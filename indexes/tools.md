@@ -9,5 +9,5 @@ Seed affected tools:
 - codex
 - cursor
 - gemini
+- mcp-chrome-bridge
 - qwen-code
-

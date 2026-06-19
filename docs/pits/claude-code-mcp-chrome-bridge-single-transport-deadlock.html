@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Code chrome-bridge MCP gets stuck after one transport connects - Agent Pitbook</title>
+  <meta name="description" content="mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Claude Code chrome-bridge MCP gets stuck after one transport connects</h1>
+      <p class="lede">mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>claude-code, mcp-chrome-bridge</td></tr><tr><th>Tags</th><td>agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>Claude Code cannot reconnect to the chrome-bridge MCP server</li><li>GET http://127.0.0.1:12306/ping succeeds with pong</li><li>the Chrome extension or bridge UI appears connected</li><li>the MCP endpoint returns HTTP 500 during handshake or tool discovery</li><li>logs contain Already connected to a transport</li><li>logs contain ERR_HTTP_HEADERS_SENT</li><li>doctor --fix or killing the native host helps only temporarily</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>agent</th><td>claude-code</td></tr><tr><th>versions</th><td>{&quot;mcp-chrome-bridge&quot;:&quot;1.0.31&quot;,&quot;local-observed-node&quot;:&quot;25.9.0_1&quot;}</td></tr><tr><th>constraints</th><td>Chrome Native Messaging host, local Streamable HTTP MCP endpoint, SSE route shared with Chrome extension UI, multiple clients or tests can touch /mcp or /sse</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections.</li><li>The MCP SDK server connection model expects one transport per server instance.</li><li>A manual curl /mcp request, Chrome extension /sse session, Claude Code session, or stale background job can occupy the singleton transport slot.</li><li>Killing the native host clears the runtime state, which explains why repair or restart works temporarily without fixing the underlying design.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Do not use curl /mcp as a health check.</p><p class="muted">The test request can initialize and occupy the transport slot that Claude Code needs.</p></li><li><p>Use /ping only to verify the bridge process is alive.</p><pre><code>curl -s http://127.0.0.1:12306/ping</code></pre></li><li><p>When stuck, pause Claude Code's active use of chrome-bridge, kill the native host process, and let Chrome relaunch it.</p><p class="muted">This clears the stale singleton transport state without changing registration files.</p></li><li><p>After relaunch, reconnect from Claude Code with /mcp -&gt; chrome-bridge -&gt; Reconnect.</p><p class="muted">Leave the first real /mcp initialize request to the intended client.</p></li><li><p>For durable repair, patch or upgrade mcp-chrome-bridge so each HTTP/SSE transport creates a fresh MCP Server instance and closes it with the transport.</p><p class="muted">This follows the public singleton-to-factory fix discussed upstream.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>After killing or patching the native host, verify only the lightweight ping endpoint.</p><p class="muted">Expected: {&quot;status&quot;:&quot;ok&quot;,&quot;message&quot;:&quot;pong&quot;}</p></li><li><p>Reconnect from Claude Code rather than from curl.</p><p class="muted">Expected: Claude Code owns the first real /mcp transport after the reset.</p></li><li><p>Review logs after reconnect.</p><p class="muted">Expected: No fresh Already connected to a transport or ERR_HTTP_HEADERS_SENT errors appear during tool discovery.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Keep only one active owner of chrome-bridge when debugging Claude Code MCP connection failures.</li><li>Create a small reset script that kills the native host and checks /ping, but never calls /mcp.</li><li>Avoid always-loading chrome-bridge in multiple Claude Code foreground and background jobs at the same time.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Using curl /mcp to test whether the bridge is fixed.</li><li>Running doctor --fix repeatedly when /ping already works.</li><li>Asking Claude Code to patch chrome-bridge while Claude Code is actively using that MCP.</li><li>Hot-patching the global npm install without first backing up the original files.</li><li>Treating a healthy /ping response as proof that MCP handshake and tool discovery are healthy.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>Local Codex thread: chrome-bridge repeated repair investigation (local-session): codex-thread:019edd12-68d0-7ad0-b92f-50d9c5d76eba</li><li><a href="https://github.com/hangwin/mcp-chrome/issues/321">hangwin/mcp-chrome issue 321: Singleton McpServer causes Already connected to a transport (issue)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/pull/301">hangwin/mcp-chrome pull request 301: replace getMcpServer singleton with factory (pr)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/issues/349">hangwin/mcp-chrome issue 349: MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT (issue)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/issues/306">hangwin/mcp-chrome issue 306: service can only connect once after Chrome starts (issue)</a></li><li><a href="https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging">Chrome Extensions Native Messaging documentation (docs)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

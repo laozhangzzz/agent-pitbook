@@ -55,6 +55,11 @@
         <td>candidate</td>
         <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">Claude Code chrome-bridge MCP gets stuck after one transport connects</a></td>
+        <td>mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.</td>
+        <td>verified</td>
+        <td>claude-code, mcp-chrome-bridge</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html">Codex still references an old workspace path after a project move</a></td>
         <td>After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.</td>
         <td>candidate</td>

@@ -46,6 +46,12 @@ function listItems(items, renderer = (item) => escapeHtml(item)) {
   return `<ul>${items.map((item) => `<li>${renderer(item)}</li>`).join("")}</ul>`;
 }
 
+function formatValue(value) {
+  if (Array.isArray(value)) return value.join(", ");
+  if (value && typeof value === "object") return JSON.stringify(value);
+  return String(value);
+}
+
 function keyValueTable(record) {
   const rows = [
     ["Status", record.status],
@@ -65,7 +71,7 @@ function keyValueTable(record) {
 function renderEnvironment(environment) {
   if (!environment || typeof environment !== "object") return "<p>Not recorded.</p>";
   const rows = Object.entries(environment).map(([key, value]) => {
-    const rendered = Array.isArray(value) ? value.join(", ") : String(value);
+    const rendered = formatValue(value);
     return `<tr><th>${escapeHtml(key)}</th><td>${escapeHtml(rendered)}</td></tr>`;
   });
   return `<table>${rows.join("")}</table>`;
@@ -242,7 +248,7 @@ function renderPitMarkdown(record) {
     "## Environment",
     "",
     ...Object.entries(record.environment ?? {}).map(([key, value]) => {
-      const rendered = Array.isArray(value) ? value.join(", ") : String(value);
+      const rendered = formatValue(value);
       return `- ${key}: ${rendered}`;
     }),
     "",
