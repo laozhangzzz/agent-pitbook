@@ -1,106 +1,141 @@
 # Agent Pitbook
 
-Agent Pitbook is a small, machine-readable knowledge base for the engineering pits that coding agents repeatedly fall into.
+Stop making coding agents rediscover the same debugging pits.
 
-The project is not a forum. It is a structured debug memory layer for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other agentic coding tools.
-
-Each pit record answers a narrow question:
-
-> When this symptom appears in this environment, what root cause and verified fix should an agent consider first?
-
-## Why
-
-Public engineering knowledge is scattered across GitHub issues, Stack Overflow, docs, blogs, chat logs, and local sessions. Human discussion formats often hide the actual fix inside long threads. LLMs can read those threads, but they do not reliably extract:
-
-- exact symptoms
-- affected versions and environments
-- root cause
-- verified fix
-- commands used to verify the fix
-- stale or unsafe workarounds
-- source links and confidence
-
-Agent Pitbook turns those lessons into records that are both human-readable and agent-readable.
-
-## Foundation
-
-The project foundation is a Git-versioned, schema-governed Markdown corpus:
-
-- canonical record contract: [schema/pit.schema.json](schema/pit.schema.json)
-- canonical pit corpus: [pits/](pits/)
-- next evidence layer: [claims/](claims/) and [sources/](sources/)
-
-Everything else is rebuildable: JSONL feeds, indexes, websites, MCP responses, search indexes, graph indexes, and hosted APIs.
-
-## Repository Shape
+Agent Pitbook is a public, structured pit database for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other coding agents. It turns recurring engineering failures into small records that agents can search before they change code:
 
 ```text
-agent-pitbook/
-  llms.txt                         LLM entrypoint
-  schema/pit.schema.json           canonical record schema
-  pits/                            Markdown pit records with frontmatter
-  sources/                         evidence metadata and source locators
-  claims/                          planned claim-level provenance layer
-  indexes/                         rebuildable Markdown maps
-  logs/                            append-only audit log
-  errors/                          error book for recurring system failures
-  feeds/pits.jsonl                 machine-readable feed
-  tools/                           no-dependency local utilities
-  adapters/                        agent-specific usage instructions
-  mcp-server/                      experimental MCP bridge notes
-  docs/                            launch and governance notes
+symptom -> environment -> root cause -> verified fix -> verification -> sources
 ```
 
-## Record Contract
+It is not a forum, not a chat log, and not an opaque vector database. It is a Git-versioned, schema-governed Markdown corpus that humans can review and agents can use.
 
-A pit record should include:
+## Why This Exists
 
-- `symptoms`: what the user or agent sees
-- `environment`: operating system, architecture, shell, runtime, package manager, agent, and relevant versions
-- `root_cause`: the smallest known explanation
-- `fix`: ordered repair steps
-- `verification`: commands or observations that prove the fix
-- `source_links`: original sources, issue threads, docs, or local session notes
-- `confidence`: `low`, `medium`, or `high`
-- `status`: `candidate`, `verified`, `stale`, or `disputed`
+Coding agents are good at trying things. They are still bad at remembering the exact local-development pits that waste everyone's time:
 
-See [schema/pit.schema.json](schema/pit.schema.json).
+- Docker publishes a port, but `localhost` still refuses connections.
+- `uv`, `npm`, or `pip` fails because the agent sandbox blocks cache writes or network access.
+- A workaround from an old GitHub issue is stale for the current version.
+- A tool-specific fix works in Codex but not Claude Code, or the reverse.
+- The agent repeats a failed approach because the lesson lived only in yesterday's chat.
 
-## LLM Wiki Lineage
+Human discussion platforms have the raw material, but the fix is often buried in long threads. Agent Pitbook stores the distilled, verifiable shape.
 
-Agent Pitbook follows Karpathy's LLM Wiki pattern of `raw sources -> wiki -> schema`, then adds the follow-up lessons that matter for agent debugging: claim-level provenance, append-only logs, an error book, and rebuildable search/index layers.
+## Who It Is For
 
-See [docs/llm-wiki/](docs/llm-wiki/).
+Use Agent Pitbook if you are:
 
-## Consume As An Agent
+- a developer using coding agents and tired of re-explaining the same environment traps
+- an open-source maintainer who wants agents to find known pitfalls before opening noisy issues
+- an agent/tool builder who needs a neutral debug memory format
+- a team trying to make Codex, Claude Code, Gemini, Cursor, Qwen Code, and Aider share operational lessons
 
-Start from [llms.txt](llms.txt).
+## 30 Second Try
 
-Preferred flow:
-
-1. Search `feeds/pits.jsonl` by symptom, tool, error text, OS, package manager, and agent.
-2. Read the matching Markdown pit under `pits/`.
-3. Treat all commands as suggestions. Inspect the local project before running them.
-4. Prefer records with `status: verified`, recent `last_verified`, and source links.
-5. If a fix works, propose a new pit record or a verification update.
-
-Local search:
+Clone the repo and search the seed records:
 
 ```bash
+git clone https://github.com/laozhangzzz/agent-pitbook.git
+cd agent-pitbook
 node tools/search-pits.mjs "docker localhost refused"
+node tools/search-pits.mjs "uv sandbox cache"
 ```
 
-Validate records:
+Validate the records:
 
 ```bash
 node tools/validate-pits.mjs
-```
-
-Rebuild the JSONL feed:
-
-```bash
 node tools/build-feed.mjs
 ```
+
+For LLMs and agents, start from [llms.txt](llms.txt).
+
+## What A Pit Looks Like
+
+Each pit answers one narrow question:
+
+> When this symptom appears in this environment, what root cause and verified fix should an agent consider first?
+
+A pit record includes:
+
+- `symptoms`: what the user or agent sees
+- `environment`: OS, architecture, shell, runtime, package manager, agent, versions, and constraints
+- `root_cause`: the smallest known explanation
+- `fix`: ordered repair steps
+- `verification`: commands or observations that prove the fix
+- `source_links`: docs, issues, PRs, release notes, source code, or local-session evidence
+- `confidence`: `low`, `medium`, or `high`
+- `status`: `candidate`, `verified`, `stale`, or `disputed`
+
+Example seed record:
+
+- [Docker port is published but localhost refuses the connection](pits/docker/docker-published-port-localhost-refused.md)
+- [uv fails because cache or Python install paths are outside writable roots](pits/python/uv-cache-outside-workspace-sandbox.md)
+- [Dependency install fails because the agent sandbox blocks network access](pits/agents/agent-network-restricted-dependency-install.md)
+
+## How Agents Should Use It
+
+Before debugging:
+
+1. Search `feeds/pits.jsonl` by exact error text, tool, OS, package manager, framework, and agent.
+2. Read the matching Markdown record under `pits/`.
+3. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
+4. Treat commands as suggestions. Inspect the local project before running them.
+5. Cite the pit ID when applying a known fix.
+
+After a fix works:
+
+1. Create or update a pit record.
+2. Mark unverified lessons as `candidate`.
+3. Include verification and sources.
+4. Rebuild the feed.
+5. Open a PR.
+
+## Source Of Truth
+
+The project foundation is:
+
+```text
+schema/pit.schema.json + pits/**/*.md
+```
+
+The next evidence layer is:
+
+```text
+sources/ + claims/ + logs/ + errors/ + indexes/
+```
+
+Canonical:
+
+- [schema/pit.schema.json](schema/pit.schema.json): record contract
+- [pits/](pits/): structured Markdown pit records
+- [sources/](sources/): evidence metadata and source locators
+- [claims/](claims/): planned claim-level provenance layer
+- [logs/](logs/): append-only audit trail
+- [errors/](errors/): error book for recurring system failures
+
+Generated or rebuildable:
+
+- [feeds/pits.jsonl](feeds/pits.jsonl)
+- [indexes/](indexes/)
+- future websites, MCP responses, search indexes, graph indexes, and hosted APIs
+
+## Why Not Just Use Search Or RAG?
+
+Search finds raw fragments. RAG retrieves chunks. Agent Pitbook stores the compiled lesson.
+
+That matters because the useful debug answer is rarely just one quote. It is the relationship between:
+
+- the exact symptom
+- the environment and version
+- the root cause
+- the safe fix
+- the verification command
+- the stale workaround to avoid
+- the source trail
+
+Search and RAG can still be useful as discovery layers. They should not be the only memory.
 
 ## Agent Adapters
 
@@ -112,6 +147,31 @@ Adapters are intentionally small. The protocol is the schema plus the feed; adap
 - Qwen Code and compatible agents: [adapters/qwen-code/AGENTS.md](adapters/qwen-code/AGENTS.md)
 - Cursor: [adapters/cursor/rules.md](adapters/cursor/rules.md)
 - Generic system prompt: [adapters/generic/system-prompt.md](adapters/generic/system-prompt.md)
+
+## LLM Wiki Lineage
+
+Agent Pitbook follows Karpathy's LLM Wiki pattern of `raw sources -> wiki -> schema`, then adds the follow-up lessons that matter for agent debugging: claim-level provenance, append-only logs, an error book, and rebuildable search/index layers.
+
+See [docs/llm-wiki/](docs/llm-wiki/).
+
+## Repository Shape
+
+```text
+agent-pitbook/
+  llms.txt                         LLM entrypoint
+  schema/pit.schema.json           canonical record schema
+  pits/                            Markdown pit records
+  sources/                         evidence metadata and source locators
+  claims/                          planned claim-level provenance layer
+  indexes/                         rebuildable Markdown maps
+  logs/                            append-only audit log
+  errors/                          error book for recurring system failures
+  feeds/pits.jsonl                 machine-readable feed
+  tools/                           no-dependency local utilities
+  adapters/                        agent-specific usage instructions
+  mcp-server/                      experimental MCP bridge notes
+  docs/                            design, launch, and governance notes
+```
 
 ## Trust Rules
 
