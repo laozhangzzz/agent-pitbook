@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Pitbook"
+  short_description: "Search and record agent debugging pits"
+  default_prompt: "Use $agent-pitbook to search known engineering pits before debugging and record verified fixes afterward."
