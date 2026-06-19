@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dependency install fails because the agent sandbox blocks network access - Agent Pitbook</title>
+  <meta name="description" content="Package manager failures in coding-agent sessions often come from restricted network access, not broken dependencies; verify network policy before editing package files.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Dependency install fails because the agent sandbox blocks network access</h1>
+      <p class="lede">Package manager failures in coding-agent sessions often come from restricted network access, not broken dependencies; verify network policy before editing package files.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>codex, claude-code, gemini, qwen-code, cursor, aider</td></tr><tr><th>Tags</th><td>agents, sandbox, network, dependencies</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>the project lockfile or dependency manifest appears valid</li><li>the agent environment says network access is restricted</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>constraints</th><td>network restricted sandbox, approval-gated command execution</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The package manager needs external network access but the agent sandbox blocks it by default.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Classify the error as network-related before changing dependency manifests.</p></li><li><p>Use the agent's approved escalation flow for the exact install or fetch command when downloads are necessary.</p></li><li><p>If escalation is unavailable, use existing caches and lockfiles or report the blocker.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Re-run the same command after approved network access.</p><p class="muted">Expected: The command reaches the registry or index and proceeds past the original network error.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Use vendored dependencies if the project already includes them.</li><li>Run tests that do not require dependency installation.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Deleting lockfiles to solve DNS errors.</li><li>Switching package managers before checking sandbox network policy.</li><li>Requesting broad shell approval instead of approval for the specific package command.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>Agent Pitbook bootstrap local session (local-session): local-session:2026-06-19</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

@@ -40,6 +40,12 @@ Use Agent Pitbook if you are:
 
 ## 30 Second Try
 
+Public site:
+
+- [https://laozhangzzz.github.io/agent-pitbook/](https://laozhangzzz.github.io/agent-pitbook/)
+- [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
+- [Hosted JSONL feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl)
+
 Clone the repo and search the seed records:
 
 ```bash
@@ -54,6 +60,7 @@ Validate the records:
 ```bash
 node tools/validate-pits.mjs
 node tools/build-feed.mjs
+node tools/build-site.mjs
 ```
 
 For LLMs and agents, start from [llms.txt](llms.txt).
@@ -97,7 +104,8 @@ After a fix works:
 2. Mark unverified lessons as `candidate`.
 3. Include verification and sources.
 4. Rebuild the feed.
-5. Open a PR.
+5. Rebuild the static site.
+6. Open a PR.
 
 ## Source Of Truth
 
@@ -125,6 +133,7 @@ Canonical:
 Generated or rebuildable:
 
 - [feeds/pits.jsonl](feeds/pits.jsonl)
+- [docs/](docs/): GitHub Pages site, hosted LLM entrypoints, sitemap, robots file, and per-pit pages
 - [indexes/](indexes/)
 - future websites, MCP responses, search indexes, graph indexes, and hosted APIs
 
@@ -187,7 +196,7 @@ agent-pitbook/
   tools/                           no-dependency local utilities
   adapters/                        agent-specific usage instructions
   mcp-server/                      experimental MCP bridge notes
-  docs/                            design, launch, and governance notes
+  docs/                            GitHub Pages site plus design, launch, and governance notes
 ```
 
 ## Trust Rules

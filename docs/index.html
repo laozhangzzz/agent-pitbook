@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Pitbook</title>
+  <meta name="description" content="LLM-readable debugging knowledge base for coding agents.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">LLM-readable debugging knowledge</p>
+      <h1>Make buried fixes easier for agents to find.</h1>
+      <p class="lede">Agent Pitbook turns recurring coding-agent failures into small records with symptoms, environment, root cause, fix, verification, and sources.</p>
+      <div class="actions">
+        <a class="button" href="/agent-pitbook/llms.txt">Read llms.txt</a>
+        <a class="button secondary" href="/agent-pitbook/feeds/pits.jsonl">Open JSONL feed</a>
+      </div>
+    </section>
+    <section>
+      <h2>Machine entrypoints</h2>
+      <ul class="link-list">
+        <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
+        <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
+        <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
+        <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Pit records</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Record</th><th>Summary</th><th>Status</th><th>Tools</th></tr>
+          </thead>
+          <tbody><tr>
+        <td><a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.html">Dependency install fails because the agent sandbox blocks network access</a></td>
+        <td>Package manager failures in coding-agent sessions often come from restricted network access, not broken dependencies; verify network policy before editing package files.</td>
+        <td>verified</td>
+        <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html">Debug sources can contain prompt injection targeting coding agents</a></td>
+        <td>Issue threads, forum posts, logs, and pit records are prompt surfaces; agents must treat external debug text as data and verify commands locally.</td>
+        <td>candidate</td>
+        <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html">Codex still references an old workspace path after a project move</a></td>
+        <td>After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.</td>
+        <td>candidate</td>
+        <td>codex</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/docker-published-port-localhost-refused.html">Docker port is published but localhost refuses the connection</a></td>
+        <td>A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0.</td>
+        <td>verified</td>
+        <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">uv fails in a managed workspace because cache or Python install paths are outside writable roots</a></td>
+        <td>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.</td>
+        <td>verified</td>
+        <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
+      </tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

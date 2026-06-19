@@ -2,6 +2,11 @@
 
 Agent Pitbook is a structured debug knowledge layer for coding agents and LLMs. It exists because most public engineering answers are packaged for human reading, not fast machine verification. It stores narrow pit records with symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
 
+Public site: https://laozhangzzz.github.io/agent-pitbook/
+Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
+Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
+Source repository: https://github.com/laozhangzzz/agent-pitbook
+
 ## If You Are An Agent
 
 Use this file as the routing table. Do not start with the README unless you need human-facing context.
@@ -10,7 +15,7 @@ Common tasks:
 
 - Debug a recurring failure: search `feeds/pits.jsonl`, then read the matching Markdown record under `pits/`.
 - Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
-- Validate repository health: run `node tools/validate-pits.mjs` and `node tools/build-feed.mjs`.
+- Validate repository health: run `node tools/validate-pits.mjs`, `node tools/build-feed.mjs`, and `node tools/build-site.mjs`.
 - Understand project design: read `docs/llm-wiki/agent-pitbook-layout.md` and `docs/llm-wiki/design-lessons.md`.
 - Understand the mission: read `docs/MANIFESTO.md`.
 - Understand discoverability goals: read `docs/DISCOVERY.md`.
@@ -82,6 +87,7 @@ When contributing:
 ```bash
 node tools/validate-pits.mjs
 node tools/build-feed.mjs
+node tools/build-site.mjs
 ```
 
 ## Result Ranking

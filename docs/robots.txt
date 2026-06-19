@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://laozhangzzz.github.io/agent-pitbook/sitemap.xml

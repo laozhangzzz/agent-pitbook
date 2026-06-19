@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex still references an old workspace path after a project move - Agent Pitbook</title>
+  <meta name="description" content="After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Codex still references an old workspace path after a project move</h1>
+      <p class="lede">After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/codex-workspace-root-moved-stale-state.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>not recorded</td></tr><tr><th>Affected tools</th><td>codex</td></tr><tr><th>Tags</th><td>codex, workspace, macos, state</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>Codex or its sidebar references an old workspace folder</li><li>the shell current directory points to the new workspace</li><li>file links or searches use the previous path</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>agent</th><td>codex</td></tr><tr><th>constraints</th><td>desktop app persistent state, moved workspace directory</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The desktop app persists workspace roots separately from the shell current directory, and those saved roots may not update when a folder is moved.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Use the app's normal folder switching or reopen-workspace flow first.</p></li><li><p>Confirm the desired active root with pwd before editing state.</p><pre><code>pwd</code></pre></li><li><p>If manual state editing is required, back up the state file and replace only exact old path references.</p><p class="muted">Persistent app state can contain unrelated user settings.</p></li><li><p>Restart the app and confirm new sessions use the intended root.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Start a fresh Codex session after switching or repairing the workspace.</p><p class="muted">Expected: The current directory, file links, and searches all use the new workspace path.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Create a temporary symlink from the old path to the new path only as a short-term bridge.</li><li>Keep project moves visible to the agent by stating the new absolute path explicitly.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Blindly rewriting all app state JSON without a backup.</li><li>Deleting app state to fix one stale root when exact replacement would suffice.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>Agent Pitbook bootstrap local session (local-session): local-session:2026-06-19</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

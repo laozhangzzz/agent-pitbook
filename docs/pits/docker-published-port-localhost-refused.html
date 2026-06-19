@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docker port is published but localhost refuses the connection - Agent Pitbook</title>
+  <meta name="description" content="A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Docker port is published but localhost refuses the connection</h1>
+      <p class="lede">A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/docker-published-port-localhost-refused.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/docker/docker-published-port-localhost-refused.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>codex, claude-code, gemini, qwen-code, cursor, aider</td></tr><tr><th>Tags</th><td>docker, macos, ports, localhost</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>docker ps or docker port shows the expected host port</li><li>curl to localhost or 127.0.0.1 on the host fails</li><li>container logs show the app listening on localhost or 127.0.0.1</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS or Linux</td></tr><tr><th>runtime</th><td>Docker</td></tr><tr><th>constraints</th><td>host-to-container port forwarding</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The app inside the container is listening on loopback rather than a container network interface.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Change the app bind address inside the container to 0.0.0.0.</p><p class="muted">The service must accept traffic forwarded through the container interface.</p></li><li><p>Keep host exposure narrow if needed by publishing the host side on 127.0.0.1.</p><p class="muted">Binding inside the container to 0.0.0.0 does not require exposing the host port publicly.</p></li><li><p>Restart or recreate the container after changing the command or configuration.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Inspect port mapping and make an HTTP request from the host.</p><p class="muted">Expected: The request reaches the service and the container logs show the request.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Exec into the container and curl the service from inside to separate app health from host forwarding.</li><li>Temporarily publish to a different host port to rule out a local port conflict.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Rebuilding the image before checking the bind address.</li><li>Using --network host on macOS as a first response.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>Agent Pitbook bootstrap local session (local-session): local-session:2026-06-19</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
