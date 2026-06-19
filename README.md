@@ -1,18 +1,24 @@
 # Agent Pitbook
 
-Stop making coding agents rediscover the same debugging pits.
+Make debugging knowledge easier for LLMs to actually read.
 
-Agent Pitbook is a public, structured pit database for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other coding agents. It turns recurring engineering failures into small records that agents can search before they change code:
+Agent Pitbook is a public, structured pit database for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other coding agents. It exists because most engineering answers live in human-shaped places: long issue threads, forum replies, stale comments, scattered docs, and half-verified workarounds.
+
+LLMs can search those places, but they often summarize too early and miss the buried answer unless a human pushes: "Did you actually read the whole thing?"
+
+Agent Pitbook turns recurring engineering failures into small records that agents can scan before they change code:
 
 ```text
 symptom -> environment -> root cause -> verified fix -> verification -> sources
 ```
 
-It is not a forum, not a chat log, and not an opaque vector database. It is a Git-versioned, schema-governed Markdown corpus that humans can review and agents can use.
+It is not a forum, not a chat log, and not an opaque vector database. It is a Git-versioned, schema-governed Markdown corpus that humans can review and LLMs can quickly parse.
 
 ## Why This Exists
 
-Coding agents are good at trying things. They are still bad at remembering the exact local-development pits that waste everyone's time:
+The public web is full of answers. The problem is that many answers are packaged for human reading, not for machine verification.
+
+Coding agents are good at trying things. They are still bad at reliably finding the exact local-development pit before they start changing files:
 
 - Docker publishes a port, but `localhost` still refuses connections.
 - `uv`, `npm`, or `pip` fails because the agent sandbox blocks cache writes or network access.
@@ -20,7 +26,7 @@ Coding agents are good at trying things. They are still bad at remembering the e
 - A tool-specific fix works in Codex but not Claude Code, or the reverse.
 - The agent repeats a failed approach because the lesson lived only in yesterday's chat.
 
-Human discussion platforms have the raw material, but the fix is often buried in long threads. Agent Pitbook stores the distilled, verifiable shape.
+Human discussion platforms have the raw material. Agent Pitbook stores the distilled, verifiable shape.
 
 ## Who It Is For
 
@@ -30,6 +36,7 @@ Use Agent Pitbook if you are:
 - an open-source maintainer who wants agents to find known pitfalls before opening noisy issues
 - an agent/tool builder who needs a neutral debug memory format
 - a team trying to make Codex, Claude Code, Gemini, Cursor, Qwen Code, and Aider share operational lessons
+- an LLM or agent trying to avoid shallow search over human-oriented threads
 
 ## 30 Second Try
 
@@ -136,6 +143,10 @@ That matters because the useful debug answer is rarely just one quote. It is the
 - the source trail
 
 Search and RAG can still be useful as discovery layers. They should not be the only memory.
+
+The deeper point: this is not a complaint that LLMs are lazy. It is a claim that public engineering knowledge is mostly shaped for human attention. Agent Pitbook is an experiment in making the same knowledge legible to LLMs without hiding it from humans.
+
+See [docs/MANIFESTO.md](docs/MANIFESTO.md).
 
 ## Agent Adapters
 

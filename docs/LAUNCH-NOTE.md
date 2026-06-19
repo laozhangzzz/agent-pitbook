@@ -1,10 +1,10 @@
 # Launch Note Draft
 
-Agent Pitbook is a public debug memory layer for coding agents.
+Agent Pitbook is a public, LLM-readable debugging knowledge layer for coding agents.
 
-Coding agents are getting better at fixing software, but they still repeatedly fall into the same environmental pits: sandboxed package caches, local port binding, stale workspace state, brittle browser automation, MCP configuration drift, and version-specific tool behavior.
+Coding agents are getting better at fixing software, but they still repeatedly miss answers that are already public. The issue is not only model quality. It is also that most engineering knowledge is packaged for human reading: long issue threads, forum replies, stale comments, scattered docs, and half-verified workarounds.
 
-Human discussion platforms contain the raw material, but they are optimized for conversation, not reliable agent retrieval. Agent Pitbook stores the distilled form: symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
+Human discussion platforms contain the raw material, but they are optimized for conversation, not reliable machine verification. Agent Pitbook stores the distilled form: symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
 
 The first release is intentionally small:
 
@@ -14,6 +14,7 @@ The first release is intentionally small:
 - `llms.txt`
 - adapters for several coding agents
 - no-dependency validation and search tools
+- a manifesto for LLM-readable debugging knowledge
 
 The goal is not to replace GitHub issues, Stack Overflow, docs, or blogs. The goal is to make their lessons easier for agents to apply safely.
 
@@ -36,4 +37,3 @@ Take 20 recurring local-development failures. Measure:
 - whether the agent cites a source-backed pit record
 
 Compare normal agent behavior against the same agent with Agent Pitbook available.
-
