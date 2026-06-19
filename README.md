@@ -22,6 +22,16 @@ Public engineering knowledge is scattered across GitHub issues, Stack Overflow, 
 
 Agent Pitbook turns those lessons into records that are both human-readable and agent-readable.
 
+## Foundation
+
+The project foundation is a Git-versioned, schema-governed Markdown corpus:
+
+- canonical record contract: [schema/pit.schema.json](schema/pit.schema.json)
+- canonical pit corpus: [pits/](pits/)
+- next evidence layer: [claims/](claims/) and [sources/](sources/)
+
+Everything else is rebuildable: JSONL feeds, indexes, websites, MCP responses, search indexes, graph indexes, and hosted APIs.
+
 ## Repository Shape
 
 ```text
@@ -29,6 +39,11 @@ agent-pitbook/
   llms.txt                         LLM entrypoint
   schema/pit.schema.json           canonical record schema
   pits/                            Markdown pit records with frontmatter
+  sources/                         evidence metadata and source locators
+  claims/                          planned claim-level provenance layer
+  indexes/                         rebuildable Markdown maps
+  logs/                            append-only audit log
+  errors/                          error book for recurring system failures
   feeds/pits.jsonl                 machine-readable feed
   tools/                           no-dependency local utilities
   adapters/                        agent-specific usage instructions
@@ -50,6 +65,12 @@ A pit record should include:
 - `status`: `candidate`, `verified`, `stale`, or `disputed`
 
 See [schema/pit.schema.json](schema/pit.schema.json).
+
+## LLM Wiki Lineage
+
+Agent Pitbook follows Karpathy's LLM Wiki pattern of `raw sources -> wiki -> schema`, then adds the follow-up lessons that matter for agent debugging: claim-level provenance, append-only logs, an error book, and rebuildable search/index layers.
+
+See [docs/llm-wiki/](docs/llm-wiki/).
 
 ## Consume As An Agent
 
@@ -123,4 +144,3 @@ Recommended default:
 - pit record text: CC BY 4.0
 
 External sources remain owned by their authors. Link and summarize them; do not mirror them wholesale.
-
