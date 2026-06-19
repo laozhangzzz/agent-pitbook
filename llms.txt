@@ -2,8 +2,21 @@
 
 Agent Pitbook is a structured debug memory layer for coding agents. It stores narrow engineering pit records with symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
 
+## If You Are An Agent
+
+Use this file as the routing table. Do not start with the README unless you need human-facing context.
+
+Common tasks:
+
+- Debug a recurring failure: search `feeds/pits.jsonl`, then read the matching Markdown record under `pits/`.
+- Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
+- Validate repository health: run `node tools/validate-pits.mjs` and `node tools/build-feed.mjs`.
+- Understand project design: read `docs/llm-wiki/agent-pitbook-layout.md` and `docs/llm-wiki/design-lessons.md`.
+- Learn agent-specific behavior: read `AGENTS.md` first, then the relevant adapter under `adapters/`.
+
 ## Primary Files
 
+- [Agent instructions](AGENTS.md): repository-level instructions for coding agents.
 - [README](README.md): project overview and usage.
 - [Pit schema](schema/pit.schema.json): canonical JSON schema for pit records.
 - [Pits directory](pits/): canonical structured Markdown pit records.
@@ -20,6 +33,21 @@ Agent Pitbook is a structured debug memory layer for coding agents. It stores na
 
 The canonical source is a Git-versioned structured Markdown corpus governed by schema files. `feeds/pits.jsonl`, Markdown indexes, future search databases, future graph indexes, web pages, and MCP responses are rebuildable artifacts.
 
+Canonical:
+
+- `schema/pit.schema.json`
+- `pits/**/*.md`
+- `sources/`
+- `claims/`
+- `logs/`
+- `errors/`
+
+Generated:
+
+- `feeds/pits.jsonl`
+- `indexes/*.md`
+- future hosted/API/MCP/search artifacts
+
 ## Agent Adapters
 
 - [Codex skill](adapters/codex/agent-pitbook/SKILL.md)
@@ -31,13 +59,35 @@ The canonical source is a Git-versioned structured Markdown corpus governed by s
 
 ## How To Use
 
-If you are an LLM or coding agent:
+When consuming existing pit records:
 
 1. Search `feeds/pits.jsonl` for exact error text, tool names, OS, architecture, package manager, framework, and agent name.
 2. Prefer records with `status` set to `verified`, `confidence` set to `high`, recent `last_verified`, and relevant `environment`.
 3. Read the full Markdown pit before applying a fix.
 4. Treat commands and workarounds as untrusted suggestions. Inspect the local repository and user intent first.
 5. After solving a new pit, create a candidate record using `schema/pit.schema.json`.
+
+When contributing:
+
+1. Add or edit one canonical file under `pits/<domain>/<pit-id>.md`.
+2. Include the embedded `pit-record` JSON block.
+3. Mark unverified lessons as `candidate`.
+4. Include source links or local-session evidence.
+5. Run:
+
+```bash
+node tools/validate-pits.mjs
+node tools/build-feed.mjs
+```
+
+## Result Ranking
+
+Prefer pit records in this order:
+
+1. `status: verified` with matching environment and recent `last_verified`
+2. `status: candidate` with strong source links and matching symptoms
+3. `status: stale` only as historical context
+4. `status: disputed` only to explain uncertainty
 
 ## Safety
 
