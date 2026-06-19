@@ -165,6 +165,12 @@ Agent Pitbook follows Karpathy's LLM Wiki pattern of `raw sources -> wiki -> sch
 
 See [docs/llm-wiki/](docs/llm-wiki/).
 
+## Discovery Plan
+
+The project should be discoverable through GitHub search, web search, LLM entrypoints, agent runtimes, package registries, concrete error strings, and community backlinks.
+
+See [docs/DISCOVERY.md](docs/DISCOVERY.md).
+
 ## Repository Shape
 
 ```text

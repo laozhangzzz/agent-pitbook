@@ -13,6 +13,7 @@ Common tasks:
 - Validate repository health: run `node tools/validate-pits.mjs` and `node tools/build-feed.mjs`.
 - Understand project design: read `docs/llm-wiki/agent-pitbook-layout.md` and `docs/llm-wiki/design-lessons.md`.
 - Understand the mission: read `docs/MANIFESTO.md`.
+- Understand discoverability goals: read `docs/DISCOVERY.md`.
 - Learn agent-specific behavior: read `AGENTS.md` first, then the relevant adapter under `adapters/`.
 
 ## Primary Files
@@ -29,6 +30,7 @@ Common tasks:
 - [JSONL feed](feeds/pits.jsonl): one machine-readable pit record per line.
 - [Contributing guide](CONTRIBUTING.md): quality rules for new records.
 - [Manifesto](docs/MANIFESTO.md): why LLM-readable debugging knowledge matters.
+- [Discovery plan](docs/DISCOVERY.md): where the project should be searchable and how.
 - [LLM Wiki follow-up notes](docs/llm-wiki/README.md): source audit and design lessons from Karpathy's LLM Wiki discussion.
 
 ## Source Of Truth
