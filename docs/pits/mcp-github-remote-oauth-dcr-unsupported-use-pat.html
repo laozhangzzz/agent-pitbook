@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT - Agent Pitbook</title>
+  <meta name="description" content="Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/) via OAuth fails with 'Incompatible auth server: does not support dynamic client registration' because the endpoint lacks OAuth Dynamic Client Registration. Use a Personal Access Token via GITHUB_PERSONAL_ACCESS_TOKEN instead of the OAuth flow.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</h1>
+      <p class="lede">Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/) via OAuth fails with 'Incompatible auth server: does not support dynamic client registration' because the endpoint lacks OAuth Dynamic Client Registration. Use a Personal Access Token via GITHUB_PERSONAL_ACCESS_TOKEN instead of the OAuth flow.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-code, github-mcp-server</td></tr><tr><th>Tags</th><td>mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails</li><li>Error: Incompatible auth server: does not support dynamic client registration</li><li>the same server config works in VS Code, which authenticates differently</li><li>the UI shows an 'Authenticate' (OAuth) button that never completes</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>agent</th><td>claude-code</td></tr><tr><th>constraints</th><td>remote MCP over HTTP with OAuth, auth server lacks Dynamic Client Registration</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server.</li><li>GitHub's remote MCP endpoint does not support DCR, so registration fails and the OAuth handshake cannot proceed.</li><li>The endpoint expects token-based auth (a PAT) instead.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Create a fine-grained GitHub Personal Access Token with the scopes you need.</p></li><li><p>Configure the GitHub MCP server to read the token from the environment rather than OAuth.</p><p class="muted">The plugin/server reads GITHUB_PERSONAL_ACCESS_TOKEN from env; setting it is the actual fix.</p></li><li><p>Do not use the OAuth 'Authenticate' button for this endpoint until DCR is supported.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Connect after providing the PAT in env.</p><p class="muted">Expected: The GitHub MCP server connects and lists tools; no 'does not support dynamic client registration' error.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Retrying the OAuth flow against an endpoint that lacks dynamic client registration.</li><li>Following docs that show the OAuth connect path when only PAT auth works for that endpoint.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/anthropics/claude-code/issues/3433">anthropics/claude-code issue 3433: Claude Code cannot connect to GitHub's remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

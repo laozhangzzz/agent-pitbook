@@ -125,6 +125,11 @@
         <td>candidate</td>
         <td>claude-desktop, cursor, mcp-server</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</a></td>
+        <td>Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/) via OAuth fails with 'Incompatible auth server: does not support dynamic client registration' because the endpoint lacks OAuth Dynamic Client Registration. Use a Personal Access Token via GITHUB_PERSONAL_ACCESS_TOKEN instead of the OAuth flow.</td>
+        <td>verified</td>
+        <td>claude-code, github-mcp-server</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</a></td>
         <td>MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.</td>
         <td>verified</td>
@@ -140,10 +145,20 @@
         <td>verified</td>
         <td>claude-desktop, cursor, cline, mcp-server</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html">Puppeteer MCP screenshots live in memory only; there is no file on disk to find</a></td>
+        <td>The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP resources, not as files. After puppeteer_screenshot there is no image on disk, so agents that search the filesystem for a saved file are chasing something that does not exist. Retrieve via the resource, or add your own persistence step.</td>
+        <td>verified</td>
+        <td>mcp-server, claude-desktop</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html">Several official reference MCP servers are archived; their bugs will not be fixed</a></td>
         <td>Some early @modelcontextprotocol/* reference servers (server-postgres, server-github, server-puppeteer) were moved to servers-archived and are unmaintained, though still installable from npm. Don't debug an archived server; check servers-archived / the README and switch to a maintained alternative (e.g. github/github-mcp-server).</td>
         <td>verified</td>
         <td>mcp-server, claude-desktop, cursor</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</a></td>
+        <td>A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize, then fail because the proxy buffers the SSE stream that Streamable HTTP needs in real time. Cloudflare Tunnel buffers SSE; Nginx needs proxy_buffering off. Disable buffering for the MCP endpoint or use a streaming proxy.</td>
+        <td>verified</td>
+        <td>claude-desktop, mcp-server</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html">server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</a></td>
         <td>@modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.</td>
@@ -160,6 +175,11 @@
         <td>verified</td>
         <td>mcp-server, python-sdk, fastmcp</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html">Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions</a></td>
+        <td>A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.</td>
+        <td>candidate</td>
+        <td>mcp-server, python-sdk, fastmcp</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</a></td>
         <td>A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</td>
         <td>verified</td>
@@ -169,6 +189,16 @@
         <td>A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol text to stdout (console.log / print) interleaves into the stream and the client fails with 'SyntaxError: ... is not valid JSON' in deserializeMessage. Log to stderr (console.error / logging) instead and keep stdout for the transport only.</td>
         <td>verified</td>
         <td>mcp-server, typescript-sdk, python-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html">Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow</a></td>
+        <td>With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.</td>
+        <td>verified</td>
+        <td>mcp-inspector, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html">mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</a></td>
+        <td>uvx mcp-server-time can crash with a zoneinfo load error when the local timezone resolves to a non-IANA abbreviation (EDT/PDT/CEST), typically under DST, because Python zoneinfo only loads canonical IANA names. Pass a valid IANA name with --local-timezone (e.g. America/New_York).</td>
+        <td>verified</td>
+        <td>mcp-server, claude-desktop</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</a></td>
         <td>The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long tool calls fail with 'MCP error -32001: Request timed out' even with server progress. Pass request options to callTool with a larger timeout and resetTimeoutOnProgress: true so progress notifications extend the deadline.</td>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions - Agent Pitbook</title>
+  <meta name="description" content="A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions</h1>
+      <p class="lede">A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stateless-streamable-http-closedresourceerror.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, python-sdk, fastmcp</td></tr><tr><th>Tags</th><td>mcp, python-sdk, streamable-http, stateless, anyio, closedresourceerror, versioning</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>each request raises an exception group ending in anyio.ClosedResourceError</li><li>stack passes through _handle_stateless_request / run_stateless_server / http_transport.connect() or streamable_http_manager.run_server</li><li>reproduces with stateless mode on affected versions (e.g. SDK 1.12.0; FastMCP 2.10.x / 2.13.x)</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>framework</th><td>MCP Python SDK / FastMCP</td></tr><tr><th>constraints</th><td>stateless Streamable HTTP transport, version-specific regression</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>In affected versions the stateless Streamable HTTP path re-enters the transport's read loop.</li><li>On the second request the write/read stream has already been closed, so anyio raises ClosedResourceError.</li><li>It is a regression in the stateless transport handling, not a problem with the user's handler.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Pin a known-good SDK version; users reported 1.11.0 working where 1.12.0 failed.</p></li><li><p>Track the upstream issue/fix and upgrade to a release that resolves the stateless ClosedResourceError, then unpin.</p></li><li><p>If you do not need stateless mode, run stateful and handle scaling separately.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Send repeated requests to the stateless server on the pinned/fixed version.</p><p class="muted">Expected: Requests succeed with no anyio.ClosedResourceError.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Stay on the last SDK version where stateless mode worked for you.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Catching ClosedResourceError in your handler, which hides the transport regression.</li><li>Assuming the latest SDK is always safe for stateless mode without checking the issue tracker.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/python-sdk/issues/1219">modelcontextprotocol/python-sdk issue 1219: _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
