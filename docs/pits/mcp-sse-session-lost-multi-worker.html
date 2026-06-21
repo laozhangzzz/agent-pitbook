@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP SSE session lost across workers/pods: Could not find session for ID (404) - Agent Pitbook</title>
+  <meta name="description" content="An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP SSE session lost across workers/pods: Could not find session for ID (404)</h1>
+      <p class="lede">An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-session-lost-multi-worker.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, python-sdk, fastmcp</td></tr><tr><th>Tags</th><td>mcp, sse, sessions, kubernetes, gunicorn, scaling, streamable-http, python-sdk</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>SSE connection opens (200), first POST returns 202, later POSTs return 404</li><li>server log: WARNING mcp.server.sse Could not find session for ID: &lt;uuid&gt;</li><li>deployment uses gunicorn workers &gt; 1 or multiple replicas behind a load balancer</li><li>worse under autoscaling as pods are added/removed</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>framework</th><td>FastMCP / MCP Python SDK</td></tr><tr><th>constraints</th><td>stateful SSE transport, multi-worker gunicorn or multi-pod Kubernetes, load balancer without session affinity</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The SSE transport is stateful: the session lives in the memory of the worker/pod that accepted the SSE connection.</li><li>A subsequent POST /messages?session_id=... can be routed to a different worker/pod with no record of that session, returning 404.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Preferred: run stateless with Streamable HTTP so no per-connection in-memory session is required.</p><pre><code>FastMCP(&quot;server&quot;, stateless_http=True)</code></pre></li><li><p>If keeping stateful SSE, pin requests to the originating instance with sticky routing (Nginx ingress upstream-hash-by on a stable per-session value).</p><p class="muted">Use a stable header like $http_x_user_id; fall back to $remote_addr only when clients have distinct IPs.</p></li><li><p>Avoid multi-worker for a single stateful instance unless sessions are shared out of process.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Send repeated messages on one session under a multi-instance deployment after the change.</p><p class="muted">Expected: No 404 / 'Could not find session for ID', even under scaling.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Sticky load-balancer routing keyed on a stable per-session identifier.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Running stateful SSE with workers &gt; 1 or multiple replicas and no sticky routing.</li><li>Hashing on $remote_addr when clients share IPs, which still splits sessions.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/python-sdk/issues/520">modelcontextprotocol/python-sdk issue 520: MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

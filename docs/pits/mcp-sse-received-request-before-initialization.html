@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSE MCP server: Received request before initialization was complete - Agent Pitbook</title>
+  <meta name="description" content="RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized connection. The confirmed cause is a non-compliant proxy (supergateway injects its own initialize); a stale client session after redeploy is another. Use a compliant proxy (mcp-proxy) or reconnect.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>SSE MCP server: Received request before initialization was complete</h1>
+      <p class="lede">RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized connection. The confirmed cause is a non-compliant proxy (supergateway injects its own initialize); a stale client session after redeploy is another. Use a compliant proxy (mcp-proxy) or reconnect.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-sse-received-request-before-initialization.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-received-request-before-initialization.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, python-sdk</td></tr><tr><th>Tags</th><td>mcp, sse, initialization, proxy, supergateway, python-sdk, redeploy</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call</li><li>appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server</li><li>the first connection worked; a later one fails</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>framework</th><td>FastMCP / MCP Python SDK</td></tr><tr><th>constraints</th><td>SSE transport, proxy/gateway in front, server redeploys while clients hold sessions</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The MCP lifecycle requires the client's initialize to complete before other requests.</li><li>A proxy such as supergateway sends its own initialize on launch (against spec) then forwards the client's, so the server sees initialize twice / out of order.</li><li>After a redeploy the client may keep an old SSE session and send requests the fresh server never saw initialized.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>If a gateway/proxy is in front, use a spec-compliant one: switching supergateway -&gt; mcp-proxy resolves the double-initialize case.</p></li><li><p>After redeploying the server, reconnect the client so a fresh initialize handshake runs.</p></li><li><p>For redeploy-heavy or multi-instance deployments, prefer stateless Streamable HTTP over stateful SSE.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Use a compliant proxy or reconnect the client, then call tools/list.</p><p class="muted">Expected: Requests succeed and the 'Received request before initialization was complete' error stops.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Reconnect the client after each server restart.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Wrapping the handler in a broad try/except that swallows the RuntimeError and masks other errors.</li><li>Blaming the server example when the proxy violates the initialization sequence.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/python-sdk/issues/423">modelcontextprotocol/python-sdk issue 423: MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

@@ -110,10 +110,35 @@
         <td>verified</td>
         <td>claude-desktop, cursor, mcp-server</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html">SSE MCP server: Received request before initialization was complete</a></td>
+        <td>RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized connection. The confirmed cause is a non-compliant proxy (supergateway injects its own initialize); a stale client session after redeploy is another. Use a compliant proxy (mcp-proxy) or reconnect.</td>
+        <td>verified</td>
+        <td>mcp-server, python-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html">MCP SSE session lost across workers/pods: Could not find session for ID (404)</a></td>
+        <td>An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.</td>
+        <td>verified</td>
+        <td>mcp-server, python-sdk, fastmcp</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</a></td>
         <td>A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</td>
         <td>verified</td>
         <td>claude-desktop, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</a></td>
+        <td>The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long tool calls fail with 'MCP error -32001: Request timed out' even with server progress. Pass request options to callTool with a larger timeout and resetTimeoutOnProgress: true so progress notifications extend the deadline.</td>
+        <td>verified</td>
+        <td>mcp-server, typescript-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)</a></td>
+        <td>@modelcontextprotocol/sdk used from a CommonJS project (e.g. NestJS) can crash at MCP client init with ERR_REQUIRE_ESM because an older SDK CJS build statically require()s the ESM-only pkce-challenge. Upgrade the SDK to a version that dynamically imports it, or force pkce-challenge@5.0.0 via overrides.</td>
+        <td>verified</td>
+        <td>mcp-server, typescript-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html">MCP TypeScript SDK breaks with Zod v4: w._parse is not a function</a></td>
+        <td>Older @modelcontextprotocol/sdk (up to ~1.17.5) hard-depends on Zod v3 and calls Zod internals; with Zod v4 installed, tool calls fail with -32603 'w._parse is not a function' or 'null is not an object (evaluating F._def)'. Pin zod@3, or upgrade the SDK to a version with Zod v4 support (~1.23.0+).</td>
+        <td>verified</td>
+        <td>mcp-server, typescript-sdk</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">On Windows an MCP server launched with npx needs a cmd /c wrapper</a></td>
         <td>On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.</td>

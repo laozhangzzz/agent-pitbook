@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP TypeScript SDK breaks with Zod v4: w._parse is not a function - Agent Pitbook</title>
+  <meta name="description" content="Older @modelcontextprotocol/sdk (up to ~1.17.5) hard-depends on Zod v3 and calls Zod internals; with Zod v4 installed, tool calls fail with -32603 'w._parse is not a function' or 'null is not an object (evaluating F._def)'. Pin zod@3, or upgrade the SDK to a version with Zod v4 support (~1.23.0+).">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP TypeScript SDK breaks with Zod v4: w._parse is not a function</h1>
+      <p class="lede">Older @modelcontextprotocol/sdk (up to ~1.17.5) hard-depends on Zod v3 and calls Zod internals; with Zod v4 installed, tool calls fail with -32603 'w._parse is not a function' or 'null is not an object (evaluating F._def)'. Pin zod@3, or upgrade the SDK to a version with Zod v4 support (~1.23.0+).</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-zod-v4-incompatible.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, zod, dependencies, versioning, tools</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>tool execution returns {&quot;code&quot;:-32603,&quot;message&quot;:&quot;w._parse is not a function...&quot;}</li><li>tools/list fails with 'null is not an object (evaluating F._def)'</li><li>errors appear in minified code and are hard to trace</li><li>Zod was recently upgraded to v4.x</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>runtime</th><td>Node.js / Bun</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>versions</th><td>{&quot;@modelcontextprotocol/sdk&quot;:&quot;1.17.5&quot;,&quot;zod&quot;:&quot;4.1.5&quot;}</td></tr><tr><th>constraints</th><td>SDK declares zod ^3.x and calls Zod internals</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>MCP SDK versions up to ~1.17.5 declare zod ^3.x and call Zod internal API (_def, _parse).</li><li>Zod v4 changed those internal structures, so the SDK's calls hit undefined methods at runtime when a v4 Zod is resolved.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Quick unblock: pin Zod v3 and ensure a single Zod version resolves.</p><pre><code>npm install zod@3.23.8</code></pre></li><li><p>Durable fix: upgrade @modelcontextprotocol/sdk to a version with backwards-compatible Zod v4 support (added around the 1.23.0 line).</p></li><li><p>Deduplicate so only one Zod version is installed.</p><pre><code>npm ls zod</code></pre></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Check the resolved Zod version and re-run a tool call.</p><p class="muted">Expected: One compatible Zod version; tool calls and tools/list succeed with no w._parse / F._def errors.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Stay on Zod v3 until the SDK upgrade is feasible.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Mixing a Zod-v4 project with an SDK that only supports Zod v3.</li><li>Leaving two Zod versions in the tree and assuming the right one resolves.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/typescript-sdk/issues/925">modelcontextprotocol/typescript-sdk issue 925: MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes (maintainer notes 1.23.0-beta adds v4 support) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

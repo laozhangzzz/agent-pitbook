@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress - Agent Pitbook</title>
+  <meta name="description" content="The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long tool calls fail with 'MCP error -32001: Request timed out' even with server progress. Pass request options to callTool with a larger timeout and resetTimeoutOnProgress: true so progress notifications extend the deadline.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</h1>
+      <p class="lede">The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long tool calls fail with 'MCP error -32001: Request timed out' even with server progress. Pass request options to callTool with a larger timeout and resetTimeoutOnProgress: true so progress notifications extend the deadline.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-client-default-60s-request-timeout.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, timeout, error-32001, progress, long-running</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>the tool finishes fine from the Python client but times out from the TS/JS client</li><li>setting a timeout on connect alone does not help</li><li>the server sends periodic progress yet the client gives up at 60s</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>constraints</th><td>default request timeout 60000 ms, progress only resets timeout when enabled</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The default per-request timeout is 60000 ms.</li><li>Progress notifications only extend it when resetTimeoutOnProgress is enabled.</li><li>The timeout must be set in the per-request options passed to callTool, not only on connect/transport.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.</p><p class="muted">This is the per-request option set; connect-level options do not apply to each call.</p></li><li><p>Ensure the server emits progress notifications during the long operation so the reset can fire.</p></li><li><p>For very long jobs, also consider setting maxTotalTimeout as a hard ceiling.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Run a tool call that exceeds 60 seconds with the options set.</p><p class="muted">Expected: It completes and returns a result with no -32001: Request timed out.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Break very long operations into shorter calls if you cannot stream progress.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Setting timeout only on connect and expecting per-call requests to inherit it.</li><li>Relying on server progress without resetTimeoutOnProgress: true.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/typescript-sdk/issues/245">modelcontextprotocol/typescript-sdk issue 245: mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

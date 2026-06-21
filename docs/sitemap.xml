@@ -105,11 +105,51 @@
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.md</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
