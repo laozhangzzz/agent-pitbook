@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set - Agent Pitbook</title>
+  <meta name="description" content="MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</h1>
+      <p class="lede">MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-docker-connection-refused-host-env.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-inspector</td></tr><tr><th>Tags</th><td>mcp, inspector, docker, devcontainer, networking, connection-refused, allowed-origins</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>curl http://localhost:6274 returns Failed to connect ... Connection refused</li><li>browser shows localhost refused to connect / ERR_CONNECTION_REFUSED</li><li>same symptom running Inspector inside a devcontainer</li><li>the published docker run inspector:latest command alone does not connect</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>runtime</th><td>Node.js</td></tr><tr><th>constraints</th><td>Inspector in a Docker container or devcontainer, binds loopback interface, enforces allowed-origins</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container.</li><li>It also validates request origin, so without HOST/ALLOWED_ORIGINS the host browser's connection is refused even when ports are published.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Pass HOST and ALLOWED_ORIGINS to the container run command.</p><pre><code>docker run --rm --network host -e HOST=127.0.0.1 -e ALLOWED_ORIGINS=http://127.0.0.1:6274 -p 6274:6274 -p 6277:6277 ghcr.io/modelcontextprotocol/inspector:latest</code></pre></li><li><p>Use the same env vars when running in a devcontainer.</p><pre><code>HOST=127.0.0.1 ALLOWED_ORIGINS=http://127.0.0.1:6274 npx @modelcontextprotocol/inspector@latest</code></pre></li><li><p>If it still refuses on a very new OS/Docker combo, try the latest Inspector release.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Curl the UI port after setting the env vars.</p><p class="muted">Expected: Succeeds and the browser loads the Inspector UI.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Run Inspector directly on the host instead of in a container if env configuration is not possible.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Assuming -p 6274:6274 alone exposes a loopback-only service.</li><li>Setting ALLOWED_ORIGINS to a value that does not match the URL opened in the browser.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/inspector/issues/828">modelcontextprotocol/inspector issue 828: Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

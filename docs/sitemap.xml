@@ -65,6 +65,14 @@
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
@@ -86,6 +94,22 @@
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.md</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -142,6 +166,22 @@
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.md</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>

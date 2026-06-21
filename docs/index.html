@@ -85,6 +85,11 @@
         <td>verified</td>
         <td>mcp-server, fastmcp</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">FastMCP overrides your app's logging configuration on init (duplicate or lost logs)</a></td>
+        <td>Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.</td>
+        <td>candidate</td>
+        <td>mcp-server, python-sdk, fastmcp</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</a></td>
         <td>npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.</td>
         <td>verified</td>
@@ -99,6 +104,16 @@
         <td>On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.</td>
         <td>candidate</td>
         <td>claude-desktop, cursor, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</a></td>
+        <td>MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.</td>
+        <td>verified</td>
+        <td>mcp-inspector</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">MCP Inspector breaks after an upgrade; pin a known-good version</a></td>
+        <td>@modelcontextprotocol/inspector ships often and some releases regress: 0.10.0 broke startup with 'mcp-inspector: command not found', 0.17.2 crashed Streamable HTTP connections with 'Controller is already closed' (fixed in 0.17.5). When Inspector breaks after npx @latest moved, pin a known-good version or upgrade to the fixed release.</td>
+        <td>verified</td>
+        <td>mcp-inspector</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html">A corrupted or cold npx cache makes an MCP server fail to start or time out</a></td>
         <td>An npx-launched MCP server that intermittently fails or yields 'Client closed' / 'MCP error -32001: Request timed out' is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeout. Clear the cache or pre-install the package.</td>
@@ -132,6 +147,16 @@
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)</a></td>
         <td>@modelcontextprotocol/sdk used from a CommonJS project (e.g. NestJS) can crash at MCP client init with ERR_REQUIRE_ESM because an older SDK CJS build statically require()s the ESM-only pkce-challenge. Upgrade the SDK to a version that dynamically imports it, or force pkce-challenge@5.0.0 via overrides.</td>
+        <td>verified</td>
+        <td>mcp-server, typescript-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation)</a></td>
+        <td>Schema validation in @modelcontextprotocol/sdk (e.g. elicitation) fails on Cloudflare Workers and similar edge runtimes with 'EvalError: Code generation from strings disallowed' because AJV v6 compiles schemas with new Function, which edge runtimes forbid. Use Cloudflare's McpAgent, or an SDK build that lets you inject an edge-compatible validator.</td>
+        <td>candidate</td>
+        <td>mcp-server, typescript-sdk</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html">MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE</a></td>
+        <td>Using MCP SDK tool types (e.g. ToolCallback&lt;Args&gt;) with Zod can trigger 'Type instantiation is excessively deep and possibly infinite ts(2589)' and freeze the TypeScript language server. Fix on the Zod/tsconfig side: single Zod version, modern moduleResolution (not legacy 'node'), and a Zod release with the fix (4.1.6).</td>
         <td>verified</td>
         <td>mcp-server, typescript-sdk</td>
       </tr><tr>
