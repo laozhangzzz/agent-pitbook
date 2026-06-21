@@ -110,6 +110,11 @@
         <td>candidate</td>
         <td>github-mcp-server, vscode</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</a></td>
+        <td>PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.</td>
+        <td>verified</td>
+        <td>sounddevice, portaudio, voice-to-claude</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</a></td>
         <td>npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.</td>
         <td>verified</td>
@@ -229,6 +234,16 @@
         <td>On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.</td>
         <td>verified</td>
         <td>claude-desktop, cursor, cline, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html">PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener</a></td>
+        <td>A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.</td>
+        <td>verified</td>
+        <td>portaudio, pynput, voice-to-claude</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</a></td>
+        <td>pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.</td>
+        <td>verified</td>
+        <td>pynput, voice-to-claude</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">uv fails in a managed workspace because cache or Python install paths are outside writable roots</a></td>
         <td>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.</td>

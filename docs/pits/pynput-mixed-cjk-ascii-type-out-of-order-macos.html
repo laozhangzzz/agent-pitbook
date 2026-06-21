@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste - Agent Pitbook</title>
+  <meta name="description" content="pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</h1>
+      <p class="lede">pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>pynput, voice-to-claude</td></tr><tr><th>Tags</th><td>macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>pure-English and pure-Chinese strings inject fine</li><li>only mixed CJK+ASCII text scrambles</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>arch</th><td>Apple Silicon</td></tr><tr><th>language</th><td>Python</td></tr><tr><th>runtime</th><td>pynput.keyboard.Controller.type()</td></tr><tr><th>versions</th><td>{&quot;python&quot;:&quot;3.12&quot;}</td></tr><tr><th>constraints</th><td>text injection into a focused input box</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.</li><li>The two dispatch paths have different timing and race each other, so a fast mixed-script string arrives interleaved / reordered.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.</p><pre><code>pbcopy &lt;&lt;&lt; &quot;$text&quot;; then synthesize Cmd+V</code></pre></li><li><p>Rely on the atomic clipboard insert so there is no per-character race.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Inject the same mixed Chinese+English sentence after the change.</p><p class="muted">Expected: It appears intact and in correct order.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Restore the previous clipboard contents after pasting if clobbering it is a concern.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Using pynput Controller.type() for mixed CJK+ASCII text on macOS.</li><li>Adding per-character sleeps to 'fix' ordering instead of switching to an atomic paste.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>voice-to-claude daemon debugging session (local-session): local-session:2026-06-21</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

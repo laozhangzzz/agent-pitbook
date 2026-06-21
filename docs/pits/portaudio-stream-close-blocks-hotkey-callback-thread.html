@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener - Agent Pitbook</title>
+  <meta name="description" content="A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener</h1>
+      <p class="lede">A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/portaudio-stream-close-blocks-hotkey-callback-thread.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>portaudio, pynput, voice-to-claude</td></tr><tr><th>Tags</th><td>macos, audio, portaudio, pynput, threading, hotkey, deadlock, voice</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line</li><li>daemon status still reports Running but pressing the hotkey does nothing</li><li>only a daemon restart recovers it</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>arch</th><td>Apple Silicon</td></tr><tr><th>language</th><td>Python</td></tr><tr><th>runtime</th><td>sounddevice + PortAudio, pynput global hotkey Listener</td></tr><tr><th>versions</th><td>{&quot;python&quot;:&quot;3.12&quot;}</td></tr><tr><th>constraints</th><td>display-connected (Studio Display) mic, single pynput listener thread</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>stop()/close() of a PortAudio stream on a flaky/display-connected device can block for a long time.</li><li>It was being called inline inside the pynput key-release callback, which runs on the single listener thread.</li><li>The blocking call wedged that thread, so the global hotkey stopped firing and the whole daemon appeared hung even though the process stayed alive.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Move recorder.stop() (the PortAudio stream.stop()/close() calls) AND all downstream processing off the pynput key-release callback thread into a background thread.</p></li><li><p>Make the callback only spawn the worker and return immediately, so the listener thread is never blocked.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Use the daemon heavily across multiple windows after the change.</p><p class="muted">Expected: Audio-device stalls no longer freeze the hotkey.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Add a watchdog that restarts the listener if the hotkey stops responding.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Doing blocking audio teardown or processing inline in a global-hotkey callback.</li><li>Trusting 'process is Running' as proof the hotkey listener is still alive.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>voice-to-claude daemon debugging session (local-session): local-session:2026-06-21</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

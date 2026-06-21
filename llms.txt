@@ -2,7 +2,7 @@
 
 Agent Pitbook is a structured debug knowledge layer for coding agents and LLMs. It exists because most public engineering answers are packaged for human reading, not fast machine verification. It stores narrow pit records with symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
 
-Focus vertical: environment and sandbox traps that coding agents hit while running code (restricted network, unwritable caches, ports published but refused, MCP transport deadlocks, per-tool quirks). It is intentionally not a general bug encyclopedia.
+Focus: execution and environment traps that make coding agents — and the tooling they build and run — fail, often silently, while running code (restricted network, unwritable caches, ports published but refused, MCP transport deadlocks, per-tool quirks, plus the local tooling stack: audio capture, input injection, threading, OS device quirks). The gate is the failure mode, not the topic — traps that fail silently, cost hours, or that an LLM does not answer reliably. Not a general bug encyclopedia.
 
 Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes search_pits and get_pit over stdio. See mcp-server/README.md.
 

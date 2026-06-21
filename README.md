@@ -2,7 +2,7 @@
 
 Make debugging knowledge easier for LLMs to actually read.
 
-**Focus: the environment and sandbox traps coding agents hit while running code** — restricted network, unwritable caches, ports that publish but refuse connections, MCP transports that deadlock, stale per-tool workarounds. One narrow, high-frequency vertical done deep, not a general bug encyclopedia.
+**Focus: execution and environment traps that make coding agents — and the tooling they build and run — fail, often silently, while running code.** Restricted network, unwritable caches, ports that publish but refuse connections, MCP transports that deadlock, stale per-tool workarounds, and the local tooling stack (audio capture, input injection, threading, OS device quirks). The gate is the failure mode, not the topic: traps that fail silently, cost hours, or that an LLM does not answer reliably — not a general bug encyclopedia.
 
 Agent Pitbook is a public, structured pit database for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other coding agents. It exists because most engineering answers live in human-shaped places: long issue threads, forum replies, stale comments, scattered docs, and half-verified workarounds.
 
@@ -242,21 +242,20 @@ Agent Pitbook should be conservative:
 - Do not include secrets, tokens, private logs, or customer data.
 - Prefer small, reproducible fixes over broad cleanup.
 
-## Scope
+Focused — by failure mode, not by topic. A pit belongs here if it (a) makes an agent or the tooling
+it runs **fail, often silently, while executing**, (b) costs hours to track down, and (c) is not
+something an LLM answers reliably without it. In scope:
 
-Deliberately narrow. The bet is that one high-frequency vertical, covered deeply with verified
-records, is worth more than a shallow catalog of everything. In scope:
-
-- agent sandbox traps: restricted network, unwritable caches, approval-gated execution
-- local ports and Docker: published-but-refused connections, host vs container networking
-- package managers under sandbox: uv, npm, pnpm, pip, cargo cache and network failures
+- agent sandbox/env traps: restricted network, unwritable caches, approval-gated execution
+- local ports and Docker; package managers under sandbox (uv, npm, pnpm, pip, cargo)
+- MCP, native messaging, browser automation, filesystem permissions
 - per-tool quirks across Codex, Claude Code, Gemini, Qwen Code, Cursor, Aider
-- MCP, native messaging, browser automation, and filesystem-permission failures
+- the local tooling stack agents build and run: audio capture (PortAudio/sounddevice), input
+  injection (pynput), threading/process deadlocks, OS device quirks
 - environments: macOS / Apple Silicon and Linux agent runtimes
 
-Out of scope (for now): general application bugs, framework how-tos, and anything an LLM already
-answers reliably without a database. If a pit isn't an environment/execution trap that agents hit
-repeatedly, it belongs in someone's issue tracker, not here.
+Out of scope: pure application-logic bugs, framework how-tos, and anything an LLM already answers
+reliably. If it does not fail silently or cost real time, it belongs in someone's issue tracker.
 
 ## Content License
 

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable - Agent Pitbook</title>
+  <meta name="description" content="PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</h1>
+      <p class="lede">PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>sounddevice, portaudio, voice-to-claude</td></tr><tr><th>Tags</th><td>macos, audio, portaudio, sounddevice, silent-capture, microphone, clamshell, voice</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌')</li><li>the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip)</li><li>no exception: sd.InputStream opens normally and its callback delivers all-zero frames</li><li>the ASR model looks broken but is being fed pure silence</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>arch</th><td>Apple Silicon</td></tr><tr><th>language</th><td>Python</td></tr><tr><th>runtime</th><td>sounddevice + PortAudio</td></tr><tr><th>versions</th><td>{&quot;python&quot;:&quot;3.12&quot;,&quot;darwin&quot;:&quot;25.x&quot;}</td></tr><tr><th>constraints</th><td>MacBook in clamshell mode docked to a Studio Display, sherpa-onnx SenseVoice ASR downstream</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device.</li><li>PortAudio opens the stream successfully and silently delivers all-zero buffers instead of erroring, so the failure is invisible at the API layer — every downstream stage 'succeeds' on silence.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.</p><pre><code>np.abs(samples).max()</code></pre></li><li><p>Enumerate input devices and record a 1s test from each; the built-in mic returned 0 while the Studio Display and Bluetooth mics returned real signal.</p><pre><code>sd.rec(..., device=idx)</code></pre></li><li><p>Pin the recorder to a working device (match by name substring) instead of relying on the system default input.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>After pinning to the Studio Display mic, measure the recorded peak and run ASR.</p><p class="muted">Expected: Recorded peak ~5600 and transcription returns correct text.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Select a known-good input device explicitly at startup rather than the OS default.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Trusting that a successfully-opened audio stream is actually capturing sound.</li><li>Blaming the ASR model for garbage output when the input is all-zero silence.</li></ul></section>
+      <section><h2>Sources</h2><ul><li>voice-to-claude daemon debugging session (local-session): local-session:2026-06-21</li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
