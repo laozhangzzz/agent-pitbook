@@ -80,6 +80,11 @@
         <td>verified</td>
         <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</a></td>
+        <td>A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</td>
+        <td>verified</td>
+        <td>claude-desktop, mcp-server</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">uv fails in a managed workspace because cache or Python install paths are outside writable roots</a></td>
         <td>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.</td>
         <td>verified</td>

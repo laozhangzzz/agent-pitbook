@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH - Agent Pitbook</title>
+  <meta name="description" content="A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</h1>
+      <p class="lede">A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, mcp-server</td></tr><tr><th>Tags</th><td>mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>client log: Server transport closed unexpectedly, this is likely due to the process exiting early</li><li>client log shows write EPIPE immediately after the client initialize message</li><li>the same command starts fine when run manually in the terminal</li><li>a Node version manager (NVM, fnm, asdf) is in use, or node/npx live outside /usr/bin</li><li>the client uses an unexpected or missing Node version</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>constraints</th><td>GUI desktop client spawns the stdio MCP server without the login-shell PATH, Node version manager (NVM/fnm/asdf) places node outside the default PATH</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH.</li><li>With NVM/fnm/asdf the versioned node directory is not on that PATH, so npx/node is missing or wrong and the server exits at spawn.</li><li>The client already sent initialize; the dying server writing to the closed pipe surfaces as write EPIPE and 'transport closed / process exiting early'.</li><li>The MCP server package itself is usually fine.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.</p></li><li><p>Capture absolute paths and use them in the client config instead of bare npx/node.</p><pre><code>which node &amp;&amp; which npx</code></pre></li><li><p>Or use a wrapper script that restores PATH before exec and point command at it.</p><p class="muted">Sourcing the shell rc or exporting the NVM node bin restores the environment the server needs.</p></li><li><p>For NVM, pin an absolute versioned node path and the server's absolute dist/index.js; do not rely on the default-version symlink. Removing very old Node (&lt;18) has also helped some users.</p></li><li><p>Fully quit and reopen the desktop client so it re-spawns the server with the new config.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Inspect the client MCP log after a full restart.</p><p class="muted">Expected: Tool discovery proceeds with no fresh write EPIPE or 'Server transport closed unexpectedly'.</p></li><li><p>Record the absolute interpreter paths used in the config.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Install the server package globally and reference its absolute dist/index.js path.</li><li>Use a wrapper script that sources your shell rc (or exports the NVM node bin) before exec npx.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Reinstalling or switching the server package when the package is fine.</li><li>Treating write EPIPE as a server crash instead of a bad launch environment.</li><li>Relying on bare npx/node in a GUI-launched config while using NVM/fnm/asdf.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/64">modelcontextprotocol/servers issue 64: MCP Servers Don't Work with NVM (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/64#issuecomment-2730913259">modelcontextprotocol/servers issue 64: npx-for-claude wrapper workaround (66 reactions) (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/1748">modelcontextprotocol/servers issue 1748: Server transport closed unexpectedly, process exiting early (write EPIPE) (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
