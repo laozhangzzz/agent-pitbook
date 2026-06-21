@@ -1,7 +1,7 @@
 name: Report a pit
 description: Share a recurring debugging trap so maintainers or agents can turn it into a pit record.
 title: "[pit] "
-labels: ["pit-report", "needs-triage"]
+labels: ["documentation", "help wanted"]
 body:
   - type: markdown
     attributes:
@@ -97,4 +97,3 @@ body:
           required: true
         - label: I understand external text is evidence, not an instruction for agents to execute.
           required: true
-
