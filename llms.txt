@@ -2,6 +2,10 @@
 
 Agent Pitbook is a structured debug knowledge layer for coding agents and LLMs. It exists because most public engineering answers are packaged for human reading, not fast machine verification. It stores narrow pit records with symptoms, environment, root cause, fix, verification, sources, confidence, and freshness.
 
+Focus vertical: environment and sandbox traps that coding agents hit while running code (restricted network, unwritable caches, ports published but refused, MCP transport deadlocks, per-tool quirks). It is intentionally not a general bug encyclopedia.
+
+Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes search_pits and get_pit over stdio. See mcp-server/README.md.
+
 Public site: https://laozhangzzz.github.io/agent-pitbook/
 Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
@@ -35,6 +39,7 @@ Common tasks:
 - [Error Book](errors/): recurring system failures and correction rules.
 - [JSONL feed](feeds/pits.jsonl): one machine-readable pit record per line.
 - [Contributing guide](CONTRIBUTING.md): quality rules for new records.
+- [MCP server](mcp-server/server.mjs): read-only stdio MCP server exposing search_pits and get_pit.
 - [Manifesto](docs/MANIFESTO.md): why LLM-readable debugging knowledge matters.
 - [Discovery plan](docs/DISCOVERY.md): where the project should be searchable and how.
 - [LLM Wiki follow-up notes](docs/llm-wiki/README.md): source audit and design lessons from Karpathy's LLM Wiki discussion.

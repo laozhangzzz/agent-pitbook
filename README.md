@@ -2,6 +2,8 @@
 
 Make debugging knowledge easier for LLMs to actually read.
 
+**Focus: the environment and sandbox traps coding agents hit while running code** — restricted network, unwritable caches, ports that publish but refuse connections, MCP transports that deadlock, stale per-tool workarounds. One narrow, high-frequency vertical done deep, not a general bug encyclopedia.
+
 Agent Pitbook is a public, structured pit database for Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Aider, and other coding agents. It exists because most engineering answers live in human-shaped places: long issue threads, forum replies, stale comments, scattered docs, and half-verified workarounds.
 
 LLMs can search those places, but they often summarize too early and miss the buried answer unless a human pushes: "Did you actually read the whole thing?"
@@ -62,6 +64,15 @@ node tools/validate-pits.mjs
 node tools/build-feed.mjs
 node tools/build-site.mjs
 ```
+
+Wire it into your agent with the read-only MCP server (search before changing code):
+
+```bash
+# Claude Code
+claude mcp add agent-pitbook -- node "$(pwd)/mcp-server/server.mjs"
+```
+
+See [mcp-server/README.md](mcp-server/README.md) for Cursor and other clients.
 
 For LLMs and agents, start from [llms.txt](llms.txt).
 
@@ -215,7 +226,7 @@ agent-pitbook/
   feeds/pits.jsonl                 machine-readable feed
   tools/                           no-dependency local utilities
   adapters/                        agent-specific usage instructions
-  mcp-server/                      experimental MCP bridge notes
+  mcp-server/                      runnable read-only MCP server (search_pits, get_pit)
   docs/                            GitHub Pages site plus design, launch, and governance notes
 ```
 
@@ -231,16 +242,21 @@ Agent Pitbook should be conservative:
 - Do not include secrets, tokens, private logs, or customer data.
 - Prefer small, reproducible fixes over broad cleanup.
 
-## Initial Scope
+## Scope
 
-The first useful scope is agentic local development:
+Deliberately narrow. The bet is that one high-frequency vertical, covered deeply with verified
+records, is worth more than a shallow catalog of everything. In scope:
 
-- macOS and Apple Silicon
-- Docker and local ports
-- Python, uv, Node, and package caches
-- local LLM tooling
-- Codex, Claude Code, Gemini, Qwen Code, Cursor, Aider
-- sandboxing, filesystem permissions, browser automation, MCP, and tool execution quirks
+- agent sandbox traps: restricted network, unwritable caches, approval-gated execution
+- local ports and Docker: published-but-refused connections, host vs container networking
+- package managers under sandbox: uv, npm, pnpm, pip, cargo cache and network failures
+- per-tool quirks across Codex, Claude Code, Gemini, Qwen Code, Cursor, Aider
+- MCP, native messaging, browser automation, and filesystem-permission failures
+- environments: macOS / Apple Silicon and Linux agent runtimes
+
+Out of scope (for now): general application bugs, framework how-tos, and anything an LLM already
+answers reliably without a database. If a pit isn't an environment/execution trap that agents hit
+repeatedly, it belongs in someone's issue tracker, not here.
 
 ## Content License
 

@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate pit records against schema
+        run: node tools/validate-pits.mjs
+
+      - name: Check feed is rebuilt from records (no drift)
+        run: |
+          node tools/build-feed.mjs
+          if ! git diff --quiet -- feeds/pits.jsonl; then
+            echo "::error::feeds/pits.jsonl is out of date. Run 'node tools/build-feed.mjs' and commit."
+            git --no-pager diff -- feeds/pits.jsonl
+            exit 1
+          fi
+
+      - name: MCP server smoke test
+        run: |
+          OUT=$(printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{}}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
+            | node mcp-server/server.mjs)
+          echo "$OUT" | grep -q '"search_pits"' || { echo "::error::MCP server did not list search_pits"; exit 1; }
+
+      - name: Freshness report (warning only)
+        run: node tools/check-freshness.mjs --max-age-days 180
