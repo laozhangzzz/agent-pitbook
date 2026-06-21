@@ -65,6 +65,25 @@ node tools/build-site.mjs
 
 For LLMs and agents, start from [llms.txt](llms.txt).
 
+## Leave A Pit
+
+Found a recurring agent or local-development trap? Do not write a tutorial. Leave the debugging trail.
+
+- Fastest path: [open a pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml) with symptoms, environment, what worked, and sources.
+- Agent-assisted path: paste your notes into your coding agent and ask it to turn them into an Agent Pitbook issue or pit record.
+- Full contribution path: add `pits/<domain>/<pit-id>.md`, validate it, rebuild the feed and site, then open a PR.
+
+Useful prompt:
+
+```text
+Convert these debugging notes into an Agent Pitbook pit report.
+Keep exact error strings for search. Extract symptoms, environment, root cause, fix, verification, and sources.
+Mark uncertain lessons as candidate. Summarize external sources in original words.
+Do not include secrets, tokens, private customer data, or proprietary logs.
+```
+
+Your solved pit is a piece of public agent memory: it can help the next developer and the next coding agent avoid repeating the same failed path.
+
 ## What A Pit Looks Like
 
 Each pit answers one narrow question:
@@ -100,12 +119,13 @@ Before debugging:
 
 After a fix works:
 
-1. Create or update a pit record.
-2. Mark unverified lessons as `candidate`.
-3. Include verification and sources.
-4. Rebuild the feed.
-5. Rebuild the static site.
-6. Open a PR.
+1. If you only have rough notes, [open a pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml).
+2. If you can prepare a record, create or update a pit record.
+3. Mark unverified lessons as `candidate`.
+4. Include verification and sources.
+5. Rebuild the feed.
+6. Rebuild the static site.
+7. Open a PR.
 
 ## Source Of Truth
 

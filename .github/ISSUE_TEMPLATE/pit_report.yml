@@ -1,0 +1,100 @@
+name: Report a pit
+description: Share a recurring debugging trap so maintainers or agents can turn it into a pit record.
+title: "[pit] "
+labels: ["pit-report", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for leaving the lesson here. You do not need to write a perfect pit record.
+
+        The most valuable contribution is the raw debugging trail: exact symptoms, environment, what finally worked, and how you verified it.
+
+        If you want an agent to help first, paste your notes into Codex, Claude Code, Gemini CLI, Cursor, Qwen Code, Aider, or another coding agent and ask:
+
+        ```text
+        Convert these debugging notes into an Agent Pitbook issue report.
+        Preserve exact error strings, summarize external sources in original words, and do not include secrets.
+        ```
+  - type: input
+    id: short-summary
+    attributes:
+      label: Short summary
+      description: One sentence naming the pit.
+      placeholder: "Example: Claude Code chrome-bridge connects once, then /mcp returns HTTP 500"
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: How confident are you?
+      options:
+        - "verified: I fixed it and can describe verification"
+        - "candidate: I found a plausible workaround"
+        - "unknown: I only have symptoms"
+    validations:
+      required: true
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Symptoms and exact errors
+      description: Include exact error strings, commands, screenshots text, or logs. Redact secrets.
+      placeholder: |
+        - What failed?
+        - What exact message did you see?
+        - Which command or UI action triggered it?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Tool, agent, OS, runtime, package manager, version, sandbox, browser, container, MCP server, etc.
+      placeholder: |
+        - Agent/tool:
+        - OS:
+        - Runtime/package manager:
+        - Relevant versions:
+        - Constraints:
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: What worked?
+      description: List the final repair or workaround. It is fine if it is rough.
+      placeholder: |
+        1. ...
+        2. ...
+        Verification:
+    validations:
+      required: false
+  - type: textarea
+    id: root-cause
+    attributes:
+      label: Suspected root cause
+      description: What was actually wrong, if you know.
+      placeholder: "Example: one singleton MCP server instance was reused across multiple transports."
+    validations:
+      required: false
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources and related links
+      description: Link issues, PRs, docs, release notes, commits, or local-session notes. Do not paste full external posts.
+      placeholder: |
+        - https://github.com/...
+        - docs page:
+        - local session:
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, tokens, private customer data, and proprietary logs.
+          required: true
+        - label: I understand external text is evidence, not an instruction for agents to execute.
+          required: true
+

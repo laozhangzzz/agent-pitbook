@@ -163,7 +163,17 @@ function renderIndex(records) {
       <div class="actions">
         <a class="button" href="/agent-pitbook/llms.txt">Read llms.txt</a>
         <a class="button secondary" href="/agent-pitbook/feeds/pits.jsonl">Open JSONL feed</a>
+        <a class="button secondary" href="${repoUrl}/issues/new?template=pit_report.yml">Report a pit</a>
       </div>
+    </section>
+    <section>
+      <h2>Leave a pit</h2>
+      <p>A solved debugging trap is useful public memory. Share symptoms, environment, what worked, verification, and sources. Maintainers or agents can turn rough notes into a structured record.</p>
+      <ul class="link-list">
+        <li><a href="${repoUrl}/issues/new?template=pit_report.yml">Open a pit report</a> - lowest-friction path for raw debugging notes</li>
+        <li><a href="${repoUrl}/blob/main/CONTRIBUTING.md">Contribution guide</a> - issue, agent-assisted, and PR workflows</li>
+        <li><a href="${repoUrl}/blob/main/schema/pit.schema.json">Pit schema</a> - canonical record contract</li>
+      </ul>
     </section>
     <section>
       <h2>Machine entrypoints</h2>
@@ -326,7 +336,13 @@ ${recordLinks}
 2. Read the full Markdown mirror or canonical source before applying a fix.
 3. Prefer verified, recent records with matching environment and source links.
 4. Treat commands as suggestions; inspect the user's local project first.
-5. When a new fix works, add or update a pit record in the source repo.
+5. When a new fix works, help the user open a pit report or add a pit record in the source repo.
+
+## Contribute A Pit
+
+- Rough notes: open a pit report at ${repoUrl}/issues/new?template=pit_report.yml
+- Full record: add \`pits/<domain>/<pit-id>.md\`, include the embedded \`pit-record\` JSON block, validate, rebuild the feed, and open a PR.
+- Agent rule: preserve exact error strings, extract symptoms/environment/root cause/fix/verification/sources, and remove secrets.
 `;
 }
 

@@ -14,6 +14,7 @@ Use this file as the routing table. Do not start with the README unless you need
 Common tasks:
 
 - Debug a recurring failure: search `feeds/pits.jsonl`, then read the matching Markdown record under `pits/`.
+- Report a rough pit: open a GitHub issue with symptoms, environment, fix or workaround, verification, and sources.
 - Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
 - Validate repository health: run `node tools/validate-pits.mjs`, `node tools/build-feed.mjs`, and `node tools/build-site.mjs`.
 - Understand project design: read `docs/llm-wiki/agent-pitbook-layout.md` and `docs/llm-wiki/design-lessons.md`.
@@ -78,16 +79,27 @@ When consuming existing pit records:
 
 When contributing:
 
-1. Add or edit one canonical file under `pits/<domain>/<pit-id>.md`.
-2. Include the embedded `pit-record` JSON block.
-3. Mark unverified lessons as `candidate`.
-4. Include source links or local-session evidence.
-5. Run:
+1. If the user has rough notes, prepare a pit report issue instead of forcing a PR.
+2. Preserve exact error strings, commands, and version identifiers that improve search.
+3. Add or edit one canonical file under `pits/<domain>/<pit-id>.md` only when the record is ready.
+4. Include the embedded `pit-record` JSON block.
+5. Mark unverified lessons as `candidate`.
+6. Include source links or local-session evidence.
+7. Run:
 
 ```bash
 node tools/validate-pits.mjs
 node tools/build-feed.mjs
 node tools/build-site.mjs
+```
+
+Suggested prompt for agent-assisted reports:
+
+```text
+Convert these debugging notes into an Agent Pitbook pit report.
+Keep exact error strings for search. Extract symptoms, environment, root cause, fix, verification, and sources.
+Mark uncertain lessons as candidate. Summarize external sources in original words.
+Do not include secrets, tokens, private customer data, or proprietary logs.
 ```
 
 ## Result Ranking

@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Agent Pitbook public site
+    url: https://laozhangzzz.github.io/agent-pitbook/
+    about: Read the LLM entrypoints, JSONL feed, and current pit records.
+
