@@ -17,12 +17,12 @@ jobs:
       - name: Validate pit records against schema
         run: node tools/validate-pits.mjs
 
-      - name: Check feed is rebuilt from records (no drift)
+      - name: Check feeds are rebuilt from records (no drift)
         run: |
           node tools/build-feed.mjs
-          if ! git diff --quiet -- feeds/pits.jsonl; then
-            echo "::error::feeds/pits.jsonl is out of date. Run 'node tools/build-feed.mjs' and commit."
-            git --no-pager diff -- feeds/pits.jsonl
+          if ! git diff --quiet -- feeds/pits.jsonl feeds/index.jsonl; then
+            echo "::error::feeds/ is out of date. Run 'node tools/build-feed.mjs' and commit."
+            git --no-pager diff -- feeds/pits.jsonl feeds/index.jsonl
             exit 1
           fi
 

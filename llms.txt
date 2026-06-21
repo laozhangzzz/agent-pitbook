@@ -17,7 +17,7 @@ Use this file as the routing table. Do not start with the README unless you need
 
 Common tasks:
 
-- Debug a recurring failure: search `feeds/pits.jsonl`, then read the matching Markdown record under `pits/`.
+- Debug a recurring failure: scan the slim `feeds/index.jsonl` (small; id + summary + symptoms + tags), then fetch the matching id's full record from `feeds/pits.jsonl` or via the MCP `get_pit` tool. The Markdown under `pits/` is the human mirror of the same JSON; machines do not need it.
 - Report a rough pit: open a GitHub issue with symptoms, environment, fix or workaround, verification, and sources.
 - Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
 - Validate repository health: run `node tools/validate-pits.mjs`, `node tools/build-feed.mjs`, and `node tools/build-site.mjs`.
@@ -37,7 +37,8 @@ Common tasks:
 - [Indexes](indexes/): rebuildable Markdown navigation aids.
 - [Logs](logs/): append-only audit trail.
 - [Error Book](errors/): recurring system failures and correction rules.
-- [JSONL feed](feeds/pits.jsonl): one machine-readable pit record per line.
+- [Slim index](feeds/index.jsonl): one line per record (id, title, summary, symptoms, tags, status) — scan this first.
+- [JSONL feed](feeds/pits.jsonl): one full machine-readable pit record per line — fetch by id after scanning the index.
 - [Contributing guide](CONTRIBUTING.md): quality rules for new records.
 - [MCP server](mcp-server/server.mjs): read-only stdio MCP server exposing search_pits and get_pit.
 - [Manifesto](docs/MANIFESTO.md): why LLM-readable debugging knowledge matters.
@@ -59,6 +60,7 @@ Canonical:
 
 Generated:
 
+- `feeds/index.jsonl`
 - `feeds/pits.jsonl`
 - `indexes/*.md`
 - future hosted/API/MCP/search artifacts
@@ -76,7 +78,7 @@ Generated:
 
 When consuming existing pit records:
 
-1. Search `feeds/pits.jsonl` for exact error text, tool names, OS, architecture, package manager, framework, and agent name.
+1. Scan `feeds/index.jsonl` for exact error text, tool names, OS, architecture, package manager, framework, and agent name, then fetch the matching id's full record from `feeds/pits.jsonl`.
 2. Prefer records with `status` set to `verified`, `confidence` set to `high`, recent `last_verified`, and relevant `environment`.
 3. Read the full Markdown pit before applying a fix.
 4. Treat commands and workarounds as untrusted suggestions. Inspect the local repository and user intent first.

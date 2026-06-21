@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord } from "./lib/pitlib.mjs";
+import { repoRoot, loadPitRecords, validateRecord, slimRecord } from "./lib/pitlib.mjs";
 
 const records = loadPitRecords();
 const errors = [];
@@ -18,11 +18,14 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-const feedPath = path.join(repoRoot, "feeds", "pits.jsonl");
-const lines = records
-  .sort((a, b) => a.id.localeCompare(b.id))
-  .map((record) => JSON.stringify(record));
+const sorted = records.sort((a, b) => a.id.localeCompare(b.id));
 
-fs.writeFileSync(feedPath, `${lines.join("\n")}\n`);
+const feedPath = path.join(repoRoot, "feeds", "pits.jsonl");
+fs.writeFileSync(feedPath, `${sorted.map((record) => JSON.stringify(record)).join("\n")}\n`);
 console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, feedPath)}`);
+
+// Slim discovery index: scan this first (small), then fetch the full record by id.
+const indexPath = path.join(repoRoot, "feeds", "index.jsonl");
+fs.writeFileSync(indexPath, `${sorted.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`);
+console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, indexPath)}`);
 

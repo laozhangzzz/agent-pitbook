@@ -115,6 +115,24 @@ export function validateRecord(record) {
   return errors;
 }
 
+// Slim discovery shape: enough for an agent to scan all records cheaply and
+// decide which full record to fetch, without paying for the full prose.
+// Keeps symptoms because exact error strings (the most common query) live there.
+export function slimRecord(record) {
+  return {
+    id: record.id,
+    title: record.title,
+    summary: record.summary,
+    status: record.status,
+    confidence: record.confidence,
+    last_verified: record.last_verified ?? record.updated_at ?? null,
+    tags: record.tags ?? [],
+    affected_tools: record.affected_tools ?? [],
+    symptoms: record.symptoms ?? [],
+    path: record.path ?? null
+  };
+}
+
 export function searchableText(record) {
   return [
     record.id,

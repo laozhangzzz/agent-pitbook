@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord } from "./lib/pitlib.mjs";
+import { repoRoot, loadPitRecords, validateRecord, slimRecord } from "./lib/pitlib.mjs";
 
 const baseUrl = "https://laozhangzzz.github.io/agent-pitbook";
 const repoUrl = "https://github.com/laozhangzzz/agent-pitbook";
@@ -312,10 +312,16 @@ function renderLlms(records) {
 
 Agent Pitbook exists because most engineering answers are packaged for human reading: long issue threads, forum replies, stale comments, scattered docs, and half-verified workarounds. This site exposes the distilled records at stable URLs.
 
-## Start Here
+## Start Here (machines)
 
-- [JSONL feed](${slugUrl("/feeds/pits.jsonl")}): one machine-readable pit record per line.
-- [Pit index](${slugUrl("/pits/")}): HTML index of all records.
+Two-tier retrieval, cheapest first:
+
+1. [Slim index](${slugUrl("/feeds/index.jsonl")}): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
+2. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+
+The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
+
+- [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
 
@@ -332,8 +338,8 @@ ${recordLinks}
 
 ## Agent Use
 
-1. Search the JSONL feed by exact error text, tool, OS, package manager, framework, and agent.
-2. Read the full Markdown mirror or canonical source before applying a fix.
+1. Scan \`feeds/index.jsonl\` by exact error text, tool, OS, package manager, framework, and agent.
+2. Fetch the full record for the matching id from \`feeds/pits.jsonl\` (or the MCP get_pit tool) before applying a fix.
 3. Prefer verified, recent records with matching environment and source links.
 4. Treat commands as suggestions; inspect the user's local project first.
 5. When a new fix works, help the user open a pit report or add a pit record in the source repo.
@@ -418,6 +424,10 @@ fs.writeFileSync(path.join(sitePitsDir, "index.html"), renderPitIndex(records));
 fs.writeFileSync(
   path.join(siteFeedsDir, "pits.jsonl"),
   `${records.map((record) => JSON.stringify(record)).join("\n")}\n`
+);
+fs.writeFileSync(
+  path.join(siteFeedsDir, "index.jsonl"),
+  `${records.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`
 );
 
 for (const record of records) {
