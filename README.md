@@ -1,5 +1,7 @@
 # Agent Pitbook
 
+[中文用户：请把你踩过的 agent 执行坑留下来](README.zh-CN.md)
+
 Make debugging knowledge easier for LLMs to actually read.
 
 **Focus: execution and environment traps that make coding agents — and the tooling they build and run — fail, often silently, while running code.** Restricted network, unwritable caches, ports that publish but refuse connections, MCP transports that deadlock, stale per-tool workarounds, and the local tooling stack (audio capture, input injection, threading, OS device quirks). The gate is the failure mode, not the topic: traps that fail silently, cost hours, or that an LLM does not answer reliably — not a general bug encyclopedia.

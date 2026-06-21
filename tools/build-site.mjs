@@ -171,6 +171,7 @@ function renderIndex(records) {
       <p>A solved debugging trap is useful public memory. Share symptoms, environment, what worked, verification, and sources. Maintainers or agents can turn rough notes into a structured record.</p>
       <ul class="link-list">
         <li><a href="${repoUrl}/issues/new?template=pit_report.yml">Open a pit report</a> - lowest-friction path for raw debugging notes</li>
+        <li><a href="${repoUrl}/blob/main/README.zh-CN.md">中文贡献入口</a> - 中文用户可以直接用中文留下 agent 执行坑</li>
         <li><a href="${repoUrl}/blob/main/CONTRIBUTING.md">Contribution guide</a> - issue, agent-assisted, and PR workflows</li>
         <li><a href="${repoUrl}/blob/main/schema/pit.schema.json">Pit schema</a> - canonical record contract</li>
       </ul>
@@ -324,6 +325,7 @@ The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of t
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
+- [Chinese contribution entry](${repoUrl}/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 
 ## Canonical Contract
 

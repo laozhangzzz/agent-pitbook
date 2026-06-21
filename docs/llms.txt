@@ -16,6 +16,7 @@ The per-pit Markdown pages and `pits/**/*.md` are the human-facing mirror of the
 - [Pit index](https://laozhangzzz.github.io/agent-pitbook/pits/): HTML index of all records (for humans).
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.
 - [Source repository](https://github.com/laozhangzzz/agent-pitbook): canonical Git history, schema, and contribution flow.
+- [Chinese contribution entry](https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 
 ## Canonical Contract
 
