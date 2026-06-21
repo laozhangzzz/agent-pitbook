@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP server hangs because the GUI client uses your user-level .npmrc, not your project's - Agent Pitbook</title>
+  <meta name="description" content="npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</h1>
+      <p class="lede">npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>cursor, claude-desktop, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, npx, npmrc, registry, startup, timeout</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>client log shows Client closed and MCP error -32001: Request timed out</li><li>a project-level .npmrc with a custom or corporate registry exists</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>GUI client spawns npx from a non-project working directory, user-level ~/.npmrc differs from project .npmrc</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project.</li><li>A GUI MCP client launches npx from a different directory (typically home), so only user-level and global config apply.</li><li>A wrong or unreachable registry in ~/.npmrc makes the fetch hang or fail, surfaced as a startup timeout.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Inspect effective npm config and the user-level rc file.</p><pre><code>npm config get registry &amp;&amp; npm config ls -l</code></pre></li><li><p>Set the user-level registry to a reachable one.</p><pre><code>npm config set registry https://registry.npmjs.org/</code></pre></li><li><p>Or pre-install the server globally and point the MCP config at the installed binary by absolute path so launch needs no registry fetch.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Relaunch from the client after fixing ~/.npmrc.</p><p class="muted">Expected: Returns the reachable registry; the client launches the server without Client closed / -32001.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Globally install the package and reference it by absolute path instead of npx.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Assuming a per-project .npmrc applies to a GUI-launched process.</li><li>Editing the MCP config repeatedly when the fault is the registry in ~/.npmrc.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/891">modelcontextprotocol/servers issue 891: author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

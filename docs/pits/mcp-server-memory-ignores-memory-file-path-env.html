@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source - Agent Pitbook</title>
+  <meta name="description" content="@modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</h1>
+      <p class="lede">@modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-server-memory-ignores-memory-file-path-env.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, mcp-server</td></tr><tr><th>Tags</th><td>mcp, server-memory, environment-variable, npm, versioning, paths</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>MEMORY_FILE_PATH is set but the memory file is created at a default location</li><li>the GitHub source handles the env var, yet the installed copy ignores it</li><li>a relative MEMORY_FILE_PATH writes to an unexpected directory</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>npm-published build lagged the GitHub source, relative env-var path resolved against package install dir</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The npm release (e.g. 0.6.2) was older than the GitHub main source: its compiled dist/index.js hardcoded path.join(__dirname, 'memory.json').</li><li>The repo source already read process.env.MEMORY_FILE_PATH, so reading the source misled users about installed behavior.</li><li>A relative MEMORY_FILE_PATH is resolved relative to the package install directory, not the user's project.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Pin @modelcontextprotocol/server-memory@latest in the config to get the build that honors the env var (fix shipped in release 2025.4.25).</p></li><li><p>Reset any cached older copy if your client caches npx packages, then relaunch.</p></li><li><p>Use an absolute MEMORY_FILE_PATH rather than a relative one.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Launch with @latest and an absolute MEMORY_FILE_PATH, then check where the file is written.</p><p class="muted">Expected: The memory file is created at exactly the absolute path provided.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>As a stopgap some users edited dist/index.js in node_modules, but upgrading the package is the durable fix.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Inferring installed MCP server behavior from the GitHub source instead of the published build.</li><li>Assuming a relative env-var path resolves against the project working directory.</li><li>Treating a node_modules patch as a permanent fix instead of upgrading.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/1018">modelcontextprotocol/servers issue 1018: Environment variables not respected in @modelcontextprotocol/server-memory package (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

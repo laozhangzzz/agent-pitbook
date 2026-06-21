@@ -80,10 +80,45 @@
         <td>verified</td>
         <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html">FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection</a></td>
+        <td>A FastMCP/MCP Python SDK streamable-HTTP or SSE server behind a proxy/gateway/container rejecting requests with 421 Misdirected Request / Invalid Host header is DNS rebinding protection (PR #861): the Host header is not in allowed_hosts. Set allowed_hosts/allowed_origins via TransportSecuritySettings or disable the protection where another layer secures it.</td>
+        <td>verified</td>
+        <td>mcp-server, fastmcp</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</a></td>
+        <td>npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.</td>
+        <td>verified</td>
+        <td>cursor, claude-desktop, cline, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html">MCP error -32000: Connection closed means the stdio server died before the handshake</a></td>
+        <td>MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug. Diagnose by running the exact configured command+args+env in a terminal; the usual concrete causes are PATH, npmrc registry, npx cache, Windows cmd /c, or a missing build.</td>
+        <td>verified</td>
+        <td>claude-desktop, cursor, cline, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</a></td>
+        <td>On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.</td>
+        <td>candidate</td>
+        <td>claude-desktop, cursor, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html">A corrupted or cold npx cache makes an MCP server fail to start or time out</a></td>
+        <td>An npx-launched MCP server that intermittently fails or yields 'Client closed' / 'MCP error -32001: Request timed out' is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeout. Clear the cache or pre-install the package.</td>
+        <td>verified</td>
+        <td>claude-desktop, cursor, cline, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html">server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</a></td>
+        <td>@modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.</td>
+        <td>verified</td>
+        <td>claude-desktop, cursor, mcp-server</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</a></td>
         <td>A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</td>
         <td>verified</td>
         <td>claude-desktop, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">On Windows an MCP server launched with npx needs a cmd /c wrapper</a></td>
+        <td>On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.</td>
+        <td>verified</td>
+        <td>claude-desktop, cursor, cline, mcp-server</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">uv fails in a managed workspace because cache or Python install paths are outside writable roots</a></td>
         <td>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.</td>

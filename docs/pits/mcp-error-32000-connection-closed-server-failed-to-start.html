@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP error -32000: Connection closed means the stdio server died before the handshake - Agent Pitbook</title>
+  <meta name="description" content="MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug. Diagnose by running the exact configured command+args+env in a terminal; the usual concrete causes are PATH, npmrc registry, npx cache, Windows cmd /c, or a missing build.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>MCP error -32000: Connection closed means the stdio server died before the handshake</h1>
+      <p class="lede">MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug. Diagnose by running the exact configured command+args+env in a terminal; the usual concrete causes are PATH, npmrc registry, npx cache, Windows cmd /c, or a missing build.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, stdio, startup, error-32000, npx, diagnosis</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>client UI shows MCP error -32000: Connection closed</li><li>sometimes preceded by locale text like 'npx' is not recognized as an internal or external command</li><li>the configured command and args run fine when pasted into a terminal</li><li>no useful server-side logs because the process never reached startup</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>constraints</th><td>GUI/editor MCP client spawning a stdio server, command resolved via PATH</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The client spawns the configured command and speaks JSON-RPC over stdio.</li><li>If the process cannot be found, crashes on launch, or writes non-protocol text to stdout, the transport closes and the client reports -32000: Connection closed.</li><li>The code is generic: it reports that the connection died, not why.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.</p><p class="muted">Any error or non-JSON-RPC output you see there is the real failure.</p></li><li><p>Check the specific causes, each tracked separately: PATH not inherited, wrong user-level npmrc registry, corrupted npx cache, Windows needing cmd /c npx, or a missing local build.</p></li><li><p>Use absolute paths for the interpreter and script in the config to remove PATH ambiguity.</p></li><li><p>Ensure the server writes diagnostics to stderr, never stdout, since stdout is the JSON-RPC channel.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Reconnect from the client after fixing the underlying cause.</p><p class="muted">Expected: Tool discovery succeeds with no -32000 in the client log.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Pin absolute interpreter and script paths in the config.</li><li>Pre-install the server package globally so npx does not need to resolve or download it at launch.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Filing a protocol bug for -32000 before running the command manually.</li><li>Reinstalling the server package repeatedly when the package was never the problem.</li><li>Writing debug output to stdout from a stdio MCP server, which corrupts the JSON-RPC stream.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/1097">modelcontextprotocol/servers issue 1097: GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/891">modelcontextprotocol/servers issue 891: Fix 'Client Closed' Error by Correcting npm Config (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

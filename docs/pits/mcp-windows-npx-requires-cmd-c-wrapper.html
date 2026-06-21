@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On Windows an MCP server launched with npx needs a cmd /c wrapper - Agent Pitbook</title>
+  <meta name="description" content="On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>On Windows an MCP server launched with npx needs a cmd /c wrapper</h1>
+      <p class="lede">On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, windows, npx, cmd, spawn, enoent, startup</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>Windows only: the MCP server will not start</li><li>logs show spawn npx ENOENT or locale text equivalent to ''npx' is not recognized as an internal or external command'</li><li>the same npx command runs fine in PowerShell or cmd manually</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>Windows</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>npx/npm are .cmd shims on Windows, client spawns the command without a shell</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables.</li><li>Node's spawn without a shell cannot execute a .cmd directly, so command: 'npx' yields ENOENT.</li><li>Routing through cmd /c lets the Windows command interpreter resolve and run the shim.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','&lt;package&gt;', ...].</p><p class="muted">cmd /c resolves and runs the .cmd shim that cannot be spawned directly.</p></li><li><p>For WSL setups, ensure the Windows-side and WSL-side npm versions are compatible; large mismatches can break the launch.</p></li><li><p>Alternatively point command at the absolute node.exe and pass the server's script path, bypassing the .cmd shim.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Relaunch after wrapping with cmd /c.</p><p class="muted">Expected: The server starts and there is no spawn npx ENOENT in the client log.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Use the absolute node.exe path plus the server script path instead of npx.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Using bare command: 'npx' on Windows.</li><li>Assuming a macOS/Linux config is portable to Windows without cmd /c.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/1097">modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error (-32000) (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/891">modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
