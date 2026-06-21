@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot; - Agent Pitbook</title>
+  <meta name="description" content="Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP servers (mcpServerStatus()/mcp_servers empty) because the SDK does not read filesystem settings by default. Pass settingSources including 'project'. An older bug also required a prior CLI run in the cwd; that was fixed in a later release.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot;</h1>
+      <p class="lede">Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP servers (mcpServerStatus()/mcp_servers empty) because the SDK does not read filesystem settings by default. Pass settingSources including 'project'. An older bug also required a prior CLI run in the cwd; that was fixed in a later release.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-agent-sdk-mcp-json-requires-project-settingsource.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-code, claude-agent-sdk</td></tr><tr><th>Tags</th><td>mcp, claude-agent-sdk, claude-code, mcp-json, settings, configuration</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>the SDK reports no MCP servers even though .mcp.json is in the working directory</li><li>servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process</li><li>tools wrapping Claude (e.g. Conductor) cannot see project MCP servers</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>runtime</th><td>Node.js / Claude Agent SDK</td></tr><tr><th>agent</th><td>claude-agent-sdk</td></tr><tr><th>constraints</th><td>SDK loads settings only when settingSources is configured</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The Agent SDK does not auto-load project/user/local settings from disk; it loads them only when settingSources is set.</li><li>Without 'project' in settingSources, .mcp.json is ignored.</li><li>A separate SDK bug required a prior CLI run in the cwd before project MCP servers were discovered; this was fixed in a release.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Pass settingSources including 'project' (and 'user'/'local' as needed) when constructing the SDK query so .mcp.json is read.</p></li><li><p>Upgrade to a Claude Code / Agent SDK release that fixed the cwd-only discovery bug.</p></li><li><p>Confirm the working directory actually contains the intended .mcp.json.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Inspect mcpServerStatus() / the mcp_servers field on first SDK launch.</p><p class="muted">Expected: Lists the .mcp.json servers without first running the CLI in that directory.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Define MCP servers programmatically via the SDK options if you cannot rely on filesystem settings.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Expecting the Agent SDK to auto-load .mcp.json like the interactive CLI, without setting settingSources.</li><li>Launching the CLI once per directory as a workaround instead of configuring settingSources.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/anthropics/claude-code/issues/13107">anthropics/claude-code issue 13107: SDK doesn't read from .mcp.json until the CLI is run in the cwd (maintainer notes settingSources 'project' requirement; fix shipped in a later release) (issue)</a></li><li><a href="https://platform.claude.com/docs/en/agent-sdk/typescript">Claude Agent SDK settingSources documentation (docs)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

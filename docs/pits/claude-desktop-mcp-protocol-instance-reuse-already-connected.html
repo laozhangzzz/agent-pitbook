@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) - Agent Pitbook</title>
+  <meta name="description" content="Some Claude Desktop builds showed 'Could not connect to MCP server' toasts on launch with 'Already connected to a transport. Call close() ... or use a separate Protocol instance per connection.' This was a client bug from reusing one MCP Protocol/transport instance across multiple server connections; fixed by upgrading Claude Desktop.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)</h1>
+      <p class="lede">Some Claude Desktop builds showed 'Could not connect to MCP server' toasts on launch with 'Already connected to a transport. Call close() ... or use a separate Protocol instance per connection.' This was a client bug from reusing one MCP Protocol/transport instance across multiple server connections; fixed by upgrading Claude Desktop.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-mcp-protocol-instance-reuse-already-connected.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop</td></tr><tr><th>Tags</th><td>mcp, claude-desktop, transport, protocol, already-connected, client-bug, versioning</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>startup toasts: Could not connect to MCP server &lt;name&gt;</li><li>log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection.</li><li>the same error appears for multiple servers connected at startup</li><li>affected servers may still actually work despite the toast</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>os</th><td>macOS / Windows</td></tr><tr><th>agent</th><td>claude-desktop</td></tr><tr><th>versions</th><td>{&quot;claude-desktop&quot;:&quot;1.1.3918&quot;}</td></tr><tr><th>constraints</th><td>one transport per Protocol/server instance, client connects several MCP servers at startup</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The MCP SDK connection model is one transport per Protocol/server instance.</li><li>The Claude Desktop build reused a single instance while connecting several servers at startup, so later connections hit 'Already connected to a transport'.</li><li>It is a client-side bug, not a server-config problem.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Upgrade Claude Desktop to a build where this is fixed (resolved in a later release after 1.1.3918).</p></li><li><p>If you cannot upgrade, note the error can be benign for internal servers that still function; verify whether your server actually failed before changing config.</p></li><li><p>Avoid editing per-server config in response to this error, since the cause is client-side instance reuse.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Upgrade Claude Desktop and relaunch.</p><p class="muted">Expected: Startup toasts stop and the log shows no 'Already connected to a transport' for MCP servers.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Ignore the toast for internal servers that still function, until you can upgrade.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Rewriting MCP server configs to chase a client-side 'Already connected to a transport' bug.</li><li>Assuming the toast means your server is broken when it may still be functional.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/anthropics/claude-code/issues/27390">anthropics/claude-code issue 27390: Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>

@@ -65,10 +65,25 @@
         <td>candidate</td>
         <td>codex, claude-code, gemini, qwen-code, cursor, aider</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html">Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot;</a></td>
+        <td>Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP servers (mcpServerStatus()/mcp_servers empty) because the SDK does not read filesystem settings by default. Pass settingSources including 'project'. An older bug also required a prior CLI run in the cwd; that was fixed in a later release.</td>
+        <td>verified</td>
+        <td>claude-code, claude-agent-sdk</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">Claude Code chrome-bridge MCP gets stuck after one transport connects</a></td>
         <td>mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.</td>
         <td>verified</td>
         <td>claude-code, mcp-chrome-bridge</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html">Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)</a></td>
+        <td>Some Claude Desktop builds showed 'Could not connect to MCP server' toasts on launch with 'Already connected to a transport. Call close() ... or use a separate Protocol instance per connection.' This was a client bug from reusing one MCP Protocol/transport instance across multiple server connections; fixed by upgrading Claude Desktop.</td>
+        <td>verified</td>
+        <td>claude-desktop</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html">Claude Desktop does not list dynamic MCP resource templates (only static resources)</a></td>
+        <td>A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not appear in Claude Desktop while static resources do. Claude Desktop calls resources/list but not resources/templates/list, so templated resources are never surfaced. Expose the capability as a tool, or verify support per client; the server is fine.</td>
+        <td>verified</td>
+        <td>claude-desktop, mcp-server</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html">Codex still references an old workspace path after a project move</a></td>
         <td>After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.</td>
@@ -89,6 +104,11 @@
         <td>Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.</td>
         <td>candidate</td>
         <td>mcp-server, python-sdk, fastmcp</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html">VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed</a></td>
+        <td>In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'tools': ['github'] works but warns it's renamed to github/*. The */alias resolves only when the server is registered under the matching name and the newer .github/agents location is used. Use the name that resolves, or list both.</td>
+        <td>candidate</td>
+        <td>github-mcp-server, vscode</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</a></td>
         <td>npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.</td>
@@ -120,6 +140,11 @@
         <td>verified</td>
         <td>claude-desktop, cursor, cline, mcp-server</td>
       </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html">Several official reference MCP servers are archived; their bugs will not be fixed</a></td>
+        <td>Some early @modelcontextprotocol/* reference servers (server-postgres, server-github, server-puppeteer) were moved to servers-archived and are unmaintained, though still installable from npm. Don't debug an archived server; check servers-archived / the README and switch to a maintained alternative (e.g. github/github-mcp-server).</td>
+        <td>verified</td>
+        <td>mcp-server, claude-desktop, cursor</td>
+      </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html">server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</a></td>
         <td>@modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.</td>
         <td>verified</td>
@@ -139,6 +164,11 @@
         <td>A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.</td>
         <td>verified</td>
         <td>claude-desktop, mcp-server</td>
+      </tr><tr>
+        <td><a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</a></td>
+        <td>A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol text to stdout (console.log / print) interleaves into the stream and the client fails with 'SyntaxError: ... is not valid JSON' in deserializeMessage. Log to stderr (console.error / logging) instead and keep stdout for the transport only.</td>
+        <td>verified</td>
+        <td>mcp-server, typescript-sdk, python-sdk</td>
       </tr><tr>
         <td><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</a></td>
         <td>The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long tool calls fail with 'MCP error -32001: Request timed out' even with server progress. Pass request options to callTool with a larger timeout and resetTimeoutOnProgress: true so progress notifications extend the deadline.</td>

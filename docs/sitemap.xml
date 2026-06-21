@@ -33,12 +33,36 @@
     <lastmod>2026-06-19</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html</loc>
     <lastmod>2026-06-19</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.md</loc>
     <lastmod>2026-06-19</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.md</loc>
+    <lastmod>2026-06-21</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html</loc>
@@ -70,6 +94,14 @@
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
@@ -121,6 +153,14 @@
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
@@ -150,6 +190,14 @@
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html</loc>
+    <lastmod>2026-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md</loc>
     <lastmod>2026-06-21</lastmod>
   </url>
   <url>

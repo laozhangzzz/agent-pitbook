@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed - Agent Pitbook</title>
+  <meta name="description" content="In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'tools': ['github'] works but warns it's renamed to github/*. The */alias resolves only when the server is registered under the matching name and the newer .github/agents location is used. Use the name that resolves, or list both.">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Pit record</p>
+      <h1>VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed</h1>
+      <p class="lede">In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'tools': ['github'] works but warns it's renamed to github/*. The */alias resolves only when the server is registered under the matching name and the newer .github/agents location is used. Use the name that resolves, or list both.</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md">Markdown mirror</a>
+        <span>|</span>
+        <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/github-mcp-vscode-toolset-name-mismatch.md">Canonical source</a>
+      </p>
+      <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>github-mcp-server, vscode</td></tr><tr><th>Tags</th><td>mcp, github-mcp-server, vscode, toolsets, configuration, naming</td></tr></table></section>
+      <section><h2>Symptoms</h2><ul><li>'tools': ['github/*'] produces Unknown tool</li><li>'tools': ['github'] works but warns it should be github/*</li><li>reported for other MCP servers too, not just GitHub</li></ul></section>
+      <section><h2>Environment</h2><table><tr><th>constraints</th><td>VS Code agent configuration, MCP server name must match the */ alias, .github/agents vs .github/chatmodes location</td></tr></table></section>
+      <section><h2>Root cause</h2><ul><li>The server/* toolset alias resolves only when the MCP server is registered under the matching name (e.g. installed via the official flow so it is named github).</li><li>A manually named server, or an older agent-config location (.github/chatmodes vs .github/agents), does not resolve the * alias, so github/* is unknown while the bare name still matches.</li></ul></section>
+      <section><h2>Fix</h2><ol><li><p>Use the name that resolves for your setup: if github/* is Unknown tool, use 'github' and ignore the rename warning for now.</p></li><li><p>Register the server under the expected name (install via the official flow rather than a custom name) so github/* resolves.</p></li><li><p>List both 'github' and 'github/*' (unsupported names are ignored) and use the newer .github/agents location where aliases apply.</p></li></ol></section>
+      <section><h2>Verification</h2><ul><li><p>Run the agent with the chosen tools entry.</p><p class="muted">Expected: GitHub MCP tools are callable with no Unknown tool error.</p></li></ul></section>
+      <section><h2>Workarounds</h2><ul><li>Keep using the bare 'github' name until the aliasing is consistent.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Blindly following the github/* rename warning when that form is Unknown tool.</li><li>Manually renaming the MCP server, which can break server/* alias resolution.</li></ul></section>
+      <section><h2>Sources</h2><ul><li><a href="https://github.com/github/github-mcp-server/issues/1402">github/github-mcp-server issue 1402: VSCode Toolset name mismatch: 'github/*' fails with Unknown tool, but 'github' warns it's deprecated (issue)</a></li></ul></section>
+    </article>
+  </main>
+</body>
+</html>
