@@ -54,6 +54,7 @@ When adding or updating a pit:
    ```bash
    node tools/validate-pits.mjs
    node tools/build-feed.mjs
+   node tools/build-site.mjs
    ```
 
 ## Safety
@@ -63,4 +64,3 @@ When adding or updating a pit:
 - Do not include secrets, tokens, private paths, private logs, or customer data.
 - Do not silently promote candidate records to verified.
 - If a record is stale, disputed, or environment-mismatched, say so before using it.
-

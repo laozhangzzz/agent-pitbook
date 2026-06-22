@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://agent-pitbook.example/schema/pit.schema.json",
+  "$id": "https://raw.githubusercontent.com/laozhangzzz/agent-pitbook/main/schema/pit.schema.json",
   "title": "Agent Pitbook Pit Record",
   "type": "object",
   "additionalProperties": false,
@@ -199,4 +199,3 @@
     }
   }
 }
-

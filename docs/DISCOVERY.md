@@ -126,15 +126,14 @@ Current state:
 - GitHub project-name search works.
 - GitHub broad-topic search is weak.
 - The repository has `llms.txt` and `AGENTS.md`.
-- There is not yet a public website-root `/llms.txt`.
-- There is no MCP package or registry entry yet.
-- The corpus is too small for long-tail discovery.
+- The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
+- A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
+- The corpus is useful but still too small for strong long-tail error discovery.
 
 Next best moves:
 
 1. Add more real pits with exact error strings.
-2. Publish a static site with root `/llms.txt`, `robots.txt`, and `sitemap.xml`.
-3. Implement a minimal MCP/CLI package.
+2. Add backlinks from concrete community discussions, launch posts, and issue replies where a pit directly helps.
+3. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
 4. Create a launch post and submit to relevant agent/LLM communities.
 5. Add a benchmark showing ordinary search vs pitbook-assisted debugging.
-

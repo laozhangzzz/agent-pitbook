@@ -26,6 +26,15 @@ jobs:
             exit 1
           fi
 
+      - name: Check static site is rebuilt from records (no drift)
+        run: |
+          node tools/build-site.mjs
+          if ! git diff --quiet -- docs/.nojekyll docs/index.html docs/llms.txt docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/; then
+            echo "::error::docs/ is out of date. Run 'node tools/build-site.mjs' and commit."
+            git --no-pager diff -- docs/.nojekyll docs/index.html docs/llms.txt docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/
+            exit 1
+          fi
+
       - name: MCP server smoke test
         run: |
           OUT=$(printf '%s\n' \

@@ -374,11 +374,16 @@ function renderPitIndex(records) {
 }
 
 function renderSitemap(records) {
+  const siteLastmod = records
+    .map((record) => record.updated_at)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
   const pages = [
-    ["/", new Date().toISOString().slice(0, 10)],
-    ["/llms.txt", new Date().toISOString().slice(0, 10)],
-    ["/feeds/pits.jsonl", new Date().toISOString().slice(0, 10)],
-    ["/pits/", new Date().toISOString().slice(0, 10)],
+    ["/", siteLastmod],
+    ["/llms.txt", siteLastmod],
+    ["/feeds/pits.jsonl", siteLastmod],
+    ["/pits/", siteLastmod],
     ...records.flatMap((record) => [
       [recordHtmlPath(record), record.updated_at],
       [recordMarkdownPath(record), record.updated_at]
