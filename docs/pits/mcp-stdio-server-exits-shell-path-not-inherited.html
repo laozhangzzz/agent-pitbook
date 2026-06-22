@@ -5,8 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH - Agent Pitbook</title>
   <meta name="description" content="A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MCP stdio server exits immediately because the GUI client does not inherit your shell PATH - Agent Pitbook">
+  <meta property="og:description" content="A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, verified, high, mcp-stdio-server-exits-shell-path-not-inherited">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH",
+  "description": "A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, verified, high, mcp-stdio-server-exits-shell-path-not-inherited",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "stdio",
+    "path",
+    "environment",
+    "nvm",
+    "npx",
+    "macos",
+    "claude-desktop",
+    "transport",
+    "mcp-server",
+    "verified",
+    "high",
+    "mcp-stdio-server-exits-shell-path-not-inherited"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

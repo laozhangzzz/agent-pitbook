@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed - Agent Pitbook</title>
   <meta name="description" content="A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize, then fail because the proxy buffers the SSE stream that Streamable HTTP needs in real time. Cloudflare Tunnel buffers SSE; Nginx needs proxy_buffering off. Disable buffering for the MCP endpoint or use a streaming proxy.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed - Agent Pitbook">
+  <meta property="og:description" content="A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize, then fail because the proxy buffers the SSE stream that Streamable HTTP needs in real time. Cloudflare Tunnel buffers SSE; Nginx needs proxy_buffering off. Disable buffering for the MCP endpoint or use a streaming proxy.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, verified, medium, mcp-reverse-proxy-buffers-sse-connection-fails">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed",
+  "description": "A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize, then fail because the proxy buffers the SSE stream that Streamable HTTP needs in real time. Cloudflare Tunnel buffers SSE; Nginx needs proxy_buffering off. Disable buffering for the MCP endpoint or use a streaming proxy.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, verified, medium, mcp-reverse-proxy-buffers-sse-connection-fails",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "sse",
+    "streamable-http",
+    "reverse-proxy",
+    "cloudflare-tunnel",
+    "buffering",
+    "remote-mcp",
+    "claude-desktop",
+    "mcp-server",
+    "verified",
+    "medium",
+    "mcp-reverse-proxy-buffers-sse-connection-fails"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener - Agent Pitbook</title>
   <meta name="description" content="A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener - Agent Pitbook">
+  <meta property="og:description" content="A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, audio, portaudio, pynput, threading, hotkey, deadlock, voice, voice-to-claude, verified, medium, portaudio-stream-close-blocks-hotkey-callback-thread">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener",
+  "description": "A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, macos, audio, portaudio, pynput, threading, hotkey, deadlock, voice, voice-to-claude, verified, medium, portaudio-stream-close-blocks-hotkey-callback-thread",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "audio",
+    "portaudio",
+    "pynput",
+    "threading",
+    "hotkey",
+    "deadlock",
+    "voice",
+    "voice-to-claude",
+    "verified",
+    "medium",
+    "portaudio-stream-close-blocks-hotkey-callback-thread"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

@@ -5,8 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream - Agent Pitbook</title>
   <meta name="description" content="A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol text to stdout (console.log / print) interleaves into the stream and the client fails with 'SyntaxError: ... is not valid JSON' in deserializeMessage. Log to stderr (console.error / logging) instead and keep stdout for the transport only.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream - Agent Pitbook">
+  <meta property="og:description" content="A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol text to stdout (console.log / print) interleaves into the stream and the client fails with 'SyntaxError: ... is not valid JSON' in deserializeMessage. Log to stderr (console.error / logging) instead and keep stdout for the transport only.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, verified, high, mcp-stdio-stdout-logging-breaks-protocol">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
+  "description": "A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol text to stdout (console.log / print) interleaves into the stream and the client fails with 'SyntaxError: ... is not valid JSON' in deserializeMessage. Log to stderr (console.error / logging) instead and keep stdout for the transport only.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, verified, high, mcp-stdio-stdout-logging-breaks-protocol",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "stdio",
+    "stdout",
+    "logging",
+    "json-rpc",
+    "console-log",
+    "protocol",
+    "mcp-server",
+    "typescript-sdk",
+    "python-sdk",
+    "verified",
+    "high",
+    "mcp-stdio-stdout-logging-breaks-protocol"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

@@ -5,8 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set - Agent Pitbook</title>
   <meta name="description" content="MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set - Agent Pitbook">
+  <meta property="og:description" content="MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, docker, devcontainer, networking, connection-refused, allowed-origins, mcp-inspector, verified, medium, mcp-inspector-docker-connection-refused-host-env">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set",
+  "description": "MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localhost refused to connect) because inside the container it binds loopback only and enforces an allowed-origins check. Set HOST and ALLOWED_ORIGINS env vars (also needed in devcontainers) so the proxy is reachable and the origin is accepted.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, docker, devcontainer, networking, connection-refused, allowed-origins, mcp-inspector, verified, medium, mcp-inspector-docker-connection-refused-host-env",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "inspector",
+    "docker",
+    "devcontainer",
+    "networking",
+    "connection-refused",
+    "allowed-origins",
+    "mcp-inspector",
+    "verified",
+    "medium",
+    "mcp-inspector-docker-connection-refused-host-env"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable - Agent Pitbook</title>
   <meta name="description" content="PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable - Agent Pitbook">
+  <meta property="og:description" content="PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, audio, portaudio, sounddevice, silent-capture, microphone, clamshell, voice, voice-to-claude, verified, medium, macos-portaudio-silent-zero-capture-unavailable-default-input">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable",
+  "description": "PortAudio (via sounddevice) can open an input stream on a physically-unavailable default mic, raise no error, and deliver all-zero buffers; downstream ASR then hallucinates junk tokens from silence. Diagnose by measuring np.abs(samples).max(); pin the recorder to a known-good device instead of the system default.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, macos, audio, portaudio, sounddevice, silent-capture, microphone, clamshell, voice, voice-to-claude, verified, medium, macos-portaudio-silent-zero-capture-unavailable-default-input",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "audio",
+    "portaudio",
+    "sounddevice",
+    "silent-capture",
+    "microphone",
+    "clamshell",
+    "voice",
+    "voice-to-claude",
+    "verified",
+    "medium",
+    "macos-portaudio-silent-zero-capture-unavailable-default-input"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

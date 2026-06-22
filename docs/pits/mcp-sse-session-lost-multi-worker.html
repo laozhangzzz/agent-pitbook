@@ -5,8 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MCP SSE session lost across workers/pods: Could not find session for ID (404) - Agent Pitbook</title>
   <meta name="description" content="An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MCP SSE session lost across workers/pods: Could not find session for ID (404) - Agent Pitbook">
+  <meta property="og:description" content="An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, sessions, kubernetes, gunicorn, scaling, streamable-http, python-sdk, mcp-server, fastmcp, verified, high, mcp-sse-session-lost-multi-worker">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MCP SSE session lost across workers/pods: Could not find session for ID (404)",
+  "description": "An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: SSE opens, first POST returns 202, later POSTs return 404 with 'Could not find session for ID'. SSE keeps session state in one process's memory while a load balancer routes follow-ups elsewhere. Use stateless Streamable HTTP (FastMCP stateless_http=True) or sticky routing.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, sessions, kubernetes, gunicorn, scaling, streamable-http, python-sdk, mcp-server, fastmcp, verified, high, mcp-sse-session-lost-multi-worker",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "sse",
+    "sessions",
+    "kubernetes",
+    "gunicorn",
+    "scaling",
+    "streamable-http",
+    "python-sdk",
+    "mcp-server",
+    "fastmcp",
+    "verified",
+    "high",
+    "mcp-sse-session-lost-multi-worker"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

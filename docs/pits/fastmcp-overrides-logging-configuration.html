@@ -5,8 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FastMCP overrides your app's logging configuration on init (duplicate or lost logs) - Agent Pitbook</title>
   <meta name="description" content="Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="FastMCP overrides your app's logging configuration on init (duplicate or lost logs) - Agent Pitbook">
+  <meta property="og:description" content="Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, candidate, medium, fastmcp-overrides-logging-configuration">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "FastMCP overrides your app's logging configuration on init (duplicate or lost logs)",
+  "description": "Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, candidate, medium, fastmcp-overrides-logging-configuration",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "fastmcp",
+    "python-sdk",
+    "logging",
+    "configuration",
+    "side-effects",
+    "mcp-server",
+    "candidate",
+    "medium",
+    "fastmcp-overrides-logging-configuration"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

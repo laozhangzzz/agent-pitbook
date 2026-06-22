@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch - Agent Pitbook</title>
   <meta name="description" content="On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch - Agent Pitbook">
+  <meta property="og:description" content="On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, candidate, medium, mcp-filesystem-server-windows-access-denied-case-sensitivity">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch",
+  "description": "On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\\source vs c:\\source). Match the configured case, or use a patched build until the upstream fix ships.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, candidate, medium, mcp-filesystem-server-windows-access-denied-case-sensitivity",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "server-filesystem",
+    "windows",
+    "paths",
+    "case-sensitivity",
+    "access-denied",
+    "claude-desktop",
+    "cursor",
+    "mcp-server",
+    "candidate",
+    "medium",
+    "mcp-filesystem-server-windows-access-denied-case-sensitivity"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

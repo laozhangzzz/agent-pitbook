@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions - Agent Pitbook</title>
   <meta name="description" content="A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions - Agent Pitbook">
+  <meta property="og:description" content="A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, python-sdk, streamable-http, stateless, anyio, closedresourceerror, versioning, mcp-server, fastmcp, candidate, medium, mcp-stateless-streamable-http-closedresourceerror">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions",
+  "description": "A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on certain MCP Python SDK / FastMCP versions because the stateless path re-enters the transport and a second request hits an already-closed stream. Pin a known-good SDK version (1.11.0 reported working vs 1.12.0) and track the upstream fix.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, python-sdk, streamable-http, stateless, anyio, closedresourceerror, versioning, mcp-server, fastmcp, candidate, medium, mcp-stateless-streamable-http-closedresourceerror",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "python-sdk",
+    "streamable-http",
+    "stateless",
+    "anyio",
+    "closedresourceerror",
+    "versioning",
+    "mcp-server",
+    "fastmcp",
+    "candidate",
+    "medium",
+    "mcp-stateless-streamable-http-closedresourceerror"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste - Agent Pitbook</title>
   <meta name="description" content="pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste - Agent Pitbook">
+  <meta property="og:description" content="pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, verified, medium, pynput-mixed-cjk-ascii-type-out-of-order-macos">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+  "description": "pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, verified, medium, pynput-mixed-cjk-ascii-type-out-of-order-macos",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "pynput",
+    "text-injection",
+    "unicode",
+    "cjk",
+    "race-condition",
+    "clipboard",
+    "voice",
+    "voice-to-claude",
+    "verified",
+    "medium",
+    "pynput-mixed-cjk-ascii-type-out-of-order-macos"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

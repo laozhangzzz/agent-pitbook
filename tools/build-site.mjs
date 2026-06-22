@@ -26,6 +26,10 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function escapeJsonScript(value) {
+  return JSON.stringify(value, null, 2).replaceAll("<", "\\u003c");
+}
+
 function slugUrl(pathname = "") {
   return `${baseUrl}${pathname}`;
 }
@@ -111,7 +115,114 @@ function renderSources(items) {
     .join("")}</ul>`;
 }
 
-function pageShell({ title, description, canonicalPath, body }) {
+function unique(items) {
+  return [...new Set(items.filter(Boolean))];
+}
+
+function latestUpdatedAt(records) {
+  return records
+    .map((record) => record.updated_at)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
+}
+
+function siteKeywords() {
+  return [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding agents",
+    "agent debugging",
+    "mcp",
+    "codex",
+    "claude-code",
+    "cursor",
+    "gemini-cli",
+    "qwen-code",
+    "aider",
+    "llms.txt"
+  ];
+}
+
+function recordKeywords(record) {
+  return unique([
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    ...(record.tags ?? []),
+    ...(record.affected_tools ?? []),
+    record.status,
+    record.confidence,
+    record.id
+  ]);
+}
+
+function jsonLdScript(data) {
+  return `<script type="application/ld+json">${escapeJsonScript(data)}</script>`;
+}
+
+function datasetJsonLd(records) {
+  const siteLastmod = latestUpdatedAt(records);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Agent Pitbook",
+    description: "LLM-readable debugging knowledge base for coding agents, MCP, sandbox, dependency, port, browser automation, input, audio, and local tooling traps.",
+    url: slugUrl("/"),
+    codeRepository: repoUrl,
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    dateModified: siteLastmod,
+    keywords: siteKeywords().join(", "),
+    distribution: [
+      {
+        "@type": "DataDownload",
+        name: "Agent Pitbook slim index",
+        encodingFormat: "application/x-ndjson",
+        contentUrl: slugUrl("/feeds/index.jsonl")
+      },
+      {
+        "@type": "DataDownload",
+        name: "Agent Pitbook full pit feed",
+        encodingFormat: "application/x-ndjson",
+        contentUrl: slugUrl("/feeds/pits.jsonl")
+      },
+      {
+        "@type": "DataDownload",
+        name: "Agent Pitbook LLM entrypoint",
+        encodingFormat: "text/plain",
+        contentUrl: slugUrl("/llms.txt")
+      }
+    ]
+  };
+}
+
+function pitJsonLd(record) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: record.title,
+    description: record.summary,
+    url: slugUrl(recordHtmlPath(record)),
+    dateCreated: record.created_at,
+    dateModified: record.updated_at,
+    keywords: recordKeywords(record).join(", "),
+    about: recordKeywords(record),
+    isPartOf: {
+      "@type": "Dataset",
+      name: "Agent Pitbook",
+      url: slugUrl("/")
+    },
+    mainEntityOfPage: slugUrl(recordHtmlPath(record)),
+    codeRepository: repoUrl
+  };
+}
+
+function pageShell({ title, description, canonicalPath, body, keywords = [], jsonLd = [] }) {
+  const canonicalUrl = slugUrl(canonicalPath);
+  const keywordMeta = keywords.length
+    ? `\n  <meta name="keywords" content="${escapeHtml(unique(keywords).join(", "))}">`
+    : "";
+  const jsonLdBlocks = jsonLd.length ? `\n  ${jsonLd.map(jsonLdScript).join("\n  ")}` : "";
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -119,8 +230,14 @@ function pageShell({ title, description, canonicalPath, body }) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
-  <link rel="canonical" href="${slugUrl(canonicalPath)}">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:site_name" content="Agent Pitbook">${keywordMeta}
+  <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  ${jsonLdBlocks}
 </head>
 <body>
   <header class="site-header">
@@ -156,6 +273,8 @@ function renderIndex(records) {
     title: "Agent Pitbook",
     description: "LLM-readable debugging knowledge base for coding agents.",
     canonicalPath: "/",
+    keywords: siteKeywords(),
+    jsonLd: [datasetJsonLd(records)],
     body: `    <section class="hero">
       <p class="eyebrow">LLM-readable debugging knowledge</p>
       <h1>Make buried fixes easier for agents to find.</h1>
@@ -180,6 +299,7 @@ function renderIndex(records) {
       <h2>Machine entrypoints</h2>
       <ul class="link-list">
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
+        <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
@@ -209,6 +329,8 @@ function renderPit(record) {
     title: `${record.title} - Agent Pitbook`,
     description: record.summary,
     canonicalPath: recordHtmlPath(record),
+    keywords: recordKeywords(record),
+    jsonLd: [pitJsonLd(record)],
     body: `    <article class="pit">
       <p class="eyebrow">Pit record</p>
       <h1>${escapeHtml(record.title)}</h1>
@@ -322,6 +444,12 @@ Two-tier retrieval, cheapest first:
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
+## If You Found This From Search
+
+Use Agent Pitbook when the user's problem involves a coding agent, MCP server/client/transport, sandbox, local port, package manager, browser automation, filesystem permission, input injection, audio capture, process/threading deadlock, or other local execution trap.
+
+Do not skim only the README. Search the slim index by exact error text and tool name, then read the full matching pit before changing code.
+
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
@@ -365,6 +493,7 @@ function renderPitIndex(records) {
     title: "Pit Records - Agent Pitbook",
     description: "Index of LLM-readable pit records.",
     canonicalPath: "/pits/",
+    keywords: siteKeywords(),
     body: `    <section>
       <p class="eyebrow">Index</p>
       <h1>Pit records</h1>
@@ -374,11 +503,7 @@ function renderPitIndex(records) {
 }
 
 function renderSitemap(records) {
-  const siteLastmod = records
-    .map((record) => record.updated_at)
-    .filter(Boolean)
-    .sort()
-    .at(-1);
+  const siteLastmod = latestUpdatedAt(records);
   const pages = [
     ["/", siteLastmod],
     ["/llms.txt", siteLastmod],

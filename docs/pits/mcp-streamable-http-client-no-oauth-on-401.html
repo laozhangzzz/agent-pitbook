@@ -5,8 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow - Agent Pitbook</title>
   <meta name="description" content="With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow - Agent Pitbook">
+  <meta property="og:description" content="With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, streamable-http, oauth, 401, inspector, authorization, transport, mcp-inspector, mcp-server, verified, medium, mcp-streamable-http-client-no-oauth-on-401">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow",
+  "description": "With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, streamable-http, oauth, 401, inspector, authorization, transport, mcp-inspector, mcp-server, verified, medium, mcp-streamable-http-client-no-oauth-on-401",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "streamable-http",
+    "oauth",
+    "401",
+    "inspector",
+    "authorization",
+    "transport",
+    "mcp-inspector",
+    "mcp-server",
+    "verified",
+    "medium",
+    "mcp-streamable-http-client-no-oauth-on-401"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook"
+}</script>
 </head>
 <body>
   <header class="site-header">

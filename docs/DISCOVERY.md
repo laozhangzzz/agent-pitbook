@@ -92,7 +92,28 @@ How:
 
 This is probably the strongest discovery path. Many agents search exact failures, not abstract project names.
 
-## 6. Community And Backlink Discovery
+## 6. Search-Enabled Model Discovery
+
+Goal: when a model with web search investigates a user's concrete debugging failure, Agent Pitbook should appear as a relevant answer source.
+
+The target path is:
+
+```text
+user symptom/error -> model web search -> per-pit HTML or Markdown page -> llms.txt / JSONL feed -> verified fix
+```
+
+How:
+
+- make every pit page an answer page, not only a catalog entry
+- put exact error strings in pit titles, summaries, symptoms, and generated HTML body text
+- expose one stable HTML URL and one stable Markdown URL per pit
+- add sitemap entries for both HTML and Markdown pages
+- add schema.org structured data to the static site and per-pit pages
+- expose the slim scan-first index at `/feeds/index.jsonl`
+- make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
+- create backlinks to specific pit pages from GitHub issues, docs, release notes, and community answers only when directly relevant
+
+## 7. Community And Backlink Discovery
 
 Goal: the project is linked from places agents and humans already inspect.
 
@@ -107,7 +128,7 @@ How:
 
 Avoid spam. Backlinks should point to useful pit records or the manifesto, not just the homepage.
 
-## 7. Dataset Discovery
+## 8. Dataset Discovery
 
 Goal: the corpus is visible as a reusable open dataset, not only a repo.
 
@@ -133,7 +154,7 @@ Current state:
 Next best moves:
 
 1. Add more real pits with exact error strings.
-2. Add backlinks from concrete community discussions, launch posts, and issue replies where a pit directly helps.
-3. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
-4. Create a launch post and submit to relevant agent/LLM communities.
+2. Submit or verify the sitemap with major search engines once the site has a stable public URL.
+3. Add backlinks from concrete issue replies and docs pages where a pit directly helps.
+4. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
 5. Add a benchmark showing ordinary search vs pitbook-assisted debugging.
