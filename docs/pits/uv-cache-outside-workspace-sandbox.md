@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/py
 
 In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.
 
+## Common Search Queries
+
+- uv-cache-outside-workspace-sandbox
+- uv cache outside workspace sandbox
+- uv fails in a managed workspace because cache or Python install paths are outside writable roots
+- uv fails in a managed workspace because cache or Python install paths are outside writable roots fix
+- uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause
+- In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths
+- python
+- sandbox
+- cache
+- codex
+- claude-code
+- gemini
+- qwen-code
+- cursor
+- aider
+- uv run or uv sync fails with permission or sandbox filesystem errors
+- the project directory is writable but global cache paths are not
+- setting UV_CACHE_DIR and UV_PYTHON_INSTALL_DIR inside the workspace allows progress
+- uv defaults to cache or interpreter directories outside the agent's writable roots
+- Changing project code to avoid uv before checking cache permissions
+- Using global chmod or deleting user-level caches from an agent session
+- Use an existing project virtual environment if it is already present and writable
+- Ask for sandbox escalation only when dependency downloads or outside-workspace writes are truly required
+- Agent Pitbook bootstrap local session
+
 ## Affected Tools
 
 - codex

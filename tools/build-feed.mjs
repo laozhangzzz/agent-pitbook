@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord, slimRecord } from "./lib/pitlib.mjs";
+import { repoRoot, loadPitRecords, validateRecord, slimRecord, recordSearchTerms } from "./lib/pitlib.mjs";
 
 const records = loadPitRecords();
 const errors = [];
@@ -29,3 +29,22 @@ const indexPath = path.join(repoRoot, "feeds", "index.jsonl");
 fs.writeFileSync(indexPath, `${sorted.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`);
 console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, indexPath)}`);
 
+const searchTermsPath = path.join(repoRoot, "feeds", "search-terms.jsonl");
+fs.writeFileSync(
+  searchTermsPath,
+  `${sorted
+    .map((record) =>
+      JSON.stringify({
+        id: record.id,
+        title: record.title,
+        status: record.status,
+        affected_tools: record.affected_tools ?? [],
+        tags: record.tags ?? [],
+        url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html`,
+        markdown_url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.md`,
+        search_terms: recordSearchTerms(record, 48)
+      })
+    )
+    .join("\n")}\n`
+);
+console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, searchTermsPath)}`);

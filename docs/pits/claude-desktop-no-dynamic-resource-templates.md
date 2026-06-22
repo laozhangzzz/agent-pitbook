@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not appear in Claude Desktop while static resources do. Claude Desktop calls resources/list but not resources/templates/list, so templated resources are never surfaced. Expose the capability as a tool, or verify support per client; the server is fine.
 
+## Common Search Queries
+
+- claude-desktop-no-dynamic-resource-templates
+- claude desktop no dynamic resource templates
+- Claude Desktop does not list dynamic MCP resource templates (only static resources
+- Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
+- Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
+- claude-desktop
+- resources
+- resource-templates
+- client-capability
+- fastmcp
+- mcp-server
+- a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- the server is correct and the template appears under the Inspector Resources tab
+- time lost assuming the server code is wrong
+- Dynamic resources are exposed via resources/templates/list; static resources via resources/list
+- Claude Desktop calls resources/list only, so it never discovers resource templates
+- The server is fine; the client does not request templates
+- Assuming a missing resource in Claude Desktop means the server is misconfigured
+- Designing a server around resource templates without checking client support
+- Model parameterized data as tools instead of resource templates for Claude Desktop
+- modelcontextprotocol/python-sdk issue 263: dynamic resource not working in Claude desktop (maintainer confirms Desktop does not support dynamic resources; client calls resources/list not resources/templates/list
+- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- claude-desktop the server is correct and the template appears under the Inspector Resources tab
+
 ## Affected Tools
 
 - claude-desktop

@@ -10,7 +10,7 @@
   <meta property="og:description" content="Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/) via OAuth fails with 'Incompatible auth server: does not support dynamic client registration' because the endpoint lacks OAuth Dynamic Client Registration. Use a Personal Access Token via GITHUB_PERSONAL_ACCESS_TOKEN instead of the OAuth flow.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat, github-mcp-server, verified, high, mcp-github-remote-oauth-dcr-unsupported-use-pat">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat, github-mcp-server, mcp-github-remote-oauth-dcr-unsupported-use-pat, mcp github remote oauth dcr unsupported use pat, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT fix, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat, github-mcp-server, verified, high, mcp-github-remote-oauth-dcr-unsupported-use-pat",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat, github-mcp-server, mcp-github-remote-oauth-dcr-unsupported-use-pat, mcp github remote oauth dcr unsupported use pat, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT fix, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,9 +35,13 @@
     "remote-mcp",
     "pat",
     "github-mcp-server",
+    "mcp-github-remote-oauth-dcr-unsupported-use-pat",
+    "mcp github remote oauth dcr unsupported use pat",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT fix",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT root cause",
     "verified",
-    "high",
-    "mcp-github-remote-oauth-dcr-unsupported-use-pat"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -54,6 +58,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -69,6 +74,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-code, github-mcp-server</td></tr><tr><th>Tags</th><td>mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-github-remote-oauth-dcr-unsupported-use-pat</li><li>mcp github remote oauth dcr unsupported use pat</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT fix</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause</li><li>oauth</li><li>dynamic-client-registration</li><li>github</li><li>claude-code</li><li>remote-mcp</li><li>github-mcp-server</li><li>claude mcp add ... then the connection fails</li><li>Error: Incompatible auth server: does not support dynamic client registration</li><li>the same server config works in VS Code, which authenticates differently</li><li>the UI shows an 'Authenticate' (OAuth) button that never completes</li><li>The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server</li><li>GitHub's remote MCP endpoint does not support DCR, so registration fails and the OAuth handshake cannot proceed</li><li>The endpoint expects token-based auth (a PAT) instead</li><li>Retrying the OAuth flow against an endpoint that lacks dynamic client registration</li><li>Following docs that show the OAuth connect path when only PAT auth works for that endpoint</li><li>Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint</li><li>anthropics/claude-code issue 3433: Claude Code cannot connect to GitHub's remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround</li><li>claude-code claude mcp add ... then the connection fails</li><li>github-mcp-server claude mcp add ... then the connection fails</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails</li><li>Error: Incompatible auth server: does not support dynamic client registration</li><li>the same server config works in VS Code, which authenticates differently</li><li>the UI shows an 'Authenticate' (OAuth) button that never completes</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>agent</th><td>claude-code</td></tr><tr><th>constraints</th><td>remote MCP over HTTP with OAuth, auth server lacks Dynamic Client Registration</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server.</li><li>GitHub's remote MCP endpoint does not support DCR, so registration fails and the OAuth handshake cannot proceed.</li><li>The endpoint expects token-based auth (a PAT) instead.</li></ul></section>

@@ -20,18 +20,18 @@ jobs:
       - name: Check feeds are rebuilt from records (no drift)
         run: |
           node tools/build-feed.mjs
-          if ! git diff --quiet -- feeds/pits.jsonl feeds/index.jsonl; then
+          if ! git diff --quiet -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl; then
             echo "::error::feeds/ is out of date. Run 'node tools/build-feed.mjs' and commit."
-            git --no-pager diff -- feeds/pits.jsonl feeds/index.jsonl
+            git --no-pager diff -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl
             exit 1
           fi
 
       - name: Check static site is rebuilt from records (no drift)
         run: |
           node tools/build-site.mjs
-          if ! git diff --quiet -- docs/.nojekyll docs/index.html docs/llms.txt docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/; then
+          if ! git diff --quiet -- docs/.nojekyll docs/index.html docs/llms.txt docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/; then
             echo "::error::docs/ is out of date. Run 'node tools/build-site.mjs' and commit."
-            git --no-pager diff -- docs/.nojekyll docs/index.html docs/llms.txt docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/
+            git --no-pager diff -- docs/.nojekyll docs/index.html docs/llms.txt docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/
             exit 1
           fi
 

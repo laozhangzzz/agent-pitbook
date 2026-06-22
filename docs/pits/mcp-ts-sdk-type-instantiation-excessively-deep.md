@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 Using MCP SDK tool types (e.g. ToolCallback<Args>) with Zod can trigger 'Type instantiation is excessively deep and possibly infinite ts(2589)' and freeze the TypeScript language server. Fix on the Zod/tsconfig side: single Zod version, modern moduleResolution (not legacy 'node'), and a Zod release with the fix (4.1.6).
 
+## Common Search Queries
+
+- mcp-ts-sdk-type-instantiation-excessively-deep
+- mcp ts sdk type instantiation excessively deep
+- MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
+- MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix
+- MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause
+- typescript-sdk
+- typescript
+- tsconfig
+- type-error
+- mcp-server
+- Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
+- the TypeScript server in Cursor/VS Code hangs and saving files stalls
+- it appears intermittently; @ts-ignore silences the error but not the slowdown
+- Deep generic instantiation in Zod's types as consumed by the SDK's tool typings
+- Worsened by multiple resolved Zod versions, a legacy moduleResolution: 'node' tsconfig, and certain SDK versions (reported from >=1.16.0
+- Suppressing with @ts-ignore and ignoring the language-server slowdown
+- Leaving two Zod versions in the dependency tree
+- Pin a known-good SDK + Zod pair until you can update tsconfig/Zod
+- modelcontextprotocol/typescript-sdk issue 494: 'Type instantiation is excessively deep' when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
+- mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
+- typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
+- mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls
+- typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls
+- mcp-server it appears intermittently; @ts-ignore silences the error but not the slowdown
+
 ## Affected Tools
 
 - mcp-server

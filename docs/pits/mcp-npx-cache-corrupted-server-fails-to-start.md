@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 An npx-launched MCP server that intermittently fails or yields 'Client closed' / 'MCP error -32001: Request timed out' is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeout. Clear the cache or pre-install the package.
 
+## Common Search Queries
+
+- mcp-npx-cache-corrupted-server-fails-to-start
+- mcp npx cache corrupted server fails to start
+- A corrupted or cold npx cache makes an MCP server fail to start or time out
+- A corrupted or cold npx cache makes an MCP server fail to start or time out fix
+- A corrupted or cold npx cache makes an MCP server fail to start or time out root cause
+- cache
+- startup
+- timeout
+- error-32001
+- claude-desktop
+- cursor
+- cline
+- mcp-server
+- npx-launched MCP server worked before and now fails, or fails only on first launch
+- client log shows Client closed and/or MCP error -32001: Request timed out
+- the failure is intermittent and sometimes clears up on its own
+- a recent flaky network or interrupted install preceded it
+- npx downloads the package into the npm cache before running it
+- An interrupted or rate-limited fetch can leave a partial or corrupted package, so the next launch crashes on missing files
+- A genuine cold download can exceed the client's startup timeout, producing -32001: Request timed out
+- Repeatedly editing the config when the real fault is a half-written cache
+- Assuming the server package is broken when a clean cache fixes it
+- Pin a globally installed package by absolute path instead of relying on npx download at launch
+- modelcontextprotocol/servers issue 1097: comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup
+
 ## Affected Tools
 
 - claude-desktop

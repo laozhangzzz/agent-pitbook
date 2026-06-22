@@ -110,6 +110,7 @@ How:
 - add sitemap entries for both HTML and Markdown pages
 - add schema.org structured data to the static site and per-pit pages
 - expose the slim scan-first index at `/feeds/index.jsonl`
+- expose generated search phrases at `/feeds/search-terms.jsonl` and `/search-queries.html`
 - make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
 - create backlinks to specific pit pages from GitHub issues, docs, release notes, and community answers only when directly relevant
 
@@ -148,6 +149,7 @@ Current state:
 - GitHub broad-topic search is weak.
 - The repository has `llms.txt` and `AGENTS.md`.
 - The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
+- The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
 - The corpus is useful but still too small for strong long-tail error discovery.
 

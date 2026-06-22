@@ -10,7 +10,7 @@
   <meta property="og:description" content="A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, verified, high, mcp-stdio-server-exits-shell-path-not-inherited">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, mcp-stdio-server-exits-shell-path-not-inherited, mcp stdio server exits shell path not inherited, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, verified, high, mcp-stdio-server-exits-shell-path-not-inherited",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, mcp-stdio-server-exits-shell-path-not-inherited, mcp stdio server exits shell path not inherited, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -37,9 +37,13 @@
     "claude-desktop",
     "transport",
     "mcp-server",
+    "mcp-stdio-server-exits-shell-path-not-inherited",
+    "mcp stdio server exits shell path not inherited",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause",
     "verified",
-    "high",
-    "mcp-stdio-server-exits-shell-path-not-inherited"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -56,6 +60,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -71,6 +76,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, mcp-server</td></tr><tr><th>Tags</th><td>mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-stdio-server-exits-shell-path-not-inherited</li><li>mcp stdio server exits shell path not inherited</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause</li><li>stdio</li><li>path</li><li>environment</li><li>macos</li><li>claude-desktop</li><li>transport</li><li>mcp-server</li><li>client log: Server transport closed unexpectedly, this is likely due to the process exiting early</li><li>client log shows write EPIPE immediately after the client initialize message</li><li>the same command starts fine when run manually in the terminal</li><li>a Node version manager (NVM, fnm, asdf) is in use, or node/npx live outside /usr/bin</li><li>the client uses an unexpected or missing Node version</li><li>GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH</li><li>With NVM/fnm/asdf the versioned node directory is not on that PATH, so npx/node is missing or wrong and the server exits at spawn</li><li>The client already sent initialize; the dying server writing to the closed pipe surfaces as write EPIPE and 'transport closed / process exiting early</li><li>The MCP server package itself is usually fine</li><li>Reinstalling or switching the server package when the package is fine</li><li>Treating write EPIPE as a server crash instead of a bad launch environment</li><li>Relying on bare npx/node in a GUI-launched config while using NVM/fnm/asdf</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>client log: Server transport closed unexpectedly, this is likely due to the process exiting early</li><li>client log shows write EPIPE immediately after the client initialize message</li><li>the same command starts fine when run manually in the terminal</li><li>a Node version manager (NVM, fnm, asdf) is in use, or node/npx live outside /usr/bin</li><li>the client uses an unexpected or missing Node version</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>constraints</th><td>GUI desktop client spawns the stdio MCP server without the login-shell PATH, Node version manager (NVM/fnm/asdf) places node outside the default PATH</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH.</li><li>With NVM/fnm/asdf the versioned node directory is not on that PATH, so npx/node is missing or wrong and the server exits at spawn.</li><li>The client already sent initialize; the dying server writing to the closed pipe surfaces as write EPIPE and 'transport closed / process exiting early'.</li><li>The MCP server package itself is usually fine.</li></ul></section>

@@ -10,6 +10,30 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/ag
 
 After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path.
 
+## Common Search Queries
+
+- codex-workspace-root-moved-stale-state
+- codex workspace root moved stale state
+- Codex still references an old workspace path after a project move
+- Codex still references an old workspace path after a project move fix
+- Codex still references an old workspace path after a project move root cause
+- After moving a workspace, Codex Desktop may retain stale workspace roots in app state, causing links or tool calls to refer to the old path
+- codex
+- workspace
+- macos
+- state
+- Codex or its sidebar references an old workspace folder
+- the shell current directory points to the new workspace
+- file links or searches use the previous path
+- The desktop app persists workspace roots separately from the shell current directory, and those saved roots may not update when a folder is moved
+- Blindly rewriting all app state JSON without a backup
+- Deleting app state to fix one stale root when exact replacement would suffice
+- Create a temporary symlink from the old path to the new path only as a short-term bridge
+- Keep project moves visible to the agent by stating the new absolute path explicitly
+- Agent Pitbook bootstrap local session
+- codex the shell current directory points to the new workspace
+- codex file links or searches use the previous path
+
 ## Affected Tools
 
 - codex

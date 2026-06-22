@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 uvx mcp-server-time can crash with a zoneinfo load error when the local timezone resolves to a non-IANA abbreviation (EDT/PDT/CEST), typically under DST, because Python zoneinfo only loads canonical IANA names. Pass a valid IANA name with --local-timezone (e.g. America/New_York).
 
+## Common Search Queries
+
+- mcp-time-server-invalid-local-timezone
+- mcp time server invalid local timezone
+- mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
+- mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix
+- mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause
+- server-time
+- timezone
+- zoneinfo
+- iana
+- mcp-server
+- claude-desktop
+- uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone
+- happens when DST is active and the local zone shows as an abbreviation (EDT/PDT/CEST
+- works fine in standard time for some users
+- The server resolves the local timezone, but the platform reports a non-IANA abbreviation (e.g. EDT
+- Python's zoneinfo only loads canonical IANA names (e.g. America/New_York), so loading the abbreviation raises and the server fails to start
+- Passing a timezone abbreviation (EDT/PDT/CEST) instead of an IANA name
+- Relying on auto-detected local timezone on a platform that emits abbreviations during DST
+- Set the process/system timezone to a canonical IANA name
+- modelcontextprotocol/servers issue 786: Time server fails under EDT timezone (use --local-timezone with an IANA name
+- claude-desktop uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone
+- mcp-server happens when DST is active and the local zone shows as an abbreviation (EDT/PDT/CEST
+- claude-desktop happens when DST is active and the local zone shows as an abbreviation (EDT/PDT/CEST
+- mcp-server works fine in standard time for some users
+
 ## Affected Tools
 
 - mcp-server

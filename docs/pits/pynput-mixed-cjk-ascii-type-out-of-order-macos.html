@@ -10,7 +10,7 @@
   <meta property="og:description" content="pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, verified, medium, pynput-mixed-cjk-ascii-type-out-of-order-macos">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, pynput-mixed-cjk-ascii-type-out-of-order-macos, pynput mixed cjk ascii type out of order macos, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, verified, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, verified, medium, pynput-mixed-cjk-ascii-type-out-of-order-macos",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, pynput-mixed-cjk-ascii-type-out-of-order-macos, pynput mixed cjk ascii type out of order macos, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, verified, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,9 +36,13 @@
     "clipboard",
     "voice",
     "voice-to-claude",
+    "pynput-mixed-cjk-ascii-type-out-of-order-macos",
+    "pynput mixed cjk ascii type out of order macos",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause",
     "verified",
-    "medium",
-    "pynput-mixed-cjk-ascii-type-out-of-order-macos"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -55,6 +59,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -70,6 +75,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>pynput, voice-to-claude</td></tr><tr><th>Tags</th><td>macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>pynput-mixed-cjk-ascii-type-out-of-order-macos</li><li>pynput mixed cjk ascii type out of order macos</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause</li><li>macos</li><li>pynput</li><li>text-injection</li><li>unicode</li><li>race-condition</li><li>clipboard</li><li>voice</li><li>voice-to-claude</li><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>pure-English and pure-Chinese strings inject fine</li><li>only mixed CJK+ASCII text scrambles</li><li>On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events</li><li>The two dispatch paths have different timing and race each other, so a fast mixed-script string arrives interleaved / reordered</li><li>Using pynput Controller.type() for mixed CJK+ASCII text on macOS</li><li>Adding per-character sleeps to 'fix' ordering instead of switching to an atomic paste</li><li>Restore the previous clipboard contents after pasting if clobbering it is a concern</li><li>voice-to-claude daemon debugging session</li><li>pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>pure-English and pure-Chinese strings inject fine</li><li>only mixed CJK+ASCII text scrambles</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>arch</th><td>Apple Silicon</td></tr><tr><th>language</th><td>Python</td></tr><tr><th>runtime</th><td>pynput.keyboard.Controller.type()</td></tr><tr><th>versions</th><td>{&quot;python&quot;:&quot;3.12&quot;}</td></tr><tr><th>constraints</th><td>text injection into a focused input box</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.</li><li>The two dispatch paths have different timing and race each other, so a fast mixed-script string arrives interleaved / reordered.</li></ul></section>

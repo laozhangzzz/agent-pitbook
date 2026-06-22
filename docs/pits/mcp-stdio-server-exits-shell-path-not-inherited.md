@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 A stdio MCP server that runs in the terminal but fails under a desktop client with 'Server transport closed unexpectedly, process exiting early' and 'write EPIPE' is usually a launch-environment problem: the GUI spawns the server without your shell PATH, so npx/node (especially under NVM/fnm/asdf) is missing or wrong and the child exits at spawn.
 
+## Common Search Queries
+
+- mcp-stdio-server-exits-shell-path-not-inherited
+- mcp stdio server exits shell path not inherited
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
+- stdio
+- path
+- environment
+- macos
+- claude-desktop
+- transport
+- mcp-server
+- client log: Server transport closed unexpectedly, this is likely due to the process exiting early
+- client log shows write EPIPE immediately after the client initialize message
+- the same command starts fine when run manually in the terminal
+- a Node version manager (NVM, fnm, asdf) is in use, or node/npx live outside /usr/bin
+- the client uses an unexpected or missing Node version
+- GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH
+- With NVM/fnm/asdf the versioned node directory is not on that PATH, so npx/node is missing or wrong and the server exits at spawn
+- The client already sent initialize; the dying server writing to the closed pipe surfaces as write EPIPE and 'transport closed / process exiting early
+- The MCP server package itself is usually fine
+- Reinstalling or switching the server package when the package is fine
+- Treating write EPIPE as a server crash instead of a bad launch environment
+- Relying on bare npx/node in a GUI-launched config while using NVM/fnm/asdf
+
 ## Affected Tools
 
 - claude-desktop

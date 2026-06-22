@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/to
 
 pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.
 
+## Common Search Queries
+
+- pynput-mixed-cjk-ascii-type-out-of-order-macos
+- pynput mixed cjk ascii type out of order macos
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause
+- macos
+- pynput
+- text-injection
+- unicode
+- race-condition
+- clipboard
+- voice
+- voice-to-claude
+- injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- pure-English and pure-Chinese strings inject fine
+- only mixed CJK+ASCII text scrambles
+- On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events
+- The two dispatch paths have different timing and race each other, so a fast mixed-script string arrives interleaved / reordered
+- Using pynput Controller.type() for mixed CJK+ASCII text on macOS
+- Adding per-character sleeps to 'fix' ordering instead of switching to an atomic paste
+- Restore the previous clipboard contents after pasting if clobbering it is a concern
+- voice-to-claude daemon debugging session
+- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+
 ## Affected Tools
 
 - pynput

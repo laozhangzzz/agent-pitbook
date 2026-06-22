@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 A FastMCP/MCP Python SDK streamable-HTTP or SSE server behind a proxy/gateway/container rejecting requests with 421 Misdirected Request / Invalid Host header is DNS rebinding protection (PR #861): the Host header is not in allowed_hosts. Set allowed_hosts/allowed_origins via TransportSecuritySettings or disable the protection where another layer secures it.
 
+## Common Search Queries
+
+- fastmcp-421-invalid-host-header-dns-rebinding
+- fastmcp 421 invalid host header dns rebinding
+- FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
+- FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix
+- FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause
+- fastmcp
+- python-sdk
+- streamable-http
+- dns-rebinding
+- proxy
+- docker
+- mcp-server
+- all external requests fail with HTTP 421 Misdirected Request and 'Invalid Host header
+- started after upgrading the MCP Python SDK / FastMCP
+- the server runs behind Nginx/Caddy/Cloudflare Tunnel/Kubernetes or binds host=0.0.0.0
+- direct localhost access works but proxied or custom-domain access does not
+- FastMCP enables DNS rebinding protection that validates the request Host header against an allowed list (added in PR #861
+- Behind a proxy or when bound to 0.0.0.0, the real Host (your domain or a cluster service name) is not in the default allowed list, so the transport-security middleware returns 421
+- There is no startup warning, so users blame their proxy config
+- When mounting streamable_http_app()/sse_app() into Starlette/FastAPI, the FastMCP host parameter does not control the bind address but still drives the auto-enable logic
+- Debugging the Nginx/Caddy config when the 421 comes from FastMCP transport-security middleware
+- Expecting the FastMCP host parameter to set the bind address for a mounted app (uvicorn/gunicorn controls that
+- Disable DNS rebinding protection when the deployment is isolated at the network layer and authenticated via OAuth
+- modelcontextprotocol/python-sdk issue 1798: Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection
+
 ## Affected Tools
 
 - mcp-server

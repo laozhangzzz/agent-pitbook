@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 Schema validation in @modelcontextprotocol/sdk (e.g. elicitation) fails on Cloudflare Workers and similar edge runtimes with 'EvalError: Code generation from strings disallowed' because AJV v6 compiles schemas with new Function, which edge runtimes forbid. Use Cloudflare's McpAgent, or an SDK build that lets you inject an edge-compatible validator.
 
+## Common Search Queries
+
+- mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror
+- mcp ts sdk edge runtime ajv codegen evalerror
+- MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation
+- MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix
+- MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause
+- typescript-sdk
+- cloudflare-workers
+- edge
+- elicitation
+- evalerror
+- mcp-server
+- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
+- occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node
+- triggered by schema validation, e.g. after responding to an elicitInput request
+- The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function
+- Edge runtimes such as Cloudflare Workers disallow dynamic code generation from strings, so validator construction throws EvalError
+- Assuming Node-tested MCP server code runs unchanged on Cloudflare Workers
+- Calling elicitation on mcpServer.server instead of Cloudflare's McpAgent
+- Move schema validation to a Node-hosted component if the edge runtime cannot run the validator
+- modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError
+- Cloudflare changelog: MCP elicitation support on McpAgent
+- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
+- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
+- mcp-server occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node
+
 ## Affected Tools
 
 - mcp-server

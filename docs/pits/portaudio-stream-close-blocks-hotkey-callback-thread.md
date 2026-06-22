@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/to
 
 A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAudio stop()/close() was called inline in the pynput key-release callback; on a flaky device that blocks and wedges the single listener thread. Move audio teardown and processing to a background thread and keep the callback non-blocking.
 
+## Common Search Queries
+
+- portaudio-stream-close-blocks-hotkey-callback-thread
+- portaudio stream close blocks hotkey callback thread
+- PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
+- PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener fix
+- PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener root cause
+- macos
+- audio
+- portaudio
+- pynput
+- threading
+- hotkey
+- deadlock
+- voice
+- voice-to-claude
+- a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
+- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
+- daemon status still reports Running but pressing the hotkey does nothing
+- only a daemon restart recovers it
+- stop()/close() of a PortAudio stream on a flaky/display-connected device can block for a long time
+- It was being called inline inside the pynput key-release callback, which runs on the single listener thread
+- The blocking call wedged that thread, so the global hotkey stopped firing and the whole daemon appeared hung even though the process stayed alive
+- Doing blocking audio teardown or processing inline in a global-hotkey callback
+- Trusting 'process is Running' as proof the hotkey listener is still alive
+- Add a watchdog that restarts the listener if the hotkey stops responding
+
 ## Affected Tools
 
 - portaudio

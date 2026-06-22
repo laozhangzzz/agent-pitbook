@@ -10,7 +10,7 @@
   <meta property="og:description" content="A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize, then fail because the proxy buffers the SSE stream that Streamable HTTP needs in real time. Cloudflare Tunnel buffers SSE; Nginx needs proxy_buffering off. Disable buffering for the MCP endpoint or use a streaming proxy.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, verified, medium, mcp-reverse-proxy-buffers-sse-connection-fails">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, mcp-reverse-proxy-buffers-sse-connection-fails, mcp reverse proxy buffers sse connection fails, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause, verified, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, verified, medium, mcp-reverse-proxy-buffers-sse-connection-fails",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, mcp-reverse-proxy-buffers-sse-connection-fails, mcp reverse proxy buffers sse connection fails, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause, verified, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,9 +36,13 @@
     "remote-mcp",
     "claude-desktop",
     "mcp-server",
+    "mcp-reverse-proxy-buffers-sse-connection-fails",
+    "mcp reverse proxy buffers sse connection fails",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause",
     "verified",
-    "medium",
-    "mcp-reverse-proxy-buffers-sse-connection-fails"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -55,6 +59,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -70,6 +75,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reverse-proxy-buffers-sse-connection-fails.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, mcp-server</td></tr><tr><th>Tags</th><td>mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-reverse-proxy-buffers-sse-connection-fails</li><li>mcp reverse proxy buffers sse connection fails</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause</li><li>streamable-http</li><li>reverse-proxy</li><li>cloudflare-tunnel</li><li>buffering</li><li>remote-mcp</li><li>claude-desktop</li><li>mcp-server</li><li>the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server</li><li>server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows</li><li>direct non-proxied access works; only the proxied/tunnelled path fails</li><li>MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally</li><li>A proxy/tunnel that buffers responses (Cloudflare Tunnel buffers SSE; Nginx with proxy_buffering on) holds bytes until the response completes, which never happens for a long-lived stream</li><li>So the client times out or errors despite a healthy OAuth/initialize handshake</li><li>Debugging OAuth when OAuth already succeeded and the SSE stream is what is buffered</li><li>Leaving default proxy_buffering on for an MCP streaming endpoint</li><li>Expose the MCP endpoint directly (non-proxied) for testing to confirm buffering is the cause</li><li>anthropics/claude-code issue 5826: Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize</li><li>claude-desktop the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server</li><li>mcp-server the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server')</li><li>server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows</li><li>direct non-proxied access works; only the proxied/tunnelled path fails</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>constraints</th><td>remote MCP over Streamable HTTP / SSE, reverse proxy or tunnel buffers responses</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally.</li><li>A proxy/tunnel that buffers responses (Cloudflare Tunnel buffers SSE; Nginx with proxy_buffering on) holds bytes until the response completes, which never happens for a long-lived stream.</li><li>So the client times out or errors despite a healthy OAuth/initialize handshake.</li></ul></section>

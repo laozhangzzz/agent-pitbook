@@ -10,7 +10,7 @@
   <meta property="og:description" content="npx-launched MCP servers that work in the terminal but hang under a GUI client (Client closed / -32001 Request timed out) can be a registry-config problem: the client launches npx from your home dir, so it reads user-level ~/.npmrc, not your project's .npmrc. A wrong registry there stalls the package fetch.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, npmrc, registry, startup, timeout, cursor, claude-desktop, cline, mcp-server, verified, medium, mcp-client-uses-user-level-npmrc-wrong-registry">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, npmrc, registry, startup, timeout, cursor, claude-desktop, cline, mcp-server, mcp-client-uses-user-level-npmrc-wrong-registry, mcp client uses user level npmrc wrong registry, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's fix, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's root cause, verified, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, npmrc, registry, startup, timeout, cursor, claude-desktop, cline, mcp-server, verified, medium, mcp-client-uses-user-level-npmrc-wrong-registry",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, npmrc, registry, startup, timeout, cursor, claude-desktop, cline, mcp-server, mcp-client-uses-user-level-npmrc-wrong-registry, mcp client uses user level npmrc wrong registry, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's fix, MCP server hangs because the GUI client uses your user-level .npmrc, not your project's root cause, verified, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -37,9 +37,13 @@
     "claude-desktop",
     "cline",
     "mcp-server",
+    "mcp-client-uses-user-level-npmrc-wrong-registry",
+    "mcp client uses user level npmrc wrong registry",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your project's",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your project's fix",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your project's root cause",
     "verified",
-    "medium",
-    "mcp-client-uses-user-level-npmrc-wrong-registry"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -56,6 +60,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -71,6 +76,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>cursor, claude-desktop, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, npx, npmrc, registry, startup, timeout</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-client-uses-user-level-npmrc-wrong-registry</li><li>mcp client uses user level npmrc wrong registry</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your project's fix</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your project's root cause</li><li>npmrc</li><li>registry</li><li>startup</li><li>timeout</li><li>cursor</li><li>claude-desktop</li><li>cline</li><li>mcp-server</li><li>npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>client log shows Client closed and MCP error -32001: Request timed out</li><li>a project-level .npmrc with a custom or corporate registry exists</li><li>npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project</li><li>A GUI MCP client launches npx from a different directory (typically home), so only user-level and global config apply</li><li>A wrong or unreachable registry in ~/.npmrc makes the fetch hang or fail, surfaced as a startup timeout</li><li>Assuming a per-project .npmrc applies to a GUI-launched process</li><li>Editing the MCP config repeatedly when the fault is the registry in ~/.npmrc</li><li>Globally install the package and reference it by absolute path instead of npx</li><li>modelcontextprotocol/servers issue 891: author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal</li><li>cursor npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>client log shows Client closed and MCP error -32001: Request timed out</li><li>a project-level .npmrc with a custom or corporate registry exists</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>GUI client spawns npx from a non-project working directory, user-level ~/.npmrc differs from project .npmrc</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project.</li><li>A GUI MCP client launches npx from a different directory (typically home), so only user-level and global config apply.</li><li>A wrong or unreachable registry in ~/.npmrc makes the fetch hang or fail, surfaced as a startup timeout.</li></ul></section>

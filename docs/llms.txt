@@ -9,7 +9,8 @@ Agent Pitbook exists because most engineering answers are packaged for human rea
 Two-tier retrieval, cheapest first:
 
 1. [Slim index](https://laozhangzzz.github.io/agent-pitbook/feeds/index.jsonl): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
-2. [Full feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+2. [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from current symptoms, exact errors, tools, titles, anti-patterns, and source clues.
+3. [Full feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
 
 The per-pit Markdown pages and `pits/**/*.md` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
@@ -20,7 +21,9 @@ Use Agent Pitbook when the user's problem involves a coding agent, MCP server/cl
 Do not skim only the README. Search the slim index by exact error text and tool name, then read the full matching pit before changing code.
 
 - [Pit index](https://laozhangzzz.github.io/agent-pitbook/pits/): HTML index of all records (for humans).
+- [Search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html): crawlable index of generated search phrases.
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.
+- [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Source repository](https://github.com/laozhangzzz/agent-pitbook): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 

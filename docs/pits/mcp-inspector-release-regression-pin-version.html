@@ -10,7 +10,7 @@
   <meta property="og:description" content="@modelcontextprotocol/inspector ships often and some releases regress: 0.10.0 broke startup with 'mcp-inspector: command not found', 0.17.2 crashed Streamable HTTP connections with 'Controller is already closed' (fixed in 0.17.5). When Inspector breaks after npx @latest moved, pin a known-good version or upgrade to the fixed release.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, npx, regression, versioning, streamable-http, mcp-inspector, verified, high, mcp-inspector-release-regression-pin-version">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, npx, regression, versioning, streamable-http, mcp-inspector, mcp-inspector-release-regression-pin-version, mcp inspector release regression pin version, MCP Inspector breaks after an upgrade; pin a known-good version, MCP Inspector breaks after an upgrade; pin a known-good version fix, MCP Inspector breaks after an upgrade; pin a known-good version root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, npx, regression, versioning, streamable-http, mcp-inspector, verified, high, mcp-inspector-release-regression-pin-version",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, npx, regression, versioning, streamable-http, mcp-inspector, mcp-inspector-release-regression-pin-version, mcp inspector release regression pin version, MCP Inspector breaks after an upgrade; pin a known-good version, MCP Inspector breaks after an upgrade; pin a known-good version fix, MCP Inspector breaks after an upgrade; pin a known-good version root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -34,9 +34,13 @@
     "versioning",
     "streamable-http",
     "mcp-inspector",
+    "mcp-inspector-release-regression-pin-version",
+    "mcp inspector release regression pin version",
+    "MCP Inspector breaks after an upgrade; pin a known-good version",
+    "MCP Inspector breaks after an upgrade; pin a known-good version fix",
+    "MCP Inspector breaks after an upgrade; pin a known-good version root cause",
     "verified",
-    "high",
-    "mcp-inspector-release-regression-pin-version"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -53,6 +57,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -68,6 +73,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-release-regression-pin-version.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-inspector</td></tr><tr><th>Tags</th><td>mcp, inspector, npx, regression, versioning, streamable-http</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-inspector-release-regression-pin-version</li><li>mcp inspector release regression pin version</li><li>MCP Inspector breaks after an upgrade; pin a known-good version</li><li>MCP Inspector breaks after an upgrade; pin a known-good version fix</li><li>MCP Inspector breaks after an upgrade; pin a known-good version root cause</li><li>inspector</li><li>regression</li><li>versioning</li><li>streamable-http</li><li>mcp-inspector</li><li>npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0</li><li>connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5</li><li>it worked yesterday and broke today with no config change because @latest moved</li><li>Inspector is released often and some releases regress</li><li>The usual launch npx @modelcontextprotocol/inspector resolves @latest, so a bad release is picked up automatically and the breakage looks local</li><li>Debugging your MCP server when the Inspector release itself regressed</li><li>Always launching @latest in CI or shared scripts</li><li>Downgrade to the last release that worked for your transport</li><li>modelcontextprotocol/inspector issue 326: 'sh: mcp-inspector: command not found' after upgrading to v0.10.0 (downgrade to 0.9.0</li><li>modelcontextprotocol/inspector issue 951: Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5</li><li>mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5</li><li>mcp-inspector it worked yesterday and broke today with no config change because @latest moved</li><li>ERR_INVALID_STATE</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0)</li><li>connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5)</li><li>it worked yesterday and broke today with no config change because @latest moved</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>runtime</th><td>Node.js</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>Inspector launched via npx @latest, frequent releases with occasional regressions</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>Inspector is released often and some releases regress.</li><li>The usual launch npx @modelcontextprotocol/inspector resolves @latest, so a bad release is picked up automatically and the breakage looks local.</li></ul></section>

@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'tools': ['github'] works but warns it's renamed to github/*. The */alias resolves only when the server is registered under the matching name and the newer .github/agents location is used. Use the name that resolves, or list both.
 
+## Common Search Queries
+
+- github-mcp-vscode-toolset-name-mismatch
+- github mcp vscode toolset name mismatch
+- VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed
+- VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed fix
+- VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed root cause
+- github-mcp-server
+- vscode
+- toolsets
+- configuration
+- naming
+- tools': ['github/*'] produces Unknown tool
+- tools': ['github'] works but warns it should be github/*
+- reported for other MCP servers too, not just GitHub
+- The server/* toolset alias resolves only when the MCP server is registered under the matching name (e.g. installed via the official flow so it is named github
+- A manually named server, or an older agent-config location (.github/chatmodes vs .github/agents), does not resolve the * alias, so github/* is unknown while the bare name still matches
+- Blindly following the github/* rename warning when that form is Unknown tool
+- Manually renaming the MCP server, which can break server/* alias resolution
+- Keep using the bare 'github' name until the aliasing is consistent
+- github/github-mcp-server issue 1402: VSCode Toolset name mismatch: 'github/*' fails with Unknown tool, but 'github' warns it's deprecated
+- github-mcp-server 'tools': ['github/*'] produces Unknown tool
+- vscode 'tools': ['github/*'] produces Unknown tool
+- github-mcp-server 'tools': ['github'] works but warns it should be github/*
+- vscode 'tools': ['github'] works but warns it should be github/*
+- github-mcp-server reported for other MCP servers too, not just GitHub
+
 ## Affected Tools
 
 - github-mcp-server

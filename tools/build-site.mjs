@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord, slimRecord } from "./lib/pitlib.mjs";
+import { repoRoot, loadPitRecords, validateRecord, slimRecord, recordSearchTerms } from "./lib/pitlib.mjs";
 
 const baseUrl = "https://laozhangzzz.github.io/agent-pitbook";
 const repoUrl = "https://github.com/laozhangzzz/agent-pitbook";
@@ -151,6 +151,7 @@ function recordKeywords(record) {
     "coding-agent pit",
     ...(record.tags ?? []),
     ...(record.affected_tools ?? []),
+    ...recordSearchTerms(record, 10),
     record.status,
     record.confidence,
     record.id
@@ -185,6 +186,12 @@ function datasetJsonLd(records) {
         name: "Agent Pitbook full pit feed",
         encodingFormat: "application/x-ndjson",
         contentUrl: slugUrl("/feeds/pits.jsonl")
+      },
+      {
+        "@type": "DataDownload",
+        name: "Agent Pitbook search terms feed",
+        encodingFormat: "application/x-ndjson",
+        contentUrl: slugUrl("/feeds/search-terms.jsonl")
       },
       {
         "@type": "DataDownload",
@@ -245,6 +252,7 @@ function pageShell({ title, description, canonicalPath, body, keywords = [], jso
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="${repoUrl}">GitHub</a>
     </nav>
@@ -300,7 +308,9 @@ function renderIndex(records) {
       <ul class="link-list">
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
+        <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
+        <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
       </ul>
@@ -320,6 +330,7 @@ function renderIndex(records) {
 }
 
 function renderPit(record) {
+  const searchTerms = recordSearchTerms(record, 24);
   const optionalSections = [
     record.workarounds?.length ? `<section><h2>Workarounds</h2>${listItems(record.workarounds)}</section>` : "",
     record.anti_patterns?.length ? `<section><h2>Anti-patterns</h2>${listItems(record.anti_patterns)}</section>` : ""
@@ -341,6 +352,7 @@ function renderPit(record) {
         <a href="${sourceHref(record)}">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2>${keyValueTable(record)}</section>
+      <section><h2>Common search queries</h2>${listItems(searchTerms)}</section>
       <section><h2>Symptoms</h2>${listItems(record.symptoms)}</section>
       <section><h2>Environment</h2>${renderEnvironment(record.environment)}</section>
       <section><h2>Root cause</h2>${listItems(record.root_cause)}</section>
@@ -365,6 +377,10 @@ function renderPitMarkdown(record) {
     "## Summary",
     "",
     record.summary,
+    "",
+    "## Common Search Queries",
+    "",
+    ...recordSearchTerms(record, 24).map((item) => `- ${item}`),
     "",
     "## Affected Tools",
     "",
@@ -440,7 +456,8 @@ Agent Pitbook exists because most engineering answers are packaged for human rea
 Two-tier retrieval, cheapest first:
 
 1. [Slim index](${slugUrl("/feeds/index.jsonl")}): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
-2. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+2. [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from current symptoms, exact errors, tools, titles, anti-patterns, and source clues.
+3. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
@@ -451,7 +468,9 @@ Use Agent Pitbook when the user's problem involves a coding agent, MCP server/cl
 Do not skim only the README. Search the slim index by exact error text and tool name, then read the full matching pit before changing code.
 
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
+- [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
+- [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](${repoUrl}/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 
@@ -502,11 +521,94 @@ function renderPitIndex(records) {
   });
 }
 
+function searchTermsFeed(records) {
+  return `${records
+    .map((record) =>
+      JSON.stringify({
+        id: record.id,
+        title: record.title,
+        status: record.status,
+        affected_tools: record.affected_tools ?? [],
+        tags: record.tags ?? [],
+        url: slugUrl(recordHtmlPath(record)),
+        markdown_url: slugUrl(recordMarkdownPath(record)),
+        search_terms: recordSearchTerms(record, 48)
+      })
+    )
+    .join("\n")}\n`;
+}
+
+function renderSearchQueryIndex(records) {
+  const sections = records
+    .map((record) => {
+      const terms = recordSearchTerms(record, 32)
+        .map((term) => `<li>${escapeHtml(term)}</li>`)
+        .join("");
+      return `<section>
+        <h2><a href="/agent-pitbook${recordHtmlPath(record)}">${escapeHtml(record.title)}</a></h2>
+        <p>${escapeHtml(record.summary)}</p>
+        <p class="record-links">
+          <a href="/agent-pitbook${recordMarkdownPath(record)}">Markdown mirror</a>
+          <span>|</span>
+          <a href="${sourceHref(record)}">Canonical source</a>
+        </p>
+        <ul>${terms}</ul>
+      </section>`;
+    })
+    .join("\n");
+
+  return pageShell({
+    title: "Search Queries - Agent Pitbook",
+    description: "Generated search phrases from Agent Pitbook symptoms, exact errors, tools, titles, and source clues.",
+    canonicalPath: "/search-queries.html",
+    keywords: [...siteKeywords(), "error strings", "debugging symptoms", "mcp errors", "agent failure search"],
+    jsonLd: [datasetJsonLd(records)],
+    body: `    <section>
+      <p class="eyebrow">Search surface</p>
+      <h1>Search queries and exact symptoms</h1>
+      <p class="lede">This page turns the current pit corpus into crawlable search phrases. It is intended for search-enabled LLMs, coding agents, and ordinary search engines looking for concrete error strings or failure symptoms.</p>
+      <p>For machine ingestion, use <a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a>. For full records, fetch <a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a>.</p>
+    </section>
+${sections}`
+  });
+}
+
+function renderSearchQueryMarkdown(records) {
+  const lines = [
+    "# Agent Pitbook Search Queries",
+    "",
+    "Generated search phrases from the current pit corpus. Search-enabled LLMs should use this page when matching exact error text, tool names, and local execution symptoms to Agent Pitbook records.",
+    "",
+    "- Machine feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl",
+    "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
+    "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
+    ""
+  ];
+
+  for (const record of records) {
+    lines.push(`## ${record.title}`, "");
+    lines.push(`Pit ID: ${record.id}`);
+    lines.push(`HTML: ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`Markdown: ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push("");
+    lines.push(record.summary, "");
+    lines.push("Search terms:", "");
+    for (const term of recordSearchTerms(record, 32)) lines.push(`- ${term}`);
+    lines.push("");
+  }
+
+  return `${lines.join("\n")}\n`;
+}
+
 function renderSitemap(records) {
   const siteLastmod = latestUpdatedAt(records);
   const pages = [
     ["/", siteLastmod],
     ["/llms.txt", siteLastmod],
+    ["/search-queries.html", siteLastmod],
+    ["/search-queries.md", siteLastmod],
+    ["/feeds/index.jsonl", siteLastmod],
+    ["/feeds/search-terms.jsonl", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
     ...records.flatMap((record) => [
@@ -547,6 +649,8 @@ cleanGeneratedDir(siteFeedsDir);
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");
 fs.writeFileSync(path.join(docsDir, "index.html"), renderIndex(records));
 fs.writeFileSync(path.join(docsDir, "llms.txt"), renderLlms(records));
+fs.writeFileSync(path.join(docsDir, "search-queries.html"), renderSearchQueryIndex(records));
+fs.writeFileSync(path.join(docsDir, "search-queries.md"), renderSearchQueryMarkdown(records));
 fs.writeFileSync(
   path.join(docsDir, "robots.txt"),
   `User-agent: *\nAllow: /\nSitemap: ${slugUrl("/sitemap.xml")}\n`
@@ -561,6 +665,7 @@ fs.writeFileSync(
   path.join(siteFeedsDir, "index.jsonl"),
   `${records.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`
 );
+fs.writeFileSync(path.join(siteFeedsDir, "search-terms.jsonl"), searchTermsFeed(records));
 
 for (const record of records) {
   fs.writeFileSync(path.join(sitePitsDir, `${record.id}.html`), renderPit(record));

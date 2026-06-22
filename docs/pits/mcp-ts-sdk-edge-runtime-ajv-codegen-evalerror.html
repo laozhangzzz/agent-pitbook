@@ -10,7 +10,7 @@
   <meta property="og:description" content="Schema validation in @modelcontextprotocol/sdk (e.g. elicitation) fails on Cloudflare Workers and similar edge runtimes with 'EvalError: Code generation from strings disallowed' because AJV v6 compiles schemas with new Function, which edge runtimes forbid. Use Cloudflare's McpAgent, or an SDK build that lets you inject an edge-compatible validator.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, candidate, medium, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror, mcp ts sdk edge runtime ajv codegen evalerror, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, candidate, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, candidate, medium, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror, mcp ts sdk edge runtime ajv codegen evalerror, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, candidate, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,9 +35,13 @@
     "elicitation",
     "evalerror",
     "mcp-server",
+    "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
+    "mcp ts sdk edge runtime ajv codegen evalerror",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause",
     "candidate",
-    "medium",
-    "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -54,6 +58,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -69,6 +74,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror</li><li>mcp ts sdk edge runtime ajv codegen evalerror</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>typescript-sdk</li><li>cloudflare-workers</li><li>edge</li><li>elicitation</li><li>evalerror</li><li>mcp-server</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node</li><li>triggered by schema validation, e.g. after responding to an elicitInput request</li><li>The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function</li><li>Edge runtimes such as Cloudflare Workers disallow dynamic code generation from strings, so validator construction throws EvalError</li><li>Assuming Node-tested MCP server code runs unchanged on Cloudflare Workers</li><li>Calling elicitation on mcpServer.server instead of Cloudflare's McpAgent</li><li>Move schema validation to a Node-hosted component if the edge runtime cannot run the validator</li><li>modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError</li><li>Cloudflare changelog: MCP elicitation support on McpAgent</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>mcp-server occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node</li><li>triggered by schema validation, e.g. after responding to an elicitInput request</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>runtime</th><td>Cloudflare Workers / edge</td></tr><tr><th>constraints</th><td>edge runtime disallows dynamic code generation from strings, AJV v6 uses new Function</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function.</li><li>Edge runtimes such as Cloudflare Workers disallow dynamic code generation from strings, so validator construction throws EvalError.</li></ul></section>

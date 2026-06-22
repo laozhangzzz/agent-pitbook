@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 @modelcontextprotocol/sdk used from a CommonJS project (e.g. NestJS) can crash at MCP client init with ERR_REQUIRE_ESM because an older SDK CJS build statically require()s the ESM-only pkce-challenge. Upgrade the SDK to a version that dynamically imports it, or force pkce-challenge@5.0.0 via overrides.
 
+## Common Search Queries
+
+- mcp-ts-sdk-commonjs-esm-pkce-challenge
+- mcp ts sdk commonjs esm pkce challenge
+- MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge
+- MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix
+- MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause
+- typescript-sdk
+- commonjs
+- nestjs
+- pkce-challenge
+- dependencies
+- mcp-server
+- runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
+- the project is CommonJS (often NestJS
+- the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js
+- pkce-challenge shipped as ESM-only
+- The SDK's CommonJS build used a static require('pkce-challenge'), which Node refuses for an ESM-only module from CJS, throwing at load time
+- Pinning a very old SDK (e.g. 1.5.0) just to avoid pkce-challenge, losing later fixes
+- Patching node_modules as a permanent solution instead of upgrading or using overrides
+- Use package-manager overrides to pin pkce-challenge@5.0.0
+- Temporarily import from the SDK's ESM dist
+- modelcontextprotocol/typescript-sdk issue 217: @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge
+- crouchcd/pkce-challenge release 5.0.0 referenced as a compatible version
+- mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
+- typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
+
 ## Affected Tools
 
 - mcp-server

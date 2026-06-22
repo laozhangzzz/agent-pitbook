@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','<package>'], or point command at node.exe with the script path.
 
+## Common Search Queries
+
+- mcp-windows-npx-requires-cmd-c-wrapper
+- mcp windows npx requires cmd c wrapper
+- On Windows an MCP server launched with npx needs a cmd /c wrapper
+- On Windows an MCP server launched with npx needs a cmd /c wrapper fix
+- On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
+- windows
+- spawn
+- enoent
+- startup
+- claude-desktop
+- cursor
+- cline
+- mcp-server
+- Windows only: the MCP server will not start
+- logs show spawn npx ENOENT or locale text equivalent to ''npx' is not recognized as an internal or external command
+- the same npx command runs fine in PowerShell or cmd manually
+- On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables
+- Node's spawn without a shell cannot execute a .cmd directly, so command: 'npx' yields ENOENT
+- Routing through cmd /c lets the Windows command interpreter resolve and run the shim
+- Using bare command: 'npx' on Windows
+- Assuming a macOS/Linux config is portable to Windows without cmd /c
+- Use the absolute node.exe path plus the server script path instead of npx
+- modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error (-32000
+- modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
+
 ## Affected Tools
 
 - claude-desktop

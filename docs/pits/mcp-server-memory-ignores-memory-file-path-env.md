@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 @modelcontextprotocol/server-memory ignored MEMORY_FILE_PATH because the npm-published dist hardcoded the path while the GitHub source already handled the env var. Pin @latest (fixed in 2025.4.25) and use an absolute path; a relative path resolves to the package dir, not your project.
 
+## Common Search Queries
+
+- mcp-server-memory-ignores-memory-file-path-env
+- mcp server memory ignores memory file path env
+- server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
+- server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix
+- server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause
+- server-memory
+- environment-variable
+- versioning
+- paths
+- claude-desktop
+- cursor
+- mcp-server
+- MEMORY_FILE_PATH is set but the memory file is created at a default location
+- the GitHub source handles the env var, yet the installed copy ignores it
+- a relative MEMORY_FILE_PATH writes to an unexpected directory
+- The npm release (e.g. 0.6.2) was older than the GitHub main source: its compiled dist/index.js hardcoded path.join(__dirname, 'memory.json
+- The repo source already read process.env.MEMORY_FILE_PATH, so reading the source misled users about installed behavior
+- A relative MEMORY_FILE_PATH is resolved relative to the package install directory, not the user's project
+- Inferring installed MCP server behavior from the GitHub source instead of the published build
+- Assuming a relative env-var path resolves against the project working directory
+- Treating a node_modules patch as a permanent fix instead of upgrading
+- As a stopgap some users edited dist/index.js in node_modules, but upgrading the package is the durable fix
+- modelcontextprotocol/servers issue 1018: Environment variables not respected in @modelcontextprotocol/server-memory package
+- claude-desktop MEMORY_FILE_PATH is set but the memory file is created at a default location
+
 ## Affected Tools
 
 - claude-desktop

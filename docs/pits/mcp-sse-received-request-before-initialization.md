@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized connection. The confirmed cause is a non-compliant proxy (supergateway injects its own initialize); a stale client session after redeploy is another. Use a compliant proxy (mcp-proxy) or reconnect.
 
+## Common Search Queries
+
+- mcp-sse-received-request-before-initialization
+- mcp sse received request before initialization
+- SSE MCP server: Received request before initialization was complete
+- SSE MCP server: Received request before initialization was complete fix
+- SSE MCP server: Received request before initialization was complete root cause
+- initialization
+- proxy
+- supergateway
+- python-sdk
+- redeploy
+- mcp-server
+- server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
+- appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server
+- the first connection worked; a later one fails
+- The MCP lifecycle requires the client's initialize to complete before other requests
+- A proxy such as supergateway sends its own initialize on launch (against spec) then forwards the client's, so the server sees initialize twice / out of order
+- After a redeploy the client may keep an old SSE session and send requests the fresh server never saw initialized
+- Wrapping the handler in a broad try/except that swallows the RuntimeError and masks other errors
+- Blaming the server example when the proxy violates the initialization sequence
+- Reconnect the client after each server restart
+- modelcontextprotocol/python-sdk issue 423: MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works
+- mcp-server server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
+- python-sdk server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
+- mcp-server appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server
+
 ## Affected Tools
 
 - mcp-server

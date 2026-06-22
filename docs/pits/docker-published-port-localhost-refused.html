@@ -10,7 +10,7 @@
   <meta property="og:description" content="A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, docker, macos, ports, localhost, codex, claude-code, gemini, qwen-code, cursor, aider, verified, high, docker-published-port-localhost-refused">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, docker, macos, ports, localhost, codex, claude-code, gemini, qwen-code, cursor, aider, docker-published-port-localhost-refused, docker published port localhost refused, Docker port is published but localhost refuses the connection, Docker port is published but localhost refuses the connection fix, Docker port is published but localhost refuses the connection root cause, A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html",
   "dateCreated": "2026-06-19",
   "dateModified": "2026-06-19",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, docker, macos, ports, localhost, codex, claude-code, gemini, qwen-code, cursor, aider, verified, high, docker-published-port-localhost-refused",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, docker, macos, ports, localhost, codex, claude-code, gemini, qwen-code, cursor, aider, docker-published-port-localhost-refused, docker published port localhost refused, Docker port is published but localhost refuses the connection, Docker port is published but localhost refuses the connection fix, Docker port is published but localhost refuses the connection root cause, A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -37,9 +37,14 @@
     "qwen-code",
     "cursor",
     "aider",
+    "docker-published-port-localhost-refused",
+    "docker published port localhost refused",
+    "Docker port is published but localhost refuses the connection",
+    "Docker port is published but localhost refuses the connection fix",
+    "Docker port is published but localhost refuses the connection root cause",
+    "A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0",
     "verified",
-    "high",
-    "docker-published-port-localhost-refused"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -56,6 +61,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -71,6 +77,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/docker/docker-published-port-localhost-refused.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>codex, claude-code, gemini, qwen-code, cursor, aider</td></tr><tr><th>Tags</th><td>docker, macos, ports, localhost</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>docker-published-port-localhost-refused</li><li>docker published port localhost refused</li><li>Docker port is published but localhost refuses the connection</li><li>Docker port is published but localhost refuses the connection fix</li><li>Docker port is published but localhost refuses the connection root cause</li><li>A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0</li><li>docker</li><li>macos</li><li>ports</li><li>localhost</li><li>codex</li><li>claude-code</li><li>gemini</li><li>qwen-code</li><li>cursor</li><li>aider</li><li>docker ps or docker port shows the expected host port</li><li>curl to localhost or 127.0.0.1 on the host fails</li><li>container logs show the app listening on localhost or 127.0.0.1</li><li>The app inside the container is listening on loopback rather than a container network interface</li><li>Rebuilding the image before checking the bind address</li><li>Using --network host on macOS as a first response</li><li>Exec into the container and curl the service from inside to separate app health from host forwarding</li><li>Temporarily publish to a different host port to rule out a local port conflict</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>docker ps or docker port shows the expected host port</li><li>curl to localhost or 127.0.0.1 on the host fails</li><li>container logs show the app listening on localhost or 127.0.0.1</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>macOS or Linux</td></tr><tr><th>runtime</th><td>Docker</td></tr><tr><th>constraints</th><td>host-to-container port forwarding</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The app inside the container is listening on loopback rather than a container network interface.</li></ul></section>

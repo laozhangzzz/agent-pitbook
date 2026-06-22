@@ -10,7 +10,7 @@
   <meta property="og:description" content="Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, candidate, medium, fastmcp-overrides-logging-configuration">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, fastmcp-overrides-logging-configuration, fastmcp overrides logging configuration, FastMCP overrides your app's logging configuration on init (duplicate or lost logs, FastMCP overrides your app's logging configuration on init (duplicate or lost logs) fix, FastMCP overrides your app's logging configuration on init (duplicate or lost logs) root cause, candidate, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, candidate, medium, fastmcp-overrides-logging-configuration",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, fastmcp-overrides-logging-configuration, fastmcp overrides logging configuration, FastMCP overrides your app's logging configuration on init (duplicate or lost logs, FastMCP overrides your app's logging configuration on init (duplicate or lost logs) fix, FastMCP overrides your app's logging configuration on init (duplicate or lost logs) root cause, candidate, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -34,9 +34,13 @@
     "configuration",
     "side-effects",
     "mcp-server",
+    "fastmcp-overrides-logging-configuration",
+    "fastmcp overrides logging configuration",
+    "FastMCP overrides your app's logging configuration on init (duplicate or lost logs",
+    "FastMCP overrides your app's logging configuration on init (duplicate or lost logs) fix",
+    "FastMCP overrides your app's logging configuration on init (duplicate or lost logs) root cause",
     "candidate",
-    "medium",
-    "fastmcp-overrides-logging-configuration"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -53,6 +57,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -68,6 +73,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-overrides-logging-configuration.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, python-sdk, fastmcp</td></tr><tr><th>Tags</th><td>mcp, fastmcp, python-sdk, logging, configuration, side-effects</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>fastmcp-overrides-logging-configuration</li><li>fastmcp overrides logging configuration</li><li>FastMCP overrides your app's logging configuration on init (duplicate or lost logs</li><li>FastMCP overrides your app's logging configuration on init (duplicate or lost logs) fix</li><li>FastMCP overrides your app's logging configuration on init (duplicate or lost logs) root cause</li><li>fastmcp</li><li>python-sdk</li><li>logging</li><li>configuration</li><li>side-effects</li><li>mcp-server</li><li>log messages become duplicated after the FastMCP server is created</li><li>a custom/structured global logging handler stops taking effect</li><li>the change appears exactly when FastMCP(...) is instantiated</li><li>FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger</li><li>Logging config is process-global, so this mutates handlers the host app already installed, duplicating messages or routing through the wrong handler</li><li>There is no built-in opt-out flag at time of writing</li><li>Configuring global logging before constructing FastMCP and assuming it survives</li><li>Monkey-patching configure_logging to a no-op as a permanent solution</li><li>Add a FastMCP logger entry to your dictConfig and re-apply it after building the server</li><li>modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler</li><li>mcp-server log messages become duplicated after the FastMCP server is created</li><li>python-sdk log messages become duplicated after the FastMCP server is created</li><li>mcp-server a custom/structured global logging handler stops taking effect</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>log messages become duplicated after the FastMCP server is created</li><li>a custom/structured global logging handler stops taking effect</li><li>the change appears exactly when FastMCP(...) is instantiated</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>framework</th><td>FastMCP / MCP Python SDK</td></tr><tr><th>constraints</th><td>FastMCP embedded in a larger process with its own logging config</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger.</li><li>Logging config is process-global, so this mutates handlers the host app already installed, duplicating messages or routing through the wrong handler.</li><li>There is no built-in opt-out flag at time of writing.</li></ul></section>

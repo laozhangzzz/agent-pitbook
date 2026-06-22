@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/do
 
 A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0.
 
+## Common Search Queries
+
+- docker-published-port-localhost-refused
+- docker published port localhost refused
+- Docker port is published but localhost refuses the connection
+- Docker port is published but localhost refuses the connection fix
+- Docker port is published but localhost refuses the connection root cause
+- A Docker container can publish the expected host port while the app inside still refuses host traffic because it is bound to loopback instead of 0.0.0.0
+- docker
+- macos
+- ports
+- localhost
+- codex
+- claude-code
+- gemini
+- qwen-code
+- cursor
+- aider
+- docker ps or docker port shows the expected host port
+- curl to localhost or 127.0.0.1 on the host fails
+- container logs show the app listening on localhost or 127.0.0.1
+- The app inside the container is listening on loopback rather than a container network interface
+- Rebuilding the image before checking the bind address
+- Using --network host on macOS as a first response
+- Exec into the container and curl the service from inside to separate app health from host forwarding
+- Temporarily publish to a different host port to rule out a local port conflict
+
 ## Affected Tools
 
 - codex

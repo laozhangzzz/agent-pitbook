@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/) via OAuth fails with 'Incompatible auth server: does not support dynamic client registration' because the endpoint lacks OAuth Dynamic Client Registration. Use a Personal Access Token via GITHUB_PERSONAL_ACCESS_TOKEN instead of the OAuth flow.
 
+## Common Search Queries
+
+- mcp-github-remote-oauth-dcr-unsupported-use-pat
+- mcp github remote oauth dcr unsupported use pat
+- Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
+- Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT fix
+- Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause
+- oauth
+- dynamic-client-registration
+- github
+- claude-code
+- remote-mcp
+- github-mcp-server
+- claude mcp add ... then the connection fails
+- Error: Incompatible auth server: does not support dynamic client registration
+- the same server config works in VS Code, which authenticates differently
+- the UI shows an 'Authenticate' (OAuth) button that never completes
+- The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server
+- GitHub's remote MCP endpoint does not support DCR, so registration fails and the OAuth handshake cannot proceed
+- The endpoint expects token-based auth (a PAT) instead
+- Retrying the OAuth flow against an endpoint that lacks dynamic client registration
+- Following docs that show the OAuth connect path when only PAT auth works for that endpoint
+- Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint
+- anthropics/claude-code issue 3433: Claude Code cannot connect to GitHub's remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
+- claude-code claude mcp add ... then the connection fails
+- github-mcp-server claude mcp add ... then the connection fails
+
 ## Affected Tools
 
 - claude-code

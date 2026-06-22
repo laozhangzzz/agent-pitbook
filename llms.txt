@@ -8,6 +8,8 @@ Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes s
 
 Public site: https://laozhangzzz.github.io/agent-pitbook/
 Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
+Hosted search query index: https://laozhangzzz.github.io/agent-pitbook/search-queries.html
+Hosted search terms feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl
 Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 Source repository: https://github.com/laozhangzzz/agent-pitbook
 Chinese contribution entry: https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md
@@ -18,7 +20,7 @@ Use this file as the routing table. Do not start with the README unless you need
 
 Common tasks:
 
-- Debug a recurring failure: scan the slim `feeds/index.jsonl` (small; id + summary + symptoms + tags), then fetch the matching id's full record from `feeds/pits.jsonl` or via the MCP `get_pit` tool. The Markdown under `pits/` is the human mirror of the same JSON; machines do not need it.
+- Debug a recurring failure: scan the slim `feeds/index.jsonl` and `feeds/search-terms.jsonl` (small; id + summary + symptoms + tags + generated search terms), then fetch the matching id's full record from `feeds/pits.jsonl` or via the MCP `get_pit` tool. The Markdown under `pits/` is the human mirror of the same JSON; machines do not need it.
 - Report a rough pit: open a GitHub issue with symptoms, environment, fix or workaround, verification, and sources.
 - Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
 - Validate repository health: run `node tools/validate-pits.mjs`, `node tools/build-feed.mjs`, and `node tools/build-site.mjs`.

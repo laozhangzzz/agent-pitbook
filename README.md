@@ -48,6 +48,8 @@ Public site:
 
 - [https://laozhangzzz.github.io/agent-pitbook/](https://laozhangzzz.github.io/agent-pitbook/)
 - [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
+- [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)
+- [Hosted search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl)
 - [Hosted JSONL feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl)
 
 Clone the repo and search the seed records:
@@ -125,10 +127,11 @@ Example seed record:
 Before debugging:
 
 1. Search `feeds/pits.jsonl` by exact error text, tool, OS, package manager, framework, and agent.
-2. Read the matching Markdown record under `pits/`.
-3. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
-4. Treat commands as suggestions. Inspect the local project before running them.
-5. Cite the pit ID when applying a known fix.
+2. If the exact error is not obvious, scan `feeds/index.jsonl` and `feeds/search-terms.jsonl` for generated query phrases from current symptoms.
+3. Read the matching Markdown record under `pits/`.
+4. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
+5. Treat commands as suggestions. Inspect the local project before running them.
+6. Cite the pit ID when applying a known fix.
 
 After a fix works:
 
@@ -166,6 +169,7 @@ Canonical:
 Generated or rebuildable:
 
 - [feeds/pits.jsonl](feeds/pits.jsonl)
+- [feeds/search-terms.jsonl](feeds/search-terms.jsonl)
 - [docs/](docs/): GitHub Pages site, hosted LLM entrypoints, sitemap, robots file, and per-pit pages
 - [indexes/](indexes/)
 - future websites, MCP responses, search indexes, graph indexes, and hosted APIs

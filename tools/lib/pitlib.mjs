@@ -129,8 +129,87 @@ export function slimRecord(record) {
     tags: record.tags ?? [],
     affected_tools: record.affected_tools ?? [],
     symptoms: record.symptoms ?? [],
+    search_terms: recordSearchTerms(record),
     path: record.path ?? null
   };
+}
+
+function normalizeSearchTerm(value) {
+  return String(value ?? "")
+    .replace(/https?:\/\/(?!(?:127\.0\.0\.1|0\.0\.0\.0|localhost)\b)\S+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/^[,.;:!?()[\]{}"'“”`]+|[,.;:!?()[\]{}"'“”`]+$/g, "")
+    .trim();
+}
+
+function pushTerm(out, seen, value) {
+  const term = normalizeSearchTerm(value);
+  if (term.length < 4 || term.length > 220) return;
+  if (/^[A-Z]{2,}-?$/.test(term)) return;
+  if (/^[A-Z0-9_-]+-$/.test(term)) return;
+  const key = term.toLowerCase();
+  if (seen.has(key)) return;
+  seen.add(key);
+  out.push(term);
+}
+
+function extractErrorLikeTerms(text) {
+  const value = String(text ?? "");
+  const out = [];
+  const patterns = [
+    /\bMCP error\s+-?\d+(?::\s*[^.;\n]{3,90})?/gi,
+    /\bHTTP\s+\d{3}\b(?:\s+[^.;\n]{3,80})?/gi,
+    /\bERR_[A-Z0-9_]+\b/g,
+    /\b[A-Z][A-Za-z]+Error:\s*[^.;\n]{3,90}/g,
+    /\b[A-Z0-9_/-]{4,}\b/g,
+    /["“”`]([^"“”`]{4,120})["“”`]/g
+  ];
+
+  for (const pattern of patterns) {
+    for (const match of value.matchAll(pattern)) {
+      out.push(match[1] ?? match[0]);
+    }
+  }
+  return out;
+}
+
+export function recordSearchTerms(record, limit = 32) {
+  const out = [];
+  const seen = new Set();
+  const tools = (record.affected_tools ?? []).slice(0, 3);
+  const symptoms = record.symptoms ?? [];
+  const textBlocks = [
+    record.id,
+    record.id?.replaceAll("-", " "),
+    record.title,
+    `${record.title} fix`,
+    `${record.title} root cause`,
+    record.summary,
+    ...(record.tags ?? []),
+    ...(record.affected_tools ?? []),
+    ...symptoms,
+    ...(record.root_cause ?? []),
+    ...(record.anti_patterns ?? []),
+    ...(record.workarounds ?? []),
+    ...(record.source_links ?? []).map((source) => source.title)
+  ];
+
+  for (const value of textBlocks) pushTerm(out, seen, value);
+
+  for (const symptom of symptoms) {
+    const symptomLower = symptom.toLowerCase();
+    for (const tool of tools) {
+      if (!symptomLower.includes(tool.toLowerCase())) {
+        pushTerm(out, seen, `${tool} ${symptom}`);
+      }
+    }
+  }
+
+  for (const value of textBlocks) {
+    for (const term of extractErrorLikeTerms(value)) pushTerm(out, seen, term);
+  }
+
+  return out.slice(0, limit);
 }
 
 export function searchableText(record) {
@@ -143,7 +222,8 @@ export function searchableText(record) {
     ...(record.symptoms ?? []),
     ...(record.root_cause ?? []),
     ...(record.workarounds ?? []),
-    ...(record.anti_patterns ?? [])
+    ...(record.anti_patterns ?? []),
+    ...recordSearchTerms(record)
   ]
     .join("\n")
     .toLowerCase();

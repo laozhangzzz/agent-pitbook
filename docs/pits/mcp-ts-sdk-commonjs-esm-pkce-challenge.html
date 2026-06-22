@@ -10,7 +10,7 @@
   <meta property="og:description" content="@modelcontextprotocol/sdk used from a CommonJS project (e.g. NestJS) can crash at MCP client init with ERR_REQUIRE_ESM because an older SDK CJS build statically require()s the ESM-only pkce-challenge. Upgrade the SDK to a version that dynamically imports it, or force pkce-challenge@5.0.0 via overrides.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies, mcp-server, verified, high, mcp-ts-sdk-commonjs-esm-pkce-challenge">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies, mcp-server, mcp-ts-sdk-commonjs-esm-pkce-challenge, mcp ts sdk commonjs esm pkce challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies, mcp-server, verified, high, mcp-ts-sdk-commonjs-esm-pkce-challenge",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies, mcp-server, mcp-ts-sdk-commonjs-esm-pkce-challenge, mcp ts sdk commonjs esm pkce challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,9 +35,13 @@
     "pkce-challenge",
     "dependencies",
     "mcp-server",
+    "mcp-ts-sdk-commonjs-esm-pkce-challenge",
+    "mcp ts sdk commonjs esm pkce challenge",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause",
     "verified",
-    "high",
-    "mcp-ts-sdk-commonjs-esm-pkce-challenge"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -54,6 +58,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -69,6 +74,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-ts-sdk-commonjs-esm-pkce-challenge</li><li>mcp ts sdk commonjs esm pkce challenge</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause</li><li>typescript-sdk</li><li>commonjs</li><li>nestjs</li><li>pkce-challenge</li><li>dependencies</li><li>mcp-server</li><li>runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</li><li>the project is CommonJS (often NestJS</li><li>the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js</li><li>pkce-challenge shipped as ESM-only</li><li>The SDK's CommonJS build used a static require('pkce-challenge'), which Node refuses for an ESM-only module from CJS, throwing at load time</li><li>Pinning a very old SDK (e.g. 1.5.0) just to avoid pkce-challenge, losing later fixes</li><li>Patching node_modules as a permanent solution instead of upgrading or using overrides</li><li>Use package-manager overrides to pin pkce-challenge@5.0.0</li><li>Temporarily import from the SDK's ESM dist</li><li>modelcontextprotocol/typescript-sdk issue 217: @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge</li><li>crouchcd/pkce-challenge release 5.0.0 referenced as a compatible version</li><li>mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</li><li>typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</li><li>the project is CommonJS (often NestJS)</li><li>the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>framework</th><td>NestJS / CommonJS</td></tr><tr><th>constraints</th><td>CommonJS module system, pkce-challenge shipped ESM-only</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>pkce-challenge shipped as ESM-only.</li><li>The SDK's CommonJS build used a static require('pkce-challenge'), which Node refuses for an ESM-only module from CJS, throwing at load time.</li></ul></section>

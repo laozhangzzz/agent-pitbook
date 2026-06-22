@@ -10,7 +10,7 @@
   <meta property="og:description" content="On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, candidate, medium, mcp-filesystem-server-windows-access-denied-case-sensitivity">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, mcp-filesystem-server-windows-access-denied-case-sensitivity, mcp filesystem server windows access denied case sensitivity, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause, candidate, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, candidate, medium, mcp-filesystem-server-windows-access-denied-case-sensitivity",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, mcp-filesystem-server-windows-access-denied-case-sensitivity, mcp filesystem server windows access denied case sensitivity, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause, candidate, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,9 +36,13 @@
     "claude-desktop",
     "cursor",
     "mcp-server",
+    "mcp-filesystem-server-windows-access-denied-case-sensitivity",
+    "mcp filesystem server windows access denied case sensitivity",
+    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch",
+    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix",
+    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause",
     "candidate",
-    "medium",
-    "mcp-filesystem-server-windows-access-denied-case-sensitivity"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -55,6 +59,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -70,6 +75,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, mcp-server</td></tr><tr><th>Tags</th><td>mcp, server-filesystem, windows, paths, case-sensitivity, access-denied</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-filesystem-server-windows-access-denied-case-sensitivity</li><li>mcp filesystem server windows access denied case sensitivity</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause</li><li>server-filesystem</li><li>windows</li><li>paths</li><li>case-sensitivity</li><li>access-denied</li><li>claude-desktop</li><li>cursor</li><li>mcp-server</li><li>Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories</li><li>the denied path is visibly inside a configured allowed root</li><li>no other errors in the logs</li><li>The allowed-directory check compares request paths against allowed roots as strings</li><li>Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test</li><li>Windows can rarely have case-sensitive paths, which complicates a fully correct fix</li><li>Widening allowed directories to the drive root to dodge the case mismatch</li><li>Assuming the allow-list config is wrong when the validator's normalization is the bug</li><li>Temporarily configure the allowed root in the exact case the client emits</li><li>modelcontextprotocol/servers issue 470: Filesystem server access denied for allowed paths on Windows</li><li>modelcontextprotocol/servers PR 2111: step toward fixing Windows path validation</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories'</li><li>the denied path is visibly inside a configured allowed root</li><li>no other errors in the logs</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>Windows</td></tr><tr><th>constraints</th><td>server-filesystem allowed-directory validation, Windows drive-letter case insensitivity</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The allowed-directory check compares request paths against allowed roots as strings.</li><li>Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test.</li><li>Windows can rarely have case-sensitive paths, which complicates a fully correct fix.</li></ul></section>

@@ -10,7 +10,7 @@
   <meta property="og:description" content="A FastMCP/MCP Python SDK streamable-HTTP or SSE server behind a proxy/gateway/container rejecting requests with 421 Misdirected Request / Invalid Host header is DNS rebinding protection (PR #861): the Host header is not in allowed_hosts. Set allowed_hosts/allowed_origins via TransportSecuritySettings or disable the protection where another layer secures it.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, streamable-http, dns-rebinding, proxy, docker, 421, mcp-server, verified, high, fastmcp-421-invalid-host-header-dns-rebinding">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, streamable-http, dns-rebinding, proxy, docker, 421, mcp-server, fastmcp-421-invalid-host-header-dns-rebinding, fastmcp 421 invalid host header dns rebinding, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, streamable-http, dns-rebinding, proxy, docker, 421, mcp-server, verified, high, fastmcp-421-invalid-host-header-dns-rebinding",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, streamable-http, dns-rebinding, proxy, docker, 421, mcp-server, fastmcp-421-invalid-host-header-dns-rebinding, fastmcp 421 invalid host header dns rebinding, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix, FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,9 +36,13 @@
     "docker",
     "421",
     "mcp-server",
+    "fastmcp-421-invalid-host-header-dns-rebinding",
+    "fastmcp 421 invalid host header dns rebinding",
+    "FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection",
+    "FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix",
+    "FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause",
     "verified",
-    "high",
-    "fastmcp-421-invalid-host-header-dns-rebinding"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -55,6 +59,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -70,6 +75,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-421-invalid-host-header-dns-rebinding.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, fastmcp</td></tr><tr><th>Tags</th><td>mcp, fastmcp, python-sdk, streamable-http, dns-rebinding, proxy, docker, 421</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>fastmcp-421-invalid-host-header-dns-rebinding</li><li>fastmcp 421 invalid host header dns rebinding</li><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection</li><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix</li><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause</li><li>fastmcp</li><li>python-sdk</li><li>streamable-http</li><li>dns-rebinding</li><li>proxy</li><li>docker</li><li>mcp-server</li><li>all external requests fail with HTTP 421 Misdirected Request and 'Invalid Host header</li><li>started after upgrading the MCP Python SDK / FastMCP</li><li>the server runs behind Nginx/Caddy/Cloudflare Tunnel/Kubernetes or binds host=0.0.0.0</li><li>direct localhost access works but proxied or custom-domain access does not</li><li>FastMCP enables DNS rebinding protection that validates the request Host header against an allowed list (added in PR #861</li><li>Behind a proxy or when bound to 0.0.0.0, the real Host (your domain or a cluster service name) is not in the default allowed list, so the transport-security middleware returns 421</li><li>There is no startup warning, so users blame their proxy config</li><li>When mounting streamable_http_app()/sse_app() into Starlette/FastAPI, the FastMCP host parameter does not control the bind address but still drives the auto-enable logic</li><li>Debugging the Nginx/Caddy config when the 421 comes from FastMCP transport-security middleware</li><li>Expecting the FastMCP host parameter to set the bind address for a mounted app (uvicorn/gunicorn controls that</li><li>Disable DNS rebinding protection when the deployment is isolated at the network layer and authenticated via OAuth</li><li>modelcontextprotocol/python-sdk issue 1798: Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>all external requests fail with HTTP 421 Misdirected Request and 'Invalid Host header'</li><li>started after upgrading the MCP Python SDK / FastMCP</li><li>the server runs behind Nginx/Caddy/Cloudflare Tunnel/Kubernetes or binds host=0.0.0.0</li><li>direct localhost access works but proxied or custom-domain access does not</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>framework</th><td>FastMCP / MCP Python SDK</td></tr><tr><th>constraints</th><td>streamable-HTTP or SSE transport, reverse proxy / gateway / container deployment, host bound to 0.0.0.0</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>FastMCP enables DNS rebinding protection that validates the request Host header against an allowed list (added in PR #861).</li><li>Behind a proxy or when bound to 0.0.0.0, the real Host (your domain or a cluster service name) is not in the default allowed list, so the transport-security middleware returns 421.</li><li>There is no startup warning, so users blame their proxy config.</li><li>When mounting streamable_http_app()/sse_app() into Starlette/FastAPI, the FastMCP host parameter does not control the bind address but still drives the auto-enable logic.</li></ul></section>

@@ -10,7 +10,7 @@
   <meta property="og:description" content="On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','&lt;package&gt;'], or point command at node.exe with the script path.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, windows, npx, cmd, spawn, enoent, startup, claude-desktop, cursor, cline, mcp-server, verified, high, mcp-windows-npx-requires-cmd-c-wrapper">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, windows, npx, cmd, spawn, enoent, startup, claude-desktop, cursor, cline, mcp-server, mcp-windows-npx-requires-cmd-c-wrapper, mcp windows npx requires cmd c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper fix, On Windows an MCP server launched with npx needs a cmd /c wrapper root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, windows, npx, cmd, spawn, enoent, startup, claude-desktop, cursor, cline, mcp-server, verified, high, mcp-windows-npx-requires-cmd-c-wrapper",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, windows, npx, cmd, spawn, enoent, startup, claude-desktop, cursor, cline, mcp-server, mcp-windows-npx-requires-cmd-c-wrapper, mcp windows npx requires cmd c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper fix, On Windows an MCP server launched with npx needs a cmd /c wrapper root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -38,9 +38,13 @@
     "cursor",
     "cline",
     "mcp-server",
+    "mcp-windows-npx-requires-cmd-c-wrapper",
+    "mcp windows npx requires cmd c wrapper",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper fix",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper root cause",
     "verified",
-    "high",
-    "mcp-windows-npx-requires-cmd-c-wrapper"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -57,6 +61,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -72,6 +77,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, windows, npx, cmd, spawn, enoent, startup</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-windows-npx-requires-cmd-c-wrapper</li><li>mcp windows npx requires cmd c wrapper</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper fix</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper root cause</li><li>windows</li><li>spawn</li><li>enoent</li><li>startup</li><li>claude-desktop</li><li>cursor</li><li>cline</li><li>mcp-server</li><li>Windows only: the MCP server will not start</li><li>logs show spawn npx ENOENT or locale text equivalent to ''npx' is not recognized as an internal or external command</li><li>the same npx command runs fine in PowerShell or cmd manually</li><li>On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables</li><li>Node's spawn without a shell cannot execute a .cmd directly, so command: 'npx' yields ENOENT</li><li>Routing through cmd /c lets the Windows command interpreter resolve and run the shim</li><li>Using bare command: 'npx' on Windows</li><li>Assuming a macOS/Linux config is portable to Windows without cmd /c</li><li>Use the absolute node.exe path plus the server script path instead of npx</li><li>modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error (-32000</li><li>modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Windows only: the MCP server will not start</li><li>logs show spawn npx ENOENT or locale text equivalent to ''npx' is not recognized as an internal or external command'</li><li>the same npx command runs fine in PowerShell or cmd manually</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>Windows</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>npx/npm are .cmd shims on Windows, client spawns the command without a shell</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables.</li><li>Node's spawn without a shell cannot execute a .cmd directly, so command: 'npx' yields ENOENT.</li><li>Routing through cmd /c lets the Windows command interpreter resolve and run the shim.</li></ul></section>

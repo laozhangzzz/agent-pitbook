@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug. Diagnose by running the exact configured command+args+env in a terminal; the usual concrete causes are PATH, npmrc registry, npx cache, Windows cmd /c, or a missing build.
 
+## Common Search Queries
+
+- mcp-error-32000-connection-closed-server-failed-to-start
+- mcp error 32000 connection closed server failed to start
+- MCP error -32000: Connection closed means the stdio server died before the handshake
+- MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- MCP error -32000: Connection closed means the stdio server died before the handshake root cause
+- stdio
+- startup
+- error-32000
+- diagnosis
+- claude-desktop
+- cursor
+- cline
+- mcp-server
+- client UI shows MCP error -32000: Connection closed
+- sometimes preceded by locale text like 'npx' is not recognized as an internal or external command
+- the configured command and args run fine when pasted into a terminal
+- no useful server-side logs because the process never reached startup
+- The client spawns the configured command and speaks JSON-RPC over stdio
+- If the process cannot be found, crashes on launch, or writes non-protocol text to stdout, the transport closes and the client reports -32000: Connection closed
+- The code is generic: it reports that the connection died, not why
+- Filing a protocol bug for -32000 before running the command manually
+- Reinstalling the server package repeatedly when the package was never the problem
+- Writing debug output to stdout from a stdio MCP server, which corrupts the JSON-RPC stream
+- Pin absolute interpreter and script paths in the config
+
 ## Affected Tools
 
 - claude-desktop

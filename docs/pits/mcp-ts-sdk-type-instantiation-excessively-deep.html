@@ -10,7 +10,7 @@
   <meta property="og:description" content="Using MCP SDK tool types (e.g. ToolCallback&lt;Args&gt;) with Zod can trigger 'Type instantiation is excessively deep and possibly infinite ts(2589)' and freeze the TypeScript language server. Fix on the Zod/tsconfig side: single Zod version, modern moduleResolution (not legacy 'node'), and a Zod release with the fix (4.1.6).">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, zod, typescript, tsconfig, type-error, ide, mcp-server, verified, medium, mcp-ts-sdk-type-instantiation-excessively-deep">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, zod, typescript, tsconfig, type-error, ide, mcp-server, mcp-ts-sdk-type-instantiation-excessively-deep, mcp ts sdk type instantiation excessively deep, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause, verified, medium">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, zod, typescript, tsconfig, type-error, ide, mcp-server, verified, medium, mcp-ts-sdk-type-instantiation-excessively-deep",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, zod, typescript, tsconfig, type-error, ide, mcp-server, mcp-ts-sdk-type-instantiation-excessively-deep, mcp ts sdk type instantiation excessively deep, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix, MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause, verified, medium",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,9 +35,13 @@
     "type-error",
     "ide",
     "mcp-server",
+    "mcp-ts-sdk-type-instantiation-excessively-deep",
+    "mcp ts sdk type instantiation excessively deep",
+    "MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE",
+    "MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix",
+    "MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause",
     "verified",
-    "medium",
-    "mcp-ts-sdk-type-instantiation-excessively-deep"
+    "medium"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -54,6 +58,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -69,6 +74,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-type-instantiation-excessively-deep.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, zod, typescript, tsconfig, type-error, ide</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-ts-sdk-type-instantiation-excessively-deep</li><li>mcp ts sdk type instantiation excessively deep</li><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE</li><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix</li><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause</li><li>typescript-sdk</li><li>typescript</li><li>tsconfig</li><li>type-error</li><li>mcp-server</li><li>Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>the TypeScript server in Cursor/VS Code hangs and saving files stalls</li><li>it appears intermittently; @ts-ignore silences the error but not the slowdown</li><li>Deep generic instantiation in Zod's types as consumed by the SDK's tool typings</li><li>Worsened by multiple resolved Zod versions, a legacy moduleResolution: 'node' tsconfig, and certain SDK versions (reported from &gt;=1.16.0</li><li>Suppressing with @ts-ignore and ignoring the language-server slowdown</li><li>Leaving two Zod versions in the dependency tree</li><li>Pin a known-good SDK + Zod pair until you can update tsconfig/Zod</li><li>modelcontextprotocol/typescript-sdk issue 494: 'Type instantiation is excessively deep' when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6</li><li>mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls</li><li>typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls</li><li>mcp-server it appears intermittently; @ts-ignore silences the error but not the slowdown</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>the TypeScript server in Cursor/VS Code hangs and saving files stalls</li><li>it appears intermittently; @ts-ignore silences the error but not the slowdown</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>constraints</th><td>Zod-typed tool definitions, possibly multiple Zod versions, legacy moduleResolution 'node', SDK &gt;= 1.16.0 reported</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>Deep generic instantiation in Zod's types as consumed by the SDK's tool typings.</li><li>Worsened by multiple resolved Zod versions, a legacy moduleResolution: 'node' tsconfig, and certain SDK versions (reported from &gt;=1.16.0).</li></ul></section>

@@ -10,7 +10,7 @@
   <meta property="og:description" content="mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, verified, high, claude-code-mcp-chrome-bridge-single-transport-deadlock">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html",
   "dateCreated": "2026-06-19",
   "dateModified": "2026-06-19",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, verified, high, claude-code-mcp-chrome-bridge-single-transport-deadlock",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,9 +36,13 @@
     "deadlock",
     "native-messaging",
     "mcp-chrome-bridge",
+    "claude-code-mcp-chrome-bridge-single-transport-deadlock",
+    "claude code mcp chrome bridge single transport deadlock",
+    "Claude Code chrome-bridge MCP gets stuck after one transport connects",
+    "Claude Code chrome-bridge MCP gets stuck after one transport connects fix",
+    "Claude Code chrome-bridge MCP gets stuck after one transport connects root cause",
     "verified",
-    "high",
-    "claude-code-mcp-chrome-bridge-single-transport-deadlock"
+    "high"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -55,6 +59,7 @@
     <nav>
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -70,6 +75,7 @@
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Canonical source</a>
       </p>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>claude-code, mcp-chrome-bridge</td></tr><tr><th>Tags</th><td>agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging</td></tr></table></section>
+      <section><h2>Common search queries</h2><ul><li>claude-code-mcp-chrome-bridge-single-transport-deadlock</li><li>claude code mcp chrome bridge single transport deadlock</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects fix</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects root cause</li><li>agents</li><li>claude-code</li><li>chrome</li><li>browser-automation</li><li>transport</li><li>deadlock</li><li>native-messaging</li><li>mcp-chrome-bridge</li><li>Claude Code cannot reconnect to the chrome-bridge MCP server</li><li>GET http://127.0.0.1:12306/ping succeeds with pong</li><li>the Chrome extension or bridge UI appears connected</li><li>the MCP endpoint returns HTTP 500 during handshake or tool discovery</li><li>logs contain Already connected to a transport</li><li>logs contain ERR_HTTP_HEADERS_SENT</li><li>doctor --fix or killing the native host helps only temporarily</li><li>The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections</li><li>The MCP SDK server connection model expects one transport per server instance</li><li>A manual curl /mcp request, Chrome extension /sse session, Claude Code session, or stale background job can occupy the singleton transport slot</li><li>Killing the native host clears the runtime state, which explains why repair or restart works temporarily without fixing the underlying design</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Claude Code cannot reconnect to the chrome-bridge MCP server</li><li>GET http://127.0.0.1:12306/ping succeeds with pong</li><li>the Chrome extension or bridge UI appears connected</li><li>the MCP endpoint returns HTTP 500 during handshake or tool discovery</li><li>logs contain Already connected to a transport</li><li>logs contain ERR_HTTP_HEADERS_SENT</li><li>doctor --fix or killing the native host helps only temporarily</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>macOS</td></tr><tr><th>runtime</th><td>Node.js</td></tr><tr><th>agent</th><td>claude-code</td></tr><tr><th>versions</th><td>{&quot;mcp-chrome-bridge&quot;:&quot;1.0.31&quot;,&quot;local-observed-node&quot;:&quot;25.9.0_1&quot;}</td></tr><tr><th>constraints</th><td>Chrome Native Messaging host, local Streamable HTTP MCP endpoint, SSE route shared with Chrome extension UI, multiple clients or tests can touch /mcp or /sse</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections.</li><li>The MCP SDK server connection model expects one transport per server instance.</li><li>A manual curl /mcp request, Chrome extension /sse session, Claude Code session, or stale background job can occupy the singleton transport slot.</li><li>Killing the native host clears the runtime state, which explains why repair or restart works temporarily without fixing the underlying design.</li></ul></section>

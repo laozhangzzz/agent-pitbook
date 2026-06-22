@@ -10,6 +10,33 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.
 
+## Common Search Queries
+
+- mcp-streamable-http-client-no-oauth-on-401
+- mcp streamable http client no oauth on 401
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause
+- streamable-http
+- oauth
+- inspector
+- authorization
+- transport
+- mcp-inspector
+- mcp-server
+- connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+- log shows Error from MCP server: Error: Error POSTing to endpoint (HTTP 401) then no further progress
+- the same server triggers the browser OAuth flow correctly via the SSE transport
+- The SSE client transport detected a 401 and started authorization
+- The Streamable HTTP client transport did not handle the 401 as an auth challenge, so no OAuth flow started and the connection stalled
+- It is a client/transport bug, not a server misconfiguration
+- Concluding the OAuth server is broken when the client transport did not act on the 401
+- Staying on an old client version that lacks Streamable HTTP auth handling
+- Use the SSE transport temporarily if it handles the OAuth challenge while you upgrade
+- modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version
+- mcp-inspector connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+- mcp-server connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+
 ## Affected Tools
 
 - mcp-inspector
