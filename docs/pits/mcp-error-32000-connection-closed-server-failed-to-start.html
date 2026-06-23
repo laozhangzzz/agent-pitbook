@@ -61,6 +61,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -84,6 +85,10 @@
       <section><h2>Verification</h2><ul><li><p>Reconnect from the client after fixing the underlying cause.</p><p class="muted">Expected: Tool discovery succeeds with no -32000 in the client log.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Pin absolute interpreter and script paths in the config.</li><li>Pre-install the server package globally so npx does not need to resolve or download it at launch.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Filing a protocol bug for -32000 before running the command manually.</li><li>Reinstalling the server package repeatedly when the package was never the problem.</li><li>Writing debug output to stdout from a stdio MCP server, which corrupts the JSON-RPC stream.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/1097">modelcontextprotocol/servers issue 1097: GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/891">modelcontextprotocol/servers issue 891: Fix 'Client Closed' Error by Correcting npm Config (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

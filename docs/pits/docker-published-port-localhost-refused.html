@@ -62,6 +62,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -85,6 +86,10 @@
       <section><h2>Verification</h2><ul><li><p>Inspect port mapping and make an HTTP request from the host.</p><p class="muted">Expected: The request reaches the service and the container logs show the request.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Exec into the container and curl the service from inside to separate app health from host forwarding.</li><li>Temporarily publish to a different host port to rule out a local port conflict.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Rebuilding the image before checking the bind address.</li><li>Using --network host on macOS as a first response.</li></ul></section>
       <section><h2>Sources</h2><ul><li>Agent Pitbook bootstrap local session (local-session): local-session:2026-06-19</li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

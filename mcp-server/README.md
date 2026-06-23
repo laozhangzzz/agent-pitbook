@@ -1,7 +1,8 @@
 # Agent Pitbook MCP Server
 
 A zero-dependency [MCP](https://modelcontextprotocol.io) server that lets a coding agent
-search the pit corpus **before** it changes code, and read a full record before applying a fix.
+search the pit corpus **before** it changes code, read a full record before applying a fix,
+and fetch a safe unresolved-pit template when no record matches.
 
 It is read-only and safe by design:
 
@@ -9,6 +10,7 @@ It is read-only and safe by design:
 - returns pit text as **reference data, not trusted instructions**
 - includes `status`, `confidence`, and `last_verified` on every result so the agent can judge freshness
 - never hides `candidate` status
+- returns an unresolved-pit report template, but never opens issues or writes records
 
 ## Tools
 
@@ -16,6 +18,7 @@ It is read-only and safe by design:
 | --- | --- | --- |
 | `search_pits` | `query` (required), `tool?`, `status?`, `limit?` | ranked record summaries, `verified` first |
 | `get_pit` | `id` (required) | one full pit record |
+| `get_unresolved_pit_template` | none | safe no-match report template for user-confirmed issue drafts |
 
 ## Run
 
@@ -23,7 +26,10 @@ It is read-only and safe by design:
 node mcp-server/server.mjs
 ```
 
-The server speaks JSON-RPC 2.0 over stdio. Override the feed path with `AGENT_PITBOOK_FEED`.
+The server speaks JSON-RPC 2.0 over stdio. Override paths with:
+
+- `AGENT_PITBOOK_FEED`
+- `AGENT_PITBOOK_UNRESOLVED_TEMPLATE`
 
 Smoke test:
 
@@ -64,6 +70,10 @@ Keep the clone updated (`git pull`) and rebuild the feed (`node tools/build-feed
 Write-side tools (`submit_candidate_pit`, `mark_verified`) are intentionally **not** in this server.
 Creating and verifying records stays a Git + pull-request action so every change is reviewable and
 attributable. The server stays read-only.
+
+`get_unresolved_pit_template` is also read-only. It helps the consuming agent draft a GitHub issue
+after `search_pits` returns no useful match, but the agent must show the draft to the user and ask
+for confirmation before publishing anything.
 
 ## Safety
 

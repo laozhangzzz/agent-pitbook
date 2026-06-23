@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord, slimRecord, recordSearchTerms } from "./lib/pitlib.mjs";
+import {
+  repoRoot,
+  loadPitRecords,
+  validateRecord,
+  slimRecord,
+  recordSearchTerms,
+  unresolvedPitTemplate
+} from "./lib/pitlib.mjs";
 
 const records = loadPitRecords();
 const errors = [];
@@ -48,3 +55,7 @@ fs.writeFileSync(
     .join("\n")}\n`
 );
 console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, searchTermsPath)}`);
+
+const unresolvedTemplatePath = path.join(repoRoot, "feeds", "unresolved-pit-template.json");
+fs.writeFileSync(unresolvedTemplatePath, `${JSON.stringify(unresolvedPitTemplate(), null, 2)}\n`);
+console.log(`Wrote unresolved pit template to ${path.relative(repoRoot, unresolvedTemplatePath)}`);

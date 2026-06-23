@@ -60,6 +60,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -83,6 +84,10 @@
       <section><h2>Verification</h2><ul><li><p>After pinning to the Studio Display mic, measure the recorded peak and run ASR.</p><p class="muted">Expected: Recorded peak ~5600 and transcription returns correct text.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Select a known-good input device explicitly at startup rather than the OS default.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Trusting that a successfully-opened audio stream is actually capturing sound.</li><li>Blaming the ASR model for garbage output when the input is all-zero silence.</li></ul></section>
       <section><h2>Sources</h2><ul><li>voice-to-claude daemon debugging session (local-session): local-session:2026-06-21</li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

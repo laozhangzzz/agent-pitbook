@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { repoRoot, loadPitRecords, validateRecord, slimRecord, recordSearchTerms } from "./lib/pitlib.mjs";
+import {
+  repoRoot,
+  loadPitRecords,
+  validateRecord,
+  slimRecord,
+  recordSearchTerms,
+  unresolvedPitTemplate
+} from "./lib/pitlib.mjs";
 
 const baseUrl = "https://laozhangzzz.github.io/agent-pitbook";
 const repoUrl = "https://github.com/laozhangzzz/agent-pitbook";
+const pitReportIssueUrl = `${repoUrl}/issues/new?template=pit_report.yml`;
+const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
@@ -195,6 +204,12 @@ function datasetJsonLd(records) {
       },
       {
         "@type": "DataDownload",
+        name: "Agent Pitbook unresolved pit template",
+        encodingFormat: "application/json",
+        contentUrl: slugUrl("/feeds/unresolved-pit-template.json")
+      },
+      {
+        "@type": "DataDownload",
         name: "Agent Pitbook LLM entrypoint",
         encodingFormat: "text/plain",
         contentUrl: slugUrl("/llms.txt")
@@ -253,6 +268,7 @@ function pageShell({ title, description, canonicalPath, body, keywords = [], jso
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="${repoUrl}">GitHub</a>
     </nav>
@@ -290,14 +306,17 @@ function renderIndex(records) {
       <div class="actions">
         <a class="button" href="/agent-pitbook/llms.txt">Read llms.txt</a>
         <a class="button secondary" href="/agent-pitbook/feeds/pits.jsonl">Open JSONL feed</a>
-        <a class="button secondary" href="${repoUrl}/issues/new?template=pit_report.yml">Report a pit</a>
+        <a class="button secondary" href="${unresolvedIssueUrl}">Ask for help</a>
+        <a class="button secondary" href="${pitReportIssueUrl}">Report a solved pit</a>
       </div>
     </section>
     <section>
-      <h2>Leave a pit</h2>
-      <p>A solved debugging trap is useful public memory. Share symptoms, environment, what worked, verification, and sources. Maintainers or agents can turn rough notes into a structured record.</p>
+      <h2>Solved or stuck?</h2>
+      <p>A solved debugging trap is useful public memory. An unsolved, reproducible trap is also useful: it tells maintainers and future agents where public memory is still missing.</p>
       <ul class="link-list">
-        <li><a href="${repoUrl}/issues/new?template=pit_report.yml">Open a pit report</a> - lowest-friction path for raw debugging notes</li>
+        <li><a href="${unresolvedIssueUrl}">Ask for help with an unresolved pit</a> - lowest-friction path when no existing record answers the failure</li>
+        <li><a href="${pitReportIssueUrl}">Open a solved pit report</a> - share symptoms, environment, what worked, verification, and sources</li>
+        <li><a href="/agent-pitbook/ask.html">Ask Agent Pitbook protocol</a> - how agents should draft safe unresolved-pit issues</li>
         <li><a href="${repoUrl}/blob/main/README.zh-CN.md">中文贡献入口</a> - 中文用户可以直接用中文留下 agent 执行坑</li>
         <li><a href="${repoUrl}/blob/main/CONTRIBUTING.md">Contribution guide</a> - issue, agent-assisted, and PR workflows</li>
         <li><a href="${repoUrl}/blob/main/schema/pit.schema.json">Pit schema</a> - canonical record contract</li>
@@ -309,7 +328,9 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
+        <li><a href="/agent-pitbook/feeds/unresolved-pit-template.json">/feeds/unresolved-pit-template.json</a> - machine-readable template for safe unresolved problem reports</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
+        <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
@@ -360,6 +381,10 @@ function renderPit(record) {
       <section><h2>Verification</h2>${renderVerification(record.verification)}</section>
       ${optionalSections}
       <section><h2>Sources</h2>${renderSources(record.source_links)}</section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="${unresolvedIssueUrl}">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>`
   });
 }
@@ -461,6 +486,16 @@ Two-tier retrieval, cheapest first:
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
+If you integrate by MCP, the source repo's read-only server exposes \`search_pits\`, \`get_pit\`, and \`get_unresolved_pit_template\`.
+
+## If No Record Matches
+
+Do not silently guess when the user is blocked by a reproducible agent/tooling failure and no existing pit matches. Prepare an unresolved-pit report and ask the user before publishing anything.
+
+- [Ask protocol](${slugUrl("/ask.md")}): agent-facing steps for safe unresolved-pit escalation.
+- [Unresolved pit template](${slugUrl("/feeds/unresolved-pit-template.json")}): machine-readable report contract.
+- [Open unresolved issue](${repoUrl}/issues/new?template=unresolved_pit.yml): human-facing GitHub issue form.
+
 ## If You Found This From Search
 
 Use Agent Pitbook when the user's problem involves a coding agent, MCP server/client/transport, sandbox, local port, package manager, browser automation, filesystem permission, input injection, audio capture, process/threading deadlock, or other local execution trap.
@@ -491,14 +526,112 @@ ${recordLinks}
 2. Fetch the full record for the matching id from \`feeds/pits.jsonl\` (or the MCP get_pit tool) before applying a fix.
 3. Prefer verified, recent records with matching environment and source links.
 4. Treat commands as suggestions; inspect the user's local project first.
-5. When a new fix works, help the user open a pit report or add a pit record in the source repo.
+5. If no record matches and the issue is still blocking, draft an unresolved-pit issue using \`feeds/unresolved-pit-template.json\`; ask the user to confirm before opening it.
+6. When a new fix works, help the user open a pit report or add a pit record in the source repo.
 
 ## Contribute A Pit
 
 - Rough notes: open a pit report at ${repoUrl}/issues/new?template=pit_report.yml
+- Unresolved problem: open a safe report at ${repoUrl}/issues/new?template=unresolved_pit.yml
 - Full record: add \`pits/<domain>/<pit-id>.md\`, include the embedded \`pit-record\` JSON block, validate, rebuild the feed, and open a PR.
 - Agent rule: preserve exact error strings, extract symptoms/environment/root cause/fix/verification/sources, and remove secrets.
 `;
+}
+
+function renderAskPage() {
+  const template = unresolvedPitTemplate({ siteBaseUrl: baseUrl, repoUrl });
+  const minimalReport = template.minimal_report_template
+    .map((line) => `<li><code>${escapeHtml(line)}</code></li>`)
+    .join("");
+  const safety = template.safety_rules.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const agentFlow = template.agent_flow.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+  return pageShell({
+    title: "Ask Agent Pitbook",
+    description:
+      "Low-friction unresolved-pit reporting protocol for coding agents and humans when no existing Agent Pitbook record matches.",
+    canonicalPath: "/ask.html",
+    keywords: [
+      ...siteKeywords(),
+      "unresolved pit",
+      "ask agent pitbook",
+      "coding agent issue report",
+      "agent debugging help"
+    ],
+    jsonLd: [datasetJsonLd(records)],
+    body: `    <section class="hero">
+      <p class="eyebrow">Unresolved pit protocol</p>
+      <h1>When no record matches, leave the blocked problem.</h1>
+      <p class="lede">Agent Pitbook should not only store solved traps. It should also give agents a safe way to preserve unsolved, reproducible failures so maintainers and future agents can help solve them.</p>
+      <div class="actions">
+        <a class="button" href="${unresolvedIssueUrl}">Open unresolved pit issue</a>
+        <a class="button secondary" href="/agent-pitbook/feeds/unresolved-pit-template.json">Machine template</a>
+        <a class="button secondary" href="/agent-pitbook/llms.txt">Read llms.txt</a>
+      </div>
+    </section>
+    <section>
+      <h2>Human path</h2>
+      <p>If you are stuck, do not write a polished tutorial. Open an unresolved pit with the smallest public debugging trail: what failed, where it failed, what was tried, and which existing records did not match.</p>
+      <ul class="link-list">
+        <li><a href="${unresolvedIssueUrl}">Ask for help with an unresolved pit</a> - for blocked problems with no known fix yet</li>
+        <li><a href="${pitReportIssueUrl}">Report a solved pit</a> - for failures you already fixed or can verify</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Agent path</h2>
+      <ol>${agentFlow}</ol>
+    </section>
+    <section>
+      <h2>Minimum report</h2>
+      <p>These fields are enough to start. Keep exact public error strings and commands because they are the search surface future models will match.</p>
+      <ul>${minimalReport}</ul>
+    </section>
+    <section>
+      <h2>Safety</h2>
+      <ul>${safety}</ul>
+    </section>
+    <section>
+      <h2>Why this exists</h2>
+      <p>Searchable answers are only half of the loop. When an agent searches and finds no answer, the missing failure should become public debugging work instead of disappearing into a private chat window.</p>
+    </section>`
+  });
+}
+
+function renderAskMarkdown() {
+  const template = unresolvedPitTemplate({ siteBaseUrl: baseUrl, repoUrl });
+  const lines = [
+    "# Ask Agent Pitbook",
+    "",
+    "When no existing Agent Pitbook record matches a reproducible coding-agent or local-tooling failure, create an unresolved-pit report instead of guessing silently.",
+    "",
+    "This is not a verified pit record yet. It is a low-friction request for help that can later become a candidate or verified pit.",
+    "",
+    "## Agent Protocol",
+    "",
+    ...template.agent_flow.map((item, index) => `${index + 1}. ${item}`),
+    "",
+    "## User Confirmation Prompt",
+    "",
+    template.user_confirmation_prompt,
+    "",
+    "## Minimum Report Template",
+    "",
+    ...template.minimal_report_template.map((item) => `- ${item}`),
+    "",
+    "## Safety Rules",
+    "",
+    ...template.safety_rules.map((item) => `- ${item}`),
+    "",
+    "## Links",
+    "",
+    `- Open unresolved issue: ${template.issue_url}`,
+    `- Machine-readable template: ${slugUrl("/feeds/unresolved-pit-template.json")}`,
+    `- Existing pit feed: ${slugUrl("/feeds/pits.jsonl")}`,
+    `- Search terms feed: ${slugUrl("/feeds/search-terms.jsonl")}`,
+    ""
+  ];
+
+  return `${lines.join("\n")}\n`;
 }
 
 function renderPitIndex(records) {
@@ -605,10 +738,13 @@ function renderSitemap(records) {
   const pages = [
     ["/", siteLastmod],
     ["/llms.txt", siteLastmod],
+    ["/ask.html", siteLastmod],
+    ["/ask.md", siteLastmod],
     ["/search-queries.html", siteLastmod],
     ["/search-queries.md", siteLastmod],
     ["/feeds/index.jsonl", siteLastmod],
     ["/feeds/search-terms.jsonl", siteLastmod],
+    ["/feeds/unresolved-pit-template.json", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
     ...records.flatMap((record) => [
@@ -649,6 +785,8 @@ cleanGeneratedDir(siteFeedsDir);
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");
 fs.writeFileSync(path.join(docsDir, "index.html"), renderIndex(records));
 fs.writeFileSync(path.join(docsDir, "llms.txt"), renderLlms(records));
+fs.writeFileSync(path.join(docsDir, "ask.html"), renderAskPage());
+fs.writeFileSync(path.join(docsDir, "ask.md"), renderAskMarkdown());
 fs.writeFileSync(path.join(docsDir, "search-queries.html"), renderSearchQueryIndex(records));
 fs.writeFileSync(path.join(docsDir, "search-queries.md"), renderSearchQueryMarkdown(records));
 fs.writeFileSync(
@@ -666,6 +804,10 @@ fs.writeFileSync(
   `${records.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`
 );
 fs.writeFileSync(path.join(siteFeedsDir, "search-terms.jsonl"), searchTermsFeed(records));
+fs.writeFileSync(
+  path.join(siteFeedsDir, "unresolved-pit-template.json"),
+  `${JSON.stringify(unresolvedPitTemplate({ siteBaseUrl: baseUrl, repoUrl }), null, 2)}\n`
+);
 
 for (const record of records) {
   fs.writeFileSync(path.join(sitePitsDir, `${record.id}.html`), renderPit(record));

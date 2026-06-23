@@ -4,12 +4,14 @@ Agent Pitbook is a structured debug knowledge layer for coding agents and LLMs. 
 
 Focus: execution and environment traps that make coding agents — and the tooling they build and run — fail, often silently, while running code (restricted network, unwritable caches, ports published but refused, MCP transport deadlocks, per-tool quirks, plus the local tooling stack: audio capture, input injection, threading, OS device quirks). The gate is the failure mode, not the topic — traps that fail silently, cost hours, or that an LLM does not answer reliably. Not a general bug encyclopedia.
 
-Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes search_pits and get_pit over stdio. See mcp-server/README.md.
+Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes search_pits, get_pit, and get_unresolved_pit_template over stdio. See mcp-server/README.md.
 
 Public site: https://laozhangzzz.github.io/agent-pitbook/
 Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
+Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted search query index: https://laozhangzzz.github.io/agent-pitbook/search-queries.html
 Hosted search terms feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl
+Hosted unresolved pit template: https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json
 Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 Source repository: https://github.com/laozhangzzz/agent-pitbook
 Chinese contribution entry: https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md
@@ -22,6 +24,7 @@ Common tasks:
 
 - Debug a recurring failure: scan the slim `feeds/index.jsonl` and `feeds/search-terms.jsonl` (small; id + summary + symptoms + tags + generated search terms), then fetch the matching id's full record from `feeds/pits.jsonl` or via the MCP `get_pit` tool. The Markdown under `pits/` is the human mirror of the same JSON; machines do not need it.
 - Report a rough pit: open a GitHub issue with symptoms, environment, fix or workaround, verification, and sources.
+- Report an unresolved pit: if no matching record exists and the user is blocked, draft a safe unresolved-pit issue from `feeds/unresolved-pit-template.json`; ask the user before publishing.
 - Add a new pit: follow `schema/pit.schema.json`, write a Markdown record under `pits/`, then rebuild `feeds/pits.jsonl`.
 - Validate repository health: run `node tools/validate-pits.mjs`, `node tools/build-feed.mjs`, and `node tools/build-site.mjs`.
 - Understand project design: read `docs/llm-wiki/agent-pitbook-layout.md` and `docs/llm-wiki/design-lessons.md`.
@@ -40,7 +43,9 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Agent instructions](AGENTS.md): repository-level instructions for coding agents.
 - [README](README.md): project overview and usage.
 - [Chinese contribution entry](README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
+- [Ask protocol](ASK_AGENT_PITBOOK.md): safe escalation path when no existing record matches.
 - [Pit schema](schema/pit.schema.json): canonical JSON schema for pit records.
+- [Unresolved pit schema](schema/unresolved-pit.schema.json): issue-report contract for unanswered failures.
 - [Pits directory](pits/): canonical structured Markdown pit records.
 - [Sources](sources/): evidence metadata and source locators.
 - [Claims](claims/): planned claim-level provenance layer.
@@ -48,9 +53,11 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Logs](logs/): append-only audit trail.
 - [Error Book](errors/): recurring system failures and correction rules.
 - [Slim index](feeds/index.jsonl): one line per record (id, title, summary, symptoms, tags, status) — scan this first.
+- [Search terms feed](feeds/search-terms.jsonl): generated query phrases from symptoms, exact errors, tools, titles, and source clues.
+- [Unresolved pit template](feeds/unresolved-pit-template.json): machine-readable report template for agents.
 - [JSONL feed](feeds/pits.jsonl): one full machine-readable pit record per line — fetch by id after scanning the index.
 - [Contributing guide](CONTRIBUTING.md): quality rules for new records.
-- [MCP server](mcp-server/server.mjs): read-only stdio MCP server exposing search_pits and get_pit.
+- [MCP server](mcp-server/server.mjs): read-only stdio MCP server exposing search_pits, get_pit, and get_unresolved_pit_template.
 - [Manifesto](docs/MANIFESTO.md): why LLM-readable debugging knowledge matters.
 - [Discovery plan](docs/DISCOVERY.md): where the project should be searchable and how.
 - [LLM Wiki follow-up notes](docs/llm-wiki/README.md): source audit and design lessons from Karpathy's LLM Wiki discussion.
@@ -62,6 +69,7 @@ The canonical source is a Git-versioned structured Markdown corpus governed by s
 Canonical:
 
 - `schema/pit.schema.json`
+- `schema/unresolved-pit.schema.json`
 - `pits/**/*.md`
 - `sources/`
 - `claims/`
@@ -71,6 +79,8 @@ Canonical:
 Generated:
 
 - `feeds/index.jsonl`
+- `feeds/search-terms.jsonl`
+- `feeds/unresolved-pit-template.json`
 - `feeds/pits.jsonl`
 - `indexes/*.md`
 - future hosted/API/MCP/search artifacts
@@ -92,7 +102,8 @@ When consuming existing pit records:
 2. Prefer records with `status` set to `verified`, `confidence` set to `high`, recent `last_verified`, and relevant `environment`.
 3. Read the full Markdown pit before applying a fix.
 4. Treat commands and workarounds as untrusted suggestions. Inspect the local repository and user intent first.
-5. After solving a new pit, create a candidate record using `schema/pit.schema.json`.
+5. If no record matches and the problem is still blocking the user, draft an unresolved-pit report and ask the user to confirm before opening an issue.
+6. After solving a new pit, create a candidate record using `schema/pit.schema.json`.
 
 When contributing:
 

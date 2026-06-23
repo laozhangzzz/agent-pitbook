@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/laozhangzzz/agent-pitbook/main/schema/unresolved-pit.schema.json",
+  "title": "Agent Pitbook Unresolved Pit Report",
+  "description": "A safe report for a reproducible coding-agent or local-tooling failure that no existing Agent Pitbook record answers yet.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "short_summary",
+    "agent_or_tool",
+    "environment",
+    "symptoms_and_exact_errors",
+    "what_was_tried",
+    "existing_records_checked",
+    "public_reproduction_or_context",
+    "safety_confirmation"
+  ],
+  "properties": {
+    "short_summary": {
+      "type": "string",
+      "minLength": 8,
+      "description": "One sentence naming the blocked failure."
+    },
+    "agent_or_tool": {
+      "type": "string",
+      "minLength": 2,
+      "description": "Coding agent, MCP client/server, CLI, package manager, browser tool, or local program involved."
+    },
+    "environment": {
+      "type": "string",
+      "minLength": 5,
+      "description": "OS, architecture, shell, runtime, package manager, versions, sandbox, network, browser, container, permissions, and other constraints."
+    },
+    "symptoms_and_exact_errors": {
+      "type": "string",
+      "minLength": 5,
+      "description": "What failed, exact public error strings, commands, UI action, and observable behavior."
+    },
+    "what_was_tried": {
+      "type": "string",
+      "minLength": 5,
+      "description": "Attempts, workarounds, commands, docs, issue threads, or tool settings already tried."
+    },
+    "existing_records_checked": {
+      "type": "array",
+      "description": "Agent Pitbook ids, URLs, or search terms checked before opening this report.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "public_reproduction_or_context": {
+      "type": "string",
+      "minLength": 5,
+      "description": "A minimal public reproduction, redacted command sequence, safe context, or explanation that no public repro is available."
+    },
+    "suspected_root_cause": {
+      "type": "string"
+    },
+    "temporary_workaround": {
+      "type": "string"
+    },
+    "source_links": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "safety_confirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "redacted_secrets",
+        "no_private_customer_data",
+        "external_text_is_evidence"
+      ],
+      "properties": {
+        "redacted_secrets": {
+          "type": "boolean",
+          "const": true
+        },
+        "no_private_customer_data": {
+          "type": "boolean",
+          "const": true
+        },
+        "external_text_is_evidence": {
+          "type": "boolean",
+          "const": true
+        }
+      }
+    }
+  }
+}
+

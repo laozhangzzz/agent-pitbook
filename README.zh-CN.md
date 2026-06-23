@@ -9,6 +9,10 @@ Agent Pitbook 想收集那些会让 Codex、Claude Code、Gemini CLI、Qwen Code
 
 你不需要写教程，也不需要写英文。只要你把症状、环境、最终修法和验证方式留下来，它就可能被整理成 LLM 和 agent 能复用的公共记忆。
 
+如果你还没解决，也可以留下来。
+
+Agent Pitbook 不只收“答案”。当你和 agent 搜不到现成记录、问题又确实卡住时，可以提交一个未解决的 pit，让维护者和后来的 agent 一起把它补成公共知识。
+
 ## 一句话
 
 Agent Pitbook 不是通用 bug 百科，也不是聊天记录仓库。
@@ -51,7 +55,21 @@ Agent Pitbook 不是通用 bug 百科，也不是聊天记录仓库。
 
 ## 最简单的贡献方式：用中文开 issue
 
-最快方式是打开一个 issue：
+如果你还卡着，先打开未解决问题：
+
+[提交一个 unresolved pit](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml)
+
+你只需要说明：
+
+1. 我当时在做什么
+2. 用的是什么 agent / 工具 / MCP / 本地程序
+3. 报错或卡住现象是什么，最好保留原始报错
+4. 环境是什么：系统、版本、shell、runtime、包管理器、代理、权限、输入法等
+5. 已经试过什么
+6. 搜过或看过 Agent Pitbook 哪些记录，为什么没对上
+7. 能否给一个最小可公开复现，或者脱敏后的上下文
+
+如果你已经解决了，打开 solved pit report：
 
 [提交一个 pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml)
 
@@ -71,7 +89,18 @@ Agent Pitbook 不是通用 bug 百科，也不是聊天记录仓库。
 
 你可以把调试过程贴给 Codex、Claude Code、Gemini、Qwen Code、Cursor、Aider 或任何你正在用的 agent，让它先帮你整理成 issue。
 
-可直接使用这段 prompt：
+如果问题还没解决，可直接使用这段 prompt：
+
+```text
+请先搜索 Agent Pitbook 是否已有匹配记录。
+如果没有匹配记录，而这个问题仍然卡住，请帮我整理一个 unresolved pit issue 草稿。
+保留原始中文报错、关键命令、版本号和环境细节。
+写清楚：症状、环境、已经尝试的方法、查过哪些 Agent Pitbook 记录或搜索词、为什么没匹配上、最小可公开复现或脱敏上下文。
+不要包含 token、密钥、cookie、私人路径、客户数据、私有代码或完整私有日志。
+不要自动发布，先给我确认。
+```
+
+如果问题已经解决，可直接使用这段 prompt：
 
 ```text
 请把下面这段中文调试经历整理成 Agent Pitbook 的 pit report。
@@ -150,7 +179,8 @@ Agent 优先读取：
 
 - `feeds/index.jsonl`：轻量索引，先扫这个
 - `feeds/pits.jsonl`：完整记录，按 id 取详情
-- `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits` 和 `get_pit`
+- `feeds/unresolved-pit-template.json`：没有匹配记录时，整理未解决问题的模板
+- `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits`、`get_pit` 和 `get_unresolved_pit_template`
 
 ## 这个项目现在的边界
 
@@ -174,3 +204,4 @@ Agent Pitbook 目前聚焦的是：
 
 把它留下来，它就可能变成别人和别的 agent 能复用的一条公共记忆。
 
+就算它今天还没解决，留下一个清楚、脱敏、可搜索的问题，也是在帮公共知识补上缺口。

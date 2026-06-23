@@ -61,6 +61,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -84,6 +85,10 @@
       <section><h2>Verification</h2><ul><li><p>Inspect the client MCP log after a full restart.</p><p class="muted">Expected: Tool discovery proceeds with no fresh write EPIPE or 'Server transport closed unexpectedly'.</p></li><li><p>Record the absolute interpreter paths used in the config.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Install the server package globally and reference its absolute dist/index.js path.</li><li>Use a wrapper script that sources your shell rc (or exports the NVM node bin) before exec npx.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Reinstalling or switching the server package when the package is fine.</li><li>Treating write EPIPE as a server crash instead of a bad launch environment.</li><li>Relying on bare npx/node in a GUI-launched config while using NVM/fnm/asdf.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/64">modelcontextprotocol/servers issue 64: MCP Servers Don't Work with NVM (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/64#issuecomment-2730913259">modelcontextprotocol/servers issue 64: npx-for-claude wrapper workaround (66 reactions) (issue)</a></li><li><a href="https://github.com/modelcontextprotocol/servers/issues/1748">modelcontextprotocol/servers issue 1748: Server transport closed unexpectedly, process exiting early (write EPIPE) (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

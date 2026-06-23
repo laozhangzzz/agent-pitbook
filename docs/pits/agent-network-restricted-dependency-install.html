@@ -62,6 +62,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -85,6 +86,10 @@
       <section><h2>Verification</h2><ul><li><p>Re-run the same command after approved network access.</p><p class="muted">Expected: The command reaches the registry or index and proceeds past the original network error.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Use vendored dependencies if the project already includes them.</li><li>Run tests that do not require dependency installation.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Deleting lockfiles to solve DNS errors.</li><li>Switching package managers before checking sandbox network policy.</li><li>Requesting broad shell approval instead of approval for the specific package command.</li></ul></section>
       <section><h2>Sources</h2><ul><li>Agent Pitbook bootstrap local session (local-session): local-session:2026-06-19</li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

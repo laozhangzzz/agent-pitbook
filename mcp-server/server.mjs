@@ -8,9 +8,11 @@
 // Tools:
 //   - search_pits(query, tool?, status?, limit?)
 //   - get_pit(id)
+//   - get_unresolved_pit_template()
 //
 // Run:   node mcp-server/server.mjs
 // Env:   AGENT_PITBOOK_FEED  override path to pits.jsonl
+//        AGENT_PITBOOK_UNRESOLVED_TEMPLATE  override path to unresolved-pit-template.json
 
 import fs from "node:fs";
 import path from "node:path";
@@ -20,6 +22,8 @@ import { fileURLToPath } from "node:url";
 const thisDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(thisDir, "..");
 const feedPath = process.env.AGENT_PITBOOK_FEED || path.join(repoRoot, "feeds", "pits.jsonl");
+const unresolvedTemplatePath =
+  process.env.AGENT_PITBOOK_UNRESOLVED_TEMPLATE || path.join(repoRoot, "feeds", "unresolved-pit-template.json");
 
 const SERVER_INFO = { name: "agent-pitbook", version: "0.1.0" };
 const DEFAULT_PROTOCOL = "2024-11-05";
@@ -107,6 +111,31 @@ function getPit(id) {
   return records.find((record) => record.id === id) ?? null;
 }
 
+function getUnresolvedPitTemplate() {
+  try {
+    return JSON.parse(fs.readFileSync(unresolvedTemplatePath, "utf8"));
+  } catch {
+    return {
+      schema_version: "agent-pitbook.unresolved-pit.v1",
+      issue_url: "https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml",
+      safety_rules: [
+        "Search existing pit records before reporting.",
+        "Ask the user for explicit confirmation before opening an issue or publishing any report.",
+        "Do not include secrets, tokens, API keys, cookies, private customer data, proprietary logs, or private source code."
+      ],
+      minimal_report_template: [
+        "Short summary:",
+        "Agent/tool:",
+        "Environment:",
+        "Symptoms and exact errors:",
+        "What we tried:",
+        "Existing Agent Pitbook records checked:",
+        "Minimal public reproduction or safe context:"
+      ]
+    };
+  }
+}
+
 // ---- MCP tool definitions ------------------------------------------------
 
 const TOOLS = [
@@ -147,6 +176,16 @@ const TOOLS = [
       properties: { id: { type: "string", description: "Pit record id (lowercase slug)." } },
       required: ["id"]
     }
+  },
+  {
+    name: "get_unresolved_pit_template",
+    description:
+      "Return the safe no-match report template. Use this when search_pits finds no matching record and the user is still blocked. " +
+      "Draft a public unresolved-pit issue only after explicit user confirmation, and never include secrets or private logs.",
+    inputSchema: {
+      type: "object",
+      properties: {}
+    }
   }
 ];
 
@@ -164,6 +203,13 @@ function callTool(name, args) {
         : `${results.length} pit record(s). Prefer status=verified with recent last_verified. ` +
           "Read the full record with get_pit before applying any fix.";
     return { text: `${header}\n\n${JSON.stringify(results, null, 2)}` };
+  }
+  if (name === "get_unresolved_pit_template") {
+    return {
+      text:
+        "Use this only after searching existing pit records. Ask the user before opening any public issue.\n\n" +
+        JSON.stringify(getUnresolvedPitTemplate(), null, 2)
+    };
   }
   if (name === "get_pit") {
     const record = getPit(args?.id);

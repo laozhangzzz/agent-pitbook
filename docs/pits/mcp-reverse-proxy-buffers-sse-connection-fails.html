@@ -60,6 +60,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -83,6 +84,10 @@
       <section><h2>Verification</h2><ul><li><p>Connect through the proxy and watch the stream.</p><p class="muted">Expected: The SSE stream flows after initialize and the client finishes connecting and lists tools.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Expose the MCP endpoint directly (non-proxied) for testing to confirm buffering is the cause.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Debugging OAuth when OAuth already succeeded and the SSE stream is what is buffered.</li><li>Leaving default proxy_buffering on for an MCP streaming endpoint.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/anthropics/claude-code/issues/5826">anthropics/claude-code issue 5826: Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

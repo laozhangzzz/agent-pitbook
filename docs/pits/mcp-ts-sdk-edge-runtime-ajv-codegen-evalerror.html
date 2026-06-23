@@ -59,6 +59,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -82,6 +83,10 @@
       <section><h2>Verification</h2><ul><li><p>Run the validation/elicitation path on the edge runtime.</p><p class="muted">Expected: Completes with no EvalError: Code generation from strings disallowed.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Move schema validation to a Node-hosted component if the edge runtime cannot run the validator.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Assuming Node-tested MCP server code runs unchanged on Cloudflare Workers.</li><li>Calling elicitation on mcpServer.server instead of Cloudflare's McpAgent.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/typescript-sdk/issues/689">modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) (issue)</a></li><li><a href="https://developers.cloudflare.com/changelog/2025-08-05-agents-mcp-update/">Cloudflare changelog: MCP elicitation support on McpAgent (docs)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

@@ -60,6 +60,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -83,6 +84,10 @@
       <section><h2>Verification</h2><ul><li><p>After killing or patching the native host, verify only the lightweight ping endpoint.</p><p class="muted">Expected: {&quot;status&quot;:&quot;ok&quot;,&quot;message&quot;:&quot;pong&quot;}</p></li><li><p>Reconnect from Claude Code rather than from curl.</p><p class="muted">Expected: Claude Code owns the first real /mcp transport after the reset.</p></li><li><p>Review logs after reconnect.</p><p class="muted">Expected: No fresh Already connected to a transport or ERR_HTTP_HEADERS_SENT errors appear during tool discovery.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Keep only one active owner of chrome-bridge when debugging Claude Code MCP connection failures.</li><li>Create a small reset script that kills the native host and checks /ping, but never calls /mcp.</li><li>Avoid always-loading chrome-bridge in multiple Claude Code foreground and background jobs at the same time.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Using curl /mcp to test whether the bridge is fixed.</li><li>Running doctor --fix repeatedly when /ping already works.</li><li>Asking Claude Code to patch chrome-bridge while Claude Code is actively using that MCP.</li><li>Hot-patching the global npm install without first backing up the original files.</li><li>Treating a healthy /ping response as proof that MCP handshake and tool discovery are healthy.</li></ul></section>
       <section><h2>Sources</h2><ul><li>Local Codex thread: chrome-bridge repeated repair investigation (local-session): codex-thread:019edd12-68d0-7ad0-b92f-50d9c5d76eba</li><li><a href="https://github.com/hangwin/mcp-chrome/issues/321">hangwin/mcp-chrome issue 321: Singleton McpServer causes Already connected to a transport (issue)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/pull/301">hangwin/mcp-chrome pull request 301: replace getMcpServer singleton with factory (pr)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/issues/349">hangwin/mcp-chrome issue 349: MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT (issue)</a></li><li><a href="https://github.com/hangwin/mcp-chrome/issues/306">hangwin/mcp-chrome issue 306: service can only connect once after Chrome starts (issue)</a></li><li><a href="https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging">Chrome Extensions Native Messaging documentation (docs)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

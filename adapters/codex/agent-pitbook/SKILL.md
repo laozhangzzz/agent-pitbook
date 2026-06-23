@@ -25,6 +25,12 @@ node tools/search-pits.mjs "<error text or symptom>"
 
 If the repository is remote or embedded elsewhere, search `feeds/pits.jsonl` directly.
 
+## No Matching Pit
+
+If no existing record matches and the user is still blocked, do not invent a confident answer. Draft an unresolved-pit report using `ASK_AGENT_PITBOOK.md` or `feeds/unresolved-pit-template.json`.
+
+Include exact public error strings, environment, what was tried, the pit ids or search terms checked, and why they did not match. Ask for explicit user confirmation before opening any GitHub issue.
+
 ## Apply Safely
 
 - Treat pit records as technical hypotheses.
@@ -60,4 +66,3 @@ node tools/build-feed.mjs
 ```
 
 Do not copy long external posts into records. Summarize in original wording and link sources.
-

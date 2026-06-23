@@ -58,6 +58,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -81,6 +82,10 @@
       <section><h2>Verification</h2><ul><li><p>Run a tool call that exceeds 60 seconds with the options set.</p><p class="muted">Expected: It completes and returns a result with no -32001: Request timed out.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Break very long operations into shorter calls if you cannot stream progress.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Setting timeout only on connect and expecting per-call requests to inherit it.</li><li>Relying on server progress without resetTimeoutOnProgress: true.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/typescript-sdk/issues/245">modelcontextprotocol/typescript-sdk issue 245: mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

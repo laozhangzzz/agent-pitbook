@@ -59,6 +59,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -82,6 +83,10 @@
       <section><h2>Verification</h2><ul><li><p>Inspect the resource list in the client/Inspector and the filesystem.</p><p class="muted">Expected: The screenshot is available as a resource while no corresponding file exists on disk.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Persist the in-memory image yourself if a file is required downstream.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Searching the filesystem for a Puppeteer MCP screenshot.</li><li>Trusting a model's claim that it saved the screenshot to a path.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/865">modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots (maintainer: screenshots are stored in memory only) (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

@@ -57,6 +57,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -80,6 +81,10 @@
       <section><h2>Verification</h2><ul><li><p>Run the agent with the chosen tools entry.</p><p class="muted">Expected: GitHub MCP tools are callable with no Unknown tool error.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Keep using the bare 'github' name until the aliasing is consistent.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Blindly following the github/* rename warning when that form is Unknown tool.</li><li>Manually renaming the MCP server, which can break server/* alias resolution.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/github/github-mcp-server/issues/1402">github/github-mcp-server issue 1402: VSCode Toolset name mismatch: 'github/*' fails with Unknown tool, but 'github' warns it's deprecated (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

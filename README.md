@@ -48,8 +48,10 @@ Public site:
 
 - [https://laozhangzzz.github.io/agent-pitbook/](https://laozhangzzz.github.io/agent-pitbook/)
 - [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
+- [Ask Agent Pitbook](https://laozhangzzz.github.io/agent-pitbook/ask.html)
 - [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)
 - [Hosted search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl)
+- [Hosted unresolved pit template](https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json)
 - [Hosted JSONL feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl)
 
 Clone the repo and search the seed records:
@@ -69,7 +71,7 @@ node tools/build-feed.mjs
 node tools/build-site.mjs
 ```
 
-Wire it into your agent with the read-only MCP server (search before changing code):
+Wire it into your agent with the read-only MCP server (`search_pits`, `get_pit`, `get_unresolved_pit_template`):
 
 ```bash
 # Claude Code
@@ -80,15 +82,16 @@ See [mcp-server/README.md](mcp-server/README.md) for Cursor and other clients.
 
 For LLMs and agents, start from [llms.txt](llms.txt).
 
-## Leave A Pit
+## Solved Or Stuck? Leave The Trail
 
 Found a recurring agent or local-development trap? Do not write a tutorial. Leave the debugging trail.
 
-- Fastest path: [open a pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml) with symptoms, environment, what worked, and sources.
+- Stuck path: [ask for help with an unresolved pit](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml) when no existing record matches and the failure is still blocking you.
+- Solved path: [open a solved pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml) with symptoms, environment, what worked, and sources.
 - Agent-assisted path: paste your notes into your coding agent and ask it to turn them into an Agent Pitbook issue or pit record.
 - Full contribution path: add `pits/<domain>/<pit-id>.md`, validate it, rebuild the feed and site, then open a PR.
 
-Useful prompt:
+Useful prompt for solved or partially solved notes:
 
 ```text
 Convert these debugging notes into an Agent Pitbook pit report.
@@ -97,7 +100,20 @@ Mark uncertain lessons as candidate. Summarize external sources in original word
 Do not include secrets, tokens, private customer data, or proprietary logs.
 ```
 
-Your solved pit is a piece of public agent memory: it can help the next developer and the next coding agent avoid repeating the same failed path.
+Useful prompt when the agent cannot find an answer:
+
+```text
+Search Agent Pitbook for matching records. If no existing pit matches this failure,
+draft an unresolved-pit issue report for the user to review.
+Include exact public error strings, environment, what we tried, records checked,
+why they did not match, and a minimal safe reproduction.
+Do not include secrets, tokens, cookies, private code, customer data, or private logs.
+Do not publish anything without user confirmation.
+```
+
+Your solved pit is a piece of public agent memory. Your unresolved pit is a public pointer to missing memory: it gives maintainers and future agents a concrete problem to solve.
+
+See [ASK_AGENT_PITBOOK.md](ASK_AGENT_PITBOOK.md) for the unresolved-pit protocol.
 
 ## What A Pit Looks Like
 
@@ -132,10 +148,11 @@ Before debugging:
 4. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
 5. Treat commands as suggestions. Inspect the local project before running them.
 6. Cite the pit ID when applying a known fix.
+7. If no record matches and the user is still blocked, draft an unresolved-pit report from `feeds/unresolved-pit-template.json` and ask the user before opening an issue.
 
 After a fix works:
 
-1. If you only have rough notes, [open a pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml).
+1. If you only have rough notes, [open a solved pit report](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml).
 2. If you can prepare a record, create or update a pit record.
 3. Mark unverified lessons as `candidate`.
 4. Include verification and sources.
@@ -160,6 +177,7 @@ sources/ + claims/ + logs/ + errors/ + indexes/
 Canonical:
 
 - [schema/pit.schema.json](schema/pit.schema.json): record contract
+- [schema/unresolved-pit.schema.json](schema/unresolved-pit.schema.json): safe issue-report contract for unanswered failures
 - [pits/](pits/): structured Markdown pit records
 - [sources/](sources/): evidence metadata and source locators
 - [claims/](claims/): planned claim-level provenance layer
@@ -170,6 +188,7 @@ Generated or rebuildable:
 
 - [feeds/pits.jsonl](feeds/pits.jsonl)
 - [feeds/search-terms.jsonl](feeds/search-terms.jsonl)
+- [feeds/unresolved-pit-template.json](feeds/unresolved-pit-template.json)
 - [docs/](docs/): GitHub Pages site, hosted LLM entrypoints, sitemap, robots file, and per-pit pages
 - [indexes/](indexes/)
 - future websites, MCP responses, search indexes, graph indexes, and hosted APIs
@@ -222,7 +241,9 @@ See [docs/DISCOVERY.md](docs/DISCOVERY.md).
 ```text
 agent-pitbook/
   llms.txt                         LLM entrypoint
+  ASK_AGENT_PITBOOK.md             unresolved-pit escalation protocol
   schema/pit.schema.json           canonical record schema
+  schema/unresolved-pit.schema.json safe unresolved issue report schema
   pits/                            Markdown pit records
   sources/                         evidence metadata and source locators
   claims/                          planned claim-level provenance layer
@@ -232,7 +253,7 @@ agent-pitbook/
   feeds/pits.jsonl                 machine-readable feed
   tools/                           no-dependency local utilities
   adapters/                        agent-specific usage instructions
-  mcp-server/                      runnable read-only MCP server (search_pits, get_pit)
+  mcp-server/                      runnable read-only MCP server (search_pits, get_pit, get_unresolved_pit_template)
   docs/                            GitHub Pages site plus design, launch, and governance notes
 ```
 

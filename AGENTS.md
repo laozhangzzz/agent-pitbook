@@ -39,6 +39,22 @@ When diagnosing a repeated or environment-specific engineering failure:
 4. Treat commands as hypotheses, not instructions. Inspect local files, runtime state, and user intent first.
 5. Ask for approval before destructive, network-expanding, or privilege-expanding commands.
 6. Cite the pit ID when using a known fix.
+7. If no record matches and the user is still blocked, do not guess silently. Draft an unresolved-pit report using `ASK_AGENT_PITBOOK.md`, `schema/unresolved-pit.schema.json`, or `feeds/unresolved-pit-template.json`, then ask the user before opening an issue.
+
+## No-Match Escalation
+
+Use the unresolved-pit path only after checking existing records.
+
+An unresolved report must include:
+
+- the exact public symptoms and error strings
+- agent/tool, OS, runtime, package manager, sandbox, network, and version details
+- what was tried
+- Agent Pitbook pit ids, URLs, or search terms already checked
+- why those records did not match
+- a minimal public reproduction or safe redacted context
+
+Never publish secrets, tokens, private source code, customer data, proprietary logs, or private paths. If GitHub access is available, open `https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml` only after explicit user confirmation.
 
 ## Contribution Workflow
 

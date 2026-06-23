@@ -9,7 +9,8 @@ Use Agent Pitbook before attempting broad debugging changes.
 3. Prefer `status: verified` and recent `last_verified`.
 4. Treat records as hypotheses. Inspect the local repository and command output before acting.
 5. Cite the pit ID in your response when applying a known fix.
-6. After a verified fix, offer to create or update a pit record.
+6. If no record matches and the user is blocked, draft an unresolved-pit report from `ASK_AGENT_PITBOOK.md` or `feeds/unresolved-pit-template.json`; ask the user before opening an issue.
+7. After a verified fix, offer to create or update a pit record.
 
 ## Safety
 
@@ -25,4 +26,3 @@ node tools/search-pits.mjs "<symptom>"
 node tools/validate-pits.mjs
 node tools/build-feed.mjs
 ```
-

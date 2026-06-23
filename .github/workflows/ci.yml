@@ -20,18 +20,18 @@ jobs:
       - name: Check feeds are rebuilt from records (no drift)
         run: |
           node tools/build-feed.mjs
-          if ! git diff --quiet -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl; then
+          if ! git diff --quiet -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl feeds/unresolved-pit-template.json; then
             echo "::error::feeds/ is out of date. Run 'node tools/build-feed.mjs' and commit."
-            git --no-pager diff -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl
+            git --no-pager diff -- feeds/pits.jsonl feeds/index.jsonl feeds/search-terms.jsonl feeds/unresolved-pit-template.json
             exit 1
           fi
 
       - name: Check static site is rebuilt from records (no drift)
         run: |
           node tools/build-site.mjs
-          if ! git diff --quiet -- docs/.nojekyll docs/index.html docs/llms.txt docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/; then
+          if ! git diff --quiet -- docs/.nojekyll docs/index.html docs/llms.txt docs/ask.html docs/ask.md docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/; then
             echo "::error::docs/ is out of date. Run 'node tools/build-site.mjs' and commit."
-            git --no-pager diff -- docs/.nojekyll docs/index.html docs/llms.txt docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/
+            git --no-pager diff -- docs/.nojekyll docs/index.html docs/llms.txt docs/ask.html docs/ask.md docs/search-queries.html docs/search-queries.md docs/robots.txt docs/sitemap.xml docs/pits/ docs/feeds/
             exit 1
           fi
 
@@ -42,6 +42,7 @@ jobs:
             '{"jsonrpc":"2.0","id":2,"method":"tools/list"}' \
             | node mcp-server/server.mjs)
           echo "$OUT" | grep -q '"search_pits"' || { echo "::error::MCP server did not list search_pits"; exit 1; }
+          echo "$OUT" | grep -q '"get_unresolved_pit_template"' || { echo "::error::MCP server did not list get_unresolved_pit_template"; exit 1; }
 
       - name: Freshness report (warning only)
         run: node tools/check-freshness.mjs --max-age-days 180

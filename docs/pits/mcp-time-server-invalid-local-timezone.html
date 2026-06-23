@@ -59,6 +59,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -82,6 +83,10 @@
       <section><h2>Verification</h2><ul><li><p>Start the server with an explicit IANA timezone.</p><p class="muted">Expected: Starts without the zoneinfo load traceback.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Set the process/system timezone to a canonical IANA name.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Passing a timezone abbreviation (EDT/PDT/CEST) instead of an IANA name.</li><li>Relying on auto-detected local timezone on a platform that emits abbreviations during DST.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/786">modelcontextprotocol/servers issue 786: Time server fails under EDT timezone (use --local-timezone with an IANA name) (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

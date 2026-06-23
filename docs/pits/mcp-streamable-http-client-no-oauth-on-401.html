@@ -60,6 +60,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -83,6 +84,10 @@
       <section><h2>Verification</h2><ul><li><p>Connect over Streamable HTTP to an OAuth-protected server on the fixed client.</p><p class="muted">Expected: A 401 triggers the authorization flow instead of hanging.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Use the SSE transport temporarily if it handles the OAuth challenge while you upgrade.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Concluding the OAuth server is broken when the client transport did not act on the 401.</li><li>Staying on an old client version that lacks Streamable HTTP auth handling.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/inspector/issues/358">modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

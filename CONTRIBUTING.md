@@ -6,7 +6,22 @@ Agent Pitbook values verified, narrow, source-backed records over volume.
 
 You do not need to understand the schema to contribute.
 
-If you solved a real debugging pit, open a pit report:
+If you are still blocked and no existing record matches, open an unresolved pit:
+
+https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml
+
+The report only needs:
+
+- exact symptoms and public error strings
+- agent/tool and environment
+- what you tried
+- which Agent Pitbook records or search terms you checked
+- a minimal public reproduction or safe redacted context
+- source links or small redacted evidence
+
+Maintainers or agents can help triage the issue. Once it is solved, the lesson can be converted into a candidate or verified pit record.
+
+If you solved a real debugging pit, open a solved pit report:
 
 https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml
 
@@ -20,9 +35,24 @@ The report only needs:
 
 Maintainers or agents can turn the report into a structured pit record later.
 
+See [ASK_AGENT_PITBOOK.md](ASK_AGENT_PITBOOK.md) for the agent-facing unresolved-pit protocol.
+
 ## Agent-Assisted Drafting
 
 You can ask a coding agent to help shape your notes before opening an issue or PR.
+
+For an unresolved problem, ask:
+
+```text
+Search Agent Pitbook for matching records. If no existing pit matches this failure,
+draft an unresolved-pit issue report for the user to review.
+Include exact public error strings, environment, what we tried, records checked,
+why they did not match, and a minimal safe reproduction.
+Do not include secrets, tokens, cookies, private code, customer data, or private logs.
+Do not publish anything without user confirmation.
+```
+
+For a solved or partially solved problem, ask:
 
 ```text
 Convert these debugging notes into an Agent Pitbook pit report.

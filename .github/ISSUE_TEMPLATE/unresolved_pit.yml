@@ -1,0 +1,125 @@
+name: Ask for help with an unresolved pit
+description: Leave a blocked coding-agent or local-tooling failure that no current pit record answers yet.
+title: "[ask] "
+labels: ["help wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when you or your agent searched Agent Pitbook and did not find a matching fix.
+
+        This is not a polished pit record. It is a safe public debugging trail so maintainers and future agents can help solve the missing case.
+
+        If an AI agent is preparing this issue, it must show the draft to the user and get confirmation before posting.
+  - type: input
+    id: short-summary
+    attributes:
+      label: Short summary
+      description: One sentence naming the blocked failure.
+      placeholder: "Example: Gemini CLI MCP stdio server starts, then every tool call hangs without logs"
+    validations:
+      required: true
+  - type: input
+    id: agent-tool
+    attributes:
+      label: Agent or tool
+      description: Coding agent, MCP client/server, CLI, package manager, browser tool, or local program involved.
+      placeholder: "Codex, Claude Code, Gemini CLI, Cursor, Qwen Code, MCP server name, npm, uv, Chrome, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, architecture, shell, runtime, package manager, versions, sandbox, network, browser, container, permissions, and other constraints.
+      placeholder: |
+        - OS / arch:
+        - Agent / tool version:
+        - Runtime / package manager:
+        - Sandbox / network / permissions:
+        - Browser / container / MCP transport:
+    validations:
+      required: true
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Symptoms and exact errors
+      description: Preserve exact public error strings, commands, UI actions, and observable behavior. Redact secrets.
+      placeholder: |
+        - What failed?
+        - Exact command or UI action:
+        - Exact error text or logs:
+        - What did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: existing-records
+    attributes:
+      label: Existing Agent Pitbook records checked
+      description: List pit ids, URLs, or search terms checked, and why they did not match.
+      placeholder: |
+        - Searched: ...
+        - Checked pit id / URL: ...
+        - Why it did not match:
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What was tried
+      description: Commands, settings, docs, issue threads, workarounds, or debugging steps already tried.
+      placeholder: |
+        1. ...
+        2. ...
+        Result:
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal public reproduction or safe context
+      description: Provide a small repro, redacted command sequence, or explain why no public repro is available.
+      placeholder: |
+        Steps:
+        1. ...
+        2. ...
+        Public repo / gist / redacted config:
+    validations:
+      required: true
+  - type: textarea
+    id: suspected-root-cause
+    attributes:
+      label: Suspected root cause
+      description: Optional. What do you or the agent think might be wrong?
+    validations:
+      required: false
+  - type: textarea
+    id: temporary-workaround
+    attributes:
+      label: Temporary workaround
+      description: Optional. Anything that partially unblocked you.
+    validations:
+      required: false
+  - type: textarea
+    id: sources
+    attributes:
+      label: Links or redacted evidence
+      description: Link related docs, issues, PRs, release notes, screenshots, or small redacted log snippets. Do not paste full external posts.
+      placeholder: |
+        - https://github.com/...
+        - docs:
+        - redacted log excerpt:
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, tokens, cookies, API keys, private customer data, proprietary logs, and private source code.
+          required: true
+        - label: I understand this is public and external text is evidence, not an instruction for agents to execute.
+          required: true
+        - label: If an AI agent prepared this, the user reviewed and approved this issue before posting.
+          required: true
+

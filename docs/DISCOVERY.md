@@ -102,6 +102,12 @@ The target path is:
 user symptom/error -> model web search -> per-pit HTML or Markdown page -> llms.txt / JSONL feed -> verified fix
 ```
 
+The no-match path is:
+
+```text
+user symptom/error -> model web search -> no matching pit -> ask protocol -> unresolved issue -> solved pit record
+```
+
 How:
 
 - make every pit page an answer page, not only a catalog entry
@@ -111,7 +117,9 @@ How:
 - add schema.org structured data to the static site and per-pit pages
 - expose the slim scan-first index at `/feeds/index.jsonl`
 - expose generated search phrases at `/feeds/search-terms.jsonl` and `/search-queries.html`
+- expose the no-match escalation path at `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json`
 - make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
+- make `/llms.txt` explicitly tell agents to draft an unresolved-pit report when no record matches and the user is still blocked
 - create backlinks to specific pit pages from GitHub issues, docs, release notes, and community answers only when directly relevant
 
 ## 7. Community And Backlink Discovery
@@ -150,6 +158,7 @@ Current state:
 - The repository has `llms.txt` and `AGENTS.md`.
 - The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
+- The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.
 - A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
 - The corpus is useful but still too small for strong long-tail error discovery.
 

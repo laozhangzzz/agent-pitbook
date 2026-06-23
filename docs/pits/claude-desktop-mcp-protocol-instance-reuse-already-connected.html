@@ -58,6 +58,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -81,6 +82,10 @@
       <section><h2>Verification</h2><ul><li><p>Upgrade Claude Desktop and relaunch.</p><p class="muted">Expected: Startup toasts stop and the log shows no 'Already connected to a transport' for MCP servers.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>Ignore the toast for internal servers that still function, until you can upgrade.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Rewriting MCP server configs to chase a client-side 'Already connected to a transport' bug.</li><li>Assuming the toast means your server is broken when it may still be functional.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/anthropics/claude-code/issues/27390">anthropics/claude-code issue 27390: Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

@@ -60,6 +60,7 @@
       <a href="/agent-pitbook/llms.txt">llms.txt</a>
       <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
       <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
       <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
       <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
     </nav>
@@ -83,6 +84,10 @@
       <section><h2>Verification</h2><ul><li><p>Launch with @latest and an absolute MEMORY_FILE_PATH, then check where the file is written.</p><p class="muted">Expected: The memory file is created at exactly the absolute path provided.</p></li></ul></section>
       <section><h2>Workarounds</h2><ul><li>As a stopgap some users edited dist/index.js in node_modules, but upgrading the package is the durable fix.</li></ul></section><section><h2>Anti-patterns</h2><ul><li>Inferring installed MCP server behavior from the GitHub source instead of the published build.</li><li>Assuming a relative env-var path resolves against the project working directory.</li><li>Treating a node_modules patch as a permanent fix instead of upgrading.</li></ul></section>
       <section><h2>Sources</h2><ul><li><a href="https://github.com/modelcontextprotocol/servers/issues/1018">modelcontextprotocol/servers issue 1018: Environment variables not respected in @modelcontextprotocol/server-memory package (issue)</a></li></ul></section>
+      <section><h2>No matching fix?</h2>
+        <p>If this record is close but does not solve the user's failure, create a safe unresolved-pit report instead of guessing. Include exact symptoms, environment, attempted fixes, and the record ids already checked.</p>
+        <p class="record-links"><a href="https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml">Ask for help with an unresolved pit</a><span>|</span><a href="/agent-pitbook/ask.md">Agent protocol</a></p>
+      </section>
     </article>
   </main>
 </body>

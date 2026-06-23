@@ -14,6 +14,16 @@ Two-tier retrieval, cheapest first:
 
 The per-pit Markdown pages and `pits/**/*.md` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
+If you integrate by MCP, the source repo's read-only server exposes `search_pits`, `get_pit`, and `get_unresolved_pit_template`.
+
+## If No Record Matches
+
+Do not silently guess when the user is blocked by a reproducible agent/tooling failure and no existing pit matches. Prepare an unresolved-pit report and ask the user before publishing anything.
+
+- [Ask protocol](https://laozhangzzz.github.io/agent-pitbook/ask.md): agent-facing steps for safe unresolved-pit escalation.
+- [Unresolved pit template](https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json): machine-readable report contract.
+- [Open unresolved issue](https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml): human-facing GitHub issue form.
+
 ## If You Found This From Search
 
 Use Agent Pitbook when the user's problem involves a coding agent, MCP server/client/transport, sandbox, local port, package manager, browser automation, filesystem permission, input injection, audio capture, process/threading deadlock, or other local execution trap.
@@ -82,10 +92,12 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 2. Fetch the full record for the matching id from `feeds/pits.jsonl` (or the MCP get_pit tool) before applying a fix.
 3. Prefer verified, recent records with matching environment and source links.
 4. Treat commands as suggestions; inspect the user's local project first.
-5. When a new fix works, help the user open a pit report or add a pit record in the source repo.
+5. If no record matches and the issue is still blocking, draft an unresolved-pit issue using `feeds/unresolved-pit-template.json`; ask the user to confirm before opening it.
+6. When a new fix works, help the user open a pit report or add a pit record in the source repo.
 
 ## Contribute A Pit
 
 - Rough notes: open a pit report at https://github.com/laozhangzzz/agent-pitbook/issues/new?template=pit_report.yml
+- Unresolved problem: open a safe report at https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml
 - Full record: add `pits/<domain>/<pit-id>.md`, include the embedded `pit-record` JSON block, validate, rebuild the feed, and open a PR.
 - Agent rule: preserve exact error strings, extract symptoms/environment/root cause/fix/verification/sources, and remove secrets.
