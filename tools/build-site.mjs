@@ -802,6 +802,7 @@ function searchTermsFeed(records) {
         tags: record.tags ?? [],
         url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
+        known_fix_issue_url: recordKnownFixIssueUrl(record),
         search_terms: recordSearchTerms(record, 48),
         answer_queries: recordAnswerQueries(record, 32),
         answer_summary: recordAnswerSummary(record)
@@ -821,6 +822,7 @@ function answerQueriesFeed(records) {
         tags: record.tags ?? [],
         url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
+        known_fix_issue_url: recordKnownFixIssueUrl(record),
         answer_summary: recordAnswerSummary(record),
         answer_queries: recordAnswerQueries(record, 64)
       })
@@ -948,6 +950,7 @@ function renderRootSearchIndex(records) {
     lines.push(`Tools: ${(record.affected_tools ?? []).join(", ")}`);
     lines.push(`HTML: ${slugUrl(recordHtmlPath(record))}`);
     lines.push(`Markdown: ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push(`Known-fix issue: ${recordKnownFixIssueUrl(record) ?? "not yet assigned"}`);
     lines.push("");
     lines.push(`Problem: ${answer.problem}`);
     lines.push(`Root cause: ${answer.root_cause}`);
@@ -983,6 +986,7 @@ function renderAnswerQueriesText(records) {
     lines.push(`TITLE ${record.title}`);
     lines.push(`URL ${slugUrl(recordHtmlPath(record))}`);
     lines.push(`MARKDOWN ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push(`KNOWN_FIX_ISSUE ${recordKnownFixIssueUrl(record) ?? ""}`);
     lines.push(`PROBLEM ${answer.problem}`);
     lines.push(`ROOT_CAUSE ${answer.root_cause}`);
     lines.push(`FIX_FIRST ${answer.fix}`);
@@ -1017,6 +1021,7 @@ function renderAiText(records) {
     const answer = recordAnswerSummary(record);
     lines.push(`- ${primaryAnswerQuery(record)}`);
     lines.push(`  URL: ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`  Known-fix issue: ${recordKnownFixIssueUrl(record) ?? "not yet assigned"}`);
     lines.push(`  Problem: ${answer.problem}`);
     lines.push(`  Root cause: ${answer.root_cause}`);
     lines.push(`  Fix first: ${answer.fix}`);
