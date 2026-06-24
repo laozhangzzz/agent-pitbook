@@ -83,18 +83,22 @@ The search surface now includes:
 
 ## Latest Audit: 2026-06-24
 
-Status after creating dedicated known-fix issues and deploying the RSS feed:
+Status after creating dedicated known-fix issues, deploying exact-query alias pages, and submitting the 1350-URL sitemap:
 
 - Pass: GitHub repo search for `agent-pitbook` returns `laozhangzzz/agent-pitbook`.
 - Pass: GitHub issue search for `GitHub MCP Server Fails to Start` returns dedicated issue #15 before the broad tracker issue #2.
 - Pass: GitHub issue search for `Singleton McpServer causes Already connected to a transport` returns dedicated issue #5 before the broad tracker issue #2.
+- Pass: GitHub issue search for `MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT` returns dedicated issue #5.
+- Pass: GitHub issue search for `MCP error -32000` returns dedicated issue #15.
 - Pass: deployed Pages URLs expose `/feed.xml`, `/llms.txt`, `/ai.txt`, `/search-index.md`, and `/answer-queries.txt` with the known-fix issue search surface linked where appropriate.
+- Pass: deployed Pages URLs expose 624 HTML exact-query alias pages plus 624 Markdown mirrors under `/q/`; `/feeds/answer-queries.jsonl` exposes 16 `query_landing_urls` per record.
 - Pass: `/SEARCH_SNAPSHOT_2026-06-24.md` lists all 39 known-fix issue URLs with exact solved-problem titles.
 - Pass: GitHub release `search-snapshot-2026-06-24` is public and includes the exact problem titles plus `pits.jsonl`, `answer-queries.jsonl`, `search-terms.jsonl`, `known-fix-issues.jsonl`, `SEARCH_INDEX.md`, `SEARCH_SNAPSHOT_2026-06-24.md`, and `feed.xml` assets.
 - Pass: per-pit HTML and Markdown pages link to their dedicated known-fix issue; per-pit JSON-LD includes the issue URL in `sameAs` and `discussionUrl`.
-- Pass: IndexNow accepted the current 101-URL sitemap submission.
-- Weak: GitHub code search via `gh search code` did not return the exact problem-title matches immediately after the commits, even though GitHub web search pages include matching text.
+- Pass: IndexNow accepted the current 1350-URL sitemap submission.
+- Weak: GitHub code search via `gh search code` did not return even `agent-pitbook` inside the repository immediately after the commits, so code search indexing remains unproven.
 - Fail/lagging: ordinary web search did not yet return the new Pages or GitHub issue surfaces immediately after deployment. This is expected indexing delay, but it means the objective is not complete until external search starts surfacing the records.
+- Searchable audit comments were added to GitHub issue #2, plus alias URL comments on issues #5 and #15.
 
 ## IndexNow Submission
 
