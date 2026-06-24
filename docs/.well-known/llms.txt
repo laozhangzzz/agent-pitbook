@@ -38,6 +38,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search snapshot](https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md): release-style exact-query snapshot with known-fix issue links.
 - [GitHub search snapshot release](https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24): release page with JSONL, RSS, and index assets.
+- [Exact-query landing pages](https://laozhangzzz.github.io/agent-pitbook/q/): one page per solved problem, with the searched phrase in URL, title, and H1.
 - [Full text index](https://laozhangzzz.github.io/agent-pitbook/llms-full.txt): complete answer-first text index.
 - [Plain answer query text](https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt): query -> pit URL map for search crawlers.
 - [AI routing text](https://laozhangzzz.github.io/agent-pitbook/ai.txt): compact instructions for AI agents.

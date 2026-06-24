@@ -8,6 +8,7 @@ Primary entrypoints:
 - LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 - Full text index: https://laozhangzzz.github.io/agent-pitbook/llms-full.txt
 - Answer query map: https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt
+- Exact-query landing pages: https://laozhangzzz.github.io/agent-pitbook/q/
 - RSS feed: https://laozhangzzz.github.io/agent-pitbook/feed.xml
 - GitHub release: https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24
 - GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface

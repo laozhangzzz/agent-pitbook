@@ -19,6 +19,7 @@ Pit ID: agent-network-restricted-dependency-install
 Pit title: Dependency install fails because the agent sandbox blocks network access
 Status: verified
 Tools: codex, claude-code, gemini, qwen-code, cursor, aider
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/3
@@ -53,6 +54,7 @@ Pit ID: agent-prompt-injection-in-debug-sources
 Pit title: Debug sources can contain prompt injection targeting coding agents
 Status: candidate
 Tools: codex, claude-code, gemini, qwen-code, cursor, aider
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/4
@@ -87,6 +89,7 @@ Pit ID: claude-agent-sdk-mcp-json-requires-project-settingsource
 Pit title: Claude Agent SDK does not load .mcp.json unless settingSources includes "project"
 Status: verified
 Tools: claude-code, claude-agent-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/8
@@ -121,6 +124,7 @@ Pit ID: claude-code-mcp-chrome-bridge-single-transport-deadlock
 Pit title: Claude Code chrome-bridge MCP gets stuck after one transport connects
 Status: verified
 Tools: claude-code, mcp-chrome-bridge
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/5
@@ -155,6 +159,7 @@ Pit ID: claude-desktop-mcp-protocol-instance-reuse-already-connected
 Pit title: Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)
 Status: verified
 Tools: claude-desktop
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/9
@@ -189,6 +194,7 @@ Pit ID: claude-desktop-no-dynamic-resource-templates
 Pit title: Claude Desktop does not list dynamic MCP resource templates (only static resources)
 Status: verified
 Tools: claude-desktop, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/10
@@ -223,6 +229,7 @@ Pit ID: codex-workspace-root-moved-stale-state
 Pit title: Codex still references an old workspace path after a project move
 Status: candidate
 Tools: codex
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/6
@@ -257,6 +264,7 @@ Pit ID: docker-published-port-localhost-refused
 Pit title: Docker port is published but localhost refuses the connection
 Status: verified
 Tools: codex, claude-code, gemini, qwen-code, cursor, aider
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/7
@@ -291,6 +299,7 @@ Pit ID: fastmcp-421-invalid-host-header-dns-rebinding
 Pit title: FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
 Status: verified
 Tools: mcp-server, fastmcp
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/11
@@ -325,6 +334,7 @@ Pit ID: fastmcp-overrides-logging-configuration
 Pit title: FastMCP overrides your app's logging configuration on init (duplicate or lost logs)
 Status: candidate
 Tools: mcp-server, python-sdk, fastmcp
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/12
@@ -359,6 +369,7 @@ Pit ID: github-mcp-vscode-toolset-name-mismatch
 Pit title: VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed
 Status: candidate
 Tools: github-mcp-server, vscode
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/13
@@ -393,6 +404,7 @@ Pit ID: macos-portaudio-silent-zero-capture-unavailable-default-input
 Pit title: macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable
 Status: verified
 Tools: sounddevice, portaudio, voice-to-claude
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/39
@@ -427,6 +439,7 @@ Pit ID: mcp-client-uses-user-level-npmrc-wrong-registry
 Pit title: MCP server hangs because the GUI client uses your user-level .npmrc, not your project's
 Status: verified
 Tools: cursor, claude-desktop, cline, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/14
@@ -461,6 +474,7 @@ Pit ID: mcp-error-32000-connection-closed-server-failed-to-start
 Pit title: MCP error -32000: Connection closed means the stdio server died before the handshake
 Status: verified
 Tools: claude-desktop, cursor, cline, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/15
@@ -495,6 +509,7 @@ Pit ID: mcp-filesystem-server-windows-access-denied-case-sensitivity
 Pit title: Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 Status: candidate
 Tools: claude-desktop, cursor, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/16
@@ -529,6 +544,7 @@ Pit ID: mcp-github-remote-oauth-dcr-unsupported-use-pat
 Pit title: Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 Status: verified
 Tools: claude-code, github-mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/17
@@ -563,6 +579,7 @@ Pit ID: mcp-inspector-docker-connection-refused-host-env
 Pit title: MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 Status: verified
 Tools: mcp-inspector
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/18
@@ -597,6 +614,7 @@ Pit ID: mcp-inspector-release-regression-pin-version
 Pit title: MCP Inspector breaks after an upgrade; pin a known-good version
 Status: verified
 Tools: mcp-inspector
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/19
@@ -631,6 +649,7 @@ Pit ID: mcp-npx-cache-corrupted-server-fails-to-start
 Pit title: A corrupted or cold npx cache makes an MCP server fail to start or time out
 Status: verified
 Tools: claude-desktop, cursor, cline, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/20
@@ -665,6 +684,7 @@ Pit ID: mcp-puppeteer-screenshots-in-memory-only
 Pit title: Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 Status: verified
 Tools: mcp-server, claude-desktop
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/21
@@ -699,6 +719,7 @@ Pit ID: mcp-reference-server-archived-unmaintained
 Pit title: Several official reference MCP servers are archived; their bugs will not be fixed
 Status: verified
 Tools: mcp-server, claude-desktop, cursor
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/22
@@ -733,6 +754,7 @@ Pit ID: mcp-reverse-proxy-buffers-sse-connection-fails
 Pit title: A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 Status: verified
 Tools: claude-desktop, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/23
@@ -767,6 +789,7 @@ Pit ID: mcp-server-memory-ignores-memory-file-path-env
 Pit title: server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 Status: verified
 Tools: claude-desktop, cursor, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
@@ -801,6 +824,7 @@ Pit ID: mcp-sse-received-request-before-initialization
 Pit title: SSE MCP server: Received request before initialization was complete
 Status: verified
 Tools: mcp-server, python-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/25
@@ -835,6 +859,7 @@ Pit ID: mcp-sse-session-lost-multi-worker
 Pit title: MCP SSE session lost across workers/pods: Could not find session for ID (404)
 Status: verified
 Tools: mcp-server, python-sdk, fastmcp
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/26
@@ -869,6 +894,7 @@ Pit ID: mcp-stateless-streamable-http-closedresourceerror
 Pit title: Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 Status: candidate
 Tools: mcp-server, python-sdk, fastmcp
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/27
@@ -903,6 +929,7 @@ Pit ID: mcp-stdio-server-exits-shell-path-not-inherited
 Pit title: MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
 Status: verified
 Tools: claude-desktop, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/28
@@ -937,6 +964,7 @@ Pit ID: mcp-stdio-stdout-logging-breaks-protocol
 Pit title: Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
 Status: verified
 Tools: mcp-server, typescript-sdk, python-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/29
@@ -971,6 +999,7 @@ Pit ID: mcp-streamable-http-client-no-oauth-on-401
 Pit title: Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 Status: verified
 Tools: mcp-inspector, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/30
@@ -1005,6 +1034,7 @@ Pit ID: mcp-time-server-invalid-local-timezone
 Pit title: mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 Status: verified
 Tools: mcp-server, claude-desktop
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/31
@@ -1039,6 +1069,7 @@ Pit ID: mcp-ts-client-default-60s-request-timeout
 Pit title: MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
 Status: verified
 Tools: mcp-server, typescript-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/32
@@ -1073,6 +1104,7 @@ Pit ID: mcp-ts-sdk-commonjs-esm-pkce-challenge
 Pit title: MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)
 Status: verified
 Tools: mcp-server, typescript-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/33
@@ -1107,6 +1139,7 @@ Pit ID: mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror
 Pit title: MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation)
 Status: candidate
 Tools: mcp-server, typescript-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/34
@@ -1141,6 +1174,7 @@ Pit ID: mcp-ts-sdk-type-instantiation-excessively-deep
 Pit title: MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 Status: verified
 Tools: mcp-server, typescript-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/35
@@ -1175,6 +1209,7 @@ Pit ID: mcp-ts-sdk-zod-v4-incompatible
 Pit title: MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
 Status: verified
 Tools: mcp-server, typescript-sdk
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/36
@@ -1209,6 +1244,7 @@ Pit ID: mcp-windows-npx-requires-cmd-c-wrapper
 Pit title: On Windows an MCP server launched with npx needs a cmd /c wrapper
 Status: verified
 Tools: claude-desktop, cursor, cline, mcp-server
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/37
@@ -1243,6 +1279,7 @@ Pit ID: portaudio-stream-close-blocks-hotkey-callback-thread
 Pit title: PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
 Status: verified
 Tools: portaudio, pynput, voice-to-claude
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/40
@@ -1277,6 +1314,7 @@ Pit ID: pynput-mixed-cjk-ascii-type-out-of-order-macos
 Pit title: pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
 Status: verified
 Tools: pynput, voice-to-claude
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/41
@@ -1311,6 +1349,7 @@ Pit ID: uv-cache-outside-workspace-sandbox
 Pit title: uv fails in a managed workspace because cache or Python install paths are outside writable roots
 Status: verified
 Tools: codex, claude-code, gemini, qwen-code, cursor, aider
+Query landing: https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.html
 HTML: https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html
 Markdown: https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.md
 Known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/38

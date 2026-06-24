@@ -93,11 +93,23 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -109,11 +121,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -125,11 +153,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -141,11 +185,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -157,11 +217,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -173,11 +249,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -189,11 +281,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -205,11 +313,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -221,11 +345,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -237,11 +377,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -253,11 +409,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -269,11 +441,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -285,11 +473,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -301,11 +505,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -317,11 +537,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -333,11 +569,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -349,11 +601,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -365,11 +633,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -381,11 +665,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
@@ -397,11 +697,27 @@
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.md</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.html</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.md</loc>
     <lastmod>2026-06-24</lastmod>
   </url>
 </urlset>

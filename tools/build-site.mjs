@@ -64,6 +64,7 @@ const knownFixIssueIds = [
 ];
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
+const siteQueryDir = path.join(docsDir, "q");
 const siteFeedsDir = path.join(docsDir, "feeds");
 const wellKnownDir = path.join(docsDir, ".well-known");
 
@@ -98,6 +99,30 @@ function recordHtmlPath(record) {
 
 function recordMarkdownPath(record) {
   return `/pits/${record.id}.md`;
+}
+
+function slugifyQuery(value) {
+  const slug = String(value ?? "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/['"]/g, "")
+    .replace(/[^\p{Letter}\p{Number}]+/gu, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 120)
+    .replace(/^-+|-+$/g, "");
+  return slug || "query";
+}
+
+function recordQuerySlug(record) {
+  return slugifyQuery(primaryAnswerQuery(record));
+}
+
+function recordQueryPath(record) {
+  return `/q/${recordQuerySlug(record)}.html`;
+}
+
+function recordQueryMarkdownPath(record) {
+  return `/q/${recordQuerySlug(record)}.md`;
 }
 
 function sourceHref(record) {
@@ -323,6 +348,35 @@ function pitJsonLd(record) {
   };
 }
 
+function queryLandingJsonLd(record) {
+  const answer = recordAnswerSummary(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline: primaryAnswerQuery(record),
+    description: `Known fix. Problem: ${answer.problem} Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
+    url: slugUrl(recordQueryPath(record)),
+    dateCreated: record.created_at,
+    dateModified: record.updated_at,
+    keywords: recordAnswerQueries(record, 16).join(", "),
+    about: recordKeywords(record),
+    isPartOf: {
+      "@type": "Dataset",
+      name: "Agent Pitbook",
+      url: slugUrl("/")
+    },
+    mainEntityOfPage: slugUrl(recordQueryPath(record)),
+    sameAs: [
+      slugUrl(recordHtmlPath(record)),
+      slugUrl(recordMarkdownPath(record)),
+      sourceHref(record),
+      knownFixIssueUrl
+    ].filter(Boolean),
+    ...(knownFixIssueUrl ? { discussionUrl: knownFixIssueUrl } : {})
+  };
+}
+
 function pageShell({ title, description, canonicalPath, body, keywords = [], jsonLd = [] }) {
   const canonicalUrl = slugUrl(canonicalPath);
   const keywordMeta = keywords.length
@@ -424,6 +478,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
+        <li><a href="/agent-pitbook/q/">/q/</a> - exact-query landing pages with searched problem text in URL, title, and H1</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md">/SEARCH_SNAPSHOT_2026-06-24.md</a> - release-style exact-query snapshot with known-fix issue links</li>
         <li><a href="${searchSnapshotReleaseUrl}">GitHub search snapshot release</a> - release page with JSONL, RSS, and index assets</li>
@@ -587,6 +642,73 @@ function renderPitMarkdown(record) {
   return `${lines.join("\n")}\n`;
 }
 
+function renderQueryLanding(record) {
+  const answerQueries = recordAnswerQueries(record, 24);
+  const answer = recordAnswerSummary(record);
+  const primaryQuery = primaryAnswerQuery(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
+  const knownFixIssueLink = knownFixIssueUrl
+    ? `<span>|</span><a href="${knownFixIssueUrl}">GitHub known-fix issue</a>`
+    : "";
+
+  return pageShell({
+    title: `${primaryQuery} - Known fix - Agent Pitbook`,
+    description: `Known fix. Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
+    canonicalPath: recordQueryPath(record),
+    keywords: unique([...recordKeywords(record), ...answerQueries]),
+    jsonLd: [queryLandingJsonLd(record)],
+    body: `    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>${escapeHtml(primaryQuery)}</h1>
+      <p class="lede">${escapeHtml(answer.problem)}</p>
+      <p class="record-links">
+        <a href="/agent-pitbook${recordHtmlPath(record)}">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook${recordQueryMarkdownPath(record)}">Markdown query page</a>
+        ${knownFixIssueLink}
+      </p>
+      <section><h2>Fast answer</h2>${renderFastAnswer(record)}</section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2>${listItems(answerQueries)}</section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook${recordHtmlPath(record)}">HTML pit</a><span>|</span><a href="/agent-pitbook${recordMarkdownPath(record)}">Markdown pit</a><span>|</span><a href="${sourceHref(record)}">Canonical source</a></p>
+      </section>
+    </article>`
+  });
+}
+
+function renderQueryLandingMarkdown(record) {
+  const answer = recordAnswerSummary(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
+  const lines = [
+    `# ${primaryAnswerQuery(record)}`,
+    "",
+    "Known fix landing page for an exact problem query.",
+    "",
+    `Pit ID: ${record.id}`,
+    `HTML query page: ${slugUrl(recordQueryPath(record))}`,
+    `Full pit HTML: ${slugUrl(recordHtmlPath(record))}`,
+    `Full pit Markdown: ${slugUrl(recordMarkdownPath(record))}`,
+    ...(knownFixIssueUrl ? [`GitHub known-fix issue: ${knownFixIssueUrl}`] : []),
+    "",
+    "## Fast Answer",
+    "",
+    `- Problem: ${answer.problem}`,
+    `- Root cause: ${answer.root_cause}`,
+    `- Fix first: ${answer.fix}`,
+    `- Verify: ${answer.verification || "Run the verification steps in the full pit record."}`,
+    "",
+    "## Queries This Answers",
+    "",
+    ...recordAnswerQueries(record, 24).map((item) => `- ${item}`),
+    ""
+  ];
+
+  return `${lines.join("\n")}\n`;
+}
+
 function renderLlms(records) {
   const recordLinks = records
     .map((record) => `- [${record.id}](${slugUrl(recordMarkdownPath(record))}): ${record.summary}`)
@@ -632,6 +754,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search snapshot](${slugUrl("/SEARCH_SNAPSHOT_2026-06-24.md")}): release-style exact-query snapshot with known-fix issue links.
 - [GitHub search snapshot release](${searchSnapshotReleaseUrl}): release page with JSONL, RSS, and index assets.
+- [Exact-query landing pages](${slugUrl("/q/")}): one page per solved problem, with the searched phrase in URL, title, and H1.
 - [Full text index](${slugUrl("/llms-full.txt")}): complete answer-first text index.
 - [Plain answer query text](${slugUrl("/answer-queries.txt")}): query -> pit URL map for search crawlers.
 - [AI routing text](${slugUrl("/ai.txt")}): compact instructions for AI agents.
@@ -791,6 +914,28 @@ function renderPitIndex(records) {
   });
 }
 
+function renderQueryIndex(records) {
+  const links = records
+    .map((record) => {
+      const answer = recordAnswerSummary(record);
+      return `<li><a href="/agent-pitbook${recordQueryPath(record)}">${escapeHtml(primaryAnswerQuery(record))}</a><p>${escapeHtml(answer.fix)}</p></li>`;
+    })
+    .join("");
+
+  return pageShell({
+    title: "Exact Query Landing Pages - Agent Pitbook",
+    description: "One answer-first landing page per solved problem query for search-enabled agents.",
+    canonicalPath: "/q/",
+    keywords: unique([...siteKeywords(), "exact query landing pages", "known fixes"]),
+    body: `    <section>
+      <p class="eyebrow">Exact-query index</p>
+      <h1>Exact query landing pages</h1>
+      <p class="lede">These pages put the searched problem phrase directly in the URL, title, and first heading so agents can land on a known fix faster.</p>
+      <ul class="pit-list">${links}</ul>
+    </section>`
+  });
+}
+
 function searchTermsFeed(records) {
   return `${records
     .map((record) =>
@@ -802,6 +947,7 @@ function searchTermsFeed(records) {
         tags: record.tags ?? [],
         url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
+        query_landing_url: slugUrl(recordQueryPath(record)),
         known_fix_issue_url: recordKnownFixIssueUrl(record),
         search_terms: recordSearchTerms(record, 48),
         answer_queries: recordAnswerQueries(record, 32),
@@ -822,6 +968,7 @@ function answerQueriesFeed(records) {
         tags: record.tags ?? [],
         url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
+        query_landing_url: slugUrl(recordQueryPath(record)),
         known_fix_issue_url: recordKnownFixIssueUrl(record),
         answer_summary: recordAnswerSummary(record),
         answer_queries: recordAnswerQueries(record, 64)
@@ -845,6 +992,7 @@ function knownFixIssuesFeed(records) {
         known_fix_issue_url,
         html_url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
+        query_landing_url: slugUrl(recordQueryPath(record)),
         source_url: sourceHref(record),
         answer_summary: recordAnswerSummary(record),
         answer_queries: recordAnswerQueries(record, 16)
@@ -948,6 +1096,7 @@ function renderRootSearchIndex(records) {
     lines.push(`Pit title: ${record.title}`);
     lines.push(`Status: ${record.status}`);
     lines.push(`Tools: ${(record.affected_tools ?? []).join(", ")}`);
+    lines.push(`Query landing: ${slugUrl(recordQueryPath(record))}`);
     lines.push(`HTML: ${slugUrl(recordHtmlPath(record))}`);
     lines.push(`Markdown: ${slugUrl(recordMarkdownPath(record))}`);
     lines.push(`Known-fix issue: ${recordKnownFixIssueUrl(record) ?? "not yet assigned"}`);
@@ -984,6 +1133,7 @@ function renderAnswerQueriesText(records) {
     const answer = recordAnswerSummary(record);
     lines.push(`PIT ${record.id}`);
     lines.push(`TITLE ${record.title}`);
+    lines.push(`QUERY_LANDING ${slugUrl(recordQueryPath(record))}`);
     lines.push(`URL ${slugUrl(recordHtmlPath(record))}`);
     lines.push(`MARKDOWN ${slugUrl(recordMarkdownPath(record))}`);
     lines.push(`KNOWN_FIX_ISSUE ${recordKnownFixIssueUrl(record) ?? ""}`);
@@ -1020,6 +1170,7 @@ function renderAiText(records) {
   for (const record of records) {
     const answer = recordAnswerSummary(record);
     lines.push(`- ${primaryAnswerQuery(record)}`);
+    lines.push(`  Query landing: ${slugUrl(recordQueryPath(record))}`);
     lines.push(`  URL: ${slugUrl(recordHtmlPath(record))}`);
     lines.push(`  Known-fix issue: ${recordKnownFixIssueUrl(record) ?? "not yet assigned"}`);
     lines.push(`  Problem: ${answer.problem}`);
@@ -1161,9 +1312,12 @@ function renderSitemap(records) {
     ["/feeds/unresolved-pit-template.json", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
+    ["/q/", siteLastmod],
     ...records.flatMap((record) => [
       [recordHtmlPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)],
-      [recordMarkdownPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)]
+      [recordMarkdownPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)],
+      [recordQueryPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)],
+      [recordQueryMarkdownPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)]
     ])
   ];
 
@@ -1187,6 +1341,14 @@ for (const record of records) {
   const recordErrors = validateRecord(record);
   if (recordErrors.length > 0) errors.push(`${record.path}: ${recordErrors.join("; ")}`);
 }
+const querySlugs = new Map();
+for (const record of records) {
+  const slug = recordQuerySlug(record);
+  if (querySlugs.has(slug)) {
+    errors.push(`duplicate query landing slug "${slug}" for ${querySlugs.get(slug)} and ${record.id}`);
+  }
+  querySlugs.set(slug, record.id);
+}
 if (errors.length > 0) {
   for (const error of errors) console.error(error);
   process.exit(1);
@@ -1195,6 +1357,7 @@ if (errors.length > 0) {
 ensureDir(docsDir);
 ensureDir(wellKnownDir);
 cleanGeneratedDir(sitePitsDir);
+cleanGeneratedDir(siteQueryDir);
 cleanGeneratedDir(siteFeedsDir);
 
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");
@@ -1220,6 +1383,7 @@ fs.writeFileSync(
 );
 fs.writeFileSync(path.join(docsDir, "sitemap.xml"), renderSitemap(records));
 fs.writeFileSync(path.join(sitePitsDir, "index.html"), renderPitIndex(records));
+fs.writeFileSync(path.join(siteQueryDir, "index.html"), renderQueryIndex(records));
 fs.writeFileSync(
   path.join(siteFeedsDir, "pits.jsonl"),
   `${records.map((record) => JSON.stringify(record)).join("\n")}\n`
@@ -1239,6 +1403,8 @@ fs.writeFileSync(
 for (const record of records) {
   fs.writeFileSync(path.join(sitePitsDir, `${record.id}.html`), renderPit(record));
   fs.writeFileSync(path.join(sitePitsDir, `${record.id}.md`), renderPitMarkdown(record));
+  fs.writeFileSync(path.join(siteQueryDir, `${recordQuerySlug(record)}.html`), renderQueryLanding(record));
+  fs.writeFileSync(path.join(siteQueryDir, `${recordQuerySlug(record)}.md`), renderQueryLandingMarkdown(record));
 }
 
 console.log(`Wrote static site for ${records.length} pit records to docs/`);

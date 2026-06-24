@@ -185,6 +185,7 @@ Agent 优先读取：
 
 - `SEARCH_INDEX.md`：根目录搜索索引，保留已解决问题、上游 issue 标题和精确报错
 - `docs/llms-full.txt`、`docs/answer-queries.txt`、`docs/ai.txt`：给搜索引擎和 agent 的纯文本入口
+- `docs/q/`：每个已解决问题一个精确搜索词落地页，URL、标题和 H1 都贴近搜索句
 - `docs/SEARCH_SNAPSHOT_2026-06-24.md`：发布快照式索引，重复所有 known-fix issue 和精确问题标题
 - GitHub release `search-snapshot-2026-06-24`：把 JSONL、RSS、索引和搜索快照作为可下载资产公开
 - `docs/feed.xml`：RSS 更新入口，让搜索工具、监控器和订阅器更容易抓到已解决问题

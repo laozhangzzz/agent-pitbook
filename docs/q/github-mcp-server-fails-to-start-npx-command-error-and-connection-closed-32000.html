@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000 - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The client spawns the configured command and speaks JSON-RPC over stdio. Fix: Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000 - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The client spawns the configured command and speaks JSON-RPC over stdio. Fix: Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, startup, error-32000, npx, diagnosis, claude-desktop, cursor, cline, mcp-server, mcp-error-32000-connection-closed-server-failed-to-start, mcp error 32000 connection closed server failed to start, MCP error -32000: Connection closed means the stdio server died before the handshake, MCP error -32000: Connection closed means the stdio server died before the handshake fix, MCP error -32000: Connection closed means the stdio server died before the handshake root cause, GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000, GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix, GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause, Fix 'Client Closed' Error by Correcting npm Config, Fix 'Client Closed' Error by Correcting npm Config fix, Fix 'Client Closed' Error by Correcting npm Config root cause, how to fix MCP error -32000: Connection closed means the stdio server died before the handshake, verified, high, claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake, claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix, cursor MCP error -32000: Connection closed means the stdio server died before the handshake, cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix, cline MCP error -32000: Connection closed means the stdio server died before the handshake, cline MCP error -32000: Connection closed means the stdio server died before the handshake fix, mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake, mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix, MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug, MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix, claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug, claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix, cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug, cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000",
+  "description": "Known fix. Problem: client UI shows MCP error -32000: Connection closed Root cause: The client spawns the configured command and speaks JSON-RPC over stdio. Fix: Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000, GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix, GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause, Fix 'Client Closed' Error by Correcting npm Config, Fix 'Client Closed' Error by Correcting npm Config fix, Fix 'Client Closed' Error by Correcting npm Config root cause, MCP error -32000: Connection closed means the stdio server died before the handshake, MCP error -32000: Connection closed means the stdio server died before the handshake fix, MCP error -32000: Connection closed means the stdio server died before the handshake root cause, how to fix MCP error -32000: Connection closed means the stdio server died before the handshake, claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake, claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix, cursor MCP error -32000: Connection closed means the stdio server died before the handshake, cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix, cline MCP error -32000: Connection closed means the stdio server died before the handshake, cline MCP error -32000: Connection closed means the stdio server died before the handshake fix",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "stdio",
+    "startup",
+    "error-32000",
+    "npx",
+    "diagnosis",
+    "claude-desktop",
+    "cursor",
+    "cline",
+    "mcp-server",
+    "mcp-error-32000-connection-closed-server-failed-to-start",
+    "mcp error 32000 connection closed server failed to start",
+    "MCP error -32000: Connection closed means the stdio server died before the handshake",
+    "MCP error -32000: Connection closed means the stdio server died before the handshake fix",
+    "MCP error -32000: Connection closed means the stdio server died before the handshake root cause",
+    "GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000",
+    "GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix",
+    "GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause",
+    "Fix 'Client Closed' Error by Correcting npm Config",
+    "Fix 'Client Closed' Error by Correcting npm Config fix",
+    "Fix 'Client Closed' Error by Correcting npm Config root cause",
+    "how to fix MCP error -32000: Connection closed means the stdio server died before the handshake",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/15"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/15"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000</h1>
+      <p class="lede">client UI shows MCP error -32000: Connection closed</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/15">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> client UI shows MCP error -32000: Connection closed</p>
+    <p><strong>Root cause:</strong> The client spawns the configured command and speaks JSON-RPC over stdio.</p>
+    <p><strong>Fix first:</strong> Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.</p>
+    <p><strong>Verify:</strong> Reconnect from the client after fixing the underlying cause.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000</li><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix</li><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause</li><li>Fix 'Client Closed' Error by Correcting npm Config</li><li>Fix 'Client Closed' Error by Correcting npm Config fix</li><li>Fix 'Client Closed' Error by Correcting npm Config root cause</li><li>MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>MCP error -32000: Connection closed means the stdio server died before the handshake root cause</li><li>how to fix MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>cursor MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>cline MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>cline MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug</li><li>MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix</li><li>claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug</li><li>claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix</li><li>cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug</li><li>cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
