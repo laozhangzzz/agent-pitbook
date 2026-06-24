@@ -5,6 +5,7 @@ Root-level answer-first search index for GitHub search, web search, and LLM retr
 - Public site: https://laozhangzzz.github.io/agent-pitbook/
 - LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 - Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html
+- Search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md
 - Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 - Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 - GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2

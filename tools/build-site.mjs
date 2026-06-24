@@ -372,6 +372,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
+        <li><a href="/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md">/SEARCH_SNAPSHOT_2026-06-24.md</a> - release-style exact-query snapshot with known-fix issue links</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="${searchDiscoveryIssueUrl}">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
         <li><a href="${knownFixIssuesUrl}">GitHub known-fix issues</a> - one native issue page per solved pit, titled by exact problem query</li>
@@ -568,6 +569,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
 - [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
+- [Search snapshot](${slugUrl("/SEARCH_SNAPSHOT_2026-06-24.md")}): release-style exact-query snapshot with known-fix issue links.
 - [Full text index](${slugUrl("/llms-full.txt")}): complete answer-first text index.
 - [Plain answer query text](${slugUrl("/answer-queries.txt")}): query -> pit URL map for search crawlers.
 - [AI routing text](${slugUrl("/ai.txt")}): compact instructions for AI agents.
@@ -840,6 +842,7 @@ function renderRootSearchIndex(records) {
     "- Public site: https://laozhangzzz.github.io/agent-pitbook/",
     "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
     "- Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html",
+    "- Search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md",
     "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
     `- GitHub issue search tracker: ${searchDiscoveryIssueUrl}`,
@@ -1054,6 +1057,7 @@ function renderSitemap(records) {
     ["/answers.html", siteLastmod],
     ["/answers.md", siteLastmod],
     ["/search-index.md", siteLastmod],
+    ["/SEARCH_SNAPSHOT_2026-06-24.md", siteLastmod],
     ["/search-queries.html", siteLastmod],
     ["/search-queries.md", siteLastmod],
     ["/feeds/index.jsonl", siteLastmod],

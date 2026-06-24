@@ -168,6 +168,7 @@ Current state:
 - The repository root includes `SEARCH_INDEX.md` for GitHub search, web search, and LLM retrieval over exact solved-problem titles.
 - GitHub issue #2 is a native searchable discovery tracker for solved-problem queries and links to the matching pit pages.
 - GitHub issues #3-#41 are dedicated `known-fix` search-surface issues, one solved pit per issue, with titles built from exact problem queries.
+- The hosted search snapshot `/SEARCH_SNAPSHOT_2026-06-24.md` repeats all known-fix issue URLs and exact solved-problem titles as a release-style index.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.

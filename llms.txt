@@ -16,6 +16,7 @@ Well-known LLM entrypoint mirror: https://laozhangzzz.github.io/agent-pitbook/.w
 Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted known fixes index: https://laozhangzzz.github.io/agent-pitbook/answers.html
 Hosted search index Markdown: https://laozhangzzz.github.io/agent-pitbook/search-index.md
+Hosted search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md
 Hosted search query index: https://laozhangzzz.github.io/agent-pitbook/search-queries.html
 GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
 GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
