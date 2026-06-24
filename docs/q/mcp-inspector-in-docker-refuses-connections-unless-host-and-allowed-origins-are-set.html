@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container. Fix: Pass HOST and ALLOWED_ORIGINS to the container run command.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container. Fix: Pass HOST and ALLOWED_ORIGINS to the container run command.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, docker, devcontainer, networking, connection-refused, allowed-origins, mcp-inspector, mcp-inspector-docker-connection-refused-host-env, mcp inspector docker connection refused host env, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause, Docker container connection refused HOST + ALLOWED_ORIGINS workaround, Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix, Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause, how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set, HOST fix, mcp-inspector HOST, mcp-inspector HOST fix, verified, medium, ALLOWED_ORIGINS, ALLOWED_ORIGINS fix, mcp-inspector ALLOWED_ORIGINS, mcp-inspector ALLOWED_ORIGINS fix, ERR_CONNECTION_REFUSED, ERR_CONNECTION_REFUSED fix, mcp-inspector ERR_CONNECTION_REFUSED, mcp-inspector ERR_CONNECTION_REFUSED fix, curl http://localhost:6274 returns Failed to connect ... Connection refused, how to fix curl http://localhost:6274 returns Failed to connect ... Connection refused, curl http://localhost:6274 returns Failed to connect ... Connection refused root cause, mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused, mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused fix, browser shows localhost refused to connect / ERR_CONNECTION_REFUSED">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set",
+  "description": "Known fix. Problem: curl http://localhost:6274 returns Failed to connect ... Connection refused Root cause: Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container. Fix: Pass HOST and ALLOWED_ORIGINS to the container run command.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Docker container connection refused HOST + ALLOWED_ORIGINS workaround, Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix, Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix, MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause, how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set, HOST fix, mcp-inspector HOST, mcp-inspector HOST fix, ALLOWED_ORIGINS, ALLOWED_ORIGINS fix, mcp-inspector ALLOWED_ORIGINS, mcp-inspector ALLOWED_ORIGINS fix, ERR_CONNECTION_REFUSED, ERR_CONNECTION_REFUSED fix",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "inspector",
+    "docker",
+    "devcontainer",
+    "networking",
+    "connection-refused",
+    "allowed-origins",
+    "mcp-inspector",
+    "mcp-inspector-docker-connection-refused-host-env",
+    "mcp inspector docker connection refused host env",
+    "MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set",
+    "MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix",
+    "MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause",
+    "Docker container connection refused HOST + ALLOWED_ORIGINS workaround",
+    "Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix",
+    "Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause",
+    "how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set",
+    "HOST fix",
+    "mcp-inspector HOST",
+    "mcp-inspector HOST fix",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-docker-connection-refused-host-env.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/18"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/18"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</h1>
+      <p class="lede">curl http://localhost:6274 returns Failed to connect ... Connection refused</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/18">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> curl http://localhost:6274 returns Failed to connect ... Connection refused</p>
+    <p><strong>Root cause:</strong> Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container.</p>
+    <p><strong>Fix first:</strong> Pass HOST and ALLOWED_ORIGINS to the container run command.</p>
+    <p><strong>Verify:</strong> Curl the UI port after setting the env vars.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Docker container connection refused HOST + ALLOWED_ORIGINS workaround</li><li>Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix</li><li>Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause</li><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</li><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix</li><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause</li><li>how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</li><li>HOST fix</li><li>mcp-inspector HOST</li><li>mcp-inspector HOST fix</li><li>ALLOWED_ORIGINS</li><li>ALLOWED_ORIGINS fix</li><li>mcp-inspector ALLOWED_ORIGINS</li><li>mcp-inspector ALLOWED_ORIGINS fix</li><li>ERR_CONNECTION_REFUSED</li><li>ERR_CONNECTION_REFUSED fix</li><li>mcp-inspector ERR_CONNECTION_REFUSED</li><li>mcp-inspector ERR_CONNECTION_REFUSED fix</li><li>curl http://localhost:6274 returns Failed to connect ... Connection refused</li><li>how to fix curl http://localhost:6274 returns Failed to connect ... Connection refused</li><li>curl http://localhost:6274 returns Failed to connect ... Connection refused root cause</li><li>mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused</li><li>mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused fix</li><li>browser shows localhost refused to connect / ERR_CONNECTION_REFUSED</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-docker-connection-refused-host-env.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

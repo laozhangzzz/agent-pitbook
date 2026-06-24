@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project. Fix: Inspect effective npm config and the user-level rc file.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project. Fix: Inspect effective npm config and the user-level rc file.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, npmrc, registry, startup, timeout, cursor, claude-desktop, cline, mcp-server, mcp-client-uses-user-level-npmrc-wrong-registry, mcp client uses user level npmrc wrong registry, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause, author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal, author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix, author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause, how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects, MCP error -32001: Request timed out, MCP error -32001: Request timed out fix, cursor MCP error -32001: Request timed out, verified, medium, cursor MCP error -32001: Request timed out fix, claude-desktop MCP error -32001: Request timed out, claude-desktop MCP error -32001: Request timed out fix, cline MCP error -32001: Request timed out, cline MCP error -32001: Request timed out fix, mcp-server MCP error -32001: Request timed out, mcp-server MCP error -32001: Request timed out fix, npx -y &lt;package&gt; works in a project terminal but not when launched by the client, how to fix npx -y &lt;package&gt; works in a project terminal but not when launched by the client, npx -y &lt;package&gt; works in a project terminal but not when launched by the client root cause, cursor npx -y &lt;package&gt; works in a project terminal but not when launched by the client, cursor npx -y &lt;package&gt; works in a project terminal but not when launched by the client fix, claude-desktop npx -y &lt;package&gt; works in a project terminal but not when launched by the client, claude-desktop npx -y &lt;package&gt; works in a project terminal but not when launched by the client fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects",
+  "description": "Known fix. Problem: npx -y \u003cpackage> works in a project terminal but not when launched by the client Root cause: npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project. Fix: Inspect effective npm config and the user-level rc file.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal, author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix, author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix, MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause, how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects, MCP error -32001: Request timed out, MCP error -32001: Request timed out fix, cursor MCP error -32001: Request timed out, cursor MCP error -32001: Request timed out fix, claude-desktop MCP error -32001: Request timed out, claude-desktop MCP error -32001: Request timed out fix, cline MCP error -32001: Request timed out, cline MCP error -32001: Request timed out fix, mcp-server MCP error -32001: Request timed out",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "npx",
+    "npmrc",
+    "registry",
+    "startup",
+    "timeout",
+    "cursor",
+    "claude-desktop",
+    "cline",
+    "mcp-server",
+    "mcp-client-uses-user-level-npmrc-wrong-registry",
+    "mcp client uses user level npmrc wrong registry",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your projects",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix",
+    "MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause",
+    "author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal",
+    "author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix",
+    "author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause",
+    "how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects",
+    "MCP error -32001: Request timed out",
+    "MCP error -32001: Request timed out fix",
+    "cursor MCP error -32001: Request timed out",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/14"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/14"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects</h1>
+      <p class="lede">npx -y &lt;package&gt; works in a project terminal but not when launched by the client</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/14">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> npx -y &lt;package&gt; works in a project terminal but not when launched by the client</p>
+    <p><strong>Root cause:</strong> npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project.</p>
+    <p><strong>Fix first:</strong> Inspect effective npm config and the user-level rc file.</p>
+    <p><strong>Verify:</strong> Relaunch from the client after fixing ~/.npmrc.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal</li><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix</li><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause</li><li>how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects</li><li>MCP error -32001: Request timed out</li><li>MCP error -32001: Request timed out fix</li><li>cursor MCP error -32001: Request timed out</li><li>cursor MCP error -32001: Request timed out fix</li><li>claude-desktop MCP error -32001: Request timed out</li><li>claude-desktop MCP error -32001: Request timed out fix</li><li>cline MCP error -32001: Request timed out</li><li>cline MCP error -32001: Request timed out fix</li><li>mcp-server MCP error -32001: Request timed out</li><li>mcp-server MCP error -32001: Request timed out fix</li><li>npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>how to fix npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>npx -y &lt;package&gt; works in a project terminal but not when launched by the client root cause</li><li>cursor npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>cursor npx -y &lt;package&gt; works in a project terminal but not when launched by the client fix</li><li>claude-desktop npx -y &lt;package&gt; works in a project terminal but not when launched by the client</li><li>claude-desktop npx -y &lt;package&gt; works in a project terminal but not when launched by the client fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

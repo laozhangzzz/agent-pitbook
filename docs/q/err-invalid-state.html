@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERR_INVALID_STATE - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: Inspector is released often and some releases regress. Fix: Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="ERR_INVALID_STATE - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: Inspector is released often and some releases regress. Fix: Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, inspector, npx, regression, versioning, streamable-http, mcp-inspector, mcp-inspector-release-regression-pin-version, mcp inspector release regression pin version, MCP Inspector breaks after an upgrade; pin a known-good version, MCP Inspector breaks after an upgrade; pin a known-good version fix, MCP Inspector breaks after an upgrade; pin a known-good version root cause, sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0, sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix, sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause, Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5, Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix, Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause, how to fix MCP Inspector breaks after an upgrade; pin a known-good version, verified, high, ERR_INVALID_STATE, HTTP fix, mcp-inspector HTTP, mcp-inspector HTTP fix, ERR_INVALID_STATE fix, mcp-inspector ERR_INVALID_STATE, mcp-inspector ERR_INVALID_STATE fix, npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0, how to fix npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0, npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) root cause, connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5, how to fix connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5, connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5) root cause, mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ERR_INVALID_STATE",
+  "description": "Known fix. Problem: npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) Root cause: Inspector is released often and some releases regress. Fix: Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0, sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix, sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause, Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5, Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix, Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause, MCP Inspector breaks after an upgrade; pin a known-good version, MCP Inspector breaks after an upgrade; pin a known-good version fix, MCP Inspector breaks after an upgrade; pin a known-good version root cause, how to fix MCP Inspector breaks after an upgrade; pin a known-good version, HTTP fix, mcp-inspector HTTP, mcp-inspector HTTP fix, ERR_INVALID_STATE, ERR_INVALID_STATE fix, mcp-inspector ERR_INVALID_STATE",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "inspector",
+    "npx",
+    "regression",
+    "versioning",
+    "streamable-http",
+    "mcp-inspector",
+    "mcp-inspector-release-regression-pin-version",
+    "mcp inspector release regression pin version",
+    "MCP Inspector breaks after an upgrade; pin a known-good version",
+    "MCP Inspector breaks after an upgrade; pin a known-good version fix",
+    "MCP Inspector breaks after an upgrade; pin a known-good version root cause",
+    "sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0",
+    "sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix",
+    "sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause",
+    "Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5",
+    "Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix",
+    "Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause",
+    "how to fix MCP Inspector breaks after an upgrade; pin a known-good version",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-release-regression-pin-version.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/19"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/19"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>ERR_INVALID_STATE</h1>
+      <p class="lede">npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0)</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/19">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0)</p>
+    <p><strong>Root cause:</strong> Inspector is released often and some releases regress.</p>
+    <p><strong>Fix first:</strong> Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.</p>
+    <p><strong>Verify:</strong> Run the pinned or fixed version.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0</li><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix</li><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause</li><li>Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5</li><li>Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix</li><li>Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause</li><li>MCP Inspector breaks after an upgrade; pin a known-good version</li><li>MCP Inspector breaks after an upgrade; pin a known-good version fix</li><li>MCP Inspector breaks after an upgrade; pin a known-good version root cause</li><li>how to fix MCP Inspector breaks after an upgrade; pin a known-good version</li><li>HTTP fix</li><li>mcp-inspector HTTP</li><li>mcp-inspector HTTP fix</li><li>ERR_INVALID_STATE</li><li>ERR_INVALID_STATE fix</li><li>mcp-inspector ERR_INVALID_STATE</li><li>mcp-inspector ERR_INVALID_STATE fix</li><li>npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0</li><li>how to fix npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0</li><li>npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) root cause</li><li>connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5</li><li>how to fix connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5</li><li>connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5) root cause</li><li>mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-release-regression-pin-version.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

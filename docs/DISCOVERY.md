@@ -171,7 +171,7 @@ Current state:
 - The hosted search snapshot `/SEARCH_SNAPSHOT_2026-06-24.md` repeats all known-fix issue URLs and exact solved-problem titles as a release-style index.
 - GitHub release `search-snapshot-2026-06-24` mirrors the search snapshot and uploads JSONL/RSS/index assets for release-page discovery.
 - The hosted feed `/feeds/known-fix-issues.jsonl` maps each pit id and exact primary query to its dedicated GitHub known-fix issue.
-- The hosted `/q/` tree exposes one exact-query landing page per solved pit, with the searched phrase in the URL, title, H1, sitemap, and Markdown mirror.
+- The hosted `/q/` tree exposes one exact-query landing page per high-value solved-problem query, with the searched phrase in the URL, title, H1, sitemap, and Markdown mirror.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.

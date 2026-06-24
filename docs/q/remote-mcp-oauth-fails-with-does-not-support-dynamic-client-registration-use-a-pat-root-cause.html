@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server. Fix: Create a fine-grained GitHub Personal Access Token with the scopes you need.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server. Fix: Create a fine-grained GitHub Personal Access Token with the scopes you need.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-root-cause.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, oauth, dynamic-client-registration, github, claude-code, remote-mcp, pat, github-mcp-server, mcp-github-remote-oauth-dcr-unsupported-use-pat, mcp github remote oauth dcr unsupported use pat, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT fix, Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause, Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround, Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix, Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause, how to fix Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT, does not support dynamic client registration, does not support dynamic client registration fix, claude-code does not support dynamic client registration, verified, high, claude-code does not support dynamic client registration fix, github-mcp-server does not support dynamic client registration, github-mcp-server does not support dynamic client registration fix, GITHUB_PERSONAL_ACCESS_TOKEN, GITHUB_PERSONAL_ACCESS_TOKEN fix, claude-code GITHUB_PERSONAL_ACCESS_TOKEN, claude-code GITHUB_PERSONAL_ACCESS_TOKEN fix, github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN, github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN fix, claude mcp add ... then the connection fails, how to fix claude mcp add ... then the connection fails, claude mcp add ... then the connection fails root cause, claude-code claude mcp add ... then the connection fails, claude-code claude mcp add ... then the connection fails fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-root-cause.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT root cause",
+  "description": "Known fix. Problem: claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails Root cause: The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server. Fix: Create a fine-grained GitHub Personal Access Token with the scopes you need.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-root-cause.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround, Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix, Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT fix, Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT root cause, how to fix Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT, does not support dynamic client registration, does not support dynamic client registration fix, claude-code does not support dynamic client registration, claude-code does not support dynamic client registration fix, github-mcp-server does not support dynamic client registration, github-mcp-server does not support dynamic client registration fix, GITHUB_PERSONAL_ACCESS_TOKEN, GITHUB_PERSONAL_ACCESS_TOKEN fix, claude-code GITHUB_PERSONAL_ACCESS_TOKEN",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "oauth",
+    "dynamic-client-registration",
+    "github",
+    "claude-code",
+    "remote-mcp",
+    "pat",
+    "github-mcp-server",
+    "mcp-github-remote-oauth-dcr-unsupported-use-pat",
+    "mcp github remote oauth dcr unsupported use pat",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT fix",
+    "Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT root cause",
+    "Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround",
+    "Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix",
+    "Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause",
+    "how to fix Remote MCP OAuth fails with \"does not support dynamic client registration\"; use a PAT",
+    "does not support dynamic client registration",
+    "does not support dynamic client registration fix",
+    "claude-code does not support dynamic client registration",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-root-cause.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/17"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/17"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause</h1>
+      <p class="lede">claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/17">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails</p>
+    <p><strong>Root cause:</strong> The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server.</p>
+    <p><strong>Fix first:</strong> Create a fine-grained GitHub Personal Access Token with the scopes you need.</p>
+    <p><strong>Verify:</strong> Connect after providing the PAT in env.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround</li><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix</li><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT fix</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause</li><li>how to fix Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</li><li>does not support dynamic client registration</li><li>does not support dynamic client registration fix</li><li>claude-code does not support dynamic client registration</li><li>claude-code does not support dynamic client registration fix</li><li>github-mcp-server does not support dynamic client registration</li><li>github-mcp-server does not support dynamic client registration fix</li><li>GITHUB_PERSONAL_ACCESS_TOKEN</li><li>GITHUB_PERSONAL_ACCESS_TOKEN fix</li><li>claude-code GITHUB_PERSONAL_ACCESS_TOKEN</li><li>claude-code GITHUB_PERSONAL_ACCESS_TOKEN fix</li><li>github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN</li><li>github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN fix</li><li>claude mcp add ... then the connection fails</li><li>how to fix claude mcp add ... then the connection fails</li><li>claude mcp add ... then the connection fails root cause</li><li>claude-code claude mcp add ... then the connection fails</li><li>claude-code claude mcp add ... then the connection fails fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

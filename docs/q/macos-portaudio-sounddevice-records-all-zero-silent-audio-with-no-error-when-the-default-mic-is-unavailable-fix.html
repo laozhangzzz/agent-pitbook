@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device. Fix: Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device. Fix: Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, audio, portaudio, sounddevice, silent-capture, microphone, clamshell, voice, voice-to-claude, macos-portaudio-silent-zero-capture-unavailable-default-input, macos portaudio silent zero capture unavailable default input, macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable, macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix, macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause, how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable, multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌, how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌, multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') root cause, sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌, sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix, portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌, verified, medium, portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix, voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌, voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix, the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause, sounddevice the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, sounddevice the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix, portaudio the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, portaudio the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix, voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix, no exception: sd.InputStream opens normally and its callback delivers all-zero frames, how to fix no exception: sd.InputStream opens normally and its callback delivers all-zero frames">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix",
+  "description": "Known fix. Problem: multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') Root cause: With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device. Fix: Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable, macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix, macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause, how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable, multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌, how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌, multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause, sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌, sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix, portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌, portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix, voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌, voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix, the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip, the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "audio",
+    "portaudio",
+    "sounddevice",
+    "silent-capture",
+    "microphone",
+    "clamshell",
+    "voice",
+    "voice-to-claude",
+    "macos-portaudio-silent-zero-capture-unavailable-default-input",
+    "macos portaudio silent zero capture unavailable default input",
+    "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable",
+    "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix",
+    "macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause",
+    "how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable",
+    "multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌",
+    "how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌",
+    "multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause",
+    "sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌",
+    "sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix",
+    "portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/macos-portaudio-silent-zero-capture-unavailable-default-input.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/39"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/39"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix</h1>
+      <p class="lede">multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌')</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/39">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌')</p>
+    <p><strong>Root cause:</strong> With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device.</p>
+    <p><strong>Fix first:</strong> Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.</p>
+    <p><strong>Verify:</strong> After pinning to the Studio Display mic, measure the recorded peak and run ASR.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</li><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix</li><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause</li><li>how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</li><li>multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') root cause</li><li>sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause</li><li>sounddevice the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>sounddevice the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix</li><li>portaudio the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>portaudio the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix</li><li>voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix</li><li>no exception: sd.InputStream opens normally and its callback delivers all-zero frames</li><li>how to fix no exception: sd.InputStream opens normally and its callback delivers all-zero frames</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

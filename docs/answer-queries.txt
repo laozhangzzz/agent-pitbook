@@ -49,6 +49,23 @@ QUERY claude-code the agent environment says network access is restricted -> htt
 QUERY claude-code the agent environment says network access is restricted fix -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html
 QUERY gemini the agent environment says network access is restricted -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html
 QUERY gemini the agent environment says network access is restricted fix -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html
+QUERY_URLS
+QUERY_URL Dependency install fails because the agent sandbox blocks network access -> https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access.html
+QUERY_URL Dependency install fails because the agent sandbox blocks network access fix -> https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access-fix.html
+QUERY_URL Dependency install fails because the agent sandbox blocks network access root cause -> https://laozhangzzz.github.io/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access-root-cause.html
+QUERY_URL how to fix Dependency install fails because the agent sandbox blocks network access -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-install-fails-because-the-agent-sandbox-blocks-network-access.html
+QUERY_URL dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors -> https://laozhangzzz.github.io/agent-pitbook/q/dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html
+QUERY_URL how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html
+QUERY_URL dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause -> https://laozhangzzz.github.io/agent-pitbook/q/dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors-root-cause.html
+QUERY_URL codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors -> https://laozhangzzz.github.io/agent-pitbook/q/codex-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html
+QUERY_URL codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors-fix.html
+QUERY_URL claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html
+QUERY_URL claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors-fix.html
+QUERY_URL gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html
+QUERY_URL gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors-fix.html
+QUERY_URL the project lockfile or dependency manifest appears valid -> https://laozhangzzz.github.io/agent-pitbook/q/the-project-lockfile-or-dependency-manifest-appears-valid.html
+QUERY_URL how to fix the project lockfile or dependency manifest appears valid -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-project-lockfile-or-dependency-manifest-appears-valid.html
+QUERY_URL the project lockfile or dependency manifest appears valid root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-project-lockfile-or-dependency-manifest-appears-valid-root-cause.html
 
 PIT agent-prompt-injection-in-debug-sources
 TITLE Debug sources can contain prompt injection targeting coding agents
@@ -91,6 +108,23 @@ QUERY claude-code external text asks the agent to reveal secrets or bypass appro
 QUERY gemini external text asks the agent to reveal secrets or bypass approval -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html
 QUERY gemini external text asks the agent to reveal secrets or bypass approval fix -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html
 QUERY a debug corpus mixes technical facts with agent-targeted instructions -> https://laozhangzzz.github.io/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html
+QUERY_URLS
+QUERY_URL Debug sources can contain prompt injection targeting coding agents -> https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents.html
+QUERY_URL Debug sources can contain prompt injection targeting coding agents fix -> https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents-fix.html
+QUERY_URL Debug sources can contain prompt injection targeting coding agents root cause -> https://laozhangzzz.github.io/agent-pitbook/q/debug-sources-can-contain-prompt-injection-targeting-coding-agents-root-cause.html
+QUERY_URL how to fix Debug sources can contain prompt injection targeting coding agents -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-debug-sources-can-contain-prompt-injection-targeting-coding-agents.html
+QUERY_URL a source includes instructions to ignore system or developer instructions -> https://laozhangzzz.github.io/agent-pitbook/q/a-source-includes-instructions-to-ignore-system-or-developer-instructions.html
+QUERY_URL how to fix a source includes instructions to ignore system or developer instructions -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-source-includes-instructions-to-ignore-system-or-developer-instructions.html
+QUERY_URL a source includes instructions to ignore system or developer instructions root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-source-includes-instructions-to-ignore-system-or-developer-instructions-root-cause.html
+QUERY_URL codex a source includes instructions to ignore system or developer instructions -> https://laozhangzzz.github.io/agent-pitbook/q/codex-a-source-includes-instructions-to-ignore-system-or-developer-instructions.html
+QUERY_URL codex a source includes instructions to ignore system or developer instructions fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-a-source-includes-instructions-to-ignore-system-or-developer-instructions-fix.html
+QUERY_URL claude-code a source includes instructions to ignore system or developer instructions -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-a-source-includes-instructions-to-ignore-system-or-developer-instructions.html
+QUERY_URL claude-code a source includes instructions to ignore system or developer instructions fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-a-source-includes-instructions-to-ignore-system-or-developer-instructions-fix.html
+QUERY_URL gemini a source includes instructions to ignore system or developer instructions -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-a-source-includes-instructions-to-ignore-system-or-developer-instructions.html
+QUERY_URL gemini a source includes instructions to ignore system or developer instructions fix -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-a-source-includes-instructions-to-ignore-system-or-developer-instructions-fix.html
+QUERY_URL a suggested command is unrelated to the reported error -> https://laozhangzzz.github.io/agent-pitbook/q/a-suggested-command-is-unrelated-to-the-reported-error.html
+QUERY_URL how to fix a suggested command is unrelated to the reported error -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-suggested-command-is-unrelated-to-the-reported-error.html
+QUERY_URL a suggested command is unrelated to the reported error root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-suggested-command-is-unrelated-to-the-reported-error-root-cause.html
 
 PIT claude-agent-sdk-mcp-json-requires-project-settingsource
 TITLE Claude Agent SDK does not load .mcp.json unless settingSources includes "project"
@@ -129,6 +163,23 @@ QUERY claude-code tools wrapping Claude (e.g. Conductor) cannot see project MCP 
 QUERY claude-code tools wrapping Claude (e.g. Conductor) cannot see project MCP servers fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html
 QUERY claude-agent-sdk tools wrapping Claude (e.g. Conductor) cannot see project MCP servers -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html
 QUERY claude-agent-sdk tools wrapping Claude (e.g. Conductor) cannot see project MCP servers fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html
+QUERY_URLS
+QUERY_URL SDK doesnt read from .mcp.json until the CLI is run in the cwd -> https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd.html
+QUERY_URL SDK doesnt read from .mcp.json until the CLI is run in the cwd fix -> https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd-fix.html
+QUERY_URL SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause -> https://laozhangzzz.github.io/agent-pitbook/q/sdk-doesnt-read-from-mcp-json-until-the-cli-is-run-in-the-cwd-root-cause.html
+QUERY_URL Claude Agent SDK does not load .mcp.json unless settingSources includes project -> https://laozhangzzz.github.io/agent-pitbook/q/claude-agent-sdk-does-not-load-mcp-json-unless-settingsources-includes-project.html
+QUERY_URL Claude Agent SDK does not load .mcp.json unless settingSources includes "project" fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-agent-sdk-does-not-load-mcp-json-unless-settingsources-includes-project-fix.html
+QUERY_URL Claude Agent SDK does not load .mcp.json unless settingSources includes "project" root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-agent-sdk-does-not-load-mcp-json-unless-settingsources-includes-project-root-cause.html
+QUERY_URL how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-claude-agent-sdk-does-not-load-mcp-json-unless-settingsources-includes-project.html
+QUERY_URL the SDK reports no MCP servers even though .mcp.json is in the working directory -> https://laozhangzzz.github.io/agent-pitbook/q/the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory.html
+QUERY_URL how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory.html
+QUERY_URL the SDK reports no MCP servers even though .mcp.json is in the working directory root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory-root-cause.html
+QUERY_URL claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory.html
+QUERY_URL claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory-fix.html
+QUERY_URL claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory -> https://laozhangzzz.github.io/agent-pitbook/q/claude-agent-sdk-the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory.html
+QUERY_URL claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-agent-sdk-the-sdk-reports-no-mcp-servers-even-though-mcp-json-is-in-the-working-directory-fix.html
+QUERY_URL servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process -> https://laozhangzzz.github.io/agent-pitbook/q/servers-appear-only-after-launching-the-claude-cli-in-the-same-directory-and-running-mcp-then-restarting-the-sdk-process.html
+QUERY_URL how to fix servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-servers-appear-only-after-launching-the-claude-cli-in-the-same-directory-and-running-mcp-then-restarting-the.html
 
 PIT claude-code-mcp-chrome-bridge-single-transport-deadlock
 TITLE Claude Code chrome-bridge MCP gets stuck after one transport connects
@@ -171,6 +222,23 @@ QUERY HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-m
 QUERY claude-code HTTP -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html
 QUERY claude-code HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html
 QUERY mcp-chrome-bridge HTTP -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html
+QUERY_URLS
+QUERY_URL Singleton McpServer causes Already connected to a transport -> https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport.html
+QUERY_URL Singleton McpServer causes Already connected to a transport fix -> https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport-fix.html
+QUERY_URL Singleton McpServer causes Already connected to a transport root cause -> https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport-root-cause.html
+QUERY_URL replace getMcpServer singleton with factory -> https://laozhangzzz.github.io/agent-pitbook/q/replace-getmcpserver-singleton-with-factory.html
+QUERY_URL replace getMcpServer singleton with factory fix -> https://laozhangzzz.github.io/agent-pitbook/q/replace-getmcpserver-singleton-with-factory-fix.html
+QUERY_URL replace getMcpServer singleton with factory root cause -> https://laozhangzzz.github.io/agent-pitbook/q/replace-getmcpserver-singleton-with-factory-root-cause.html
+QUERY_URL MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-chrome-bridge-returns-500-due-to-err-http-headers-sent.html
+QUERY_URL MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-chrome-bridge-returns-500-due-to-err-http-headers-sent-fix.html
+QUERY_URL MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-chrome-bridge-returns-500-due-to-err-http-headers-sent-root-cause.html
+QUERY_URL service can only connect once after Chrome starts -> https://laozhangzzz.github.io/agent-pitbook/q/service-can-only-connect-once-after-chrome-starts.html
+QUERY_URL service can only connect once after Chrome starts fix -> https://laozhangzzz.github.io/agent-pitbook/q/service-can-only-connect-once-after-chrome-starts-fix.html
+QUERY_URL service can only connect once after Chrome starts root cause -> https://laozhangzzz.github.io/agent-pitbook/q/service-can-only-connect-once-after-chrome-starts-root-cause.html
+QUERY_URL Claude Code chrome-bridge MCP gets stuck after one transport connects -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-chrome-bridge-mcp-gets-stuck-after-one-transport-connects.html
+QUERY_URL Claude Code chrome-bridge MCP gets stuck after one transport connects fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-chrome-bridge-mcp-gets-stuck-after-one-transport-connects-fix.html
+QUERY_URL Claude Code chrome-bridge MCP gets stuck after one transport connects root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-chrome-bridge-mcp-gets-stuck-after-one-transport-connects-root-cause.html
+QUERY_URL how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-claude-code-chrome-bridge-mcp-gets-stuck-after-one-transport-connects.html
 
 PIT claude-desktop-mcp-protocol-instance-reuse-already-connected
 TITLE Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)
@@ -208,6 +276,23 @@ QUERY how to fix affected servers may still actually work despite the toast -> h
 QUERY affected servers may still actually work despite the toast root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html
 QUERY claude-desktop affected servers may still actually work despite the toast -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html
 QUERY claude-desktop affected servers may still actually work despite the toast fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html
+QUERY_URLS
+QUERY_URL Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f.html
+QUERY_URL Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f-claude-desktop-mcp-protocol-instance-reuse-already-connected.html
+QUERY_URL Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-servers-fail-with-protocol-instance-reuse-error-already-connected-to-a-transport-anthropic-confirms-f-claude-desktop-mcp-protocol-instance-reuse-already-connected-2.html
+QUERY_URL Claude Desktop MCP error: Already connected to a transport Protocol instance reuse -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-already-connected-to-a-transport-protocol-instance-reuse.html
+QUERY_URL Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-already-connected-to-a-transport-protocol-instance-reuse-fix.html
+QUERY_URL Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-already-connected-to-a-transport-protocol-instance-reuse-root-cause.html
+QUERY_URL how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-claude-desktop-mcp-error-already-connected-to-a-transport-protocol-instance-reuse.html
+QUERY_URL startup toasts: Could not connect to MCP server <name> -> https://laozhangzzz.github.io/agent-pitbook/q/startup-toasts-could-not-connect-to-mcp-server-name.html
+QUERY_URL how to fix startup toasts: Could not connect to MCP server <name> -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-startup-toasts-could-not-connect-to-mcp-server-name.html
+QUERY_URL startup toasts: Could not connect to MCP server <name> root cause -> https://laozhangzzz.github.io/agent-pitbook/q/startup-toasts-could-not-connect-to-mcp-server-name-root-cause.html
+QUERY_URL claude-desktop startup toasts: Could not connect to MCP server <name> -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-startup-toasts-could-not-connect-to-mcp-server-name.html
+QUERY_URL claude-desktop startup toasts: Could not connect to MCP server <name> fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-startup-toasts-could-not-connect-to-mcp-server-name-fix.html
+QUERY_URL log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection -> https://laozhangzzz.github.io/agent-pitbook/q/log-shows-error-already-connected-to-a-transport-call-close-before-connecting-to-a-new-transport-or-use-a-separate-proto.html
+QUERY_URL how to fix log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-log-shows-error-already-connected-to-a-transport-call-close-before-connecting-to-a-new-transport-or-use-a-sep.html
+QUERY_URL log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection. root cause -> https://laozhangzzz.github.io/agent-pitbook/q/log-shows-error-already-connected-to-a-transport-call-close-before-connecting-to-a-new-transport-or-use-a-separate-proto-claude-desktop-mcp-protocol-instance-reuse-already-connected.html
+QUERY_URL claude-desktop log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-log-shows-error-already-connected-to-a-transport-call-close-before-connecting-to-a-new-transport-or-use-a.html
 
 PIT claude-desktop-no-dynamic-resource-templates
 TITLE Claude Desktop does not list dynamic MCP resource templates (only static resources)
@@ -246,6 +331,23 @@ QUERY claude-desktop time lost assuming the server code is wrong -> https://laoz
 QUERY claude-desktop time lost assuming the server code is wrong fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html
 QUERY mcp-server time lost assuming the server code is wrong -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html
 QUERY mcp-server time lost assuming the server code is wrong fix -> https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html
+QUERY_URLS
+QUERY_URL dynamic resource not working in Claude desktop -> https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop.html
+QUERY_URL dynamic resource not working in Claude desktop fix -> https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop-fix.html
+QUERY_URL dynamic resource not working in Claude desktop root cause -> https://laozhangzzz.github.io/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop-root-cause.html
+QUERY_URL Claude Desktop does not list dynamic MCP resource templates only static resources -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-does-not-list-dynamic-mcp-resource-templates-only-static-resources.html
+QUERY_URL Claude Desktop does not list dynamic MCP resource templates (only static resources) fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-does-not-list-dynamic-mcp-resource-templates-only-static-resources-fix.html
+QUERY_URL Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-does-not-list-dynamic-mcp-resource-templates-only-static-resources-root-cause.html
+QUERY_URL how to fix Claude Desktop does not list dynamic MCP resource templates only static resources -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-claude-desktop-does-not-list-dynamic-mcp-resource-templates-only-static-resources.html
+QUERY_URL a static resource works in Claude Desktop but a parameterized/templated resource does not show -> https://laozhangzzz.github.io/agent-pitbook/q/a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html
+QUERY_URL how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html
+QUERY_URL a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show-root-cause.html
+QUERY_URL claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html
+QUERY_URL claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show-fix.html
+QUERY_URL mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html
+QUERY_URL mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show-fix.html
+QUERY_URL the server is correct and the template appears under the Inspector Resources tab -> https://laozhangzzz.github.io/agent-pitbook/q/the-server-is-correct-and-the-template-appears-under-the-inspector-resources-tab.html
+QUERY_URL how to fix the server is correct and the template appears under the Inspector Resources tab -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-server-is-correct-and-the-template-appears-under-the-inspector-resources-tab.html
 
 PIT codex-workspace-root-moved-stale-state
 TITLE Codex still references an old workspace path after a project move
@@ -273,6 +375,23 @@ QUERY how to fix file links or searches use the previous path -> https://laozhan
 QUERY file links or searches use the previous path root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html
 QUERY codex file links or searches use the previous path -> https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html
 QUERY codex file links or searches use the previous path fix -> https://laozhangzzz.github.io/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html
+QUERY_URLS
+QUERY_URL Codex still references an old workspace path after a project move -> https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move.html
+QUERY_URL Codex still references an old workspace path after a project move fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move-fix.html
+QUERY_URL Codex still references an old workspace path after a project move root cause -> https://laozhangzzz.github.io/agent-pitbook/q/codex-still-references-an-old-workspace-path-after-a-project-move-root-cause.html
+QUERY_URL how to fix Codex still references an old workspace path after a project move -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-codex-still-references-an-old-workspace-path-after-a-project-move.html
+QUERY_URL Codex or its sidebar references an old workspace folder -> https://laozhangzzz.github.io/agent-pitbook/q/codex-or-its-sidebar-references-an-old-workspace-folder.html
+QUERY_URL how to fix Codex or its sidebar references an old workspace folder -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-codex-or-its-sidebar-references-an-old-workspace-folder.html
+QUERY_URL Codex or its sidebar references an old workspace folder root cause -> https://laozhangzzz.github.io/agent-pitbook/q/codex-or-its-sidebar-references-an-old-workspace-folder-root-cause.html
+QUERY_URL the shell current directory points to the new workspace -> https://laozhangzzz.github.io/agent-pitbook/q/the-shell-current-directory-points-to-the-new-workspace.html
+QUERY_URL how to fix the shell current directory points to the new workspace -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-shell-current-directory-points-to-the-new-workspace.html
+QUERY_URL the shell current directory points to the new workspace root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-shell-current-directory-points-to-the-new-workspace-root-cause.html
+QUERY_URL codex the shell current directory points to the new workspace -> https://laozhangzzz.github.io/agent-pitbook/q/codex-the-shell-current-directory-points-to-the-new-workspace.html
+QUERY_URL codex the shell current directory points to the new workspace fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-the-shell-current-directory-points-to-the-new-workspace-fix.html
+QUERY_URL file links or searches use the previous path -> https://laozhangzzz.github.io/agent-pitbook/q/file-links-or-searches-use-the-previous-path.html
+QUERY_URL how to fix file links or searches use the previous path -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-file-links-or-searches-use-the-previous-path.html
+QUERY_URL file links or searches use the previous path root cause -> https://laozhangzzz.github.io/agent-pitbook/q/file-links-or-searches-use-the-previous-path-root-cause.html
+QUERY_URL codex file links or searches use the previous path -> https://laozhangzzz.github.io/agent-pitbook/q/codex-file-links-or-searches-use-the-previous-path.html
 
 PIT docker-published-port-localhost-refused
 TITLE Docker port is published but localhost refuses the connection
@@ -314,6 +433,23 @@ QUERY claude-code container logs show the app listening on localhost or 127.0.0.
 QUERY claude-code container logs show the app listening on localhost or 127.0.0.1 fix -> https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html
 QUERY gemini container logs show the app listening on localhost or 127.0.0.1 -> https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html
 QUERY gemini container logs show the app listening on localhost or 127.0.0.1 fix -> https://laozhangzzz.github.io/agent-pitbook/pits/docker-published-port-localhost-refused.html
+QUERY_URLS
+QUERY_URL Docker port is published but localhost refuses the connection -> https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection.html
+QUERY_URL Docker port is published but localhost refuses the connection fix -> https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection-fix.html
+QUERY_URL Docker port is published but localhost refuses the connection root cause -> https://laozhangzzz.github.io/agent-pitbook/q/docker-port-is-published-but-localhost-refuses-the-connection-root-cause.html
+QUERY_URL how to fix Docker port is published but localhost refuses the connection -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-docker-port-is-published-but-localhost-refuses-the-connection.html
+QUERY_URL docker ps or docker port shows the expected host port -> https://laozhangzzz.github.io/agent-pitbook/q/docker-ps-or-docker-port-shows-the-expected-host-port.html
+QUERY_URL how to fix docker ps or docker port shows the expected host port -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-docker-ps-or-docker-port-shows-the-expected-host-port.html
+QUERY_URL docker ps or docker port shows the expected host port root cause -> https://laozhangzzz.github.io/agent-pitbook/q/docker-ps-or-docker-port-shows-the-expected-host-port-root-cause.html
+QUERY_URL codex docker ps or docker port shows the expected host port -> https://laozhangzzz.github.io/agent-pitbook/q/codex-docker-ps-or-docker-port-shows-the-expected-host-port.html
+QUERY_URL codex docker ps or docker port shows the expected host port fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-docker-ps-or-docker-port-shows-the-expected-host-port-fix.html
+QUERY_URL claude-code docker ps or docker port shows the expected host port -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-docker-ps-or-docker-port-shows-the-expected-host-port.html
+QUERY_URL claude-code docker ps or docker port shows the expected host port fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-docker-ps-or-docker-port-shows-the-expected-host-port-fix.html
+QUERY_URL gemini docker ps or docker port shows the expected host port -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-docker-ps-or-docker-port-shows-the-expected-host-port.html
+QUERY_URL gemini docker ps or docker port shows the expected host port fix -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-docker-ps-or-docker-port-shows-the-expected-host-port-fix.html
+QUERY_URL curl to localhost or 127.0.0.1 on the host fails -> https://laozhangzzz.github.io/agent-pitbook/q/curl-to-localhost-or-127-0-0-1-on-the-host-fails.html
+QUERY_URL how to fix curl to localhost or 127.0.0.1 on the host fails -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-curl-to-localhost-or-127-0-0-1-on-the-host-fails.html
+QUERY_URL curl to localhost or 127.0.0.1 on the host fails root cause -> https://laozhangzzz.github.io/agent-pitbook/q/curl-to-localhost-or-127-0-0-1-on-the-host-fails-root-cause.html
 
 PIT fastmcp-421-invalid-host-header-dns-rebinding
 TITLE FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
@@ -356,6 +492,23 @@ QUERY fastmcp HTTP -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-4
 QUERY fastmcp HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html
 QUERY all external requests fail with HTTP 421 Misdirected Request and Invalid Host header -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html
 QUERY how to fix all external requests fail with HTTP 421 Misdirected Request and Invalid Host header -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html
+QUERY_URLS
+QUERY_URL Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection -> https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection.html
+QUERY_URL Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) fix -> https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection-fix.html
+QUERY_URL Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/guide-resolving-421-invalid-host-header-dns-rebinding-protection-root-cause.html
+QUERY_URL FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-returns-421-invalid-host-header-behind-a-proxy-due-to-dns-rebinding-protection.html
+QUERY_URL FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-returns-421-invalid-host-header-behind-a-proxy-due-to-dns-rebinding-protection-fix.html
+QUERY_URL FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-returns-421-invalid-host-header-behind-a-proxy-due-to-dns-rebinding-protection-root-cause.html
+QUERY_URL how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-fastmcp-returns-421-invalid-host-header-behind-a-proxy-due-to-dns-rebinding-protection.html
+QUERY_URL /MCP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp.html
+QUERY_URL /MCP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-fix.html
+QUERY_URL mcp-server /MCP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp.html
+QUERY_URL mcp-server /MCP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp-fix.html
+QUERY_URL fastmcp /MCP -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-mcp.html
+QUERY_URL fastmcp /MCP fix -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-mcp-fix.html
+QUERY_URL -HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/http.html
+QUERY_URL -HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix.html
+QUERY_URL mcp-server -HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http.html
 
 PIT fastmcp-overrides-logging-configuration
 TITLE FastMCP overrides your app's logging configuration on init (duplicate or lost logs)
@@ -396,6 +549,23 @@ QUERY mcp-server the change appears exactly when FastMCP(...) is instantiated ->
 QUERY mcp-server the change appears exactly when FastMCP(...) is instantiated fix -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html
 QUERY python-sdk the change appears exactly when FastMCP(...) is instantiated -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html
 QUERY python-sdk the change appears exactly when FastMCP(...) is instantiated fix -> https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html
+QUERY_URLS
+QUERY_URL Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler -> https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler.html
+QUERY_URL Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix -> https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler-fix.html
+QUERY_URL Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler-root-cause.html
+QUERY_URL FastMCP overrides your apps logging configuration on init duplicate or lost logs -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-overrides-your-apps-logging-configuration-on-init-duplicate-or-lost-logs.html
+QUERY_URL FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-overrides-your-apps-logging-configuration-on-init-duplicate-or-lost-logs-fix.html
+QUERY_URL FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-overrides-your-apps-logging-configuration-on-init-duplicate-or-lost-logs-root-cause.html
+QUERY_URL how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-fastmcp-overrides-your-apps-logging-configuration-on-init-duplicate-or-lost-logs.html
+QUERY_URL log messages become duplicated after the FastMCP server is created -> https://laozhangzzz.github.io/agent-pitbook/q/log-messages-become-duplicated-after-the-fastmcp-server-is-created.html
+QUERY_URL how to fix log messages become duplicated after the FastMCP server is created -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-log-messages-become-duplicated-after-the-fastmcp-server-is-created.html
+QUERY_URL log messages become duplicated after the FastMCP server is created root cause -> https://laozhangzzz.github.io/agent-pitbook/q/log-messages-become-duplicated-after-the-fastmcp-server-is-created-root-cause.html
+QUERY_URL mcp-server log messages become duplicated after the FastMCP server is created -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created.html
+QUERY_URL mcp-server log messages become duplicated after the FastMCP server is created fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html
+QUERY_URL python-sdk log messages become duplicated after the FastMCP server is created -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-log-messages-become-duplicated-after-the-fastmcp-server-is-created.html
+QUERY_URL python-sdk log messages become duplicated after the FastMCP server is created fix -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html
+QUERY_URL a custom/structured global logging handler stops taking effect -> https://laozhangzzz.github.io/agent-pitbook/q/a-custom-structured-global-logging-handler-stops-taking-effect.html
+QUERY_URL how to fix a custom/structured global logging handler stops taking effect -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-custom-structured-global-logging-handler-stops-taking-effect.html
 
 PIT github-mcp-vscode-toolset-name-mismatch
 TITLE VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed
@@ -434,6 +604,23 @@ QUERY github-mcp-server reported for other MCP servers too, not just GitHub -> h
 QUERY github-mcp-server reported for other MCP servers too, not just GitHub fix -> https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html
 QUERY vscode reported for other MCP servers too, not just GitHub -> https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html
 QUERY vscode reported for other MCP servers too, not just GitHub fix -> https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html
+QUERY_URLS
+QUERY_URL VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated -> https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated.html
+QUERY_URL VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix -> https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated-fix.html
+QUERY_URL VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause -> https://laozhangzzz.github.io/agent-pitbook/q/vscode-toolset-name-mismatch-github-fails-with-unknown-tool-but-github-warns-its-deprecated-root-cause.html
+QUERY_URL VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed -> https://laozhangzzz.github.io/agent-pitbook/q/vs-code-agent-config-github-mcp-toolset-is-unknown-tool-while-github-warns-its-renamed.html
+QUERY_URL VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix -> https://laozhangzzz.github.io/agent-pitbook/q/vs-code-agent-config-github-mcp-toolset-is-unknown-tool-while-github-warns-its-renamed-fix.html
+QUERY_URL VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause -> https://laozhangzzz.github.io/agent-pitbook/q/vs-code-agent-config-github-mcp-toolset-is-unknown-tool-while-github-warns-its-renamed-root-cause.html
+QUERY_URL how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-vs-code-agent-config-github-mcp-toolset-is-unknown-tool-while-github-warns-its-renamed.html
+QUERY_URL tools: [github/*] produces Unknown tool -> https://laozhangzzz.github.io/agent-pitbook/q/tools-github-produces-unknown-tool.html
+QUERY_URL how to fix 'tools': ['github/*'] produces Unknown tool -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-tools-github-produces-unknown-tool.html
+QUERY_URL tools: [github/*] produces Unknown tool root cause -> https://laozhangzzz.github.io/agent-pitbook/q/tools-github-produces-unknown-tool-root-cause.html
+QUERY_URL github-mcp-server 'tools': ['github/*'] produces Unknown tool -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-tools-github-produces-unknown-tool.html
+QUERY_URL github-mcp-server 'tools': ['github/*'] produces Unknown tool fix -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-tools-github-produces-unknown-tool-fix.html
+QUERY_URL vscode 'tools': ['github/*'] produces Unknown tool -> https://laozhangzzz.github.io/agent-pitbook/q/vscode-tools-github-produces-unknown-tool.html
+QUERY_URL vscode 'tools': ['github/*'] produces Unknown tool fix -> https://laozhangzzz.github.io/agent-pitbook/q/vscode-tools-github-produces-unknown-tool-fix.html
+QUERY_URL tools: [github] works but warns it should be github/* -> https://laozhangzzz.github.io/agent-pitbook/q/tools-github-works-but-warns-it-should-be-github.html
+QUERY_URL how to fix 'tools': ['github'] works but warns it should be github/* -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-tools-github-works-but-warns-it-should-be-github.html
 
 PIT macos-portaudio-silent-zero-capture-unavailable-default-input
 TITLE macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable
@@ -476,6 +663,23 @@ QUERY portaudio no exception: sd.InputStream opens normally and its callback del
 QUERY voice-to-claude no exception: sd.InputStream opens normally and its callback delivers all-zero frames -> https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html
 QUERY voice-to-claude no exception: sd.InputStream opens normally and its callback delivers all-zero frames fix -> https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html
 QUERY the ASR model looks broken but is being fed pure silence -> https://laozhangzzz.github.io/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html
+QUERY_URLS
+QUERY_URL macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable -> https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.html
+QUERY_URL macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix -> https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-fix.html
+QUERY_URL macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause -> https://laozhangzzz.github.io/agent-pitbook/q/macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable-root-cause.html
+QUERY_URL how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-macos-portaudio-sounddevice-records-all-zero-silent-audio-with-no-error-when-the-default-mic-is-unavailable.html
+QUERY_URL multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌 -> https://laozhangzzz.github.io/agent-pitbook/q/multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌.html
+QUERY_URL how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌 -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌.html
+QUERY_URL multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause -> https://laozhangzzz.github.io/agent-pitbook/q/multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌-root-cause.html
+QUERY_URL sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌 -> https://laozhangzzz.github.io/agent-pitbook/q/sounddevice-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌.html
+QUERY_URL sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix -> https://laozhangzzz.github.io/agent-pitbook/q/sounddevice-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌-fix.html
+QUERY_URL portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌 -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌.html
+QUERY_URL portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌-fix.html
+QUERY_URL voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌 -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌.html
+QUERY_URL voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-multi-second-speech-transcribes-to-a-single-junk-token-e-g-6-2s-clip-我-stray-korean-그-or-谷歌-fix.html
+QUERY_URL the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip -> https://laozhangzzz.github.io/agent-pitbook/q/the-saved-wav-has-peak-amplitude-0-and-rms-0-all-zero-samples-across-the-whole-clip.html
+QUERY_URL how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-saved-wav-has-peak-amplitude-0-and-rms-0-all-zero-samples-across-the-whole-clip.html
+QUERY_URL the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-saved-wav-has-peak-amplitude-0-and-rms-0-all-zero-samples-across-the-whole-clip-root-cause.html
 
 PIT mcp-client-uses-user-level-npmrc-wrong-registry
 TITLE MCP server hangs because the GUI client uses your user-level .npmrc, not your project's
@@ -518,6 +722,23 @@ QUERY client log shows Client closed and MCP error -32001: Request timed out roo
 QUERY cursor client log shows Client closed and MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html
 QUERY cursor client log shows Client closed and MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html
 QUERY claude-desktop client log shows Client closed and MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html
+QUERY_URLS
+QUERY_URL author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal -> https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden.html
+QUERY_URL author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix -> https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden-mcp-client-uses-user-level-npmrc-wrong-registry.html
+QUERY_URL author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause -> https://laozhangzzz.github.io/agent-pitbook/q/author-resolved-client-closed-by-fixing-an-incorrect-registry-in-user-level-npmrc-that-the-project-npmrc-had-overridden-mcp-client-uses-user-level-npmrc-wrong-registry-2.html
+QUERY_URL MCP server hangs because the GUI client uses your user-level .npmrc, not your projects -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html
+QUERY_URL MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects-fix.html
+QUERY_URL MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects-root-cause.html
+QUERY_URL how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-hangs-because-the-gui-client-uses-your-user-level-npmrc-not-your-projects.html
+QUERY_URL MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out.html
+QUERY_URL MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-fix.html
+QUERY_URL cursor MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32001-request-timed-out.html
+QUERY_URL cursor MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32001-request-timed-out-fix.html
+QUERY_URL claude-desktop MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32001-request-timed-out.html
+QUERY_URL claude-desktop MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32001-request-timed-out-fix.html
+QUERY_URL cline MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/q/cline-mcp-error-32001-request-timed-out.html
+QUERY_URL cline MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/q/cline-mcp-error-32001-request-timed-out-fix.html
+QUERY_URL mcp-server MCP error -32001: Request timed out -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp-error-32001-request-timed-out.html
 
 PIT mcp-error-32000-connection-closed-server-failed-to-start
 TITLE MCP error -32000: Connection closed means the stdio server died before the handshake
@@ -560,6 +781,23 @@ QUERY PATH fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-320
 QUERY claude-desktop PATH -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html
 QUERY claude-desktop PATH fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html
 QUERY cursor PATH -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html
+QUERY_URLS
+QUERY_URL GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000 -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html
+QUERY_URL GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000-fix.html
+QUERY_URL GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000-root-cause.html
+QUERY_URL Fix 'Client Closed' Error by Correcting npm Config -> https://laozhangzzz.github.io/agent-pitbook/q/fix-client-closed-error-by-correcting-npm-config.html
+QUERY_URL Fix 'Client Closed' Error by Correcting npm Config fix -> https://laozhangzzz.github.io/agent-pitbook/q/fix-client-closed-error-by-correcting-npm-config-fix.html
+QUERY_URL Fix 'Client Closed' Error by Correcting npm Config root cause -> https://laozhangzzz.github.io/agent-pitbook/q/fix-client-closed-error-by-correcting-npm-config-root-cause.html
+QUERY_URL MCP error -32000: Connection closed means the stdio server died before the handshake -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+QUERY_URL MCP error -32000: Connection closed means the stdio server died before the handshake fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake-fix.html
+QUERY_URL MCP error -32000: Connection closed means the stdio server died before the handshake root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake-root-cause.html
+QUERY_URL how to fix MCP error -32000: Connection closed means the stdio server died before the handshake -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+QUERY_URL claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+QUERY_URL claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake-fix.html
+QUERY_URL cursor MCP error -32000: Connection closed means the stdio server died before the handshake -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+QUERY_URL cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake-fix.html
+QUERY_URL cline MCP error -32000: Connection closed means the stdio server died before the handshake -> https://laozhangzzz.github.io/agent-pitbook/q/cline-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+QUERY_URL cline MCP error -32000: Connection closed means the stdio server died before the handshake fix -> https://laozhangzzz.github.io/agent-pitbook/q/cline-mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake-fix.html
 
 PIT mcp-filesystem-server-windows-access-denied-case-sensitivity
 TITLE Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
@@ -602,6 +840,23 @@ QUERY no other errors in the logs -> https://laozhangzzz.github.io/agent-pitbook
 QUERY how to fix no other errors in the logs -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html
 QUERY no other errors in the logs root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html
 QUERY claude-desktop no other errors in the logs -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html
+QUERY_URLS
+QUERY_URL Filesystem server access denied for allowed paths on Windows -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows.html
+QUERY_URL Filesystem server access denied for allowed paths on Windows fix -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows-fix.html
+QUERY_URL Filesystem server access denied for allowed paths on Windows root cause -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-server-access-denied-for-allowed-paths-on-windows-root-cause.html
+QUERY_URL step toward fixing Windows path validation -> https://laozhangzzz.github.io/agent-pitbook/q/step-toward-fixing-windows-path-validation.html
+QUERY_URL step toward fixing Windows path validation fix -> https://laozhangzzz.github.io/agent-pitbook/q/step-toward-fixing-windows-path-validation-fix.html
+QUERY_URL step toward fixing Windows path validation root cause -> https://laozhangzzz.github.io/agent-pitbook/q/step-toward-fixing-windows-path-validation-root-cause.html
+QUERY_URL Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-mcp-server-denies-allowed-windows-paths-due-to-drive-letter-case-mismatch.html
+QUERY_URL Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-mcp-server-denies-allowed-windows-paths-due-to-drive-letter-case-mismatch-fix.html
+QUERY_URL Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause -> https://laozhangzzz.github.io/agent-pitbook/q/filesystem-mcp-server-denies-allowed-windows-paths-due-to-drive-letter-case-mismatch-root-cause.html
+QUERY_URL how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-filesystem-mcp-server-denies-allowed-windows-paths-due-to-drive-letter-case-mismatch.html
+QUERY_URL Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories -> https://laozhangzzz.github.io/agent-pitbook/q/windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directories.html
+QUERY_URL how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directories.html
+QUERY_URL Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause -> https://laozhangzzz.github.io/agent-pitbook/q/windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directories-root-cause.html
+QUERY_URL claude-desktop Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directori.html
+QUERY_URL claude-desktop Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directori-mcp-filesystem-server-windows-access-denied-case-sensitivity.html
+QUERY_URL cursor Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-windows-only-a-file-under-an-allowed-directory-returns-error-access-denied-path-outside-allowed-directories.html
 
 PIT mcp-github-remote-oauth-dcr-unsupported-use-pat
 TITLE Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
@@ -644,6 +899,23 @@ QUERY Error: Incompatible auth server: does not support dynamic client registrat
 QUERY claude-code Error: Incompatible auth server: does not support dynamic client registration -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html
 QUERY claude-code Error: Incompatible auth server: does not support dynamic client registration fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html
 QUERY github-mcp-server Error: Incompatible auth server: does not support dynamic client registration -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html
+QUERY_URLS
+QUERY_URL Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token.html
+QUERY_URL Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token-mcp-github-remote-oauth-dcr-unsupported-use-pat.html
+QUERY_URL Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-cannot-connect-to-githubs-remote-mcp-server-using-oauth-authentication-pat-via-github-personal-access-token-mcp-github-remote-oauth-dcr-unsupported-use-pat-2.html
+QUERY_URL Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT -> https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat.html
+QUERY_URL Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT fix -> https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-fix.html
+QUERY_URL Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause -> https://laozhangzzz.github.io/agent-pitbook/q/remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat-root-cause.html
+QUERY_URL how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-remote-mcp-oauth-fails-with-does-not-support-dynamic-client-registration-use-a-pat.html
+QUERY_URL does not support dynamic client registration -> https://laozhangzzz.github.io/agent-pitbook/q/does-not-support-dynamic-client-registration.html
+QUERY_URL does not support dynamic client registration fix -> https://laozhangzzz.github.io/agent-pitbook/q/does-not-support-dynamic-client-registration-fix.html
+QUERY_URL claude-code does not support dynamic client registration -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-does-not-support-dynamic-client-registration.html
+QUERY_URL claude-code does not support dynamic client registration fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-does-not-support-dynamic-client-registration-fix.html
+QUERY_URL github-mcp-server does not support dynamic client registration -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-does-not-support-dynamic-client-registration.html
+QUERY_URL github-mcp-server does not support dynamic client registration fix -> https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-does-not-support-dynamic-client-registration-fix.html
+QUERY_URL GITHUB_PERSONAL_ACCESS_TOKEN -> https://laozhangzzz.github.io/agent-pitbook/q/github-personal-access-token.html
+QUERY_URL GITHUB_PERSONAL_ACCESS_TOKEN fix -> https://laozhangzzz.github.io/agent-pitbook/q/github-personal-access-token-fix.html
+QUERY_URL claude-code GITHUB_PERSONAL_ACCESS_TOKEN -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-github-personal-access-token.html
 
 PIT mcp-inspector-docker-connection-refused-host-env
 TITLE MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
@@ -686,6 +958,23 @@ QUERY same symptom running Inspector inside a devcontainer -> https://laozhangzz
 QUERY how to fix same symptom running Inspector inside a devcontainer -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html
 QUERY same symptom running Inspector inside a devcontainer root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html
 QUERY mcp-inspector same symptom running Inspector inside a devcontainer -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html
+QUERY_URLS
+QUERY_URL Docker container connection refused HOST + ALLOWED_ORIGINS workaround -> https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround.html
+QUERY_URL Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix -> https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround-fix.html
+QUERY_URL Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/docker-container-connection-refused-host-allowed-origins-workaround-root-cause.html
+QUERY_URL MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html
+QUERY_URL MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set-fix.html
+QUERY_URL MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set-root-cause.html
+QUERY_URL how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-inspector-in-docker-refuses-connections-unless-host-and-allowed-origins-are-set.html
+QUERY_URL HOST fix -> https://laozhangzzz.github.io/agent-pitbook/q/host-fix.html
+QUERY_URL mcp-inspector HOST -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-host.html
+QUERY_URL mcp-inspector HOST fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-host-fix.html
+QUERY_URL ALLOWED_ORIGINS -> https://laozhangzzz.github.io/agent-pitbook/q/allowed-origins.html
+QUERY_URL ALLOWED_ORIGINS fix -> https://laozhangzzz.github.io/agent-pitbook/q/allowed-origins-fix.html
+QUERY_URL mcp-inspector ALLOWED_ORIGINS -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-allowed-origins.html
+QUERY_URL mcp-inspector ALLOWED_ORIGINS fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-allowed-origins-fix.html
+QUERY_URL ERR_CONNECTION_REFUSED -> https://laozhangzzz.github.io/agent-pitbook/q/err-connection-refused.html
+QUERY_URL ERR_CONNECTION_REFUSED fix -> https://laozhangzzz.github.io/agent-pitbook/q/err-connection-refused-fix.html
 
 PIT mcp-inspector-release-regression-pin-version
 TITLE MCP Inspector breaks after an upgrade; pin a known-good version
@@ -726,6 +1015,23 @@ QUERY how to fix it worked yesterday and broke today with no config change becau
 QUERY it worked yesterday and broke today with no config change because @latest moved root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html
 QUERY mcp-inspector it worked yesterday and broke today with no config change because @latest moved -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html
 QUERY mcp-inspector it worked yesterday and broke today with no config change because @latest moved fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html
+QUERY_URLS
+QUERY_URL sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0 -> https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0.html
+QUERY_URL sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix -> https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0-fix.html
+QUERY_URL sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/sh-mcp-inspector-command-not-found-after-upgrading-to-v0-10-0-downgrade-to-0-9-0-root-cause.html
+QUERY_URL Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5 -> https://laozhangzzz.github.io/agent-pitbook/q/controller-is-already-closed-on-fastmcp-streamable-http-downgrade-to-0-16-7-fixed-in-0-17-5.html
+QUERY_URL Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix -> https://laozhangzzz.github.io/agent-pitbook/q/controller-is-already-closed-on-fastmcp-streamable-http-downgrade-to-0-16-7-fixed-in-0-17-5-fix.html
+QUERY_URL Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/controller-is-already-closed-on-fastmcp-streamable-http-downgrade-to-0-16-7-fixed-in-0-17-5-root-cause.html
+QUERY_URL MCP Inspector breaks after an upgrade; pin a known-good version -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-breaks-after-an-upgrade-pin-a-known-good-version.html
+QUERY_URL MCP Inspector breaks after an upgrade; pin a known-good version fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-breaks-after-an-upgrade-pin-a-known-good-version-fix.html
+QUERY_URL MCP Inspector breaks after an upgrade; pin a known-good version root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-breaks-after-an-upgrade-pin-a-known-good-version-root-cause.html
+QUERY_URL how to fix MCP Inspector breaks after an upgrade; pin a known-good version -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-inspector-breaks-after-an-upgrade-pin-a-known-good-version.html
+QUERY_URL HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix-mcp-inspector-release-regression-pin-version.html
+QUERY_URL mcp-inspector HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http.html
+QUERY_URL mcp-inspector HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http-fix.html
+QUERY_URL ERR_INVALID_STATE -> https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state.html
+QUERY_URL ERR_INVALID_STATE fix -> https://laozhangzzz.github.io/agent-pitbook/q/err-invalid-state-fix.html
+QUERY_URL mcp-inspector ERR_INVALID_STATE -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-err-invalid-state.html
 
 PIT mcp-npx-cache-corrupted-server-fails-to-start
 TITLE A corrupted or cold npx cache makes an MCP server fail to start or time out
@@ -768,6 +1074,23 @@ QUERY mcp-server MCP error -32001: Request timed out -> https://laozhangzzz.gith
 QUERY mcp-server MCP error -32001: Request timed out fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html
 QUERY npx-launched MCP server worked before and now fails, or fails only on first launch -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html
 QUERY how to fix npx-launched MCP server worked before and now fails, or fails only on first launch -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html
+QUERY_URLS
+QUERY_URL comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup -> https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup.html
+QUERY_URL comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix -> https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup-fix.html
+QUERY_URL comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause -> https://laozhangzzz.github.io/agent-pitbook/q/comment-confirming-a-corrupted-npx-cache-from-network-errors-caused-the-server-to-crash-clearing-it-fixed-startup-root-c.html
+QUERY_URL Client closed / -32001 Request timed out around npx MCP startup -> https://laozhangzzz.github.io/agent-pitbook/q/client-closed-32001-request-timed-out-around-npx-mcp-startup.html
+QUERY_URL Client closed / -32001 Request timed out around npx MCP startup fix -> https://laozhangzzz.github.io/agent-pitbook/q/client-closed-32001-request-timed-out-around-npx-mcp-startup-fix.html
+QUERY_URL Client closed / -32001 Request timed out around npx MCP startup root cause -> https://laozhangzzz.github.io/agent-pitbook/q/client-closed-32001-request-timed-out-around-npx-mcp-startup-root-cause.html
+QUERY_URL A corrupted or cold npx cache makes an MCP server fail to start or time out -> https://laozhangzzz.github.io/agent-pitbook/q/a-corrupted-or-cold-npx-cache-makes-an-mcp-server-fail-to-start-or-time-out.html
+QUERY_URL A corrupted or cold npx cache makes an MCP server fail to start or time out fix -> https://laozhangzzz.github.io/agent-pitbook/q/a-corrupted-or-cold-npx-cache-makes-an-mcp-server-fail-to-start-or-time-out-fix.html
+QUERY_URL A corrupted or cold npx cache makes an MCP server fail to start or time out root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-corrupted-or-cold-npx-cache-makes-an-mcp-server-fail-to-start-or-time-out-root-cause.html
+QUERY_URL how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-corrupted-or-cold-npx-cache-makes-an-mcp-server-fail-to-start-or-time-out.html
+QUERY_URL MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-partial-package-or-a.html
+QUERY_URL MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-partial-package-or-a-mcp-npx-cache-corrupted-server-fails-to-start.html
+QUERY_URL claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-parti.html
+QUERY_URL claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-parti-mcp-npx-cache-corrupted-server-fails-to-start.html
+QUERY_URL cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-partial-packa.html
+QUERY_URL cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-mcp-error-32001-request-timed-out-is-often-a-npx-npm-cache-problem-an-interrupted-download-leaves-a-partial-packa-mcp-npx-cache-corrupted-server-fails-to-start.html
 
 PIT mcp-puppeteer-screenshots-in-memory-only
 TITLE Puppeteer MCP screenshots live in memory only; there is no file on disk to find
@@ -806,6 +1129,23 @@ QUERY mcp-server the agent searches the filesystem (sometimes outside the projec
 QUERY mcp-server the agent searches the filesystem (sometimes outside the project) for the missing file fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html
 QUERY claude-desktop the agent searches the filesystem (sometimes outside the project) for the missing file -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html
 QUERY claude-desktop the agent searches the filesystem (sometimes outside the project) for the missing file fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html
+QUERY_URLS
+QUERY_URL Puppeteer MCP Server Missing Screenshots -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots.html
+QUERY_URL Puppeteer MCP Server Missing Screenshots fix -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots-fix.html
+QUERY_URL Puppeteer MCP Server Missing Screenshots root cause -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots-root-cause.html
+QUERY_URL Puppeteer MCP screenshots live in memory only; there is no file on disk to find -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-screenshots-live-in-memory-only-there-is-no-file-on-disk-to-find.html
+QUERY_URL Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-screenshots-live-in-memory-only-there-is-no-file-on-disk-to-find-fix.html
+QUERY_URL Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-mcp-screenshots-live-in-memory-only-there-is-no-file-on-disk-to-find-root-cause.html
+QUERY_URL how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-puppeteer-mcp-screenshots-live-in-memory-only-there-is-no-file-on-disk-to-find.html
+QUERY_URL puppeteer_screenshot reports success but no image file appears on disk -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk.html
+QUERY_URL how to fix puppeteer_screenshot reports success but no image file appears on disk -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk.html
+QUERY_URL puppeteer_screenshot reports success but no image file appears on disk root cause -> https://laozhangzzz.github.io/agent-pitbook/q/puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk-root-cause.html
+QUERY_URL mcp-server puppeteer_screenshot reports success but no image file appears on disk -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk.html
+QUERY_URL mcp-server puppeteer_screenshot reports success but no image file appears on disk fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk-fix.html
+QUERY_URL claude-desktop puppeteer_screenshot reports success but no image file appears on disk -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk.html
+QUERY_URL claude-desktop puppeteer_screenshot reports success but no image file appears on disk fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-puppeteer-screenshot-reports-success-but-no-image-file-appears-on-disk-fix.html
+QUERY_URL the model tries to open a screenshot path and finds nothing -> https://laozhangzzz.github.io/agent-pitbook/q/the-model-tries-to-open-a-screenshot-path-and-finds-nothing.html
+QUERY_URL how to fix the model tries to open a screenshot path and finds nothing -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-model-tries-to-open-a-screenshot-path-and-finds-nothing.html
 
 PIT mcp-reference-server-archived-unmaintained
 TITLE Several official reference MCP servers are archived; their bugs will not be fixed
@@ -848,6 +1188,23 @@ QUERY the package still installs from npm, so it looks current root cause -> htt
 QUERY mcp-server the package still installs from npm, so it looks current -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html
 QUERY mcp-server the package still installs from npm, so it looks current fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html
 QUERY claude-desktop the package still installs from npm, so it looks current -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html
+QUERY_URLS
+QUERY_URL server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived -> https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived.html
+QUERY_URL server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix -> https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived-fix.html
+QUERY_URL server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause -> https://laozhangzzz.github.io/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived-root-cause.html
+QUERY_URL maintainer deprecation notice that server-github development moved to github/github-mcp-server -> https://laozhangzzz.github.io/agent-pitbook/q/maintainer-deprecation-notice-that-server-github-development-moved-to-github-github-mcp-server.html
+QUERY_URL maintainer deprecation notice that server-github development moved to github/github-mcp-server fix -> https://laozhangzzz.github.io/agent-pitbook/q/maintainer-deprecation-notice-that-server-github-development-moved-to-github-github-mcp-server-fix.html
+QUERY_URL maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause -> https://laozhangzzz.github.io/agent-pitbook/q/maintainer-deprecation-notice-that-server-github-development-moved-to-github-github-mcp-server-root-cause.html
+QUERY_URL Several official reference MCP servers are archived; their bugs will not be fixed -> https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed.html
+QUERY_URL Several official reference MCP servers are archived; their bugs will not be fixed fix -> https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-fix.html
+QUERY_URL Several official reference MCP servers are archived; their bugs will not be fixed root cause -> https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-root-cause.html
+QUERY_URL how to fix Several official reference MCP servers are archived; their bugs will not be fixed -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed.html
+QUERY_URL README fix -> https://laozhangzzz.github.io/agent-pitbook/q/readme-fix.html
+QUERY_URL mcp-server README -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-readme.html
+QUERY_URL mcp-server README fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-readme-fix.html
+QUERY_URL claude-desktop README -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-readme.html
+QUERY_URL claude-desktop README fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-readme-fix.html
+QUERY_URL cursor README -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-readme.html
 
 PIT mcp-reverse-proxy-buffers-sse-connection-fails
 TITLE A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
@@ -890,6 +1247,23 @@ QUERY direct non-proxied access works; only the proxied/tunnelled path fails roo
 QUERY claude-desktop direct non-proxied access works; only the proxied/tunnelled path fails -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html
 QUERY claude-desktop direct non-proxied access works; only the proxied/tunnelled path fails fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html
 QUERY mcp-server direct non-proxied access works; only the proxied/tunnelled path fails -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html
+QUERY_URLS
+QUERY_URL Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful.html
+QUERY_URL Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful-mcp-reverse-proxy-buffers-sse-connection-fails.html
+QUERY_URL Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful-mcp-reverse-proxy-buffers-sse-connection-fails-2.html
+QUERY_URL A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed -> https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed.html
+QUERY_URL A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix -> https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-fix.html
+QUERY_URL A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-root-cause.html
+QUERY_URL how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed.html
+QUERY_URL HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix-mcp-reverse-proxy-buffers-sse-connection-fails.html
+QUERY_URL claude-desktop HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-http.html
+QUERY_URL claude-desktop HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-http-fix.html
+QUERY_URL mcp-server HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-mcp-reverse-proxy-buffers-sse-connection-fails.html
+QUERY_URL mcp-server HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-fix.html
+QUERY_URL the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server -> https://laozhangzzz.github.io/agent-pitbook/q/the-client-connects-to-a-custom-remote-mcp-then-errors-e-g-there-was-an-error-connecting-to-your-server.html
+QUERY_URL how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-client-connects-to-a-custom-remote-mcp-then-errors-e-g-there-was-an-error-connecting-to-your-server.html
+QUERY_URL the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-client-connects-to-a-custom-remote-mcp-then-errors-e-g-there-was-an-error-connecting-to-your-server-root-cause.html
+QUERY_URL claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-the-client-connects-to-a-custom-remote-mcp-then-errors-e-g-there-was-an-error-connecting-to-your-server.html
 
 PIT mcp-server-memory-ignores-memory-file-path-env
 TITLE server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
@@ -932,6 +1306,23 @@ QUERY claude-desktop the GitHub source handles the env var, yet the installed co
 QUERY cursor the GitHub source handles the env var, yet the installed copy ignores it -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html
 QUERY cursor the GitHub source handles the env var, yet the installed copy ignores it fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html
 QUERY mcp-server the GitHub source handles the env var, yet the installed copy ignores it -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html
+QUERY_URLS
+QUERY_URL Environment variables not respected in @modelcontextprotocol/server-memory package -> https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package.html
+QUERY_URL Environment variables not respected in @modelcontextprotocol/server-memory package fix -> https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package-fix.html
+QUERY_URL Environment variables not respected in @modelcontextprotocol/server-memory package root cause -> https://laozhangzzz.github.io/agent-pitbook/q/environment-variables-not-respected-in-modelcontextprotocol-server-memory-package-root-cause.html
+QUERY_URL server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source -> https://laozhangzzz.github.io/agent-pitbook/q/server-memory-ignores-memory-file-path-because-the-npm-build-lagged-the-source.html
+QUERY_URL server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix -> https://laozhangzzz.github.io/agent-pitbook/q/server-memory-ignores-memory-file-path-because-the-npm-build-lagged-the-source-fix.html
+QUERY_URL server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause -> https://laozhangzzz.github.io/agent-pitbook/q/server-memory-ignores-memory-file-path-because-the-npm-build-lagged-the-source-root-cause.html
+QUERY_URL how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-server-memory-ignores-memory-file-path-because-the-npm-build-lagged-the-source.html
+QUERY_URL MEMORY_FILE_PATH -> https://laozhangzzz.github.io/agent-pitbook/q/memory-file-path.html
+QUERY_URL MEMORY_FILE_PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/memory-file-path-fix.html
+QUERY_URL claude-desktop MEMORY_FILE_PATH -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-memory-file-path.html
+QUERY_URL claude-desktop MEMORY_FILE_PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-memory-file-path-fix.html
+QUERY_URL cursor MEMORY_FILE_PATH -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-memory-file-path.html
+QUERY_URL cursor MEMORY_FILE_PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-memory-file-path-fix.html
+QUERY_URL mcp-server MEMORY_FILE_PATH -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-memory-file-path.html
+QUERY_URL mcp-server MEMORY_FILE_PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-memory-file-path-fix.html
+QUERY_URL MEMORY_FILE_PATH is set but the memory file is created at a default location -> https://laozhangzzz.github.io/agent-pitbook/q/memory-file-path-is-set-but-the-memory-file-is-created-at-a-default-location.html
 
 PIT mcp-sse-received-request-before-initialization
 TITLE SSE MCP server: Received request before initialization was complete
@@ -974,6 +1365,23 @@ QUERY appears after a redeploy/restart or when a gateway/proxy sits in front of 
 QUERY mcp-server appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html
 QUERY mcp-server appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html
 QUERY python-sdk appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html
+QUERY_URLS
+QUERY_URL MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p.html
+QUERY_URL MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p-mcp-sse-received-request-before-initialization.html
+QUERY_URL MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-server-received-request-before-initialization-was-complete-comment-confirms-supergateway-double-initialize-mcp-p-mcp-sse-received-request-before-initialization-2.html
+QUERY_URL SSE MCP server: Received request before initialization was complete -> https://laozhangzzz.github.io/agent-pitbook/q/sse-mcp-server-received-request-before-initialization-was-complete.html
+QUERY_URL SSE MCP server: Received request before initialization was complete fix -> https://laozhangzzz.github.io/agent-pitbook/q/sse-mcp-server-received-request-before-initialization-was-complete-fix.html
+QUERY_URL SSE MCP server: Received request before initialization was complete root cause -> https://laozhangzzz.github.io/agent-pitbook/q/sse-mcp-server-received-request-before-initialization-was-complete-root-cause.html
+QUERY_URL how to fix SSE MCP server: Received request before initialization was complete -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-sse-mcp-server-received-request-before-initialization-was-complete.html
+QUERY_URL RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized -> https://laozhangzzz.github.io/agent-pitbook/q/runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initialize-or-duplic.html
+QUERY_URL RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix -> https://laozhangzzz.github.io/agent-pitbook/q/runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initialize-or-duplic-mcp-sse-received-request-before-initialization.html
+QUERY_URL mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initializ.html
+QUERY_URL mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initializ-mcp-sse-received-request-before-initialization.html
+QUERY_URL python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initializ.html
+QUERY_URL python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-runtimeerror-received-request-before-initialization-was-complete-from-an-sse-mcp-server-means-a-non-initializ-mcp-sse-received-request-before-initialization.html
+QUERY_URL RuntimeError: Received request before initialization was complete on tools/list or a tool call -> https://laozhangzzz.github.io/agent-pitbook/q/runtimeerror-received-request-before-initialization-was-complete-on-tools-list-or-a-tool-call.html
+QUERY_URL RuntimeError: Received request before initialization was complete on tools/list or a tool call fix -> https://laozhangzzz.github.io/agent-pitbook/q/runtimeerror-received-request-before-initialization-was-complete-on-tools-list-or-a-tool-call-fix.html
+QUERY_URL mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-runtimeerror-received-request-before-initialization-was-complete-on-tools-list-or-a-tool-call.html
 
 PIT mcp-sse-session-lost-multi-worker
 TITLE MCP SSE session lost across workers/pods: Could not find session for ID (404)
@@ -1016,6 +1424,23 @@ QUERY SSE connection opens (200), first POST returns 202, later POSTs return 404
 QUERY how to fix SSE connection opens (200), first POST returns 202, later POSTs return 404 -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html
 QUERY SSE connection opens (200), first POST returns 202, later POSTs return 404 root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html
 QUERY mcp-server SSE connection opens (200), first POST returns 202, later POSTs return 404 -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html
+QUERY_URLS
+QUERY_URL MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes.html
+QUERY_URL MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes-f.html
+QUERY_URL MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-session-lost-in-multi-worker-environment-comments-confirm-stateless-http-true-and-ingress-sticky-hash-fixes-r.html
+QUERY_URL MCP SSE session lost across workers/pods: Could not find session for ID 404 -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-session-lost-across-workers-pods-could-not-find-session-for-id-404.html
+QUERY_URL MCP SSE session lost across workers/pods: Could not find session for ID (404) fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-session-lost-across-workers-pods-could-not-find-session-for-id-404-fix.html
+QUERY_URL MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sse-session-lost-across-workers-pods-could-not-find-session-for-id-404-root-cause.html
+QUERY_URL how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404 -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-sse-session-lost-across-workers-pods-could-not-find-session-for-id-404.html
+QUERY_URL POST fix -> https://laozhangzzz.github.io/agent-pitbook/q/post-fix.html
+QUERY_URL mcp-server POST -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-post.html
+QUERY_URL mcp-server POST fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-post-fix.html
+QUERY_URL python-sdk POST -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-post.html
+QUERY_URL python-sdk POST fix -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-post-fix.html
+QUERY_URL fastmcp POST -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-post.html
+QUERY_URL fastmcp POST fix -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-post-fix.html
+QUERY_URL HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix-mcp-sse-session-lost-multi-worker.html
+QUERY_URL mcp-server HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-mcp-sse-session-lost-multi-worker.html
 
 PIT mcp-stateless-streamable-http-closedresourceerror
 TITLE Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
@@ -1058,6 +1483,23 @@ QUERY python-sdk each request raises an exception group ending in anyio.ClosedRe
 QUERY fastmcp each request raises an exception group ending in anyio.ClosedResourceError -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html
 QUERY fastmcp each request raises an exception group ending in anyio.ClosedResourceError fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html
 QUERY stack passes through _handle_stateless_request / run_stateless_server / http_transport.connect() or streamable_http_manager.run_server -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html
+QUERY_URLS
+QUERY_URL _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13 -> https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13.html
+QUERY_URL _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) fix -> https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13-fix.html
+QUERY_URL _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/handle-stateless-request-closedresourceerror-reports-1-11-0-works-1-12-0-fails-also-fastmcp-2-10-2-13-root-cause.html
+QUERY_URL Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions -> https://laozhangzzz.github.io/agent-pitbook/q/stateless-streamable-http-mcp-server-throws-anyio-closedresourceerror-on-some-sdk-versions.html
+QUERY_URL Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions fix -> https://laozhangzzz.github.io/agent-pitbook/q/stateless-streamable-http-mcp-server-throws-anyio-closedresourceerror-on-some-sdk-versions-fix.html
+QUERY_URL Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause -> https://laozhangzzz.github.io/agent-pitbook/q/stateless-streamable-http-mcp-server-throws-anyio-closedresourceerror-on-some-sdk-versions-root-cause.html
+QUERY_URL how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-stateless-streamable-http-mcp-server-throws-anyio-closedresourceerror-on-some-sdk-versions.html
+QUERY_URL HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix-mcp-stateless-streamable-http-closedresourceerror.html
+QUERY_URL mcp-server HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-mcp-stateless-streamable-http-closedresourceerror.html
+QUERY_URL mcp-server HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-fix-mcp-stateless-streamable-http-closedresourceerror.html
+QUERY_URL python-sdk HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-http.html
+QUERY_URL python-sdk HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-http-fix.html
+QUERY_URL fastmcp HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-http.html
+QUERY_URL fastmcp HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/fastmcp-http-fix.html
+QUERY_URL 10/2 -> https://laozhangzzz.github.io/agent-pitbook/q/10-2.html
+QUERY_URL 10/2 fix -> https://laozhangzzz.github.io/agent-pitbook/q/10-2-fix.html
 
 PIT mcp-stdio-server-exits-shell-path-not-inherited
 TITLE MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
@@ -1100,6 +1542,23 @@ QUERY mcp-server NVM/ fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mc
 QUERY client log: Server transport closed unexpectedly, this is likely due to the process exiting early -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html
 QUERY how to fix client log: Server transport closed unexpectedly, this is likely due to the process exiting early -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html
 QUERY client log: Server transport closed unexpectedly, this is likely due to the process exiting early root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html
+QUERY_URLS
+QUERY_URL MCP Servers Dont Work with NVM -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm.html
+QUERY_URL MCP Servers Dont Work with NVM fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm-fix.html
+QUERY_URL MCP Servers Dont Work with NVM root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm-root-cause.html
+QUERY_URL npx-for-claude wrapper workaround 66 reactions -> https://laozhangzzz.github.io/agent-pitbook/q/npx-for-claude-wrapper-workaround-66-reactions.html
+QUERY_URL npx-for-claude wrapper workaround (66 reactions) fix -> https://laozhangzzz.github.io/agent-pitbook/q/npx-for-claude-wrapper-workaround-66-reactions-fix.html
+QUERY_URL npx-for-claude wrapper workaround (66 reactions) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/npx-for-claude-wrapper-workaround-66-reactions-root-cause.html
+QUERY_URL Server transport closed unexpectedly, process exiting early write EPIPE -> https://laozhangzzz.github.io/agent-pitbook/q/server-transport-closed-unexpectedly-process-exiting-early-write-epipe.html
+QUERY_URL Server transport closed unexpectedly, process exiting early (write EPIPE) fix -> https://laozhangzzz.github.io/agent-pitbook/q/server-transport-closed-unexpectedly-process-exiting-early-write-epipe-fix.html
+QUERY_URL Server transport closed unexpectedly, process exiting early (write EPIPE) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/server-transport-closed-unexpectedly-process-exiting-early-write-epipe-root-cause.html
+QUERY_URL MCP stdio server exits immediately because the GUI client does not inherit your shell PATH -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-stdio-server-exits-immediately-because-the-gui-client-does-not-inherit-your-shell-path.html
+QUERY_URL MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-stdio-server-exits-immediately-because-the-gui-client-does-not-inherit-your-shell-path-fix.html
+QUERY_URL MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-stdio-server-exits-immediately-because-the-gui-client-does-not-inherit-your-shell-path-root-cause.html
+QUERY_URL how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-stdio-server-exits-immediately-because-the-gui-client-does-not-inherit-your-shell-path.html
+QUERY_URL PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/path-fix.html
+QUERY_URL claude-desktop PATH -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path.html
+QUERY_URL claude-desktop PATH fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path-fix.html
 
 PIT mcp-stdio-stdout-logging-breaks-protocol
 TITLE Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
@@ -1142,6 +1601,23 @@ QUERY mcp-server the bad token matches the servers own log text (e.g. get_weathe
 QUERY typescript-sdk the bad token matches the servers own log text e.g. get_weather tool called -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html
 QUERY typescript-sdk the bad token matches the servers own log text (e.g. get_weather tool called...) fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html
 QUERY python-sdk the bad token matches the servers own log text e.g. get_weather tool called -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html
+QUERY_URLS
+QUERY_URL SyntaxError in stdio deserializeMessage a console.log in the server triggers it -> https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.html
+QUERY_URL SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix -> https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it-fix.html
+QUERY_URL SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it-root-cause.html
+QUERY_URL Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream -> https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html
+QUERY_URL Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix -> https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream-fix.html
+QUERY_URL Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause -> https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream-root-cause.html
+QUERY_URL how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html
+QUERY_URL JSON-RPC -> https://laozhangzzz.github.io/agent-pitbook/q/json-rpc.html
+QUERY_URL JSON-RPC fix -> https://laozhangzzz.github.io/agent-pitbook/q/json-rpc-fix.html
+QUERY_URL mcp-server JSON-RPC -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-json-rpc.html
+QUERY_URL mcp-server JSON-RPC fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-json-rpc-fix.html
+QUERY_URL typescript-sdk JSON-RPC -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-json-rpc.html
+QUERY_URL typescript-sdk JSON-RPC fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-json-rpc-fix.html
+QUERY_URL python-sdk JSON-RPC -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-json-rpc.html
+QUERY_URL python-sdk JSON-RPC fix -> https://laozhangzzz.github.io/agent-pitbook/q/python-sdk-json-rpc-fix.html
+QUERY_URL client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse -> https://laozhangzzz.github.io/agent-pitbook/q/client-error-syntaxerror-is-not-valid-json-inside-deserializemessage-json-parse.html
 
 PIT mcp-streamable-http-client-no-oauth-on-401
 TITLE Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
@@ -1184,6 +1660,23 @@ QUERY mcp-server connecting to an OAuth-protected MCP server over Streamable HTT
 QUERY log shows Error from MCP server: Error: Error POSTing to endpoint (HTTP 401) then no further progress -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html
 QUERY how to fix log shows Error from MCP server: Error: Error POSTing to endpoint (HTTP 401) then no further progress -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html
 QUERY log shows Error from MCP server: Error: Error POSTing to endpoint (HTTP 401) then no further progress root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URLS
+QUERY_URL When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version -> https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released.html
+QUERY_URL When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix -> https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/when-using-streamable-http-transport-the-oauth-flow-is-not-triggered-when-the-server-returns-401-resolved-in-a-released-mcp-streamable-http-client-no-oauth-on-401-2.html
+QUERY_URL Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow -> https://laozhangzzz.github.io/agent-pitbook/q/streamable-http-mcp-client-hangs-on-401-instead-of-starting-the-oauth-flow.html
+QUERY_URL Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix -> https://laozhangzzz.github.io/agent-pitbook/q/streamable-http-mcp-client-hangs-on-401-instead-of-starting-the-oauth-flow-fix.html
+QUERY_URL Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause -> https://laozhangzzz.github.io/agent-pitbook/q/streamable-http-mcp-client-hangs-on-401-instead-of-starting-the-oauth-flow-root-cause.html
+QUERY_URL how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-streamable-http-mcp-client-hangs-on-401-instead-of-starting-the-oauth-flow.html
+QUERY_URL HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/http-fix-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL mcp-inspector HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL mcp-inspector HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http-fix-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL mcp-server HTTP -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL mcp-server HTTP fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-fix-mcp-streamable-http-client-no-oauth-on-401.html
+QUERY_URL mcp-inspector HTTP 401 -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http-401.html
+QUERY_URL mcp-inspector HTTP 401 fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-inspector-http-401-fix.html
+QUERY_URL mcp-server HTTP 401 -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-401.html
+QUERY_URL mcp-server HTTP 401 fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-http-401-fix.html
 
 PIT mcp-time-server-invalid-local-timezone
 TITLE mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
@@ -1226,6 +1719,23 @@ QUERY claude-desktop uvx mcp-server-time traceback through zoneinfo/_common.py l
 QUERY happens when DST is active and the local zone shows as an abbreviation EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html
 QUERY how to fix happens when DST is active and the local zone shows as an abbreviation EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html
 QUERY happens when DST is active and the local zone shows as an abbreviation (EDT/PDT/CEST) root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html
+QUERY_URLS
+QUERY_URL Time server fails under EDT timezone use --local-timezone with an IANA name -> https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name.html
+QUERY_URL Time server fails under EDT timezone (use --local-timezone with an IANA name) fix -> https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name-fix.html
+QUERY_URL Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/time-server-fails-under-edt-timezone-use-local-timezone-with-an-iana-name-root-cause.html
+QUERY_URL mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-time-crashes-when-the-local-timezone-is-an-abbreviation-like-edt-pdt-cest.html
+QUERY_URL mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-time-crashes-when-the-local-timezone-is-an-abbreviation-like-edt-pdt-cest-fix.html
+QUERY_URL mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-time-crashes-when-the-local-timezone-is-an-abbreviation-like-edt-pdt-cest-root-cause.html
+QUERY_URL how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-server-time-crashes-when-the-local-timezone-is-an-abbreviation-like-edt-pdt-cest.html
+QUERY_URL EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/q/edt-pdt-cest.html
+QUERY_URL EDT/PDT/CEST fix -> https://laozhangzzz.github.io/agent-pitbook/q/edt-pdt-cest-fix.html
+QUERY_URL mcp-server EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-edt-pdt-cest.html
+QUERY_URL mcp-server EDT/PDT/CEST fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-edt-pdt-cest-fix.html
+QUERY_URL claude-desktop EDT/PDT/CEST -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-edt-pdt-cest.html
+QUERY_URL claude-desktop EDT/PDT/CEST fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-edt-pdt-cest-fix.html
+QUERY_URL -IANA -> https://laozhangzzz.github.io/agent-pitbook/q/iana.html
+QUERY_URL -IANA fix -> https://laozhangzzz.github.io/agent-pitbook/q/iana-fix.html
+QUERY_URL mcp-server -IANA -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-iana.html
 
 PIT mcp-ts-client-default-60s-request-timeout
 TITLE MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
@@ -1268,6 +1778,23 @@ QUERY mcp-server TS/JS fix -> https://laozhangzzz.github.io/agent-pitbook/pits/m
 QUERY typescript-sdk TS/JS -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html
 QUERY typescript-sdk TS/JS fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html
 QUERY how to fix McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html
+QUERY_URLS
+QUERY_URL mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout.html
+QUERY_URL mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout-mcp-ts-client-default-60s-request-timeout.html
+QUERY_URL mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout-mcp-ts-client-default-60s-request-timeout-2.html
+QUERY_URL MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-client-times-out-long-tool-calls-after-60s-32001-unless-you-reset-on-progress.html
+QUERY_URL MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-client-times-out-long-tool-calls-after-60s-32001-unless-you-reset-on-progress-fix.html
+QUERY_URL MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-client-times-out-long-tool-calls-after-60s-32001-unless-you-reset-on-progress-root-cause.html
+QUERY_URL how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-typescript-client-times-out-long-tool-calls-after-60s-32001-unless-you-reset-on-progress.html
+QUERY_URL MCP error -32001: Request timed out even with server progress -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-even-with-server-progress.html
+QUERY_URL MCP error -32001: Request timed out even with server progress fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-even-with-server-progress-fix.html
+QUERY_URL mcp-server MCP error -32001: Request timed out even with server progress -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp-error-32001-request-timed-out-even-with-server-progress.html
+QUERY_URL mcp-server MCP error -32001: Request timed out even with server progress fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp-error-32001-request-timed-out-even-with-server-progress-fix.html
+QUERY_URL typescript-sdk MCP error -32001: Request timed out even with server progress -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress.html
+QUERY_URL typescript-sdk MCP error -32001: Request timed out even with server progress fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress-fix.html
+QUERY_URL MCP error -32001: Request timed out with data: { timeout: 60000 } -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-with-data-timeout-60000.html
+QUERY_URL MCP error -32001: Request timed out with data: { timeout: 60000 } fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32001-request-timed-out-with-data-timeout-60000-fix.html
+QUERY_URL mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-mcp-error-32001-request-timed-out-with-data-timeout-60000.html
 
 PIT mcp-ts-sdk-commonjs-esm-pkce-challenge
 TITLE MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)
@@ -1310,6 +1837,23 @@ QUERY how to fix the error originates inside @modelcontextprotocol/sdk/dist/cjs/
 QUERY the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html
 QUERY mcp-server the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html
 QUERY mcp-server the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html
+QUERY_URLS
+QUERY_URL @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge -> https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge.html
+QUERY_URL @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix -> https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge-fix.html
+QUERY_URL @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge-root-cause.html
+QUERY_URL MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-in-commonjs-projects-with-err-require-esm-pkce-challenge.html
+QUERY_URL MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-in-commonjs-projects-with-err-require-esm-pkce-challenge-fix.html
+QUERY_URL MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-in-commonjs-projects-with-err-require-esm-pkce-challenge-root-cause.html
+QUERY_URL how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-typescript-sdk-crashes-in-commonjs-projects-with-err-require-esm-pkce-challenge.html
+QUERY_URL ERR_REQUIRE_ESM -> https://laozhangzzz.github.io/agent-pitbook/q/err-require-esm.html
+QUERY_URL ERR_REQUIRE_ESM fix -> https://laozhangzzz.github.io/agent-pitbook/q/err-require-esm-fix.html
+QUERY_URL mcp-server ERR_REQUIRE_ESM -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-err-require-esm.html
+QUERY_URL mcp-server ERR_REQUIRE_ESM fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-err-require-esm-fix.html
+QUERY_URL typescript-sdk ERR_REQUIRE_ESM -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-err-require-esm.html
+QUERY_URL typescript-sdk ERR_REQUIRE_ESM fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-err-require-esm-fix.html
+QUERY_URL runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead -> https://laozhangzzz.github.io/agent-pitbook/q/runtime-crash-on-mcp-client-init-err-require-esm-require-of-es-module-pkce-challenge-is-not-supported-use-dynamic-import.html
+QUERY_URL how to fix runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-runtime-crash-on-mcp-client-init-err-require-esm-require-of-es-module-pkce-challenge-is-not-supported-use-dyn.html
+QUERY_URL runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead root cause -> https://laozhangzzz.github.io/agent-pitbook/q/runtime-crash-on-mcp-client-init-err-require-esm-require-of-es-module-pkce-challenge-is-not-supported-use-dynamic-import-mcp-ts-sdk-commonjs-esm-pkce-challenge.html
 
 PIT mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror
 TITLE MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation)
@@ -1352,6 +1896,23 @@ QUERY occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node r
 QUERY mcp-server occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
 QUERY mcp-server occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
 QUERY typescript-sdk occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
+QUERY_URLS
+QUERY_URL Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError -> https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror.html
+QUERY_URL Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix -> https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror-fix.html
+QUERY_URL Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror-root-cause.html
+QUERY_URL MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-validation-fails-on-cloudflare-workers-with-evalerror-ajv-code-generation.html
+QUERY_URL MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-validation-fails-on-cloudflare-workers-with-evalerror-ajv-code-generation-fix.html
+QUERY_URL MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-validation-fails-on-cloudflare-workers-with-evalerror-ajv-code-generation-root-cause.html
+QUERY_URL how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-ts-sdk-validation-fails-on-cloudflare-workers-with-evalerror-ajv-code-generation.html
+QUERY_URL EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid -> https://laozhangzzz.github.io/agent-pitbook/q/evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which-edge-runtimes.html
+QUERY_URL EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix -> https://laozhangzzz.github.io/agent-pitbook/q/evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which-edge-runtimes-mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
+QUERY_URL mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which-edg.html
+QUERY_URL mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which-edg-mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
+QUERY_URL typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which.html
+QUERY_URL typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-evalerror-code-generation-from-strings-disallowed-because-ajv-v6-compiles-schemas-with-new-function-which-mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html
+QUERY_URL EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv -> https://laozhangzzz.github.io/agent-pitbook/q/evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html
+QUERY_URL EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix -> https://laozhangzzz.github.io/agent-pitbook/q/evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv-fix.html
+QUERY_URL mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html
 
 PIT mcp-ts-sdk-type-instantiation-excessively-deep
 TITLE MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
@@ -1390,6 +1951,23 @@ QUERY mcp-server it appears intermittently; @ts-ignore silences the error but no
 QUERY mcp-server it appears intermittently; @ts-ignore silences the error but not the slowdown fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html
 QUERY typescript-sdk it appears intermittently; @ts-ignore silences the error but not the slowdown -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html
 QUERY typescript-sdk it appears intermittently; @ts-ignore silences the error but not the slowdown fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html
+QUERY_URLS
+QUERY_URL Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6 -> https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul.html
+QUERY_URL Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix -> https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul-mcp-ts-sdk-type-instantiation-excessively-deep.html
+QUERY_URL Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-when-importing-toolcallback-zod-author-recommends-single-zod-version-modern-modul-mcp-ts-sdk-type-instantiation-excessively-deep-2.html
+QUERY_URL MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-type-instantiation-is-excessively-deep-ts2589-freezes-the-ide.html
+QUERY_URL MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-type-instantiation-is-excessively-deep-ts2589-freezes-the-ide-fix.html
+QUERY_URL MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-ts-sdk-type-instantiation-is-excessively-deep-ts2589-freezes-the-ide-root-cause.html
+QUERY_URL how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-ts-sdk-type-instantiation-is-excessively-deep-ts2589-freezes-the-ide.html
+QUERY_URL Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types -> https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types.html
+QUERY_URL how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types.html
+QUERY_URL Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause -> https://laozhangzzz.github.io/agent-pitbook/q/type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types-root-cause.html
+QUERY_URL mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types.html
+QUERY_URL mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types-fix.html
+QUERY_URL typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types.html
+QUERY_URL typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-type-instantiation-is-excessively-deep-and-possibly-infinite-ts-2589-on-lines-referencing-sdk-tool-types-mcp-ts-sdk-type-instantiation-excessively-deep.html
+QUERY_URL the TypeScript server in Cursor/VS Code hangs and saving files stalls -> https://laozhangzzz.github.io/agent-pitbook/q/the-typescript-server-in-cursor-vs-code-hangs-and-saving-files-stalls.html
+QUERY_URL how to fix the TypeScript server in Cursor/VS Code hangs and saving files stalls -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-typescript-server-in-cursor-vs-code-hangs-and-saving-files-stalls.html
 
 PIT mcp-ts-sdk-zod-v4-incompatible
 TITLE MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
@@ -1432,6 +2010,23 @@ QUERY how to fix errors appear in minified code and are hard to trace -> https:/
 QUERY errors appear in minified code and are hard to trace root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html
 QUERY mcp-server errors appear in minified code and are hard to trace -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html
 QUERY mcp-server errors appear in minified code and are hard to trace fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html
+QUERY_URLS
+QUERY_URL MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes.html
+QUERY_URL MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes-fix.html
+QUERY_URL MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-sdk-v1-17-5-incompatible-with-zod-v4-breaking-changes-root-cause.html
+QUERY_URL MCP TypeScript SDK breaks with Zod v4: w._parse is not a function -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-breaks-with-zod-v4-w-parse-is-not-a-function.html
+QUERY_URL MCP TypeScript SDK breaks with Zod v4: w._parse is not a function fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-breaks-with-zod-v4-w-parse-is-not-a-function-fix.html
+QUERY_URL MCP TypeScript SDK breaks with Zod v4: w._parse is not a function root cause -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-breaks-with-zod-v4-w-parse-is-not-a-function-root-cause.html
+QUERY_URL how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-mcp-typescript-sdk-breaks-with-zod-v4-w-parse-is-not-a-function.html
+QUERY_URL w._parse is not a function -> https://laozhangzzz.github.io/agent-pitbook/q/w-parse-is-not-a-function.html
+QUERY_URL w._parse is not a function... fix -> https://laozhangzzz.github.io/agent-pitbook/q/w-parse-is-not-a-function-fix.html
+QUERY_URL mcp-server w._parse is not a function -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-w-parse-is-not-a-function.html
+QUERY_URL mcp-server w._parse is not a function... fix -> https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-w-parse-is-not-a-function-fix.html
+QUERY_URL typescript-sdk w._parse is not a function -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-w-parse-is-not-a-function.html
+QUERY_URL typescript-sdk w._parse is not a function... fix -> https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-w-parse-is-not-a-function-fix.html
+QUERY_URL tool execution returns {"code":-32603,"message":"w._parse is not a function..."} -> https://laozhangzzz.github.io/agent-pitbook/q/tool-execution-returns-code-32603-message-w-parse-is-not-a-function.html
+QUERY_URL how to fix tool execution returns {"code":-32603,"message":"w._parse is not a function..."} -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-tool-execution-returns-code-32603-message-w-parse-is-not-a-function.html
+QUERY_URL tool execution returns {"code":-32603,"message":"w._parse is not a function..."} root cause -> https://laozhangzzz.github.io/agent-pitbook/q/tool-execution-returns-code-32603-message-w-parse-is-not-a-function-root-cause.html
 
 PIT mcp-windows-npx-requires-cmd-c-wrapper
 TITLE On Windows an MCP server launched with npx needs a cmd /c wrapper
@@ -1474,6 +2069,23 @@ QUERY mcp-server /WSL fix -> https://laozhangzzz.github.io/agent-pitbook/pits/mc
 QUERY Windows only: the MCP server will not start -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html
 QUERY how to fix Windows only: the MCP server will not start -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html
 QUERY Windows only: the MCP server will not start root cause -> https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html
+QUERY_URLS
+QUERY_URL Windows npx launch failure with garbled 'not recognized' error -32000 -> https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000.html
+QUERY_URL Windows npx launch failure with garbled 'not recognized' error (-32000) fix -> https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000-fix.html
+QUERY_URL Windows npx launch failure with garbled 'not recognized' error (-32000) root cause -> https://laozhangzzz.github.io/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000-root-cause.html
+QUERY_URL comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions -> https://laozhangzzz.github.io/agent-pitbook/q/comment-noting-windows-wsl-needs-cmd-c-before-npx-y-and-matching-npm-versions.html
+QUERY_URL comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix -> https://laozhangzzz.github.io/agent-pitbook/q/comment-noting-windows-wsl-needs-cmd-c-before-npx-y-and-matching-npm-versions-fix.html
+QUERY_URL comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause -> https://laozhangzzz.github.io/agent-pitbook/q/comment-noting-windows-wsl-needs-cmd-c-before-npx-y-and-matching-npm-versions-root-cause.html
+QUERY_URL On Windows an MCP server launched with npx needs a cmd /c wrapper -> https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper.html
+QUERY_URL On Windows an MCP server launched with npx needs a cmd /c wrapper fix -> https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-fix.html
+QUERY_URL On Windows an MCP server launched with npx needs a cmd /c wrapper root cause -> https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-root-cause.html
+QUERY_URL how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper.html
+QUERY_URL ENOENT fix -> https://laozhangzzz.github.io/agent-pitbook/q/enoent-fix.html
+QUERY_URL claude-desktop ENOENT -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-enoent.html
+QUERY_URL claude-desktop ENOENT fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-enoent-fix.html
+QUERY_URL cursor ENOENT -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-enoent.html
+QUERY_URL cursor ENOENT fix -> https://laozhangzzz.github.io/agent-pitbook/q/cursor-enoent-fix.html
+QUERY_URL cline ENOENT -> https://laozhangzzz.github.io/agent-pitbook/q/cline-enoent.html
 
 PIT portaudio-stream-close-blocks-hotkey-callback-thread
 TITLE PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
@@ -1516,6 +2128,23 @@ QUERY pynput daemon status still reports Running but pressing the hotkey does no
 QUERY voice-to-claude daemon status still reports Running but pressing the hotkey does nothing -> https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html
 QUERY voice-to-claude daemon status still reports Running but pressing the hotkey does nothing fix -> https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html
 QUERY only a daemon restart recovers it -> https://laozhangzzz.github.io/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html
+QUERY_URLS
+QUERY_URL PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener.html
+QUERY_URL PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener fix -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener-fix.html
+QUERY_URL PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener root cause -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener-root-cause.html
+QUERY_URL how to fix PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-portaudio-stream-stop-close-on-a-hotkey-callback-thread-can-freeze-the-global-hotkey-listener.html
+QUERY_URL a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating -> https://laozhangzzz.github.io/agent-pitbook/q/a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating.html
+QUERY_URL how to fix a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating.html
+QUERY_URL a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating root cause -> https://laozhangzzz.github.io/agent-pitbook/q/a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating-root-cause.html
+QUERY_URL portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating.html
+QUERY_URL portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix -> https://laozhangzzz.github.io/agent-pitbook/q/portaudio-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating-fix.html
+QUERY_URL pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating.html
+QUERY_URL pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating-fix.html
+QUERY_URL voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating.html
+QUERY_URL voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-a-push-to-talk-dictation-daemon-intermittently-goes-unresponsive-after-switching-windows-and-dictating-f.html
+QUERY_URL the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line -> https://laozhangzzz.github.io/agent-pitbook/q/the-log-is-stuck-at-recording-stopped-processing-with-no-following-audio-duration-line.html
+QUERY_URL how to fix the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-the-log-is-stuck-at-recording-stopped-processing-with-no-following-audio-duration-line.html
+QUERY_URL the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line root cause -> https://laozhangzzz.github.io/agent-pitbook/q/the-log-is-stuck-at-recording-stopped-processing-with-no-following-audio-duration-line-root-cause.html
 
 PIT pynput-mixed-cjk-ascii-type-out-of-order-macos
 TITLE pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
@@ -1556,6 +2185,23 @@ QUERY pynput only mixed CJK+ASCII text scrambles -> https://laozhangzzz.github.i
 QUERY pynput only mixed CJK+ASCII text scrambles fix -> https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html
 QUERY voice-to-claude only mixed CJK+ASCII text scrambles -> https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html
 QUERY voice-to-claude only mixed CJK+ASCII text scrambles fix -> https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html
+QUERY_URLS
+QUERY_URL pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.html
+QUERY_URL pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste-fix.html
+QUERY_URL pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste-root-cause.html
+QUERY_URL how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.html
+QUERY_URL ASCII fix -> https://laozhangzzz.github.io/agent-pitbook/q/ascii-fix.html
+QUERY_URL pynput ASCII -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-ascii.html
+QUERY_URL pynput ASCII fix -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-ascii-fix.html
+QUERY_URL voice-to-claude ASCII -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-ascii.html
+QUERY_URL voice-to-claude ASCII fix -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-ascii-fix.html
+QUERY_URL injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped -> https://laozhangzzz.github.io/agent-pitbook/q/injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-the-end-some-cjk.html
+QUERY_URL how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-the-e.html
+QUERY_URL injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause -> https://laozhangzzz.github.io/agent-pitbook/q/injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-the-end-some-cjk-pynput-mixed-cjk-ascii-type-out-of-order-macos.html
+QUERY_URL pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-the-end-s.html
+QUERY_URL pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix -> https://laozhangzzz.github.io/agent-pitbook/q/pynput-injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-the-end-s-pynput-mixed-cjk-ascii-type-out-of-order-macos.html
+QUERY_URL voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to.html
+QUERY_URL voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix -> https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-打开claude-code-然后commit一下-yields-打开claudec-然后一下-odecomit-reordered-english-fragments-shoved-to-pynput-mixed-cjk-ascii-type-out-of-order-macos.html
 
 PIT uv-cache-outside-workspace-sandbox
 TITLE uv fails in a managed workspace because cache or Python install paths are outside writable roots
@@ -1598,4 +2244,21 @@ QUERY codex uv run or uv sync fails with permission or sandbox filesystem errors
 QUERY claude-code uv run or uv sync fails with permission or sandbox filesystem errors -> https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html
 QUERY claude-code uv run or uv sync fails with permission or sandbox filesystem errors fix -> https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html
 QUERY gemini uv run or uv sync fails with permission or sandbox filesystem errors -> https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html
+QUERY_URLS
+QUERY_URL uv fails in a managed workspace because cache or Python install paths are outside writable roots -> https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.html
+QUERY_URL uv fails in a managed workspace because cache or Python install paths are outside writable roots fix -> https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots-fix.html
+QUERY_URL uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause -> https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots-root-cause.html
+QUERY_URL how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots -> https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.html
+QUERY_URL UV_CACHE_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/uv-cache-dir.html
+QUERY_URL UV_CACHE_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/uv-cache-dir-fix.html
+QUERY_URL codex UV_CACHE_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/codex-uv-cache-dir.html
+QUERY_URL codex UV_CACHE_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/codex-uv-cache-dir-fix.html
+QUERY_URL claude-code UV_CACHE_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-uv-cache-dir.html
+QUERY_URL claude-code UV_CACHE_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/claude-code-uv-cache-dir-fix.html
+QUERY_URL gemini UV_CACHE_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-uv-cache-dir.html
+QUERY_URL gemini UV_CACHE_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/gemini-uv-cache-dir-fix.html
+QUERY_URL qwen-code UV_CACHE_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/qwen-code-uv-cache-dir.html
+QUERY_URL qwen-code UV_CACHE_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/qwen-code-uv-cache-dir-fix.html
+QUERY_URL UV_PYTHON_INSTALL_DIR -> https://laozhangzzz.github.io/agent-pitbook/q/uv-python-install-dir.html
+QUERY_URL UV_PYTHON_INSTALL_DIR fix -> https://laozhangzzz.github.io/agent-pitbook/q/uv-python-install-dir-fix.html
 

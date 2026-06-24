@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mcp-server log messages become duplicated after the FastMCP server is created fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger. Fix: Re-apply your logging configuration after constructing FastMCP so your handlers win.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="mcp-server log messages become duplicated after the FastMCP server is created fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger. Fix: Re-apply your logging configuration after constructing FastMCP so your handlers win.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, fastmcp, python-sdk, logging, configuration, side-effects, mcp-server, fastmcp-overrides-logging-configuration, fastmcp overrides logging configuration, FastMCP overrides your apps logging configuration on init duplicate or lost logs, FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix, FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause, Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler, Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix, Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause, how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs, log messages become duplicated after the FastMCP server is created, how to fix log messages become duplicated after the FastMCP server is created, log messages become duplicated after the FastMCP server is created root cause, candidate, medium, mcp-server log messages become duplicated after the FastMCP server is created fix, mcp-server log messages become duplicated after the FastMCP server is created, python-sdk log messages become duplicated after the FastMCP server is created, python-sdk log messages become duplicated after the FastMCP server is created fix, a custom/structured global logging handler stops taking effect, how to fix a custom/structured global logging handler stops taking effect, a custom/structured global logging handler stops taking effect root cause, mcp-server a custom/structured global logging handler stops taking effect, mcp-server a custom/structured global logging handler stops taking effect fix, python-sdk a custom/structured global logging handler stops taking effect, python-sdk a custom/structured global logging handler stops taking effect fix, fastmcp a custom/structured global logging handler stops taking effect, fastmcp a custom/structured global logging handler stops taking effect fix, the change appears exactly when FastMCP(...) is instantiated">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "mcp-server log messages become duplicated after the FastMCP server is created fix",
+  "description": "Known fix. Problem: log messages become duplicated after the FastMCP server is created Root cause: FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger. Fix: Re-apply your logging configuration after constructing FastMCP so your handlers win.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler, Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix, Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause, FastMCP overrides your apps logging configuration on init duplicate or lost logs, FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix, FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause, how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs, log messages become duplicated after the FastMCP server is created, how to fix log messages become duplicated after the FastMCP server is created, log messages become duplicated after the FastMCP server is created root cause, mcp-server log messages become duplicated after the FastMCP server is created, mcp-server log messages become duplicated after the FastMCP server is created fix, python-sdk log messages become duplicated after the FastMCP server is created, python-sdk log messages become duplicated after the FastMCP server is created fix, a custom/structured global logging handler stops taking effect, how to fix a custom/structured global logging handler stops taking effect",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "fastmcp",
+    "python-sdk",
+    "logging",
+    "configuration",
+    "side-effects",
+    "mcp-server",
+    "fastmcp-overrides-logging-configuration",
+    "fastmcp overrides logging configuration",
+    "FastMCP overrides your apps logging configuration on init duplicate or lost logs",
+    "FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix",
+    "FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause",
+    "Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler",
+    "Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix",
+    "Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause",
+    "how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs",
+    "log messages become duplicated after the FastMCP server is created",
+    "how to fix log messages become duplicated after the FastMCP server is created",
+    "log messages become duplicated after the FastMCP server is created root cause",
+    "candidate",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-log-messages-become-duplicated-after-the-fastmcp-server-is-created-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-overrides-logging-configuration.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/12"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/12"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>mcp-server log messages become duplicated after the FastMCP server is created fix</h1>
+      <p class="lede">log messages become duplicated after the FastMCP server is created</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/option-to-not-rewrite-the-logging-configuration-workarounds-re-apply-dictconfig-remove-added-handler.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/12">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> log messages become duplicated after the FastMCP server is created</p>
+    <p><strong>Root cause:</strong> FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger.</p>
+    <p><strong>Fix first:</strong> Re-apply your logging configuration after constructing FastMCP so your handlers win.</p>
+    <p><strong>Verify:</strong> Emit logs after re-applying your config.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler</li><li>Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix</li><li>Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause</li><li>FastMCP overrides your apps logging configuration on init duplicate or lost logs</li><li>FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix</li><li>FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause</li><li>how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs</li><li>log messages become duplicated after the FastMCP server is created</li><li>how to fix log messages become duplicated after the FastMCP server is created</li><li>log messages become duplicated after the FastMCP server is created root cause</li><li>mcp-server log messages become duplicated after the FastMCP server is created</li><li>mcp-server log messages become duplicated after the FastMCP server is created fix</li><li>python-sdk log messages become duplicated after the FastMCP server is created</li><li>python-sdk log messages become duplicated after the FastMCP server is created fix</li><li>a custom/structured global logging handler stops taking effect</li><li>how to fix a custom/structured global logging handler stops taking effect</li><li>a custom/structured global logging handler stops taking effect root cause</li><li>mcp-server a custom/structured global logging handler stops taking effect</li><li>mcp-server a custom/structured global logging handler stops taking effect fix</li><li>python-sdk a custom/structured global logging handler stops taking effect</li><li>python-sdk a custom/structured global logging handler stops taking effect fix</li><li>fastmcp a custom/structured global logging handler stops taking effect</li><li>fastmcp a custom/structured global logging handler stops taking effect fix</li><li>the change appears exactly when FastMCP(...) is instantiated</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-overrides-logging-configuration.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

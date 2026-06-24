@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Several official reference MCP servers are archived; their bugs will not be fixed fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The project archived a number of reference servers to reduce maintenance load and focus on a smaller core set. Fix: Before debugging a reference server, check whether it is in modelcontextprotocol/servers-archived or flagged deprecated in the main README.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Several official reference MCP servers are archived; their bugs will not be fixed fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The project archived a number of reference servers to reduce maintenance load and focus on a smaller core set. Fix: Before debugging a reference server, check whether it is in modelcontextprotocol/servers-archived or flagged deprecated in the main README.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, servers, archived, deprecated, maintenance, postgres, github, puppeteer, mcp-server, claude-desktop, cursor, mcp-reference-server-archived-unmaintained, mcp reference server archived unmaintained, Several official reference MCP servers are archived; their bugs will not be fixed, Several official reference MCP servers are archived; their bugs will not be fixed fix, Several official reference MCP servers are archived; their bugs will not be fixed root cause, server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived, server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix, server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause, maintainer deprecation notice that server-github development moved to github/github-mcp-server, maintainer deprecation notice that server-github development moved to github/github-mcp-server fix, maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause, how to fix Several official reference MCP servers are archived; their bugs will not be fixed, verified, high, README fix, mcp-server README, mcp-server README fix, claude-desktop README, claude-desktop README fix, cursor README, cursor README fix, a reference server misbehaves and the issue is closed with a deprecation/archival note, how to fix a reference server misbehaves and the issue is closed with a deprecation/archival note, a reference server misbehaves and the issue is closed with a deprecation/archival note root cause, mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note, mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note fix, claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note, claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Several official reference MCP servers are archived; their bugs will not be fixed fix",
+  "description": "Known fix. Problem: a reference server misbehaves and the issue is closed with a deprecation/archival note Root cause: The project archived a number of reference servers to reduce maintenance load and focus on a smaller core set. Fix: Before debugging a reference server, check whether it is in modelcontextprotocol/servers-archived or flagged deprecated in the main README.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived, server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix, server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause, maintainer deprecation notice that server-github development moved to github/github-mcp-server, maintainer deprecation notice that server-github development moved to github/github-mcp-server fix, maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause, Several official reference MCP servers are archived; their bugs will not be fixed, Several official reference MCP servers are archived; their bugs will not be fixed fix, Several official reference MCP servers are archived; their bugs will not be fixed root cause, how to fix Several official reference MCP servers are archived; their bugs will not be fixed, README fix, mcp-server README, mcp-server README fix, claude-desktop README, claude-desktop README fix, cursor README",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "servers",
+    "archived",
+    "deprecated",
+    "maintenance",
+    "postgres",
+    "github",
+    "puppeteer",
+    "mcp-server",
+    "claude-desktop",
+    "cursor",
+    "mcp-reference-server-archived-unmaintained",
+    "mcp reference server archived unmaintained",
+    "Several official reference MCP servers are archived; their bugs will not be fixed",
+    "Several official reference MCP servers are archived; their bugs will not be fixed fix",
+    "Several official reference MCP servers are archived; their bugs will not be fixed root cause",
+    "server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived",
+    "server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix",
+    "server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause",
+    "maintainer deprecation notice that server-github development moved to github/github-mcp-server",
+    "maintainer deprecation notice that server-github development moved to github/github-mcp-server fix",
+    "maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause",
+    "how to fix Several official reference MCP servers are archived; their bugs will not be fixed",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/several-official-reference-mcp-servers-are-archived-their-bugs-will-not-be-fixed-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reference-server-archived-unmaintained.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/22"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/22"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>Several official reference MCP servers are archived; their bugs will not be fixed fix</h1>
+      <p class="lede">a reference server misbehaves and the issue is closed with a deprecation/archival note</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/server-postgres-multi-instance-issue-closed-maintainer-notes-the-server-moved-to-servers-archived.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/22">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> a reference server misbehaves and the issue is closed with a deprecation/archival note</p>
+    <p><strong>Root cause:</strong> The project archived a number of reference servers to reduce maintenance load and focus on a smaller core set.</p>
+    <p><strong>Fix first:</strong> Before debugging a reference server, check whether it is in modelcontextprotocol/servers-archived or flagged deprecated in the main README.</p>
+    <p><strong>Verify:</strong> Check the repository of the server you depend on.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived</li><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix</li><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server fix</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause</li><li>Several official reference MCP servers are archived; their bugs will not be fixed</li><li>Several official reference MCP servers are archived; their bugs will not be fixed fix</li><li>Several official reference MCP servers are archived; their bugs will not be fixed root cause</li><li>how to fix Several official reference MCP servers are archived; their bugs will not be fixed</li><li>README fix</li><li>mcp-server README</li><li>mcp-server README fix</li><li>claude-desktop README</li><li>claude-desktop README fix</li><li>cursor README</li><li>cursor README fix</li><li>a reference server misbehaves and the issue is closed with a deprecation/archival note</li><li>how to fix a reference server misbehaves and the issue is closed with a deprecation/archival note</li><li>a reference server misbehaves and the issue is closed with a deprecation/archival note root cause</li><li>mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note</li><li>mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note fix</li><li>claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note</li><li>claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reference-server-archived-unmaintained.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

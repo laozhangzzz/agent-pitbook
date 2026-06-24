@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>typescript-sdk MCP error -32001: Request timed out even with server progress - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The default per-request timeout is 60000 ms. Fix: Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="typescript-sdk MCP error -32001: Request timed out even with server progress - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The default per-request timeout is 60000 ms. Fix: Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, timeout, error-32001, progress, long-running, mcp-server, mcp-ts-client-default-60s-request-timeout, mcp ts client default 60s request timeout, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause, mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress, mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix, mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause, how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress, MCP error -32001: Request timed out even with server progress, MCP error -32001: Request timed out even with server progress fix, mcp-server MCP error -32001: Request timed out even with server progress, verified, high, typescript-sdk MCP error -32001: Request timed out even with server progress, mcp-server MCP error -32001: Request timed out even with server progress fix, typescript-sdk MCP error -32001: Request timed out even with server progress fix, MCP error -32001: Request timed out with data: { timeout: 60000 }, MCP error -32001: Request timed out with data: { timeout: 60000 } fix, mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }, mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } fix, typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 }, typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 } fix, McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }, McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix, mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }, mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix, typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "typescript-sdk MCP error -32001: Request timed out even with server progress",
+  "description": "Known fix. Problem: McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } Root cause: The default per-request timeout is 60000 ms. Fix: Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress, mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix, mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix, MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause, how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress, MCP error -32001: Request timed out even with server progress, MCP error -32001: Request timed out even with server progress fix, mcp-server MCP error -32001: Request timed out even with server progress, mcp-server MCP error -32001: Request timed out even with server progress fix, typescript-sdk MCP error -32001: Request timed out even with server progress, typescript-sdk MCP error -32001: Request timed out even with server progress fix, MCP error -32001: Request timed out with data: { timeout: 60000 }, MCP error -32001: Request timed out with data: { timeout: 60000 } fix, mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "typescript-sdk",
+    "timeout",
+    "error-32001",
+    "progress",
+    "long-running",
+    "mcp-server",
+    "mcp-ts-client-default-60s-request-timeout",
+    "mcp ts client default 60s request timeout",
+    "MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress",
+    "MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix",
+    "MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause",
+    "mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress",
+    "mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix",
+    "mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause",
+    "how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress",
+    "MCP error -32001: Request timed out even with server progress",
+    "MCP error -32001: Request timed out even with server progress fix",
+    "mcp-server MCP error -32001: Request timed out even with server progress",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/typescript-sdk-mcp-error-32001-request-timed-out-even-with-server-progress.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-client-default-60s-request-timeout.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/32"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/32"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>typescript-sdk MCP error -32001: Request timed out even with server progress</h1>
+      <p class="lede">McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/mcp-client-times-out-after-60-seconds-ignoring-timeout-option-comments-confirm-calltool-request-options-and-resettimeout.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/32">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</p>
+    <p><strong>Root cause:</strong> The default per-request timeout is 60000 ms.</p>
+    <p><strong>Fix first:</strong> Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.</p>
+    <p><strong>Verify:</strong> Run a tool call that exceeds 60 seconds with the options set.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress</li><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix</li><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause</li><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</li><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix</li><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause</li><li>how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</li><li>MCP error -32001: Request timed out even with server progress</li><li>MCP error -32001: Request timed out even with server progress fix</li><li>mcp-server MCP error -32001: Request timed out even with server progress</li><li>mcp-server MCP error -32001: Request timed out even with server progress fix</li><li>typescript-sdk MCP error -32001: Request timed out even with server progress</li><li>typescript-sdk MCP error -32001: Request timed out even with server progress fix</li><li>MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</li><li>mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-client-default-60s-request-timeout.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

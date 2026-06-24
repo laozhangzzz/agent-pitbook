@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: Dynamic resources are exposed via resources/templates/list; static resources via resources/list. Fix: Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: Dynamic resources are exposed via resources/templates/list; static resources via resources/list. Fix: Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, claude-desktop, resources, resource-templates, client-capability, fastmcp, mcp-server, claude-desktop-no-dynamic-resource-templates, claude desktop no dynamic resource templates, Claude Desktop does not list dynamic MCP resource templates only static resources, Claude Desktop does not list dynamic MCP resource templates (only static resources) fix, Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause, dynamic resource not working in Claude desktop, dynamic resource not working in Claude desktop fix, dynamic resource not working in Claude desktop root cause, how to fix Claude Desktop does not list dynamic MCP resource templates only static resources, a static resource works in Claude Desktop but a parameterized/templated resource does not show, how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show, a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause, verified, high, mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show, claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show, claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix, mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix, the server is correct and the template appears under the Inspector Resources tab, how to fix the server is correct and the template appears under the Inspector Resources tab, the server is correct and the template appears under the Inspector Resources tab root cause, claude-desktop the server is correct and the template appears under the Inspector Resources tab, claude-desktop the server is correct and the template appears under the Inspector Resources tab fix, mcp-server the server is correct and the template appears under the Inspector Resources tab, mcp-server the server is correct and the template appears under the Inspector Resources tab fix, time lost assuming the server code is wrong, how to fix time lost assuming the server code is wrong, time lost assuming the server code is wrong root cause">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show",
+  "description": "Known fix. Problem: a static resource works in Claude Desktop but a parameterized/templated resource does not show Root cause: Dynamic resources are exposed via resources/templates/list; static resources via resources/list. Fix: Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "dynamic resource not working in Claude desktop, dynamic resource not working in Claude desktop fix, dynamic resource not working in Claude desktop root cause, Claude Desktop does not list dynamic MCP resource templates only static resources, Claude Desktop does not list dynamic MCP resource templates (only static resources) fix, Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause, how to fix Claude Desktop does not list dynamic MCP resource templates only static resources, a static resource works in Claude Desktop but a parameterized/templated resource does not show, how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show, a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause, claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show, claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix, mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show, mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix, the server is correct and the template appears under the Inspector Resources tab, how to fix the server is correct and the template appears under the Inspector Resources tab",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "claude-desktop",
+    "resources",
+    "resource-templates",
+    "client-capability",
+    "fastmcp",
+    "mcp-server",
+    "claude-desktop-no-dynamic-resource-templates",
+    "claude desktop no dynamic resource templates",
+    "Claude Desktop does not list dynamic MCP resource templates only static resources",
+    "Claude Desktop does not list dynamic MCP resource templates (only static resources) fix",
+    "Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause",
+    "dynamic resource not working in Claude desktop",
+    "dynamic resource not working in Claude desktop fix",
+    "dynamic resource not working in Claude desktop root cause",
+    "how to fix Claude Desktop does not list dynamic MCP resource templates only static resources",
+    "a static resource works in Claude Desktop but a parameterized/templated resource does not show",
+    "how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show",
+    "a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-a-static-resource-works-in-claude-desktop-but-a-parameterized-templated-resource-does-not-show.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-no-dynamic-resource-templates.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/10"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/10"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show</h1>
+      <p class="lede">a static resource works in Claude Desktop but a parameterized/templated resource does not show</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/dynamic-resource-not-working-in-claude-desktop.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/10">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> a static resource works in Claude Desktop but a parameterized/templated resource does not show</p>
+    <p><strong>Root cause:</strong> Dynamic resources are exposed via resources/templates/list; static resources via resources/list.</p>
+    <p><strong>Fix first:</strong> Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.</p>
+    <p><strong>Verify:</strong> Open the server in MCP Inspector and check the Resources tab.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>dynamic resource not working in Claude desktop</li><li>dynamic resource not working in Claude desktop fix</li><li>dynamic resource not working in Claude desktop root cause</li><li>Claude Desktop does not list dynamic MCP resource templates only static resources</li><li>Claude Desktop does not list dynamic MCP resource templates (only static resources) fix</li><li>Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause</li><li>how to fix Claude Desktop does not list dynamic MCP resource templates only static resources</li><li>a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause</li><li>claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix</li><li>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix</li><li>the server is correct and the template appears under the Inspector Resources tab</li><li>how to fix the server is correct and the template appears under the Inspector Resources tab</li><li>the server is correct and the template appears under the Inspector Resources tab root cause</li><li>claude-desktop the server is correct and the template appears under the Inspector Resources tab</li><li>claude-desktop the server is correct and the template appears under the Inspector Resources tab fix</li><li>mcp-server the server is correct and the template appears under the Inspector Resources tab</li><li>mcp-server the server is correct and the template appears under the Inspector Resources tab fix</li><li>time lost assuming the server code is wrong</li><li>how to fix time lost assuming the server code is wrong</li><li>time lost assuming the server code is wrong root cause</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-no-dynamic-resource-templates.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The package manager needs external network access but the agent sandbox blocks it by default. Fix: Classify the error as network-related before changing dependency manifests.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The package manager needs external network access but the agent sandbox blocks it by default. Fix: Classify the error as network-related before changing dependency manifests.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, agents, sandbox, network, dependencies, codex, claude-code, gemini, qwen-code, cursor, aider, agent-network-restricted-dependency-install, agent network restricted dependency install, Dependency install fails because the agent sandbox blocks network access, Dependency install fails because the agent sandbox blocks network access fix, Dependency install fails because the agent sandbox blocks network access root cause, Package manager failures in coding-agent sessions often come from restricted network access, not broken dependencies; verify network policy before editing package files, how to fix Dependency install fails because the agent sandbox blocks network access, dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause, codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, verified, high, claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, the project lockfile or dependency manifest appears valid, how to fix the project lockfile or dependency manifest appears valid, the project lockfile or dependency manifest appears valid root cause, codex the project lockfile or dependency manifest appears valid, codex the project lockfile or dependency manifest appears valid fix, claude-code the project lockfile or dependency manifest appears valid, claude-code the project lockfile or dependency manifest appears valid fix, gemini the project lockfile or dependency manifest appears valid, gemini the project lockfile or dependency manifest appears valid fix, the agent environment says network access is restricted, how to fix the agent environment says network access is restricted">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors",
+  "description": "Known fix. Problem: dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors Root cause: The package manager needs external network access but the agent sandbox blocks it by default. Fix: Classify the error as network-related before changing dependency manifests.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html",
+  "dateCreated": "2026-06-19",
+  "dateModified": "2026-06-19",
+  "keywords": "Dependency install fails because the agent sandbox blocks network access, Dependency install fails because the agent sandbox blocks network access fix, Dependency install fails because the agent sandbox blocks network access root cause, how to fix Dependency install fails because the agent sandbox blocks network access, dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause, codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors, gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix, the project lockfile or dependency manifest appears valid, how to fix the project lockfile or dependency manifest appears valid, the project lockfile or dependency manifest appears valid root cause",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "agents",
+    "sandbox",
+    "network",
+    "dependencies",
+    "codex",
+    "claude-code",
+    "gemini",
+    "qwen-code",
+    "cursor",
+    "aider",
+    "agent-network-restricted-dependency-install",
+    "agent network restricted dependency install",
+    "Dependency install fails because the agent sandbox blocks network access",
+    "Dependency install fails because the agent sandbox blocks network access fix",
+    "Dependency install fails because the agent sandbox blocks network access root cause",
+    "Package manager failures in coding-agent sessions often come from restricted network access, not broken dependencies; verify network policy before editing package files",
+    "how to fix Dependency install fails because the agent sandbox blocks network access",
+    "dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors",
+    "how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors",
+    "dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause",
+    "codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors",
+    "codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix",
+    "claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/how-to-fix-dependency-installation-fails-with-dns-host-resolution-registry-index-tls-or-timeout-errors.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/agent-network-restricted-dependency-install.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/3"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/3"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</h1>
+      <p class="lede">dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/dependency-install-fails-because-the-agent-sandbox-blocks-network-access.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/3">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</p>
+    <p><strong>Root cause:</strong> The package manager needs external network access but the agent sandbox blocks it by default.</p>
+    <p><strong>Fix first:</strong> Classify the error as network-related before changing dependency manifests.</p>
+    <p><strong>Verify:</strong> Re-run the same command after approved network access.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Dependency install fails because the agent sandbox blocks network access</li><li>Dependency install fails because the agent sandbox blocks network access fix</li><li>Dependency install fails because the agent sandbox blocks network access root cause</li><li>how to fix Dependency install fails because the agent sandbox blocks network access</li><li>dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause</li><li>codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>the project lockfile or dependency manifest appears valid</li><li>how to fix the project lockfile or dependency manifest appears valid</li><li>the project lockfile or dependency manifest appears valid root cause</li><li>codex the project lockfile or dependency manifest appears valid</li><li>codex the project lockfile or dependency manifest appears valid fix</li><li>claude-code the project lockfile or dependency manifest appears valid</li><li>claude-code the project lockfile or dependency manifest appears valid fix</li><li>gemini the project lockfile or dependency manifest appears valid</li><li>gemini the project lockfile or dependency manifest appears valid fix</li><li>the agent environment says network access is restricted</li><li>how to fix the agent environment says network access is restricted</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

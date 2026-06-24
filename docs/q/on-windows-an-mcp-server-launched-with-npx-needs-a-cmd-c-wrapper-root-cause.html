@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On Windows an MCP server launched with npx needs a cmd /c wrapper root cause - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables. Fix: Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','&lt;package&gt;', ...].">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="On Windows an MCP server launched with npx needs a cmd /c wrapper root cause - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables. Fix: Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','&lt;package&gt;', ...].">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-root-cause.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, windows, npx, cmd, spawn, enoent, startup, claude-desktop, cursor, cline, mcp-server, mcp-windows-npx-requires-cmd-c-wrapper, mcp windows npx requires cmd c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper fix, On Windows an MCP server launched with npx needs a cmd /c wrapper root cause, Windows npx launch failure with garbled 'not recognized' error -32000, Windows npx launch failure with garbled 'not recognized' error (-32000) fix, Windows npx launch failure with garbled 'not recognized' error (-32000) root cause, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause, how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper, verified, high, ENOENT fix, claude-desktop ENOENT, claude-desktop ENOENT fix, cursor ENOENT, cursor ENOENT fix, cline ENOENT, cline ENOENT fix, mcp-server ENOENT, mcp-server ENOENT fix, /WSL, /WSL fix, claude-desktop /WSL, claude-desktop /WSL fix, cursor /WSL">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-root-cause.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "On Windows an MCP server launched with npx needs a cmd /c wrapper root cause",
+  "description": "Known fix. Problem: Windows only: the MCP server will not start Root cause: On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables. Fix: Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','\u003cpackage>', ...].",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-root-cause.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Windows npx launch failure with garbled 'not recognized' error -32000, Windows npx launch failure with garbled 'not recognized' error (-32000) fix, Windows npx launch failure with garbled 'not recognized' error (-32000) root cause, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix, comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause, On Windows an MCP server launched with npx needs a cmd /c wrapper, On Windows an MCP server launched with npx needs a cmd /c wrapper fix, On Windows an MCP server launched with npx needs a cmd /c wrapper root cause, how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper, ENOENT fix, claude-desktop ENOENT, claude-desktop ENOENT fix, cursor ENOENT, cursor ENOENT fix, cline ENOENT",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "windows",
+    "npx",
+    "cmd",
+    "spawn",
+    "enoent",
+    "startup",
+    "claude-desktop",
+    "cursor",
+    "cline",
+    "mcp-server",
+    "mcp-windows-npx-requires-cmd-c-wrapper",
+    "mcp windows npx requires cmd c wrapper",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper fix",
+    "On Windows an MCP server launched with npx needs a cmd /c wrapper root cause",
+    "Windows npx launch failure with garbled 'not recognized' error -32000",
+    "Windows npx launch failure with garbled 'not recognized' error (-32000) fix",
+    "Windows npx launch failure with garbled 'not recognized' error (-32000) root cause",
+    "comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions",
+    "comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix",
+    "comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause",
+    "how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/on-windows-an-mcp-server-launched-with-npx-needs-a-cmd-c-wrapper-root-cause.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/37"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/37"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>On Windows an MCP server launched with npx needs a cmd /c wrapper root cause</h1>
+      <p class="lede">Windows only: the MCP server will not start</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/windows-npx-launch-failure-with-garbled-not-recognized-error-32000.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/37">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> Windows only: the MCP server will not start</p>
+    <p><strong>Root cause:</strong> On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables.</p>
+    <p><strong>Fix first:</strong> Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','&lt;package&gt;', ...].</p>
+    <p><strong>Verify:</strong> Relaunch after wrapping with cmd /c.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Windows npx launch failure with garbled 'not recognized' error -32000</li><li>Windows npx launch failure with garbled 'not recognized' error (-32000) fix</li><li>Windows npx launch failure with garbled 'not recognized' error (-32000) root cause</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper fix</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper root cause</li><li>how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper</li><li>ENOENT fix</li><li>claude-desktop ENOENT</li><li>claude-desktop ENOENT fix</li><li>cursor ENOENT</li><li>cursor ENOENT fix</li><li>cline ENOENT</li><li>cline ENOENT fix</li><li>mcp-server ENOENT</li><li>mcp-server ENOENT fix</li><li>/WSL</li><li>/WSL fix</li><li>claude-desktop /WSL</li><li>claude-desktop /WSL fix</li><li>cursor /WSL</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

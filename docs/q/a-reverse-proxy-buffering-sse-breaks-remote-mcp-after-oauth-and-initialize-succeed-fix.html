@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally. Fix: Disable response buffering for the MCP endpoint at the proxy.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally. Fix: Disable response buffering for the MCP endpoint at the proxy.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, sse, streamable-http, reverse-proxy, cloudflare-tunnel, buffering, remote-mcp, claude-desktop, mcp-server, mcp-reverse-proxy-buffers-sse-connection-fails, mcp reverse proxy buffers sse connection fails, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause, Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize, Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix, Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause, how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, HTTP fix, claude-desktop HTTP, claude-desktop HTTP fix, verified, medium, mcp-server HTTP, mcp-server HTTP fix, the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause, claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, claude-desktop the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix, mcp-server the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, mcp-server the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix, server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows, how to fix server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows, server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows root cause, claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows, claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix",
+  "description": "Known fix. Problem: the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') Root cause: MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally. Fix: Disable response buffering for the MCP endpoint at the proxy.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize, Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix, Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix, A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause, how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed, HTTP fix, claude-desktop HTTP, claude-desktop HTTP fix, mcp-server HTTP, mcp-server HTTP fix, the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server, the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause, claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "sse",
+    "streamable-http",
+    "reverse-proxy",
+    "cloudflare-tunnel",
+    "buffering",
+    "remote-mcp",
+    "claude-desktop",
+    "mcp-server",
+    "mcp-reverse-proxy-buffers-sse-connection-fails",
+    "mcp reverse proxy buffers sse connection fails",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix",
+    "A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause",
+    "Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize",
+    "Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix",
+    "Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause",
+    "how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed",
+    "HTTP fix",
+    "claude-desktop HTTP",
+    "claude-desktop HTTP fix",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/a-reverse-proxy-buffering-sse-breaks-remote-mcp-after-oauth-and-initialize-succeed-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reverse-proxy-buffers-sse-connection-fails.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/23"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/23"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix</h1>
+      <p class="lede">the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server')</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/claude-desktop-custom-mcp-connection-failure-confirmed-root-cause-is-cloudflare-tunnel-buffering-sse-despite-successful.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/23">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server')</p>
+    <p><strong>Root cause:</strong> MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally.</p>
+    <p><strong>Fix first:</strong> Disable response buffering for the MCP endpoint at the proxy.</p>
+    <p><strong>Verify:</strong> Connect through the proxy and watch the stream.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize</li><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix</li><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause</li><li>how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</li><li>HTTP fix</li><li>claude-desktop HTTP</li><li>claude-desktop HTTP fix</li><li>mcp-server HTTP</li><li>mcp-server HTTP fix</li><li>the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause</li><li>claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>claude-desktop the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix</li><li>mcp-server the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>mcp-server the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix</li><li>server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows</li><li>how to fix server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows</li><li>server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows root cause</li><li>claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows</li><li>claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reverse-proxy-buffers-sse-connection-fails.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

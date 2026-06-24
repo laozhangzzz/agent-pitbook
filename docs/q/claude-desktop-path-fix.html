@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>claude-desktop PATH fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH. Fix: Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="claude-desktop PATH fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH. Fix: Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, path, environment, nvm, npx, macos, claude-desktop, transport, mcp-server, mcp-stdio-server-exits-shell-path-not-inherited, mcp stdio server exits shell path not inherited, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause, MCP Servers Dont Work with NVM, MCP Servers Dont Work with NVM fix, MCP Servers Dont Work with NVM root cause, npx-for-claude wrapper workaround 66 reactions, npx-for-claude wrapper workaround (66 reactions) fix, npx-for-claude wrapper workaround (66 reactions) root cause, Server transport closed unexpectedly, process exiting early write EPIPE, Server transport closed unexpectedly, process exiting early (write EPIPE) fix, Server transport closed unexpectedly, process exiting early (write EPIPE) root cause, verified, high, claude-desktop PATH fix, how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, PATH fix, claude-desktop PATH, mcp-server PATH, mcp-server PATH fix, EPIPE fix, claude-desktop EPIPE, claude-desktop EPIPE fix, mcp-server EPIPE, mcp-server EPIPE fix, NVM/">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "claude-desktop PATH fix",
+  "description": "Known fix. Problem: client log: Server transport closed unexpectedly, this is likely due to the process exiting early Root cause: GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH. Fix: Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "MCP Servers Dont Work with NVM, MCP Servers Dont Work with NVM fix, MCP Servers Dont Work with NVM root cause, npx-for-claude wrapper workaround 66 reactions, npx-for-claude wrapper workaround (66 reactions) fix, npx-for-claude wrapper workaround (66 reactions) root cause, Server transport closed unexpectedly, process exiting early write EPIPE, Server transport closed unexpectedly, process exiting early (write EPIPE) fix, Server transport closed unexpectedly, process exiting early (write EPIPE) root cause, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix, MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause, how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH, PATH fix, claude-desktop PATH, claude-desktop PATH fix",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "stdio",
+    "path",
+    "environment",
+    "nvm",
+    "npx",
+    "macos",
+    "claude-desktop",
+    "transport",
+    "mcp-server",
+    "mcp-stdio-server-exits-shell-path-not-inherited",
+    "mcp stdio server exits shell path not inherited",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix",
+    "MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause",
+    "MCP Servers Dont Work with NVM",
+    "MCP Servers Dont Work with NVM fix",
+    "MCP Servers Dont Work with NVM root cause",
+    "npx-for-claude wrapper workaround 66 reactions",
+    "npx-for-claude wrapper workaround (66 reactions) fix",
+    "npx-for-claude wrapper workaround (66 reactions) root cause",
+    "Server transport closed unexpectedly, process exiting early write EPIPE",
+    "Server transport closed unexpectedly, process exiting early (write EPIPE) fix",
+    "Server transport closed unexpectedly, process exiting early (write EPIPE) root cause",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/claude-desktop-path-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/28"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/28"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>claude-desktop PATH fix</h1>
+      <p class="lede">client log: Server transport closed unexpectedly, this is likely due to the process exiting early</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/mcp-servers-dont-work-with-nvm.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/28">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> client log: Server transport closed unexpectedly, this is likely due to the process exiting early</p>
+    <p><strong>Root cause:</strong> GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH.</p>
+    <p><strong>Fix first:</strong> Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.</p>
+    <p><strong>Verify:</strong> Inspect the client MCP log after a full restart.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>MCP Servers Dont Work with NVM</li><li>MCP Servers Dont Work with NVM fix</li><li>MCP Servers Dont Work with NVM root cause</li><li>npx-for-claude wrapper workaround 66 reactions</li><li>npx-for-claude wrapper workaround (66 reactions) fix</li><li>npx-for-claude wrapper workaround (66 reactions) root cause</li><li>Server transport closed unexpectedly, process exiting early write EPIPE</li><li>Server transport closed unexpectedly, process exiting early (write EPIPE) fix</li><li>Server transport closed unexpectedly, process exiting early (write EPIPE) root cause</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause</li><li>how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</li><li>PATH fix</li><li>claude-desktop PATH</li><li>claude-desktop PATH fix</li><li>mcp-server PATH</li><li>mcp-server PATH fix</li><li>EPIPE fix</li><li>claude-desktop EPIPE</li><li>claude-desktop EPIPE fix</li><li>mcp-server EPIPE</li><li>mcp-server EPIPE fix</li><li>NVM/</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

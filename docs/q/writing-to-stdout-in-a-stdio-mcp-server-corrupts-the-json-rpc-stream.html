@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: In the stdio transport, stdout is the JSON-RPC channel. Fix: Remove or redirect all stdout writes in the server; use stderr.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: In the stdio transport, stdout is the JSON-RPC channel. Fix: Remove or redirect all stdout writes in the server; use stderr.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, mcp-stdio-stdout-logging-breaks-protocol, mcp stdio stdout logging breaks protocol, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause, SyntaxError in stdio deserializeMessage a console.log in the server triggers it, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause, how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, JSON-RPC, JSON-RPC fix, mcp-server JSON-RPC, verified, high, mcp-server JSON-RPC fix, typescript-sdk JSON-RPC, typescript-sdk JSON-RPC fix, python-sdk JSON-RPC, python-sdk JSON-RPC fix, client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse, how to fix client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse, client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse root cause, mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse, mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix, typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse, typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix, python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse, python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
+  "description": "Known fix. Problem: client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse Root cause: In the stdio transport, stdout is the JSON-RPC channel. Fix: Remove or redirect all stdout writes in the server; use stderr.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "SyntaxError in stdio deserializeMessage a console.log in the server triggers it, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause, how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, JSON-RPC, JSON-RPC fix, mcp-server JSON-RPC, mcp-server JSON-RPC fix, typescript-sdk JSON-RPC, typescript-sdk JSON-RPC fix, python-sdk JSON-RPC, python-sdk JSON-RPC fix, client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "stdio",
+    "stdout",
+    "logging",
+    "json-rpc",
+    "console-log",
+    "protocol",
+    "mcp-server",
+    "typescript-sdk",
+    "python-sdk",
+    "mcp-stdio-stdout-logging-breaks-protocol",
+    "mcp stdio stdout logging breaks protocol",
+    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
+    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix",
+    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause",
+    "SyntaxError in stdio deserializeMessage a console.log in the server triggers it",
+    "SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix",
+    "SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause",
+    "how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
+    "JSON-RPC",
+    "JSON-RPC fix",
+    "mcp-server JSON-RPC",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/writing-to-stdout-in-a-stdio-mcp-server-corrupts-the-json-rpc-stream.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-stdout-logging-breaks-protocol.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/29"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/29"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</h1>
+      <p class="lede">client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/29">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</p>
+    <p><strong>Root cause:</strong> In the stdio transport, stdout is the JSON-RPC channel.</p>
+    <p><strong>Fix first:</strong> Remove or redirect all stdout writes in the server; use stderr.</p>
+    <p><strong>Verify:</strong> Call a tool after moving logging to stderr.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>SyntaxError in stdio deserializeMessage a console.log in the server triggers it</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>JSON-RPC</li><li>JSON-RPC fix</li><li>mcp-server JSON-RPC</li><li>mcp-server JSON-RPC fix</li><li>typescript-sdk JSON-RPC</li><li>typescript-sdk JSON-RPC fix</li><li>python-sdk JSON-RPC</li><li>python-sdk JSON-RPC fix</li><li>client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>how to fix client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse root cause</li><li>mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix</li><li>typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix</li><li>python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-stdout-logging-breaks-protocol.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

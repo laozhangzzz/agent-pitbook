@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function. Fix: On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function. Fix: On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror, mcp ts sdk edge runtime ajv codegen evalerror, MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause, how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, candidate, medium, mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv, mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix, mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix, typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv, typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile, how to fix EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile root cause, mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile, mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv",
+  "description": "Known fix. Problem: EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile Root cause: The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function. Fix: On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause, MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid, typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv, EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix, mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "typescript-sdk",
+    "cloudflare-workers",
+    "edge",
+    "ajv",
+    "elicitation",
+    "evalerror",
+    "mcp-server",
+    "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
+    "mcp ts sdk edge runtime ajv codegen evalerror",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix",
+    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause",
+    "Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError",
+    "Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix",
+    "Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause",
+    "how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation",
+    "EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid",
+    "EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix",
+    "mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid",
+    "candidate",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-evalerror-code-generation-from-strings-disallowed-for-this-context-with-a-stack-through-new-function-and-ajv.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/34"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/34"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv</h1>
+      <p class="lede">EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/elicitation-feature-fails-on-cloudflare-workers-due-to-ajv-code-generation-evalerror.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/34">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</p>
+    <p><strong>Root cause:</strong> The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function.</p>
+    <p><strong>Fix first:</strong> On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.</p>
+    <p><strong>Verify:</strong> Run the validation/elicitation path on the edge runtime.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid</li><li>EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix</li><li>mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid</li><li>mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix</li><li>typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid</li><li>typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix</li><li>typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv</li><li>typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>how to fix EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile root cause</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile fix</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
