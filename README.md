@@ -49,8 +49,10 @@ Public site:
 - [https://laozhangzzz.github.io/agent-pitbook/](https://laozhangzzz.github.io/agent-pitbook/)
 - [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
 - [Ask Agent Pitbook](https://laozhangzzz.github.io/agent-pitbook/ask.html)
+- [Hosted known fixes index](https://laozhangzzz.github.io/agent-pitbook/answers.html)
 - [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)
 - [Hosted search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl)
+- [Hosted answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl)
 - [Hosted unresolved pit template](https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json)
 - [Hosted JSONL feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl)
 
@@ -143,7 +145,7 @@ Example seed record:
 Before debugging:
 
 1. Search `feeds/pits.jsonl` by exact error text, tool, OS, package manager, framework, and agent.
-2. If the exact error is not obvious, scan `feeds/index.jsonl` and `feeds/search-terms.jsonl` for generated query phrases from current symptoms.
+2. If the exact error is not obvious, scan `feeds/index.jsonl`, `feeds/search-terms.jsonl`, and `feeds/answer-queries.jsonl` for generated query phrases, known-fix snippets, upstream issue titles, and current symptoms.
 3. Read the matching Markdown record under `pits/`.
 4. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
 5. Treat commands as suggestions. Inspect the local project before running them.
@@ -188,6 +190,7 @@ Generated or rebuildable:
 
 - [feeds/pits.jsonl](feeds/pits.jsonl)
 - [feeds/search-terms.jsonl](feeds/search-terms.jsonl)
+- [feeds/answer-queries.jsonl](feeds/answer-queries.jsonl)
 - [feeds/unresolved-pit-template.json](feeds/unresolved-pit-template.json)
 - [docs/](docs/): GitHub Pages site, hosted LLM entrypoints, sitemap, robots file, and per-pit pages
 - [indexes/](indexes/)
@@ -235,6 +238,7 @@ See [docs/llm-wiki/](docs/llm-wiki/).
 The project should be discoverable through GitHub search, web search, LLM entrypoints, agent runtimes, package registries, concrete error strings, and community backlinks.
 
 See [docs/DISCOVERY.md](docs/DISCOVERY.md).
+Search recall is audited with [docs/SEARCH_AUDIT.md](docs/SEARCH_AUDIT.md) and `node tools/search-probes.mjs`.
 
 ## Repository Shape
 

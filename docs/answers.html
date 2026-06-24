@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Known Fixes - Agent Pitbook</title>
+  <meta name="description" content="Answer-first index of known coding-agent, MCP, sandbox, dependency, port, browser automation, input, audio, and local tooling fixes.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Known Fixes - Agent Pitbook">
+  <meta property="og:description" content="Answer-first index of known coding-agent, MCP, sandbox, dependency, port, browser automation, input, audio, and local tooling fixes.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/answers.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding agents, agent debugging, mcp, codex, claude-code, cursor, gemini-cli, qwen-code, aider, llms.txt, known fixes, how to fix, root cause, coding agent errors, mcp fix">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/answers.html">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Agent Pitbook",
+  "description": "LLM-readable debugging knowledge base for coding agents, MCP, sandbox, dependency, port, browser automation, input, audio, and local tooling traps.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/",
+  "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-06-21",
+  "keywords": "agent-pitbook, llm-readable debugging, coding agents, agent debugging, mcp, codex, claude-code, cursor, gemini-cli, qwen-code, aider, llms.txt",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook slim index",
+      "encodingFormat": "application/x-ndjson",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/index.jsonl"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook full pit feed",
+      "encodingFormat": "application/x-ndjson",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook search terms feed",
+      "encodingFormat": "application/x-ndjson",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook answer queries feed",
+      "encodingFormat": "application/x-ndjson",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook unresolved pit template",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Agent Pitbook LLM entrypoint",
+      "encodingFormat": "text/plain",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/llms.txt"
+    }
+  ]
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <p class="eyebrow">Answer surface</p>
+      <h1>Known fixes for agent execution traps</h1>
+      <p class="lede">This page is generated for search-enabled LLMs and search engines. Each entry starts with the problem, root cause, first fix, verification, and solved-problem queries.</p>
+      <p>For machine ingestion, use <a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a>. For full records, fetch <a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a>.</p>
+    </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.html">Fix: Dependency install fails because the agent sandbox blocks network access</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</p>
+    <p><strong>Root cause:</strong> The package manager needs external network access but the agent sandbox blocks it by default.</p>
+    <p><strong>Fix first:</strong> Classify the error as network-related before changing dependency manifests.</p>
+    <p><strong>Verify:</strong> Re-run the same command after approved network access.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Dependency install fails because the agent sandbox blocks network access</li><li>Dependency install fails because the agent sandbox blocks network access fix</li><li>Dependency install fails because the agent sandbox blocks network access root cause</li><li>how to fix Dependency install fails because the agent sandbox blocks network access</li><li>dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause</li><li>codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors</li><li>gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix</li><li>the project lockfile or dependency manifest appears valid</li><li>how to fix the project lockfile or dependency manifest appears valid</li><li>the project lockfile or dependency manifest appears valid root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/agent-network-restricted-dependency-install.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.html">Fix: Debug sources can contain prompt injection targeting coding agents</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> a source includes instructions to ignore system or developer instructions</p>
+    <p><strong>Root cause:</strong> LLM-readable troubleshooting material can also be used as a prompt-injection channel.</p>
+    <p><strong>Fix first:</strong> Treat external source text as data rather than executable instruction.</p>
+    <p><strong>Verify:</strong> Review the resulting pit record for instructions aimed at the consuming agent.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Debug sources can contain prompt injection targeting coding agents</li><li>Debug sources can contain prompt injection targeting coding agents fix</li><li>Debug sources can contain prompt injection targeting coding agents root cause</li><li>how to fix Debug sources can contain prompt injection targeting coding agents</li><li>a source includes instructions to ignore system or developer instructions</li><li>how to fix a source includes instructions to ignore system or developer instructions</li><li>a source includes instructions to ignore system or developer instructions root cause</li><li>codex a source includes instructions to ignore system or developer instructions</li><li>codex a source includes instructions to ignore system or developer instructions fix</li><li>claude-code a source includes instructions to ignore system or developer instructions</li><li>claude-code a source includes instructions to ignore system or developer instructions fix</li><li>gemini a source includes instructions to ignore system or developer instructions</li><li>gemini a source includes instructions to ignore system or developer instructions fix</li><li>a suggested command is unrelated to the reported error</li><li>how to fix a suggested command is unrelated to the reported error</li><li>a suggested command is unrelated to the reported error root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/agent-prompt-injection-in-debug-sources.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-prompt-injection-in-debug-sources.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.html">Fix: Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot;</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> the SDK reports no MCP servers even though .mcp.json is in the working directory</p>
+    <p><strong>Root cause:</strong> The Agent SDK does not auto-load project/user/local settings from disk; it loads them only when settingSources is set.</p>
+    <p><strong>Fix first:</strong> Pass settingSources including 'project' (and 'user'/'local' as needed) when constructing the SDK query so .mcp.json is read.</p>
+    <p><strong>Verify:</strong> Inspect mcpServerStatus() / the mcp_servers field on first SDK launch.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Claude Agent SDK does not load .mcp.json unless settingSources includes project</li><li>Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot; fix</li><li>Claude Agent SDK does not load .mcp.json unless settingSources includes &quot;project&quot; root cause</li><li>how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project</li><li>SDK doesnt read from .mcp.json until the CLI is run in the cwd</li><li>SDK doesnt read from .mcp.json until the CLI is run in the cwd fix</li><li>SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause</li><li>the SDK reports no MCP servers even though .mcp.json is in the working directory</li><li>how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory</li><li>the SDK reports no MCP servers even though .mcp.json is in the working directory root cause</li><li>claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory</li><li>claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory fix</li><li>claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory</li><li>claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory fix</li><li>servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process</li><li>how to fix servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/claude-agent-sdk-mcp-json-requires-project-settingsource.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-agent-sdk-mcp-json-requires-project-settingsource.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">Fix: Claude Code chrome-bridge MCP gets stuck after one transport connects</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> Claude Code cannot reconnect to the chrome-bridge MCP server</p>
+    <p><strong>Root cause:</strong> The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections.</p>
+    <p><strong>Fix first:</strong> Do not use curl /mcp as a health check.</p>
+    <p><strong>Verify:</strong> After killing or patching the native host, verify only the lightweight ping endpoint.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects fix</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects root cause</li><li>how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Singleton McpServer causes Already connected to a transport</li><li>Singleton McpServer causes Already connected to a transport fix</li><li>Singleton McpServer causes Already connected to a transport root cause</li><li>replace getMcpServer singleton with factory</li><li>replace getMcpServer singleton with factory fix</li><li>replace getMcpServer singleton with factory root cause</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT fix</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT root cause</li><li>service can only connect once after Chrome starts</li><li>service can only connect once after Chrome starts fix</li><li>service can only connect once after Chrome starts root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.html">Fix: Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> startup toasts: Could not connect to MCP server &lt;name&gt;</p>
+    <p><strong>Root cause:</strong> The MCP SDK connection model is one transport per Protocol/server instance.</p>
+    <p><strong>Fix first:</strong> Upgrade Claude Desktop to a build where this is fixed (resolved in a later release after 1.1.3918).</p>
+    <p><strong>Verify:</strong> Upgrade Claude Desktop and relaunch.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Claude Desktop MCP error: Already connected to a transport Protocol instance reuse</li><li>Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) fix</li><li>Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) root cause</li><li>how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse</li><li>Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release</li><li>Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix</li><li>Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release root cause</li><li>startup toasts: Could not connect to MCP server &lt;name&gt;</li><li>how to fix startup toasts: Could not connect to MCP server &lt;name&gt;</li><li>startup toasts: Could not connect to MCP server &lt;name&gt; root cause</li><li>claude-desktop startup toasts: Could not connect to MCP server &lt;name&gt;</li><li>claude-desktop startup toasts: Could not connect to MCP server &lt;name&gt; fix</li><li>log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection</li><li>how to fix log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection</li><li>log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection. root cause</li><li>claude-desktop log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/claude-desktop-mcp-protocol-instance-reuse-already-connected.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-mcp-protocol-instance-reuse-already-connected.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.html">Fix: Claude Desktop does not list dynamic MCP resource templates (only static resources)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> a static resource works in Claude Desktop but a parameterized/templated resource does not show</p>
+    <p><strong>Root cause:</strong> Dynamic resources are exposed via resources/templates/list; static resources via resources/list.</p>
+    <p><strong>Fix first:</strong> Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.</p>
+    <p><strong>Verify:</strong> Open the server in MCP Inspector and check the Resources tab.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Claude Desktop does not list dynamic MCP resource templates only static resources</li><li>Claude Desktop does not list dynamic MCP resource templates (only static resources) fix</li><li>Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause</li><li>how to fix Claude Desktop does not list dynamic MCP resource templates only static resources</li><li>dynamic resource not working in Claude desktop</li><li>dynamic resource not working in Claude desktop fix</li><li>dynamic resource not working in Claude desktop root cause</li><li>a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause</li><li>claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix</li><li>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show</li><li>mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix</li><li>the server is correct and the template appears under the Inspector Resources tab</li><li>how to fix the server is correct and the template appears under the Inspector Resources tab</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/claude-desktop-no-dynamic-resource-templates.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-no-dynamic-resource-templates.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.html">Fix: Codex still references an old workspace path after a project move</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> Codex or its sidebar references an old workspace folder</p>
+    <p><strong>Root cause:</strong> The desktop app persists workspace roots separately from the shell current directory, and those saved roots may not update when a folder is moved.</p>
+    <p><strong>Fix first:</strong> Use the app's normal folder switching or reopen-workspace flow first.</p>
+    <p><strong>Verify:</strong> Start a fresh Codex session after switching or repairing the workspace.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Codex still references an old workspace path after a project move</li><li>Codex still references an old workspace path after a project move fix</li><li>Codex still references an old workspace path after a project move root cause</li><li>how to fix Codex still references an old workspace path after a project move</li><li>Codex or its sidebar references an old workspace folder</li><li>how to fix Codex or its sidebar references an old workspace folder</li><li>Codex or its sidebar references an old workspace folder root cause</li><li>the shell current directory points to the new workspace</li><li>how to fix the shell current directory points to the new workspace</li><li>the shell current directory points to the new workspace root cause</li><li>codex the shell current directory points to the new workspace</li><li>codex the shell current directory points to the new workspace fix</li><li>file links or searches use the previous path</li><li>how to fix file links or searches use the previous path</li><li>file links or searches use the previous path root cause</li><li>codex file links or searches use the previous path</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/codex-workspace-root-moved-stale-state.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/codex-workspace-root-moved-stale-state.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/docker-published-port-localhost-refused.html">Fix: Docker port is published but localhost refuses the connection</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> docker ps or docker port shows the expected host port</p>
+    <p><strong>Root cause:</strong> The app inside the container is listening on loopback rather than a container network interface.</p>
+    <p><strong>Fix first:</strong> Change the app bind address inside the container to 0.0.0.0.</p>
+    <p><strong>Verify:</strong> Inspect port mapping and make an HTTP request from the host.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Docker port is published but localhost refuses the connection</li><li>Docker port is published but localhost refuses the connection fix</li><li>Docker port is published but localhost refuses the connection root cause</li><li>how to fix Docker port is published but localhost refuses the connection</li><li>docker ps or docker port shows the expected host port</li><li>how to fix docker ps or docker port shows the expected host port</li><li>docker ps or docker port shows the expected host port root cause</li><li>codex docker ps or docker port shows the expected host port</li><li>codex docker ps or docker port shows the expected host port fix</li><li>claude-code docker ps or docker port shows the expected host port</li><li>claude-code docker ps or docker port shows the expected host port fix</li><li>gemini docker ps or docker port shows the expected host port</li><li>gemini docker ps or docker port shows the expected host port fix</li><li>curl to localhost or 127.0.0.1 on the host fails</li><li>how to fix curl to localhost or 127.0.0.1 on the host fails</li><li>curl to localhost or 127.0.0.1 on the host fails root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/docker-published-port-localhost-refused.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/docker/docker-published-port-localhost-refused.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.html">Fix: FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> all external requests fail with HTTP 421 Misdirected Request and 'Invalid Host header'</p>
+    <p><strong>Root cause:</strong> FastMCP enables DNS rebinding protection that validates the request Host header against an allowed list (added in PR #861).</p>
+    <p><strong>Fix first:</strong> Explicitly allow your hosts and origins via TransportSecuritySettings(allowed_hosts=[...], allowed_origins=[...]).</p>
+    <p><strong>Verify:</strong> Send a proxied request after setting allowed_hosts or disabling protection.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection</li><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix</li><li>FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause</li><li>how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection</li><li>Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection</li><li>Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) fix</li><li>Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) root cause</li><li>/MCP</li><li>/MCP fix</li><li>mcp-server /MCP</li><li>mcp-server /MCP fix</li><li>fastmcp /MCP</li><li>fastmcp /MCP fix</li><li>-HTTP</li><li>-HTTP fix</li><li>mcp-server -HTTP</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/fastmcp-421-invalid-host-header-dns-rebinding.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-421-invalid-host-header-dns-rebinding.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.html">Fix: FastMCP overrides your app's logging configuration on init (duplicate or lost logs)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> log messages become duplicated after the FastMCP server is created</p>
+    <p><strong>Root cause:</strong> FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger.</p>
+    <p><strong>Fix first:</strong> Re-apply your logging configuration after constructing FastMCP so your handlers win.</p>
+    <p><strong>Verify:</strong> Emit logs after re-applying your config.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>FastMCP overrides your apps logging configuration on init duplicate or lost logs</li><li>FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix</li><li>FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause</li><li>how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs</li><li>Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler</li><li>Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix</li><li>Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause</li><li>log messages become duplicated after the FastMCP server is created</li><li>how to fix log messages become duplicated after the FastMCP server is created</li><li>log messages become duplicated after the FastMCP server is created root cause</li><li>mcp-server log messages become duplicated after the FastMCP server is created</li><li>mcp-server log messages become duplicated after the FastMCP server is created fix</li><li>python-sdk log messages become duplicated after the FastMCP server is created</li><li>python-sdk log messages become duplicated after the FastMCP server is created fix</li><li>a custom/structured global logging handler stops taking effect</li><li>how to fix a custom/structured global logging handler stops taking effect</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/fastmcp-overrides-logging-configuration.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-overrides-logging-configuration.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html">Fix: VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> 'tools': ['github/*'] produces Unknown tool</p>
+    <p><strong>Root cause:</strong> The server/* toolset alias resolves only when the MCP server is registered under the matching name (e.g. installed via the official flow so it is named github).</p>
+    <p><strong>Fix first:</strong> Use the name that resolves for your setup: if github/* is Unknown tool, use 'github' and ignore the rename warning for now.</p>
+    <p><strong>Verify:</strong> Run the agent with the chosen tools entry.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause</li><li>how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause</li><li>tools: [github/*] produces Unknown tool</li><li>how to fix 'tools': ['github/*'] produces Unknown tool</li><li>tools: [github/*] produces Unknown tool root cause</li><li>github-mcp-server 'tools': ['github/*'] produces Unknown tool</li><li>github-mcp-server 'tools': ['github/*'] produces Unknown tool fix</li><li>vscode 'tools': ['github/*'] produces Unknown tool</li><li>vscode 'tools': ['github/*'] produces Unknown tool fix</li><li>tools: [github] works but warns it should be github/*</li><li>how to fix 'tools': ['github'] works but warns it should be github/*</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/github-mcp-vscode-toolset-name-mismatch.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.html">Fix: macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌')</p>
+    <p><strong>Root cause:</strong> With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device.</p>
+    <p><strong>Fix first:</strong> Diagnose by measuring the recorded level, not by trusting the API: 0 == silent capture.</p>
+    <p><strong>Verify:</strong> After pinning to the Studio Display mic, measure the recorded peak and run ASR.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</li><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix</li><li>macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause</li><li>how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable</li><li>multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') root cause</li><li>sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -&gt; 我。, stray Korean 그., or 谷歌</li><li>voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -&gt; '我。', stray Korean '그.', or '谷歌') fix</li><li>the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip</li><li>the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/macos-portaudio-silent-zero-capture-unavailable-default-input.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.html">Fix: MCP server hangs because the GUI client uses your user-level .npmrc, not your project's</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> npx -y &lt;package&gt; works in a project terminal but not when launched by the client</p>
+    <p><strong>Root cause:</strong> npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project.</p>
+    <p><strong>Fix first:</strong> Inspect effective npm config and the user-level rc file.</p>
+    <p><strong>Verify:</strong> Relaunch from the client after fixing ~/.npmrc.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix</li><li>MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause</li><li>how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects</li><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal</li><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix</li><li>author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause</li><li>MCP error -32001: Request timed out</li><li>MCP error -32001: Request timed out fix</li><li>cursor MCP error -32001: Request timed out</li><li>cursor MCP error -32001: Request timed out fix</li><li>claude-desktop MCP error -32001: Request timed out</li><li>claude-desktop MCP error -32001: Request timed out fix</li><li>cline MCP error -32001: Request timed out</li><li>cline MCP error -32001: Request timed out fix</li><li>mcp-server MCP error -32001: Request timed out</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-client-uses-user-level-npmrc-wrong-registry.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.html">Fix: MCP error -32000: Connection closed means the stdio server died before the handshake</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> client UI shows MCP error -32000: Connection closed</p>
+    <p><strong>Root cause:</strong> The client spawns the configured command and speaks JSON-RPC over stdio.</p>
+    <p><strong>Fix first:</strong> Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.</p>
+    <p><strong>Verify:</strong> Reconnect from the client after fixing the underlying cause.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>MCP error -32000: Connection closed means the stdio server died before the handshake root cause</li><li>how to fix MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000</li><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix</li><li>GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause</li><li>Fix 'Client Closed' Error by Correcting npm Config</li><li>Fix 'Client Closed' Error by Correcting npm Config fix</li><li>Fix 'Client Closed' Error by Correcting npm Config root cause</li><li>claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>cursor MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix</li><li>cline MCP error -32000: Connection closed means the stdio server died before the handshake</li><li>cline MCP error -32000: Connection closed means the stdio server died before the handshake fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-error-32000-connection-closed-server-failed-to-start.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">Fix: Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories'</p>
+    <p><strong>Root cause:</strong> The allowed-directory check compares request paths against allowed roots as strings.</p>
+    <p><strong>Fix first:</strong> Make the configured allowed-directory drive-letter case match what the client sends; try both C:\... and c:\... forms.</p>
+    <p><strong>Verify:</strong> Call read_file on a path under the allowed directory after aligning case or applying the patched build.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause</li><li>how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem server access denied for allowed paths on Windows</li><li>Filesystem server access denied for allowed paths on Windows fix</li><li>Filesystem server access denied for allowed paths on Windows root cause</li><li>step toward fixing Windows path validation</li><li>step toward fixing Windows path validation fix</li><li>step toward fixing Windows path validation root cause</li><li>Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories</li><li>how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories</li><li>Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause</li><li>claude-desktop Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories</li><li>claude-desktop Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix</li><li>cursor Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.html">Fix: Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> claude mcp add ... https://api.githubcopilot.com/mcp/ then the connection fails</p>
+    <p><strong>Root cause:</strong> The client's OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server.</p>
+    <p><strong>Fix first:</strong> Create a fine-grained GitHub Personal Access Token with the scopes you need.</p>
+    <p><strong>Verify:</strong> Connect after providing the PAT in env.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT fix</li><li>Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT root cause</li><li>how to fix Remote MCP OAuth fails with &quot;does not support dynamic client registration&quot;; use a PAT</li><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround</li><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix</li><li>Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause</li><li>does not support dynamic client registration</li><li>does not support dynamic client registration fix</li><li>claude-code does not support dynamic client registration</li><li>claude-code does not support dynamic client registration fix</li><li>github-mcp-server does not support dynamic client registration</li><li>github-mcp-server does not support dynamic client registration fix</li><li>GITHUB_PERSONAL_ACCESS_TOKEN</li><li>GITHUB_PERSONAL_ACCESS_TOKEN fix</li><li>claude-code GITHUB_PERSONAL_ACCESS_TOKEN</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.html">Fix: MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> curl http://localhost:6274 returns Failed to connect ... Connection refused</p>
+    <p><strong>Root cause:</strong> Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container.</p>
+    <p><strong>Fix first:</strong> Pass HOST and ALLOWED_ORIGINS to the container run command.</p>
+    <p><strong>Verify:</strong> Curl the UI port after setting the env vars.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</li><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix</li><li>MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause</li><li>how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set</li><li>Docker container connection refused HOST + ALLOWED_ORIGINS workaround</li><li>Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix</li><li>Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause</li><li>HOST fix</li><li>mcp-inspector HOST</li><li>mcp-inspector HOST fix</li><li>ALLOWED_ORIGINS</li><li>ALLOWED_ORIGINS fix</li><li>mcp-inspector ALLOWED_ORIGINS</li><li>mcp-inspector ALLOWED_ORIGINS fix</li><li>ERR_CONNECTION_REFUSED</li><li>ERR_CONNECTION_REFUSED fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-inspector-docker-connection-refused-host-env.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-docker-connection-refused-host-env.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.html">Fix: MCP Inspector breaks after an upgrade; pin a known-good version</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0)</p>
+    <p><strong>Root cause:</strong> Inspector is released often and some releases regress.</p>
+    <p><strong>Fix first:</strong> Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.</p>
+    <p><strong>Verify:</strong> Run the pinned or fixed version.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP Inspector breaks after an upgrade; pin a known-good version</li><li>MCP Inspector breaks after an upgrade; pin a known-good version fix</li><li>MCP Inspector breaks after an upgrade; pin a known-good version root cause</li><li>how to fix MCP Inspector breaks after an upgrade; pin a known-good version</li><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0</li><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix</li><li>sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause</li><li>Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5</li><li>Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix</li><li>Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause</li><li>HTTP fix</li><li>mcp-inspector HTTP</li><li>mcp-inspector HTTP fix</li><li>ERR_INVALID_STATE</li><li>ERR_INVALID_STATE fix</li><li>mcp-inspector ERR_INVALID_STATE</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-inspector-release-regression-pin-version.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-release-regression-pin-version.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html">Fix: A corrupted or cold npx cache makes an MCP server fail to start or time out</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> npx-launched MCP server worked before and now fails, or fails only on first launch</p>
+    <p><strong>Root cause:</strong> npx downloads the package into the npm cache before running it.</p>
+    <p><strong>Fix first:</strong> Clear the npm/npx cache and relaunch.</p>
+    <p><strong>Verify:</strong> Relaunch after clearing the cache or pre-installing.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out fix</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out root cause</li><li>how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause</li><li>Client closed / -32001 Request timed out around npx MCP startup</li><li>Client closed / -32001 Request timed out around npx MCP startup fix</li><li>Client closed / -32001 Request timed out around npx MCP startup root cause</li><li>MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part</li><li>MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix</li><li>claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part</li><li>claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix</li><li>cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part</li><li>cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-npx-cache-corrupted-server-fails-to-start.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html">Fix: Puppeteer MCP screenshots live in memory only; there is no file on disk to find</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> puppeteer_screenshot reports success but no image file appears on disk</p>
+    <p><strong>Root cause:</strong> The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path.</p>
+    <p><strong>Fix first:</strong> Retrieve the screenshot via the MCP resource the server exposes, not from a file path.</p>
+    <p><strong>Verify:</strong> Inspect the resource list in the client/Inspector and the filesystem.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find</li><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix</li><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause</li><li>how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find</li><li>Puppeteer MCP Server Missing Screenshots</li><li>Puppeteer MCP Server Missing Screenshots fix</li><li>Puppeteer MCP Server Missing Screenshots root cause</li><li>puppeteer_screenshot reports success but no image file appears on disk</li><li>how to fix puppeteer_screenshot reports success but no image file appears on disk</li><li>puppeteer_screenshot reports success but no image file appears on disk root cause</li><li>mcp-server puppeteer_screenshot reports success but no image file appears on disk</li><li>mcp-server puppeteer_screenshot reports success but no image file appears on disk fix</li><li>claude-desktop puppeteer_screenshot reports success but no image file appears on disk</li><li>claude-desktop puppeteer_screenshot reports success but no image file appears on disk fix</li><li>the model tries to open a screenshot path and finds nothing</li><li>how to fix the model tries to open a screenshot path and finds nothing</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-puppeteer-screenshots-in-memory-only.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.html">Fix: Several official reference MCP servers are archived; their bugs will not be fixed</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> a reference server misbehaves and the issue is closed with a deprecation/archival note</p>
+    <p><strong>Root cause:</strong> The project archived a number of reference servers to reduce maintenance load and focus on a smaller core set.</p>
+    <p><strong>Fix first:</strong> Before debugging a reference server, check whether it is in modelcontextprotocol/servers-archived or flagged deprecated in the main README.</p>
+    <p><strong>Verify:</strong> Check the repository of the server you depend on.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Several official reference MCP servers are archived; their bugs will not be fixed</li><li>Several official reference MCP servers are archived; their bugs will not be fixed fix</li><li>Several official reference MCP servers are archived; their bugs will not be fixed root cause</li><li>how to fix Several official reference MCP servers are archived; their bugs will not be fixed</li><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived</li><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix</li><li>server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server fix</li><li>maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause</li><li>README fix</li><li>mcp-server README</li><li>mcp-server README fix</li><li>claude-desktop README</li><li>claude-desktop README fix</li><li>cursor README</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-reference-server-archived-unmaintained.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reference-server-archived-unmaintained.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.html">Fix: A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server')</p>
+    <p><strong>Root cause:</strong> MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally.</p>
+    <p><strong>Fix first:</strong> Disable response buffering for the MCP endpoint at the proxy.</p>
+    <p><strong>Verify:</strong> Connect through the proxy and watch the stream.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix</li><li>A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause</li><li>how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed</li><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize</li><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix</li><li>Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause</li><li>HTTP fix</li><li>claude-desktop HTTP</li><li>claude-desktop HTTP fix</li><li>mcp-server HTTP</li><li>mcp-server HTTP fix</li><li>the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li><li>the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause</li><li>claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-reverse-proxy-buffers-sse-connection-fails.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reverse-proxy-buffers-sse-connection-fails.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.html">Fix: server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> MEMORY_FILE_PATH is set but the memory file is created at a default location</p>
+    <p><strong>Root cause:</strong> The npm release (e.g. 0.6.2) was older than the GitHub main source: its compiled dist/index.js hardcoded path.join(__dirname, 'memory.json').</p>
+    <p><strong>Fix first:</strong> Pin @modelcontextprotocol/server-memory@latest in the config to get the build that honors the env var (fix shipped in release 2025.4.25).</p>
+    <p><strong>Verify:</strong> Launch with @latest and an absolute MEMORY_FILE_PATH, then check where the file is written.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</li><li>server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix</li><li>server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause</li><li>how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source</li><li>Environment variables not respected in @modelcontextprotocol/server-memory package</li><li>Environment variables not respected in @modelcontextprotocol/server-memory package fix</li><li>Environment variables not respected in @modelcontextprotocol/server-memory package root cause</li><li>MEMORY_FILE_PATH</li><li>MEMORY_FILE_PATH fix</li><li>claude-desktop MEMORY_FILE_PATH</li><li>claude-desktop MEMORY_FILE_PATH fix</li><li>cursor MEMORY_FILE_PATH</li><li>cursor MEMORY_FILE_PATH fix</li><li>mcp-server MEMORY_FILE_PATH</li><li>mcp-server MEMORY_FILE_PATH fix</li><li>MEMORY_FILE_PATH is set but the memory file is created at a default location</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-server-memory-ignores-memory-file-path-env.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-server-memory-ignores-memory-file-path-env.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-sse-received-request-before-initialization.html">Fix: SSE MCP server: Received request before initialization was complete</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call</p>
+    <p><strong>Root cause:</strong> The MCP lifecycle requires the client's initialize to complete before other requests.</p>
+    <p><strong>Fix first:</strong> If a gateway/proxy is in front, use a spec-compliant one: switching supergateway -&gt; mcp-proxy resolves the double-initialize case.</p>
+    <p><strong>Verify:</strong> Use a compliant proxy or reconnect the client, then call tools/list.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>SSE MCP server: Received request before initialization was complete</li><li>SSE MCP server: Received request before initialization was complete fix</li><li>SSE MCP server: Received request before initialization was complete root cause</li><li>how to fix SSE MCP server: Received request before initialization was complete</li><li>MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works</li><li>MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix</li><li>MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause</li><li>RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini</li><li>RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix</li><li>mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini</li><li>mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix</li><li>python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini</li><li>python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix</li><li>RuntimeError: Received request before initialization was complete on tools/list or a tool call</li><li>RuntimeError: Received request before initialization was complete on tools/list or a tool call fix</li><li>mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-sse-received-request-before-initialization.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-received-request-before-initialization.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.html">Fix: MCP SSE session lost across workers/pods: Could not find session for ID (404)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> SSE connection opens (200), first POST returns 202, later POSTs return 404</p>
+    <p><strong>Root cause:</strong> The SSE transport is stateful: the session lives in the memory of the worker/pod that accepted the SSE connection.</p>
+    <p><strong>Fix first:</strong> Preferred: run stateless with Streamable HTTP so no per-connection in-memory session is required.</p>
+    <p><strong>Verify:</strong> Send repeated messages on one session under a multi-instance deployment after the change.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP SSE session lost across workers/pods: Could not find session for ID 404</li><li>MCP SSE session lost across workers/pods: Could not find session for ID (404) fix</li><li>MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause</li><li>how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404</li><li>MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes</li><li>MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) fix</li><li>MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) root cause</li><li>POST fix</li><li>mcp-server POST</li><li>mcp-server POST fix</li><li>python-sdk POST</li><li>python-sdk POST fix</li><li>fastmcp POST</li><li>fastmcp POST fix</li><li>HTTP fix</li><li>mcp-server HTTP</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-sse-session-lost-multi-worker.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-session-lost-multi-worker.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.html">Fix: Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> each request raises an exception group ending in anyio.ClosedResourceError</p>
+    <p><strong>Root cause:</strong> In affected versions the stateless Streamable HTTP path re-enters the transport's read loop.</p>
+    <p><strong>Fix first:</strong> Pin a known-good SDK version; users reported 1.11.0 working where 1.12.0 failed.</p>
+    <p><strong>Verify:</strong> Send repeated requests to the stateless server on the pinned/fixed version.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions</li><li>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions fix</li><li>Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause</li><li>how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions</li><li>_handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13</li><li>_handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) fix</li><li>_handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) root cause</li><li>HTTP fix</li><li>mcp-server HTTP</li><li>mcp-server HTTP fix</li><li>python-sdk HTTP</li><li>python-sdk HTTP fix</li><li>fastmcp HTTP</li><li>fastmcp HTTP fix</li><li>10/2</li><li>10/2 fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-stateless-streamable-http-closedresourceerror.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stateless-streamable-http-closedresourceerror.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.html">Fix: MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> client log: Server transport closed unexpectedly, this is likely due to the process exiting early</p>
+    <p><strong>Root cause:</strong> GUI clients launch MCP servers without sourcing the user's shell config, so the child gets a minimal PATH.</p>
+    <p><strong>Fix first:</strong> Confirm the failure is launch-environment, not a broken server: it runs in your terminal but fails when the client launches it.</p>
+    <p><strong>Verify:</strong> Inspect the client MCP log after a full restart.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix</li><li>MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause</li><li>how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH</li><li>MCP Servers Dont Work with NVM</li><li>MCP Servers Dont Work with NVM fix</li><li>MCP Servers Dont Work with NVM root cause</li><li>npx-for-claude wrapper workaround 66 reactions</li><li>npx-for-claude wrapper workaround (66 reactions) fix</li><li>npx-for-claude wrapper workaround (66 reactions) root cause</li><li>Server transport closed unexpectedly, process exiting early write EPIPE</li><li>Server transport closed unexpectedly, process exiting early (write EPIPE) fix</li><li>Server transport closed unexpectedly, process exiting early (write EPIPE) root cause</li><li>PATH fix</li><li>claude-desktop PATH</li><li>claude-desktop PATH fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-stdio-server-exits-shell-path-not-inherited.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">Fix: Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</p>
+    <p><strong>Root cause:</strong> In the stdio transport, stdout is the JSON-RPC channel.</p>
+    <p><strong>Fix first:</strong> Remove or redirect all stdout writes in the server; use stderr.</p>
+    <p><strong>Verify:</strong> Call a tool after moving logging to stderr.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>SyntaxError in stdio deserializeMessage a console.log in the server triggers it</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause</li><li>JSON-RPC</li><li>JSON-RPC fix</li><li>mcp-server JSON-RPC</li><li>mcp-server JSON-RPC fix</li><li>typescript-sdk JSON-RPC</li><li>typescript-sdk JSON-RPC fix</li><li>python-sdk JSON-RPC</li><li>python-sdk JSON-RPC fix</li><li>client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-stdout-logging-breaks-protocol.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.html">Fix: Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> connecting to an OAuth-protected MCP server over Streamable HTTP hangs</p>
+    <p><strong>Root cause:</strong> The SSE client transport detected a 401 and started authorization.</p>
+    <p><strong>Fix first:</strong> Upgrade to a client/Inspector/SDK version where Streamable HTTP triggers OAuth on 401 (resolved in a released Inspector version).</p>
+    <p><strong>Verify:</strong> Connect over Streamable HTTP to an OAuth-protected server on the fixed client.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow</li><li>Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix</li><li>Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause</li><li>how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow</li><li>When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version</li><li>When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix</li><li>When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause</li><li>HTTP fix</li><li>mcp-inspector HTTP</li><li>mcp-inspector HTTP fix</li><li>mcp-server HTTP</li><li>mcp-server HTTP fix</li><li>mcp-inspector HTTP 401</li><li>mcp-inspector HTTP 401 fix</li><li>mcp-server HTTP 401</li><li>mcp-server HTTP 401 fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-streamable-http-client-no-oauth-on-401.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-streamable-http-client-no-oauth-on-401.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html">Fix: mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone</p>
+    <p><strong>Root cause:</strong> The server resolves the local timezone, but the platform reports a non-IANA abbreviation (e.g. EDT).</p>
+    <p><strong>Fix first:</strong> Pass an explicit IANA timezone with --local-timezone.</p>
+    <p><strong>Verify:</strong> Start the server with an explicit IANA timezone.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause</li><li>how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>Time server fails under EDT timezone use --local-timezone with an IANA name</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) fix</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause</li><li>EDT/PDT/CEST</li><li>EDT/PDT/CEST fix</li><li>mcp-server EDT/PDT/CEST</li><li>mcp-server EDT/PDT/CEST fix</li><li>claude-desktop EDT/PDT/CEST</li><li>claude-desktop EDT/PDT/CEST fix</li><li>-IANA</li><li>-IANA fix</li><li>mcp-server -IANA</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-time-server-invalid-local-timezone.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.html">Fix: MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }</p>
+    <p><strong>Root cause:</strong> The default per-request timeout is 60000 ms.</p>
+    <p><strong>Fix first:</strong> Pass request options as the third argument to callTool with a larger timeout and resetTimeoutOnProgress: true.</p>
+    <p><strong>Verify:</strong> Run a tool call that exceeds 60 seconds with the options set.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</li><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix</li><li>MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause</li><li>how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress</li><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress</li><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix</li><li>mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause</li><li>MCP error -32001: Request timed out even with server progress</li><li>MCP error -32001: Request timed out even with server progress fix</li><li>mcp-server MCP error -32001: Request timed out even with server progress</li><li>mcp-server MCP error -32001: Request timed out even with server progress fix</li><li>typescript-sdk MCP error -32001: Request timed out even with server progress</li><li>typescript-sdk MCP error -32001: Request timed out even with server progress fix</li><li>MCP error -32001: Request timed out with data: { timeout: 60000</li><li>MCP error -32001: Request timed out with data: { timeout: 60000 } fix</li><li>mcp-server MCP error -32001: Request timed out with data: { timeout: 60000</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-ts-client-default-60s-request-timeout.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-client-default-60s-request-timeout.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">Fix: MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</p>
+    <p><strong>Root cause:</strong> pkce-challenge shipped as ESM-only.</p>
+    <p><strong>Fix first:</strong> Upgrade @modelcontextprotocol/sdk to a version that lazily import()s pkce-challenge.</p>
+    <p><strong>Verify:</strong> Start the CommonJS app and initialize the MCP client.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause</li><li>how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge</li><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge</li><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix</li><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause</li><li>ERR_REQUIRE_ESM</li><li>ERR_REQUIRE_ESM fix</li><li>mcp-server ERR_REQUIRE_ESM</li><li>mcp-server ERR_REQUIRE_ESM fix</li><li>typescript-sdk ERR_REQUIRE_ESM</li><li>typescript-sdk ERR_REQUIRE_ESM fix</li><li>ESM- fix</li><li>mcp-server ESM-</li><li>mcp-server ESM- fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">Fix: MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation)</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</p>
+    <p><strong>Root cause:</strong> The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function.</p>
+    <p><strong>Fix first:</strong> On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.</p>
+    <p><strong>Verify:</strong> Run the validation/elicitation path on the edge runtime.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause</li><li>EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function</li><li>EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix</li><li>mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function</li><li>mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix</li><li>typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function</li><li>typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Functio</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Functio fix</li><li>mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Functio</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.html">Fix: MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</p>
+    <p><strong>Root cause:</strong> Deep generic instantiation in Zod's types as consumed by the SDK's tool typings.</p>
+    <p><strong>Fix first:</strong> Ensure a single Zod version is installed; duplicates are a common trigger.</p>
+    <p><strong>Verify:</strong> Reopen the project and reference SDK tool types after the change.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE</li><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix</li><li>MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause</li><li>how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE</li><li>Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6</li><li>Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix</li><li>Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause</li><li>Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause</li><li>mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix</li><li>typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types</li><li>typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix</li><li>the TypeScript server in Cursor/VS Code hangs and saving files stalls</li><li>how to fix the TypeScript server in Cursor/VS Code hangs and saving files stalls</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-ts-sdk-type-instantiation-excessively-deep.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-type-instantiation-excessively-deep.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.html">Fix: MCP TypeScript SDK breaks with Zod v4: w._parse is not a function</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> tool execution returns {&quot;code&quot;:-32603,&quot;message&quot;:&quot;w._parse is not a function...&quot;}</p>
+    <p><strong>Root cause:</strong> MCP SDK versions up to ~1.17.5 declare zod ^3.x and call Zod internal API (_def, _parse).</p>
+    <p><strong>Fix first:</strong> Quick unblock: pin Zod v3 and ensure a single Zod version resolves.</p>
+    <p><strong>Verify:</strong> Check the resolved Zod version and re-run a tool call.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>MCP TypeScript SDK breaks with Zod v4: w._parse is not a function</li><li>MCP TypeScript SDK breaks with Zod v4: w._parse is not a function fix</li><li>MCP TypeScript SDK breaks with Zod v4: w._parse is not a function root cause</li><li>how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function</li><li>MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes</li><li>MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes fix</li><li>MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes root cause</li><li>w._parse is not a function</li><li>w._parse is not a function... fix</li><li>mcp-server w._parse is not a function</li><li>mcp-server w._parse is not a function... fix</li><li>typescript-sdk w._parse is not a function</li><li>typescript-sdk w._parse is not a function... fix</li><li>tool execution returns {code:-32603,message:w._parse is not a function</li><li>how to fix tool execution returns {code:-32603,message:w._parse is not a function</li><li>tool execution returns {&quot;code&quot;:-32603,&quot;message&quot;:&quot;w._parse is not a function...&quot;} root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-ts-sdk-zod-v4-incompatible.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-zod-v4-incompatible.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.html">Fix: On Windows an MCP server launched with npx needs a cmd /c wrapper</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> Windows only: the MCP server will not start</p>
+    <p><strong>Root cause:</strong> On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables.</p>
+    <p><strong>Fix first:</strong> Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','&lt;package&gt;', ...].</p>
+    <p><strong>Verify:</strong> Relaunch after wrapping with cmd /c.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>On Windows an MCP server launched with npx needs a cmd /c wrapper</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper fix</li><li>On Windows an MCP server launched with npx needs a cmd /c wrapper root cause</li><li>how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper</li><li>Windows npx launch failure with garbled 'not recognized' error -32000</li><li>Windows npx launch failure with garbled 'not recognized' error (-32000) fix</li><li>Windows npx launch failure with garbled 'not recognized' error (-32000) root cause</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix</li><li>comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause</li><li>ENOENT fix</li><li>claude-desktop ENOENT</li><li>claude-desktop ENOENT fix</li><li>cursor ENOENT</li><li>cursor ENOENT fix</li><li>cline ENOENT</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/mcp-windows-npx-requires-cmd-c-wrapper.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.html">Fix: PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</p>
+    <p><strong>Root cause:</strong> stop()/close() of a PortAudio stream on a flaky/display-connected device can block for a long time.</p>
+    <p><strong>Fix first:</strong> Move recorder.stop() (the PortAudio stream.stop()/close() calls) AND all downstream processing off the pynput key-release callback thread into a background thread.</p>
+    <p><strong>Verify:</strong> Use the daemon heavily across multiple windows after the change.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener</li><li>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener fix</li><li>PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener root cause</li><li>how to fix PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener</li><li>a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>how to fix a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating root cause</li><li>portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix</li><li>pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix</li><li>voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating</li><li>voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix</li><li>the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line</li><li>how to fix the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line</li><li>the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line root cause</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/portaudio-stream-close-blocks-hotkey-callback-thread.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/portaudio-stream-close-blocks-hotkey-callback-thread.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">Fix: pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</p>
+    <p><strong>Root cause:</strong> On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.</p>
+    <p><strong>Fix first:</strong> Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.</p>
+    <p><strong>Verify:</strong> Inject the same mixed Chinese+English sentence after the change.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause</li><li>how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>ASCII fix</li><li>pynput ASCII</li><li>pynput ASCII fix</li><li>voice-to-claude ASCII</li><li>voice-to-claude ASCII fix</li><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause</li><li>pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix</li><li>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Canonical source</a>
+        </p>
+      </section>
+<section>
+        <h2><a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">Fix: uv fails in a managed workspace because cache or Python install paths are outside writable roots</a></h2>
+        <div class="answer-box">
+    <p><strong>Problem:</strong> uv run or uv sync fails with permission or sandbox filesystem errors</p>
+    <p><strong>Root cause:</strong> uv defaults to cache or interpreter directories outside the agent's writable roots.</p>
+    <p><strong>Fix first:</strong> Set UV_CACHE_DIR to a workspace-local directory.</p>
+    <p><strong>Verify:</strong> Run a small uv command with local paths.</p>
+  </div>
+        <h3>Queries this answer targets</h3>
+        <ul><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots fix</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause</li><li>how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>UV_CACHE_DIR</li><li>UV_CACHE_DIR fix</li><li>codex UV_CACHE_DIR</li><li>codex UV_CACHE_DIR fix</li><li>claude-code UV_CACHE_DIR</li><li>claude-code UV_CACHE_DIR fix</li><li>gemini UV_CACHE_DIR</li><li>gemini UV_CACHE_DIR fix</li><li>qwen-code UV_CACHE_DIR</li><li>qwen-code UV_CACHE_DIR fix</li><li>UV_PYTHON_INSTALL_DIR</li><li>UV_PYTHON_INSTALL_DIR fix</li></ul>
+        <p class="record-links">
+          <a href="/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.md">Markdown mirror</a>
+          <span>|</span>
+          <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/python/uv-cache-outside-workspace-sandbox.md">Canonical source</a>
+        </p>
+      </section>
+  </main>
+</body>
+</html>

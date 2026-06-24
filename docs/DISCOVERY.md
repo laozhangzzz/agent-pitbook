@@ -4,6 +4,8 @@ Agent Pitbook exists to make debugging knowledge easier for LLMs and coding agen
 
 This document defines where the project should be discoverable and how to make that happen.
 
+Search recall probes and pass/fail criteria are tracked in [SEARCH_AUDIT.md](SEARCH_AUDIT.md).
+
 ## 1. GitHub Search
 
 Goal: a human or agent searching GitHub for coding-agent debugging memory should find the repository.
@@ -117,6 +119,7 @@ How:
 - add schema.org structured data to the static site and per-pit pages
 - expose the slim scan-first index at `/feeds/index.jsonl`
 - expose generated search phrases at `/feeds/search-terms.jsonl` and `/search-queries.html`
+- expose answer-first known-fix snippets at `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl`
 - expose the no-match escalation path at `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json`
 - make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
 - make `/llms.txt` explicitly tell agents to draft an unresolved-pit report when no record matches and the user is still blocked
@@ -158,6 +161,7 @@ Current state:
 - The repository has `llms.txt` and `AGENTS.md`.
 - The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
+- The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.
 - A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
 - The corpus is useful but still too small for strong long-tail error discovery.

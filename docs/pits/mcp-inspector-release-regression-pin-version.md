@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 @modelcontextprotocol/inspector ships often and some releases regress: 0.10.0 broke startup with 'mcp-inspector: command not found', 0.17.2 crashed Streamable HTTP connections with 'Controller is already closed' (fixed in 0.17.5). When Inspector breaks after npx @latest moved, pin a known-good version or upgrade to the fixed release.
 
+## Fast Answer
+
+- Problem: npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0)
+- Root cause: Inspector is released often and some releases regress.
+- Fix first: Pin a known-good version to unblock, e.g. @0.9.0 for the 0.10.0 command-not-found regression or @0.16.7 for the 0.17.2 Controller-already-closed regression.
+- Verify: Run the pinned or fixed version.
+
+## Queries This Answers
+
+- MCP Inspector breaks after an upgrade; pin a known-good version
+- MCP Inspector breaks after an upgrade; pin a known-good version fix
+- MCP Inspector breaks after an upgrade; pin a known-good version root cause
+- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause
+- Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
+- Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix
+- Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause
+- HTTP fix
+- mcp-inspector HTTP
+- mcp-inspector HTTP fix
+- ERR_INVALID_STATE
+- ERR_INVALID_STATE fix
+- mcp-inspector ERR_INVALID_STATE
+- mcp-inspector ERR_INVALID_STATE fix
+- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
+- how to fix npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
+- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) root cause
+- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
+- how to fix connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
+- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5) root cause
+- mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
+
 ## Common Search Queries
 
 - mcp-inspector-release-regression-pin-version
@@ -22,19 +56,20 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 - versioning
 - streamable-http
 - mcp-inspector
-- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0
-- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5
+- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
+- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
 - it worked yesterday and broke today with no config change because @latest moved
 - Inspector is released often and some releases regress
 - The usual launch npx @modelcontextprotocol/inspector resolves @latest, so a bad release is picked up automatically and the breakage looks local
 - Debugging your MCP server when the Inspector release itself regressed
 - Always launching @latest in CI or shared scripts
 - Downgrade to the last release that worked for your transport
-- modelcontextprotocol/inspector issue 326: 'sh: mcp-inspector: command not found' after upgrading to v0.10.0 (downgrade to 0.9.0
-- modelcontextprotocol/inspector issue 951: Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5
-- mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5
-- mcp-inspector it worked yesterday and broke today with no config change because @latest moved
-- ERR_INVALID_STATE
+- modelcontextprotocol/inspector issue 326: 'sh: mcp-inspector: command not found' after upgrading to v0.10.0 downgrade to 0.9.0
+- modelcontextprotocol/inspector issue 951: Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0
+- Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
+- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix
 
 ## Affected Tools
 

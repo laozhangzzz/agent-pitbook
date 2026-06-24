@@ -45,6 +45,12 @@
     },
     {
       "@type": "DataDownload",
+      "name": "Agent Pitbook answer queries feed",
+      "encodingFormat": "application/x-ndjson",
+      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl"
+    },
+    {
+      "@type": "DataDownload",
       "name": "Agent Pitbook unresolved pit template",
       "encodingFormat": "application/json",
       "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json"
@@ -100,9 +106,11 @@
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
+        <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
         <li><a href="/agent-pitbook/feeds/unresolved-pit-template.json">/feeds/unresolved-pit-template.json</a> - machine-readable template for safe unresolved problem reports</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
+        <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>

@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug. Diagnose by running the exact configured command+args+env in a terminal; the usual concrete causes are PATH, npmrc registry, npx cache, Windows cmd /c, or a missing build.
 
+## Fast Answer
+
+- Problem: client UI shows MCP error -32000: Connection closed
+- Root cause: The client spawns the configured command and speaks JSON-RPC over stdio.
+- Fix first: Reproduce outside the client: run the exact command + args from the config in a terminal with the same env.
+- Verify: Reconnect from the client after fixing the underlying cause.
+
+## Queries This Answers
+
+- MCP error -32000: Connection closed means the stdio server died before the handshake
+- MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- MCP error -32000: Connection closed means the stdio server died before the handshake root cause
+- how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
+- GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000
+- GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix
+- GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause
+- Fix 'Client Closed' Error by Correcting npm Config
+- Fix 'Client Closed' Error by Correcting npm Config fix
+- Fix 'Client Closed' Error by Correcting npm Config root cause
+- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake
+- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- cursor MCP error -32000: Connection closed means the stdio server died before the handshake
+- cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- cline MCP error -32000: Connection closed means the stdio server died before the handshake
+- cline MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake
+- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
+- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
+- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
+- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
+- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
+- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
+
 ## Common Search Queries
 
 - mcp-error-32000-connection-closed-server-failed-to-start

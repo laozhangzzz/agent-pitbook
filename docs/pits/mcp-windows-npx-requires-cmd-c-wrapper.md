@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''npx' is not recognized' because npx is a .cmd batch shim that cannot be spawned directly. Wrap it as command: 'cmd', args: ['/c','npx','-y','<package>'], or point command at node.exe with the script path.
 
+## Fast Answer
+
+- Problem: Windows only: the MCP server will not start
+- Root cause: On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables.
+- Fix first: Launch through cmd: set command to 'cmd' and args to ['/c','npx','-y','<package>', ...].
+- Verify: Relaunch after wrapping with cmd /c.
+
+## Queries This Answers
+
+- On Windows an MCP server launched with npx needs a cmd /c wrapper
+- On Windows an MCP server launched with npx needs a cmd /c wrapper fix
+- On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
+- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
+- Windows npx launch failure with garbled 'not recognized' error -32000
+- Windows npx launch failure with garbled 'not recognized' error (-32000) fix
+- Windows npx launch failure with garbled 'not recognized' error (-32000) root cause
+- comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
+- comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix
+- comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause
+- ENOENT fix
+- claude-desktop ENOENT
+- claude-desktop ENOENT fix
+- cursor ENOENT
+- cursor ENOENT fix
+- cline ENOENT
+- cline ENOENT fix
+- mcp-server ENOENT
+- mcp-server ENOENT fix
+- /WSL
+- /WSL fix
+- claude-desktop /WSL
+- claude-desktop /WSL fix
+- cursor /WSL
+
 ## Common Search Queries
 
 - mcp-windows-npx-requires-cmd-c-wrapper
@@ -26,15 +60,15 @@ On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''np
 - cline
 - mcp-server
 - Windows only: the MCP server will not start
-- logs show spawn npx ENOENT or locale text equivalent to ''npx' is not recognized as an internal or external command
+- logs show spawn npx ENOENT or locale text equivalent to npx is not recognized as an internal or external command
 - the same npx command runs fine in PowerShell or cmd manually
 - On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables
-- Node's spawn without a shell cannot execute a .cmd directly, so command: 'npx' yields ENOENT
+- Nodes spawn without a shell cannot execute a .cmd directly, so command: npx yields ENOENT
 - Routing through cmd /c lets the Windows command interpreter resolve and run the shim
 - Using bare command: 'npx' on Windows
 - Assuming a macOS/Linux config is portable to Windows without cmd /c
 - Use the absolute node.exe path plus the server script path instead of npx
-- modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error (-32000
+- modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error -32000
 - modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
 
 ## Affected Tools

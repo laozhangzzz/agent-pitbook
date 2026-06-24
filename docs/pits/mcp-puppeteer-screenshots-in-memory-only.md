@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP resources, not as files. After puppeteer_screenshot there is no image on disk, so agents that search the filesystem for a saved file are chasing something that does not exist. Retrieve via the resource, or add your own persistence step.
 
+## Fast Answer
+
+- Problem: puppeteer_screenshot reports success but no image file appears on disk
+- Root cause: The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path.
+- Fix first: Retrieve the screenshot via the MCP resource the server exposes, not from a file path.
+- Verify: Inspect the resource list in the client/Inspector and the filesystem.
+
+## Queries This Answers
+
+- Puppeteer MCP screenshots live in memory only; there is no file on disk to find
+- Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix
+- Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause
+- how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
+- Puppeteer MCP Server Missing Screenshots
+- Puppeteer MCP Server Missing Screenshots fix
+- Puppeteer MCP Server Missing Screenshots root cause
+- puppeteer_screenshot reports success but no image file appears on disk
+- how to fix puppeteer_screenshot reports success but no image file appears on disk
+- puppeteer_screenshot reports success but no image file appears on disk root cause
+- mcp-server puppeteer_screenshot reports success but no image file appears on disk
+- mcp-server puppeteer_screenshot reports success but no image file appears on disk fix
+- claude-desktop puppeteer_screenshot reports success but no image file appears on disk
+- claude-desktop puppeteer_screenshot reports success but no image file appears on disk fix
+- the model tries to open a screenshot path and finds nothing
+- how to fix the model tries to open a screenshot path and finds nothing
+- the model tries to open a screenshot path and finds nothing root cause
+- mcp-server the model tries to open a screenshot path and finds nothing
+- mcp-server the model tries to open a screenshot path and finds nothing fix
+- claude-desktop the model tries to open a screenshot path and finds nothing
+- claude-desktop the model tries to open a screenshot path and finds nothing fix
+- the agent searches the filesystem (sometimes outside the project) for the missing file
+- how to fix the agent searches the filesystem (sometimes outside the project) for the missing file
+- the agent searches the filesystem (sometimes outside the project) for the missing file root cause
+
 ## Common Search Queries
 
 - mcp-puppeteer-screenshots-in-memory-only
@@ -30,12 +64,12 @@ The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP res
 - The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path
 - Models often assume the screenshot was written to disk (and may claim they saved it), reinforcing the misconception
 - Searching the filesystem for a Puppeteer MCP screenshot
-- Trusting a model's claim that it saved the screenshot to a path
+- Trusting a models claim that it saved the screenshot to a path
 - Persist the in-memory image yourself if a file is required downstream
-- modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots (maintainer: screenshots are stored in memory only
-- mcp-server puppeteer_screenshot reports success but no image file appears on disk
-- claude-desktop puppeteer_screenshot reports success but no image file appears on disk
-- mcp-server the model tries to open a screenshot path and finds nothing
+- modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots maintainer: screenshots are stored in memory only
+- Puppeteer MCP Server Missing Screenshots
+- how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
+- Puppeteer MCP Server Missing Screenshots fix
 
 ## Affected Tools
 

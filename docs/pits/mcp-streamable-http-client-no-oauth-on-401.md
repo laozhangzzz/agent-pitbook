@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the client hung after 'Error POSTing to endpoint (HTTP 401)'. This was a transport gap (seen in MCP Inspector) where Streamable HTTP did not start auth on 401. Upgrade to a fixed client/SDK; SSE handled it as an interim check.
 
+## Fast Answer
+
+- Problem: connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+- Root cause: The SSE client transport detected a 401 and started authorization.
+- Fix first: Upgrade to a client/Inspector/SDK version where Streamable HTTP triggers OAuth on 401 (resolved in a released Inspector version).
+- Verify: Connect over Streamable HTTP to an OAuth-protected server on the fixed client.
+
+## Queries This Answers
+
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix
+- Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause
+- how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause
+- HTTP fix
+- mcp-inspector HTTP
+- mcp-inspector HTTP fix
+- mcp-server HTTP
+- mcp-server HTTP fix
+- mcp-inspector HTTP 401
+- mcp-inspector HTTP 401 fix
+- mcp-server HTTP 401
+- mcp-server HTTP 401 fix
+- /SDK
+- /SDK fix
+- mcp-inspector /SDK
+- mcp-inspector /SDK fix
+- mcp-server /SDK
+- mcp-server /SDK fix
+- connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+- how to fix connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+
 ## Common Search Queries
 
 - mcp-streamable-http-client-no-oauth-on-401
@@ -33,9 +67,9 @@ With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the 
 - Concluding the OAuth server is broken when the client transport did not act on the 401
 - Staying on an old client version that lacks Streamable HTTP auth handling
 - Use the SSE transport temporarily if it handles the OAuth challenge while you upgrade
-- modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version
-- mcp-inspector connecting to an OAuth-protected MCP server over Streamable HTTP hangs
-- mcp-server connecting to an OAuth-protected MCP server over Streamable HTTP hangs
+- modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
+- how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 
 ## Affected Tools
 

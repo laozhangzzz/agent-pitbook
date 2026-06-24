@@ -12,6 +12,7 @@
 //
 // Run:   node mcp-server/server.mjs
 // Env:   AGENT_PITBOOK_FEED  override path to pits.jsonl
+//        AGENT_PITBOOK_ANSWER_QUERIES  override path to answer-queries.jsonl
 //        AGENT_PITBOOK_UNRESOLVED_TEMPLATE  override path to unresolved-pit-template.json
 
 import fs from "node:fs";
@@ -22,6 +23,8 @@ import { fileURLToPath } from "node:url";
 const thisDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(thisDir, "..");
 const feedPath = process.env.AGENT_PITBOOK_FEED || path.join(repoRoot, "feeds", "pits.jsonl");
+const answerQueriesPath =
+  process.env.AGENT_PITBOOK_ANSWER_QUERIES || path.join(repoRoot, "feeds", "answer-queries.jsonl");
 const unresolvedTemplatePath =
   process.env.AGENT_PITBOOK_UNRESOLVED_TEMPLATE || path.join(repoRoot, "feeds", "unresolved-pit-template.json");
 
@@ -48,17 +51,47 @@ function loadRecords() {
   return records;
 }
 
-function searchableText(record) {
+function loadJsonl(filePath) {
+  let text;
+  try {
+    text = fs.readFileSync(filePath, "utf8");
+  } catch {
+    return [];
+  }
+  const out = [];
+  for (const line of text.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    try {
+      out.push(JSON.parse(trimmed));
+    } catch {
+      // skip malformed generated records
+    }
+  }
+  return out;
+}
+
+function answerQueryById() {
+  return new Map(loadJsonl(answerQueriesPath).map((item) => [item.id, item]));
+}
+
+function searchableText(record, answerQueryRecord = null) {
+  const answerSummary = answerQueryRecord?.answer_summary ?? {};
   return [
     record.id,
     record.title,
     record.summary,
+    answerSummary.problem,
+    answerSummary.root_cause,
+    answerSummary.fix,
+    answerSummary.verification,
     ...(record.tags ?? []),
     ...(record.affected_tools ?? []),
     ...(record.symptoms ?? []),
     ...(record.root_cause ?? []),
     ...(record.workarounds ?? []),
-    ...(record.anti_patterns ?? [])
+    ...(record.anti_patterns ?? []),
+    ...(answerQueryRecord?.answer_queries ?? [])
   ]
     .join("\n")
     .toLowerCase();
@@ -68,13 +101,14 @@ const STATUS_RANK = { verified: 0, candidate: 1, stale: 2, disputed: 3 };
 
 function searchPits({ query, tool, status, limit }) {
   const records = loadRecords();
+  const answerQueries = answerQueryById();
   const terms = String(query ?? "")
     .toLowerCase()
     .split(/\s+/)
     .filter(Boolean);
 
   let scored = records.map((record) => {
-    const text = searchableText(record);
+    const text = searchableText(record, answerQueries.get(record.id));
     const score = terms.reduce((sum, term) => sum + (text.includes(term) ? 1 : 0), 0);
     return { record, score };
   });

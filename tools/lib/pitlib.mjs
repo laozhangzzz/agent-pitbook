@@ -132,27 +132,63 @@ export function slimRecord(record) {
     affected_tools: record.affected_tools ?? [],
     symptoms: record.symptoms ?? [],
     search_terms: recordSearchTerms(record),
+    answer_queries: recordAnswerQueries(record, 12),
+    answer_summary: recordAnswerSummary(record),
     path: record.path ?? null
   };
 }
 
 function normalizeSearchTerm(value) {
-  return String(value ?? "")
+  let term = String(value ?? "")
     .replace(/https?:\/\/(?!(?:127\.0\.0\.1|0\.0\.0\.0|localhost)\b)\S+/g, " ")
     .replace(/\s+/g, " ")
     .replace(/^[,.;:!?()[\]{}"'“”`]+|[,.;:!?()[\]{}"'“”`]+$/g, "")
     .trim();
+  if ((term.match(/"/g) ?? []).length % 2 === 1) term = term.replaceAll('"', "");
+  if ((term.match(/'/g) ?? []).length % 2 === 1) term = term.replaceAll("'", "");
+  if ((term.match(/\(/g) ?? []).length !== (term.match(/\)/g) ?? []).length) term = term.replace(/[()]/g, "");
+  return term;
 }
 
 function pushTerm(out, seen, value) {
   const term = normalizeSearchTerm(value);
+  const lower = term.toLowerCase();
+  const tokens = lower.split(/\s+/);
+  const lowValueWords = new Set([
+    "code",
+    "message",
+    "type",
+    "data",
+    "error",
+    "true",
+    "false",
+    "null",
+    "project",
+    "json",
+    "esm"
+  ]);
   if (term.length < 4 || term.length > 220) return;
+  if (lowValueWords.has(lower)) return;
+  if (/^\d+$/.test(term)) return;
+  if (/\sfix$/.test(lower)) {
+    const withoutFix = lower.replace(/\s+fix$/, "");
+    const fixTokens = withoutFix.split(/\s+/);
+    if (/^\d+$/.test(withoutFix)) return;
+    if (fixTokens.length <= 2 && lowValueWords.has(fixTokens.at(-1))) return;
+    if (fixTokens.length <= 2 && /^\d+$/.test(fixTokens.at(-1))) return;
+  }
+  if (tokens.length <= 2 && lowValueWords.has(tokens.at(-1))) return;
+  if (tokens.length <= 2 && /^\d+$/.test(tokens.at(-1))) return;
   if (/^[A-Z]{2,}-?$/.test(term)) return;
   if (/^[A-Z0-9_-]+-$/.test(term)) return;
   const key = term.toLowerCase();
   if (seen.has(key)) return;
   seen.add(key);
   out.push(term);
+}
+
+function uniqueValues(items) {
+  return [...new Set(items.filter(Boolean))];
 }
 
 function extractErrorLikeTerms(text) {
@@ -175,6 +211,83 @@ function extractErrorLikeTerms(text) {
   return out;
 }
 
+function stripIssuePrefix(value) {
+  return String(value ?? "")
+    .replace(/^[\w.-]+\/[\w.-]+\s+(issue|pull request|pr)\s+#?\d+:\s*/i, "")
+    .replace(/^[\w.-]+\/[\w.-]+\s+(issue|pull request|pr)\s+\d+:\s*/i, "")
+    .replace(/\s*\((maintainer|docs?|issue|pr|pull request)[^)]+\)\s*$/i, "")
+    .trim();
+}
+
+function sourceProblemTitles(record) {
+  return uniqueValues(
+    (record.source_links ?? [])
+      .filter((source) => ["issue", "pr", "pull-request"].includes(String(source.type ?? "").toLowerCase()))
+      .map((source) => stripIssuePrefix(source.title))
+      .filter((title) => title.length >= 8)
+  );
+}
+
+export function recordAnswerSummary(record) {
+  const rootCause = (record.root_cause ?? [])[0] ?? record.summary;
+  const firstFix = (record.fix ?? [])[0]?.step ?? "";
+  const verification = (record.verification ?? [])[0]?.method ?? "";
+  return {
+    problem: record.symptoms?.[0] ?? record.title,
+    root_cause: rootCause,
+    fix: firstFix,
+    verification
+  };
+}
+
+export function recordAnswerQueries(record, limit = 24) {
+  const out = [];
+  const seen = new Set();
+  const tools = record.affected_tools ?? [];
+  const symptoms = record.symptoms ?? [];
+  const sourceTitles = sourceProblemTitles(record);
+  const errorTerms = uniqueValues([
+    ...extractErrorLikeTerms(record.title),
+    ...extractErrorLikeTerms(record.summary),
+    ...symptoms.flatMap((symptom) => extractErrorLikeTerms(symptom)),
+    ...sourceTitles.flatMap((title) => extractErrorLikeTerms(title))
+  ]);
+
+  pushTerm(out, seen, record.title);
+  pushTerm(out, seen, `${record.title} fix`);
+  pushTerm(out, seen, `${record.title} root cause`);
+  pushTerm(out, seen, `how to fix ${record.title}`);
+
+  for (const title of sourceTitles.slice(0, 8)) {
+    pushTerm(out, seen, title);
+    pushTerm(out, seen, `${title} fix`);
+    pushTerm(out, seen, `${title} root cause`);
+  }
+
+  for (const error of errorTerms.slice(0, 8)) {
+    pushTerm(out, seen, error);
+    pushTerm(out, seen, `${error} fix`);
+    for (const tool of tools.slice(0, 4)) {
+      pushTerm(out, seen, `${tool} ${error}`);
+      pushTerm(out, seen, `${tool} ${error} fix`);
+    }
+  }
+
+  for (const symptom of symptoms.slice(0, 6)) {
+    pushTerm(out, seen, symptom);
+    pushTerm(out, seen, `how to fix ${symptom}`);
+    pushTerm(out, seen, `${symptom} root cause`);
+    for (const tool of tools.slice(0, 3)) {
+      if (!symptom.toLowerCase().includes(tool.toLowerCase())) {
+        pushTerm(out, seen, `${tool} ${symptom}`);
+        pushTerm(out, seen, `${tool} ${symptom} fix`);
+      }
+    }
+  }
+
+  return out.slice(0, limit);
+}
+
 export function recordSearchTerms(record, limit = 32) {
   const out = [];
   const seen = new Set();
@@ -193,7 +306,9 @@ export function recordSearchTerms(record, limit = 32) {
     ...(record.root_cause ?? []),
     ...(record.anti_patterns ?? []),
     ...(record.workarounds ?? []),
-    ...(record.source_links ?? []).map((source) => source.title)
+    ...(record.source_links ?? []).map((source) => source.title),
+    ...sourceProblemTitles(record),
+    ...recordAnswerQueries(record, 24)
   ];
 
   for (const value of textBlocks) pushTerm(out, seen, value);
@@ -283,7 +398,8 @@ export function searchableText(record) {
     ...(record.root_cause ?? []),
     ...(record.workarounds ?? []),
     ...(record.anti_patterns ?? []),
-    ...recordSearchTerms(record)
+    ...recordSearchTerms(record),
+    ...recordAnswerQueries(record)
   ]
     .join("\n")
     .toLowerCase();

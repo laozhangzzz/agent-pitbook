@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>uv fails in a managed workspace because cache or Python install paths are outside writable roots - Agent Pitbook</title>
-  <meta name="description" content="In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.">
+  <title>Fix: uv fails in a managed workspace because cache or Python install paths are outside writable roots - Agent Pitbook</title>
+  <meta name="description" content="Root cause: uv defaults to cache or interpreter directories outside the agent's writable roots. Fix: Set UV_CACHE_DIR to a workspace-local directory.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="uv fails in a managed workspace because cache or Python install paths are outside writable roots - Agent Pitbook">
-  <meta property="og:description" content="In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.">
+  <meta property="og:title" content="Fix: uv fails in a managed workspace because cache or Python install paths are outside writable roots - Agent Pitbook">
+  <meta property="og:description" content="Root cause: uv defaults to cache or interpreter directories outside the agent's writable roots. Fix: Set UV_CACHE_DIR to a workspace-local directory.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, python, uv, sandbox, cache, codex, claude-code, gemini, qwen-code, cursor, aider, uv-cache-outside-workspace-sandbox, uv cache outside workspace sandbox, uv fails in a managed workspace because cache or Python install paths are outside writable roots, uv fails in a managed workspace because cache or Python install paths are outside writable roots fix, uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause, In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths, verified, high">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, python, uv, sandbox, cache, codex, claude-code, gemini, qwen-code, cursor, aider, uv-cache-outside-workspace-sandbox, uv cache outside workspace sandbox, uv fails in a managed workspace because cache or Python install paths are outside writable roots, uv fails in a managed workspace because cache or Python install paths are outside writable roots fix, uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause, In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths, how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots, UV_CACHE_DIR, UV_CACHE_DIR fix, codex UV_CACHE_DIR, codex UV_CACHE_DIR fix, claude-code UV_CACHE_DIR, claude-code UV_CACHE_DIR fix, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "uv fails in a managed workspace because cache or Python install paths are outside writable roots",
-  "description": "In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths.",
+  "headline": "Fix: uv fails in a managed workspace because cache or Python install paths are outside writable roots",
+  "description": "Problem: uv run or uv sync fails with permission or sandbox filesystem errors Root cause: uv defaults to cache or interpreter directories outside the agent's writable roots. Fix: Set UV_CACHE_DIR to a workspace-local directory.",
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/uv-cache-outside-workspace-sandbox.html",
   "dateCreated": "2026-06-19",
   "dateModified": "2026-06-19",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, python, uv, sandbox, cache, codex, claude-code, gemini, qwen-code, cursor, aider, uv-cache-outside-workspace-sandbox, uv cache outside workspace sandbox, uv fails in a managed workspace because cache or Python install paths are outside writable roots, uv fails in a managed workspace because cache or Python install paths are outside writable roots fix, uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause, In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths, verified, high",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, python, uv, sandbox, cache, codex, claude-code, gemini, qwen-code, cursor, aider, uv-cache-outside-workspace-sandbox, uv cache outside workspace sandbox, uv fails in a managed workspace because cache or Python install paths are outside writable roots, uv fails in a managed workspace because cache or Python install paths are outside writable roots fix, uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause, In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths, how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots, UV_CACHE_DIR, UV_CACHE_DIR fix, codex UV_CACHE_DIR, codex UV_CACHE_DIR fix, claude-code UV_CACHE_DIR, claude-code UV_CACHE_DIR fix, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -43,6 +43,13 @@
     "uv fails in a managed workspace because cache or Python install paths are outside writable roots fix",
     "uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause",
     "In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths",
+    "how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots",
+    "UV_CACHE_DIR",
+    "UV_CACHE_DIR fix",
+    "codex UV_CACHE_DIR",
+    "codex UV_CACHE_DIR fix",
+    "claude-code UV_CACHE_DIR",
+    "claude-code UV_CACHE_DIR fix",
     "verified",
     "high"
   ],
@@ -77,8 +84,15 @@
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/python/uv-cache-outside-workspace-sandbox.md">Canonical source</a>
       </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> uv run or uv sync fails with permission or sandbox filesystem errors</p>
+    <p><strong>Root cause:</strong> uv defaults to cache or interpreter directories outside the agent's writable roots.</p>
+    <p><strong>Fix first:</strong> Set UV_CACHE_DIR to a workspace-local directory.</p>
+    <p><strong>Verify:</strong> Run a small uv command with local paths.</p>
+  </div></section>
+      <section><h2>Queries this answers</h2><ul><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots fix</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause</li><li>how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>UV_CACHE_DIR</li><li>UV_CACHE_DIR fix</li><li>codex UV_CACHE_DIR</li><li>codex UV_CACHE_DIR fix</li><li>claude-code UV_CACHE_DIR</li><li>claude-code UV_CACHE_DIR fix</li><li>gemini UV_CACHE_DIR</li><li>gemini UV_CACHE_DIR fix</li><li>qwen-code UV_CACHE_DIR</li><li>qwen-code UV_CACHE_DIR fix</li><li>UV_PYTHON_INSTALL_DIR</li><li>UV_PYTHON_INSTALL_DIR fix</li><li>codex UV_PYTHON_INSTALL_DIR</li><li>codex UV_PYTHON_INSTALL_DIR fix</li><li>claude-code UV_PYTHON_INSTALL_DIR</li><li>claude-code UV_PYTHON_INSTALL_DIR fix</li><li>gemini UV_PYTHON_INSTALL_DIR</li><li>gemini UV_PYTHON_INSTALL_DIR fix</li><li>qwen-code UV_PYTHON_INSTALL_DIR</li><li>qwen-code UV_PYTHON_INSTALL_DIR fix</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>codex, claude-code, gemini, qwen-code, cursor, aider</td></tr><tr><th>Tags</th><td>python, uv, sandbox, cache</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>uv-cache-outside-workspace-sandbox</li><li>uv cache outside workspace sandbox</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots fix</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause</li><li>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths</li><li>python</li><li>sandbox</li><li>cache</li><li>codex</li><li>claude-code</li><li>gemini</li><li>qwen-code</li><li>cursor</li><li>aider</li><li>uv run or uv sync fails with permission or sandbox filesystem errors</li><li>the project directory is writable but global cache paths are not</li><li>setting UV_CACHE_DIR and UV_PYTHON_INSTALL_DIR inside the workspace allows progress</li><li>uv defaults to cache or interpreter directories outside the agent's writable roots</li><li>Changing project code to avoid uv before checking cache permissions</li><li>Using global chmod or deleting user-level caches from an agent session</li><li>Use an existing project virtual environment if it is already present and writable</li><li>Ask for sandbox escalation only when dependency downloads or outside-workspace writes are truly required</li><li>Agent Pitbook bootstrap local session</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>uv-cache-outside-workspace-sandbox</li><li>uv cache outside workspace sandbox</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots fix</li><li>uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause</li><li>In managed agent sandboxes, uv may fail because its default cache or Python install directories are not writable; point them to workspace-local paths</li><li>python</li><li>sandbox</li><li>cache</li><li>codex</li><li>claude-code</li><li>gemini</li><li>qwen-code</li><li>cursor</li><li>aider</li><li>uv run or uv sync fails with permission or sandbox filesystem errors</li><li>the project directory is writable but global cache paths are not</li><li>setting UV_CACHE_DIR and UV_PYTHON_INSTALL_DIR inside the workspace allows progress</li><li>uv defaults to cache or interpreter directories outside the agents writable roots</li><li>Changing project code to avoid uv before checking cache permissions</li><li>Using global chmod or deleting user-level caches from an agent session</li><li>Use an existing project virtual environment if it is already present and writable</li><li>Ask for sandbox escalation only when dependency downloads or outside-workspace writes are truly required</li><li>Agent Pitbook bootstrap local session</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>uv run or uv sync fails with permission or sandbox filesystem errors</li><li>the project directory is writable but global cache paths are not</li><li>setting UV_CACHE_DIR and UV_PYTHON_INSTALL_DIR inside the workspace allows progress</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>package_manager</th><td>uv</td></tr><tr><th>constraints</th><td>workspace-write sandbox, restricted filesystem writes</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>uv defaults to cache or interpreter directories outside the agent's writable roots.</li></ul></section>

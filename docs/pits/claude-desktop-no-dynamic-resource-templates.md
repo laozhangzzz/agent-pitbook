@@ -10,11 +10,45 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not appear in Claude Desktop while static resources do. Claude Desktop calls resources/list but not resources/templates/list, so templated resources are never surfaced. Expose the capability as a tool, or verify support per client; the server is fine.
 
+## Fast Answer
+
+- Problem: a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- Root cause: Dynamic resources are exposed via resources/templates/list; static resources via resources/list.
+- Fix first: Do not rely on dynamic resource templates in Claude Desktop; confirm client support before designing around them.
+- Verify: Open the server in MCP Inspector and check the Resources tab.
+
+## Queries This Answers
+
+- Claude Desktop does not list dynamic MCP resource templates only static resources
+- Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
+- Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
+- how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
+- dynamic resource not working in Claude desktop
+- dynamic resource not working in Claude desktop fix
+- dynamic resource not working in Claude desktop root cause
+- a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause
+- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
+- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show
+- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
+- the server is correct and the template appears under the Inspector Resources tab
+- how to fix the server is correct and the template appears under the Inspector Resources tab
+- the server is correct and the template appears under the Inspector Resources tab root cause
+- claude-desktop the server is correct and the template appears under the Inspector Resources tab
+- claude-desktop the server is correct and the template appears under the Inspector Resources tab fix
+- mcp-server the server is correct and the template appears under the Inspector Resources tab
+- mcp-server the server is correct and the template appears under the Inspector Resources tab fix
+- time lost assuming the server code is wrong
+- how to fix time lost assuming the server code is wrong
+- time lost assuming the server code is wrong root cause
+
 ## Common Search Queries
 
 - claude-desktop-no-dynamic-resource-templates
 - claude desktop no dynamic resource templates
-- Claude Desktop does not list dynamic MCP resource templates (only static resources
+- Claude Desktop does not list dynamic MCP resource templates only static resources
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
 - claude-desktop
@@ -32,10 +66,10 @@ A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not app
 - Assuming a missing resource in Claude Desktop means the server is misconfigured
 - Designing a server around resource templates without checking client support
 - Model parameterized data as tools instead of resource templates for Claude Desktop
-- modelcontextprotocol/python-sdk issue 263: dynamic resource not working in Claude desktop (maintainer confirms Desktop does not support dynamic resources; client calls resources/list not resources/templates/list
-- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- claude-desktop the server is correct and the template appears under the Inspector Resources tab
+- modelcontextprotocol/python-sdk issue 263: dynamic resource not working in Claude desktop maintainer confirms Desktop does not support dynamic resources; client calls resources/list not resources/templates/list
+- dynamic resource not working in Claude desktop
+- how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
+- dynamic resource not working in Claude desktop fix
 
 ## Affected Tools
 

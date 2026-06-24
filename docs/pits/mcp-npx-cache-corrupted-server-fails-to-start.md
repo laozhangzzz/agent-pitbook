@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 An npx-launched MCP server that intermittently fails or yields 'Client closed' / 'MCP error -32001: Request timed out' is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeout. Clear the cache or pre-install the package.
 
+## Fast Answer
+
+- Problem: npx-launched MCP server worked before and now fails, or fails only on first launch
+- Root cause: npx downloads the package into the npm cache before running it.
+- Fix first: Clear the npm/npx cache and relaunch.
+- Verify: Relaunch after clearing the cache or pre-installing.
+
+## Queries This Answers
+
+- A corrupted or cold npx cache makes an MCP server fail to start or time out
+- A corrupted or cold npx cache makes an MCP server fail to start or time out fix
+- A corrupted or cold npx cache makes an MCP server fail to start or time out root cause
+- how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out
+- comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup
+- comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix
+- comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause
+- Client closed / -32001 Request timed out around npx MCP startup
+- Client closed / -32001 Request timed out around npx MCP startup fix
+- Client closed / -32001 Request timed out around npx MCP startup root cause
+- MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part
+- MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix
+- claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part
+- claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix
+- cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part
+- cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix
+- cline MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part
+- cline MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix
+- mcp-server MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part
+- mcp-server MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a part fix
+- MCP error -32001: Request timed out
+- MCP error -32001: Request timed out fix
+- claude-desktop MCP error -32001: Request timed out
+- claude-desktop MCP error -32001: Request timed out fix
+
 ## Common Search Queries
 
 - mcp-npx-cache-corrupted-server-fails-to-start
@@ -31,7 +65,7 @@ An npx-launched MCP server that intermittently fails or yields 'Client closed' /
 - a recent flaky network or interrupted install preceded it
 - npx downloads the package into the npm cache before running it
 - An interrupted or rate-limited fetch can leave a partial or corrupted package, so the next launch crashes on missing files
-- A genuine cold download can exceed the client's startup timeout, producing -32001: Request timed out
+- A genuine cold download can exceed the clients startup timeout, producing -32001: Request timed out
 - Repeatedly editing the config when the real fault is a half-written cache
 - Assuming the server package is broken when a clean cache fixes it
 - Pin a globally installed package by absolute path instead of relying on npx download at launch

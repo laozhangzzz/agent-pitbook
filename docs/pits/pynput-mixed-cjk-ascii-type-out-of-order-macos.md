@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/to
 
 pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strings (reordered, English fragments shoved to the end, some CJK dropped) because CJK goes via synthesized Unicode events and ASCII via key events, and the two paths race. Inject via clipboard (pbcopy + Cmd+V) for an atomic insert.
 
+## Fast Answer
+
+- Problem: injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.
+- Fix first: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.
+- Verify: Inject the same mixed Chinese+English sentence after the change.
+
+## Queries This Answers
+
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix
+- pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause
+- how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
+- ASCII fix
+- pynput ASCII
+- pynput ASCII fix
+- voice-to-claude ASCII
+- voice-to-claude ASCII fix
+- injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause
+- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix
+- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix
+- pure-English and pure-Chinese strings inject fine
+- how to fix pure-English and pure-Chinese strings inject fine
+- pure-English and pure-Chinese strings inject fine root cause
+- pynput pure-English and pure-Chinese strings inject fine
+- pynput pure-English and pure-Chinese strings inject fine fix
+- voice-to-claude pure-English and pure-Chinese strings inject fine
+- voice-to-claude pure-English and pure-Chinese strings inject fine fix
+- only mixed CJK+ASCII text scrambles
+
 ## Common Search Queries
 
 - pynput-mixed-cjk-ascii-type-out-of-order-macos
@@ -34,8 +68,8 @@ pynput.keyboard.Controller.type() on macOS scrambles mixed Chinese+English strin
 - Adding per-character sleeps to 'fix' ordering instead of switching to an atomic paste
 - Restore the previous clipboard contents after pasting if clobbering it is a concern
 - voice-to-claude daemon debugging session
-- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
-- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
+- how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
+- ASCII fix
 
 ## Affected Tools
 

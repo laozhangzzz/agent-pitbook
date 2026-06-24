@@ -178,6 +178,7 @@ node tools/build-site.mjs
 Agent 优先读取：
 
 - `feeds/index.jsonl`：轻量索引，先扫这个
+- `feeds/answer-queries.jsonl`：已知修复、上游 issue 标题、原始报错和 root cause/fix 查询
 - `feeds/pits.jsonl`：完整记录，按 id 取详情
 - `feeds/unresolved-pit-template.json`：没有匹配记录时，整理未解决问题的模板
 - `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits`、`get_pit` 和 `get_unresolved_pit_template`

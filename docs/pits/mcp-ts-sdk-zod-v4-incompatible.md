@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 Older @modelcontextprotocol/sdk (up to ~1.17.5) hard-depends on Zod v3 and calls Zod internals; with Zod v4 installed, tool calls fail with -32603 'w._parse is not a function' or 'null is not an object (evaluating F._def)'. Pin zod@3, or upgrade the SDK to a version with Zod v4 support (~1.23.0+).
 
+## Fast Answer
+
+- Problem: tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
+- Root cause: MCP SDK versions up to ~1.17.5 declare zod ^3.x and call Zod internal API (_def, _parse).
+- Fix first: Quick unblock: pin Zod v3 and ensure a single Zod version resolves.
+- Verify: Check the resolved Zod version and re-run a tool call.
+
+## Queries This Answers
+
+- MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
+- MCP TypeScript SDK breaks with Zod v4: w._parse is not a function fix
+- MCP TypeScript SDK breaks with Zod v4: w._parse is not a function root cause
+- how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes fix
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes root cause
+- w._parse is not a function
+- w._parse is not a function... fix
+- mcp-server w._parse is not a function
+- mcp-server w._parse is not a function... fix
+- typescript-sdk w._parse is not a function
+- typescript-sdk w._parse is not a function... fix
+- tool execution returns {code:-32603,message:w._parse is not a function
+- how to fix tool execution returns {code:-32603,message:w._parse is not a function
+- tool execution returns {"code":-32603,"message":"w._parse is not a function..."} root cause
+- mcp-server tool execution returns {code:-32603,message:w._parse is not a function
+- mcp-server tool execution returns {"code":-32603,"message":"w._parse is not a function..."} fix
+- typescript-sdk tool execution returns {code:-32603,message:w._parse is not a function
+- typescript-sdk tool execution returns {"code":-32603,"message":"w._parse is not a function..."} fix
+- tools/list fails with null is not an object evaluating F._def
+- how to fix tools/list fails with null is not an object evaluating F._def
+- tools/list fails with 'null is not an object (evaluating F._def)' root cause
+- mcp-server tools/list fails with null is not an object evaluating F._def
+
 ## Common Search Queries
 
 - mcp-ts-sdk-zod-v4-incompatible
@@ -22,20 +56,20 @@ Older @modelcontextprotocol/sdk (up to ~1.17.5) hard-depends on Zod v3 and calls
 - versioning
 - tools
 - mcp-server
-- tool execution returns {"code":-32603,"message":"w._parse is not a function
-- tools/list fails with 'null is not an object (evaluating F._def
+- tool execution returns {code:-32603,message:w._parse is not a function
+- tools/list fails with null is not an object evaluating F._def
 - errors appear in minified code and are hard to trace
 - Zod was recently upgraded to v4.x
-- MCP SDK versions up to ~1.17.5 declare zod ^3.x and call Zod internal API (_def, _parse
-- Zod v4 changed those internal structures, so the SDK's calls hit undefined methods at runtime when a v4 Zod is resolved
+- MCP SDK versions up to ~1.17.5 declare zod ^3.x and call Zod internal API _def, _parse
+- Zod v4 changed those internal structures, so the SDKs calls hit undefined methods at runtime when a v4 Zod is resolved
 - Mixing a Zod-v4 project with an SDK that only supports Zod v3
 - Leaving two Zod versions in the tree and assuming the right one resolves
 - Stay on Zod v3 until the SDK upgrade is feasible
-- modelcontextprotocol/typescript-sdk issue 925: MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes (maintainer notes 1.23.0-beta adds v4 support
-- mcp-server tool execution returns {"code":-32603,"message":"w._parse is not a function
-- typescript-sdk tool execution returns {"code":-32603,"message":"w._parse is not a function
-- mcp-server tools/list fails with 'null is not an object (evaluating F._def
-- typescript-sdk tools/list fails with 'null is not an object (evaluating F._def
+- modelcontextprotocol/typescript-sdk issue 925: MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes maintainer notes 1.23.0-beta adds v4 support
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes
+- how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes fix
+- MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes root cause
 
 ## Affected Tools
 

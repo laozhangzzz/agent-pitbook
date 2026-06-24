@@ -7,6 +7,8 @@ import {
   validateRecord,
   slimRecord,
   recordSearchTerms,
+  recordAnswerQueries,
+  recordAnswerSummary,
   unresolvedPitTemplate
 } from "./lib/pitlib.mjs";
 
@@ -49,12 +51,35 @@ fs.writeFileSync(
         tags: record.tags ?? [],
         url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html`,
         markdown_url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.md`,
-        search_terms: recordSearchTerms(record, 48)
+        search_terms: recordSearchTerms(record, 48),
+        answer_queries: recordAnswerQueries(record, 32),
+        answer_summary: recordAnswerSummary(record)
       })
     )
     .join("\n")}\n`
 );
 console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, searchTermsPath)}`);
+
+const answerQueriesPath = path.join(repoRoot, "feeds", "answer-queries.jsonl");
+fs.writeFileSync(
+  answerQueriesPath,
+  `${sorted
+    .map((record) =>
+      JSON.stringify({
+        id: record.id,
+        title: record.title,
+        status: record.status,
+        affected_tools: record.affected_tools ?? [],
+        tags: record.tags ?? [],
+        url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html`,
+        markdown_url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.md`,
+        answer_summary: recordAnswerSummary(record),
+        answer_queries: recordAnswerQueries(record, 64)
+      })
+    )
+    .join("\n")}\n`
+);
+console.log(`Wrote ${records.length} records to ${path.relative(repoRoot, answerQueriesPath)}`);
 
 const unresolvedTemplatePath = path.join(repoRoot, "feeds", "unresolved-pit-template.json");
 fs.writeFileSync(unresolvedTemplatePath, `${JSON.stringify(unresolvedPitTemplate(), null, 2)}\n`);

@@ -7,6 +7,8 @@ import {
   validateRecord,
   slimRecord,
   recordSearchTerms,
+  recordAnswerQueries,
+  recordAnswerSummary,
   unresolvedPitTemplate
 } from "./lib/pitlib.mjs";
 
@@ -124,6 +126,16 @@ function renderSources(items) {
     .join("")}</ul>`;
 }
 
+function renderFastAnswer(record) {
+  const answer = recordAnswerSummary(record);
+  return `<div class="answer-box">
+    <p><strong>Problem:</strong> ${escapeHtml(answer.problem)}</p>
+    <p><strong>Root cause:</strong> ${escapeHtml(answer.root_cause)}</p>
+    <p><strong>Fix first:</strong> ${escapeHtml(answer.fix)}</p>
+    <p><strong>Verify:</strong> ${escapeHtml(answer.verification || "Run the verification steps below and confirm the original symptom is gone.")}</p>
+  </div>`;
+}
+
 function unique(items) {
   return [...new Set(items.filter(Boolean))];
 }
@@ -161,6 +173,7 @@ function recordKeywords(record) {
     ...(record.tags ?? []),
     ...(record.affected_tools ?? []),
     ...recordSearchTerms(record, 10),
+    ...recordAnswerQueries(record, 10),
     record.status,
     record.confidence,
     record.id
@@ -204,6 +217,12 @@ function datasetJsonLd(records) {
       },
       {
         "@type": "DataDownload",
+        name: "Agent Pitbook answer queries feed",
+        encodingFormat: "application/x-ndjson",
+        contentUrl: slugUrl("/feeds/answer-queries.jsonl")
+      },
+      {
+        "@type": "DataDownload",
         name: "Agent Pitbook unresolved pit template",
         encodingFormat: "application/json",
         contentUrl: slugUrl("/feeds/unresolved-pit-template.json")
@@ -219,11 +238,12 @@ function datasetJsonLd(records) {
 }
 
 function pitJsonLd(record) {
+  const answer = recordAnswerSummary(record);
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    headline: record.title,
-    description: record.summary,
+    headline: `Fix: ${record.title}`,
+    description: `Problem: ${answer.problem} Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
     url: slugUrl(recordHtmlPath(record)),
     dateCreated: record.created_at,
     dateModified: record.updated_at,
@@ -328,9 +348,11 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
+        <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
         <li><a href="/agent-pitbook/feeds/unresolved-pit-template.json">/feeds/unresolved-pit-template.json</a> - machine-readable template for safe unresolved problem reports</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
+        <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
@@ -352,14 +374,16 @@ function renderIndex(records) {
 
 function renderPit(record) {
   const searchTerms = recordSearchTerms(record, 24);
+  const answerQueries = recordAnswerQueries(record, 24);
+  const answer = recordAnswerSummary(record);
   const optionalSections = [
     record.workarounds?.length ? `<section><h2>Workarounds</h2>${listItems(record.workarounds)}</section>` : "",
     record.anti_patterns?.length ? `<section><h2>Anti-patterns</h2>${listItems(record.anti_patterns)}</section>` : ""
   ].join("");
 
   return pageShell({
-    title: `${record.title} - Agent Pitbook`,
-    description: record.summary,
+    title: `Fix: ${record.title} - Agent Pitbook`,
+    description: `Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
     canonicalPath: recordHtmlPath(record),
     keywords: recordKeywords(record),
     jsonLd: [pitJsonLd(record)],
@@ -372,6 +396,8 @@ function renderPit(record) {
         <span>|</span>
         <a href="${sourceHref(record)}">Canonical source</a>
       </p>
+      <section><h2>Fast answer</h2>${renderFastAnswer(record)}</section>
+      <section><h2>Queries this answers</h2>${listItems(answerQueries)}</section>
       <section><h2>Record metadata</h2>${keyValueTable(record)}</section>
       <section><h2>Common search queries</h2>${listItems(searchTerms)}</section>
       <section><h2>Symptoms</h2>${listItems(record.symptoms)}</section>
@@ -390,6 +416,7 @@ function renderPit(record) {
 }
 
 function renderPitMarkdown(record) {
+  const answer = recordAnswerSummary(record);
   const lines = [
     `# ${record.title}`,
     "",
@@ -402,6 +429,17 @@ function renderPitMarkdown(record) {
     "## Summary",
     "",
     record.summary,
+    "",
+    "## Fast Answer",
+    "",
+    `- Problem: ${answer.problem}`,
+    `- Root cause: ${answer.root_cause}`,
+    `- Fix first: ${answer.fix}`,
+    `- Verify: ${answer.verification || "Run the verification steps below and confirm the original symptom is gone."}`,
+    "",
+    "## Queries This Answers",
+    "",
+    ...recordAnswerQueries(record, 24).map((item) => `- ${item}`),
     "",
     "## Common Search Queries",
     "",
@@ -482,7 +520,8 @@ Two-tier retrieval, cheapest first:
 
 1. [Slim index](${slugUrl("/feeds/index.jsonl")}): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
 2. [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from current symptoms, exact errors, tools, titles, anti-patterns, and source clues.
-3. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+3. [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): answer-first queries for known solved problems, upstream issue titles, exact errors, root causes, and fixes.
+4. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
@@ -503,9 +542,11 @@ Use Agent Pitbook when the user's problem involves a coding agent, MCP server/cl
 Do not skim only the README. Search the slim index by exact error text and tool name, then read the full matching pit before changing code.
 
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
+- [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
+- [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): queries for existing public issue titles and solved-problem searches.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](${repoUrl}/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 
@@ -522,7 +563,7 @@ ${recordLinks}
 
 ## Agent Use
 
-1. Scan \`feeds/index.jsonl\` by exact error text, tool, OS, package manager, framework, and agent.
+1. Scan \`feeds/index.jsonl\`, \`feeds/search-terms.jsonl\`, and \`feeds/answer-queries.jsonl\` by exact error text, tool, OS, package manager, framework, and agent.
 2. Fetch the full record for the matching id from \`feeds/pits.jsonl\` (or the MCP get_pit tool) before applying a fix.
 3. Prefer verified, recent records with matching environment and source links.
 4. Treat commands as suggestions; inspect the user's local project first.
@@ -665,10 +706,98 @@ function searchTermsFeed(records) {
         tags: record.tags ?? [],
         url: slugUrl(recordHtmlPath(record)),
         markdown_url: slugUrl(recordMarkdownPath(record)),
-        search_terms: recordSearchTerms(record, 48)
+        search_terms: recordSearchTerms(record, 48),
+        answer_queries: recordAnswerQueries(record, 32),
+        answer_summary: recordAnswerSummary(record)
       })
     )
     .join("\n")}\n`;
+}
+
+function answerQueriesFeed(records) {
+  return `${records
+    .map((record) =>
+      JSON.stringify({
+        id: record.id,
+        title: record.title,
+        status: record.status,
+        affected_tools: record.affected_tools ?? [],
+        tags: record.tags ?? [],
+        url: slugUrl(recordHtmlPath(record)),
+        markdown_url: slugUrl(recordMarkdownPath(record)),
+        answer_summary: recordAnswerSummary(record),
+        answer_queries: recordAnswerQueries(record, 64)
+      })
+    )
+    .join("\n")}\n`;
+}
+
+function renderAnswerIndex(records) {
+  const sections = records
+    .map((record) => {
+      const queries = recordAnswerQueries(record, 16)
+        .map((query) => `<li>${escapeHtml(query)}</li>`)
+        .join("");
+      return `<section>
+        <h2><a href="/agent-pitbook${recordHtmlPath(record)}">Fix: ${escapeHtml(record.title)}</a></h2>
+        ${renderFastAnswer(record)}
+        <h3>Queries this answer targets</h3>
+        <ul>${queries}</ul>
+        <p class="record-links">
+          <a href="/agent-pitbook${recordMarkdownPath(record)}">Markdown mirror</a>
+          <span>|</span>
+          <a href="${sourceHref(record)}">Canonical source</a>
+        </p>
+      </section>`;
+    })
+    .join("\n");
+
+  return pageShell({
+    title: "Known Fixes - Agent Pitbook",
+    description: "Answer-first index of known coding-agent, MCP, sandbox, dependency, port, browser automation, input, audio, and local tooling fixes.",
+    canonicalPath: "/answers.html",
+    keywords: [...siteKeywords(), "known fixes", "how to fix", "root cause", "coding agent errors", "mcp fix"],
+    jsonLd: [datasetJsonLd(records)],
+    body: `    <section>
+      <p class="eyebrow">Answer surface</p>
+      <h1>Known fixes for agent execution traps</h1>
+      <p class="lede">This page is generated for search-enabled LLMs and search engines. Each entry starts with the problem, root cause, first fix, verification, and solved-problem queries.</p>
+      <p>For machine ingestion, use <a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a>. For full records, fetch <a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a>.</p>
+    </section>
+${sections}`
+  });
+}
+
+function renderAnswerMarkdown(records) {
+  const lines = [
+    "# Agent Pitbook Known Fixes",
+    "",
+    "Answer-first index of solved coding-agent and local tooling traps. Search-enabled LLMs should use this when a user query already resembles an existing public issue, exact error, or workaround search.",
+    "",
+    "- Machine feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
+    "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
+    "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
+    ""
+  ];
+
+  for (const record of records) {
+    const answer = recordAnswerSummary(record);
+    lines.push(`## Fix: ${record.title}`, "");
+    lines.push(`Pit ID: ${record.id}`);
+    lines.push(`HTML: ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`Markdown: ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push("");
+    lines.push(`Problem: ${answer.problem}`);
+    lines.push(`Root cause: ${answer.root_cause}`);
+    lines.push(`Fix first: ${answer.fix}`);
+    lines.push(`Verify: ${answer.verification || "Run the verification steps in the full record."}`);
+    lines.push("");
+    lines.push("Queries this answer targets:", "");
+    for (const query of recordAnswerQueries(record, 24)) lines.push(`- ${query}`);
+    lines.push("");
+  }
+
+  return `${lines.join("\n")}\n`;
 }
 
 function renderSearchQueryIndex(records) {
@@ -700,7 +829,7 @@ function renderSearchQueryIndex(records) {
       <p class="eyebrow">Search surface</p>
       <h1>Search queries and exact symptoms</h1>
       <p class="lede">This page turns the current pit corpus into crawlable search phrases. It is intended for search-enabled LLMs, coding agents, and ordinary search engines looking for concrete error strings or failure symptoms.</p>
-      <p>For machine ingestion, use <a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a>. For full records, fetch <a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a>.</p>
+      <p>For machine ingestion, use <a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> and <a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a>. For answer-first snippets, see <a href="/agent-pitbook/answers.html">/answers.html</a>. For full records, fetch <a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a>.</p>
     </section>
 ${sections}`
   });
@@ -713,6 +842,8 @@ function renderSearchQueryMarkdown(records) {
     "Generated search phrases from the current pit corpus. Search-enabled LLMs should use this page when matching exact error text, tool names, and local execution symptoms to Agent Pitbook records.",
     "",
     "- Machine feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl",
+    "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
+    "- Answer-first index: https://laozhangzzz.github.io/agent-pitbook/answers.html",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
     "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
     ""
@@ -740,10 +871,13 @@ function renderSitemap(records) {
     ["/llms.txt", siteLastmod],
     ["/ask.html", siteLastmod],
     ["/ask.md", siteLastmod],
+    ["/answers.html", siteLastmod],
+    ["/answers.md", siteLastmod],
     ["/search-queries.html", siteLastmod],
     ["/search-queries.md", siteLastmod],
     ["/feeds/index.jsonl", siteLastmod],
     ["/feeds/search-terms.jsonl", siteLastmod],
+    ["/feeds/answer-queries.jsonl", siteLastmod],
     ["/feeds/unresolved-pit-template.json", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
@@ -787,6 +921,8 @@ fs.writeFileSync(path.join(docsDir, "index.html"), renderIndex(records));
 fs.writeFileSync(path.join(docsDir, "llms.txt"), renderLlms(records));
 fs.writeFileSync(path.join(docsDir, "ask.html"), renderAskPage());
 fs.writeFileSync(path.join(docsDir, "ask.md"), renderAskMarkdown());
+fs.writeFileSync(path.join(docsDir, "answers.html"), renderAnswerIndex(records));
+fs.writeFileSync(path.join(docsDir, "answers.md"), renderAnswerMarkdown(records));
 fs.writeFileSync(path.join(docsDir, "search-queries.html"), renderSearchQueryIndex(records));
 fs.writeFileSync(path.join(docsDir, "search-queries.md"), renderSearchQueryMarkdown(records));
 fs.writeFileSync(
@@ -804,6 +940,7 @@ fs.writeFileSync(
   `${records.map((record) => JSON.stringify(slimRecord(record))).join("\n")}\n`
 );
 fs.writeFileSync(path.join(siteFeedsDir, "search-terms.jsonl"), searchTermsFeed(records));
+fs.writeFileSync(path.join(siteFeedsDir, "answer-queries.jsonl"), answerQueriesFeed(records));
 fs.writeFileSync(
   path.join(siteFeedsDir, "unresolved-pit-template.json"),
   `${JSON.stringify(unresolvedPitTemplate({ siteBaseUrl: baseUrl, repoUrl }), null, 2)}\n`

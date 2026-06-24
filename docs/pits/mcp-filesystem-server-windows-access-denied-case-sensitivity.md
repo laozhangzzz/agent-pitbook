@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - path outside allowed directories' for paths that are inside an allowed root, because its validation does not normalize Windows drive-letter case (C:\source vs c:\source). Match the configured case, or use a patched build until the upstream fix ships.
 
+## Fast Answer
+
+- Problem: Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories'
+- Root cause: The allowed-directory check compares request paths against allowed roots as strings.
+- Fix first: Make the configured allowed-directory drive-letter case match what the client sends; try both C:\... and c:\... forms.
+- Verify: Call read_file on a path under the allowed directory after aligning case or applying the patched build.
+
+## Queries This Answers
+
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
+- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
+- Filesystem server access denied for allowed paths on Windows
+- Filesystem server access denied for allowed paths on Windows fix
+- Filesystem server access denied for allowed paths on Windows root cause
+- step toward fixing Windows path validation
+- step toward fixing Windows path validation fix
+- step toward fixing Windows path validation root cause
+- Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
+- how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
+- Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause
+- claude-desktop Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
+- claude-desktop Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
+- cursor Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
+- cursor Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
+- mcp-server Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
+- mcp-server Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
+- the denied path is visibly inside a configured allowed root
+- how to fix the denied path is visibly inside a configured allowed root
+- the denied path is visibly inside a configured allowed root root cause
+- claude-desktop the denied path is visibly inside a configured allowed root
+- claude-desktop the denied path is visibly inside a configured allowed root fix
+
 ## Common Search Queries
 
 - mcp-filesystem-server-windows-access-denied-case-sensitivity
@@ -25,14 +59,14 @@ On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - 
 - claude-desktop
 - cursor
 - mcp-server
-- Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories
+- Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
 - the denied path is visibly inside a configured allowed root
 - no other errors in the logs
 - The allowed-directory check compares request paths against allowed roots as strings
 - Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test
 - Windows can rarely have case-sensitive paths, which complicates a fully correct fix
 - Widening allowed directories to the drive root to dodge the case mismatch
-- Assuming the allow-list config is wrong when the validator's normalization is the bug
+- Assuming the allow-list config is wrong when the validators normalization is the bug
 - Temporarily configure the allowed root in the exact case the client emits
 - modelcontextprotocol/servers issue 470: Filesystem server access denied for allowed paths on Windows
 - modelcontextprotocol/servers PR 2111: step toward fixing Windows path validation

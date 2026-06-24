@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Claude Code chrome-bridge MCP gets stuck after one transport connects - Agent Pitbook</title>
-  <meta name="description" content="mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.">
+  <title>Fix: Claude Code chrome-bridge MCP gets stuck after one transport connects - Agent Pitbook</title>
+  <meta name="description" content="Root cause: The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections. Fix: Do not use curl /mcp as a health check.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Claude Code chrome-bridge MCP gets stuck after one transport connects - Agent Pitbook">
-  <meta property="og:description" content="mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.">
+  <meta property="og:title" content="Fix: Claude Code chrome-bridge MCP gets stuck after one transport connects - Agent Pitbook">
+  <meta property="og:description" content="Root cause: The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections. Fix: Do not use curl /mcp as a health check.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, verified, high">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects, Singleton McpServer causes Already connected to a transport, Singleton McpServer causes Already connected to a transport fix, Singleton McpServer causes Already connected to a transport root cause, replace getMcpServer singleton with factory, replace getMcpServer singleton with factory fix, replace getMcpServer singleton with factory root cause, verified, high">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Claude Code chrome-bridge MCP gets stuck after one transport connects",
-  "description": "mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.",
+  "headline": "Fix: Claude Code chrome-bridge MCP gets stuck after one transport connects",
+  "description": "Problem: Claude Code cannot reconnect to the chrome-bridge MCP server Root cause: The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections. Fix: Do not use curl /mcp as a health check.",
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/claude-code-mcp-chrome-bridge-single-transport-deadlock.html",
   "dateCreated": "2026-06-19",
   "dateModified": "2026-06-19",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, verified, high",
+  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging, mcp-chrome-bridge, claude-code-mcp-chrome-bridge-single-transport-deadlock, claude code mcp chrome bridge single transport deadlock, Claude Code chrome-bridge MCP gets stuck after one transport connects, Claude Code chrome-bridge MCP gets stuck after one transport connects fix, Claude Code chrome-bridge MCP gets stuck after one transport connects root cause, how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects, Singleton McpServer causes Already connected to a transport, Singleton McpServer causes Already connected to a transport fix, Singleton McpServer causes Already connected to a transport root cause, replace getMcpServer singleton with factory, replace getMcpServer singleton with factory fix, replace getMcpServer singleton with factory root cause, verified, high",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -41,6 +41,13 @@
     "Claude Code chrome-bridge MCP gets stuck after one transport connects",
     "Claude Code chrome-bridge MCP gets stuck after one transport connects fix",
     "Claude Code chrome-bridge MCP gets stuck after one transport connects root cause",
+    "how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects",
+    "Singleton McpServer causes Already connected to a transport",
+    "Singleton McpServer causes Already connected to a transport fix",
+    "Singleton McpServer causes Already connected to a transport root cause",
+    "replace getMcpServer singleton with factory",
+    "replace getMcpServer singleton with factory fix",
+    "replace getMcpServer singleton with factory root cause",
     "verified",
     "high"
   ],
@@ -75,6 +82,13 @@
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/claude-code-mcp-chrome-bridge-single-transport-deadlock.md">Canonical source</a>
       </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> Claude Code cannot reconnect to the chrome-bridge MCP server</p>
+    <p><strong>Root cause:</strong> The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections.</p>
+    <p><strong>Fix first:</strong> Do not use curl /mcp as a health check.</p>
+    <p><strong>Verify:</strong> After killing or patching the native host, verify only the lightweight ping endpoint.</p>
+  </div></section>
+      <section><h2>Queries this answers</h2><ul><li>Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects fix</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects root cause</li><li>how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Singleton McpServer causes Already connected to a transport</li><li>Singleton McpServer causes Already connected to a transport fix</li><li>Singleton McpServer causes Already connected to a transport root cause</li><li>replace getMcpServer singleton with factory</li><li>replace getMcpServer singleton with factory fix</li><li>replace getMcpServer singleton with factory root cause</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT fix</li><li>MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT root cause</li><li>service can only connect once after Chrome starts</li><li>service can only connect once after Chrome starts fix</li><li>service can only connect once after Chrome starts root cause</li><li>HTTP 500 or Already connected to a transport until the native host is restarted or the br</li><li>HTTP 500 or Already connected to a transport until the native host is restarted or the br fix</li><li>claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br</li><li>claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br fix</li><li>mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br</li><li>mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br fix</li><li>HTTP/SSE</li><li>HTTP/SSE fix</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-19</td></tr><tr><th>Updated</th><td>2026-06-19</td></tr><tr><th>Last verified</th><td>2026-06-19</td></tr><tr><th>Affected tools</th><td>claude-code, mcp-chrome-bridge</td></tr><tr><th>Tags</th><td>agents, claude-code, mcp, chrome, browser-automation, transport, deadlock, native-messaging</td></tr></table></section>
       <section><h2>Common search queries</h2><ul><li>claude-code-mcp-chrome-bridge-single-transport-deadlock</li><li>claude code mcp chrome bridge single transport deadlock</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects fix</li><li>Claude Code chrome-bridge MCP gets stuck after one transport connects root cause</li><li>agents</li><li>claude-code</li><li>chrome</li><li>browser-automation</li><li>transport</li><li>deadlock</li><li>native-messaging</li><li>mcp-chrome-bridge</li><li>Claude Code cannot reconnect to the chrome-bridge MCP server</li><li>GET http://127.0.0.1:12306/ping succeeds with pong</li><li>the Chrome extension or bridge UI appears connected</li><li>the MCP endpoint returns HTTP 500 during handshake or tool discovery</li><li>logs contain Already connected to a transport</li><li>logs contain ERR_HTTP_HEADERS_SENT</li><li>doctor --fix or killing the native host helps only temporarily</li><li>The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections</li><li>The MCP SDK server connection model expects one transport per server instance</li><li>A manual curl /mcp request, Chrome extension /sse session, Claude Code session, or stale background job can occupy the singleton transport slot</li><li>Killing the native host clears the runtime state, which explains why repair or restart works temporarily without fixing the underlying design</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Claude Code cannot reconnect to the chrome-bridge MCP server</li><li>GET http://127.0.0.1:12306/ping succeeds with pong</li><li>the Chrome extension or bridge UI appears connected</li><li>the MCP endpoint returns HTTP 500 during handshake or tool discovery</li><li>logs contain Already connected to a transport</li><li>logs contain ERR_HTTP_HEADERS_SENT</li><li>doctor --fix or killing the native host helps only temporarily</li></ul></section>

@@ -10,13 +10,47 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 Constructing a FastMCP server reconfigures Python's global logging (a configure_logging call), disturbing handlers your app already set up, so logs duplicate or your custom handler is bypassed. There is no opt-out flag yet; re-apply your logging config (logging.config.dictConfig) after building FastMCP, or remove the handler it added.
 
+## Fast Answer
+
+- Problem: log messages become duplicated after the FastMCP server is created
+- Root cause: FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger.
+- Fix first: Re-apply your logging configuration after constructing FastMCP so your handlers win.
+- Verify: Emit logs after re-applying your config.
+
+## Queries This Answers
+
+- FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix
+- FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
+- how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
+- log messages become duplicated after the FastMCP server is created
+- how to fix log messages become duplicated after the FastMCP server is created
+- log messages become duplicated after the FastMCP server is created root cause
+- mcp-server log messages become duplicated after the FastMCP server is created
+- mcp-server log messages become duplicated after the FastMCP server is created fix
+- python-sdk log messages become duplicated after the FastMCP server is created
+- python-sdk log messages become duplicated after the FastMCP server is created fix
+- a custom/structured global logging handler stops taking effect
+- how to fix a custom/structured global logging handler stops taking effect
+- a custom/structured global logging handler stops taking effect root cause
+- mcp-server a custom/structured global logging handler stops taking effect
+- mcp-server a custom/structured global logging handler stops taking effect fix
+- python-sdk a custom/structured global logging handler stops taking effect
+- python-sdk a custom/structured global logging handler stops taking effect fix
+- fastmcp a custom/structured global logging handler stops taking effect
+- fastmcp a custom/structured global logging handler stops taking effect fix
+- the change appears exactly when FastMCP(...) is instantiated
+
 ## Common Search Queries
 
 - fastmcp-overrides-logging-configuration
 - fastmcp overrides logging configuration
-- FastMCP overrides your app's logging configuration on init (duplicate or lost logs
-- FastMCP overrides your app's logging configuration on init (duplicate or lost logs) fix
-- FastMCP overrides your app's logging configuration on init (duplicate or lost logs) root cause
+- FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix
+- FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
 - fastmcp
 - python-sdk
 - logging
@@ -32,10 +66,10 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 - Configuring global logging before constructing FastMCP and assuming it survives
 - Monkey-patching configure_logging to a no-op as a permanent solution
 - Add a FastMCP logger entry to your dictConfig and re-apply it after building the server
-- modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler
-- mcp-server log messages become duplicated after the FastMCP server is created
-- python-sdk log messages become duplicated after the FastMCP server is created
-- mcp-server a custom/structured global logging handler stops taking effect
+- modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
+- Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
+- how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
 
 ## Affected Tools
 

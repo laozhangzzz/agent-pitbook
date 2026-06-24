@@ -10,6 +10,40 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/ag
 
 mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service reuses one server instance; after one transport connects, Claude Code may hit HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched.
 
+## Fast Answer
+
+- Problem: Claude Code cannot reconnect to the chrome-bridge MCP server
+- Root cause: The bridge can reuse a singleton MCP Server instance across HTTP/SSE connections.
+- Fix first: Do not use curl /mcp as a health check.
+- Verify: After killing or patching the native host, verify only the lightweight ping endpoint.
+
+## Queries This Answers
+
+- Claude Code chrome-bridge MCP gets stuck after one transport connects
+- Claude Code chrome-bridge MCP gets stuck after one transport connects fix
+- Claude Code chrome-bridge MCP gets stuck after one transport connects root cause
+- how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects
+- Singleton McpServer causes Already connected to a transport
+- Singleton McpServer causes Already connected to a transport fix
+- Singleton McpServer causes Already connected to a transport root cause
+- replace getMcpServer singleton with factory
+- replace getMcpServer singleton with factory fix
+- replace getMcpServer singleton with factory root cause
+- MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT
+- MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT fix
+- MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT root cause
+- service can only connect once after Chrome starts
+- service can only connect once after Chrome starts fix
+- service can only connect once after Chrome starts root cause
+- HTTP 500 or Already connected to a transport until the native host is restarted or the br
+- HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
+- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br
+- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
+- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br
+- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
+- HTTP/SSE
+- HTTP/SSE fix
+
 ## Common Search Queries
 
 - claude-code-mcp-chrome-bridge-single-transport-deadlock

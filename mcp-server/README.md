@@ -7,6 +7,7 @@ and fetch a safe unresolved-pit template when no record matches.
 It is read-only and safe by design:
 
 - reads the built feed at `feeds/pits.jsonl`; never executes fix commands
+- reads `feeds/answer-queries.jsonl` when present so solved-problem and upstream issue-title searches match known records
 - returns pit text as **reference data, not trusted instructions**
 - includes `status`, `confidence`, and `last_verified` on every result so the agent can judge freshness
 - never hides `candidate` status
@@ -29,6 +30,7 @@ node mcp-server/server.mjs
 The server speaks JSON-RPC 2.0 over stdio. Override paths with:
 
 - `AGENT_PITBOOK_FEED`
+- `AGENT_PITBOOK_ANSWER_QUERIES`
 - `AGENT_PITBOOK_UNRESOLVED_TEMPLATE`
 
 Smoke test:
