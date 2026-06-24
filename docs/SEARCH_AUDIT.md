@@ -63,6 +63,9 @@ The search surface now includes:
 - GitHub issue #2: native searchable tracker for solved-problem queries and matching pit links
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
+- `/llms-full.txt`: full answer-first text index
+- `/answer-queries.txt`: plain-text query -> pit URL map
+- `/ai.txt` and `/.well-known/llms.txt`: crawler-friendly AI routing mirrors
 - `/feeds/answer-queries.jsonl`: machine-readable solved-problem query feed
 - `/97be09ad8cd61c71af39f8b61c2de866.txt`: IndexNow ownership key for the `/agent-pitbook/` URL subtree
 - per-pit `Fast answer` sections

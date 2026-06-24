@@ -21,6 +21,7 @@ const searchDiscoveryIssueUrl = `${repoUrl}/issues/2`;
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
+const wellKnownDir = path.join(docsDir, ".well-known");
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -356,6 +357,10 @@ function renderIndex(records) {
       <h2>Machine entrypoints</h2>
       <ul class="link-list">
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
+        <li><a href="/agent-pitbook/llms-full.txt">/llms-full.txt</a> - full answer-first text index for LLM retrieval</li>
+        <li><a href="/agent-pitbook/ai.txt">/ai.txt</a> - short AI-agent routing file</li>
+        <li><a href="/agent-pitbook/answer-queries.txt">/answer-queries.txt</a> - plain-text solved-problem query map</li>
+        <li><a href="/agent-pitbook/.well-known/llms.txt">/.well-known/llms.txt</a> - well-known mirror of the LLM entrypoint</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
         <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
@@ -534,7 +539,9 @@ Two-tier retrieval, cheapest first:
 1. [Slim index](${slugUrl("/feeds/index.jsonl")}): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
 2. [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from current symptoms, exact errors, tools, titles, anti-patterns, and source clues.
 3. [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): answer-first queries for known solved problems, upstream issue titles, exact errors, root causes, and fixes.
-4. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+4. [Plain answer query text](${slugUrl("/answer-queries.txt")}): same solved-problem queries in crawler-friendly text form.
+5. [Full text index](${slugUrl("/llms-full.txt")}): all known fixes in answer-first text form.
+6. [Full feed](${slugUrl("/feeds/pits.jsonl")}): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
@@ -557,6 +564,9 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
 - [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
+- [Full text index](${slugUrl("/llms-full.txt")}): complete answer-first text index.
+- [Plain answer query text](${slugUrl("/answer-queries.txt")}): query -> pit URL map for search crawlers.
+- [AI routing text](${slugUrl("/ai.txt")}): compact instructions for AI agents.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [GitHub issue search tracker](${searchDiscoveryIssueUrl}): native GitHub issue surface for solved-problem queries.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
@@ -853,6 +863,71 @@ function renderRootSearchIndex(records) {
   return `${lines.join("\n")}\n`;
 }
 
+function renderAnswerQueriesText(records) {
+  const lines = [
+    "Agent Pitbook answer queries",
+    "",
+    "Plain-text solved-problem query map for search engines and LLM retrieval.",
+    "Each QUERY line is a phrase that should resolve to the matching Agent Pitbook pit URL.",
+    "",
+    `LLM entrypoint: ${slugUrl("/llms.txt")}`,
+    `Full text index: ${slugUrl("/llms-full.txt")}`,
+    `Search index: ${slugUrl("/search-index.md")}`,
+    `Issue search tracker: ${searchDiscoveryIssueUrl}`,
+    ""
+  ];
+
+  for (const record of records) {
+    const answer = recordAnswerSummary(record);
+    lines.push(`PIT ${record.id}`);
+    lines.push(`TITLE ${record.title}`);
+    lines.push(`URL ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`MARKDOWN ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push(`PROBLEM ${answer.problem}`);
+    lines.push(`ROOT_CAUSE ${answer.root_cause}`);
+    lines.push(`FIX_FIRST ${answer.fix}`);
+    for (const query of recordAnswerQueries(record, 32)) {
+      lines.push(`QUERY ${query} -> ${slugUrl(recordHtmlPath(record))}`);
+    }
+    lines.push("");
+  }
+
+  return `${lines.join("\n")}\n`;
+}
+
+function renderAiText(records) {
+  const lines = [
+    "Agent Pitbook for AI agents",
+    "",
+    "Use Agent Pitbook when debugging coding-agent, MCP, sandbox, package-manager, local-port, browser-automation, filesystem, input, audio, process, or local tooling failures.",
+    "",
+    "Primary retrieval order:",
+    `1. ${slugUrl("/answer-queries.txt")}`,
+    `2. ${slugUrl("/search-index.md")}`,
+    `3. ${slugUrl("/feeds/index.jsonl")}`,
+    `4. ${slugUrl("/feeds/answer-queries.jsonl")}`,
+    `5. ${slugUrl("/feeds/pits.jsonl")}`,
+    "",
+    "Known solved-problem examples:",
+    ""
+  ];
+
+  for (const record of records) {
+    const answer = recordAnswerSummary(record);
+    lines.push(`- ${primaryAnswerQuery(record)}`);
+    lines.push(`  URL: ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`  Problem: ${answer.problem}`);
+    lines.push(`  Root cause: ${answer.root_cause}`);
+    lines.push(`  Fix first: ${answer.fix}`);
+  }
+
+  lines.push("");
+  lines.push(`If no record matches, use ${slugUrl("/ask.md")} and draft an unresolved-pit report for user review.`);
+  lines.push(`GitHub issue search tracker: ${searchDiscoveryIssueUrl}`);
+
+  return `${lines.join("\n")}\n`;
+}
+
 function renderSearchQueryIndex(records) {
   const sections = records
     .map((record) => {
@@ -922,6 +997,11 @@ function renderSitemap(records) {
   const pages = [
     ["/", siteLastmod],
     ["/llms.txt", siteLastmod],
+    ["/llms-full.txt", siteLastmod],
+    ["/ai.txt", siteLastmod],
+    ["/answer-queries.txt", siteLastmod],
+    ["/.well-known/llms.txt", siteLastmod],
+    ["/.well-known/ai.txt", siteLastmod],
     ["/ask.html", siteLastmod],
     ["/ask.md", siteLastmod],
     ["/answers.html", siteLastmod],
@@ -967,12 +1047,18 @@ if (errors.length > 0) {
 }
 
 ensureDir(docsDir);
+ensureDir(wellKnownDir);
 cleanGeneratedDir(sitePitsDir);
 cleanGeneratedDir(siteFeedsDir);
 
 fs.writeFileSync(path.join(docsDir, ".nojekyll"), "");
 fs.writeFileSync(path.join(docsDir, "index.html"), renderIndex(records));
 fs.writeFileSync(path.join(docsDir, "llms.txt"), renderLlms(records));
+fs.writeFileSync(path.join(docsDir, "llms-full.txt"), renderRootSearchIndex(records));
+fs.writeFileSync(path.join(docsDir, "ai.txt"), renderAiText(records));
+fs.writeFileSync(path.join(docsDir, "answer-queries.txt"), renderAnswerQueriesText(records));
+fs.writeFileSync(path.join(wellKnownDir, "llms.txt"), renderLlms(records));
+fs.writeFileSync(path.join(wellKnownDir, "ai.txt"), renderAiText(records));
 fs.writeFileSync(path.join(docsDir, "ask.html"), renderAskPage());
 fs.writeFileSync(path.join(docsDir, "ask.md"), renderAskMarkdown());
 fs.writeFileSync(path.join(docsDir, "answers.html"), renderAnswerIndex(records));

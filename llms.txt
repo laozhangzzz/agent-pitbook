@@ -8,6 +8,10 @@ Fastest integration: the read-only MCP server at mcp-server/server.mjs exposes s
 
 Public site: https://laozhangzzz.github.io/agent-pitbook/
 Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
+Hosted full LLM text index: https://laozhangzzz.github.io/agent-pitbook/llms-full.txt
+Hosted plain answer query map: https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt
+Hosted AI routing text: https://laozhangzzz.github.io/agent-pitbook/ai.txt
+Well-known LLM entrypoint mirror: https://laozhangzzz.github.io/agent-pitbook/.well-known/llms.txt
 Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted known fixes index: https://laozhangzzz.github.io/agent-pitbook/answers.html
 Hosted search index Markdown: https://laozhangzzz.github.io/agent-pitbook/search-index.md
