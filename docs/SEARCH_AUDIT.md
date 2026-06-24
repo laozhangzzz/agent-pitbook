@@ -89,7 +89,7 @@ Status after creating dedicated known-fix issues and deploying the RSS feed:
 - Pass: GitHub issue search for `Singleton McpServer causes Already connected to a transport` returns dedicated issue #5 before the broad tracker issue #2.
 - Pass: deployed Pages URLs expose `/feed.xml`, `/llms.txt`, `/ai.txt`, `/search-index.md`, and `/answer-queries.txt` with the known-fix issue search surface linked where appropriate.
 - Pass: `/SEARCH_SNAPSHOT_2026-06-24.md` lists all 39 known-fix issue URLs with exact solved-problem titles.
-- Pass: GitHub release `search-snapshot-2026-06-24` is public and includes the exact problem titles plus `pits.jsonl`, `answer-queries.jsonl`, `known-fix-issues.jsonl`, `SEARCH_INDEX.md`, `SEARCH_SNAPSHOT_2026-06-24.md`, and `feed.xml` assets.
+- Pass: GitHub release `search-snapshot-2026-06-24` is public and includes the exact problem titles plus `pits.jsonl`, `answer-queries.jsonl`, `search-terms.jsonl`, `known-fix-issues.jsonl`, `SEARCH_INDEX.md`, `SEARCH_SNAPSHOT_2026-06-24.md`, and `feed.xml` assets.
 - Pass: per-pit HTML and Markdown pages link to their dedicated known-fix issue; per-pit JSON-LD includes the issue URL in `sameAs` and `discussionUrl`.
 - Pass: IndexNow accepted the current 101-URL sitemap submission.
 - Weak: GitHub code search via `gh search code` did not return the exact problem-title matches immediately after the commits, even though GitHub web search pages include matching text.
