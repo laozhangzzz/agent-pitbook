@@ -77,6 +77,18 @@ The search surface now includes:
 - MCP search over `feeds/answer-queries.jsonl`
 - `tools/indexnow-submit.mjs`: submit the sitemap URL set to IndexNow-compatible engines after deployment
 
+## Latest Audit: 2026-06-24
+
+Status after creating dedicated known-fix issues and deploying the RSS feed:
+
+- Pass: GitHub repo search for `agent-pitbook` returns `laozhangzzz/agent-pitbook`.
+- Pass: GitHub issue search for `GitHub MCP Server Fails to Start` returns dedicated issue #15 before the broad tracker issue #2.
+- Pass: GitHub issue search for `Singleton McpServer causes Already connected to a transport` returns dedicated issue #5 before the broad tracker issue #2.
+- Pass: deployed Pages URLs expose `/feed.xml`, `/llms.txt`, `/ai.txt`, `/search-index.md`, and `/answer-queries.txt` with the known-fix issue search surface linked where appropriate.
+- Pass: IndexNow accepted the current 99-URL sitemap submission.
+- Weak: GitHub code search via `gh search code` did not return the exact problem-title matches immediately after the commits, even though GitHub web search pages include matching text.
+- Fail/lagging: ordinary web search did not yet return the new Pages or GitHub issue surfaces immediately after deployment. This is expected indexing delay, but it means the objective is not complete until external search starts surfacing the records.
+
 ## IndexNow Submission
 
 After a Pages deployment, notify IndexNow-compatible search engines:
