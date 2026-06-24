@@ -5,6 +5,7 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-received-request-before-initialization.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/25
 
 ## Summary
 

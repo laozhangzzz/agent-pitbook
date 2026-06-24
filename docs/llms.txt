@@ -48,6 +48,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.
 - [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): queries for existing public issue titles and solved-problem searches.
+- [Known-fix issue map](https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl): pit id to dedicated GitHub known-fix issue URL map.
 - [Source repository](https://github.com/laozhangzzz/agent-pitbook): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 

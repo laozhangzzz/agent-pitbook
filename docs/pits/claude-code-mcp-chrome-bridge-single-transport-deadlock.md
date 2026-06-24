@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/claude-code-mcp-chrome-bridge-single-transport-deadlock.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/5
 
 ## Summary
 

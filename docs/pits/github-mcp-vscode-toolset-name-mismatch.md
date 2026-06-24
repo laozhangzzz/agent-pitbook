@@ -5,6 +5,7 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/github-mcp-vscode-toolset-name-mismatch.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/13
 
 ## Summary
 

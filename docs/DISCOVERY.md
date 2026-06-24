@@ -170,6 +170,7 @@ Current state:
 - GitHub issues #3-#41 are dedicated `known-fix` search-surface issues, one solved pit per issue, with titles built from exact problem queries.
 - The hosted search snapshot `/SEARCH_SNAPSHOT_2026-06-24.md` repeats all known-fix issue URLs and exact solved-problem titles as a release-style index.
 - GitHub release `search-snapshot-2026-06-24` mirrors the search snapshot and uploads JSONL/RSS/index assets for release-page discovery.
+- The hosted feed `/feeds/known-fix-issues.jsonl` maps each pit id and exact primary query to its dedicated GitHub known-fix issue.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.

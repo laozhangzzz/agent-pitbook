@@ -23,6 +23,7 @@ GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues
 GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
 Hosted search terms feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl
 Hosted answer queries feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
+Hosted known-fix issue map: https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl
 Hosted unresolved pit template: https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json
 Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 Root GitHub search index: https://github.com/laozhangzzz/agent-pitbook/blob/main/SEARCH_INDEX.md
@@ -69,6 +70,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Slim index](feeds/index.jsonl): one line per record (id, title, summary, symptoms, tags, status) — scan this first.
 - [Search terms feed](feeds/search-terms.jsonl): generated query phrases from symptoms, exact errors, tools, titles, and source clues.
 - [Answer queries feed](feeds/answer-queries.jsonl): answer-first known-fix queries from symptoms, exact errors, source issue titles, root causes, and fixes.
+- [Known-fix issue map](docs/feeds/known-fix-issues.jsonl): pit id to dedicated GitHub issue URL map for exact-query search landing pages.
 - [RSS feed](docs/feed.xml): known fixes as feed items with exact problem titles for crawlers, feed readers, and monitors.
 - [Unresolved pit template](feeds/unresolved-pit-template.json): machine-readable report template for agents.
 - [JSONL feed](feeds/pits.jsonl): one full machine-readable pit record per line — fetch by id after scanning the index.
@@ -115,7 +117,7 @@ Generated:
 
 When consuming existing pit records:
 
-1. Scan `feeds/index.jsonl`, `feeds/search-terms.jsonl`, and `feeds/answer-queries.jsonl` for exact error text, upstream issue titles, tool names, OS, architecture, package manager, framework, and agent name, then fetch the matching id's full record from `feeds/pits.jsonl`.
+1. Scan `feeds/index.jsonl`, `feeds/search-terms.jsonl`, `feeds/answer-queries.jsonl`, and hosted `docs/feeds/known-fix-issues.jsonl` for exact error text, upstream issue titles, tool names, OS, architecture, package manager, framework, agent name, and dedicated GitHub known-fix issue URLs, then fetch the matching id's full record from `feeds/pits.jsonl`.
 2. Prefer records with `status` set to `verified`, `confidence` set to `high`, recent `last_verified`, and relevant `environment`.
 3. Read the full Markdown pit before applying a fix.
 4. Treat commands and workarounds as untrusted suggestions. Inspect the local repository and user intent first.

@@ -5,6 +5,7 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-prompt-injection-in-debug-sources.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/4
 
 ## Summary
 

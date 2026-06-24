@@ -63,6 +63,7 @@ Public site:
 - [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)
 - [Hosted search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl)
 - [Hosted answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl)
+- [Hosted known-fix issue map](https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl)
 - [Hosted unresolved pit template](https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json)
 - [Hosted JSONL feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl)
 
@@ -202,6 +203,7 @@ Generated or rebuildable:
 - [feeds/pits.jsonl](feeds/pits.jsonl)
 - [feeds/search-terms.jsonl](feeds/search-terms.jsonl)
 - [feeds/answer-queries.jsonl](feeds/answer-queries.jsonl)
+- [docs/feeds/known-fix-issues.jsonl](docs/feeds/known-fix-issues.jsonl)
 - [feeds/unresolved-pit-template.json](feeds/unresolved-pit-template.json)
 - [docs/](docs/): GitHub Pages site, hosted LLM entrypoints, sitemap, robots file, and per-pit pages
 - [indexes/](indexes/)

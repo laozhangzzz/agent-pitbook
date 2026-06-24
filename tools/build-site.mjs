@@ -20,6 +20,48 @@ const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
 const searchDiscoveryIssueUrl = `${repoUrl}/issues/2`;
 const knownFixIssuesUrl = `${repoUrl}/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface`;
 const searchSnapshotReleaseUrl = `${repoUrl}/releases/tag/search-snapshot-2026-06-24`;
+const knownFixIssueStartNumber = 3;
+const knownFixIssueIds = [
+  "agent-network-restricted-dependency-install",
+  "agent-prompt-injection-in-debug-sources",
+  "claude-code-mcp-chrome-bridge-single-transport-deadlock",
+  "codex-workspace-root-moved-stale-state",
+  "docker-published-port-localhost-refused",
+  "claude-agent-sdk-mcp-json-requires-project-settingsource",
+  "claude-desktop-mcp-protocol-instance-reuse-already-connected",
+  "claude-desktop-no-dynamic-resource-templates",
+  "fastmcp-421-invalid-host-header-dns-rebinding",
+  "fastmcp-overrides-logging-configuration",
+  "github-mcp-vscode-toolset-name-mismatch",
+  "mcp-client-uses-user-level-npmrc-wrong-registry",
+  "mcp-error-32000-connection-closed-server-failed-to-start",
+  "mcp-filesystem-server-windows-access-denied-case-sensitivity",
+  "mcp-github-remote-oauth-dcr-unsupported-use-pat",
+  "mcp-inspector-docker-connection-refused-host-env",
+  "mcp-inspector-release-regression-pin-version",
+  "mcp-npx-cache-corrupted-server-fails-to-start",
+  "mcp-puppeteer-screenshots-in-memory-only",
+  "mcp-reference-server-archived-unmaintained",
+  "mcp-reverse-proxy-buffers-sse-connection-fails",
+  "mcp-server-memory-ignores-memory-file-path-env",
+  "mcp-sse-received-request-before-initialization",
+  "mcp-sse-session-lost-multi-worker",
+  "mcp-stateless-streamable-http-closedresourceerror",
+  "mcp-stdio-server-exits-shell-path-not-inherited",
+  "mcp-stdio-stdout-logging-breaks-protocol",
+  "mcp-streamable-http-client-no-oauth-on-401",
+  "mcp-time-server-invalid-local-timezone",
+  "mcp-ts-client-default-60s-request-timeout",
+  "mcp-ts-sdk-commonjs-esm-pkce-challenge",
+  "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
+  "mcp-ts-sdk-type-instantiation-excessively-deep",
+  "mcp-ts-sdk-zod-v4-incompatible",
+  "mcp-windows-npx-requires-cmd-c-wrapper",
+  "uv-cache-outside-workspace-sandbox",
+  "macos-portaudio-silent-zero-capture-unavailable-default-input",
+  "portaudio-stream-close-blocks-hotkey-callback-thread",
+  "pynput-mixed-cjk-ascii-type-out-of-order-macos"
+];
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
@@ -60,6 +102,12 @@ function recordMarkdownPath(record) {
 
 function sourceHref(record) {
   return `${repoUrl}/blob/main/${record.path}`;
+}
+
+function recordKnownFixIssueUrl(record) {
+  const index = knownFixIssueIds.indexOf(record.id);
+  if (index === -1) return null;
+  return `${repoUrl}/issues/${knownFixIssueStartNumber + index}`;
 }
 
 function listItems(items, renderer = (item) => escapeHtml(item)) {
@@ -252,6 +300,7 @@ function datasetJsonLd(records) {
 
 function pitJsonLd(record) {
   const answer = recordAnswerSummary(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
@@ -268,7 +317,9 @@ function pitJsonLd(record) {
       url: slugUrl("/")
     },
     mainEntityOfPage: slugUrl(recordHtmlPath(record)),
-    codeRepository: repoUrl
+    codeRepository: repoUrl,
+    sameAs: [sourceHref(record), slugUrl(recordMarkdownPath(record)), knownFixIssueUrl].filter(Boolean),
+    ...(knownFixIssueUrl ? { discussionUrl: knownFixIssueUrl } : {})
   };
 }
 
@@ -368,6 +419,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
         <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
+        <li><a href="/agent-pitbook/feeds/known-fix-issues.jsonl">/feeds/known-fix-issues.jsonl</a> - pit id to dedicated GitHub known-fix issue URL map</li>
         <li><a href="/agent-pitbook/feeds/unresolved-pit-template.json">/feeds/unresolved-pit-template.json</a> - machine-readable template for safe unresolved problem reports</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
@@ -401,6 +453,10 @@ function renderPit(record) {
   const answerQueries = recordAnswerQueries(record, 24);
   const answer = recordAnswerSummary(record);
   const primaryQuery = primaryAnswerQuery(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
+  const knownFixIssueLink = knownFixIssueUrl
+    ? `<span>|</span><a href="${knownFixIssueUrl}">GitHub known-fix issue</a>`
+    : "";
   const optionalSections = [
     record.workarounds?.length ? `<section><h2>Workarounds</h2>${listItems(record.workarounds)}</section>` : "",
     record.anti_patterns?.length ? `<section><h2>Anti-patterns</h2>${listItems(record.anti_patterns)}</section>` : ""
@@ -420,6 +476,7 @@ function renderPit(record) {
         <a href="/agent-pitbook${recordMarkdownPath(record)}">Markdown mirror</a>
         <span>|</span>
         <a href="${sourceHref(record)}">Canonical source</a>
+        ${knownFixIssueLink}
       </p>
       <section><h2>Fast answer</h2>${renderFastAnswer(record)}</section>
       <section><h2>Queries this answers</h2>${listItems(answerQueries)}</section>
@@ -442,6 +499,7 @@ function renderPit(record) {
 
 function renderPitMarkdown(record) {
   const answer = recordAnswerSummary(record);
+  const knownFixIssueUrl = recordKnownFixIssueUrl(record);
   const lines = [
     `# ${record.title}`,
     "",
@@ -450,6 +508,7 @@ function renderPitMarkdown(record) {
     `Confidence: ${record.confidence}`,
     `Updated: ${record.updated_at}`,
     `Canonical source: ${sourceHref(record)}`,
+    ...(knownFixIssueUrl ? [`GitHub known-fix issue: ${knownFixIssueUrl}`] : []),
     "",
     "## Summary",
     "",
@@ -583,6 +642,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): queries for existing public issue titles and solved-problem searches.
+- [Known-fix issue map](${slugUrl("/feeds/known-fix-issues.jsonl")}): pit id to dedicated GitHub known-fix issue URL map.
 - [Source repository](${repoUrl}): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](${repoUrl}/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 
@@ -768,6 +828,30 @@ function answerQueriesFeed(records) {
     .join("\n")}\n`;
 }
 
+function knownFixIssuesFeed(records) {
+  return `${records
+    .map((record) => {
+      const known_fix_issue_url = recordKnownFixIssueUrl(record);
+      if (!known_fix_issue_url) return null;
+      return JSON.stringify({
+        id: record.id,
+        title: record.title,
+        primary_answer_query: primaryAnswerQuery(record),
+        status: record.status,
+        affected_tools: record.affected_tools ?? [],
+        tags: record.tags ?? [],
+        known_fix_issue_url,
+        html_url: slugUrl(recordHtmlPath(record)),
+        markdown_url: slugUrl(recordMarkdownPath(record)),
+        source_url: sourceHref(record),
+        answer_summary: recordAnswerSummary(record),
+        answer_queries: recordAnswerQueries(record, 16)
+      });
+    })
+    .filter(Boolean)
+    .join("\n")}\n`;
+}
+
 function renderAnswerIndex(records) {
   const sections = records
     .map((record) => {
@@ -848,6 +932,7 @@ function renderRootSearchIndex(records) {
     "- Search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md",
     `- Search snapshot release: ${searchSnapshotReleaseUrl}`,
     "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
+    "- Known-fix issue map: https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
     `- GitHub issue search tracker: ${searchDiscoveryIssueUrl}`,
     `- GitHub known-fix issues: ${knownFixIssuesUrl}`,
@@ -1067,6 +1152,7 @@ function renderSitemap(records) {
     ["/feeds/index.jsonl", siteLastmod],
     ["/feeds/search-terms.jsonl", siteLastmod],
     ["/feeds/answer-queries.jsonl", siteLastmod],
+    ["/feeds/known-fix-issues.jsonl", siteLastmod],
     ["/feeds/unresolved-pit-template.json", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
@@ -1139,6 +1225,7 @@ fs.writeFileSync(
 );
 fs.writeFileSync(path.join(siteFeedsDir, "search-terms.jsonl"), searchTermsFeed(records));
 fs.writeFileSync(path.join(siteFeedsDir, "answer-queries.jsonl"), answerQueriesFeed(records));
+fs.writeFileSync(path.join(siteFeedsDir, "known-fix-issues.jsonl"), knownFixIssuesFeed(records));
 fs.writeFileSync(
   path.join(siteFeedsDir, "unresolved-pit-template.json"),
   `${JSON.stringify(unresolvedPitTemplate({ siteBaseUrl: baseUrl, repoUrl }), null, 2)}\n`

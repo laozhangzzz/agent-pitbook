@@ -5,6 +5,7 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/41
 
 ## Summary
 

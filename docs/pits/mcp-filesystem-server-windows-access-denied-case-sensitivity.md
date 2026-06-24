@@ -5,6 +5,7 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/16
 
 ## Summary
 

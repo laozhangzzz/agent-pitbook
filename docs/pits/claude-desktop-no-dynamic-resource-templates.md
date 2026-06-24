@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-no-dynamic-resource-templates.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/10
 
 ## Summary
 

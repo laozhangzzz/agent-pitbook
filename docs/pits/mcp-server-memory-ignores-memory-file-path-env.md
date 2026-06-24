@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-server-memory-ignores-memory-file-path-env.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
 
 ## Summary
 

@@ -11,6 +11,7 @@ Primary entrypoints:
 - RSS feed: https://laozhangzzz.github.io/agent-pitbook/feed.xml
 - GitHub release: https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24
 - GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
+- Known-fix issue map: https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl
 - JSONL corpus: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 
 ## Known Fix Search Targets

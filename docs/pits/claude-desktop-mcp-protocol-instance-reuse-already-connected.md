@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-desktop-mcp-protocol-instance-reuse-already-connected.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/9
 
 ## Summary
 

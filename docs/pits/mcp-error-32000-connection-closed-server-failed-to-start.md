@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/15
 
 ## Summary
 

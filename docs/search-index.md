@@ -8,6 +8,7 @@ Root-level answer-first search index for GitHub search, web search, and LLM retr
 - Search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md
 - Search snapshot release: https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24
 - Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
+- Known-fix issue map: https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl
 - Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 - GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
 - GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface

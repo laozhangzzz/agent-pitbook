@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/3
 
 ## Summary
 

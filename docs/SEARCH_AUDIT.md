@@ -64,6 +64,7 @@ The search surface now includes:
 - GitHub issues #3-#41: dedicated `known-fix` issue pages, one solved pit per issue, titled by exact problem query
 - `/SEARCH_SNAPSHOT_2026-06-24.md`: release-style exact-query snapshot with known-fix issue links
 - GitHub release `search-snapshot-2026-06-24`: release page plus downloadable JSONL/RSS/index assets
+- `/feeds/known-fix-issues.jsonl`: machine-readable pit id -> dedicated GitHub known-fix issue URL map
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
 - `/llms-full.txt`: full answer-first text index

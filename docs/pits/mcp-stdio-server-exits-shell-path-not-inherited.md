@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/28
 
 ## Summary
 

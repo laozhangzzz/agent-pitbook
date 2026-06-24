@@ -5,6 +5,7 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/33
 
 ## Summary
 

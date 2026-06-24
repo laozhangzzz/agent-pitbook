@@ -5,6 +5,7 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/codex-workspace-root-moved-stale-state.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/6
 
 ## Summary
 

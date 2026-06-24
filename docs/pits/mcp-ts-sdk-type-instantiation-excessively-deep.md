@@ -5,6 +5,7 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-type-instantiation-excessively-deep.md
+GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/35
 
 ## Summary
 
