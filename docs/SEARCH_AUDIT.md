@@ -63,6 +63,7 @@ The search surface now includes:
 - GitHub issue #2: native searchable tracker for solved-problem queries and matching pit links
 - GitHub issues #3-#41: dedicated `known-fix` issue pages, one solved pit per issue, titled by exact problem query
 - `/SEARCH_SNAPSHOT_2026-06-24.md`: release-style exact-query snapshot with known-fix issue links
+- GitHub release `search-snapshot-2026-06-24`: release page plus downloadable JSONL/RSS/index assets
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
 - `/llms-full.txt`: full answer-first text index
@@ -87,6 +88,7 @@ Status after creating dedicated known-fix issues and deploying the RSS feed:
 - Pass: GitHub issue search for `Singleton McpServer causes Already connected to a transport` returns dedicated issue #5 before the broad tracker issue #2.
 - Pass: deployed Pages URLs expose `/feed.xml`, `/llms.txt`, `/ai.txt`, `/search-index.md`, and `/answer-queries.txt` with the known-fix issue search surface linked where appropriate.
 - Pass: `/SEARCH_SNAPSHOT_2026-06-24.md` lists all 39 known-fix issue URLs with exact solved-problem titles.
+- Pass: GitHub release `search-snapshot-2026-06-24` is public and includes the exact problem titles plus `pits.jsonl`, `answer-queries.jsonl`, `SEARCH_INDEX.md`, `SEARCH_SNAPSHOT_2026-06-24.md`, and `feed.xml` assets.
 - Pass: IndexNow accepted the current 99-URL sitemap submission.
 - Weak: GitHub code search via `gh search code` did not return the exact problem-title matches immediately after the commits, even though GitHub web search pages include matching text.
 - Fail/lagging: ordinary web search did not yet return the new Pages or GitHub issue surfaces immediately after deployment. This is expected indexing delay, but it means the objective is not complete until external search starts surfacing the records.

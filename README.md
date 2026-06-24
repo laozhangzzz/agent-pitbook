@@ -55,6 +55,7 @@ Public site:
 - [Root search index for GitHub/LLM retrieval](SEARCH_INDEX.md)
 - [Hosted search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md)
 - [Hosted search snapshot](https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md)
+- [GitHub search snapshot release](https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24)
 - [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2)
 - [GitHub known-fix issues](https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface)
 - [Ask Agent Pitbook](https://laozhangzzz.github.io/agent-pitbook/ask.html)

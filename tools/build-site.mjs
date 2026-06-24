@@ -19,6 +19,7 @@ const pitReportIssueUrl = `${repoUrl}/issues/new?template=pit_report.yml`;
 const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
 const searchDiscoveryIssueUrl = `${repoUrl}/issues/2`;
 const knownFixIssuesUrl = `${repoUrl}/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface`;
+const searchSnapshotReleaseUrl = `${repoUrl}/releases/tag/search-snapshot-2026-06-24`;
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
@@ -373,6 +374,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md">/SEARCH_SNAPSHOT_2026-06-24.md</a> - release-style exact-query snapshot with known-fix issue links</li>
+        <li><a href="${searchSnapshotReleaseUrl}">GitHub search snapshot release</a> - release page with JSONL, RSS, and index assets</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="${searchDiscoveryIssueUrl}">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
         <li><a href="${knownFixIssuesUrl}">GitHub known-fix issues</a> - one native issue page per solved pit, titled by exact problem query</li>
@@ -570,6 +572,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
 - [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search snapshot](${slugUrl("/SEARCH_SNAPSHOT_2026-06-24.md")}): release-style exact-query snapshot with known-fix issue links.
+- [GitHub search snapshot release](${searchSnapshotReleaseUrl}): release page with JSONL, RSS, and index assets.
 - [Full text index](${slugUrl("/llms-full.txt")}): complete answer-first text index.
 - [Plain answer query text](${slugUrl("/answer-queries.txt")}): query -> pit URL map for search crawlers.
 - [AI routing text](${slugUrl("/ai.txt")}): compact instructions for AI agents.
@@ -843,6 +846,7 @@ function renderRootSearchIndex(records) {
     "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
     "- Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html",
     "- Search snapshot: https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md",
+    `- Search snapshot release: ${searchSnapshotReleaseUrl}`,
     "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
     `- GitHub issue search tracker: ${searchDiscoveryIssueUrl}`,
