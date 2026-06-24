@@ -17,6 +17,7 @@ const repoUrl = "https://github.com/laozhangzzz/agent-pitbook";
 const siteSurfaceUpdatedAt = "2026-06-24";
 const pitReportIssueUrl = `${repoUrl}/issues/new?template=pit_report.yml`;
 const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
+const searchDiscoveryIssueUrl = `${repoUrl}/issues/2`;
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
@@ -364,6 +365,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
+        <li><a href="${searchDiscoveryIssueUrl}">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
       </ul>
@@ -556,6 +558,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
 - [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
+- [GitHub issue search tracker](${searchDiscoveryIssueUrl}): native GitHub issue surface for solved-problem queries.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): queries for existing public issue titles and solved-problem searches.
@@ -823,6 +826,7 @@ function renderRootSearchIndex(records) {
     "- Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html",
     "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
+    `- GitHub issue search tracker: ${searchDiscoveryIssueUrl}`,
     ""
   ];
 

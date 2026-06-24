@@ -35,6 +35,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Answer-first index](https://laozhangzzz.github.io/agent-pitbook/answers.html): known fixes arranged as problem -> root cause -> fix.
 - [Search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html): crawlable index of generated search phrases.
+- [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2): native GitHub issue surface for solved-problem queries.
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.
 - [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): queries for existing public issue titles and solved-problem searches.

@@ -7,6 +7,7 @@ Root-level answer-first search index for GitHub search, web search, and LLM retr
 - Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html
 - Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 - Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
+- GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
 
 ## Dependency install fails because the agent sandbox blocks network access
 

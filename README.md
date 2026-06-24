@@ -50,6 +50,7 @@ Public site:
 - [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
 - [Root search index for GitHub/LLM retrieval](SEARCH_INDEX.md)
 - [Hosted search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md)
+- [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2)
 - [Ask Agent Pitbook](https://laozhangzzz.github.io/agent-pitbook/ask.html)
 - [Hosted known fixes index](https://laozhangzzz.github.io/agent-pitbook/answers.html)
 - [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)

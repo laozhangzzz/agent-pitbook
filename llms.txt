@@ -12,6 +12,7 @@ Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted known fixes index: https://laozhangzzz.github.io/agent-pitbook/answers.html
 Hosted search index Markdown: https://laozhangzzz.github.io/agent-pitbook/search-index.md
 Hosted search query index: https://laozhangzzz.github.io/agent-pitbook/search-queries.html
+GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
 Hosted search terms feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl
 Hosted answer queries feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 Hosted unresolved pit template: https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json
