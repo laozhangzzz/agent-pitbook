@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-claude-code-commit-yields-claudec-odecomit-reordered-english-fragments-shoved-to-the-end-some-pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, pynput-mixed-cjk-ascii-type-out-of-order-macos, pynput mixed cjk ascii type out of order macos, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, ASCII fix, pynput ASCII, pynput ASCII fix, voice-to-claude ASCII, voice-to-claude ASCII fix, injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, verified, medium, voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix, how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause, pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix, voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, pure-English and pure-Chinese strings inject fine, how to fix pure-English and pure-Chinese strings inject fine, pure-English and pure-Chinese strings inject fine root cause, pynput pure-English and pure-Chinese strings inject fine, pynput pure-English and pure-Chinese strings inject fine fix, voice-to-claude pure-English and pure-Chinese strings inject fine, voice-to-claude pure-English and pure-Chinese strings inject fine fix, only mixed CJK+ASCII text scrambles">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-claude-code-commit-yields-claudec-odecomit-reordered-english-fragments-shoved-to-the-end-some-pynput-mixed-cjk-ascii-type-out-of-order-macos.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix",
+  "description": "Known fix. Problem: injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-claude-code-commit-yields-claudec-odecomit-reordered-english-fragments-shoved-to-the-end-some-pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, ASCII fix, pynput ASCII, pynput ASCII fix, voice-to-claude ASCII, voice-to-claude ASCII fix, injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause, pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix, voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped, voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "pynput",
+    "text-injection",
+    "unicode",
+    "cjk",
+    "race-condition",
+    "clipboard",
+    "voice",
+    "voice-to-claude",
+    "pynput-mixed-cjk-ascii-type-out-of-order-macos",
+    "pynput mixed cjk ascii type out of order macos",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause",
+    "how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+    "ASCII fix",
+    "pynput ASCII",
+    "pynput ASCII fix",
+    "voice-to-claude ASCII",
+    "voice-to-claude ASCII fix",
+    "injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/voice-to-claude-injecting-claude-code-commit-yields-claudec-odecomit-reordered-english-fragments-shoved-to-the-end-some-pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/41"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/41"
+}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix</h1>
+      <p class="lede">injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/41">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</p>
+    <p><strong>Root cause:</strong> On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.</p>
+    <p><strong>Fix first:</strong> Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.</p>
+    <p><strong>Verify:</strong> Inject the same mixed Chinese+English sentence after the change.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause</li><li>how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>ASCII fix</li><li>pynput ASCII</li><li>pynput ASCII fix</li><li>voice-to-claude ASCII</li><li>voice-to-claude ASCII fix</li><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause</li><li>pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix</li><li>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</li><li>voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix</li><li>pure-English and pure-Chinese strings inject fine</li><li>how to fix pure-English and pure-Chinese strings inject fine</li><li>pure-English and pure-Chinese strings inject fine root cause</li><li>pynput pure-English and pure-Chinese strings inject fine</li><li>pynput pure-English and pure-Chinese strings inject fine fix</li><li>voice-to-claude pure-English and pure-Chinese strings inject fine</li><li>voice-to-claude pure-English and pure-Chinese strings inject fine fix</li><li>only mixed CJK+ASCII text scrambles</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
