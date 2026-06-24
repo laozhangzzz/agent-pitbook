@@ -48,6 +48,8 @@ Public site:
 
 - [https://laozhangzzz.github.io/agent-pitbook/](https://laozhangzzz.github.io/agent-pitbook/)
 - [Hosted llms.txt](https://laozhangzzz.github.io/agent-pitbook/llms.txt)
+- [Root search index for GitHub/LLM retrieval](SEARCH_INDEX.md)
+- [Hosted search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md)
 - [Ask Agent Pitbook](https://laozhangzzz.github.io/agent-pitbook/ask.html)
 - [Hosted known fixes index](https://laozhangzzz.github.io/agent-pitbook/answers.html)
 - [Hosted search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html)
@@ -188,6 +190,7 @@ Canonical:
 
 Generated or rebuildable:
 
+- [SEARCH_INDEX.md](SEARCH_INDEX.md)
 - [feeds/pits.jsonl](feeds/pits.jsonl)
 - [feeds/search-terms.jsonl](feeds/search-terms.jsonl)
 - [feeds/answer-queries.jsonl](feeds/answer-queries.jsonl)

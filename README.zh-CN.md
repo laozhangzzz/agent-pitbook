@@ -183,6 +183,7 @@ node tools/indexnow-submit.mjs
 
 Agent 优先读取：
 
+- `SEARCH_INDEX.md`：根目录搜索索引，保留已解决问题、上游 issue 标题和精确报错
 - `feeds/index.jsonl`：轻量索引，先扫这个
 - `feeds/answer-queries.jsonl`：已知修复、上游 issue 标题、原始报错和 root cause/fix 查询
 - `feeds/pits.jsonl`：完整记录，按 id 取详情

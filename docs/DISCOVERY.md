@@ -26,6 +26,7 @@ How:
 - keep important terms in the repository description
 - use GitHub topics for the main agent/tool names and concepts
 - keep the README first screen focused on the problem
+- keep a root-level `SEARCH_INDEX.md` with exact solved-problem titles, upstream issue titles, and answer links
 - include exact tool names: Codex, Claude Code, Gemini CLI, Cursor, Aider, Qwen Code
 - include exact failure examples in pit titles and summaries
 
@@ -162,6 +163,7 @@ Current state:
 - GitHub broad-topic search is weak.
 - The repository has `llms.txt` and `AGENTS.md`.
 - The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
+- The repository root includes `SEARCH_INDEX.md` for GitHub search, web search, and LLM retrieval over exact solved-problem titles.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.

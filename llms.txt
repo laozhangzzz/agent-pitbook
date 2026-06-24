@@ -10,11 +10,13 @@ Public site: https://laozhangzzz.github.io/agent-pitbook/
 Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted known fixes index: https://laozhangzzz.github.io/agent-pitbook/answers.html
+Hosted search index Markdown: https://laozhangzzz.github.io/agent-pitbook/search-index.md
 Hosted search query index: https://laozhangzzz.github.io/agent-pitbook/search-queries.html
 Hosted search terms feed: https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl
 Hosted answer queries feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 Hosted unresolved pit template: https://laozhangzzz.github.io/agent-pitbook/feeds/unresolved-pit-template.json
 Hosted JSONL feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
+Root GitHub search index: https://github.com/laozhangzzz/agent-pitbook/blob/main/SEARCH_INDEX.md
 Source repository: https://github.com/laozhangzzz/agent-pitbook
 Chinese contribution entry: https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md
 
@@ -54,6 +56,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Indexes](indexes/): rebuildable Markdown navigation aids.
 - [Logs](logs/): append-only audit trail.
 - [Error Book](errors/): recurring system failures and correction rules.
+- [Root search index](SEARCH_INDEX.md): answer-first exact problem titles for GitHub search, web search, and LLM retrieval.
 - [Slim index](feeds/index.jsonl): one line per record (id, title, summary, symptoms, tags, status) — scan this first.
 - [Search terms feed](feeds/search-terms.jsonl): generated query phrases from symptoms, exact errors, tools, titles, and source clues.
 - [Answer queries feed](feeds/answer-queries.jsonl): answer-first known-fix queries from symptoms, exact errors, source issue titles, root causes, and fixes.

@@ -362,6 +362,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
+        <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
@@ -553,6 +554,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 
 - [Pit index](${slugUrl("/pits/")}): HTML index of all records (for humans).
 - [Answer-first index](${slugUrl("/answers.html")}): known fixes arranged as problem -> root cause -> fix.
+- [Search index Markdown](${slugUrl("/search-index.md")}): exact solved-problem titles and links for search engines and LLM retrieval.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
@@ -810,6 +812,43 @@ function renderAnswerMarkdown(records) {
   return `${lines.join("\n")}\n`;
 }
 
+function renderRootSearchIndex(records) {
+  const lines = [
+    "# Agent Pitbook Search Index",
+    "",
+    "Root-level answer-first search index for GitHub search, web search, and LLM retrieval. This file intentionally repeats solved-problem titles, upstream issue/PR titles, exact errors, root causes, and first fixes so a search-enabled model can find Agent Pitbook without digging through generated feeds.",
+    "",
+    "- Public site: https://laozhangzzz.github.io/agent-pitbook/",
+    "- LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt",
+    "- Known fixes: https://laozhangzzz.github.io/agent-pitbook/answers.html",
+    "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
+    "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
+    ""
+  ];
+
+  for (const record of records) {
+    const answer = recordAnswerSummary(record);
+    lines.push(`## ${primaryAnswerQuery(record)}`, "");
+    lines.push(`Pit ID: ${record.id}`);
+    lines.push(`Pit title: ${record.title}`);
+    lines.push(`Status: ${record.status}`);
+    lines.push(`Tools: ${(record.affected_tools ?? []).join(", ")}`);
+    lines.push(`HTML: ${slugUrl(recordHtmlPath(record))}`);
+    lines.push(`Markdown: ${slugUrl(recordMarkdownPath(record))}`);
+    lines.push("");
+    lines.push(`Problem: ${answer.problem}`);
+    lines.push(`Root cause: ${answer.root_cause}`);
+    lines.push(`Fix first: ${answer.fix}`);
+    lines.push(`Verify: ${answer.verification || "Run the verification steps in the full record."}`);
+    lines.push("");
+    lines.push("Search queries this answer targets:", "");
+    for (const query of recordAnswerQueries(record, 16)) lines.push(`- ${query}`);
+    lines.push("");
+  }
+
+  return `${lines.join("\n")}\n`;
+}
+
 function renderSearchQueryIndex(records) {
   const sections = records
     .map((record) => {
@@ -883,6 +922,7 @@ function renderSitemap(records) {
     ["/ask.md", siteLastmod],
     ["/answers.html", siteLastmod],
     ["/answers.md", siteLastmod],
+    ["/search-index.md", siteLastmod],
     ["/search-queries.html", siteLastmod],
     ["/search-queries.md", siteLastmod],
     ["/feeds/index.jsonl", siteLastmod],
@@ -933,8 +973,10 @@ fs.writeFileSync(path.join(docsDir, "ask.html"), renderAskPage());
 fs.writeFileSync(path.join(docsDir, "ask.md"), renderAskMarkdown());
 fs.writeFileSync(path.join(docsDir, "answers.html"), renderAnswerIndex(records));
 fs.writeFileSync(path.join(docsDir, "answers.md"), renderAnswerMarkdown(records));
+fs.writeFileSync(path.join(docsDir, "search-index.md"), renderRootSearchIndex(records));
 fs.writeFileSync(path.join(docsDir, "search-queries.html"), renderSearchQueryIndex(records));
 fs.writeFileSync(path.join(docsDir, "search-queries.md"), renderSearchQueryMarkdown(records));
+fs.writeFileSync(path.join(repoRoot, "SEARCH_INDEX.md"), renderRootSearchIndex(records));
 fs.writeFileSync(
   path.join(docsDir, "robots.txt"),
   `User-agent: *\nAllow: /\nSitemap: ${slugUrl("/sitemap.xml")}\n`
