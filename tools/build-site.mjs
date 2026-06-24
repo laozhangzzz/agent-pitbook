@@ -540,6 +540,8 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/q/">/q/</a> - exact-query landing pages with searched problem text in URL, title, and H1</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md">/SEARCH_SNAPSHOT_2026-06-24.md</a> - release-style exact-query snapshot with known-fix issue links</li>
+        <li><a href="/agent-pitbook/SEARCH_AUDIT.md">/SEARCH_AUDIT.md</a> - current evidence for what search surfaces pass or lag</li>
+        <li><a href="/agent-pitbook/DISCOVERY.md">/DISCOVERY.md</a> - discovery map for human and agent readers</li>
         <li><a href="${searchSnapshotReleaseUrl}">GitHub search snapshot release</a> - release page with JSONL, RSS, and index assets</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="${searchDiscoveryIssueUrl}">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
@@ -1381,6 +1383,8 @@ function renderSitemap(records, queryPages) {
     ["/answers.md", siteLastmod],
     ["/search-index.md", siteLastmod],
     ["/SEARCH_SNAPSHOT_2026-06-24.md", siteLastmod],
+    ["/SEARCH_AUDIT.md", siteLastmod],
+    ["/DISCOVERY.md", siteLastmod],
     ["/search-queries.html", siteLastmod],
     ["/search-queries.md", siteLastmod],
     ["/feeds/index.jsonl", siteLastmod],
