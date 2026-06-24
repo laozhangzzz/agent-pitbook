@@ -11,6 +11,7 @@ Hosted LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 Hosted full LLM text index: https://laozhangzzz.github.io/agent-pitbook/llms-full.txt
 Hosted plain answer query map: https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt
 Hosted AI routing text: https://laozhangzzz.github.io/agent-pitbook/ai.txt
+Hosted RSS feed: https://laozhangzzz.github.io/agent-pitbook/feed.xml
 Well-known LLM entrypoint mirror: https://laozhangzzz.github.io/agent-pitbook/.well-known/llms.txt
 Hosted ask protocol: https://laozhangzzz.github.io/agent-pitbook/ask.md
 Hosted known fixes index: https://laozhangzzz.github.io/agent-pitbook/answers.html
@@ -65,6 +66,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Slim index](feeds/index.jsonl): one line per record (id, title, summary, symptoms, tags, status) — scan this first.
 - [Search terms feed](feeds/search-terms.jsonl): generated query phrases from symptoms, exact errors, tools, titles, and source clues.
 - [Answer queries feed](feeds/answer-queries.jsonl): answer-first known-fix queries from symptoms, exact errors, source issue titles, root causes, and fixes.
+- [RSS feed](docs/feed.xml): known fixes as feed items with exact problem titles for crawlers, feed readers, and monitors.
 - [Unresolved pit template](feeds/unresolved-pit-template.json): machine-readable report template for agents.
 - [JSONL feed](feeds/pits.jsonl): one full machine-readable pit record per line — fetch by id after scanning the index.
 - [Contributing guide](CONTRIBUTING.md): quality rules for new records.

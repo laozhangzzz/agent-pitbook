@@ -39,6 +39,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Full text index](https://laozhangzzz.github.io/agent-pitbook/llms-full.txt): complete answer-first text index.
 - [Plain answer query text](https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt): query -> pit URL map for search crawlers.
 - [AI routing text](https://laozhangzzz.github.io/agent-pitbook/ai.txt): compact instructions for AI agents.
+- [RSS feed](https://laozhangzzz.github.io/agent-pitbook/feed.xml): known fixes as feed items with exact problem titles.
 - [Search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html): crawlable index of generated search phrases.
 - [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2): native GitHub issue surface for solved-problem queries.
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.

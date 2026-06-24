@@ -289,6 +289,7 @@ function pageShell({ title, description, canonicalPath, body, keywords = [], jso
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:site_name" content="Agent Pitbook">${keywordMeta}
   <link rel="canonical" href="${canonicalUrl}">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
   ${jsonLdBlocks}
 </head>
@@ -361,6 +362,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/ai.txt">/ai.txt</a> - short AI-agent routing file</li>
         <li><a href="/agent-pitbook/answer-queries.txt">/answer-queries.txt</a> - plain-text solved-problem query map</li>
         <li><a href="/agent-pitbook/.well-known/llms.txt">/.well-known/llms.txt</a> - well-known mirror of the LLM entrypoint</li>
+        <li><a href="/agent-pitbook/feed.xml">/feed.xml</a> - RSS feed of known fixes and exact problem titles</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
         <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
         <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
@@ -567,6 +569,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [Full text index](${slugUrl("/llms-full.txt")}): complete answer-first text index.
 - [Plain answer query text](${slugUrl("/answer-queries.txt")}): query -> pit URL map for search crawlers.
 - [AI routing text](${slugUrl("/ai.txt")}): compact instructions for AI agents.
+- [RSS feed](${slugUrl("/feed.xml")}): known fixes as feed items with exact problem titles.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [GitHub issue search tracker](${searchDiscoveryIssueUrl}): native GitHub issue surface for solved-problem queries.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
@@ -928,6 +931,42 @@ function renderAiText(records) {
   return `${lines.join("\n")}\n`;
 }
 
+function renderRssFeed(records) {
+  const siteLastmod = maxDate(latestUpdatedAt(records), siteSurfaceUpdatedAt);
+  const items = records
+    .map((record) => {
+      const answer = recordAnswerSummary(record);
+      const link = slugUrl(recordHtmlPath(record));
+      const queries = recordAnswerQueries(record, 8).join("; ");
+      const description = [
+        `Problem: ${answer.problem}`,
+        `Root cause: ${answer.root_cause}`,
+        `Fix first: ${answer.fix}`,
+        `Queries: ${queries}`
+      ].join("\n");
+      return `    <item>
+      <title>${escapeHtml(`Fix: ${primaryAnswerQuery(record)}`)}</title>
+      <link>${escapeHtml(link)}</link>
+      <guid isPermaLink="true">${escapeHtml(link)}</guid>
+      <pubDate>${new Date(`${record.updated_at}T00:00:00Z`).toUTCString()}</pubDate>
+      <description>${escapeHtml(description)}</description>
+    </item>`;
+    })
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Agent Pitbook known fixes</title>
+    <link>${escapeHtml(slugUrl("/"))}</link>
+    <description>Answer-first search feed for coding-agent and MCP failure fixes.</description>
+    <lastBuildDate>${new Date(`${siteLastmod}T00:00:00Z`).toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+}
+
 function renderSearchQueryIndex(records) {
   const sections = records
     .map((record) => {
@@ -1000,6 +1039,7 @@ function renderSitemap(records) {
     ["/llms-full.txt", siteLastmod],
     ["/ai.txt", siteLastmod],
     ["/answer-queries.txt", siteLastmod],
+    ["/feed.xml", siteLastmod],
     ["/.well-known/llms.txt", siteLastmod],
     ["/.well-known/ai.txt", siteLastmod],
     ["/ask.html", siteLastmod],
@@ -1057,6 +1097,7 @@ fs.writeFileSync(path.join(docsDir, "llms.txt"), renderLlms(records));
 fs.writeFileSync(path.join(docsDir, "llms-full.txt"), renderRootSearchIndex(records));
 fs.writeFileSync(path.join(docsDir, "ai.txt"), renderAiText(records));
 fs.writeFileSync(path.join(docsDir, "answer-queries.txt"), renderAnswerQueriesText(records));
+fs.writeFileSync(path.join(docsDir, "feed.xml"), renderRssFeed(records));
 fs.writeFileSync(path.join(wellKnownDir, "llms.txt"), renderLlms(records));
 fs.writeFileSync(path.join(wellKnownDir, "ai.txt"), renderAiText(records));
 fs.writeFileSync(path.join(docsDir, "ask.html"), renderAskPage());

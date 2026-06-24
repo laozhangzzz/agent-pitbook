@@ -51,6 +51,7 @@ Public site:
 - [Hosted full LLM text index](https://laozhangzzz.github.io/agent-pitbook/llms-full.txt)
 - [Hosted plain answer query map](https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt)
 - [Hosted AI routing text](https://laozhangzzz.github.io/agent-pitbook/ai.txt)
+- [Hosted RSS feed](https://laozhangzzz.github.io/agent-pitbook/feed.xml)
 - [Root search index for GitHub/LLM retrieval](SEARCH_INDEX.md)
 - [Hosted search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md)
 - [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2)
