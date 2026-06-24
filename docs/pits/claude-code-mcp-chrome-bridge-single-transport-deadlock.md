@@ -19,10 +19,6 @@ mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service 
 
 ## Queries This Answers
 
-- Claude Code chrome-bridge MCP gets stuck after one transport connects
-- Claude Code chrome-bridge MCP gets stuck after one transport connects fix
-- Claude Code chrome-bridge MCP gets stuck after one transport connects root cause
-- how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects
 - Singleton McpServer causes Already connected to a transport
 - Singleton McpServer causes Already connected to a transport fix
 - Singleton McpServer causes Already connected to a transport root cause
@@ -35,12 +31,16 @@ mcp-chrome-bridge can repeatedly appear broken because its HTTP/SSE MCP service 
 - service can only connect once after Chrome starts
 - service can only connect once after Chrome starts fix
 - service can only connect once after Chrome starts root cause
-- HTTP 500 or Already connected to a transport until the native host is restarted or the br
-- HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the br fix
+- Claude Code chrome-bridge MCP gets stuck after one transport connects
+- Claude Code chrome-bridge MCP gets stuck after one transport connects fix
+- Claude Code chrome-bridge MCP gets stuck after one transport connects root cause
+- how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects
+- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
+- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
+- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
+- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
+- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
+- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
 - HTTP/SSE
 - HTTP/SSE fix
 

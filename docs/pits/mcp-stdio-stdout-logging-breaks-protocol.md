@@ -19,13 +19,13 @@ A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol te
 
 ## Queries This Answers
 
+- SyntaxError in stdio deserializeMessage a console.log in the server triggers it
+- SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix
+- SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause
 - how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
-- SyntaxError in stdio deserializeMessage a console.log in the server triggers it
-- SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix
-- SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause
 - JSON-RPC
 - JSON-RPC fix
 - mcp-server JSON-RPC

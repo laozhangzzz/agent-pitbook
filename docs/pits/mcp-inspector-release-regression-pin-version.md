@@ -19,16 +19,16 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 ## Queries This Answers
 
-- MCP Inspector breaks after an upgrade; pin a known-good version
-- MCP Inspector breaks after an upgrade; pin a known-good version fix
-- MCP Inspector breaks after an upgrade; pin a known-good version root cause
-- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause
 - Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
 - Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix
 - Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause
+- MCP Inspector breaks after an upgrade; pin a known-good version
+- MCP Inspector breaks after an upgrade; pin a known-good version fix
+- MCP Inspector breaks after an upgrade; pin a known-good version root cause
+- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
 - HTTP fix
 - mcp-inspector HTTP
 - mcp-inspector HTTP fix
@@ -68,8 +68,8 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 - modelcontextprotocol/inspector issue 951: Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0
 - Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
-- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix
+- sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause
 
 ## Affected Tools
 

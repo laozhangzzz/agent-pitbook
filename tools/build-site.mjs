@@ -137,6 +137,10 @@ function renderFastAnswer(record) {
   </div>`;
 }
 
+function primaryAnswerQuery(record) {
+  return recordAnswerQueries(record, 1)[0] || record.title;
+}
+
 function unique(items) {
   return [...new Set(items.filter(Boolean))];
 }
@@ -247,7 +251,7 @@ function pitJsonLd(record) {
   return {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    headline: `Fix: ${record.title}`,
+    headline: `Fix: ${primaryAnswerQuery(record)}`,
     description: `Problem: ${answer.problem} Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
     url: slugUrl(recordHtmlPath(record)),
     dateCreated: record.created_at,
@@ -381,13 +385,14 @@ function renderPit(record) {
   const searchTerms = recordSearchTerms(record, 24);
   const answerQueries = recordAnswerQueries(record, 24);
   const answer = recordAnswerSummary(record);
+  const primaryQuery = primaryAnswerQuery(record);
   const optionalSections = [
     record.workarounds?.length ? `<section><h2>Workarounds</h2>${listItems(record.workarounds)}</section>` : "",
     record.anti_patterns?.length ? `<section><h2>Anti-patterns</h2>${listItems(record.anti_patterns)}</section>` : ""
   ].join("");
 
   return pageShell({
-    title: `Fix: ${record.title} - Agent Pitbook`,
+    title: `Fix: ${primaryQuery} - Agent Pitbook`,
     description: `Root cause: ${answer.root_cause} Fix: ${answer.fix}`,
     canonicalPath: recordHtmlPath(record),
     keywords: recordKeywords(record),

@@ -19,13 +19,13 @@ With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the 
 
 ## Queries This Answers
 
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause
 - how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
-- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
-- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix
-- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause
 - HTTP fix
 - mcp-inspector HTTP
 - mcp-inspector HTTP fix
@@ -69,7 +69,7 @@ With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the 
 - Use the SSE transport temporarily if it handles the OAuth challenge while you upgrade
 - modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
 - When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
-- how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix
 
 ## Affected Tools
 

@@ -19,16 +19,16 @@ Some early @modelcontextprotocol/* reference servers (server-postgres, server-gi
 
 ## Queries This Answers
 
-- Several official reference MCP servers are archived; their bugs will not be fixed
-- Several official reference MCP servers are archived; their bugs will not be fixed fix
-- Several official reference MCP servers are archived; their bugs will not be fixed root cause
-- how to fix Several official reference MCP servers are archived; their bugs will not be fixed
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server fix
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause
+- Several official reference MCP servers are archived; their bugs will not be fixed
+- Several official reference MCP servers are archived; their bugs will not be fixed fix
+- Several official reference MCP servers are archived; their bugs will not be fixed root cause
+- how to fix Several official reference MCP servers are archived; their bugs will not be fixed
 - README fix
 - mcp-server README
 - mcp-server README fix
@@ -68,8 +68,8 @@ Some early @modelcontextprotocol/* reference servers (server-postgres, server-gi
 - Archived packages may remain published, so an agent can install and run a server whose bugs will never be fixed
 - Filing or chasing bugs against an archived reference server
 - Assuming an npm package is maintained just because it installs and runs
-- Use a community- or vendor-maintained server for the same capability
 - modelcontextprotocol/servers issue 1219: server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived
+- modelcontextprotocol/servers issue 1097: maintainer deprecation notice that server-github development moved to github/github-mcp-server
 
 ## Affected Tools
 

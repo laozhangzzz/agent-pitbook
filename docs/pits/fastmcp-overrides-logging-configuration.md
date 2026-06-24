@@ -19,13 +19,13 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 
 ## Queries This Answers
 
+- Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
 - FastMCP overrides your apps logging configuration on init duplicate or lost logs
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
 - how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
-- Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
-- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
-- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
 - log messages become duplicated after the FastMCP server is created
 - how to fix log messages become duplicated after the FastMCP server is created
 - log messages become duplicated after the FastMCP server is created root cause
@@ -68,8 +68,8 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 - Add a FastMCP logger entry to your dictConfig and re-apply it after building the server
 - modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
 - Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
-- how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
 - Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
+- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
 
 ## Affected Tools
 

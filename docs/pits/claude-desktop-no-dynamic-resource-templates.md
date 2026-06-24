@@ -19,13 +19,13 @@ A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not app
 
 ## Queries This Answers
 
+- dynamic resource not working in Claude desktop
+- dynamic resource not working in Claude desktop fix
+- dynamic resource not working in Claude desktop root cause
 - Claude Desktop does not list dynamic MCP resource templates only static resources
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
 - how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
-- dynamic resource not working in Claude desktop
-- dynamic resource not working in Claude desktop fix
-- dynamic resource not working in Claude desktop root cause
 - a static resource works in Claude Desktop but a parameterized/templated resource does not show
 - how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show
 - a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause
@@ -68,8 +68,8 @@ A dynamic MCP resource with a URI template (e.g. greeting://{name}) does not app
 - Model parameterized data as tools instead of resource templates for Claude Desktop
 - modelcontextprotocol/python-sdk issue 263: dynamic resource not working in Claude desktop maintainer confirms Desktop does not support dynamic resources; client calls resources/list not resources/templates/list
 - dynamic resource not working in Claude desktop
-- how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
 - dynamic resource not working in Claude desktop fix
+- dynamic resource not working in Claude desktop root cause
 
 ## Affected Tools
 

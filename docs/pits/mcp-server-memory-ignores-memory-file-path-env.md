@@ -19,13 +19,13 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 ## Queries This Answers
 
+- Environment variables not respected in @modelcontextprotocol/server-memory package
+- Environment variables not respected in @modelcontextprotocol/server-memory package fix
+- Environment variables not respected in @modelcontextprotocol/server-memory package root cause
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause
 - how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
-- Environment variables not respected in @modelcontextprotocol/server-memory package
-- Environment variables not respected in @modelcontextprotocol/server-memory package fix
-- Environment variables not respected in @modelcontextprotocol/server-memory package root cause
 - MEMORY_FILE_PATH
 - MEMORY_FILE_PATH fix
 - claude-desktop MEMORY_FILE_PATH

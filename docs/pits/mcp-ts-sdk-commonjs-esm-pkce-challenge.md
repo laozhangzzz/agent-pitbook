@@ -19,30 +19,30 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 
 ## Queries This Answers
 
+- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
+- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix
+- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause
 - how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
-- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
-- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix
-- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause
 - ERR_REQUIRE_ESM
 - ERR_REQUIRE_ESM fix
 - mcp-server ERR_REQUIRE_ESM
 - mcp-server ERR_REQUIRE_ESM fix
 - typescript-sdk ERR_REQUIRE_ESM
 - typescript-sdk ERR_REQUIRE_ESM fix
-- ESM- fix
-- mcp-server ESM-
-- mcp-server ESM- fix
-- typescript-sdk ESM-
-- typescript-sdk ESM- fix
 - runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
 - how to fix runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
 - runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead root cause
 - mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
 - mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead fix
 - typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
+- typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead fix
+- the project is CommonJS often NestJS
+- how to fix the project is CommonJS often NestJS
+- the project is CommonJS (often NestJS) root cause
+- mcp-server the project is CommonJS often NestJS
 
 ## Common Search Queries
 
@@ -69,7 +69,7 @@ Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mc
 - modelcontextprotocol/typescript-sdk issue 217: @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
 - crouchcd/pkce-challenge release 5.0.0 referenced as a compatible version
 - @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
-- how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
+- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix
 
 ## Affected Tools
 

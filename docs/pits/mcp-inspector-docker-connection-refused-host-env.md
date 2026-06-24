@@ -19,13 +19,13 @@ MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localh
 
 ## Queries This Answers
 
+- Docker container connection refused HOST + ALLOWED_ORIGINS workaround
+- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix
+- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause
 - how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
-- Docker container connection refused HOST + ALLOWED_ORIGINS workaround
-- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix
-- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause
 - HOST fix
 - mcp-inspector HOST
 - mcp-inspector HOST fix
@@ -69,7 +69,7 @@ MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localh
 - Run Inspector directly on the host instead of in a container if env configuration is not possible
 - modelcontextprotocol/inspector issue 828: Docker container connection refused HOST + ALLOWED_ORIGINS workaround
 - Docker container connection refused HOST + ALLOWED_ORIGINS workaround
-- how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
+- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix
 
 ## Affected Tools
 

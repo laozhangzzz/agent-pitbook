@@ -19,13 +19,13 @@ In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'to
 
 ## Queries This Answers
 
+- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
+- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix
+- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause
 - how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
-- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
-- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix
-- VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause
 - tools: [github/*] produces Unknown tool
 - how to fix 'tools': ['github/*'] produces Unknown tool
 - tools: [github/*] produces Unknown tool root cause
@@ -66,9 +66,9 @@ In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'to
 - Keep using the bare 'github' name until the aliasing is consistent
 - github/github-mcp-server issue 1402: VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
-- how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause
+- how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
 - how to fix 'tools': ['github/*'] produces Unknown tool
 
 ## Affected Tools

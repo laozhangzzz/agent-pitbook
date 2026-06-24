@@ -19,13 +19,13 @@ Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/
 
 ## Queries This Answers
 
+- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
+- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix
+- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT fix
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause
 - how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
-- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
-- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix
-- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause
 - does not support dynamic client registration
 - does not support dynamic client registration fix
 - claude-code does not support dynamic client registration
@@ -69,7 +69,7 @@ Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/
 - Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint
 - anthropics/claude-code issue 3433: Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
 - Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
-- how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
+- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix
 
 ## Affected Tools
 

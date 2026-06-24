@@ -19,25 +19,25 @@ Schema validation in @modelcontextprotocol/sdk (e.g. elicitation) fails on Cloud
 
 ## Queries This Answers
 
+- Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
+- Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix
+- Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause
 - how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
-- Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
-- Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix
-- Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Functio
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Functio fix
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Functio
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Functio fix
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Functio
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Functio fix
+- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
+- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
+- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
+- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
+- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
+- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
 - EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
 - how to fix EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
 - EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile root cause
@@ -68,8 +68,8 @@ Schema validation in @modelcontextprotocol/sdk (e.g. elicitation) fails on Cloud
 - modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
 - Cloudflare changelog: MCP elicitation support on McpAgent
 - Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
-- how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
 - Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix
+- Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause
 
 ## Affected Tools
 

@@ -19,13 +19,13 @@ uvx mcp-server-time can crash with a zoneinfo load error when the local timezone
 
 ## Queries This Answers
 
+- Time server fails under EDT timezone use --local-timezone with an IANA name
+- Time server fails under EDT timezone (use --local-timezone with an IANA name) fix
+- Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause
 - how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
-- Time server fails under EDT timezone use --local-timezone with an IANA name
-- Time server fails under EDT timezone (use --local-timezone with an IANA name) fix
-- Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause
 - EDT/PDT/CEST
 - EDT/PDT/CEST fix
 - mcp-server EDT/PDT/CEST
@@ -67,9 +67,9 @@ uvx mcp-server-time can crash with a zoneinfo load error when the local timezone
 - Set the process/system timezone to a canonical IANA name
 - modelcontextprotocol/servers issue 786: Time server fails under EDT timezone use --local-timezone with an IANA name
 - Time server fails under EDT timezone use --local-timezone with an IANA name
-- how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 - Time server fails under EDT timezone (use --local-timezone with an IANA name) fix
 - Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause
+- how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 
 ## Affected Tools
 

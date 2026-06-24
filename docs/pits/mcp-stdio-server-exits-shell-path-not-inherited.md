@@ -19,10 +19,6 @@ A stdio MCP server that runs in the terminal but fails under a desktop client wi
 
 ## Queries This Answers
 
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
-- how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
 - MCP Servers Dont Work with NVM
 - MCP Servers Dont Work with NVM fix
 - MCP Servers Dont Work with NVM root cause
@@ -32,6 +28,10 @@ A stdio MCP server that runs in the terminal but fails under a desktop client wi
 - Server transport closed unexpectedly, process exiting early write EPIPE
 - Server transport closed unexpectedly, process exiting early (write EPIPE) fix
 - Server transport closed unexpectedly, process exiting early (write EPIPE) root cause
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
+- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
+- how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
 - PATH fix
 - claude-desktop PATH
 - claude-desktop PATH fix

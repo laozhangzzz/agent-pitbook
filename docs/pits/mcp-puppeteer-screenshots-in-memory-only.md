@@ -19,13 +19,13 @@ The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP res
 
 ## Queries This Answers
 
+- Puppeteer MCP Server Missing Screenshots
+- Puppeteer MCP Server Missing Screenshots fix
+- Puppeteer MCP Server Missing Screenshots root cause
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause
 - how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
-- Puppeteer MCP Server Missing Screenshots
-- Puppeteer MCP Server Missing Screenshots fix
-- Puppeteer MCP Server Missing Screenshots root cause
 - puppeteer_screenshot reports success but no image file appears on disk
 - how to fix puppeteer_screenshot reports success but no image file appears on disk
 - puppeteer_screenshot reports success but no image file appears on disk root cause
@@ -68,8 +68,8 @@ The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP res
 - Persist the in-memory image yourself if a file is required downstream
 - modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots maintainer: screenshots are stored in memory only
 - Puppeteer MCP Server Missing Screenshots
-- how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 - Puppeteer MCP Server Missing Screenshots fix
+- Puppeteer MCP Server Missing Screenshots root cause
 
 ## Affected Tools
 

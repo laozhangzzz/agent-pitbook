@@ -19,16 +19,16 @@ MCP error -32000: Connection closed is a generic 'the stdio server process did n
 
 ## Queries This Answers
 
-- MCP error -32000: Connection closed means the stdio server died before the handshake
-- MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- MCP error -32000: Connection closed means the stdio server died before the handshake root cause
-- how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause
 - Fix 'Client Closed' Error by Correcting npm Config
 - Fix 'Client Closed' Error by Correcting npm Config fix
 - Fix 'Client Closed' Error by Correcting npm Config root cause
+- MCP error -32000: Connection closed means the stdio server died before the handshake
+- MCP error -32000: Connection closed means the stdio server died before the handshake fix
+- MCP error -32000: Connection closed means the stdio server died before the handshake root cause
+- how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
 - claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake
 - claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix
 - cursor MCP error -32000: Connection closed means the stdio server died before the handshake
@@ -37,12 +37,12 @@ MCP error -32000: Connection closed is a generic 'the stdio server process did n
 - cline MCP error -32000: Connection closed means the stdio server died before the handshake fix
 - mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake
 - mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a prot fix
+- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
+- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
+- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
+- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
+- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
+- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
 
 ## Common Search Queries
 

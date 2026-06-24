@@ -19,13 +19,13 @@ Using MCP SDK tool types (e.g. ToolCallback<Args>) with Zod can trigger 'Type in
 
 ## Queries This Answers
 
+- Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
+- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix
+- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause
 - how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
-- Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
-- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix
-- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 - how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause
@@ -66,9 +66,9 @@ Using MCP SDK tool types (e.g. ToolCallback<Args>) with Zod can trigger 'Type in
 - Pin a known-good SDK + Zod pair until you can update tsconfig/Zod
 - modelcontextprotocol/typescript-sdk issue 494: 'Type instantiation is excessively deep' when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
 - Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
-- how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix
 - Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause
+- how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 
 ## Affected Tools

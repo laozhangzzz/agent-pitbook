@@ -19,13 +19,13 @@ A FastMCP/MCP Python SDK streamable-HTTP or SSE server behind a proxy/gateway/co
 
 ## Queries This Answers
 
+- Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection
+- Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) fix
+- Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) root cause
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause
 - how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
-- Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection
-- Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) fix
-- Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) root cause
 - /MCP
 - /MCP fix
 - mcp-server /MCP

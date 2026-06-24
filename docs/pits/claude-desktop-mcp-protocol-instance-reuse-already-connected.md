@@ -19,13 +19,13 @@ Some Claude Desktop builds showed 'Could not connect to MCP server' toasts on la
 
 ## Queries This Answers
 
+- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
+- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix
+- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release root cause
 - Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
 - Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) fix
 - Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) root cause
 - how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
-- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
-- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix
-- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release root cause
 - startup toasts: Could not connect to MCP server <name>
 - how to fix startup toasts: Could not connect to MCP server <name>
 - startup toasts: Could not connect to MCP server <name> root cause
@@ -69,7 +69,7 @@ Some Claude Desktop builds showed 'Could not connect to MCP server' toasts on la
 - Ignore the toast for internal servers that still function, until you can upgrade
 - anthropics/claude-code issue 27390: Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
 - Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
-- how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
+- Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix
 
 ## Affected Tools
 

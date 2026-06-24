@@ -19,19 +19,19 @@ RuntimeError: Received request before initialization was complete from an SSE MC
 
 ## Queries This Answers
 
+- MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
+- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix
+- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause
 - SSE MCP server: Received request before initialization was complete
 - SSE MCP server: Received request before initialization was complete fix
 - SSE MCP server: Received request before initialization was complete root cause
 - how to fix SSE MCP server: Received request before initialization was complete
-- MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
-- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix
-- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
+- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
+- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
+- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
 - RuntimeError: Received request before initialization was complete on tools/list or a tool call
 - RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
 - mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call
@@ -68,8 +68,8 @@ RuntimeError: Received request before initialization was complete from an SSE MC
 - Reconnect the client after each server restart
 - modelcontextprotocol/python-sdk issue 423: MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
 - MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
-- how to fix SSE MCP server: Received request before initialization was complete
 - MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix
+- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause
 
 ## Affected Tools
 

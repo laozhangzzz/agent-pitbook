@@ -19,16 +19,16 @@ On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''np
 
 ## Queries This Answers
 
-- On Windows an MCP server launched with npx needs a cmd /c wrapper
-- On Windows an MCP server launched with npx needs a cmd /c wrapper fix
-- On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
-- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
 - Windows npx launch failure with garbled 'not recognized' error -32000
 - Windows npx launch failure with garbled 'not recognized' error (-32000) fix
 - Windows npx launch failure with garbled 'not recognized' error (-32000) root cause
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause
+- On Windows an MCP server launched with npx needs a cmd /c wrapper
+- On Windows an MCP server launched with npx needs a cmd /c wrapper fix
+- On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
+- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
 - ENOENT fix
 - claude-desktop ENOENT
 - claude-desktop ENOENT fix

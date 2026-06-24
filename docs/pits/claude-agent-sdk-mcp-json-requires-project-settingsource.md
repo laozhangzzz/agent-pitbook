@@ -19,13 +19,13 @@ Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP s
 
 ## Queries This Answers
 
+- SDK doesnt read from .mcp.json until the CLI is run in the cwd
+- SDK doesnt read from .mcp.json until the CLI is run in the cwd fix
+- SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause
 - Claude Agent SDK does not load .mcp.json unless settingSources includes project
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" fix
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" root cause
 - how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd fix
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause
 - the SDK reports no MCP servers even though .mcp.json is in the working directory
 - how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory
 - the SDK reports no MCP servers even though .mcp.json is in the working directory root cause
@@ -68,8 +68,8 @@ Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP s
 - anthropics/claude-code issue 13107: SDK doesnt read from .mcp.json until the CLI is run in the cwd maintainer notes settingSources project requirement; fix shipped in a later release
 - Claude Agent SDK settingSources documentation
 - SDK doesnt read from .mcp.json until the CLI is run in the cwd
-- how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
 - SDK doesnt read from .mcp.json until the CLI is run in the cwd fix
+- SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause
 
 ## Affected Tools
 

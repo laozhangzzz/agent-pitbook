@@ -19,30 +19,30 @@ The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long to
 
 ## Queries This Answers
 
+- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
+- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix
+- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause
 - how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
-- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
-- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix
-- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause
 - MCP error -32001: Request timed out even with server progress
 - MCP error -32001: Request timed out even with server progress fix
 - mcp-server MCP error -32001: Request timed out even with server progress
 - mcp-server MCP error -32001: Request timed out even with server progress fix
 - typescript-sdk MCP error -32001: Request timed out even with server progress
 - typescript-sdk MCP error -32001: Request timed out even with server progress fix
-- MCP error -32001: Request timed out with data: { timeout: 60000
+- MCP error -32001: Request timed out with data: { timeout: 60000 }
 - MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000
+- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }
 - mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000
+- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 }
 - typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000
+- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 - McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000
+- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 - mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000
+- typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 
 ## Common Search Queries
 
@@ -57,7 +57,7 @@ The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long to
 - progress
 - long-running
 - mcp-server
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000
+- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 - the tool finishes fine from the Python client but times out from the TS/JS client
 - setting a timeout on connect alone does not help
 - the server sends periodic progress yet the client gives up at 60s
@@ -69,7 +69,7 @@ The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long to
 - Break very long operations into shorter calls if you cannot stream progress
 - modelcontextprotocol/typescript-sdk issue 245: mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
 - mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
-- how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
+- mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix
 
 ## Affected Tools
 

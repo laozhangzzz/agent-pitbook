@@ -142,7 +142,7 @@ function normalizeSearchTerm(value) {
   let term = String(value ?? "")
     .replace(/https?:\/\/(?!(?:127\.0\.0\.1|0\.0\.0\.0|localhost)\b)\S+/g, " ")
     .replace(/\s+/g, " ")
-    .replace(/^[,.;:!?()[\]{}"'“”`]+|[,.;:!?()[\]{}"'“”`]+$/g, "")
+    .replace(/^[,.;:!?()[\]"'“”`]+|[,.;:!?()[\]"'“”`]+$/g, "")
     .trim();
   if ((term.match(/"/g) ?? []).length % 2 === 1) term = term.replaceAll('"', "");
   if ((term.match(/'/g) ?? []).length % 2 === 1) term = term.replaceAll("'", "");
@@ -170,6 +170,7 @@ function pushTerm(out, seen, value) {
   if (term.length < 4 || term.length > 220) return;
   if (lowValueWords.has(lower)) return;
   if (/^\d+$/.test(term)) return;
+  if (tokens.some((token) => /^[a-z0-9_/-]+-$/i.test(token))) return;
   if (/\sfix$/.test(lower)) {
     const withoutFix = lower.replace(/\s+fix$/, "");
     const fixTokens = withoutFix.split(/\s+/);
@@ -195,10 +196,10 @@ function extractErrorLikeTerms(text) {
   const value = String(text ?? "");
   const out = [];
   const patterns = [
-    /\bMCP error\s+-?\d+(?::\s*[^.;\n]{3,90})?/gi,
-    /\bHTTP\s+\d{3}\b(?:\s+[^.;\n]{3,80})?/gi,
+    /\bMCP error\s+-?\d+(?::\s*[^.;\n]{3,160})?/gi,
+    /\bHTTP\s+\d{3}\b(?:\s+[^.;\n]{3,140})?/gi,
     /\bERR_[A-Z0-9_]+\b/g,
-    /\b[A-Z][A-Za-z]+Error:\s*[^.;\n]{3,90}/g,
+    /\b[A-Z][A-Za-z]+Error:\s*[^.;\n]{3,160}/g,
     /\b[A-Z0-9_/-]{4,}\b/g,
     /["“”`]([^"“”`]{4,120})["“”`]/g
   ];
@@ -253,16 +254,16 @@ export function recordAnswerQueries(record, limit = 24) {
     ...sourceTitles.flatMap((title) => extractErrorLikeTerms(title))
   ]);
 
-  pushTerm(out, seen, record.title);
-  pushTerm(out, seen, `${record.title} fix`);
-  pushTerm(out, seen, `${record.title} root cause`);
-  pushTerm(out, seen, `how to fix ${record.title}`);
-
   for (const title of sourceTitles.slice(0, 8)) {
     pushTerm(out, seen, title);
     pushTerm(out, seen, `${title} fix`);
     pushTerm(out, seen, `${title} root cause`);
   }
+
+  pushTerm(out, seen, record.title);
+  pushTerm(out, seen, `${record.title} fix`);
+  pushTerm(out, seen, `${record.title} root cause`);
+  pushTerm(out, seen, `how to fix ${record.title}`);
 
   for (const error of errorTerms.slice(0, 8)) {
     pushTerm(out, seen, error);

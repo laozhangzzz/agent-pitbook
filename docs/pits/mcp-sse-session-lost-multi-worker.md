@@ -19,13 +19,13 @@ An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: S
 
 ## Queries This Answers
 
+- MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
+- MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) fix
+- MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) root cause
 - MCP SSE session lost across workers/pods: Could not find session for ID 404
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) fix
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause
 - how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
-- MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
-- MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) fix
-- MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) root cause
 - POST fix
 - mcp-server POST
 - mcp-server POST fix

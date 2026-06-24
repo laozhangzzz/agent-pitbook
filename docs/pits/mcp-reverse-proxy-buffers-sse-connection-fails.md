@@ -19,13 +19,13 @@ A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize,
 
 ## Queries This Answers
 
+- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
+- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix
+- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause
 - how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
-- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
-- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix
-- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause
 - HTTP fix
 - claude-desktop HTTP
 - claude-desktop HTTP fix
@@ -69,7 +69,7 @@ A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize,
 - Expose the MCP endpoint directly (non-proxied) for testing to confirm buffering is the cause
 - anthropics/claude-code issue 5826: Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
 - Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
-- how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
+- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix
 
 ## Affected Tools
 

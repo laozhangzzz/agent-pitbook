@@ -19,16 +19,16 @@ On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - 
 
 ## Queries This Answers
 
-- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
-- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
-- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
-- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 - Filesystem server access denied for allowed paths on Windows
 - Filesystem server access denied for allowed paths on Windows fix
 - Filesystem server access denied for allowed paths on Windows root cause
 - step toward fixing Windows path validation
 - step toward fixing Windows path validation fix
 - step toward fixing Windows path validation root cause
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
+- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
+- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 - Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
 - how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
 - Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause

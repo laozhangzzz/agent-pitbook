@@ -126,9 +126,9 @@ Search terms:
 - anthropics/claude-code issue 13107: SDK doesnt read from .mcp.json until the CLI is run in the cwd maintainer notes settingSources project requirement; fix shipped in a later release
 - Claude Agent SDK settingSources documentation
 - SDK doesnt read from .mcp.json until the CLI is run in the cwd
-- how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
 - SDK doesnt read from .mcp.json until the CLI is run in the cwd fix
 - SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause
+- how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
 - how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory
 - the SDK reports no MCP servers even though .mcp.json is in the working directory root cause
 - claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory
@@ -213,9 +213,9 @@ Search terms:
 - Ignore the toast for internal servers that still function, until you can upgrade
 - anthropics/claude-code issue 27390: Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
 - Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release
-- how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
 - Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release fix
 - Claude Desktop MCP servers fail with Protocol instance reuse error (Already connected to a transport); Anthropic confirms fix in a later Desktop release root cause
+- how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
 - how to fix startup toasts: Could not connect to MCP server <name>
 - startup toasts: Could not connect to MCP server <name> root cause
 - claude-desktop startup toasts: Could not connect to MCP server <name>
@@ -255,9 +255,9 @@ Search terms:
 - Model parameterized data as tools instead of resource templates for Claude Desktop
 - modelcontextprotocol/python-sdk issue 263: dynamic resource not working in Claude desktop maintainer confirms Desktop does not support dynamic resources; client calls resources/list not resources/templates/list
 - dynamic resource not working in Claude desktop
-- how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
 - dynamic resource not working in Claude desktop fix
 - dynamic resource not working in Claude desktop root cause
+- how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
 - how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show
 - a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause
 - claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
@@ -385,9 +385,9 @@ Search terms:
 - Disable DNS rebinding protection when the deployment is isolated at the network layer and authenticated via OAuth
 - modelcontextprotocol/python-sdk issue 1798: Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection
 - Guide: Resolving '421 Invalid Host Header' DNS Rebinding Protection
-- how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
 - Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) fix
 - Guide: Resolving '421 Invalid Host Header' (DNS Rebinding Protection) root cause
+- how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
 - /MCP
 - /MCP fix
 - mcp-server /MCP
@@ -425,9 +425,9 @@ Search terms:
 - Add a FastMCP logger entry to your dictConfig and re-apply it after building the server
 - modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
 - Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
-- how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
 - Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
 - Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
+- how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
 - how to fix log messages become duplicated after the FastMCP server is created
 - log messages become duplicated after the FastMCP server is created root cause
 - mcp-server log messages become duplicated after the FastMCP server is created
@@ -466,9 +466,9 @@ Search terms:
 - Keep using the bare 'github' name until the aliasing is consistent
 - github/github-mcp-server issue 1402: VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated
-- how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause
+- how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
 - how to fix 'tools': ['github/*'] produces Unknown tool
 - tools: [github/*] produces Unknown tool root cause
 - github-mcp-server 'tools': ['github/*'] produces Unknown tool
@@ -556,9 +556,9 @@ Search terms:
 - Globally install the package and reference it by absolute path instead of npx
 - modelcontextprotocol/servers issue 891: author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal
 - author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal
-- how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects
 - author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal fix
 - author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal root cause
+- how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects
 - MCP error -32001: Request timed out
 - MCP error -32001: Request timed out fix
 - cursor MCP error -32001: Request timed out
@@ -604,9 +604,9 @@ Search terms:
 - modelcontextprotocol/servers issue 891: Fix 'Client Closed' Error by Correcting npm Config
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed -32000
 - Fix 'Client Closed' Error by Correcting npm Config
-- how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) fix
 - GitHub MCP Server Fails to Start: 'npx' Command Error and Connection Closed (-32000) root cause
+- Fix 'Client Closed' Error by Correcting npm Config fix
 
 ## Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 
@@ -644,11 +644,11 @@ Search terms:
 - modelcontextprotocol/servers PR 2111: step toward fixing Windows path validation
 - Filesystem server access denied for allowed paths on Windows
 - step toward fixing Windows path validation
-- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 - Filesystem server access denied for allowed paths on Windows fix
 - Filesystem server access denied for allowed paths on Windows root cause
 - step toward fixing Windows path validation fix
 - step toward fixing Windows path validation root cause
+- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 - how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
 
 ## Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
@@ -684,9 +684,9 @@ Search terms:
 - Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint
 - anthropics/claude-code issue 3433: Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
 - Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
-- how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 - Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix
 - Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) root cause
+- how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 - does not support dynamic client registration
 - does not support dynamic client registration fix
 - claude-code does not support dynamic client registration
@@ -727,9 +727,9 @@ Search terms:
 - Run Inspector directly on the host instead of in a container if env configuration is not possible
 - modelcontextprotocol/inspector issue 828: Docker container connection refused HOST + ALLOWED_ORIGINS workaround
 - Docker container connection refused HOST + ALLOWED_ORIGINS workaround
-- how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 - Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix
 - Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) root cause
+- how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 - HOST fix
 - mcp-inspector HOST
 - mcp-inspector HOST fix
@@ -769,11 +769,11 @@ Search terms:
 - modelcontextprotocol/inspector issue 951: Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 downgrade to 0.9.0
 - Controller is already closed on fastmcp Streamable HTTP downgrade to 0.16.7; fixed in 0.17.5
-- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) fix
 - sh: mcp-inspector: command not found after upgrading to v0.10.0 (downgrade to 0.9.0) root cause
 - Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) fix
 - Controller is already closed on fastmcp Streamable HTTP (downgrade to 0.16.7; fixed in 0.17.5) root cause
+- how to fix MCP Inspector breaks after an upgrade; pin a known-good version
 - HTTP fix
 - mcp-inspector HTTP
 - mcp-inspector HTTP fix
@@ -817,11 +817,11 @@ Search terms:
 - modelcontextprotocol/servers issue 891: Client closed / -32001 Request timed out around npx MCP startup
 - comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup
 - Client closed / -32001 Request timed out around npx MCP startup
-- how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out
 - comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix
 - comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause
 - Client closed / -32001 Request timed out around npx MCP startup fix
 - Client closed / -32001 Request timed out around npx MCP startup root cause
+- how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out
 
 ## Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 
@@ -855,9 +855,9 @@ Search terms:
 - Persist the in-memory image yourself if a file is required downstream
 - modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots maintainer: screenshots are stored in memory only
 - Puppeteer MCP Server Missing Screenshots
-- how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 - Puppeteer MCP Server Missing Screenshots fix
 - Puppeteer MCP Server Missing Screenshots root cause
+- how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 - how to fix puppeteer_screenshot reports success but no image file appears on disk
 - puppeteer_screenshot reports success but no image file appears on disk root cause
 - mcp-server puppeteer_screenshot reports success but no image file appears on disk
@@ -898,16 +898,16 @@ Search terms:
 - Archived packages may remain published, so an agent can install and run a server whose bugs will never be fixed
 - Filing or chasing bugs against an archived reference server
 - Assuming an npm package is maintained just because it installs and runs
-- Use a community- or vendor-maintained server for the same capability
 - modelcontextprotocol/servers issue 1219: server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived
 - modelcontextprotocol/servers issue 1097: maintainer deprecation notice that server-github development moved to github/github-mcp-server
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server
-- how to fix Several official reference MCP servers are archived; their bugs will not be fixed
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived fix
 - server-postgres multi-instance issue closed; maintainer notes the server moved to servers-archived root cause
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server fix
 - maintainer deprecation notice that server-github development moved to github/github-mcp-server root cause
+- how to fix Several official reference MCP servers are archived; their bugs will not be fixed
+- README fix
 
 ## A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 
@@ -942,9 +942,9 @@ Search terms:
 - Expose the MCP endpoint directly (non-proxied) for testing to confirm buffering is the cause
 - anthropics/claude-code issue 5826: Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
 - Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
-- how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 - Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix
 - Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize root cause
+- how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 - HTTP fix
 - claude-desktop HTTP
 - claude-desktop HTTP fix
@@ -986,9 +986,9 @@ Search terms:
 - As a stopgap some users edited dist/index.js in node_modules, but upgrading the package is the durable fix
 - modelcontextprotocol/servers issue 1018: Environment variables not respected in @modelcontextprotocol/server-memory package
 - Environment variables not respected in @modelcontextprotocol/server-memory package
-- how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 - Environment variables not respected in @modelcontextprotocol/server-memory package fix
 - Environment variables not respected in @modelcontextprotocol/server-memory package root cause
+- how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 - MEMORY_FILE_PATH
 - MEMORY_FILE_PATH fix
 - claude-desktop MEMORY_FILE_PATH
@@ -1027,15 +1027,15 @@ Search terms:
 - Reconnect the client after each server restart
 - modelcontextprotocol/python-sdk issue 423: MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
 - MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
-- how to fix SSE MCP server: Received request before initialization was complete
 - MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix
 - MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-ini fix
+- how to fix SSE MCP server: Received request before initialization was complete
+- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
+- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
+- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
+- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
 - RuntimeError: Received request before initialization was complete on tools/list or a tool call
 
 ## MCP SSE session lost across workers/pods: Could not find session for ID (404)
@@ -1072,9 +1072,9 @@ Search terms:
 - Sticky load-balancer routing keyed on a stable per-session identifier
 - modelcontextprotocol/python-sdk issue 520: MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
 - MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
-- how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
 - MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) fix
 - MCP Server Session Lost in Multi-Worker Environment (comments confirm stateless_http=True and ingress sticky-hash fixes) root cause
+- how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
 - POST fix
 - mcp-server POST
 - mcp-server POST fix
@@ -1115,9 +1115,9 @@ Search terms:
 - Stay on the last SDK version where stateless mode worked for you
 - modelcontextprotocol/python-sdk issue 1219: _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
 - _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
-- how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 - _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) fix
 - _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) root cause
+- how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 - HTTP fix
 - mcp-server HTTP
 - mcp-server HTTP fix
@@ -1202,9 +1202,9 @@ Search terms:
 - Temporarily disable logging in the server to confirm the diagnosis
 - modelcontextprotocol/typescript-sdk issue 244: SyntaxError in stdio deserializeMessage a console.log in the server triggers it
 - SyntaxError in stdio deserializeMessage a console.log in the server triggers it
-- how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
 - SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix
 - SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause
+- how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
 - JSON-RPC fix
 - mcp-server JSON-RPC
 - mcp-server JSON-RPC fix
@@ -1243,9 +1243,9 @@ Search terms:
 - Use the SSE transport temporarily if it handles the OAuth challenge while you upgrade
 - modelcontextprotocol/inspector issue 358: When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
 - When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 resolved in a released Inspector version
-- how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 - When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) fix
 - When using Streamable HTTP transport, the oauth flow is not triggered when the server returns 401 (resolved in a released Inspector version) root cause
+- how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 - HTTP fix
 - mcp-inspector HTTP
 - mcp-inspector HTTP fix
@@ -1284,9 +1284,9 @@ Search terms:
 - Set the process/system timezone to a canonical IANA name
 - modelcontextprotocol/servers issue 786: Time server fails under EDT timezone use --local-timezone with an IANA name
 - Time server fails under EDT timezone use --local-timezone with an IANA name
-- how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 - Time server fails under EDT timezone (use --local-timezone with an IANA name) fix
 - Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause
+- how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 - EDT/PDT/CEST
 - EDT/PDT/CEST fix
 - mcp-server EDT/PDT/CEST
@@ -1317,7 +1317,7 @@ Search terms:
 - progress
 - long-running
 - mcp-server
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000
+- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 - the tool finishes fine from the Python client but times out from the TS/JS client
 - setting a timeout on connect alone does not help
 - the server sends periodic progress yet the client gives up at 60s
@@ -1329,9 +1329,9 @@ Search terms:
 - Break very long operations into shorter calls if you cannot stream progress
 - modelcontextprotocol/typescript-sdk issue 245: mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
 - mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress
-- how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
 - mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress fix
 - mcp client times out after 60 seconds (ignoring timeout option); comments confirm callTool request options and resetTimeoutOnProgress root cause
+- how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
 - MCP error -32001: Request timed out even with server progress
 - MCP error -32001: Request timed out even with server progress fix
 - mcp-server MCP error -32001: Request timed out even with server progress
@@ -1372,9 +1372,9 @@ Search terms:
 - modelcontextprotocol/typescript-sdk issue 217: @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
 - crouchcd/pkce-challenge release 5.0.0 referenced as a compatible version
 - @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
-- how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
 - @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix
 - @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause
+- how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
 - ERR_REQUIRE_ESM
 - ERR_REQUIRE_ESM fix
 - mcp-server ERR_REQUIRE_ESM
@@ -1414,16 +1414,16 @@ Search terms:
 - modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
 - Cloudflare changelog: MCP elicitation support on McpAgent
 - Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError
-- how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
 - Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix
 - Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Functio
+- how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
+- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
+- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
+- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
 
 ## MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 
@@ -1455,9 +1455,9 @@ Search terms:
 - Pin a known-good SDK + Zod pair until you can update tsconfig/Zod
 - modelcontextprotocol/typescript-sdk issue 494: 'Type instantiation is excessively deep' when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
 - Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
-- how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix
 - Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause
+- how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause
 - mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
@@ -1488,7 +1488,7 @@ Search terms:
 - versioning
 - tools
 - mcp-server
-- tool execution returns {code:-32603,message:w._parse is not a function
+- tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
 - tools/list fails with null is not an object evaluating F._def
 - errors appear in minified code and are hard to trace
 - Zod was recently upgraded to v4.x
@@ -1499,16 +1499,16 @@ Search terms:
 - Stay on Zod v3 until the SDK upgrade is feasible
 - modelcontextprotocol/typescript-sdk issue 925: MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes maintainer notes 1.23.0-beta adds v4 support
 - MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes
-- how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
 - MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes fix
 - MCP SDK v1.17.5 Incompatible with Zod v4 - Breaking Changes root cause
+- how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
 - w._parse is not a function
 - w._parse is not a function... fix
 - mcp-server w._parse is not a function
 - mcp-server w._parse is not a function... fix
 - typescript-sdk w._parse is not a function
 - typescript-sdk w._parse is not a function... fix
-- how to fix tool execution returns {code:-32603,message:w._parse is not a function
+- how to fix tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
 - tool execution returns {"code":-32603,"message":"w._parse is not a function..."} root cause
 
 ## On Windows an MCP server launched with npx needs a cmd /c wrapper
@@ -1547,11 +1547,11 @@ Search terms:
 - modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
 - Windows npx launch failure with garbled 'not recognized' error -32000
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
-- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
 - Windows npx launch failure with garbled 'not recognized' error (-32000) fix
 - Windows npx launch failure with garbled 'not recognized' error (-32000) root cause
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions fix
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause
+- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
 - ENOENT fix
 
 ## PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener

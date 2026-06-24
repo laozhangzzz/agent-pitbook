@@ -19,13 +19,13 @@ A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on ce
 
 ## Queries This Answers
 
+- _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
+- _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) fix
+- _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) root cause
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions fix
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause
 - how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
-- _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
-- _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) fix
-- _handle_stateless_request ClosedResourceError (reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13) root cause
 - HTTP fix
 - mcp-server HTTP
 - mcp-server HTTP fix
