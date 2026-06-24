@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/35
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause
 - how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
+- mcp-server type instantiation excessively deep ts2589 freezes ide
+- mcp-server type instantiation excessively deep ts2589 freezes ide fix
+- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server
+- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server fix
+- mcp ts sdk type ts2589 freezes ide
+- mcp ts sdk type ts2589 freezes ide fix
+- mcp ts sdk type mcp-server
+- mcp ts sdk type mcp-server fix
+- mcp-server ts 2589 lines referencing sdk tool types
+- mcp-server ts 2589 lines referencing sdk tool types fix
+- sdk tool types possibly infinite ts 2589 lines referencing mcp-server
+- sdk tool types possibly infinite ts 2589 lines referencing mcp-server fix
+- type instantiation excessively deep sdk tool types
+- type instantiation excessively deep sdk tool types fix
+- type instantiation excessively deep mcp-server
+- type instantiation excessively deep mcp-server fix
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause
-- mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix
-- typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix
-- the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- how to fix the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- the TypeScript server in Cursor/VS Code hangs and saving files stalls root cause
-- mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls fix
-- typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls fix
-- it appears intermittently; @ts-ignore silences the error but not the slowdown
-- how to fix it appears intermittently; @ts-ignore silences the error but not the slowdown
-- it appears intermittently; @ts-ignore silences the error but not the slowdown root cause
-

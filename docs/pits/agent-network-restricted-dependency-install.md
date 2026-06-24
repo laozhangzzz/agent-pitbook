@@ -24,26 +24,26 @@ Package manager failures in coding-agent sessions often come from restricted net
 - Dependency install fails because the agent sandbox blocks network access fix
 - Dependency install fails because the agent sandbox blocks network access root cause
 - how to fix Dependency install fails because the agent sandbox blocks network access
+- codex install fails agent sandbox blocks network access
+- codex install fails agent sandbox blocks network access fix
+- blocks network access dependency install fails agent sandbox codex
+- blocks network access dependency install fails agent sandbox codex fix
+- dependency install fails agent blocks network access
+- dependency install fails agent blocks network access fix
+- dependency install fails agent codex
+- dependency install fails agent codex fix
+- codex host resolution registry index tls timeout errors
+- codex host resolution registry index tls timeout errors fix
+- tls timeout errors fails dns host resolution registry index codex
+- tls timeout errors fails dns host resolution registry index codex fix
+- dependency installation fails dns tls timeout errors
+- dependency installation fails dns tls timeout errors fix
+- dependency installation fails dns codex
+- dependency installation fails dns codex fix
 - dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
 - how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
 - dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause
 - codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- the project lockfile or dependency manifest appears valid
-- how to fix the project lockfile or dependency manifest appears valid
-- the project lockfile or dependency manifest appears valid root cause
-- codex the project lockfile or dependency manifest appears valid
-- codex the project lockfile or dependency manifest appears valid fix
-- claude-code the project lockfile or dependency manifest appears valid
-- claude-code the project lockfile or dependency manifest appears valid fix
-- gemini the project lockfile or dependency manifest appears valid
-- gemini the project lockfile or dependency manifest appears valid fix
-- the agent environment says network access is restricted
-- how to fix the agent environment says network access is restricted
 
 ## Common Search Queries
 

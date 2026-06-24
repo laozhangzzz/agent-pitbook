@@ -27,23 +27,23 @@ npx-launched MCP servers that work in the terminal but hang under a GUI client (
 - MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix
 - MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause
 - how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects
+- cursor client uses your user level npmrc project
+- cursor client uses your user level npmrc project fix
+- level npmrc project hangs gui client uses your user cursor
+- level npmrc project hangs gui client uses your user cursor fix
+- mcp server hangs gui level npmrc project
+- mcp server hangs gui level npmrc project fix
+- mcp server hangs gui cursor
+- mcp server hangs gui cursor fix
+- cursor npx package works project terminal launched client
+- cursor npx package works project terminal launched client fix
+- terminal launched client npx package works project cursor
+- terminal launched client npx package works project cursor fix
+- npx package works project terminal launched client
+- npx package works project terminal launched client fix
+- npx package works project cursor
+- npx package works project cursor fix
 - MCP error -32001: Request timed out
-- MCP error -32001: Request timed out fix
-- cursor MCP error -32001: Request timed out
-- cursor MCP error -32001: Request timed out fix
-- claude-desktop MCP error -32001: Request timed out
-- claude-desktop MCP error -32001: Request timed out fix
-- cline MCP error -32001: Request timed out
-- cline MCP error -32001: Request timed out fix
-- mcp-server MCP error -32001: Request timed out
-- mcp-server MCP error -32001: Request timed out fix
-- npx -y <package> works in a project terminal but not when launched by the client
-- how to fix npx -y <package> works in a project terminal but not when launched by the client
-- npx -y <package> works in a project terminal but not when launched by the client root cause
-- cursor npx -y <package> works in a project terminal but not when launched by the client
-- cursor npx -y <package> works in a project terminal but not when launched by the client fix
-- claude-desktop npx -y <package> works in a project terminal but not when launched by the client
-- claude-desktop npx -y <package> works in a project terminal but not when launched by the client fix
 
 ## Common Search Queries
 

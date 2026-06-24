@@ -27,18 +27,17 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/15
 - MCP error -32000: Connection closed means the stdio server died before the handshake fix
 - MCP error -32000: Connection closed means the stdio server died before the handshake root cause
 - how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
-- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake
-- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- cursor MCP error -32000: Connection closed means the stdio server died before the handshake
-- cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- cline MCP error -32000: Connection closed means the stdio server died before the handshake
-- cline MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake
-- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
-
+- claude-desktop connection closed means stdio server died handshake
+- claude-desktop connection closed means stdio server died handshake fix
+- server died handshake error 32000 connection closed means stdio claude-desktop
+- server died handshake error 32000 connection closed means stdio claude-desktop fix
+- mcp error 32000 connection server died handshake
+- mcp error 32000 connection server died handshake fix
+- mcp error 32000 connection claude-desktop
+- mcp error 32000 connection claude-desktop fix
+- claude-desktop client ui mcp error 32000 connection closed
+- claude-desktop client ui mcp error 32000 connection closed fix
+- 32000 connection closed client ui mcp error claude-desktop
+- 32000 connection closed client ui mcp error claude-desktop fix
+- client ui mcp error 32000 connection closed
+- client ui mcp error 32000 connection closed fix

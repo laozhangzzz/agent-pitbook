@@ -30,20 +30,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/19
 - MCP Inspector breaks after an upgrade; pin a known-good version fix
 - MCP Inspector breaks after an upgrade; pin a known-good version root cause
 - how to fix MCP Inspector breaks after an upgrade; pin a known-good version
-- HTTP fix
-- mcp-inspector HTTP
-- mcp-inspector HTTP fix
-- ERR_INVALID_STATE
-- ERR_INVALID_STATE fix
-- mcp-inspector ERR_INVALID_STATE
-- mcp-inspector ERR_INVALID_STATE fix
-- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
-- how to fix npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
-- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) root cause
-- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
-- how to fix connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
-- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5) root cause
-- mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
+- mcp-inspector breaks after upgrade pin known good version
+- mcp-inspector breaks after upgrade pin known good version fix
+- known good version mcp inspector breaks after upgrade pin mcp-inspector
+- known good version mcp inspector breaks after upgrade pin mcp-inspector fix
+- mcp inspector breaks after known good version
+- mcp inspector breaks after known good version fix
+- mcp inspector breaks after mcp-inspector
+- mcp inspector breaks after mcp-inspector fix
+- mcp-inspector fails sh mcp command found recognized 10
+- mcp-inspector fails sh mcp command found recognized 10 fix
+- found recognized 10 modelcontextprotocol inspector fails sh mcp command mcp-inspector
+- found recognized 10 modelcontextprotocol inspector fails sh mcp command mcp-inspector fix
+- npx modelcontextprotocol inspector fails found recognized 10
+- npx modelcontextprotocol inspector fails found recognized 10 fix
 
 ## Common Search Queries
 

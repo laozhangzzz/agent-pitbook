@@ -27,23 +27,23 @@ A stdio MCP server uses stdout as its JSON-RPC channel. Printing non-protocol te
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause
 - how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
+- mcp-server stdio mcp server corrupts json rpc stream
+- mcp-server stdio mcp server corrupts json rpc stream fix
+- json rpc stream writing stdout stdio mcp server corrupts mcp-server
+- json rpc stream writing stdout stdio mcp server corrupts mcp-server fix
+- writing stdout stdio mcp json rpc stream
+- writing stdout stdio mcp json rpc stream fix
+- writing stdout stdio mcp mcp-server
+- writing stdout stdio mcp mcp-server fix
+- mcp-server client error syntaxerror valid json deserializemessage parse
+- mcp-server client error syntaxerror valid json deserializemessage parse fix
+- json deserializemessage parse client error syntaxerror valid mcp-server
+- json deserializemessage parse client error syntaxerror valid mcp-server fix
+- client error syntaxerror valid json deserializemessage parse
+- client error syntaxerror valid json deserializemessage parse fix
+- client error syntaxerror valid mcp-server
+- client error syntaxerror valid mcp-server fix
 - JSON-RPC
-- JSON-RPC fix
-- mcp-server JSON-RPC
-- mcp-server JSON-RPC fix
-- typescript-sdk JSON-RPC
-- typescript-sdk JSON-RPC fix
-- python-sdk JSON-RPC
-- python-sdk JSON-RPC fix
-- client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- how to fix client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse root cause
-- mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
-- typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
-- python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
 
 ## Common Search Queries
 

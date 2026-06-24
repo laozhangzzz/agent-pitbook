@@ -24,26 +24,26 @@ A Docker container can publish the expected host port while the app inside still
 - Docker port is published but localhost refuses the connection fix
 - Docker port is published but localhost refuses the connection root cause
 - how to fix Docker port is published but localhost refuses the connection
+- codex docker port published localhost refuses connection
+- codex docker port published localhost refuses connection fix
+- localhost refuses connection docker port published codex
+- localhost refuses connection docker port published codex fix
+- docker port published localhost localhost refuses connection
+- docker port published localhost localhost refuses connection fix
+- docker port published localhost codex
+- docker port published localhost codex fix
+- codex docker ps port expected host
+- codex docker ps port expected host fix
+- port expected host docker ps codex
+- port expected host docker ps codex fix
+- docker ps port expected port expected host
+- docker ps port expected port expected host fix
+- docker ps port expected codex
+- docker ps port expected codex fix
 - docker ps or docker port shows the expected host port
 - how to fix docker ps or docker port shows the expected host port
 - docker ps or docker port shows the expected host port root cause
 - codex docker ps or docker port shows the expected host port
-- codex docker ps or docker port shows the expected host port fix
-- claude-code docker ps or docker port shows the expected host port
-- claude-code docker ps or docker port shows the expected host port fix
-- gemini docker ps or docker port shows the expected host port
-- gemini docker ps or docker port shows the expected host port fix
-- curl to localhost or 127.0.0.1 on the host fails
-- how to fix curl to localhost or 127.0.0.1 on the host fails
-- curl to localhost or 127.0.0.1 on the host fails root cause
-- codex curl to localhost or 127.0.0.1 on the host fails
-- codex curl to localhost or 127.0.0.1 on the host fails fix
-- claude-code curl to localhost or 127.0.0.1 on the host fails
-- claude-code curl to localhost or 127.0.0.1 on the host fails fix
-- gemini curl to localhost or 127.0.0.1 on the host fails
-- gemini curl to localhost or 127.0.0.1 on the host fails fix
-- container logs show the app listening on localhost or 127.0.0.1
-- how to fix container logs show the app listening on localhost or 127.0.0.1
 
 ## Common Search Queries
 

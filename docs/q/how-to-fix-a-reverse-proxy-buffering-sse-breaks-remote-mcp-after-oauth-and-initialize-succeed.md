@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/23
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause
 - how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
+- claude-desktop breaks remote mcp after oauth initialize succeed
+- claude-desktop breaks remote mcp after oauth initialize succeed fix
+- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop
+- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop fix
+- reverse proxy buffering sse oauth initialize succeed
+- reverse proxy buffering sse oauth initialize succeed fix
+- reverse proxy buffering sse claude-desktop
+- reverse proxy buffering sse claude-desktop fix
+- claude-desktop errors there was error connecting your server
+- claude-desktop errors there was error connecting your server fix
+- connecting your server remote mcp errors there was error claude-desktop
+- connecting your server remote mcp errors there was error claude-desktop fix
+- client connects custom remote connecting your server
+- client connects custom remote connecting your server fix
+- client connects custom remote claude-desktop
+- client connects custom remote claude-desktop fix
 - HTTP fix
-- claude-desktop HTTP
-- claude-desktop HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause
-- claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- claude-desktop the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix
-- mcp-server the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- mcp-server the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix
-- server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- how to fix server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows root cause
-- claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows fix
-

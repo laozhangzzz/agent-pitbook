@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/34
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause
 - how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
+- mcp-server fails cloudflare workers evalerror ajv code generation
+- mcp-server fails cloudflare workers evalerror ajv code generation fix
+- ajv code generation sdk validation fails cloudflare workers evalerror mcp-server
+- ajv code generation sdk validation fails cloudflare workers evalerror mcp-server fix
+- mcp ts sdk validation ajv code generation
+- mcp ts sdk validation ajv code generation fix
+- mcp ts sdk validation mcp-server
+- mcp ts sdk validation mcp-server fix
+- mcp-server context stack through new function ajv localcompile
+- mcp-server context stack through new function ajv localcompile fix
+- function ajv localcompile strings disallowed context stack through new mcp-server
+- function ajv localcompile strings disallowed context stack through new mcp-server fix
+- evalerror code generation strings function ajv localcompile
+- evalerror code generation strings function ajv localcompile fix
+- evalerror code generation strings mcp-server
+- evalerror code generation strings mcp-server fix
 - EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- how to fix EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile root cause
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile fix
-

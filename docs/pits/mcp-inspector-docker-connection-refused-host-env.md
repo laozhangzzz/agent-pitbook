@@ -27,23 +27,23 @@ MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localh
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause
 - how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
+- mcp-inspector refuses connections unless host allowed origins set
+- mcp-inspector refuses connections unless host allowed origins set fix
+- allowed origins set inspector docker refuses connections unless host mcp-inspector
+- allowed origins set inspector docker refuses connections unless host mcp-inspector fix
+- mcp inspector docker refuses allowed origins set
+- mcp inspector docker refuses allowed origins set fix
+- mcp inspector docker refuses mcp-inspector
+- mcp inspector docker refuses mcp-inspector fix
+- mcp-inspector localhost 6274 returns failed connect connection refused
+- mcp-inspector localhost 6274 returns failed connect connection refused fix
+- connect connection refused curl http localhost 6274 returns failed mcp-inspector
+- connect connection refused curl http localhost 6274 returns failed mcp-inspector fix
+- curl http localhost 6274 connect connection refused
+- curl http localhost 6274 connect connection refused fix
+- curl http localhost 6274 mcp-inspector
+- curl http localhost 6274 mcp-inspector fix
 - HOST fix
-- mcp-inspector HOST
-- mcp-inspector HOST fix
-- ALLOWED_ORIGINS
-- ALLOWED_ORIGINS fix
-- mcp-inspector ALLOWED_ORIGINS
-- mcp-inspector ALLOWED_ORIGINS fix
-- ERR_CONNECTION_REFUSED
-- ERR_CONNECTION_REFUSED fix
-- mcp-inspector ERR_CONNECTION_REFUSED
-- mcp-inspector ERR_CONNECTION_REFUSED fix
-- curl http://localhost:6274 returns Failed to connect ... Connection refused
-- how to fix curl http://localhost:6274 returns Failed to connect ... Connection refused
-- curl http://localhost:6274 returns Failed to connect ... Connection refused root cause
-- mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused
-- mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused fix
-- browser shows localhost refused to connect / ERR_CONNECTION_REFUSED
 
 ## Common Search Queries
 

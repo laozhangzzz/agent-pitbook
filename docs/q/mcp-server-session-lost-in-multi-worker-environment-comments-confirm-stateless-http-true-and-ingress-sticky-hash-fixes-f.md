@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/26
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) fix
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause
 - how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
+- mcp-server lost across workers pods find id 404
+- mcp-server lost across workers pods find id 404 fix
+- find id 404 sse session lost across workers pods mcp-server
+- find id 404 sse session lost across workers pods mcp-server fix
+- mcp sse session lost find id 404
+- mcp sse session lost find id 404 fix
+- mcp sse session lost mcp-server
+- mcp sse session lost mcp-server fix
+- mcp-server post returns 202 later posts return 404
+- mcp-server post returns 202 later posts return 404 fix
+- posts return 404 200 first post returns 202 later mcp-server
+- posts return 404 200 first post returns 202 later mcp-server fix
+- sse connection opens 200 posts return 404
+- sse connection opens 200 posts return 404 fix
+- sse connection opens 200 mcp-server
+- sse connection opens 200 mcp-server fix
 - POST fix
-- mcp-server POST
-- mcp-server POST fix
-- python-sdk POST
-- python-sdk POST fix
-- fastmcp POST
-- fastmcp POST fix
-- HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- python-sdk HTTP
-- python-sdk HTTP fix
-- fastmcp HTTP
-- fastmcp HTTP fix
-- WARNING fix
-- mcp-server WARNING
-- mcp-server WARNING fix
-

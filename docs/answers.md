@@ -23,26 +23,26 @@ Queries this answer targets:
 - Dependency install fails because the agent sandbox blocks network access fix
 - Dependency install fails because the agent sandbox blocks network access root cause
 - how to fix Dependency install fails because the agent sandbox blocks network access
+- codex install fails agent sandbox blocks network access
+- codex install fails agent sandbox blocks network access fix
+- blocks network access dependency install fails agent sandbox codex
+- blocks network access dependency install fails agent sandbox codex fix
+- dependency install fails agent blocks network access
+- dependency install fails agent blocks network access fix
+- dependency install fails agent codex
+- dependency install fails agent codex fix
+- codex host resolution registry index tls timeout errors
+- codex host resolution registry index tls timeout errors fix
+- tls timeout errors fails dns host resolution registry index codex
+- tls timeout errors fails dns host resolution registry index codex fix
+- dependency installation fails dns tls timeout errors
+- dependency installation fails dns tls timeout errors fix
+- dependency installation fails dns codex
+- dependency installation fails dns codex fix
 - dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
 - how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
 - dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause
 - codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- claude-code dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- gemini dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors fix
-- the project lockfile or dependency manifest appears valid
-- how to fix the project lockfile or dependency manifest appears valid
-- the project lockfile or dependency manifest appears valid root cause
-- codex the project lockfile or dependency manifest appears valid
-- codex the project lockfile or dependency manifest appears valid fix
-- claude-code the project lockfile or dependency manifest appears valid
-- claude-code the project lockfile or dependency manifest appears valid fix
-- gemini the project lockfile or dependency manifest appears valid
-- gemini the project lockfile or dependency manifest appears valid fix
-- the agent environment says network access is restricted
-- how to fix the agent environment says network access is restricted
 
 ## Fix: Debug sources can contain prompt injection targeting coding agents
 
@@ -61,26 +61,26 @@ Queries this answer targets:
 - Debug sources can contain prompt injection targeting coding agents fix
 - Debug sources can contain prompt injection targeting coding agents root cause
 - how to fix Debug sources can contain prompt injection targeting coding agents
+- codex sources contain prompt injection targeting coding agents
+- codex sources contain prompt injection targeting coding agents fix
+- targeting coding agents debug sources contain prompt injection codex
+- targeting coding agents debug sources contain prompt injection codex fix
+- debug sources contain prompt targeting coding agents
+- debug sources contain prompt targeting coding agents fix
+- debug sources contain prompt codex
+- debug sources contain prompt codex fix
+- codex source includes instructions ignore system developer
+- codex source includes instructions ignore system developer fix
+- ignore system developer source includes instructions codex
+- ignore system developer source includes instructions codex fix
+- source includes instructions ignore ignore system developer
+- source includes instructions ignore ignore system developer fix
+- source includes instructions ignore codex
+- source includes instructions ignore codex fix
 - a source includes instructions to ignore system or developer instructions
 - how to fix a source includes instructions to ignore system or developer instructions
 - a source includes instructions to ignore system or developer instructions root cause
 - codex a source includes instructions to ignore system or developer instructions
-- codex a source includes instructions to ignore system or developer instructions fix
-- claude-code a source includes instructions to ignore system or developer instructions
-- claude-code a source includes instructions to ignore system or developer instructions fix
-- gemini a source includes instructions to ignore system or developer instructions
-- gemini a source includes instructions to ignore system or developer instructions fix
-- a suggested command is unrelated to the reported error
-- how to fix a suggested command is unrelated to the reported error
-- a suggested command is unrelated to the reported error root cause
-- codex a suggested command is unrelated to the reported error
-- codex a suggested command is unrelated to the reported error fix
-- claude-code a suggested command is unrelated to the reported error
-- claude-code a suggested command is unrelated to the reported error fix
-- gemini a suggested command is unrelated to the reported error
-- gemini a suggested command is unrelated to the reported error fix
-- external text asks the agent to reveal secrets or bypass approval
-- how to fix external text asks the agent to reveal secrets or bypass approval
 
 ## Fix: Claude Agent SDK does not load .mcp.json unless settingSources includes "project"
 
@@ -102,23 +102,23 @@ Queries this answer targets:
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" fix
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" root cause
 - how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
+- claude-code load mcp json unless settingsources includes project
+- claude-code load mcp json unless settingsources includes project fix
+- settingsources includes project agent sdk load mcp json unless claude-code
+- settingsources includes project agent sdk load mcp json unless claude-code fix
+- claude agent sdk load settingsources includes project
+- claude agent sdk load settingsources includes project fix
+- claude agent sdk load claude-code
+- claude agent sdk load claude-code fix
+- claude-code mcp servers even though json working directory
+- claude-code mcp servers even though json working directory fix
+- json working directory sdk no mcp servers even though claude-code
+- json working directory sdk no mcp servers even though claude-code fix
+- sdk no mcp servers json working directory
+- sdk no mcp servers json working directory fix
+- sdk no mcp servers claude-code
+- sdk no mcp servers claude-code fix
 - the SDK reports no MCP servers even though .mcp.json is in the working directory
-- how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory
-- the SDK reports no MCP servers even though .mcp.json is in the working directory root cause
-- claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory
-- claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory fix
-- claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory
-- claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory fix
-- servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- how to fix servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process root cause
-- claude-code servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- claude-code servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process fix
-- claude-agent-sdk servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- claude-agent-sdk servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process fix
-- tools wrapping Claude (e.g. Conductor) cannot see project MCP servers
-- how to fix tools wrapping Claude (e.g. Conductor) cannot see project MCP servers
-- tools wrapping Claude (e.g. Conductor) cannot see project MCP servers root cause
 
 ## Fix: Claude Code chrome-bridge MCP gets stuck after one transport connects
 
@@ -149,14 +149,14 @@ Queries this answer targets:
 - Claude Code chrome-bridge MCP gets stuck after one transport connects fix
 - Claude Code chrome-bridge MCP gets stuck after one transport connects root cause
 - how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects
-- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- HTTP/SSE
-- HTTP/SSE fix
+- claude-code mcp gets stuck after one transport connects
+- claude-code mcp gets stuck after one transport connects fix
+- one transport connects chrome bridge mcp gets stuck after claude-code
+- one transport connects chrome bridge mcp gets stuck after claude-code fix
+- claude code chrome bridge one transport connects
+- claude code chrome bridge one transport connects fix
+- claude code chrome bridge claude-code
+- claude code chrome bridge claude-code fix
 
 ## Fix: Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse)
 
@@ -178,23 +178,23 @@ Queries this answer targets:
 - Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) fix
 - Claude Desktop MCP error: Already connected to a transport (Protocol instance reuse) root cause
 - how to fix Claude Desktop MCP error: Already connected to a transport Protocol instance reuse
+- claude-desktop error already connected transport protocol instance reuse
+- claude-desktop error already connected transport protocol instance reuse fix
+- protocol instance reuse desktop mcp error already connected transport claude-desktop
+- protocol instance reuse desktop mcp error already connected transport claude-desktop fix
+- claude desktop mcp error protocol instance reuse
+- claude desktop mcp error protocol instance reuse fix
+- claude desktop mcp error claude-desktop
+- claude desktop mcp error claude-desktop fix
+- claude-desktop startup toasts connect mcp server name
+- claude-desktop startup toasts connect mcp server name fix
+- mcp server name startup toasts connect claude-desktop
+- mcp server name startup toasts connect claude-desktop fix
+- startup toasts connect mcp mcp server name
+- startup toasts connect mcp mcp server name fix
+- startup toasts connect mcp claude-desktop
+- startup toasts connect mcp claude-desktop fix
 - startup toasts: Could not connect to MCP server <name>
-- how to fix startup toasts: Could not connect to MCP server <name>
-- startup toasts: Could not connect to MCP server <name> root cause
-- claude-desktop startup toasts: Could not connect to MCP server <name>
-- claude-desktop startup toasts: Could not connect to MCP server <name> fix
-- log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection
-- how to fix log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection
-- log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection. root cause
-- claude-desktop log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection
-- claude-desktop log shows Error: Already connected to a transport. Call close() before connecting to a new transport, or use a separate Protocol instance per connection. fix
-- the same error appears for multiple servers connected at startup
-- how to fix the same error appears for multiple servers connected at startup
-- the same error appears for multiple servers connected at startup root cause
-- claude-desktop the same error appears for multiple servers connected at startup
-- claude-desktop the same error appears for multiple servers connected at startup fix
-- affected servers may still actually work despite the toast
-- how to fix affected servers may still actually work despite the toast
 
 ## Fix: Claude Desktop does not list dynamic MCP resource templates (only static resources)
 
@@ -216,23 +216,23 @@ Queries this answer targets:
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
 - how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
+- claude-desktop list dynamic mcp resource templates static resources
+- claude-desktop list dynamic mcp resource templates static resources fix
+- templates static resources claude desktop list dynamic mcp resource claude-desktop
+- templates static resources claude desktop list dynamic mcp resource claude-desktop fix
+- claude desktop list dynamic templates static resources
+- claude desktop list dynamic templates static resources fix
+- claude desktop list dynamic claude-desktop
+- claude desktop list dynamic claude-desktop fix
+- claude-desktop resource works claude desktop parameterized templated show
+- claude-desktop resource works claude desktop parameterized templated show fix
+- parameterized templated show static resource works claude desktop claude-desktop
+- parameterized templated show static resource works claude desktop claude-desktop fix
+- static resource works claude parameterized templated show
+- static resource works claude parameterized templated show fix
+- static resource works claude claude-desktop
+- static resource works claude claude-desktop fix
 - a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause
-- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
-- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
-- the server is correct and the template appears under the Inspector Resources tab
-- how to fix the server is correct and the template appears under the Inspector Resources tab
-- the server is correct and the template appears under the Inspector Resources tab root cause
-- claude-desktop the server is correct and the template appears under the Inspector Resources tab
-- claude-desktop the server is correct and the template appears under the Inspector Resources tab fix
-- mcp-server the server is correct and the template appears under the Inspector Resources tab
-- mcp-server the server is correct and the template appears under the Inspector Resources tab fix
-- time lost assuming the server code is wrong
-- how to fix time lost assuming the server code is wrong
-- time lost assuming the server code is wrong root cause
 
 ## Fix: Codex still references an old workspace path after a project move
 
@@ -251,19 +251,26 @@ Queries this answer targets:
 - Codex still references an old workspace path after a project move fix
 - Codex still references an old workspace path after a project move root cause
 - how to fix Codex still references an old workspace path after a project move
+- codex references old workspace path after project move
+- codex references old workspace path after project move fix
+- after project move still references old workspace path codex
+- after project move still references old workspace path codex fix
+- still references old workspace after project move
+- still references old workspace after project move fix
+- still references old workspace codex
+- still references old workspace codex fix
+- codex sidebar references old workspace folder
+- codex sidebar references old workspace folder fix
+- old workspace folder sidebar references codex
+- old workspace folder sidebar references codex fix
+- sidebar references old workspace old workspace folder
+- sidebar references old workspace old workspace folder fix
+- sidebar references old workspace codex
+- sidebar references old workspace codex fix
 - Codex or its sidebar references an old workspace folder
 - how to fix Codex or its sidebar references an old workspace folder
 - Codex or its sidebar references an old workspace folder root cause
 - the shell current directory points to the new workspace
-- how to fix the shell current directory points to the new workspace
-- the shell current directory points to the new workspace root cause
-- codex the shell current directory points to the new workspace
-- codex the shell current directory points to the new workspace fix
-- file links or searches use the previous path
-- how to fix file links or searches use the previous path
-- file links or searches use the previous path root cause
-- codex file links or searches use the previous path
-- codex file links or searches use the previous path fix
 
 ## Fix: Docker port is published but localhost refuses the connection
 
@@ -282,26 +289,26 @@ Queries this answer targets:
 - Docker port is published but localhost refuses the connection fix
 - Docker port is published but localhost refuses the connection root cause
 - how to fix Docker port is published but localhost refuses the connection
+- codex docker port published localhost refuses connection
+- codex docker port published localhost refuses connection fix
+- localhost refuses connection docker port published codex
+- localhost refuses connection docker port published codex fix
+- docker port published localhost localhost refuses connection
+- docker port published localhost localhost refuses connection fix
+- docker port published localhost codex
+- docker port published localhost codex fix
+- codex docker ps port expected host
+- codex docker ps port expected host fix
+- port expected host docker ps codex
+- port expected host docker ps codex fix
+- docker ps port expected port expected host
+- docker ps port expected port expected host fix
+- docker ps port expected codex
+- docker ps port expected codex fix
 - docker ps or docker port shows the expected host port
 - how to fix docker ps or docker port shows the expected host port
 - docker ps or docker port shows the expected host port root cause
 - codex docker ps or docker port shows the expected host port
-- codex docker ps or docker port shows the expected host port fix
-- claude-code docker ps or docker port shows the expected host port
-- claude-code docker ps or docker port shows the expected host port fix
-- gemini docker ps or docker port shows the expected host port
-- gemini docker ps or docker port shows the expected host port fix
-- curl to localhost or 127.0.0.1 on the host fails
-- how to fix curl to localhost or 127.0.0.1 on the host fails
-- curl to localhost or 127.0.0.1 on the host fails root cause
-- codex curl to localhost or 127.0.0.1 on the host fails
-- codex curl to localhost or 127.0.0.1 on the host fails fix
-- claude-code curl to localhost or 127.0.0.1 on the host fails
-- claude-code curl to localhost or 127.0.0.1 on the host fails fix
-- gemini curl to localhost or 127.0.0.1 on the host fails
-- gemini curl to localhost or 127.0.0.1 on the host fails fix
-- container logs show the app listening on localhost or 127.0.0.1
-- how to fix container logs show the app listening on localhost or 127.0.0.1
 
 ## Fix: FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
 
@@ -323,23 +330,23 @@ Queries this answer targets:
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause
 - how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
+- mcp-server host header behind proxy dns rebinding protection
+- mcp-server host header behind proxy dns rebinding protection fix
+- dns rebinding protection 421 invalid host header behind proxy mcp-server
+- dns rebinding protection 421 invalid host header behind proxy mcp-server fix
+- returns 421 invalid host dns rebinding protection
+- returns 421 invalid host dns rebinding protection fix
+- returns 421 invalid host mcp-server
+- returns 421 invalid host mcp-server fix
+- mcp-server http 421 misdirected request invalid host header
+- mcp-server http 421 misdirected request invalid host header fix
+- invalid host header requests fail http 421 misdirected request mcp-server
+- invalid host header requests fail http 421 misdirected request mcp-server fix
+- all external requests fail invalid host header
+- all external requests fail invalid host header fix
+- all external requests fail mcp-server
+- all external requests fail mcp-server fix
 - /MCP
-- /MCP fix
-- mcp-server /MCP
-- mcp-server /MCP fix
-- fastmcp /MCP
-- fastmcp /MCP fix
-- -HTTP
-- -HTTP fix
-- mcp-server -HTTP
-- mcp-server -HTTP fix
-- fastmcp -HTTP
-- fastmcp -HTTP fix
-- HTTP 421 Misdirected Request and Invalid Host header
-- HTTP 421 Misdirected Request and 'Invalid Host header' fix
-- mcp-server HTTP 421 Misdirected Request and Invalid Host header
-- mcp-server HTTP 421 Misdirected Request and 'Invalid Host header' fix
-- fastmcp HTTP 421 Misdirected Request and Invalid Host header
 
 ## Fix: FastMCP overrides your app's logging configuration on init (duplicate or lost logs)
 
@@ -361,23 +368,23 @@ Queries this answer targets:
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
 - how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- mcp-server app logging configuration init duplicate lost logs
+- mcp-server app logging configuration init duplicate lost logs fix
+- duplicate lost logs overrides your app logging configuration init mcp-server
+- duplicate lost logs overrides your app logging configuration init mcp-server fix
+- overrides your app logging duplicate lost logs
+- overrides your app logging duplicate lost logs fix
+- overrides your app logging mcp-server
+- overrides your app logging mcp-server fix
+- mcp-server log messages become duplicated after server created
+- mcp-server log messages become duplicated after server created fix
+- after server created log messages become duplicated mcp-server
+- after server created log messages become duplicated mcp-server fix
+- log messages become duplicated after server created
+- log messages become duplicated after server created fix
+- log messages become duplicated mcp-server
+- log messages become duplicated mcp-server fix
 - log messages become duplicated after the FastMCP server is created
-- how to fix log messages become duplicated after the FastMCP server is created
-- log messages become duplicated after the FastMCP server is created root cause
-- mcp-server log messages become duplicated after the FastMCP server is created
-- mcp-server log messages become duplicated after the FastMCP server is created fix
-- python-sdk log messages become duplicated after the FastMCP server is created
-- python-sdk log messages become duplicated after the FastMCP server is created fix
-- a custom/structured global logging handler stops taking effect
-- how to fix a custom/structured global logging handler stops taking effect
-- a custom/structured global logging handler stops taking effect root cause
-- mcp-server a custom/structured global logging handler stops taking effect
-- mcp-server a custom/structured global logging handler stops taking effect fix
-- python-sdk a custom/structured global logging handler stops taking effect
-- python-sdk a custom/structured global logging handler stops taking effect fix
-- fastmcp a custom/structured global logging handler stops taking effect
-- fastmcp a custom/structured global logging handler stops taking effect fix
-- the change appears exactly when FastMCP(...) is instantiated
 
 ## Fix: VS Code agent config: github/* MCP toolset is Unknown tool while github warns it's renamed
 
@@ -399,23 +406,23 @@ Queries this answer targets:
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause
 - how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
+- github-mcp-server mcp toolset unknown tool while warns renamed
+- github-mcp-server mcp toolset unknown tool while warns renamed fix
+- while warns renamed config github mcp toolset unknown tool github-mcp-server
+- while warns renamed config github mcp toolset unknown tool github-mcp-server fix
+- vs code agent config while warns renamed
+- vs code agent config while warns renamed fix
+- vs code agent config github-mcp-server
+- vs code agent config github-mcp-server fix
+- github-mcp-server tools github produces unknown tool
+- github-mcp-server tools github produces unknown tool fix
+- produces unknown tool tools github github-mcp-server
+- produces unknown tool tools github github-mcp-server fix
+- tools github produces unknown produces unknown tool
+- tools github produces unknown produces unknown tool fix
+- tools github produces unknown github-mcp-server
+- tools github produces unknown github-mcp-server fix
 - tools: [github/*] produces Unknown tool
-- how to fix 'tools': ['github/*'] produces Unknown tool
-- tools: [github/*] produces Unknown tool root cause
-- github-mcp-server 'tools': ['github/*'] produces Unknown tool
-- github-mcp-server 'tools': ['github/*'] produces Unknown tool fix
-- vscode 'tools': ['github/*'] produces Unknown tool
-- vscode 'tools': ['github/*'] produces Unknown tool fix
-- tools: [github] works but warns it should be github/*
-- how to fix 'tools': ['github'] works but warns it should be github/*
-- tools: [github] works but warns it should be github/* root cause
-- github-mcp-server 'tools': ['github'] works but warns it should be github/*
-- github-mcp-server 'tools': ['github'] works but warns it should be github/* fix
-- vscode 'tools': ['github'] works but warns it should be github/*
-- vscode 'tools': ['github'] works but warns it should be github/* fix
-- reported for other MCP servers too, not just GitHub
-- how to fix reported for other MCP servers too, not just GitHub
-- reported for other MCP servers too, not just GitHub root cause
 
 ## Fix: macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable
 
@@ -434,26 +441,26 @@ Queries this answer targets:
 - macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix
 - macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause
 - how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable
+- sounddevice silent audio no error default mic unavailable
+- sounddevice silent audio no error default mic unavailable fix
+- default mic unavailable all zero silent audio no error sounddevice
+- default mic unavailable all zero silent audio no error sounddevice fix
+- macos all zero silent default mic unavailable
+- macos all zero silent default mic unavailable fix
+- macos all zero silent sounddevice
+- macos all zero silent sounddevice fix
+- sounddevice single junk token 2s clip stray korean
+- sounddevice single junk token 2s clip stray korean fix
+- clip stray korean speech transcribes single junk token 2s sounddevice
+- clip stray korean speech transcribes single junk token 2s sounddevice fix
+- multi second speech transcribes clip stray korean
+- multi second speech transcribes clip stray korean fix
+- multi second speech transcribes sounddevice
+- multi second speech transcribes sounddevice fix
 - multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
 - how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
 - multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause
 - sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause
-- sounddevice the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- sounddevice the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- portaudio the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- portaudio the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- no exception: sd.InputStream opens normally and its callback delivers all-zero frames
-- how to fix no exception: sd.InputStream opens normally and its callback delivers all-zero frames
 
 ## Fix: MCP server hangs because the GUI client uses your user-level .npmrc, not your project's
 
@@ -475,23 +482,23 @@ Queries this answer targets:
 - MCP server hangs because the GUI client uses your user-level .npmrc, not your projects fix
 - MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause
 - how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects
+- cursor client uses your user level npmrc project
+- cursor client uses your user level npmrc project fix
+- level npmrc project hangs gui client uses your user cursor
+- level npmrc project hangs gui client uses your user cursor fix
+- mcp server hangs gui level npmrc project
+- mcp server hangs gui level npmrc project fix
+- mcp server hangs gui cursor
+- mcp server hangs gui cursor fix
+- cursor npx package works project terminal launched client
+- cursor npx package works project terminal launched client fix
+- terminal launched client npx package works project cursor
+- terminal launched client npx package works project cursor fix
+- npx package works project terminal launched client
+- npx package works project terminal launched client fix
+- npx package works project cursor
+- npx package works project cursor fix
 - MCP error -32001: Request timed out
-- MCP error -32001: Request timed out fix
-- cursor MCP error -32001: Request timed out
-- cursor MCP error -32001: Request timed out fix
-- claude-desktop MCP error -32001: Request timed out
-- claude-desktop MCP error -32001: Request timed out fix
-- cline MCP error -32001: Request timed out
-- cline MCP error -32001: Request timed out fix
-- mcp-server MCP error -32001: Request timed out
-- mcp-server MCP error -32001: Request timed out fix
-- npx -y <package> works in a project terminal but not when launched by the client
-- how to fix npx -y <package> works in a project terminal but not when launched by the client
-- npx -y <package> works in a project terminal but not when launched by the client root cause
-- cursor npx -y <package> works in a project terminal but not when launched by the client
-- cursor npx -y <package> works in a project terminal but not when launched by the client fix
-- claude-desktop npx -y <package> works in a project terminal but not when launched by the client
-- claude-desktop npx -y <package> works in a project terminal but not when launched by the client fix
 
 ## Fix: MCP error -32000: Connection closed means the stdio server died before the handshake
 
@@ -516,20 +523,20 @@ Queries this answer targets:
 - MCP error -32000: Connection closed means the stdio server died before the handshake fix
 - MCP error -32000: Connection closed means the stdio server died before the handshake root cause
 - how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
-- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake
-- claude-desktop MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- cursor MCP error -32000: Connection closed means the stdio server died before the handshake
-- cursor MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- cline MCP error -32000: Connection closed means the stdio server died before the handshake
-- cline MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake
-- mcp-server MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- claude-desktop MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug
-- cursor MCP error -32000: Connection closed is a generic 'the stdio server process did not start' signal, not a protocol bug fix
+- claude-desktop connection closed means stdio server died handshake
+- claude-desktop connection closed means stdio server died handshake fix
+- server died handshake error 32000 connection closed means stdio claude-desktop
+- server died handshake error 32000 connection closed means stdio claude-desktop fix
+- mcp error 32000 connection server died handshake
+- mcp error 32000 connection server died handshake fix
+- mcp error 32000 connection claude-desktop
+- mcp error 32000 connection claude-desktop fix
+- claude-desktop client ui mcp error 32000 connection closed
+- claude-desktop client ui mcp error 32000 connection closed fix
+- 32000 connection closed client ui mcp error claude-desktop
+- 32000 connection closed client ui mcp error claude-desktop fix
+- client ui mcp error 32000 connection closed
+- client ui mcp error 32000 connection closed fix
 
 ## Fix: Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 
@@ -554,20 +561,20 @@ Queries this answer targets:
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
 - how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
-- Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause
-- claude-desktop Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- claude-desktop Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- cursor Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- cursor Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- mcp-server Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- mcp-server Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- the denied path is visibly inside a configured allowed root
-- how to fix the denied path is visibly inside a configured allowed root
-- the denied path is visibly inside a configured allowed root root cause
-- claude-desktop the denied path is visibly inside a configured allowed root
-- claude-desktop the denied path is visibly inside a configured allowed root fix
+- claude-desktop allowed windows paths drive letter case mismatch
+- claude-desktop allowed windows paths drive letter case mismatch fix
+- letter case mismatch server denies allowed windows paths drive claude-desktop
+- letter case mismatch server denies allowed windows paths drive claude-desktop fix
+- filesystem mcp server denies letter case mismatch
+- filesystem mcp server denies letter case mismatch fix
+- filesystem mcp server denies claude-desktop
+- filesystem mcp server denies claude-desktop fix
+- claude-desktop directory returns error access denied path directories
+- claude-desktop directory returns error access denied path directories fix
+- denied path directories file allowed directory returns error access claude-desktop
+- denied path directories file allowed directory returns error access claude-desktop fix
+- windows file allowed directory denied path directories
+- windows file allowed directory denied path directories fix
 
 ## Fix: Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 
@@ -589,23 +596,23 @@ Queries this answer targets:
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT fix
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause
 - how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
+- claude-code oauth fails support dynamic client registration pat
+- claude-code oauth fails support dynamic client registration pat fix
+- client registration pat remote mcp oauth fails support dynamic claude-code
+- client registration pat remote mcp oauth fails support dynamic claude-code fix
+- remote mcp oauth fails client registration pat
+- remote mcp oauth fails client registration pat fix
+- remote mcp oauth fails claude-code
+- remote mcp oauth fails claude-code fix
+- claude-code add https api githubcopilot com connection fails
+- claude-code add https api githubcopilot com connection fails fix
+- com connection fails claude mcp add https api githubcopilot claude-code
+- com connection fails claude mcp add https api githubcopilot claude-code fix
+- claude mcp add https com connection fails
+- claude mcp add https com connection fails fix
+- claude mcp add https claude-code
+- claude mcp add https claude-code fix
 - does not support dynamic client registration
-- does not support dynamic client registration fix
-- claude-code does not support dynamic client registration
-- claude-code does not support dynamic client registration fix
-- github-mcp-server does not support dynamic client registration
-- github-mcp-server does not support dynamic client registration fix
-- GITHUB_PERSONAL_ACCESS_TOKEN
-- GITHUB_PERSONAL_ACCESS_TOKEN fix
-- claude-code GITHUB_PERSONAL_ACCESS_TOKEN
-- claude-code GITHUB_PERSONAL_ACCESS_TOKEN fix
-- github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN
-- github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN fix
-- claude mcp add ... then the connection fails
-- how to fix claude mcp add ... then the connection fails
-- claude mcp add ... then the connection fails root cause
-- claude-code claude mcp add ... then the connection fails
-- claude-code claude mcp add ... then the connection fails fix
 
 ## Fix: MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 
@@ -627,23 +634,23 @@ Queries this answer targets:
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set fix
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause
 - how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
+- mcp-inspector refuses connections unless host allowed origins set
+- mcp-inspector refuses connections unless host allowed origins set fix
+- allowed origins set inspector docker refuses connections unless host mcp-inspector
+- allowed origins set inspector docker refuses connections unless host mcp-inspector fix
+- mcp inspector docker refuses allowed origins set
+- mcp inspector docker refuses allowed origins set fix
+- mcp inspector docker refuses mcp-inspector
+- mcp inspector docker refuses mcp-inspector fix
+- mcp-inspector localhost 6274 returns failed connect connection refused
+- mcp-inspector localhost 6274 returns failed connect connection refused fix
+- connect connection refused curl http localhost 6274 returns failed mcp-inspector
+- connect connection refused curl http localhost 6274 returns failed mcp-inspector fix
+- curl http localhost 6274 connect connection refused
+- curl http localhost 6274 connect connection refused fix
+- curl http localhost 6274 mcp-inspector
+- curl http localhost 6274 mcp-inspector fix
 - HOST fix
-- mcp-inspector HOST
-- mcp-inspector HOST fix
-- ALLOWED_ORIGINS
-- ALLOWED_ORIGINS fix
-- mcp-inspector ALLOWED_ORIGINS
-- mcp-inspector ALLOWED_ORIGINS fix
-- ERR_CONNECTION_REFUSED
-- ERR_CONNECTION_REFUSED fix
-- mcp-inspector ERR_CONNECTION_REFUSED
-- mcp-inspector ERR_CONNECTION_REFUSED fix
-- curl http://localhost:6274 returns Failed to connect ... Connection refused
-- how to fix curl http://localhost:6274 returns Failed to connect ... Connection refused
-- curl http://localhost:6274 returns Failed to connect ... Connection refused root cause
-- mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused
-- mcp-inspector curl http://localhost:6274 returns Failed to connect ... Connection refused fix
-- browser shows localhost refused to connect / ERR_CONNECTION_REFUSED
 
 ## Fix: MCP Inspector breaks after an upgrade; pin a known-good version
 
@@ -668,20 +675,20 @@ Queries this answer targets:
 - MCP Inspector breaks after an upgrade; pin a known-good version fix
 - MCP Inspector breaks after an upgrade; pin a known-good version root cause
 - how to fix MCP Inspector breaks after an upgrade; pin a known-good version
-- HTTP fix
-- mcp-inspector HTTP
-- mcp-inspector HTTP fix
-- ERR_INVALID_STATE
-- ERR_INVALID_STATE fix
-- mcp-inspector ERR_INVALID_STATE
-- mcp-inspector ERR_INVALID_STATE fix
-- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
-- how to fix npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' 0.10.0
-- npx @modelcontextprotocol/inspector fails with 'sh: mcp-inspector: command not found' or ''mcp-inspector' is not recognized' (0.10.0) root cause
-- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
-- how to fix connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
-- connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed (0.17.2, fixed 0.17.5) root cause
-- mcp-inspector connecting to a Streamable HTTP server crashes with TypeError [ERR_INVALID_STATE]: Invalid state: Controller is already closed 0.17.2, fixed 0.17.5
+- mcp-inspector breaks after upgrade pin known good version
+- mcp-inspector breaks after upgrade pin known good version fix
+- known good version mcp inspector breaks after upgrade pin mcp-inspector
+- known good version mcp inspector breaks after upgrade pin mcp-inspector fix
+- mcp inspector breaks after known good version
+- mcp inspector breaks after known good version fix
+- mcp inspector breaks after mcp-inspector
+- mcp inspector breaks after mcp-inspector fix
+- mcp-inspector fails sh mcp command found recognized 10
+- mcp-inspector fails sh mcp command found recognized 10 fix
+- found recognized 10 modelcontextprotocol inspector fails sh mcp command mcp-inspector
+- found recognized 10 modelcontextprotocol inspector fails sh mcp command mcp-inspector fix
+- npx modelcontextprotocol inspector fails found recognized 10
+- npx modelcontextprotocol inspector fails found recognized 10 fix
 
 ## Fix: A corrupted or cold npx cache makes an MCP server fail to start or time out
 
@@ -706,20 +713,20 @@ Queries this answer targets:
 - A corrupted or cold npx cache makes an MCP server fail to start or time out fix
 - A corrupted or cold npx cache makes an MCP server fail to start or time out root cause
 - how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out
-- MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo
-- MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix
-- claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo
-- claude-desktop MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix
-- cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo
-- cursor MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix
-- cline MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo
-- cline MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix
-- mcp-server MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo
-- mcp-server MCP error -32001: Request timed out is often a npx/npm cache problem: an interrupted download leaves a partial package, or a cold first download exceeds the client startup timeo fix
-- MCP error -32001: Request timed out
-- MCP error -32001: Request timed out fix
-- claude-desktop MCP error -32001: Request timed out
-- claude-desktop MCP error -32001: Request timed out fix
+- claude-desktop makes mcp server fail start time out
+- claude-desktop makes mcp server fail start time out fix
+- start time out npx cache makes mcp server fail claude-desktop
+- start time out npx cache makes mcp server fail claude-desktop fix
+- corrupted cold npx cache start time out
+- corrupted cold npx cache start time out fix
+- corrupted cold npx cache claude-desktop
+- corrupted cold npx cache claude-desktop fix
+- claude-desktop mcp server worked now fails first launch
+- claude-desktop mcp server worked now fails first launch fix
+- fails first launch npx launched mcp server worked now claude-desktop
+- fails first launch npx launched mcp server worked now claude-desktop fix
+- npx launched mcp server fails first launch
+- npx launched mcp server fails first launch fix
 
 ## Fix: Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 
@@ -741,23 +748,23 @@ Queries this answer targets:
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause
 - how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
+- mcp-server live memory there no file disk find
+- mcp-server live memory there no file disk find fix
+- file disk find mcp screenshots live memory there no mcp-server
+- file disk find mcp screenshots live memory there no mcp-server fix
+- puppeteer mcp screenshots live file disk find
+- puppeteer mcp screenshots live file disk find fix
+- puppeteer mcp screenshots live mcp-server
+- puppeteer mcp screenshots live mcp-server fix
+- mcp-server screenshot success no image file appears disk
+- mcp-server screenshot success no image file appears disk fix
+- file appears disk puppeteer screenshot success no image mcp-server
+- file appears disk puppeteer screenshot success no image mcp-server fix
+- puppeteer screenshot success no file appears disk
+- puppeteer screenshot success no file appears disk fix
+- puppeteer screenshot success no mcp-server
+- puppeteer screenshot success no mcp-server fix
 - puppeteer_screenshot reports success but no image file appears on disk
-- how to fix puppeteer_screenshot reports success but no image file appears on disk
-- puppeteer_screenshot reports success but no image file appears on disk root cause
-- mcp-server puppeteer_screenshot reports success but no image file appears on disk
-- mcp-server puppeteer_screenshot reports success but no image file appears on disk fix
-- claude-desktop puppeteer_screenshot reports success but no image file appears on disk
-- claude-desktop puppeteer_screenshot reports success but no image file appears on disk fix
-- the model tries to open a screenshot path and finds nothing
-- how to fix the model tries to open a screenshot path and finds nothing
-- the model tries to open a screenshot path and finds nothing root cause
-- mcp-server the model tries to open a screenshot path and finds nothing
-- mcp-server the model tries to open a screenshot path and finds nothing fix
-- claude-desktop the model tries to open a screenshot path and finds nothing
-- claude-desktop the model tries to open a screenshot path and finds nothing fix
-- the agent searches the filesystem (sometimes outside the project) for the missing file
-- how to fix the agent searches the filesystem (sometimes outside the project) for the missing file
-- the agent searches the filesystem (sometimes outside the project) for the missing file root cause
 
 ## Fix: Several official reference MCP servers are archived; their bugs will not be fixed
 
@@ -782,20 +789,20 @@ Queries this answer targets:
 - Several official reference MCP servers are archived; their bugs will not be fixed fix
 - Several official reference MCP servers are archived; their bugs will not be fixed root cause
 - how to fix Several official reference MCP servers are archived; their bugs will not be fixed
-- README fix
-- mcp-server README
-- mcp-server README fix
-- claude-desktop README
-- claude-desktop README fix
-- cursor README
-- cursor README fix
-- a reference server misbehaves and the issue is closed with a deprecation/archival note
-- how to fix a reference server misbehaves and the issue is closed with a deprecation/archival note
-- a reference server misbehaves and the issue is closed with a deprecation/archival note root cause
-- mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note
-- mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note fix
-- claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note
-- claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note fix
+- mcp-server mcp servers archived their bugs will fixed
+- mcp-server mcp servers archived their bugs will fixed fix
+- bugs will fixed official reference mcp servers archived their mcp-server
+- bugs will fixed official reference mcp servers archived their mcp-server fix
+- several official reference mcp bugs will fixed
+- several official reference mcp bugs will fixed fix
+- several official reference mcp mcp-server
+- several official reference mcp mcp-server fix
+- mcp-server server misbehaves issue closed deprecation archival note
+- mcp-server server misbehaves issue closed deprecation archival note fix
+- deprecation archival note reference server misbehaves issue closed mcp-server
+- deprecation archival note reference server misbehaves issue closed mcp-server fix
+- reference server misbehaves issue deprecation archival note
+- reference server misbehaves issue deprecation archival note fix
 
 ## Fix: A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 
@@ -817,23 +824,23 @@ Queries this answer targets:
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed fix
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause
 - how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
+- claude-desktop breaks remote mcp after oauth initialize succeed
+- claude-desktop breaks remote mcp after oauth initialize succeed fix
+- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop
+- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop fix
+- reverse proxy buffering sse oauth initialize succeed
+- reverse proxy buffering sse oauth initialize succeed fix
+- reverse proxy buffering sse claude-desktop
+- reverse proxy buffering sse claude-desktop fix
+- claude-desktop errors there was error connecting your server
+- claude-desktop errors there was error connecting your server fix
+- connecting your server remote mcp errors there was error claude-desktop
+- connecting your server remote mcp errors there was error claude-desktop fix
+- client connects custom remote connecting your server
+- client connects custom remote connecting your server fix
+- client connects custom remote claude-desktop
+- client connects custom remote claude-desktop fix
 - HTTP fix
-- claude-desktop HTTP
-- claude-desktop HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- how to fix the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') root cause
-- claude-desktop the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- claude-desktop the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix
-- mcp-server the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- mcp-server the client connects to a custom remote MCP then errors (e.g. 'There was an error connecting to your server') fix
-- server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- how to fix server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows root cause
-- claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- claude-desktop server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows fix
 
 ## Fix: server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 
@@ -855,23 +862,23 @@ Queries this answer targets:
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause
 - how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
+- claude-desktop ignores file path npm build lagged source
+- claude-desktop ignores file path npm build lagged source fix
+- build lagged source server memory ignores file path npm claude-desktop
+- build lagged source server memory ignores file path npm claude-desktop fix
+- server memory ignores file build lagged source
+- server memory ignores file build lagged source fix
+- server memory ignores file claude-desktop
+- server memory ignores file claude-desktop fix
+- claude-desktop memory file path set created default location
+- claude-desktop memory file path set created default location fix
+- created default location memory file path set claude-desktop
+- created default location memory file path set claude-desktop fix
+- memory file path set created default location
+- memory file path set created default location fix
+- memory file path set claude-desktop
+- memory file path set claude-desktop fix
 - MEMORY_FILE_PATH
-- MEMORY_FILE_PATH fix
-- claude-desktop MEMORY_FILE_PATH
-- claude-desktop MEMORY_FILE_PATH fix
-- cursor MEMORY_FILE_PATH
-- cursor MEMORY_FILE_PATH fix
-- mcp-server MEMORY_FILE_PATH
-- mcp-server MEMORY_FILE_PATH fix
-- MEMORY_FILE_PATH is set but the memory file is created at a default location
-- how to fix MEMORY_FILE_PATH is set but the memory file is created at a default location
-- MEMORY_FILE_PATH is set but the memory file is created at a default location root cause
-- claude-desktop MEMORY_FILE_PATH is set but the memory file is created at a default location
-- claude-desktop MEMORY_FILE_PATH is set but the memory file is created at a default location fix
-- cursor MEMORY_FILE_PATH is set but the memory file is created at a default location
-- cursor MEMORY_FILE_PATH is set but the memory file is created at a default location fix
-- mcp-server MEMORY_FILE_PATH is set but the memory file is created at a default location
-- mcp-server MEMORY_FILE_PATH is set but the memory file is created at a default location fix
 
 ## Fix: SSE MCP server: Received request before initialization was complete
 
@@ -893,23 +900,23 @@ Queries this answer targets:
 - SSE MCP server: Received request before initialization was complete fix
 - SSE MCP server: Received request before initialization was complete root cause
 - how to fix SSE MCP server: Received request before initialization was complete
+- mcp-server mcp server received request initialization was complete
+- mcp-server mcp server received request initialization was complete fix
+- initialization was complete sse mcp server received request mcp-server
+- initialization was complete sse mcp server received request mcp-server fix
+- sse mcp server received initialization was complete
+- sse mcp server received initialization was complete fix
+- sse mcp server received mcp-server
+- sse mcp server received mcp-server fix
+- mcp-server initialization was complete tools list tool call
+- mcp-server initialization was complete tools list tool call fix
+- list tool call received request initialization was complete tools mcp-server
+- list tool call received request initialization was complete tools mcp-server fix
+- server raises runtimeerror received list tool call
+- server raises runtimeerror received list tool call fix
+- server raises runtimeerror received mcp-server
+- server raises runtimeerror received mcp-server fix
 - RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- python-sdk RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- python-sdk RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- how to fix server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call root cause
-- mcp-server server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- mcp-server server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
 
 ## Fix: MCP SSE session lost across workers/pods: Could not find session for ID (404)
 
@@ -931,23 +938,23 @@ Queries this answer targets:
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) fix
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause
 - how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
+- mcp-server lost across workers pods find id 404
+- mcp-server lost across workers pods find id 404 fix
+- find id 404 sse session lost across workers pods mcp-server
+- find id 404 sse session lost across workers pods mcp-server fix
+- mcp sse session lost find id 404
+- mcp sse session lost find id 404 fix
+- mcp sse session lost mcp-server
+- mcp sse session lost mcp-server fix
+- mcp-server post returns 202 later posts return 404
+- mcp-server post returns 202 later posts return 404 fix
+- posts return 404 200 first post returns 202 later mcp-server
+- posts return 404 200 first post returns 202 later mcp-server fix
+- sse connection opens 200 posts return 404
+- sse connection opens 200 posts return 404 fix
+- sse connection opens 200 mcp-server
+- sse connection opens 200 mcp-server fix
 - POST fix
-- mcp-server POST
-- mcp-server POST fix
-- python-sdk POST
-- python-sdk POST fix
-- fastmcp POST
-- fastmcp POST fix
-- HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- python-sdk HTTP
-- python-sdk HTTP fix
-- fastmcp HTTP
-- fastmcp HTTP fix
-- WARNING fix
-- mcp-server WARNING
-- mcp-server WARNING fix
 
 ## Fix: Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 
@@ -969,23 +976,23 @@ Queries this answer targets:
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions fix
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause
 - how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
+- mcp-server server throws anyio closedresourceerror some sdk versions
+- mcp-server server throws anyio closedresourceerror some sdk versions fix
+- some sdk versions http mcp server throws anyio closedresourceerror mcp-server
+- some sdk versions http mcp server throws anyio closedresourceerror mcp-server fix
+- stateless streamable http mcp some sdk versions
+- stateless streamable http mcp some sdk versions fix
+- stateless streamable http mcp mcp-server
+- stateless streamable http mcp mcp-server fix
+- mcp-server request raises exception group ending anyio closedresourceerror
+- mcp-server request raises exception group ending anyio closedresourceerror fix
+- ending anyio closedresourceerror each request raises exception group mcp-server
+- ending anyio closedresourceerror each request raises exception group mcp-server fix
+- each request raises exception ending anyio closedresourceerror
+- each request raises exception ending anyio closedresourceerror fix
+- each request raises exception mcp-server
+- each request raises exception mcp-server fix
 - HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- python-sdk HTTP
-- python-sdk HTTP fix
-- fastmcp HTTP
-- fastmcp HTTP fix
-- 10/2
-- 10/2 fix
-- mcp-server 10/2
-- mcp-server 10/2 fix
-- python-sdk 10/2
-- python-sdk 10/2 fix
-- fastmcp 10/2
-- fastmcp 10/2 fix
-- each request raises an exception group ending in anyio.ClosedResourceError
-- how to fix each request raises an exception group ending in anyio.ClosedResourceError
 
 ## Fix: MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
 
@@ -1013,17 +1020,17 @@ Queries this answer targets:
 - MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
 - MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
 - how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
-- PATH fix
-- claude-desktop PATH
-- claude-desktop PATH fix
-- mcp-server PATH
-- mcp-server PATH fix
-- EPIPE fix
-- claude-desktop EPIPE
-- claude-desktop EPIPE fix
-- mcp-server EPIPE
-- mcp-server EPIPE fix
-- NVM/
+- claude-desktop immediately gui client inherit your shell path
+- claude-desktop immediately gui client inherit your shell path fix
+- your shell path server exits immediately gui client inherit claude-desktop
+- your shell path server exits immediately gui client inherit claude-desktop fix
+- mcp stdio server exits your shell path
+- mcp stdio server exits your shell path fix
+- mcp stdio server exits claude-desktop
+- mcp stdio server exits claude-desktop fix
+- claude-desktop transport closed unexpectedly likely process exiting early
+- claude-desktop transport closed unexpectedly likely process exiting early fix
+- process exiting early log server transport closed unexpectedly likely claude-desktop
 
 ## Fix: Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
 
@@ -1045,23 +1052,23 @@ Queries this answer targets:
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix
 - Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause
 - how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream
+- mcp-server stdio mcp server corrupts json rpc stream
+- mcp-server stdio mcp server corrupts json rpc stream fix
+- json rpc stream writing stdout stdio mcp server corrupts mcp-server
+- json rpc stream writing stdout stdio mcp server corrupts mcp-server fix
+- writing stdout stdio mcp json rpc stream
+- writing stdout stdio mcp json rpc stream fix
+- writing stdout stdio mcp mcp-server
+- writing stdout stdio mcp mcp-server fix
+- mcp-server client error syntaxerror valid json deserializemessage parse
+- mcp-server client error syntaxerror valid json deserializemessage parse fix
+- json deserializemessage parse client error syntaxerror valid mcp-server
+- json deserializemessage parse client error syntaxerror valid mcp-server fix
+- client error syntaxerror valid json deserializemessage parse
+- client error syntaxerror valid json deserializemessage parse fix
+- client error syntaxerror valid mcp-server
+- client error syntaxerror valid mcp-server fix
 - JSON-RPC
-- JSON-RPC fix
-- mcp-server JSON-RPC
-- mcp-server JSON-RPC fix
-- typescript-sdk JSON-RPC
-- typescript-sdk JSON-RPC fix
-- python-sdk JSON-RPC
-- python-sdk JSON-RPC fix
-- client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- how to fix client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse root cause
-- mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- mcp-server client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
-- typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- typescript-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
-- python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse
-- python-sdk client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse fix
 
 ## Fix: Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
 
@@ -1083,23 +1090,23 @@ Queries this answer targets:
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause
 - how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- mcp-inspector client hangs 401 instead starting oauth flow
+- mcp-inspector client hangs 401 instead starting oauth flow fix
+- starting oauth flow http mcp client hangs 401 instead mcp-inspector
+- starting oauth flow http mcp client hangs 401 instead mcp-inspector fix
+- streamable http mcp client starting oauth flow
+- streamable http mcp client starting oauth flow fix
+- streamable http mcp client mcp-inspector
+- streamable http mcp client mcp-inspector fix
+- mcp-inspector protected mcp server over streamable http hangs
+- mcp-inspector protected mcp server over streamable http hangs fix
+- streamable http hangs connecting oauth protected mcp server over mcp-inspector
+- streamable http hangs connecting oauth protected mcp server over mcp-inspector fix
+- connecting oauth protected mcp streamable http hangs
+- connecting oauth protected mcp streamable http hangs fix
+- connecting oauth protected mcp mcp-inspector
+- connecting oauth protected mcp mcp-inspector fix
 - HTTP fix
-- mcp-inspector HTTP
-- mcp-inspector HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- mcp-inspector HTTP 401
-- mcp-inspector HTTP 401 fix
-- mcp-server HTTP 401
-- mcp-server HTTP 401 fix
-- /SDK
-- /SDK fix
-- mcp-inspector /SDK
-- mcp-inspector /SDK fix
-- mcp-server /SDK
-- mcp-server /SDK fix
-- connecting to an OAuth-protected MCP server over Streamable HTTP hangs
-- how to fix connecting to an OAuth-protected MCP server over Streamable HTTP hangs
 
 ## Fix: mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 
@@ -1121,23 +1128,23 @@ Queries this answer targets:
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause
 - how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
+- mcp-server local timezone abbreviation like edt pdt cest
+- mcp-server local timezone abbreviation like edt pdt cest fix
+- edt pdt cest time crashes local timezone abbreviation like mcp-server
+- edt pdt cest time crashes local timezone abbreviation like mcp-server fix
+- mcp server time crashes edt pdt cest
+- mcp server time crashes edt pdt cest fix
+- mcp server time crashes mcp-server
+- mcp server time crashes mcp-server fix
+- mcp-server zoneinfo common py load tzdata failing timezone
+- mcp-server zoneinfo common py load tzdata failing timezone fix
+- tzdata failing timezone traceback through zoneinfo common py load mcp-server
+- tzdata failing timezone traceback through zoneinfo common py load mcp-server fix
+- uvx mcp server time tzdata failing timezone
+- uvx mcp server time tzdata failing timezone fix
+- uvx mcp server time mcp-server
+- uvx mcp server time mcp-server fix
 - EDT/PDT/CEST
-- EDT/PDT/CEST fix
-- mcp-server EDT/PDT/CEST
-- mcp-server EDT/PDT/CEST fix
-- claude-desktop EDT/PDT/CEST
-- claude-desktop EDT/PDT/CEST fix
-- -IANA
-- -IANA fix
-- mcp-server -IANA
-- mcp-server -IANA fix
-- claude-desktop -IANA
-- claude-desktop -IANA fix
-- IANA fix
-- mcp-server IANA
-- mcp-server IANA fix
-- claude-desktop IANA
-- claude-desktop IANA fix
 
 ## Fix: MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
 
@@ -1159,23 +1166,23 @@ Queries this answer targets:
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause
 - how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
+- mcp-server after 60s 32001 unless you reset progress
+- mcp-server after 60s 32001 unless you reset progress fix
+- you reset progress tool calls after 60s 32001 unless mcp-server
+- you reset progress tool calls after 60s 32001 unless mcp-server fix
+- mcp typescript client times you reset progress
+- mcp typescript client times you reset progress fix
+- mcp typescript client times mcp-server
+- mcp typescript client times mcp-server fix
+- mcp-server 32001 request timed out data timeout 60000
+- mcp-server 32001 request timed out data timeout 60000 fix
+- data timeout 60000 mcp error 32001 request timed out mcp-server
+- data timeout 60000 mcp error 32001 request timed out mcp-server fix
+- mcperror mcp error 32001 data timeout 60000
+- mcperror mcp error 32001 data timeout 60000 fix
+- mcperror mcp error 32001 mcp-server
+- mcperror mcp error 32001 mcp-server fix
 - MCP error -32001: Request timed out even with server progress
-- MCP error -32001: Request timed out even with server progress fix
-- mcp-server MCP error -32001: Request timed out even with server progress
-- mcp-server MCP error -32001: Request timed out even with server progress fix
-- typescript-sdk MCP error -32001: Request timed out even with server progress
-- typescript-sdk MCP error -32001: Request timed out even with server progress fix
-- MCP error -32001: Request timed out with data: { timeout: 60000 }
-- MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }
-- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 }
-- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
-- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 
 ## Fix: MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge)
 
@@ -1197,23 +1204,23 @@ Queries this answer targets:
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause
 - how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
+- mcp-server commonjs projects err require esm pkce challenge
+- mcp-server commonjs projects err require esm pkce challenge fix
+- esm pkce challenge sdk crashes commonjs projects err require mcp-server
+- esm pkce challenge sdk crashes commonjs projects err require mcp-server fix
+- mcp typescript sdk crashes esm pkce challenge
+- mcp typescript sdk crashes esm pkce challenge fix
+- mcp typescript sdk crashes mcp-server
+- mcp typescript sdk crashes mcp-server fix
+- mcp-server module pkce challenge supported dynamic import instead
+- mcp-server module pkce challenge supported dynamic import instead fix
+- dynamic import instead esm es module pkce challenge supported mcp-server
+- dynamic import instead esm es module pkce challenge supported mcp-server fix
+- runtime crash mcp client dynamic import instead
+- runtime crash mcp client dynamic import instead fix
+- runtime crash mcp client mcp-server
+- runtime crash mcp client mcp-server fix
 - ERR_REQUIRE_ESM
-- ERR_REQUIRE_ESM fix
-- mcp-server ERR_REQUIRE_ESM
-- mcp-server ERR_REQUIRE_ESM fix
-- typescript-sdk ERR_REQUIRE_ESM
-- typescript-sdk ERR_REQUIRE_ESM fix
-- runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
-- how to fix runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
-- runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead root cause
-- mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
-- mcp-server runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead fix
-- typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
-- typescript-sdk runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead fix
-- the project is CommonJS often NestJS
-- how to fix the project is CommonJS often NestJS
-- the project is CommonJS (often NestJS) root cause
-- mcp-server the project is CommonJS often NestJS
 
 ## Fix: MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation)
 
@@ -1235,23 +1242,23 @@ Queries this answer targets:
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix
 - MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause
 - how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation
+- mcp-server fails cloudflare workers evalerror ajv code generation
+- mcp-server fails cloudflare workers evalerror ajv code generation fix
+- ajv code generation sdk validation fails cloudflare workers evalerror mcp-server
+- ajv code generation sdk validation fails cloudflare workers evalerror mcp-server fix
+- mcp ts sdk validation ajv code generation
+- mcp ts sdk validation ajv code generation fix
+- mcp ts sdk validation mcp-server
+- mcp ts sdk validation mcp-server fix
+- mcp-server context stack through new function ajv localcompile
+- mcp-server context stack through new function ajv localcompile fix
+- function ajv localcompile strings disallowed context stack through new mcp-server
+- function ajv localcompile strings disallowed context stack through new mcp-server fix
+- evalerror code generation strings function ajv localcompile
+- evalerror code generation strings function ajv localcompile fix
+- evalerror code generation strings mcp-server
+- evalerror code generation strings mcp-server fix
 - EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- mcp-server EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid
-- typescript-sdk EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv
-- typescript-sdk EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv fix
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- how to fix EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile root cause
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile
-- mcp-server EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile fix
 
 ## Fix: MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 
@@ -1273,23 +1280,23 @@ Queries this answer targets:
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE fix
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause
 - how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
+- mcp-server type instantiation excessively deep ts2589 freezes ide
+- mcp-server type instantiation excessively deep ts2589 freezes ide fix
+- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server
+- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server fix
+- mcp ts sdk type ts2589 freezes ide
+- mcp ts sdk type ts2589 freezes ide fix
+- mcp ts sdk type mcp-server
+- mcp ts sdk type mcp-server fix
+- mcp-server ts 2589 lines referencing sdk tool types
+- mcp-server ts 2589 lines referencing sdk tool types fix
+- sdk tool types possibly infinite ts 2589 lines referencing mcp-server
+- sdk tool types possibly infinite ts 2589 lines referencing mcp-server fix
+- type instantiation excessively deep sdk tool types
+- type instantiation excessively deep sdk tool types fix
+- type instantiation excessively deep mcp-server
+- type instantiation excessively deep mcp-server fix
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- how to fix Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types root cause
-- mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- mcp-server Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix
-- typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
-- typescript-sdk Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types fix
-- the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- how to fix the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- the TypeScript server in Cursor/VS Code hangs and saving files stalls root cause
-- mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- mcp-server the TypeScript server in Cursor/VS Code hangs and saving files stalls fix
-- typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- typescript-sdk the TypeScript server in Cursor/VS Code hangs and saving files stalls fix
-- it appears intermittently; @ts-ignore silences the error but not the slowdown
-- how to fix it appears intermittently; @ts-ignore silences the error but not the slowdown
-- it appears intermittently; @ts-ignore silences the error but not the slowdown root cause
 
 ## Fix: MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
 
@@ -1311,23 +1318,23 @@ Queries this answer targets:
 - MCP TypeScript SDK breaks with Zod v4: w._parse is not a function fix
 - MCP TypeScript SDK breaks with Zod v4: w._parse is not a function root cause
 - how to fix MCP TypeScript SDK breaks with Zod v4: w._parse is not a function
+- mcp-server typescript sdk breaks zod v4 parse function
+- mcp-server typescript sdk breaks zod v4 parse function fix
+- v4 parse function mcp typescript sdk breaks zod mcp-server
+- v4 parse function mcp typescript sdk breaks zod mcp-server fix
+- mcp typescript sdk breaks v4 parse function
+- mcp typescript sdk breaks v4 parse function fix
+- mcp typescript sdk breaks mcp-server
+- mcp typescript sdk breaks mcp-server fix
+- mcp-server execution returns code 32603 message parse function
+- mcp-server execution returns code 32603 message parse function fix
+- message parse function tool execution returns code 32603 mcp-server
+- message parse function tool execution returns code 32603 mcp-server fix
+- tool execution returns code message parse function
+- tool execution returns code message parse function fix
+- tool execution returns code mcp-server
+- tool execution returns code mcp-server fix
 - w._parse is not a function
-- w._parse is not a function... fix
-- mcp-server w._parse is not a function
-- mcp-server w._parse is not a function... fix
-- typescript-sdk w._parse is not a function
-- typescript-sdk w._parse is not a function... fix
-- tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
-- how to fix tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
-- tool execution returns {"code":-32603,"message":"w._parse is not a function..."} root cause
-- mcp-server tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
-- mcp-server tool execution returns {"code":-32603,"message":"w._parse is not a function..."} fix
-- typescript-sdk tool execution returns {"code":-32603,"message":"w._parse is not a function..."}
-- typescript-sdk tool execution returns {"code":-32603,"message":"w._parse is not a function..."} fix
-- tools/list fails with null is not an object evaluating F._def
-- how to fix tools/list fails with null is not an object evaluating F._def
-- tools/list fails with 'null is not an object (evaluating F._def)' root cause
-- mcp-server tools/list fails with null is not an object evaluating F._def
 
 ## Fix: On Windows an MCP server launched with npx needs a cmd /c wrapper
 
@@ -1352,20 +1359,20 @@ Queries this answer targets:
 - On Windows an MCP server launched with npx needs a cmd /c wrapper fix
 - On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
 - how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
-- ENOENT fix
-- claude-desktop ENOENT
-- claude-desktop ENOENT fix
-- cursor ENOENT
-- cursor ENOENT fix
-- cline ENOENT
-- cline ENOENT fix
-- mcp-server ENOENT
-- mcp-server ENOENT fix
-- /WSL
-- /WSL fix
-- claude-desktop /WSL
-- claude-desktop /WSL fix
-- cursor /WSL
+- claude-desktop mcp server launched npx needs cmd wrapper
+- claude-desktop mcp server launched npx needs cmd wrapper fix
+- needs cmd wrapper windows mcp server launched npx claude-desktop
+- needs cmd wrapper windows mcp server launched npx claude-desktop fix
+- windows mcp server launched needs cmd wrapper
+- windows mcp server launched needs cmd wrapper fix
+- windows mcp server launched claude-desktop
+- windows mcp server launched claude-desktop fix
+- claude-desktop windows mcp server will start
+- claude-desktop windows mcp server will start fix
+- server will start windows mcp claude-desktop
+- server will start windows mcp claude-desktop fix
+- windows mcp server will server will start
+- windows mcp server will server will start fix
 
 ## Fix: PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
 
@@ -1384,26 +1391,26 @@ Queries this answer targets:
 - PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener fix
 - PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener root cause
 - how to fix PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
+- portaudio close hotkey callback thread freeze global listener
+- portaudio close hotkey callback thread freeze global listener fix
+- freeze global listener stream stop close hotkey callback thread portaudio
+- freeze global listener stream stop close hotkey callback thread portaudio fix
+- stream stop close hotkey freeze global listener
+- stream stop close hotkey freeze global listener fix
+- stream stop close hotkey portaudio
+- stream stop close hotkey portaudio fix
+- portaudio intermittently goes unresponsive after switching windows dictating
+- portaudio intermittently goes unresponsive after switching windows dictating fix
+- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio
+- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio fix
+- push talk dictation daemon switching windows dictating
+- push talk dictation daemon switching windows dictating fix
+- push talk dictation daemon portaudio
+- push talk dictation daemon portaudio fix
 - a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
 - how to fix a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
 - a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating root cause
 - portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- how to fix the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line root cause
-- portaudio the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- portaudio the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- pynput the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- pynput the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- voice-to-claude the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- voice-to-claude the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- daemon status still reports Running but pressing the hotkey does nothing
-- how to fix daemon status still reports Running but pressing the hotkey does nothing
 
 ## Fix: pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
 
@@ -1422,26 +1429,26 @@ Queries this answer targets:
 - pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix
 - pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause
 - how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste
+- pynput mixed chinese english text macos clipboard paste
+- pynput mixed chinese english text macos clipboard paste fix
+- macos clipboard paste type scrambles mixed chinese english text pynput
+- macos clipboard paste type scrambles mixed chinese english text pynput fix
+- controller type scrambles mixed macos clipboard paste
+- controller type scrambles mixed macos clipboard paste fix
+- controller type scrambles mixed pynput
+- controller type scrambles mixed pynput fix
+- pynput english fragments shoved end some cjk dropped
+- pynput english fragments shoved end some cjk dropped fix
+- some cjk dropped odecomit reordered english fragments shoved end pynput
+- some cjk dropped odecomit reordered english fragments shoved end pynput fix
+- injecting claude code commit some cjk dropped
+- injecting claude code commit some cjk dropped fix
+- injecting claude code commit pynput
+- injecting claude code commit pynput fix
 - ASCII fix
 - pynput ASCII
 - pynput ASCII fix
 - voice-to-claude ASCII
-- voice-to-claude ASCII fix
-- injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
-- how to fix injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
-- injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped root cause
-- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
-- pynput injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix
-- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped
-- voice-to-claude injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped fix
-- pure-English and pure-Chinese strings inject fine
-- how to fix pure-English and pure-Chinese strings inject fine
-- pure-English and pure-Chinese strings inject fine root cause
-- pynput pure-English and pure-Chinese strings inject fine
-- pynput pure-English and pure-Chinese strings inject fine fix
-- voice-to-claude pure-English and pure-Chinese strings inject fine
-- voice-to-claude pure-English and pure-Chinese strings inject fine fix
-- only mixed CJK+ASCII text scrambles
 
 ## Fix: uv fails in a managed workspace because cache or Python install paths are outside writable roots
 
@@ -1460,24 +1467,24 @@ Queries this answer targets:
 - uv fails in a managed workspace because cache or Python install paths are outside writable roots fix
 - uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause
 - how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots
+- codex workspace cache python install paths writable roots
+- codex workspace cache python install paths writable roots fix
+- paths writable roots fails managed workspace cache python install codex
+- paths writable roots fails managed workspace cache python install codex fix
+- uv fails managed workspace paths writable roots
+- uv fails managed workspace paths writable roots fix
+- uv fails managed workspace codex
+- uv fails managed workspace codex fix
+- codex run sync fails permission sandbox filesystem errors
+- codex run sync fails permission sandbox filesystem errors fix
+- sandbox filesystem errors uv run sync fails permission codex
+- sandbox filesystem errors uv run sync fails permission codex fix
+- uv run sync fails sandbox filesystem errors
+- uv run sync fails sandbox filesystem errors fix
+- uv run sync fails codex
+- uv run sync fails codex fix
 - UV_CACHE_DIR
 - UV_CACHE_DIR fix
 - codex UV_CACHE_DIR
 - codex UV_CACHE_DIR fix
-- claude-code UV_CACHE_DIR
-- claude-code UV_CACHE_DIR fix
-- gemini UV_CACHE_DIR
-- gemini UV_CACHE_DIR fix
-- qwen-code UV_CACHE_DIR
-- qwen-code UV_CACHE_DIR fix
-- UV_PYTHON_INSTALL_DIR
-- UV_PYTHON_INSTALL_DIR fix
-- codex UV_PYTHON_INSTALL_DIR
-- codex UV_PYTHON_INSTALL_DIR fix
-- claude-code UV_PYTHON_INSTALL_DIR
-- claude-code UV_PYTHON_INSTALL_DIR fix
-- gemini UV_PYTHON_INSTALL_DIR
-- gemini UV_PYTHON_INSTALL_DIR fix
-- qwen-code UV_PYTHON_INSTALL_DIR
-- qwen-code UV_PYTHON_INSTALL_DIR fix
 

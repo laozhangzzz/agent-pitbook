@@ -21,24 +21,23 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/40
 - PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener fix
 - PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener root cause
 - how to fix PortAudio stream stop()/close() on a hotkey-callback thread can freeze the global hotkey listener
+- portaudio close hotkey callback thread freeze global listener
+- portaudio close hotkey callback thread freeze global listener fix
+- freeze global listener stream stop close hotkey callback thread portaudio
+- freeze global listener stream stop close hotkey callback thread portaudio fix
+- stream stop close hotkey freeze global listener
+- stream stop close hotkey freeze global listener fix
+- stream stop close hotkey portaudio
+- stream stop close hotkey portaudio fix
+- portaudio intermittently goes unresponsive after switching windows dictating
+- portaudio intermittently goes unresponsive after switching windows dictating fix
+- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio
+- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio fix
+- push talk dictation daemon switching windows dictating
+- push talk dictation daemon switching windows dictating fix
+- push talk dictation daemon portaudio
+- push talk dictation daemon portaudio fix
 - a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
 - how to fix a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
 - a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating root cause
 - portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- pynput a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- voice-to-claude a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating fix
-- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- how to fix the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line root cause
-- portaudio the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- portaudio the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- pynput the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- pynput the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- voice-to-claude the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- voice-to-claude the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line fix
-- daemon status still reports Running but pressing the hotkey does nothing
-- how to fix daemon status still reports Running but pressing the hotkey does nothing
-

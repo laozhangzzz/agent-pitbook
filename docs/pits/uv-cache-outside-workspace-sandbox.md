@@ -24,26 +24,26 @@ In managed agent sandboxes, uv may fail because its default cache or Python inst
 - uv fails in a managed workspace because cache or Python install paths are outside writable roots fix
 - uv fails in a managed workspace because cache or Python install paths are outside writable roots root cause
 - how to fix uv fails in a managed workspace because cache or Python install paths are outside writable roots
+- codex workspace cache python install paths writable roots
+- codex workspace cache python install paths writable roots fix
+- paths writable roots fails managed workspace cache python install codex
+- paths writable roots fails managed workspace cache python install codex fix
+- uv fails managed workspace paths writable roots
+- uv fails managed workspace paths writable roots fix
+- uv fails managed workspace codex
+- uv fails managed workspace codex fix
+- codex run sync fails permission sandbox filesystem errors
+- codex run sync fails permission sandbox filesystem errors fix
+- sandbox filesystem errors uv run sync fails permission codex
+- sandbox filesystem errors uv run sync fails permission codex fix
+- uv run sync fails sandbox filesystem errors
+- uv run sync fails sandbox filesystem errors fix
+- uv run sync fails codex
+- uv run sync fails codex fix
 - UV_CACHE_DIR
 - UV_CACHE_DIR fix
 - codex UV_CACHE_DIR
 - codex UV_CACHE_DIR fix
-- claude-code UV_CACHE_DIR
-- claude-code UV_CACHE_DIR fix
-- gemini UV_CACHE_DIR
-- gemini UV_CACHE_DIR fix
-- qwen-code UV_CACHE_DIR
-- qwen-code UV_CACHE_DIR fix
-- UV_PYTHON_INSTALL_DIR
-- UV_PYTHON_INSTALL_DIR fix
-- codex UV_PYTHON_INSTALL_DIR
-- codex UV_PYTHON_INSTALL_DIR fix
-- claude-code UV_PYTHON_INSTALL_DIR
-- claude-code UV_PYTHON_INSTALL_DIR fix
-- gemini UV_PYTHON_INSTALL_DIR
-- gemini UV_PYTHON_INSTALL_DIR fix
-- qwen-code UV_PYTHON_INSTALL_DIR
-- qwen-code UV_PYTHON_INSTALL_DIR fix
 
 ## Common Search Queries
 

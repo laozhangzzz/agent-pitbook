@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>some cjk dropped odecomit reordered english fragments shoved end pynput fix - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="some cjk dropped odecomit reordered english fragments shoved end pynput fix - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/some-cjk-dropped-odecomit-reordered-english-fragments-shoved-end-pynput-fix.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, macos, pynput, text-injection, unicode, cjk, race-condition, clipboard, voice, voice-to-claude, pynput-mixed-cjk-ascii-type-out-of-order-macos, pynput mixed cjk ascii type out of order macos, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput mixed chinese english text macos clipboard paste, pynput mixed chinese english text macos clipboard paste fix, macos clipboard paste type scrambles mixed chinese english text pynput, macos clipboard paste type scrambles mixed chinese english text pynput fix, controller type scrambles mixed macos clipboard paste, controller type scrambles mixed macos clipboard paste fix, verified, medium, some cjk dropped odecomit reordered english fragments shoved end pynput fix, controller type scrambles mixed pynput, controller type scrambles mixed pynput fix, pynput english fragments shoved end some cjk dropped, pynput english fragments shoved end some cjk dropped fix, some cjk dropped odecomit reordered english fragments shoved end pynput, injecting claude code commit some cjk dropped, injecting claude code commit some cjk dropped fix, injecting claude code commit pynput, injecting claude code commit pynput fix, ASCII fix, pynput ASCII, pynput ASCII fix, voice-to-claude ASCII">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/some-cjk-dropped-odecomit-reordered-english-fragments-shoved-end-pynput-fix.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "some cjk dropped odecomit reordered english fragments shoved end pynput fix",
+  "description": "Known fix. Problem: injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped Root cause: On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events. Fix: Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/some-cjk-dropped-odecomit-reordered-english-fragments-shoved-end-pynput-fix.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix, pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause, how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste, pynput mixed chinese english text macos clipboard paste, pynput mixed chinese english text macos clipboard paste fix, macos clipboard paste type scrambles mixed chinese english text pynput, macos clipboard paste type scrambles mixed chinese english text pynput fix, controller type scrambles mixed macos clipboard paste, controller type scrambles mixed macos clipboard paste fix, controller type scrambles mixed pynput, controller type scrambles mixed pynput fix, pynput english fragments shoved end some cjk dropped, pynput english fragments shoved end some cjk dropped fix, some cjk dropped odecomit reordered english fragments shoved end pynput, some cjk dropped odecomit reordered english fragments shoved end pynput fix",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "macos",
+    "pynput",
+    "text-injection",
+    "unicode",
+    "cjk",
+    "race-condition",
+    "clipboard",
+    "voice",
+    "voice-to-claude",
+    "pynput-mixed-cjk-ascii-type-out-of-order-macos",
+    "pynput mixed cjk ascii type out of order macos",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix",
+    "pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause",
+    "how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste",
+    "pynput mixed chinese english text macos clipboard paste",
+    "pynput mixed chinese english text macos clipboard paste fix",
+    "macos clipboard paste type scrambles mixed chinese english text pynput",
+    "macos clipboard paste type scrambles mixed chinese english text pynput fix",
+    "controller type scrambles mixed macos clipboard paste",
+    "controller type scrambles mixed macos clipboard paste fix",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/some-cjk-dropped-odecomit-reordered-english-fragments-shoved-end-pynput-fix.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/41"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/41"
+}</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>some cjk dropped odecomit reordered english fragments shoved end pynput fix</h1>
+      <p class="lede">injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/41">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> injecting '打开Claude Code，然后commit一下。' yields '打开ClaudeC，然后一下。odecomit' — reordered, English fragments shoved to the end, some CJK dropped</p>
+    <p><strong>Root cause:</strong> On macOS pynput types CJK characters via synthesized Unicode events and ASCII via key events.</p>
+    <p><strong>Fix first:</strong> Switch text injection from per-character keyboard.type() to clipboard paste: copy the full string via pbcopy, then simulate Cmd+V.</p>
+    <p><strong>Verify:</strong> Inject the same mixed Chinese+English sentence after the change.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste fix</li><li>pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste root cause</li><li>how to fix pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste</li><li>pynput mixed chinese english text macos clipboard paste</li><li>pynput mixed chinese english text macos clipboard paste fix</li><li>macos clipboard paste type scrambles mixed chinese english text pynput</li><li>macos clipboard paste type scrambles mixed chinese english text pynput fix</li><li>controller type scrambles mixed macos clipboard paste</li><li>controller type scrambles mixed macos clipboard paste fix</li><li>controller type scrambles mixed pynput</li><li>controller type scrambles mixed pynput fix</li><li>pynput english fragments shoved end some cjk dropped</li><li>pynput english fragments shoved end some cjk dropped fix</li><li>some cjk dropped odecomit reordered english fragments shoved end pynput</li><li>some cjk dropped odecomit reordered english fragments shoved end pynput fix</li><li>injecting claude code commit some cjk dropped</li><li>injecting claude code commit some cjk dropped fix</li><li>injecting claude code commit pynput</li><li>injecting claude code commit pynput fix</li><li>ASCII fix</li><li>pynput ASCII</li><li>pynput ASCII fix</li><li>voice-to-claude ASCII</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/pynput-mixed-cjk-ascii-type-out-of-order-macos.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

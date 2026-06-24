@@ -27,23 +27,23 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) fix
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
 - how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
+- mcp-server app logging configuration init duplicate lost logs
+- mcp-server app logging configuration init duplicate lost logs fix
+- duplicate lost logs overrides your app logging configuration init mcp-server
+- duplicate lost logs overrides your app logging configuration init mcp-server fix
+- overrides your app logging duplicate lost logs
+- overrides your app logging duplicate lost logs fix
+- overrides your app logging mcp-server
+- overrides your app logging mcp-server fix
+- mcp-server log messages become duplicated after server created
+- mcp-server log messages become duplicated after server created fix
+- after server created log messages become duplicated mcp-server
+- after server created log messages become duplicated mcp-server fix
+- log messages become duplicated after server created
+- log messages become duplicated after server created fix
+- log messages become duplicated mcp-server
+- log messages become duplicated mcp-server fix
 - log messages become duplicated after the FastMCP server is created
-- how to fix log messages become duplicated after the FastMCP server is created
-- log messages become duplicated after the FastMCP server is created root cause
-- mcp-server log messages become duplicated after the FastMCP server is created
-- mcp-server log messages become duplicated after the FastMCP server is created fix
-- python-sdk log messages become duplicated after the FastMCP server is created
-- python-sdk log messages become duplicated after the FastMCP server is created fix
-- a custom/structured global logging handler stops taking effect
-- how to fix a custom/structured global logging handler stops taking effect
-- a custom/structured global logging handler stops taking effect root cause
-- mcp-server a custom/structured global logging handler stops taking effect
-- mcp-server a custom/structured global logging handler stops taking effect fix
-- python-sdk a custom/structured global logging handler stops taking effect
-- python-sdk a custom/structured global logging handler stops taking effect fix
-- fastmcp a custom/structured global logging handler stops taking effect
-- fastmcp a custom/structured global logging handler stops taking effect fix
-- the change appears exactly when FastMCP(...) is instantiated
 
 ## Common Search Queries
 

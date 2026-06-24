@@ -27,18 +27,17 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/37
 - On Windows an MCP server launched with npx needs a cmd /c wrapper fix
 - On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
 - how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
-- ENOENT fix
-- claude-desktop ENOENT
-- claude-desktop ENOENT fix
-- cursor ENOENT
-- cursor ENOENT fix
-- cline ENOENT
-- cline ENOENT fix
-- mcp-server ENOENT
-- mcp-server ENOENT fix
-- /WSL
-- /WSL fix
-- claude-desktop /WSL
-- claude-desktop /WSL fix
-- cursor /WSL
-
+- claude-desktop mcp server launched npx needs cmd wrapper
+- claude-desktop mcp server launched npx needs cmd wrapper fix
+- needs cmd wrapper windows mcp server launched npx claude-desktop
+- needs cmd wrapper windows mcp server launched npx claude-desktop fix
+- windows mcp server launched needs cmd wrapper
+- windows mcp server launched needs cmd wrapper fix
+- windows mcp server launched claude-desktop
+- windows mcp server launched claude-desktop fix
+- claude-desktop windows mcp server will start
+- claude-desktop windows mcp server will start fix
+- server will start windows mcp claude-desktop
+- server will start windows mcp claude-desktop fix
+- windows mcp server will server will start
+- windows mcp server will server will start fix

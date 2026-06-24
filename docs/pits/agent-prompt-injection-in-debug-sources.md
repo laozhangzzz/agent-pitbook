@@ -24,26 +24,26 @@ Issue threads, forum posts, logs, and pit records are prompt surfaces; agents mu
 - Debug sources can contain prompt injection targeting coding agents fix
 - Debug sources can contain prompt injection targeting coding agents root cause
 - how to fix Debug sources can contain prompt injection targeting coding agents
+- codex sources contain prompt injection targeting coding agents
+- codex sources contain prompt injection targeting coding agents fix
+- targeting coding agents debug sources contain prompt injection codex
+- targeting coding agents debug sources contain prompt injection codex fix
+- debug sources contain prompt targeting coding agents
+- debug sources contain prompt targeting coding agents fix
+- debug sources contain prompt codex
+- debug sources contain prompt codex fix
+- codex source includes instructions ignore system developer
+- codex source includes instructions ignore system developer fix
+- ignore system developer source includes instructions codex
+- ignore system developer source includes instructions codex fix
+- source includes instructions ignore ignore system developer
+- source includes instructions ignore ignore system developer fix
+- source includes instructions ignore codex
+- source includes instructions ignore codex fix
 - a source includes instructions to ignore system or developer instructions
 - how to fix a source includes instructions to ignore system or developer instructions
 - a source includes instructions to ignore system or developer instructions root cause
 - codex a source includes instructions to ignore system or developer instructions
-- codex a source includes instructions to ignore system or developer instructions fix
-- claude-code a source includes instructions to ignore system or developer instructions
-- claude-code a source includes instructions to ignore system or developer instructions fix
-- gemini a source includes instructions to ignore system or developer instructions
-- gemini a source includes instructions to ignore system or developer instructions fix
-- a suggested command is unrelated to the reported error
-- how to fix a suggested command is unrelated to the reported error
-- a suggested command is unrelated to the reported error root cause
-- codex a suggested command is unrelated to the reported error
-- codex a suggested command is unrelated to the reported error fix
-- claude-code a suggested command is unrelated to the reported error
-- claude-code a suggested command is unrelated to the reported error fix
-- gemini a suggested command is unrelated to the reported error
-- gemini a suggested command is unrelated to the reported error fix
-- external text asks the agent to reveal secrets or bypass approval
-- how to fix external text asks the agent to reveal secrets or bypass approval
 
 ## Common Search Queries
 

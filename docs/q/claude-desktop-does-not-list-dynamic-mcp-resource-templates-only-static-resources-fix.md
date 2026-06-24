@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/10
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) fix
 - Claude Desktop does not list dynamic MCP resource templates (only static resources) root cause
 - how to fix Claude Desktop does not list dynamic MCP resource templates only static resources
+- claude-desktop list dynamic mcp resource templates static resources
+- claude-desktop list dynamic mcp resource templates static resources fix
+- templates static resources claude desktop list dynamic mcp resource claude-desktop
+- templates static resources claude desktop list dynamic mcp resource claude-desktop fix
+- claude desktop list dynamic templates static resources
+- claude desktop list dynamic templates static resources fix
+- claude desktop list dynamic claude-desktop
+- claude desktop list dynamic claude-desktop fix
+- claude-desktop resource works claude desktop parameterized templated show
+- claude-desktop resource works claude desktop parameterized templated show fix
+- parameterized templated show static resource works claude desktop claude-desktop
+- parameterized templated show static resource works claude desktop claude-desktop fix
+- static resource works claude parameterized templated show
+- static resource works claude parameterized templated show fix
+- static resource works claude claude-desktop
+- static resource works claude claude-desktop fix
 - a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- how to fix a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- a static resource works in Claude Desktop but a parameterized/templated resource does not show root cause
-- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- claude-desktop a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
-- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show
-- mcp-server a static resource works in Claude Desktop but a parameterized/templated resource does not show fix
-- the server is correct and the template appears under the Inspector Resources tab
-- how to fix the server is correct and the template appears under the Inspector Resources tab
-- the server is correct and the template appears under the Inspector Resources tab root cause
-- claude-desktop the server is correct and the template appears under the Inspector Resources tab
-- claude-desktop the server is correct and the template appears under the Inspector Resources tab fix
-- mcp-server the server is correct and the template appears under the Inspector Resources tab
-- mcp-server the server is correct and the template appears under the Inspector Resources tab fix
-- time lost assuming the server code is wrong
-- how to fix time lost assuming the server code is wrong
-- time lost assuming the server code is wrong root cause
-

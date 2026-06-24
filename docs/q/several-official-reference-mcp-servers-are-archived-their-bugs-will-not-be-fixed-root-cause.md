@@ -27,18 +27,17 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/22
 - Several official reference MCP servers are archived; their bugs will not be fixed fix
 - Several official reference MCP servers are archived; their bugs will not be fixed root cause
 - how to fix Several official reference MCP servers are archived; their bugs will not be fixed
-- README fix
-- mcp-server README
-- mcp-server README fix
-- claude-desktop README
-- claude-desktop README fix
-- cursor README
-- cursor README fix
-- a reference server misbehaves and the issue is closed with a deprecation/archival note
-- how to fix a reference server misbehaves and the issue is closed with a deprecation/archival note
-- a reference server misbehaves and the issue is closed with a deprecation/archival note root cause
-- mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note
-- mcp-server a reference server misbehaves and the issue is closed with a deprecation/archival note fix
-- claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note
-- claude-desktop a reference server misbehaves and the issue is closed with a deprecation/archival note fix
-
+- mcp-server mcp servers archived their bugs will fixed
+- mcp-server mcp servers archived their bugs will fixed fix
+- bugs will fixed official reference mcp servers archived their mcp-server
+- bugs will fixed official reference mcp servers archived their mcp-server fix
+- several official reference mcp bugs will fixed
+- several official reference mcp bugs will fixed fix
+- several official reference mcp mcp-server
+- several official reference mcp mcp-server fix
+- mcp-server server misbehaves issue closed deprecation archival note
+- mcp-server server misbehaves issue closed deprecation archival note fix
+- deprecation archival note reference server misbehaves issue closed mcp-server
+- deprecation archival note reference server misbehaves issue closed mcp-server fix
+- reference server misbehaves issue deprecation archival note
+- reference server misbehaves issue deprecation archival note fix

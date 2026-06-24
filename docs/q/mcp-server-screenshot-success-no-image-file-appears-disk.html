@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mcp-server screenshot success no image file appears disk - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path. Fix: Retrieve the screenshot via the MCP resource the server exposes, not from a file path.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="mcp-server screenshot success no image file appears disk - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path. Fix: Retrieve the screenshot via the MCP resource the server exposes, not from a file path.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-screenshot-success-no-image-file-appears-disk.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-puppeteer, screenshots, resources, in-memory, misconception, mcp-server, claude-desktop, mcp-puppeteer-screenshots-in-memory-only, mcp puppeteer screenshots in memory only, Puppeteer MCP screenshots live in memory only; there is no file on disk to find, Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix, Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause, Puppeteer MCP Server Missing Screenshots, Puppeteer MCP Server Missing Screenshots fix, Puppeteer MCP Server Missing Screenshots root cause, how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find, mcp-server live memory there no file disk find, mcp-server live memory there no file disk find fix, file disk find mcp screenshots live memory there no mcp-server, verified, medium, mcp-server screenshot success no image file appears disk, file disk find mcp screenshots live memory there no mcp-server fix, puppeteer mcp screenshots live file disk find, puppeteer mcp screenshots live file disk find fix, puppeteer mcp screenshots live mcp-server, puppeteer mcp screenshots live mcp-server fix, mcp-server screenshot success no image file appears disk fix, file appears disk puppeteer screenshot success no image mcp-server, file appears disk puppeteer screenshot success no image mcp-server fix, puppeteer screenshot success no file appears disk, puppeteer screenshot success no file appears disk fix, puppeteer screenshot success no mcp-server, puppeteer screenshot success no mcp-server fix, puppeteer_screenshot reports success but no image file appears on disk">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-screenshot-success-no-image-file-appears-disk.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "mcp-server screenshot success no image file appears disk",
+  "description": "Known fix. Problem: puppeteer_screenshot reports success but no image file appears on disk Root cause: The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path. Fix: Retrieve the screenshot via the MCP resource the server exposes, not from a file path.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-screenshot-success-no-image-file-appears-disk.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "Puppeteer MCP Server Missing Screenshots, Puppeteer MCP Server Missing Screenshots fix, Puppeteer MCP Server Missing Screenshots root cause, Puppeteer MCP screenshots live in memory only; there is no file on disk to find, Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix, Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause, how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find, mcp-server live memory there no file disk find, mcp-server live memory there no file disk find fix, file disk find mcp screenshots live memory there no mcp-server, file disk find mcp screenshots live memory there no mcp-server fix, puppeteer mcp screenshots live file disk find, puppeteer mcp screenshots live file disk find fix, puppeteer mcp screenshots live mcp-server, puppeteer mcp screenshots live mcp-server fix, mcp-server screenshot success no image file appears disk",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "server-puppeteer",
+    "screenshots",
+    "resources",
+    "in-memory",
+    "misconception",
+    "mcp-server",
+    "claude-desktop",
+    "mcp-puppeteer-screenshots-in-memory-only",
+    "mcp puppeteer screenshots in memory only",
+    "Puppeteer MCP screenshots live in memory only; there is no file on disk to find",
+    "Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix",
+    "Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause",
+    "Puppeteer MCP Server Missing Screenshots",
+    "Puppeteer MCP Server Missing Screenshots fix",
+    "Puppeteer MCP Server Missing Screenshots root cause",
+    "how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find",
+    "mcp-server live memory there no file disk find",
+    "mcp-server live memory there no file disk find fix",
+    "file disk find mcp screenshots live memory there no mcp-server",
+    "verified",
+    "medium"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-server-screenshot-success-no-image-file-appears-disk.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-puppeteer-screenshots-in-memory-only.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/21"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/21"
+}</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>mcp-server screenshot success no image file appears disk</h1>
+      <p class="lede">puppeteer_screenshot reports success but no image file appears on disk</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/puppeteer-mcp-server-missing-screenshots.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/21">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> puppeteer_screenshot reports success but no image file appears on disk</p>
+    <p><strong>Root cause:</strong> The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path.</p>
+    <p><strong>Fix first:</strong> Retrieve the screenshot via the MCP resource the server exposes, not from a file path.</p>
+    <p><strong>Verify:</strong> Inspect the resource list in the client/Inspector and the filesystem.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>Puppeteer MCP Server Missing Screenshots</li><li>Puppeteer MCP Server Missing Screenshots fix</li><li>Puppeteer MCP Server Missing Screenshots root cause</li><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find</li><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix</li><li>Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause</li><li>how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find</li><li>mcp-server live memory there no file disk find</li><li>mcp-server live memory there no file disk find fix</li><li>file disk find mcp screenshots live memory there no mcp-server</li><li>file disk find mcp screenshots live memory there no mcp-server fix</li><li>puppeteer mcp screenshots live file disk find</li><li>puppeteer mcp screenshots live file disk find fix</li><li>puppeteer mcp screenshots live mcp-server</li><li>puppeteer mcp screenshots live mcp-server fix</li><li>mcp-server screenshot success no image file appears disk</li><li>mcp-server screenshot success no image file appears disk fix</li><li>file appears disk puppeteer screenshot success no image mcp-server</li><li>file appears disk puppeteer screenshot success no image mcp-server fix</li><li>puppeteer screenshot success no file appears disk</li><li>puppeteer screenshot success no file appears disk fix</li><li>puppeteer screenshot success no mcp-server</li><li>puppeteer screenshot success no mcp-server fix</li><li>puppeteer_screenshot reports success but no image file appears on disk</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-puppeteer-screenshots-in-memory-only.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-puppeteer-screenshots-in-memory-only.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

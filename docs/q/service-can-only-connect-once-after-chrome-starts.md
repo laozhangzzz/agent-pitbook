@@ -33,12 +33,11 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/5
 - Claude Code chrome-bridge MCP gets stuck after one transport connects fix
 - Claude Code chrome-bridge MCP gets stuck after one transport connects root cause
 - how to fix Claude Code chrome-bridge MCP gets stuck after one transport connects
-- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- claude-code HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched
-- mcp-chrome-bridge HTTP 500 or Already connected to a transport until the native host is restarted or the bridge is patched fix
-- HTTP/SSE
-- HTTP/SSE fix
-
+- claude-code mcp gets stuck after one transport connects
+- claude-code mcp gets stuck after one transport connects fix
+- one transport connects chrome bridge mcp gets stuck after claude-code
+- one transport connects chrome bridge mcp gets stuck after claude-code fix
+- claude code chrome bridge one transport connects
+- claude code chrome bridge one transport connects fix
+- claude code chrome bridge claude-code
+- claude code chrome bridge claude-code fix

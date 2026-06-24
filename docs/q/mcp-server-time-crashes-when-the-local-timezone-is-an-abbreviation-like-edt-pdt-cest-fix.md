@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/31
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause
 - how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
+- mcp-server local timezone abbreviation like edt pdt cest
+- mcp-server local timezone abbreviation like edt pdt cest fix
+- edt pdt cest time crashes local timezone abbreviation like mcp-server
+- edt pdt cest time crashes local timezone abbreviation like mcp-server fix
+- mcp server time crashes edt pdt cest
+- mcp server time crashes edt pdt cest fix
+- mcp server time crashes mcp-server
+- mcp server time crashes mcp-server fix
+- mcp-server zoneinfo common py load tzdata failing timezone
+- mcp-server zoneinfo common py load tzdata failing timezone fix
+- tzdata failing timezone traceback through zoneinfo common py load mcp-server
+- tzdata failing timezone traceback through zoneinfo common py load mcp-server fix
+- uvx mcp server time tzdata failing timezone
+- uvx mcp server time tzdata failing timezone fix
+- uvx mcp server time mcp-server
+- uvx mcp server time mcp-server fix
 - EDT/PDT/CEST
-- EDT/PDT/CEST fix
-- mcp-server EDT/PDT/CEST
-- mcp-server EDT/PDT/CEST fix
-- claude-desktop EDT/PDT/CEST
-- claude-desktop EDT/PDT/CEST fix
-- -IANA
-- -IANA fix
-- mcp-server -IANA
-- mcp-server -IANA fix
-- claude-desktop -IANA
-- claude-desktop -IANA fix
-- IANA fix
-- mcp-server IANA
-- mcp-server IANA fix
-- claude-desktop IANA
-- claude-desktop IANA fix
-

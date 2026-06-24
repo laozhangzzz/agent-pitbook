@@ -33,17 +33,17 @@ A stdio MCP server that runs in the terminal but fails under a desktop client wi
 - MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
 - MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
 - how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
-- PATH fix
-- claude-desktop PATH
-- claude-desktop PATH fix
-- mcp-server PATH
-- mcp-server PATH fix
-- EPIPE fix
-- claude-desktop EPIPE
-- claude-desktop EPIPE fix
-- mcp-server EPIPE
-- mcp-server EPIPE fix
-- NVM/
+- claude-desktop immediately gui client inherit your shell path
+- claude-desktop immediately gui client inherit your shell path fix
+- your shell path server exits immediately gui client inherit claude-desktop
+- your shell path server exits immediately gui client inherit claude-desktop fix
+- mcp stdio server exits your shell path
+- mcp stdio server exits your shell path fix
+- mcp stdio server exits claude-desktop
+- mcp stdio server exits claude-desktop fix
+- claude-desktop transport closed unexpectedly likely process exiting early
+- claude-desktop transport closed unexpectedly likely process exiting early fix
+- process exiting early log server transport closed unexpectedly likely claude-desktop
 
 ## Common Search Queries
 

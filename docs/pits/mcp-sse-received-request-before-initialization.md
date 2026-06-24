@@ -27,23 +27,23 @@ RuntimeError: Received request before initialization was complete from an SSE MC
 - SSE MCP server: Received request before initialization was complete fix
 - SSE MCP server: Received request before initialization was complete root cause
 - how to fix SSE MCP server: Received request before initialization was complete
+- mcp-server mcp server received request initialization was complete
+- mcp-server mcp server received request initialization was complete fix
+- initialization was complete sse mcp server received request mcp-server
+- initialization was complete sse mcp server received request mcp-server fix
+- sse mcp server received initialization was complete
+- sse mcp server received initialization was complete fix
+- sse mcp server received mcp-server
+- sse mcp server received mcp-server fix
+- mcp-server initialization was complete tools list tool call
+- mcp-server initialization was complete tools list tool call fix
+- list tool call received request initialization was complete tools mcp-server
+- list tool call received request initialization was complete tools mcp-server fix
+- server raises runtimeerror received list tool call
+- server raises runtimeerror received list tool call fix
+- server raises runtimeerror received mcp-server
+- server raises runtimeerror received mcp-server fix
 - RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- mcp-server RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
-- python-sdk RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized fix
-- RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- mcp-server RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- python-sdk RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- python-sdk RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
-- server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- how to fix server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call root cause
-- mcp-server server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- mcp-server server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call fix
 
 ## Common Search Queries
 

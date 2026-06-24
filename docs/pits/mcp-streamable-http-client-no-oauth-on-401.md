@@ -27,23 +27,23 @@ With Streamable HTTP, a 401 did not trigger the OAuth flow the way SSE did; the 
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow fix
 - Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow root cause
 - how to fix Streamable HTTP MCP client hangs on 401 instead of starting the OAuth flow
+- mcp-inspector client hangs 401 instead starting oauth flow
+- mcp-inspector client hangs 401 instead starting oauth flow fix
+- starting oauth flow http mcp client hangs 401 instead mcp-inspector
+- starting oauth flow http mcp client hangs 401 instead mcp-inspector fix
+- streamable http mcp client starting oauth flow
+- streamable http mcp client starting oauth flow fix
+- streamable http mcp client mcp-inspector
+- streamable http mcp client mcp-inspector fix
+- mcp-inspector protected mcp server over streamable http hangs
+- mcp-inspector protected mcp server over streamable http hangs fix
+- streamable http hangs connecting oauth protected mcp server over mcp-inspector
+- streamable http hangs connecting oauth protected mcp server over mcp-inspector fix
+- connecting oauth protected mcp streamable http hangs
+- connecting oauth protected mcp streamable http hangs fix
+- connecting oauth protected mcp mcp-inspector
+- connecting oauth protected mcp mcp-inspector fix
 - HTTP fix
-- mcp-inspector HTTP
-- mcp-inspector HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- mcp-inspector HTTP 401
-- mcp-inspector HTTP 401 fix
-- mcp-server HTTP 401
-- mcp-server HTTP 401 fix
-- /SDK
-- /SDK fix
-- mcp-inspector /SDK
-- mcp-inspector /SDK fix
-- mcp-server /SDK
-- mcp-server /SDK fix
-- connecting to an OAuth-protected MCP server over Streamable HTTP hangs
-- how to fix connecting to an OAuth-protected MCP server over Streamable HTTP hangs
 
 ## Common Search Queries
 

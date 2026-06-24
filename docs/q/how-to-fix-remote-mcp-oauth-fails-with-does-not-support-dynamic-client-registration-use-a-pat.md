@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/17
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT fix
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause
 - how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
+- claude-code oauth fails support dynamic client registration pat
+- claude-code oauth fails support dynamic client registration pat fix
+- client registration pat remote mcp oauth fails support dynamic claude-code
+- client registration pat remote mcp oauth fails support dynamic claude-code fix
+- remote mcp oauth fails client registration pat
+- remote mcp oauth fails client registration pat fix
+- remote mcp oauth fails claude-code
+- remote mcp oauth fails claude-code fix
+- claude-code add https api githubcopilot com connection fails
+- claude-code add https api githubcopilot com connection fails fix
+- com connection fails claude mcp add https api githubcopilot claude-code
+- com connection fails claude mcp add https api githubcopilot claude-code fix
+- claude mcp add https com connection fails
+- claude mcp add https com connection fails fix
+- claude mcp add https claude-code
+- claude mcp add https claude-code fix
 - does not support dynamic client registration
-- does not support dynamic client registration fix
-- claude-code does not support dynamic client registration
-- claude-code does not support dynamic client registration fix
-- github-mcp-server does not support dynamic client registration
-- github-mcp-server does not support dynamic client registration fix
-- GITHUB_PERSONAL_ACCESS_TOKEN
-- GITHUB_PERSONAL_ACCESS_TOKEN fix
-- claude-code GITHUB_PERSONAL_ACCESS_TOKEN
-- claude-code GITHUB_PERSONAL_ACCESS_TOKEN fix
-- github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN
-- github-mcp-server GITHUB_PERSONAL_ACCESS_TOKEN fix
-- claude mcp add ... then the connection fails
-- how to fix claude mcp add ... then the connection fails
-- claude mcp add ... then the connection fails root cause
-- claude-code claude mcp add ... then the connection fails
-- claude-code claude mcp add ... then the connection fails fix
-

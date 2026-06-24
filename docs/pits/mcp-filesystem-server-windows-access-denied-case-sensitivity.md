@@ -30,20 +30,20 @@ On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - 
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
 - how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
-- Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- how to fix Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' root cause
-- claude-desktop Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- claude-desktop Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- cursor Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- cursor Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- mcp-server Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- mcp-server Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories' fix
-- the denied path is visibly inside a configured allowed root
-- how to fix the denied path is visibly inside a configured allowed root
-- the denied path is visibly inside a configured allowed root root cause
-- claude-desktop the denied path is visibly inside a configured allowed root
-- claude-desktop the denied path is visibly inside a configured allowed root fix
+- claude-desktop allowed windows paths drive letter case mismatch
+- claude-desktop allowed windows paths drive letter case mismatch fix
+- letter case mismatch server denies allowed windows paths drive claude-desktop
+- letter case mismatch server denies allowed windows paths drive claude-desktop fix
+- filesystem mcp server denies letter case mismatch
+- filesystem mcp server denies letter case mismatch fix
+- filesystem mcp server denies claude-desktop
+- filesystem mcp server denies claude-desktop fix
+- claude-desktop directory returns error access denied path directories
+- claude-desktop directory returns error access denied path directories fix
+- denied path directories file allowed directory returns error access claude-desktop
+- denied path directories file allowed directory returns error access claude-desktop fix
+- windows file allowed directory denied path directories
+- windows file allowed directory denied path directories fix
 
 ## Common Search Queries
 

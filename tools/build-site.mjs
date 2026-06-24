@@ -441,7 +441,7 @@ function pageShell({ title, description, canonicalPath, body, keywords = [], jso
   const keywordMeta = keywords.length
     ? `\n  <meta name="keywords" content="${escapeHtml(unique(keywords).join(", "))}">`
     : "";
-  const jsonLdBlocks = jsonLd.length ? `\n  ${jsonLd.map(jsonLdScript).join("\n  ")}` : "";
+  const jsonLdBlocks = jsonLd.length ? `${jsonLd.map((item) => `  ${jsonLdScript(item)}`).join("\n")}\n` : "";
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -457,7 +457,7 @@ function pageShell({ title, description, canonicalPath, body, keywords = [], jso
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
-  ${jsonLdBlocks}
+${jsonLdBlocks}
 </head>
 <body>
   <header class="site-header">
@@ -764,8 +764,7 @@ function renderQueryLandingMarkdown(page) {
     "",
     "## Queries This Answers",
     "",
-    ...recordAnswerQueries(record, 24).map((item) => `- ${item}`),
-    ""
+    ...recordAnswerQueries(record, 24).map((item) => `- ${item}`)
   ];
 
   return `${lines.join("\n")}\n`;

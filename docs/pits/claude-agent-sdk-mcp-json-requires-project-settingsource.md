@@ -27,23 +27,23 @@ Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP s
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" fix
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" root cause
 - how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
+- claude-code load mcp json unless settingsources includes project
+- claude-code load mcp json unless settingsources includes project fix
+- settingsources includes project agent sdk load mcp json unless claude-code
+- settingsources includes project agent sdk load mcp json unless claude-code fix
+- claude agent sdk load settingsources includes project
+- claude agent sdk load settingsources includes project fix
+- claude agent sdk load claude-code
+- claude agent sdk load claude-code fix
+- claude-code mcp servers even though json working directory
+- claude-code mcp servers even though json working directory fix
+- json working directory sdk no mcp servers even though claude-code
+- json working directory sdk no mcp servers even though claude-code fix
+- sdk no mcp servers json working directory
+- sdk no mcp servers json working directory fix
+- sdk no mcp servers claude-code
+- sdk no mcp servers claude-code fix
 - the SDK reports no MCP servers even though .mcp.json is in the working directory
-- how to fix the SDK reports no MCP servers even though .mcp.json is in the working directory
-- the SDK reports no MCP servers even though .mcp.json is in the working directory root cause
-- claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory
-- claude-code the SDK reports no MCP servers even though .mcp.json is in the working directory fix
-- claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory
-- claude-agent-sdk the SDK reports no MCP servers even though .mcp.json is in the working directory fix
-- servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- how to fix servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process root cause
-- claude-code servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- claude-code servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process fix
-- claude-agent-sdk servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- claude-agent-sdk servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process fix
-- tools wrapping Claude (e.g. Conductor) cannot see project MCP servers
-- how to fix tools wrapping Claude (e.g. Conductor) cannot see project MCP servers
-- tools wrapping Claude (e.g. Conductor) cannot see project MCP servers root cause
 
 ## Common Search Queries
 

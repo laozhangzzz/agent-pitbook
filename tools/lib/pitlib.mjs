@@ -192,6 +192,96 @@ function uniqueValues(items) {
   return [...new Set(items.filter(Boolean))];
 }
 
+function looseSearchTokens(value) {
+  const stopWords = new Set([
+    "a",
+    "an",
+    "and",
+    "are",
+    "as",
+    "at",
+    "be",
+    "because",
+    "before",
+    "but",
+    "by",
+    "can",
+    "could",
+    "does",
+    "doesnt",
+    "due",
+    "for",
+    "from",
+    "in",
+    "inside",
+    "into",
+    "is",
+    "it",
+    "its",
+    "not",
+    "of",
+    "on",
+    "only",
+    "or",
+    "outside",
+    "record",
+    "records",
+    "report",
+    "reports",
+    "shows",
+    "the",
+    "then",
+    "this",
+    "to",
+    "under",
+    "use",
+    "using",
+    "via",
+    "when",
+    "with",
+    "without"
+  ]);
+  return uniqueValues(
+    String(value ?? "")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim()
+      .split(/\s+/)
+      .filter((token) => token.length >= 2 && !stopWords.has(token))
+  );
+}
+
+function looseSearchPhrases(record, limit = 8) {
+  const out = [];
+  const seen = new Set();
+  const tools = record.affected_tools ?? [];
+  const primaryTool = tools[0] ?? "";
+  const toolSet = new Set(tools.map((tool) => tool.toLowerCase()));
+
+  const push = (value) => pushTerm(out, seen, value);
+  const addForText = (value) => {
+    const tokens = looseSearchTokens(value);
+    if (tokens.length < 4) return;
+    const withoutTools = tokens.filter((token) => !toolSet.has(token));
+    const source = withoutTools.length >= 4 ? withoutTools : tokens;
+    const tail7 = source.slice(-7);
+    const last3 = source.slice(-3);
+    const beforeLast3 = source.slice(-9, -3);
+    const head4 = source.slice(0, 4);
+
+    if (primaryTool) push(`${primaryTool} ${tail7.join(" ")}`);
+    if (last3.length && beforeLast3.length) push(`${last3.join(" ")} ${beforeLast3.join(" ")} ${primaryTool}`.trim());
+    if (head4.length && last3.length) push(`${head4.join(" ")} ${last3.join(" ")}`);
+    if (primaryTool && head4.length) push(`${head4.join(" ")} ${primaryTool}`);
+  };
+
+  addForText(record.title);
+  for (const symptom of (record.symptoms ?? []).slice(0, 3)) addForText(symptom);
+  return out.slice(0, limit);
+}
+
 function extractErrorLikeTerms(text) {
   const value = String(text ?? "");
   const out = [];
@@ -264,6 +354,11 @@ export function recordAnswerQueries(record, limit = 24) {
   pushTerm(out, seen, `${record.title} fix`);
   pushTerm(out, seen, `${record.title} root cause`);
   pushTerm(out, seen, `how to fix ${record.title}`);
+
+  for (const phrase of looseSearchPhrases(record, 8)) {
+    pushTerm(out, seen, phrase);
+    pushTerm(out, seen, `${phrase} fix`);
+  }
 
   for (const error of errorTerms.slice(0, 8)) {
     pushTerm(out, seen, error);

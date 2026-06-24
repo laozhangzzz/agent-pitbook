@@ -27,23 +27,23 @@ In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'to
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix
 - VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause
 - how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
+- github-mcp-server mcp toolset unknown tool while warns renamed
+- github-mcp-server mcp toolset unknown tool while warns renamed fix
+- while warns renamed config github mcp toolset unknown tool github-mcp-server
+- while warns renamed config github mcp toolset unknown tool github-mcp-server fix
+- vs code agent config while warns renamed
+- vs code agent config while warns renamed fix
+- vs code agent config github-mcp-server
+- vs code agent config github-mcp-server fix
+- github-mcp-server tools github produces unknown tool
+- github-mcp-server tools github produces unknown tool fix
+- produces unknown tool tools github github-mcp-server
+- produces unknown tool tools github github-mcp-server fix
+- tools github produces unknown produces unknown tool
+- tools github produces unknown produces unknown tool fix
+- tools github produces unknown github-mcp-server
+- tools github produces unknown github-mcp-server fix
 - tools: [github/*] produces Unknown tool
-- how to fix 'tools': ['github/*'] produces Unknown tool
-- tools: [github/*] produces Unknown tool root cause
-- github-mcp-server 'tools': ['github/*'] produces Unknown tool
-- github-mcp-server 'tools': ['github/*'] produces Unknown tool fix
-- vscode 'tools': ['github/*'] produces Unknown tool
-- vscode 'tools': ['github/*'] produces Unknown tool fix
-- tools: [github] works but warns it should be github/*
-- how to fix 'tools': ['github'] works but warns it should be github/*
-- tools: [github] works but warns it should be github/* root cause
-- github-mcp-server 'tools': ['github'] works but warns it should be github/*
-- github-mcp-server 'tools': ['github'] works but warns it should be github/* fix
-- vscode 'tools': ['github'] works but warns it should be github/*
-- vscode 'tools': ['github'] works but warns it should be github/* fix
-- reported for other MCP servers too, not just GitHub
-- how to fix reported for other MCP servers too, not just GitHub
-- reported for other MCP servers too, not just GitHub root cause
 
 ## Common Search Queries
 
@@ -70,7 +70,7 @@ In VS Code agent config, 'tools': ['github/*'] fails with Unknown tool while 'to
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix
 - VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause
 - how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed
-- how to fix 'tools': ['github/*'] produces Unknown tool
+- github-mcp-server mcp toolset unknown tool while warns renamed
 
 ## Affected Tools
 

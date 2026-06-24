@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/21
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find fix
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause
 - how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
+- mcp-server live memory there no file disk find
+- mcp-server live memory there no file disk find fix
+- file disk find mcp screenshots live memory there no mcp-server
+- file disk find mcp screenshots live memory there no mcp-server fix
+- puppeteer mcp screenshots live file disk find
+- puppeteer mcp screenshots live file disk find fix
+- puppeteer mcp screenshots live mcp-server
+- puppeteer mcp screenshots live mcp-server fix
+- mcp-server screenshot success no image file appears disk
+- mcp-server screenshot success no image file appears disk fix
+- file appears disk puppeteer screenshot success no image mcp-server
+- file appears disk puppeteer screenshot success no image mcp-server fix
+- puppeteer screenshot success no file appears disk
+- puppeteer screenshot success no file appears disk fix
+- puppeteer screenshot success no mcp-server
+- puppeteer screenshot success no mcp-server fix
 - puppeteer_screenshot reports success but no image file appears on disk
-- how to fix puppeteer_screenshot reports success but no image file appears on disk
-- puppeteer_screenshot reports success but no image file appears on disk root cause
-- mcp-server puppeteer_screenshot reports success but no image file appears on disk
-- mcp-server puppeteer_screenshot reports success but no image file appears on disk fix
-- claude-desktop puppeteer_screenshot reports success but no image file appears on disk
-- claude-desktop puppeteer_screenshot reports success but no image file appears on disk fix
-- the model tries to open a screenshot path and finds nothing
-- how to fix the model tries to open a screenshot path and finds nothing
-- the model tries to open a screenshot path and finds nothing root cause
-- mcp-server the model tries to open a screenshot path and finds nothing
-- mcp-server the model tries to open a screenshot path and finds nothing fix
-- claude-desktop the model tries to open a screenshot path and finds nothing
-- claude-desktop the model tries to open a screenshot path and finds nothing fix
-- the agent searches the filesystem (sometimes outside the project) for the missing file
-- how to fix the agent searches the filesystem (sometimes outside the project) for the missing file
-- the agent searches the filesystem (sometimes outside the project) for the missing file root cause
-

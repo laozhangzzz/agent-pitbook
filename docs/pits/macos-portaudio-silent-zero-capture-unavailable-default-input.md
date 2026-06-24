@@ -24,26 +24,26 @@ PortAudio (via sounddevice) can open an input stream on a physically-unavailable
 - macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable fix
 - macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable root cause
 - how to fix macOS PortAudio/sounddevice records all-zero silent audio with no error when the default mic is unavailable
+- sounddevice silent audio no error default mic unavailable
+- sounddevice silent audio no error default mic unavailable fix
+- default mic unavailable all zero silent audio no error sounddevice
+- default mic unavailable all zero silent audio no error sounddevice fix
+- macos all zero silent default mic unavailable
+- macos all zero silent default mic unavailable fix
+- macos all zero silent sounddevice
+- macos all zero silent sounddevice fix
+- sounddevice single junk token 2s clip stray korean
+- sounddevice single junk token 2s clip stray korean fix
+- clip stray korean speech transcribes single junk token 2s sounddevice
+- clip stray korean speech transcribes single junk token 2s sounddevice fix
+- multi second speech transcribes clip stray korean
+- multi second speech transcribes clip stray korean fix
+- multi second speech transcribes sounddevice
+- multi second speech transcribes sounddevice fix
 - multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
 - how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
 - multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause
 - sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- sounddevice multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- portaudio multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- portaudio multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- voice-to-claude multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- voice-to-claude multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') fix
-- the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- how to fix the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) root cause
-- sounddevice the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- sounddevice the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- portaudio the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- portaudio the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- voice-to-claude the saved WAV has peak amplitude 0 and RMS 0 (all-zero samples across the whole clip) fix
-- no exception: sd.InputStream opens normally and its callback delivers all-zero frames
-- how to fix no exception: sd.InputStream opens normally and its callback delivers all-zero frames
 
 ## Common Search Queries
 

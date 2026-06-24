@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mcp typescript sdk crashes esm pkce challenge - Known fix - Agent Pitbook</title>
+  <meta name="description" content="Known fix. Root cause: pkce-challenge shipped as ESM-only. Fix: Upgrade @modelcontextprotocol/sdk to a version that lazily import()s pkce-challenge.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="mcp typescript sdk crashes esm pkce challenge - Known fix - Agent Pitbook">
+  <meta property="og:description" content="Known fix. Root cause: pkce-challenge shipped as ESM-only. Fix: Upgrade @modelcontextprotocol/sdk to a version that lazily import()s pkce-challenge.">
+  <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-esm-pkce-challenge.html">
+  <meta property="og:site_name" content="Agent Pitbook">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, commonjs, esm, nestjs, pkce-challenge, dependencies, mcp-server, mcp-ts-sdk-commonjs-esm-pkce-challenge, mcp ts sdk commonjs esm pkce challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause, @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge, @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix, @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause, how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge, mcp-server commonjs projects err require esm pkce challenge, mcp-server commonjs projects err require esm pkce challenge fix, esm pkce challenge sdk crashes commonjs projects err require mcp-server, verified, high, mcp typescript sdk crashes esm pkce challenge, esm pkce challenge sdk crashes commonjs projects err require mcp-server fix, mcp typescript sdk crashes esm pkce challenge fix, mcp typescript sdk crashes mcp-server, mcp typescript sdk crashes mcp-server fix, mcp-server module pkce challenge supported dynamic import instead, mcp-server module pkce challenge supported dynamic import instead fix, dynamic import instead esm es module pkce challenge supported mcp-server, dynamic import instead esm es module pkce challenge supported mcp-server fix, runtime crash mcp client dynamic import instead, runtime crash mcp client dynamic import instead fix, runtime crash mcp client mcp-server, runtime crash mcp client mcp-server fix, ERR_REQUIRE_ESM">
+  <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-esm-pkce-challenge.html">
+  <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
+  <link rel="stylesheet" href="/agent-pitbook/styles.css">
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "mcp typescript sdk crashes esm pkce challenge",
+  "description": "Known fix. Problem: runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead Root cause: pkce-challenge shipped as ESM-only. Fix: Upgrade @modelcontextprotocol/sdk to a version that lazily import()s pkce-challenge.",
+  "url": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-esm-pkce-challenge.html",
+  "dateCreated": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "keywords": "@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge, @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix, @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix, MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause, how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge, mcp-server commonjs projects err require esm pkce challenge, mcp-server commonjs projects err require esm pkce challenge fix, esm pkce challenge sdk crashes commonjs projects err require mcp-server, esm pkce challenge sdk crashes commonjs projects err require mcp-server fix, mcp typescript sdk crashes esm pkce challenge, mcp typescript sdk crashes esm pkce challenge fix, mcp typescript sdk crashes mcp-server, mcp typescript sdk crashes mcp-server fix, mcp-server module pkce challenge supported dynamic import instead",
+  "about": [
+    "agent-pitbook",
+    "llm-readable debugging",
+    "coding-agent pit",
+    "mcp",
+    "typescript-sdk",
+    "commonjs",
+    "esm",
+    "nestjs",
+    "pkce-challenge",
+    "dependencies",
+    "mcp-server",
+    "mcp-ts-sdk-commonjs-esm-pkce-challenge",
+    "mcp ts sdk commonjs esm pkce challenge",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix",
+    "MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause",
+    "@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge",
+    "@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix",
+    "@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause",
+    "how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge",
+    "mcp-server commonjs projects err require esm pkce challenge",
+    "mcp-server commonjs projects err require esm pkce challenge fix",
+    "esm pkce challenge sdk crashes commonjs projects err require mcp-server",
+    "verified",
+    "high"
+  ],
+  "isPartOf": {
+    "@type": "Dataset",
+    "name": "Agent Pitbook",
+    "url": "https://laozhangzzz.github.io/agent-pitbook/"
+  },
+  "mainEntityOfPage": "https://laozhangzzz.github.io/agent-pitbook/q/mcp-typescript-sdk-crashes-esm-pkce-challenge.html",
+  "sameAs": [
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html",
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md",
+    "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md",
+    "https://github.com/laozhangzzz/agent-pitbook/issues/33"
+  ],
+  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/33"
+}</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/agent-pitbook/">Agent Pitbook</a>
+    <nav>
+      <a href="/agent-pitbook/llms.txt">llms.txt</a>
+      <a href="/agent-pitbook/feeds/pits.jsonl">JSONL</a>
+      <a href="/agent-pitbook/search-queries.html">Search terms</a>
+      <a href="/agent-pitbook/ask.html">Ask</a>
+      <a href="/agent-pitbook/sitemap.xml">Sitemap</a>
+      <a href="https://github.com/laozhangzzz/agent-pitbook">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <article class="pit">
+      <p class="eyebrow">Known fix for searched query</p>
+      <h1>mcp typescript sdk crashes esm pkce challenge</h1>
+      <p class="lede">runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</p>
+      <p class="record-links">
+        <a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">Full pit record</a>
+        <span>|</span>
+        <a href="/agent-pitbook/q/modelcontextprotocol-sdk-fails-in-commonjs-projects-due-to-incompatible-esm-only-dependency-pkce-challenge.md">Markdown query page</a>
+        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/33">GitHub known-fix issue</a>
+      </p>
+      <section><h2>Fast answer</h2><div class="answer-box">
+    <p><strong>Problem:</strong> runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead</p>
+    <p><strong>Root cause:</strong> pkce-challenge shipped as ESM-only.</p>
+    <p><strong>Fix first:</strong> Upgrade @modelcontextprotocol/sdk to a version that lazily import()s pkce-challenge.</p>
+    <p><strong>Verify:</strong> Start the CommonJS app and initialize the MCP client.</p>
+  </div></section>
+      <section><h2>Why this page exists</h2>
+        <p>This page is a direct landing page for an exact problem query. Search-enabled agents should read the full pit record before applying the fix.</p>
+      </section>
+      <section><h2>Queries this answers</h2><ul><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge</li><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix</li><li>@modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) root cause</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) fix</li><li>MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause</li><li>how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge</li><li>mcp-server commonjs projects err require esm pkce challenge</li><li>mcp-server commonjs projects err require esm pkce challenge fix</li><li>esm pkce challenge sdk crashes commonjs projects err require mcp-server</li><li>esm pkce challenge sdk crashes commonjs projects err require mcp-server fix</li><li>mcp typescript sdk crashes esm pkce challenge</li><li>mcp typescript sdk crashes esm pkce challenge fix</li><li>mcp typescript sdk crashes mcp-server</li><li>mcp typescript sdk crashes mcp-server fix</li><li>mcp-server module pkce challenge supported dynamic import instead</li><li>mcp-server module pkce challenge supported dynamic import instead fix</li><li>dynamic import instead esm es module pkce challenge supported mcp-server</li><li>dynamic import instead esm es module pkce challenge supported mcp-server fix</li><li>runtime crash mcp client dynamic import instead</li><li>runtime crash mcp client dynamic import instead fix</li><li>runtime crash mcp client mcp-server</li><li>runtime crash mcp client mcp-server fix</li><li>ERR_REQUIRE_ESM</li></ul></section>
+      <section><h2>Full record</h2>
+        <p class="record-links"><a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.html">HTML pit</a><span>|</span><a href="/agent-pitbook/pits/mcp-ts-sdk-commonjs-esm-pkce-challenge.md">Markdown pit</a><span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md">Canonical source</a></p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

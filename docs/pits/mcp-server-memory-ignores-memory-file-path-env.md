@@ -27,23 +27,23 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source fix
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause
 - how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
+- claude-desktop ignores file path npm build lagged source
+- claude-desktop ignores file path npm build lagged source fix
+- build lagged source server memory ignores file path npm claude-desktop
+- build lagged source server memory ignores file path npm claude-desktop fix
+- server memory ignores file build lagged source
+- server memory ignores file build lagged source fix
+- server memory ignores file claude-desktop
+- server memory ignores file claude-desktop fix
+- claude-desktop memory file path set created default location
+- claude-desktop memory file path set created default location fix
+- created default location memory file path set claude-desktop
+- created default location memory file path set claude-desktop fix
+- memory file path set created default location
+- memory file path set created default location fix
+- memory file path set claude-desktop
+- memory file path set claude-desktop fix
 - MEMORY_FILE_PATH
-- MEMORY_FILE_PATH fix
-- claude-desktop MEMORY_FILE_PATH
-- claude-desktop MEMORY_FILE_PATH fix
-- cursor MEMORY_FILE_PATH
-- cursor MEMORY_FILE_PATH fix
-- mcp-server MEMORY_FILE_PATH
-- mcp-server MEMORY_FILE_PATH fix
-- MEMORY_FILE_PATH is set but the memory file is created at a default location
-- how to fix MEMORY_FILE_PATH is set but the memory file is created at a default location
-- MEMORY_FILE_PATH is set but the memory file is created at a default location root cause
-- claude-desktop MEMORY_FILE_PATH is set but the memory file is created at a default location
-- claude-desktop MEMORY_FILE_PATH is set but the memory file is created at a default location fix
-- cursor MEMORY_FILE_PATH is set but the memory file is created at a default location
-- cursor MEMORY_FILE_PATH is set but the memory file is created at a default location fix
-- mcp-server MEMORY_FILE_PATH is set but the memory file is created at a default location
-- mcp-server MEMORY_FILE_PATH is set but the memory file is created at a default location fix
 
 ## Common Search Queries
 

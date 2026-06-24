@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/11
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection fix
 - FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection root cause
 - how to fix FastMCP returns 421 Invalid Host Header behind a proxy due to DNS rebinding protection
+- mcp-server host header behind proxy dns rebinding protection
+- mcp-server host header behind proxy dns rebinding protection fix
+- dns rebinding protection 421 invalid host header behind proxy mcp-server
+- dns rebinding protection 421 invalid host header behind proxy mcp-server fix
+- returns 421 invalid host dns rebinding protection
+- returns 421 invalid host dns rebinding protection fix
+- returns 421 invalid host mcp-server
+- returns 421 invalid host mcp-server fix
+- mcp-server http 421 misdirected request invalid host header
+- mcp-server http 421 misdirected request invalid host header fix
+- invalid host header requests fail http 421 misdirected request mcp-server
+- invalid host header requests fail http 421 misdirected request mcp-server fix
+- all external requests fail invalid host header
+- all external requests fail invalid host header fix
+- all external requests fail mcp-server
+- all external requests fail mcp-server fix
 - /MCP
-- /MCP fix
-- mcp-server /MCP
-- mcp-server /MCP fix
-- fastmcp /MCP
-- fastmcp /MCP fix
-- -HTTP
-- -HTTP fix
-- mcp-server -HTTP
-- mcp-server -HTTP fix
-- fastmcp -HTTP
-- fastmcp -HTTP fix
-- HTTP 421 Misdirected Request and Invalid Host header
-- HTTP 421 Misdirected Request and 'Invalid Host header' fix
-- mcp-server HTTP 421 Misdirected Request and Invalid Host header
-- mcp-server HTTP 421 Misdirected Request and 'Invalid Host header' fix
-- fastmcp HTTP 421 Misdirected Request and Invalid Host header
-

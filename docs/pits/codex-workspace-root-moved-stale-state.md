@@ -24,19 +24,26 @@ After moving a workspace, Codex Desktop may retain stale workspace roots in app 
 - Codex still references an old workspace path after a project move fix
 - Codex still references an old workspace path after a project move root cause
 - how to fix Codex still references an old workspace path after a project move
+- codex references old workspace path after project move
+- codex references old workspace path after project move fix
+- after project move still references old workspace path codex
+- after project move still references old workspace path codex fix
+- still references old workspace after project move
+- still references old workspace after project move fix
+- still references old workspace codex
+- still references old workspace codex fix
+- codex sidebar references old workspace folder
+- codex sidebar references old workspace folder fix
+- old workspace folder sidebar references codex
+- old workspace folder sidebar references codex fix
+- sidebar references old workspace old workspace folder
+- sidebar references old workspace old workspace folder fix
+- sidebar references old workspace codex
+- sidebar references old workspace codex fix
 - Codex or its sidebar references an old workspace folder
 - how to fix Codex or its sidebar references an old workspace folder
 - Codex or its sidebar references an old workspace folder root cause
 - the shell current directory points to the new workspace
-- how to fix the shell current directory points to the new workspace
-- the shell current directory points to the new workspace root cause
-- codex the shell current directory points to the new workspace
-- codex the shell current directory points to the new workspace fix
-- file links or searches use the previous path
-- how to fix file links or searches use the previous path
-- file links or searches use the previous path root cause
-- codex file links or searches use the previous path
-- codex file links or searches use the previous path fix
 
 ## Common Search Queries
 
@@ -60,10 +67,10 @@ After moving a workspace, Codex Desktop may retain stale workspace roots in app 
 - Keep project moves visible to the agent by stating the new absolute path explicitly
 - Agent Pitbook bootstrap local session
 - how to fix Codex still references an old workspace path after a project move
-- how to fix Codex or its sidebar references an old workspace folder
-- Codex or its sidebar references an old workspace folder root cause
-- how to fix the shell current directory points to the new workspace
-- the shell current directory points to the new workspace root cause
+- codex references old workspace path after project move
+- codex references old workspace path after project move fix
+- after project move still references old workspace path codex
+- after project move still references old workspace path codex fix
 
 ## Affected Tools
 

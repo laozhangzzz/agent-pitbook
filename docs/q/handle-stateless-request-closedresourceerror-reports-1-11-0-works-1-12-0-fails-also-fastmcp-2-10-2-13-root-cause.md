@@ -24,21 +24,20 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/27
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions fix
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause
 - how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
+- mcp-server server throws anyio closedresourceerror some sdk versions
+- mcp-server server throws anyio closedresourceerror some sdk versions fix
+- some sdk versions http mcp server throws anyio closedresourceerror mcp-server
+- some sdk versions http mcp server throws anyio closedresourceerror mcp-server fix
+- stateless streamable http mcp some sdk versions
+- stateless streamable http mcp some sdk versions fix
+- stateless streamable http mcp mcp-server
+- stateless streamable http mcp mcp-server fix
+- mcp-server request raises exception group ending anyio closedresourceerror
+- mcp-server request raises exception group ending anyio closedresourceerror fix
+- ending anyio closedresourceerror each request raises exception group mcp-server
+- ending anyio closedresourceerror each request raises exception group mcp-server fix
+- each request raises exception ending anyio closedresourceerror
+- each request raises exception ending anyio closedresourceerror fix
+- each request raises exception mcp-server
+- each request raises exception mcp-server fix
 - HTTP fix
-- mcp-server HTTP
-- mcp-server HTTP fix
-- python-sdk HTTP
-- python-sdk HTTP fix
-- fastmcp HTTP
-- fastmcp HTTP fix
-- 10/2
-- 10/2 fix
-- mcp-server 10/2
-- mcp-server 10/2 fix
-- python-sdk 10/2
-- python-sdk 10/2 fix
-- fastmcp 10/2
-- fastmcp 10/2 fix
-- each request raises an exception group ending in anyio.ClosedResourceError
-- how to fix each request raises an exception group ending in anyio.ClosedResourceError
-

@@ -27,23 +27,23 @@ The MCP TypeScript/JS client defaults to a 60000 ms per-request timeout; long to
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress fix
 - MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress root cause
 - how to fix MCP TypeScript client times out long tool calls after 60s (-32001) unless you reset on progress
+- mcp-server after 60s 32001 unless you reset progress
+- mcp-server after 60s 32001 unless you reset progress fix
+- you reset progress tool calls after 60s 32001 unless mcp-server
+- you reset progress tool calls after 60s 32001 unless mcp-server fix
+- mcp typescript client times you reset progress
+- mcp typescript client times you reset progress fix
+- mcp typescript client times mcp-server
+- mcp typescript client times mcp-server fix
+- mcp-server 32001 request timed out data timeout 60000
+- mcp-server 32001 request timed out data timeout 60000 fix
+- data timeout 60000 mcp error 32001 request timed out mcp-server
+- data timeout 60000 mcp error 32001 request timed out mcp-server fix
+- mcperror mcp error 32001 data timeout 60000
+- mcperror mcp error 32001 data timeout 60000 fix
+- mcperror mcp error 32001 mcp-server
+- mcperror mcp error 32001 mcp-server fix
 - MCP error -32001: Request timed out even with server progress
-- MCP error -32001: Request timed out even with server progress fix
-- mcp-server MCP error -32001: Request timed out even with server progress
-- mcp-server MCP error -32001: Request timed out even with server progress fix
-- typescript-sdk MCP error -32001: Request timed out even with server progress
-- typescript-sdk MCP error -32001: Request timed out even with server progress fix
-- MCP error -32001: Request timed out with data: { timeout: 60000 }
-- MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 }
-- mcp-server MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 }
-- typescript-sdk MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
-- McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
-- mcp-server McpError: MCP error -32001: Request timed out with data: { timeout: 60000 } fix
-- typescript-sdk McpError: MCP error -32001: Request timed out with data: { timeout: 60000 }
 
 ## Common Search Queries
 
