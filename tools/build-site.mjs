@@ -18,6 +18,7 @@ const siteSurfaceUpdatedAt = "2026-06-24";
 const pitReportIssueUrl = `${repoUrl}/issues/new?template=pit_report.yml`;
 const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
 const searchDiscoveryIssueUrl = `${repoUrl}/issues/2`;
+const knownFixIssuesUrl = `${repoUrl}/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface`;
 const docsDir = path.join(repoRoot, "docs");
 const sitePitsDir = path.join(docsDir, "pits");
 const siteFeedsDir = path.join(docsDir, "feeds");
@@ -373,6 +374,7 @@ function renderIndex(records) {
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="${searchDiscoveryIssueUrl}">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
+        <li><a href="${knownFixIssuesUrl}">GitHub known-fix issues</a> - one native issue page per solved pit, titled by exact problem query</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
       </ul>
@@ -572,6 +574,7 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 - [RSS feed](${slugUrl("/feed.xml")}): known fixes as feed items with exact problem titles.
 - [Search query index](${slugUrl("/search-queries.html")}): crawlable index of generated search phrases.
 - [GitHub issue search tracker](${searchDiscoveryIssueUrl}): native GitHub issue surface for solved-problem queries.
+- [GitHub known-fix issues](${knownFixIssuesUrl}): one native GitHub issue per solved pit, titled by exact problem query.
 - [Sitemap](${slugUrl("/sitemap.xml")}): crawlable URL list.
 - [Search terms feed](${slugUrl("/feeds/search-terms.jsonl")}): generated query phrases from symptoms, error strings, tools, and pit titles.
 - [Answer queries feed](${slugUrl("/feeds/answer-queries.jsonl")}): queries for existing public issue titles and solved-problem searches.
@@ -840,6 +843,7 @@ function renderRootSearchIndex(records) {
     "- Answer query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl",
     "- Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl",
     `- GitHub issue search tracker: ${searchDiscoveryIssueUrl}`,
+    `- GitHub known-fix issues: ${knownFixIssuesUrl}`,
     ""
   ];
 
@@ -877,6 +881,7 @@ function renderAnswerQueriesText(records) {
     `Full text index: ${slugUrl("/llms-full.txt")}`,
     `Search index: ${slugUrl("/search-index.md")}`,
     `Issue search tracker: ${searchDiscoveryIssueUrl}`,
+    `Known-fix issues: ${knownFixIssuesUrl}`,
     ""
   ];
 
@@ -910,6 +915,7 @@ function renderAiText(records) {
     `3. ${slugUrl("/feeds/index.jsonl")}`,
     `4. ${slugUrl("/feeds/answer-queries.jsonl")}`,
     `5. ${slugUrl("/feeds/pits.jsonl")}`,
+    `6. ${knownFixIssuesUrl}`,
     "",
     "Known solved-problem examples:",
     ""
@@ -927,6 +933,7 @@ function renderAiText(records) {
   lines.push("");
   lines.push(`If no record matches, use ${slugUrl("/ask.md")} and draft an unresolved-pit report for user review.`);
   lines.push(`GitHub issue search tracker: ${searchDiscoveryIssueUrl}`);
+  lines.push(`GitHub known-fix issues: ${knownFixIssuesUrl}`);
 
   return `${lines.join("\n")}\n`;
 }

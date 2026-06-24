@@ -7,6 +7,7 @@ LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 Full text index: https://laozhangzzz.github.io/agent-pitbook/llms-full.txt
 Search index: https://laozhangzzz.github.io/agent-pitbook/search-index.md
 Issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
+Known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
 
 PIT agent-network-restricted-dependency-install
 TITLE Dependency install fails because the agent sandbox blocks network access

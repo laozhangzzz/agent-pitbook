@@ -8,6 +8,7 @@ Primary retrieval order:
 3. https://laozhangzzz.github.io/agent-pitbook/feeds/index.jsonl
 4. https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 5. https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
+6. https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
 
 Known solved-problem examples:
 
@@ -209,3 +210,4 @@ Known solved-problem examples:
 
 If no record matches, use https://laozhangzzz.github.io/agent-pitbook/ask.md and draft an unresolved-pit report for user review.
 GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2
+GitHub known-fix issues: https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface
