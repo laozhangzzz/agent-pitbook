@@ -15,6 +15,29 @@ Primary entrypoints:
 - Known-fix issue map: https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl
 - JSONL corpus: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 
+## Exact-Query Alias Pages
+
+The deployed site exposes 624 HTML exact-query alias pages plus 624 Markdown mirrors under `/q/`. Each page puts the searched problem phrase in the page title, H1, body text, sitemap, and JSON-LD so a search-enabled model can land on a known fix from the phrase it actually searched.
+
+Current crawl/indexing evidence as of 2026-06-24:
+
+- Sitemap: 1352 URLs, including 1249 `/q/` URLs.
+- IndexNow: accepted the current 1352-URL sitemap with HTTP 200.
+- GitHub issue search: passes for `MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT` -> issue #5.
+- GitHub issue search: passes for `MCP error -32000` -> issue #15.
+- Ordinary web search: still lagging immediately after deployment; the goal remains open until public/model-style search reliably surfaces these records.
+
+Representative exact-query pages:
+
+- `MCP Chrome Bridge returns 500 due to ERR_HTTP_HEADERS_SENT`: https://laozhangzzz.github.io/agent-pitbook/q/mcp-chrome-bridge-returns-500-due-to-err-http-headers-sent.html
+- `Singleton McpServer causes Already connected to a transport`: https://laozhangzzz.github.io/agent-pitbook/q/singleton-mcpserver-causes-already-connected-to-a-transport.html
+- `MCP error -32000: Connection closed means the stdio server died before the handshake`: https://laozhangzzz.github.io/agent-pitbook/q/mcp-error-32000-connection-closed-means-the-stdio-server-died-before-the-handshake.html
+- `GitHub MCP Server Fails to Start: npx Command Error and Connection Closed -32000`: https://laozhangzzz.github.io/agent-pitbook/q/github-mcp-server-fails-to-start-npx-command-error-and-connection-closed-32000.html
+- `MCP Servers Dont Work with NVM`: https://laozhangzzz.github.io/agent-pitbook/q/mcp-servers-dont-work-with-nvm.html
+- `SyntaxError in stdio deserializeMessage a console.log in the server triggers it`: https://laozhangzzz.github.io/agent-pitbook/q/syntaxerror-in-stdio-deserializemessage-a-console-log-in-the-server-triggers-it.html
+- `uv fails in a managed workspace because cache or Python install paths are outside writable roots`: https://laozhangzzz.github.io/agent-pitbook/q/uv-fails-in-a-managed-workspace-because-cache-or-python-install-paths-are-outside-writable-roots.html
+- `pynput Controller.type() scrambles mixed Chinese+English text on macOS; use clipboard paste`: https://laozhangzzz.github.io/agent-pitbook/q/pynput-controller-type-scrambles-mixed-chinese-english-text-on-macos-use-clipboard-paste.html
+
 ## Known Fix Search Targets
 
 ### Dependency install fails because the agent sandbox blocks network access
