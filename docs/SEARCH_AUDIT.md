@@ -60,6 +60,7 @@ model in-the-wild usage: not yet proven
 The search surface now includes:
 
 - root `SEARCH_INDEX.md`: answer-first exact problem titles in the GitHub repository root
+- GitHub issue #2: native searchable tracker for solved-problem queries and matching pit links
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
 - `/feeds/answer-queries.jsonl`: machine-readable solved-problem query feed
@@ -92,6 +93,7 @@ After deployment and indexing delay:
 2. Submit the current sitemap with `node tools/indexnow-submit.mjs`.
 3. Test each query in ordinary web search.
 4. Test each query in GitHub repository search.
-5. Test exact error snippets in GitHub code search, especially whether `SEARCH_INDEX.md` appears.
-6. Mark each query as `pass`, `weak pass`, or `fail`.
-7. For failures, add relevant backlinks from real issue discussions only when the pit directly helps.
+5. Test each query in GitHub issue search, especially whether issue #2 appears.
+6. Test exact error snippets in GitHub code search, especially whether `SEARCH_INDEX.md` appears.
+7. Mark each query as `pass`, `weak pass`, or `fail`.
+8. For failures, add relevant backlinks from real issue discussions only when the pit directly helps.
