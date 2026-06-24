@@ -14,6 +14,7 @@ import {
 
 const baseUrl = "https://laozhangzzz.github.io/agent-pitbook";
 const repoUrl = "https://github.com/laozhangzzz/agent-pitbook";
+const siteSurfaceUpdatedAt = "2026-06-24";
 const pitReportIssueUrl = `${repoUrl}/issues/new?template=pit_report.yml`;
 const unresolvedIssueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
 const docsDir = path.join(repoRoot, "docs");
@@ -148,6 +149,10 @@ function latestUpdatedAt(records) {
     .at(-1);
 }
 
+function maxDate(...values) {
+  return values.filter(Boolean).sort().at(-1);
+}
+
 function siteKeywords() {
   return [
     "agent-pitbook",
@@ -185,7 +190,7 @@ function jsonLdScript(data) {
 }
 
 function datasetJsonLd(records) {
-  const siteLastmod = latestUpdatedAt(records);
+  const siteLastmod = maxDate(latestUpdatedAt(records), siteSurfaceUpdatedAt);
   return {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -865,7 +870,7 @@ function renderSearchQueryMarkdown(records) {
 }
 
 function renderSitemap(records) {
-  const siteLastmod = latestUpdatedAt(records);
+  const siteLastmod = maxDate(latestUpdatedAt(records), siteSurfaceUpdatedAt);
   const pages = [
     ["/", siteLastmod],
     ["/llms.txt", siteLastmod],
@@ -882,8 +887,8 @@ function renderSitemap(records) {
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
     ...records.flatMap((record) => [
-      [recordHtmlPath(record), record.updated_at],
-      [recordMarkdownPath(record), record.updated_at]
+      [recordHtmlPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)],
+      [recordMarkdownPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)]
     ])
   ];
 

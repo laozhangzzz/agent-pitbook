@@ -39,6 +39,7 @@ How:
 - expose `/llms.txt` at the website root
 - expose `/sitemap.xml`
 - expose `/robots.txt` with a `Sitemap:` directive
+- expose an IndexNow key file under the Pages project path and submit the sitemap URL set after deployment
 - give every pit a stable HTML and Markdown URL
 - use simple static pages, not JavaScript-only rendering
 - add canonical links from pages back to the GitHub source files
@@ -123,6 +124,7 @@ How:
 - expose the no-match escalation path at `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json`
 - make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
 - make `/llms.txt` explicitly tell agents to draft an unresolved-pit report when no record matches and the user is still blocked
+- run `node tools/indexnow-submit.mjs` after Pages deployment so IndexNow-compatible engines are told about the current sitemap URLs
 - create backlinks to specific pit pages from GitHub issues, docs, release notes, and community answers only when directly relevant
 
 ## 7. Community And Backlink Discovery
@@ -163,13 +165,14 @@ Current state:
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.
+- The site includes an IndexNow key file and `tools/indexnow-submit.mjs` can submit current sitemap URLs after deployment.
 - A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
 - The corpus is useful but still too small for strong long-tail error discovery.
 
 Next best moves:
 
 1. Add more real pits with exact error strings.
-2. Submit or verify the sitemap with major search engines once the site has a stable public URL.
+2. Submit the current sitemap URL set with IndexNow after each meaningful Pages deployment.
 3. Add backlinks from concrete issue replies and docs pages where a pit directly helps.
 4. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
 5. Add a benchmark showing ordinary search vs pitbook-assisted debugging.

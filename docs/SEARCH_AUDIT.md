@@ -62,20 +62,35 @@ The search surface now includes:
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
 - `/feeds/answer-queries.jsonl`: machine-readable solved-problem query feed
+- `/97be09ad8cd61c71af39f8b61c2de866.txt`: IndexNow ownership key for the `/agent-pitbook/` URL subtree
 - per-pit `Fast answer` sections
 - per-pit `Queries this answers` sections
 - `Fix: ...` HTML titles and answer-first meta descriptions
 - sitemap entries for answer pages and answer feed
 - MCP search over `feeds/answer-queries.jsonl`
+- `tools/indexnow-submit.mjs`: submit the sitemap URL set to IndexNow-compatible engines after deployment
+
+## IndexNow Submission
+
+After a Pages deployment, notify IndexNow-compatible search engines:
+
+```bash
+node tools/indexnow-submit.mjs --dry-run
+node tools/indexnow-submit.mjs
+```
+
+The script reads `docs/sitemap.xml`, posts the URL set to `https://api.indexnow.org/indexnow`, and includes `keyLocation` so the key file can live under the GitHub Pages project path instead of the host root.
+
+An HTTP `200` or `202` only proves the URL set was accepted for processing. It does not prove ranking or indexing.
 
 ## Next Audit Loop
 
 After deployment and indexing delay:
 
 1. Generate probes with `node tools/search-probes.mjs --records 12 --queries 6`.
-2. Test each query in ordinary web search.
-3. Test each query in GitHub repository search.
-4. Test exact error snippets in GitHub code search.
-5. Mark each query as `pass`, `weak pass`, or `fail`.
-6. For failures, add relevant backlinks from real issue discussions only when the pit directly helps.
-
+2. Submit the current sitemap with `node tools/indexnow-submit.mjs`.
+3. Test each query in ordinary web search.
+4. Test each query in GitHub repository search.
+5. Test exact error snippets in GitHub code search.
+6. Mark each query as `pass`, `weak pass`, or `fail`.
+7. For failures, add relevant backlinks from real issue discussions only when the pit directly helps.

@@ -44,5 +44,8 @@ jobs:
           echo "$OUT" | grep -q '"search_pits"' || { echo "::error::MCP server did not list search_pits"; exit 1; }
           echo "$OUT" | grep -q '"get_unresolved_pit_template"' || { echo "::error::MCP server did not list get_unresolved_pit_template"; exit 1; }
 
+      - name: IndexNow payload smoke test
+        run: node tools/indexnow-submit.mjs --dry-run > /tmp/indexnow-payload.json
+
       - name: Freshness report (warning only)
         run: node tools/check-freshness.mjs --max-age-days 180

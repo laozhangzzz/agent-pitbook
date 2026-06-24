@@ -239,6 +239,7 @@ The project should be discoverable through GitHub search, web search, LLM entryp
 
 See [docs/DISCOVERY.md](docs/DISCOVERY.md).
 Search recall is audited with [docs/SEARCH_AUDIT.md](docs/SEARCH_AUDIT.md) and `node tools/search-probes.mjs`.
+After a Pages deployment, notify IndexNow-compatible engines with `node tools/indexnow-submit.mjs`.
 
 ## Repository Shape
 

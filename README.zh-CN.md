@@ -175,6 +175,12 @@ node tools/build-feed.mjs
 node tools/build-site.mjs
 ```
 
+如果这次改动会影响公开搜索入口或 sitemap，GitHub Pages 部署后再运行：
+
+```bash
+node tools/indexnow-submit.mjs
+```
+
 Agent 优先读取：
 
 - `feeds/index.jsonl`：轻量索引，先扫这个
