@@ -183,17 +183,14 @@ node tools/indexnow-submit.mjs
 
 Agent 优先读取：
 
+- `llms.txt` 和 `docs/llms.txt`：公开站点和仓库里的 LLM 入口，告诉 agent 先读什么
 - `SEARCH_INDEX.md`：根目录搜索索引，保留已解决问题、上游 issue 标题和精确报错
-- `docs/llms-full.txt`、`docs/answer-queries.txt`、`docs/ai.txt`：给搜索引擎和 agent 的纯文本入口
-- `docs/q/`：每个高价值已解决问题搜索词一个落地页，URL、标题和 H1 都贴近搜索句
-- `docs/SEARCH_SNAPSHOT_2026-06-24.md`：发布快照式索引，重复所有 known-fix issue 和精确问题标题
-- GitHub release `search-snapshot-2026-06-24`：把 JSONL、RSS、索引和搜索快照作为可下载资产公开
-- `docs/feed.xml`：RSS 更新入口，让搜索工具、监控器和订阅器更容易抓到已解决问题
-- GitHub `known-fix` issues：每个已解决坑一个独立 issue，用精确问题标题做搜索落点
-- `docs/feeds/known-fix-issues.jsonl`：pit id 到独立 known-fix issue 的机器可读映射
+- `docs/ai.txt`：给搜索引擎和 agent 的简短路由文本
+- `docs/answers.html` 和 `docs/answers.md`：answer-first 的已知修复索引
+- `docs/feed.xml`：RSS 更新入口，让搜索工具、监控器和订阅器更容易抓到新增修复
 - `feeds/index.jsonl`：轻量索引，先扫这个
-- `feeds/answer-queries.jsonl`：已知修复、上游 issue 标题、原始报错和 root cause/fix 查询
 - `feeds/pits.jsonl`：完整记录，按 id 取详情
+- `feeds/search-terms.jsonl` 和 `feeds/answer-queries.jsonl`：紧凑候选查询，不再生成批量薄落地页
 - `feeds/unresolved-pit-template.json`：没有匹配记录时，整理未解决问题的模板
 - `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits`、`get_pit` 和 `get_unresolved_pit_template`
 

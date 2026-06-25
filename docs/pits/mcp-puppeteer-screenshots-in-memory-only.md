@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-puppeteer-screenshots-in-memory-only.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/21
 
 ## Summary
 
@@ -28,22 +27,6 @@ The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP res
 - Puppeteer MCP screenshots live in memory only; there is no file on disk to find root cause
 - how to fix Puppeteer MCP screenshots live in memory only; there is no file on disk to find
 - mcp-server live memory there no file disk find
-- mcp-server live memory there no file disk find fix
-- file disk find mcp screenshots live memory there no mcp-server
-- file disk find mcp screenshots live memory there no mcp-server fix
-- puppeteer mcp screenshots live file disk find
-- puppeteer mcp screenshots live file disk find fix
-- puppeteer mcp screenshots live mcp-server
-- puppeteer mcp screenshots live mcp-server fix
-- mcp-server screenshot success no image file appears disk
-- mcp-server screenshot success no image file appears disk fix
-- file appears disk puppeteer screenshot success no image mcp-server
-- file appears disk puppeteer screenshot success no image mcp-server fix
-- puppeteer screenshot success no file appears disk
-- puppeteer screenshot success no file appears disk fix
-- puppeteer screenshot success no mcp-server
-- puppeteer screenshot success no mcp-server fix
-- puppeteer_screenshot reports success but no image file appears on disk
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ The Puppeteer MCP server keeps screenshots in memory and exposes them as MCP res
 - misconception
 - mcp-server
 - claude-desktop
-- puppeteer_screenshot reports success but no image file appears on disk
-- the model tries to open a screenshot path and finds nothing
-- the agent searches the filesystem (sometimes outside the project) for the missing file
-- The server stores screenshots in memory and exposes them as MCP resources, with no documented filesystem path
-- Models often assume the screenshot was written to disk (and may claim they saved it), reinforcing the misconception
-- Searching the filesystem for a Puppeteer MCP screenshot
-- Trusting a models claim that it saved the screenshot to a path
-- Persist the in-memory image yourself if a file is required downstream
-- modelcontextprotocol/servers issue 865: Puppeteer MCP Server Missing Screenshots maintainer: screenshots are stored in memory only
-- Puppeteer MCP Server Missing Screenshots
-- Puppeteer MCP Server Missing Screenshots fix
-- Puppeteer MCP Server Missing Screenshots root cause
 
 ## Affected Tools
 

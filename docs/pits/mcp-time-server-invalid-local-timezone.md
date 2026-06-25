@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-time-server-invalid-local-timezone.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/31
 
 ## Summary
 
@@ -28,22 +27,6 @@ uvx mcp-server-time can crash with a zoneinfo load error when the local timezone
 - mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause
 - how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 - mcp-server local timezone abbreviation like edt pdt cest
-- mcp-server local timezone abbreviation like edt pdt cest fix
-- edt pdt cest time crashes local timezone abbreviation like mcp-server
-- edt pdt cest time crashes local timezone abbreviation like mcp-server fix
-- mcp server time crashes edt pdt cest
-- mcp server time crashes edt pdt cest fix
-- mcp server time crashes mcp-server
-- mcp server time crashes mcp-server fix
-- mcp-server zoneinfo common py load tzdata failing timezone
-- mcp-server zoneinfo common py load tzdata failing timezone fix
-- tzdata failing timezone traceback through zoneinfo common py load mcp-server
-- tzdata failing timezone traceback through zoneinfo common py load mcp-server fix
-- uvx mcp server time tzdata failing timezone
-- uvx mcp server time tzdata failing timezone fix
-- uvx mcp server time mcp-server
-- uvx mcp server time mcp-server fix
-- EDT/PDT/CEST
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ uvx mcp-server-time can crash with a zoneinfo load error when the local timezone
 - mcp-server
 - claude-desktop
 - uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone
-- happens when DST is active and the local zone shows as an abbreviation EDT/PDT/CEST
-- works fine in standard time for some users
-- The server resolves the local timezone, but the platform reports a non-IANA abbreviation e.g. EDT
-- Pythons zoneinfo only loads canonical IANA names (e.g. America/New_York), so loading the abbreviation raises and the server fails to start
-- Passing a timezone abbreviation (EDT/PDT/CEST) instead of an IANA name
-- Relying on auto-detected local timezone on a platform that emits abbreviations during DST
-- Set the process/system timezone to a canonical IANA name
-- modelcontextprotocol/servers issue 786: Time server fails under EDT timezone use --local-timezone with an IANA name
-- Time server fails under EDT timezone use --local-timezone with an IANA name
-- Time server fails under EDT timezone (use --local-timezone with an IANA name) fix
-- Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause
-- how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST
 
 ## Affected Tools
 

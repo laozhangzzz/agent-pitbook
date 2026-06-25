@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-windows-npx-requires-cmd-c-wrapper.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/37
 
 ## Summary
 
@@ -28,22 +27,6 @@ On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''np
 - comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions root cause
 - On Windows an MCP server launched with npx needs a cmd /c wrapper
 - On Windows an MCP server launched with npx needs a cmd /c wrapper fix
-- On Windows an MCP server launched with npx needs a cmd /c wrapper root cause
-- how to fix On Windows an MCP server launched with npx needs a cmd /c wrapper
-- claude-desktop mcp server launched npx needs cmd wrapper
-- claude-desktop mcp server launched npx needs cmd wrapper fix
-- needs cmd wrapper windows mcp server launched npx claude-desktop
-- needs cmd wrapper windows mcp server launched npx claude-desktop fix
-- windows mcp server launched needs cmd wrapper
-- windows mcp server launched needs cmd wrapper fix
-- windows mcp server launched claude-desktop
-- windows mcp server launched claude-desktop fix
-- claude-desktop windows mcp server will start
-- claude-desktop windows mcp server will start fix
-- server will start windows mcp claude-desktop
-- server will start windows mcp claude-desktop fix
-- windows mcp server will server will start
-- windows mcp server will server will start fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ On Windows, command: 'npx' for an MCP server fails with spawn npx ENOENT or ''np
 - claude-desktop
 - cursor
 - cline
-- mcp-server
-- Windows only: the MCP server will not start
-- logs show spawn npx ENOENT or locale text equivalent to npx is not recognized as an internal or external command
-- the same npx command runs fine in PowerShell or cmd manually
-- On Windows npx and npm are npx.cmd / npm.cmd batch files, not executables
-- Nodes spawn without a shell cannot execute a .cmd directly, so command: npx yields ENOENT
-- Routing through cmd /c lets the Windows command interpreter resolve and run the shim
-- Using bare command: 'npx' on Windows
-- Assuming a macOS/Linux config is portable to Windows without cmd /c
-- Use the absolute node.exe path plus the server script path instead of npx
-- modelcontextprotocol/servers issue 1097: Windows npx launch failure with garbled 'not recognized' error -32000
-- modelcontextprotocol/servers issue 891: comment noting Windows/WSL needs 'cmd /c' before 'npx -y' and matching npm versions
 
 ## Affected Tools
 

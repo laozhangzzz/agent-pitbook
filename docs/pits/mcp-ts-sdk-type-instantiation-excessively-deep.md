@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-type-instantiation-excessively-deep.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/35
 
 ## Summary
 
@@ -28,22 +27,6 @@ Using MCP SDK tool types (e.g. ToolCallback<Args>) with Zod can trigger 'Type in
 - MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE root cause
 - how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
 - mcp-server type instantiation excessively deep ts2589 freezes ide
-- mcp-server type instantiation excessively deep ts2589 freezes ide fix
-- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server
-- ts2589 freezes ide ts sdk type instantiation excessively deep mcp-server fix
-- mcp ts sdk type ts2589 freezes ide
-- mcp ts sdk type ts2589 freezes ide fix
-- mcp ts sdk type mcp-server
-- mcp ts sdk type mcp-server fix
-- mcp-server ts 2589 lines referencing sdk tool types
-- mcp-server ts 2589 lines referencing sdk tool types fix
-- sdk tool types possibly infinite ts 2589 lines referencing mcp-server
-- sdk tool types possibly infinite ts 2589 lines referencing mcp-server fix
-- type instantiation excessively deep sdk tool types
-- type instantiation excessively deep sdk tool types fix
-- type instantiation excessively deep mcp-server
-- type instantiation excessively deep mcp-server fix
-- Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Using MCP SDK tool types (e.g. ToolCallback<Args>) with Zod can trigger 'Type in
 - mcp-server
 - Type instantiation is excessively deep and possibly infinite.ts(2589) on lines referencing SDK tool types
 - the TypeScript server in Cursor/VS Code hangs and saving files stalls
-- it appears intermittently; @ts-ignore silences the error but not the slowdown
-- Deep generic instantiation in Zod's types as consumed by the SDK's tool typings
-- Worsened by multiple resolved Zod versions, a legacy moduleResolution: 'node' tsconfig, and certain SDK versions reported from >=1.16.0
-- Suppressing with @ts-ignore and ignoring the language-server slowdown
-- Leaving two Zod versions in the dependency tree
-- Pin a known-good SDK + Zod pair until you can update tsconfig/Zod
-- modelcontextprotocol/typescript-sdk issue 494: 'Type instantiation is excessively deep' when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
-- Type instantiation is excessively deep when importing ToolCallback Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6
-- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) fix
-- Type instantiation is excessively deep when importing ToolCallback (Zod author recommends single Zod version + modern moduleResolution; fixed in Zod 4.1.6) root cause
-- how to fix MCP TS SDK: 'Type instantiation is excessively deep' (ts2589) freezes the IDE
-- mcp-server type instantiation excessively deep ts2589 freezes ide
 
 ## Affected Tools
 

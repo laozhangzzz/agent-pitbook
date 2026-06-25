@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/macos-portaudio-silent-zero-capture-unavailable-default-input.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/39
 
 ## Summary
 
@@ -28,22 +27,6 @@ PortAudio (via sounddevice) can open an input stream on a physically-unavailable
 - sounddevice silent audio no error default mic unavailable fix
 - default mic unavailable all zero silent audio no error sounddevice
 - default mic unavailable all zero silent audio no error sounddevice fix
-- macos all zero silent default mic unavailable
-- macos all zero silent default mic unavailable fix
-- macos all zero silent sounddevice
-- macos all zero silent sounddevice fix
-- sounddevice single junk token 2s clip stray korean
-- sounddevice single junk token 2s clip stray korean fix
-- clip stray korean speech transcribes single junk token 2s sounddevice
-- clip stray korean speech transcribes single junk token 2s sounddevice fix
-- multi second speech transcribes clip stray korean
-- multi second speech transcribes clip stray korean fix
-- multi second speech transcribes sounddevice
-- multi second speech transcribes sounddevice fix
-- multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- how to fix multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- multi-second speech transcribes to a single junk token (e.g. 6.2s clip -> '我。', stray Korean '그.', or '谷歌') root cause
-- sounddevice multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ PortAudio (via sounddevice) can open an input stream on a physically-unavailable
 - silent-capture
 - microphone
 - clamshell
-- voice
-- voice-to-claude
-- multi-second speech transcribes to a single junk token e.g. 6.2s clip -> 我。, stray Korean 그., or 谷歌
-- the saved WAV has peak amplitude 0 and RMS 0 all-zero samples across the whole clip
-- no exception: sd.InputStream opens normally and its callback delivers all-zero frames
-- the ASR model looks broken but is being fed pure silence
-- With the lid closed (clamshell), the built-in MacBook mic is physically unavailable but is still enumerated AND still selected as the default input device
-- PortAudio opens the stream successfully and silently delivers all-zero buffers instead of erroring, so the failure is invisible at the API layer — every downstream stage 'succeeds' on silence
-- Trusting that a successfully-opened audio stream is actually capturing sound
-- Blaming the ASR model for garbage output when the input is all-zero silence
-- Select a known-good input device explicitly at startup rather than the OS default
-- voice-to-claude daemon debugging session
 
 ## Affected Tools
 

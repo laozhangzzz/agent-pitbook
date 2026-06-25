@@ -9,11 +9,9 @@ Agent Pitbook exists because most engineering answers are packaged for human rea
 Two-tier retrieval, cheapest first:
 
 1. [Slim index](https://laozhangzzz.github.io/agent-pitbook/feeds/index.jsonl): one line per record with id, title, summary, symptoms, tags, status. Scan this first; it is small.
-2. [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from current symptoms, exact errors, tools, titles, anti-patterns, and source clues.
-3. [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): answer-first queries for known solved problems, upstream issue titles, exact errors, root causes, and fixes.
-4. [Plain answer query text](https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt): same solved-problem queries in crawler-friendly text form.
-5. [Full text index](https://laozhangzzz.github.io/agent-pitbook/llms-full.txt): all known fixes in answer-first text form.
-6. [Full feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+2. [Full feed](https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl): one full record per line. Fetch the matching id here (or via the MCP get_pit tool) for root cause, ordered fix, verification, and sources.
+3. [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): compact candidate phrases from current symptoms, exact errors, tools, titles, and source clues.
+4. [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): compact candidate queries for known solved problems. Treat these as hints, not proof of external search visibility.
 
 The per-pit Markdown pages and `pits/**/*.md` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
@@ -35,21 +33,14 @@ Do not skim only the README. Search the slim index by exact error text and tool 
 
 - [Pit index](https://laozhangzzz.github.io/agent-pitbook/pits/): HTML index of all records (for humans).
 - [Answer-first index](https://laozhangzzz.github.io/agent-pitbook/answers.html): known fixes arranged as problem -> root cause -> fix.
-- [Search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md): exact solved-problem titles and links for search engines and LLM retrieval.
-- [Search snapshot](https://laozhangzzz.github.io/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md): release-style exact-query snapshot with known-fix issue links.
-- [GitHub search snapshot release](https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24): release page with JSONL, RSS, and index assets.
-- [Exact-query landing pages](https://laozhangzzz.github.io/agent-pitbook/q/): one page per high-value solved-problem query, with the searched phrase in URL, title, and H1.
-- [Full text index](https://laozhangzzz.github.io/agent-pitbook/llms-full.txt): complete answer-first text index.
-- [Plain answer query text](https://laozhangzzz.github.io/agent-pitbook/answer-queries.txt): query -> pit URL map for search crawlers.
+- [Search index Markdown](https://laozhangzzz.github.io/agent-pitbook/search-index.md): answer-first record summaries and links for search engines and LLM retrieval.
 - [AI routing text](https://laozhangzzz.github.io/agent-pitbook/ai.txt): compact instructions for AI agents.
 - [RSS feed](https://laozhangzzz.github.io/agent-pitbook/feed.xml): known fixes as feed items with exact problem titles.
 - [Search query index](https://laozhangzzz.github.io/agent-pitbook/search-queries.html): crawlable index of generated search phrases.
-- [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2): native GitHub issue surface for solved-problem queries.
-- [GitHub known-fix issues](https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface): one native GitHub issue per solved pit, titled by exact problem query.
+- [GitHub issue search tracker](https://github.com/laozhangzzz/agent-pitbook/issues/2): native GitHub issue surface for discovery notes and unresolved search gaps.
 - [Sitemap](https://laozhangzzz.github.io/agent-pitbook/sitemap.xml): crawlable URL list.
 - [Search terms feed](https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl): generated query phrases from symptoms, error strings, tools, and pit titles.
-- [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): queries for existing public issue titles and solved-problem searches.
-- [Known-fix issue map](https://laozhangzzz.github.io/agent-pitbook/feeds/known-fix-issues.jsonl): pit id to dedicated GitHub known-fix issue URL map.
+- [Answer queries feed](https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl): compact candidate queries for solved-problem searches.
 - [Source repository](https://github.com/laozhangzzz/agent-pitbook): canonical Git history, schema, and contribution flow.
 - [Chinese contribution entry](https://github.com/laozhangzzz/agent-pitbook/blob/main/README.zh-CN.md): Chinese users can leave rough pit reports in Chinese; maintainers or agents can structure them later.
 

@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: In the stdio transport, stdout is the JSON-RPC channel. Fix: Remove or redirect all stdout writes in the server; use stderr.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, mcp-stdio-stdout-logging-breaks-protocol, mcp stdio stdout logging breaks protocol, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause, SyntaxError in stdio deserializeMessage a console.log in the server triggers it, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause, how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, mcp-server stdio mcp server corrupts json rpc stream, mcp-server stdio mcp server corrupts json rpc stream fix, json rpc stream writing stdout stdio mcp server corrupts mcp-server, verified, high">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, verified, high, mcp-stdio-stdout-logging-breaks-protocol">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, mcp-stdio-stdout-logging-breaks-protocol, mcp stdio stdout logging breaks protocol, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix, Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause, SyntaxError in stdio deserializeMessage a console.log in the server triggers it, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix, SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause, how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream, mcp-server stdio mcp server corrupts json rpc stream, mcp-server stdio mcp server corrupts json rpc stream fix, json rpc stream writing stdout stdio mcp server corrupts mcp-server, verified, high",
+  "keywords": "mcp, stdio, stdout, logging, json-rpc, console-log, protocol, mcp-server, typescript-sdk, python-sdk, mcp-stdio-stdout-logging-breaks-protocol",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -37,20 +37,9 @@
     "mcp-server",
     "typescript-sdk",
     "python-sdk",
-    "mcp-stdio-stdout-logging-breaks-protocol",
-    "mcp stdio stdout logging breaks protocol",
-    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
-    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix",
-    "Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause",
-    "SyntaxError in stdio deserializeMessage a console.log in the server triggers it",
-    "SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix",
-    "SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause",
-    "how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream",
-    "mcp-server stdio mcp server corrupts json rpc stream",
-    "mcp-server stdio mcp server corrupts json rpc stream fix",
-    "json rpc stream writing stdout stdio mcp server corrupts mcp-server",
     "verified",
-    "high"
+    "high",
+    "mcp-stdio-stdout-logging-breaks-protocol"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -61,10 +50,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-stdout-logging-breaks-protocol.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/29"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/29"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md"
+  ]
 }</script>
 
 </head>
@@ -89,7 +76,6 @@
         <a href="/agent-pitbook/pits/mcp-stdio-stdout-logging-breaks-protocol.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-stdout-logging-breaks-protocol.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/29">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</p>
@@ -97,9 +83,9 @@
     <p><strong>Fix first:</strong> Remove or redirect all stdout writes in the server; use stderr.</p>
     <p><strong>Verify:</strong> Call a tool after moving logging to stderr.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>SyntaxError in stdio deserializeMessage a console.log in the server triggers it</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>mcp-server stdio mcp server corrupts json rpc stream</li><li>mcp-server stdio mcp server corrupts json rpc stream fix</li><li>json rpc stream writing stdout stdio mcp server corrupts mcp-server</li><li>json rpc stream writing stdout stdio mcp server corrupts mcp-server fix</li><li>writing stdout stdio mcp json rpc stream</li><li>writing stdout stdio mcp json rpc stream fix</li><li>writing stdout stdio mcp mcp-server</li><li>writing stdout stdio mcp mcp-server fix</li><li>mcp-server client error syntaxerror valid json deserializemessage parse</li><li>mcp-server client error syntaxerror valid json deserializemessage parse fix</li><li>json deserializemessage parse client error syntaxerror valid mcp-server</li><li>json deserializemessage parse client error syntaxerror valid mcp-server fix</li><li>client error syntaxerror valid json deserializemessage parse</li><li>client error syntaxerror valid json deserializemessage parse fix</li><li>client error syntaxerror valid mcp-server</li><li>client error syntaxerror valid mcp-server fix</li><li>JSON-RPC</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>SyntaxError in stdio deserializeMessage a console.log in the server triggers it</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) fix</li><li>SyntaxError in stdio deserializeMessage (a console.log in the server triggers it) root cause</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>how to fix Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>mcp-server stdio mcp server corrupts json rpc stream</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk, python-sdk</td></tr><tr><th>Tags</th><td>mcp, stdio, stdout, logging, json-rpc, console-log, protocol</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>mcp-stdio-stdout-logging-breaks-protocol</li><li>mcp stdio stdout logging breaks protocol</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>stdio</li><li>stdout</li><li>logging</li><li>json-rpc</li><li>console-log</li><li>protocol</li><li>mcp-server</li><li>typescript-sdk</li><li>python-sdk</li><li>client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>the bad token matches the servers own log text e.g. get_weather tool called</li><li>tool calls fail intermittently, correlated with code paths that log</li><li>In the stdio transport, stdout is the JSON-RPC channel</li><li>A server writing human-readable output to stdout (console.log in Node, print in Python) injects non-JSON lines between protocol messages</li><li>The clients line-based deserializer then tries to JSON.parse the log text and throws</li><li>Using console.log / bare print for debugging inside a stdio MCP server</li><li>A dependency or startup banner that prints to stdout in a stdio server</li><li>Temporarily disable logging in the server to confirm the diagnosis</li><li>modelcontextprotocol/typescript-sdk issue 244: SyntaxError in stdio deserializeMessage a console.log in the server triggers it</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-stdio-stdout-logging-breaks-protocol</li><li>mcp stdio stdout logging breaks protocol</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream fix</li><li>Writing to stdout in a stdio MCP server corrupts the JSON-RPC stream root cause</li><li>stdio</li><li>stdout</li><li>logging</li><li>json-rpc</li><li>console-log</li><li>protocol</li><li>mcp-server</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>client error SyntaxError: ... is not valid JSON inside deserializeMessage / JSON.parse</li><li>the bad token matches the server's own log text (e.g. get_weather tool called...)</li><li>tool calls fail intermittently, correlated with code paths that log</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>constraints</th><td>stdio transport where stdout carries JSON-RPC, server prints to stdout</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>In the stdio transport, stdout is the JSON-RPC channel.</li><li>A server writing human-readable output to stdout (console.log in Node, print in Python) injects non-JSON lines between protocol messages.</li><li>The client's line-based deserializer then tries to JSON.parse the log text and throws.</li></ul></section>

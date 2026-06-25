@@ -51,8 +51,8 @@ fs.writeFileSync(
         tags: record.tags ?? [],
         url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html`,
         markdown_url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.md`,
-        search_terms: recordSearchTerms(record, 48),
-        answer_queries: recordAnswerQueries(record, 32),
+        search_terms: recordSearchTerms(record, 24),
+        answer_queries: recordAnswerQueries(record, 8),
         answer_summary: recordAnswerSummary(record)
       })
     )
@@ -74,7 +74,7 @@ fs.writeFileSync(
         url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html`,
         markdown_url: `https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.md`,
         answer_summary: recordAnswerSummary(record),
-        answer_queries: recordAnswerQueries(record, 64)
+        answer_queries: recordAnswerQueries(record, 8)
       })
     )
     .join("\n")}\n`

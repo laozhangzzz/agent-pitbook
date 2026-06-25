@@ -5,7 +5,6 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stateless-streamable-http-closedresourceerror.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/27
 
 ## Summary
 
@@ -28,22 +27,6 @@ A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on ce
 - Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions root cause
 - how to fix Stateless Streamable HTTP MCP server throws anyio.ClosedResourceError on some SDK versions
 - mcp-server server throws anyio closedresourceerror some sdk versions
-- mcp-server server throws anyio closedresourceerror some sdk versions fix
-- some sdk versions http mcp server throws anyio closedresourceerror mcp-server
-- some sdk versions http mcp server throws anyio closedresourceerror mcp-server fix
-- stateless streamable http mcp some sdk versions
-- stateless streamable http mcp some sdk versions fix
-- stateless streamable http mcp mcp-server
-- stateless streamable http mcp mcp-server fix
-- mcp-server request raises exception group ending anyio closedresourceerror
-- mcp-server request raises exception group ending anyio closedresourceerror fix
-- ending anyio closedresourceerror each request raises exception group mcp-server
-- ending anyio closedresourceerror each request raises exception group mcp-server fix
-- each request raises exception ending anyio closedresourceerror
-- each request raises exception ending anyio closedresourceerror fix
-- each request raises exception mcp-server
-- each request raises exception mcp-server fix
-- HTTP fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ A stateless Streamable HTTP MCP server can raise anyio.ClosedResourceError on ce
 - closedresourceerror
 - versioning
 - mcp-server
-- fastmcp
-- each request raises an exception group ending in anyio.ClosedResourceError
-- stack passes through _handle_stateless_request / run_stateless_server / http_transport.connect() or streamable_http_manager.run_server
-- reproduces with stateless mode on affected versions e.g. SDK 1.12.0; FastMCP 2.10.x / 2.13.x
-- In affected versions the stateless Streamable HTTP path re-enters the transports read loop
-- On the second request the write/read stream has already been closed, so anyio raises ClosedResourceError
-- It is a regression in the stateless transport handling, not a problem with the users handler
-- Catching ClosedResourceError in your handler, which hides the transport regression
-- Assuming the latest SDK is always safe for stateless mode without checking the issue tracker
-- Stay on the last SDK version where stateless mode worked for you
-- modelcontextprotocol/python-sdk issue 1219: _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
-- _handle_stateless_request ClosedResourceError reports 1.11.0 works, 1.12.0 fails; also FastMCP 2.10/2.13
 
 ## Affected Tools
 

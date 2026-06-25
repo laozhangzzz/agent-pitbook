@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/tooling/portaudio-stream-close-blocks-hotkey-callback-thread.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/40
 
 ## Summary
 
@@ -28,22 +27,6 @@ A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAud
 - portaudio close hotkey callback thread freeze global listener fix
 - freeze global listener stream stop close hotkey callback thread portaudio
 - freeze global listener stream stop close hotkey callback thread portaudio fix
-- stream stop close hotkey freeze global listener
-- stream stop close hotkey freeze global listener fix
-- stream stop close hotkey portaudio
-- stream stop close hotkey portaudio fix
-- portaudio intermittently goes unresponsive after switching windows dictating
-- portaudio intermittently goes unresponsive after switching windows dictating fix
-- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio
-- switching windows dictating dictation daemon intermittently goes unresponsive after portaudio fix
-- push talk dictation daemon switching windows dictating
-- push talk dictation daemon switching windows dictating fix
-- push talk dictation daemon portaudio
-- push talk dictation daemon portaudio fix
-- a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- how to fix a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating root cause
-- portaudio a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ A push-to-talk daemon can look hung (process alive, hotkey dead) because PortAud
 - threading
 - hotkey
 - deadlock
-- voice
-- voice-to-claude
-- a push-to-talk dictation daemon intermittently goes unresponsive after switching windows and dictating
-- the log is stuck at 'Recording stopped, processing...' with no following 'Audio duration' line
-- daemon status still reports Running but pressing the hotkey does nothing
-- only a daemon restart recovers it
-- stop()/close() of a PortAudio stream on a flaky/display-connected device can block for a long time
-- It was being called inline inside the pynput key-release callback, which runs on the single listener thread
-- The blocking call wedged that thread, so the global hotkey stopped firing and the whole daemon appeared hung even though the process stayed alive
-- Doing blocking audio teardown or processing inline in a global-hotkey callback
-- Trusting 'process is Running' as proof the hotkey listener is still alive
-- Add a watchdog that restarts the listener if the hotkey stops responding
 
 ## Affected Tools
 

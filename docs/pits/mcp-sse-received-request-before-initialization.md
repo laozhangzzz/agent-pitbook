@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-received-request-before-initialization.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/25
 
 ## Summary
 
@@ -28,22 +27,6 @@ RuntimeError: Received request before initialization was complete from an SSE MC
 - SSE MCP server: Received request before initialization was complete root cause
 - how to fix SSE MCP server: Received request before initialization was complete
 - mcp-server mcp server received request initialization was complete
-- mcp-server mcp server received request initialization was complete fix
-- initialization was complete sse mcp server received request mcp-server
-- initialization was complete sse mcp server received request mcp-server fix
-- sse mcp server received initialization was complete
-- sse mcp server received initialization was complete fix
-- sse mcp server received mcp-server
-- sse mcp server received mcp-server fix
-- mcp-server initialization was complete tools list tool call
-- mcp-server initialization was complete tools list tool call fix
-- list tool call received request initialization was complete tools mcp-server
-- list tool call received request initialization was complete tools mcp-server fix
-- server raises runtimeerror received list tool call
-- server raises runtimeerror received list tool call fix
-- server raises runtimeerror received mcp-server
-- server raises runtimeerror received mcp-server fix
-- RuntimeError: Received request before initialization was complete from an SSE MCP server means a non-initialize (or duplicate initialize) request arrived on an uninitialized
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ RuntimeError: Received request before initialization was complete from an SSE MC
 - redeploy
 - mcp-server
 - server raises RuntimeError: Received request before initialization was complete on tools/list or a tool call
-- appears after a redeploy/restart or when a gateway/proxy sits in front of the SSE server
-- the first connection worked; a later one fails
-- The MCP lifecycle requires the clients initialize to complete before other requests
-- A proxy such as supergateway sends its own initialize on launch (against spec) then forwards the clients, so the server sees initialize twice / out of order
-- After a redeploy the client may keep an old SSE session and send requests the fresh server never saw initialized
-- Wrapping the handler in a broad try/except that swallows the RuntimeError and masks other errors
-- Blaming the server example when the proxy violates the initialization sequence
-- Reconnect the client after each server restart
-- modelcontextprotocol/python-sdk issue 423: MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
-- MCP SSE Server: Received request before initialization was complete comment confirms supergateway double-initialize; mcp-proxy works
-- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) fix
-- MCP SSE Server: Received request before initialization was complete (comment confirms supergateway double-initialize; mcp-proxy works) root cause
 
 ## Affected Tools
 

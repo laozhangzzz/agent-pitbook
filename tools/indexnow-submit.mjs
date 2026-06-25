@@ -45,7 +45,8 @@ function readSitemapUrls(filePath) {
   const text = fs.readFileSync(filePath, "utf8");
   return [...text.matchAll(/<loc>([^<]+)<\/loc>/g)]
     .map((match) => match[1].trim())
-    .filter((url) => url.startsWith(defaultSiteBaseUrl));
+    .filter((url) => url.startsWith(defaultSiteBaseUrl))
+    .filter((url) => !new URL(url).pathname.includes("/agent-pitbook/q/"));
 }
 
 async function submit(args, urls) {

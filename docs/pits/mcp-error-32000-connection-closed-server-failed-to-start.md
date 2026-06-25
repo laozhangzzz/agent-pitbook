@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-error-32000-connection-closed-server-failed-to-start.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/15
 
 ## Summary
 
@@ -28,22 +27,6 @@ MCP error -32000: Connection closed is a generic 'the stdio server process did n
 - Fix 'Client Closed' Error by Correcting npm Config root cause
 - MCP error -32000: Connection closed means the stdio server died before the handshake
 - MCP error -32000: Connection closed means the stdio server died before the handshake fix
-- MCP error -32000: Connection closed means the stdio server died before the handshake root cause
-- how to fix MCP error -32000: Connection closed means the stdio server died before the handshake
-- claude-desktop connection closed means stdio server died handshake
-- claude-desktop connection closed means stdio server died handshake fix
-- server died handshake error 32000 connection closed means stdio claude-desktop
-- server died handshake error 32000 connection closed means stdio claude-desktop fix
-- mcp error 32000 connection server died handshake
-- mcp error 32000 connection server died handshake fix
-- mcp error 32000 connection claude-desktop
-- mcp error 32000 connection claude-desktop fix
-- claude-desktop client ui mcp error 32000 connection closed
-- claude-desktop client ui mcp error 32000 connection closed fix
-- 32000 connection closed client ui mcp error claude-desktop
-- 32000 connection closed client ui mcp error claude-desktop fix
-- client ui mcp error 32000 connection closed
-- client ui mcp error 32000 connection closed fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ MCP error -32000: Connection closed is a generic 'the stdio server process did n
 - claude-desktop
 - cursor
 - cline
-- mcp-server
-- client UI shows MCP error -32000: Connection closed
-- sometimes preceded by locale text like 'npx' is not recognized as an internal or external command
-- the configured command and args run fine when pasted into a terminal
-- no useful server-side logs because the process never reached startup
-- The client spawns the configured command and speaks JSON-RPC over stdio
-- If the process cannot be found, crashes on launch, or writes non-protocol text to stdout, the transport closes and the client reports -32000: Connection closed
-- The code is generic: it reports that the connection died, not why
-- Filing a protocol bug for -32000 before running the command manually
-- Reinstalling the server package repeatedly when the package was never the problem
-- Writing debug output to stdout from a stdio MCP server, which corrupts the JSON-RPC stream
-- Pin absolute interpreter and script paths in the config
 
 ## Affected Tools
 

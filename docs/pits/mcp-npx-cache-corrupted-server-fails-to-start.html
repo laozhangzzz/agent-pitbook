@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: npx downloads the package into the npm cache before running it. Fix: Clear the npm/npx cache and relaunch.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, cache, startup, timeout, error-32001, claude-desktop, cursor, cline, mcp-server, mcp-npx-cache-corrupted-server-fails-to-start, mcp npx cache corrupted server fails to start, A corrupted or cold npx cache makes an MCP server fail to start or time out, A corrupted or cold npx cache makes an MCP server fail to start or time out fix, A corrupted or cold npx cache makes an MCP server fail to start or time out root cause, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause, Client closed / -32001 Request timed out around npx MCP startup, Client closed / -32001 Request timed out around npx MCP startup fix, Client closed / -32001 Request timed out around npx MCP startup root cause, how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out, verified, medium">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, cache, startup, timeout, error-32001, claude-desktop, cursor, cline, mcp-server, verified, medium, mcp-npx-cache-corrupted-server-fails-to-start">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, npx, cache, startup, timeout, error-32001, claude-desktop, cursor, cline, mcp-server, mcp-npx-cache-corrupted-server-fails-to-start, mcp npx cache corrupted server fails to start, A corrupted or cold npx cache makes an MCP server fail to start or time out, A corrupted or cold npx cache makes an MCP server fail to start or time out fix, A corrupted or cold npx cache makes an MCP server fail to start or time out root cause, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix, comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause, Client closed / -32001 Request timed out around npx MCP startup, Client closed / -32001 Request timed out around npx MCP startup fix, Client closed / -32001 Request timed out around npx MCP startup root cause, how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out, verified, medium",
+  "keywords": "mcp, npx, cache, startup, timeout, error-32001, claude-desktop, cursor, cline, mcp-server, mcp-npx-cache-corrupted-server-fails-to-start",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -37,20 +37,9 @@
     "cursor",
     "cline",
     "mcp-server",
-    "mcp-npx-cache-corrupted-server-fails-to-start",
-    "mcp npx cache corrupted server fails to start",
-    "A corrupted or cold npx cache makes an MCP server fail to start or time out",
-    "A corrupted or cold npx cache makes an MCP server fail to start or time out fix",
-    "A corrupted or cold npx cache makes an MCP server fail to start or time out root cause",
-    "comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup",
-    "comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix",
-    "comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause",
-    "Client closed / -32001 Request timed out around npx MCP startup",
-    "Client closed / -32001 Request timed out around npx MCP startup fix",
-    "Client closed / -32001 Request timed out around npx MCP startup root cause",
-    "how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out",
     "verified",
-    "medium"
+    "medium",
+    "mcp-npx-cache-corrupted-server-fails-to-start"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -61,10 +50,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-npx-cache-corrupted-server-fails-to-start.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/20"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/20"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md"
+  ]
 }</script>
 
 </head>
@@ -89,7 +76,6 @@
         <a href="/agent-pitbook/pits/mcp-npx-cache-corrupted-server-fails-to-start.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-npx-cache-corrupted-server-fails-to-start.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/20">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> npx-launched MCP server worked before and now fails, or fails only on first launch</p>
@@ -97,9 +83,9 @@
     <p><strong>Fix first:</strong> Clear the npm/npx cache and relaunch.</p>
     <p><strong>Verify:</strong> Relaunch after clearing the cache or pre-installing.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause</li><li>Client closed / -32001 Request timed out around npx MCP startup</li><li>Client closed / -32001 Request timed out around npx MCP startup fix</li><li>Client closed / -32001 Request timed out around npx MCP startup root cause</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out fix</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out root cause</li><li>how to fix A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>claude-desktop makes mcp server fail start time out</li><li>claude-desktop makes mcp server fail start time out fix</li><li>start time out npx cache makes mcp server fail claude-desktop</li><li>start time out npx cache makes mcp server fail claude-desktop fix</li><li>corrupted cold npx cache start time out</li><li>corrupted cold npx cache start time out fix</li><li>corrupted cold npx cache claude-desktop</li><li>corrupted cold npx cache claude-desktop fix</li><li>claude-desktop mcp server worked now fails first launch</li><li>claude-desktop mcp server worked now fails first launch fix</li><li>fails first launch npx launched mcp server worked now claude-desktop</li><li>fails first launch npx launched mcp server worked now claude-desktop fix</li><li>npx launched mcp server fails first launch</li><li>npx launched mcp server fails first launch fix</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup fix</li><li>comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup root cause</li><li>Client closed / -32001 Request timed out around npx MCP startup</li><li>Client closed / -32001 Request timed out around npx MCP startup fix</li><li>Client closed / -32001 Request timed out around npx MCP startup root cause</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out fix</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, cline, mcp-server</td></tr><tr><th>Tags</th><td>mcp, npx, cache, startup, timeout, error-32001</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>mcp-npx-cache-corrupted-server-fails-to-start</li><li>mcp npx cache corrupted server fails to start</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out fix</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out root cause</li><li>cache</li><li>startup</li><li>timeout</li><li>error-32001</li><li>claude-desktop</li><li>cursor</li><li>cline</li><li>mcp-server</li><li>npx-launched MCP server worked before and now fails, or fails only on first launch</li><li>client log shows Client closed and/or MCP error -32001: Request timed out</li><li>the failure is intermittent and sometimes clears up on its own</li><li>a recent flaky network or interrupted install preceded it</li><li>npx downloads the package into the npm cache before running it</li><li>An interrupted or rate-limited fetch can leave a partial or corrupted package, so the next launch crashes on missing files</li><li>A genuine cold download can exceed the clients startup timeout, producing -32001: Request timed out</li><li>Repeatedly editing the config when the real fault is a half-written cache</li><li>Assuming the server package is broken when a clean cache fixes it</li><li>Pin a globally installed package by absolute path instead of relying on npx download at launch</li><li>modelcontextprotocol/servers issue 1097: comment confirming a corrupted npx cache from network errors caused the server to crash; clearing it fixed startup</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-npx-cache-corrupted-server-fails-to-start</li><li>mcp npx cache corrupted server fails to start</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out fix</li><li>A corrupted or cold npx cache makes an MCP server fail to start or time out root cause</li><li>cache</li><li>startup</li><li>timeout</li><li>error-32001</li><li>claude-desktop</li><li>cursor</li><li>cline</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>npx-launched MCP server worked before and now fails, or fails only on first launch</li><li>client log shows Client closed and/or MCP error -32001: Request timed out</li><li>the failure is intermittent and sometimes clears up on its own</li><li>a recent flaky network or interrupted install preceded it</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>runtime</th><td>Node.js</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>constraints</th><td>MCP server launched via npx -y &lt;package&gt;, client enforces a startup timeout</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>npx downloads the package into the npm cache before running it.</li><li>An interrupted or rate-limited fetch can leave a partial or corrupted package, so the next launch crashes on missing files.</li><li>A genuine cold download can exceed the client's startup timeout, producing -32001: Request timed out.</li></ul></section>

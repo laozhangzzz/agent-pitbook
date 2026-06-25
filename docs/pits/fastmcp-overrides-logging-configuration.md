@@ -5,7 +5,6 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/fastmcp-overrides-logging-configuration.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/12
 
 ## Summary
 
@@ -28,22 +27,6 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 - FastMCP overrides your apps logging configuration on init (duplicate or lost logs) root cause
 - how to fix FastMCP overrides your apps logging configuration on init duplicate or lost logs
 - mcp-server app logging configuration init duplicate lost logs
-- mcp-server app logging configuration init duplicate lost logs fix
-- duplicate lost logs overrides your app logging configuration init mcp-server
-- duplicate lost logs overrides your app logging configuration init mcp-server fix
-- overrides your app logging duplicate lost logs
-- overrides your app logging duplicate lost logs fix
-- overrides your app logging mcp-server
-- overrides your app logging mcp-server fix
-- mcp-server log messages become duplicated after server created
-- mcp-server log messages become duplicated after server created fix
-- after server created log messages become duplicated mcp-server
-- after server created log messages become duplicated mcp-server fix
-- log messages become duplicated after server created
-- log messages become duplicated after server created fix
-- log messages become duplicated mcp-server
-- log messages become duplicated mcp-server fix
-- log messages become duplicated after the FastMCP server is created
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Constructing a FastMCP server reconfigures Python's global logging (a configure_
 - side-effects
 - mcp-server
 - log messages become duplicated after the FastMCP server is created
-- a custom/structured global logging handler stops taking effect
-- the change appears exactly when FastMCP(...) is instantiated
-- FastMCP performs global logging configuration at startup (configure_logging) instead of confining itself to its own logger
-- Logging config is process-global, so this mutates handlers the host app already installed, duplicating messages or routing through the wrong handler
-- There is no built-in opt-out flag at time of writing
-- Configuring global logging before constructing FastMCP and assuming it survives
-- Monkey-patching configure_logging to a no-op as a permanent solution
-- Add a FastMCP logger entry to your dictConfig and re-apply it after building the server
-- modelcontextprotocol/python-sdk issue 420: Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
-- Option to not rewrite the logging configuration workarounds: re-apply dictConfig, remove added handler
-- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) fix
-- Option to not rewrite the logging configuration (workarounds: re-apply dictConfig, remove added handler) root cause
 
 ## Affected Tools
 

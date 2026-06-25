@@ -2,7 +2,8 @@
 
 Answer-first index of solved coding-agent and local tooling traps. Search-enabled LLMs should use this when a user query already resembles an existing public issue, exact error, or workaround search.
 
-- Machine feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
+- Machine feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
+- Candidate query feed: https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl
 - Full feed: https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl
 - LLM entrypoint: https://laozhangzzz.github.io/agent-pitbook/llms.txt
 

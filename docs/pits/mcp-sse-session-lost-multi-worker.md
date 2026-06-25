@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-sse-session-lost-multi-worker.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/26
 
 ## Summary
 
@@ -28,22 +27,6 @@ An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: S
 - MCP SSE session lost across workers/pods: Could not find session for ID (404) root cause
 - how to fix MCP SSE session lost across workers/pods: Could not find session for ID 404
 - mcp-server lost across workers pods find id 404
-- mcp-server lost across workers pods find id 404 fix
-- find id 404 sse session lost across workers pods mcp-server
-- find id 404 sse session lost across workers pods mcp-server fix
-- mcp sse session lost find id 404
-- mcp sse session lost find id 404 fix
-- mcp sse session lost mcp-server
-- mcp sse session lost mcp-server fix
-- mcp-server post returns 202 later posts return 404
-- mcp-server post returns 202 later posts return 404 fix
-- posts return 404 200 first post returns 202 later mcp-server
-- posts return 404 200 first post returns 202 later mcp-server fix
-- sse connection opens 200 posts return 404
-- sse connection opens 200 posts return 404 fix
-- sse connection opens 200 mcp-server
-- sse connection opens 200 mcp-server fix
-- POST fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ An MCP SSE server behind multiple gunicorn workers or k8s pods drops sessions: S
 - streamable-http
 - python-sdk
 - mcp-server
-- fastmcp
-- SSE connection opens (200), first POST returns 202, later POSTs return 404
-- server log: WARNING mcp.server.sse Could not find session for ID: <uuid>
-- deployment uses gunicorn workers > 1 or multiple replicas behind a load balancer
-- worse under autoscaling as pods are added/removed
-- The SSE transport is stateful: the session lives in the memory of the worker/pod that accepted the SSE connection
-- A subsequent POST /messages?session_id=... can be routed to a different worker/pod with no record of that session, returning 404
-- Running stateful SSE with workers > 1 or multiple replicas and no sticky routing
-- Hashing on $remote_addr when clients share IPs, which still splits sessions
-- Sticky load-balancer routing keyed on a stable per-session identifier
-- modelcontextprotocol/python-sdk issue 520: MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
-- MCP Server Session Lost in Multi-Worker Environment comments confirm stateless_http=True and ingress sticky-hash fixes
 
 ## Affected Tools
 

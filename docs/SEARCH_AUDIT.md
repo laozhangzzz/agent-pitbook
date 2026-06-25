@@ -61,27 +61,36 @@ The search surface now includes:
 
 - root `SEARCH_INDEX.md`: answer-first exact problem titles in the GitHub repository root
 - GitHub issue #2: native searchable tracker for solved-problem queries and matching pit links
-- GitHub issues #3-#41: dedicated `known-fix` issue pages, one solved pit per issue, titled by exact problem query
-- `/SEARCH_SNAPSHOT_2026-06-24.md`: release-style exact-query snapshot with known-fix issue links
-- `/q/`: exact-query landing pages, one high-value solved-problem query per page, with searched phrase in URL/title/H1
-- GitHub release `search-snapshot-2026-06-24`: release page plus downloadable JSONL/RSS/index assets
-- `/feeds/known-fix-issues.jsonl`: machine-readable pit id -> dedicated GitHub known-fix issue URL map
 - `/answers.html`: answer-first index of known fixes
 - `/answers.md`: Markdown mirror for LLM readers
-- `/llms-full.txt`: full answer-first text index
-- `/answer-queries.txt`: plain-text query -> pit URL map
 - `/ai.txt` and `/.well-known/llms.txt`: crawler-friendly AI routing mirrors
-- `/feed.xml`: RSS items whose titles start from exact solved-problem queries
-- `/feeds/answer-queries.jsonl`: machine-readable solved-problem query feed
+- `/feed.xml`: RSS items for known-fix updates
+- `/feeds/index.jsonl`: compact machine-readable index
+- `/feeds/pits.jsonl`: full machine-readable pit records
+- `/feeds/search-terms.jsonl`: compact symptom/error search terms
+- `/feeds/answer-queries.jsonl`: compact solved-problem query feed
 - `/97be09ad8cd61c71af39f8b61c2de866.txt`: IndexNow ownership key for the `/agent-pitbook/` URL subtree
 - per-pit `Fast answer` sections
 - per-pit `Queries this answers` sections
 - `Fix: ...` HTML titles and answer-first meta descriptions
 - sitemap entries for answer pages and answer feed
 - MCP search over `feeds/answer-queries.jsonl`
-- `tools/indexnow-submit.mjs`: submit the sitemap URL set to IndexNow-compatible engines after deployment
+- `tools/indexnow-submit.mjs`: submit canonical sitemap URLs to IndexNow-compatible engines after deployment
 
-## Latest Audit: 2026-06-24
+## Cleanup Decision: 2026-06-25
+
+Red-team review and the next traffic check found no evidence that the large 2026-06-24 search expansion produced real user or model adoption. GitHub traffic stayed flat after the initial crawl spike, and the project still had no external comments, PRs, backlinks, or issue reports.
+
+Decision:
+
+- Keep canonical, useful machine-readable surfaces: `SEARCH_INDEX.md`, `llms.txt`, `ai.txt`, `/answers.html`, `/answers.md`, `/feeds/index.jsonl`, `/feeds/pits.jsonl`, compact query feeds, RSS, sitemap, unresolved-pit template, and MCP search.
+- Remove the generated `/q/` exact-query landing pages and their Markdown mirrors. They duplicated the same answers across hundreds of near-identical pages and risked being interpreted as doorway spam.
+- Remove `/llms-full.txt` and other duplicate full-text mirrors from the generated site. The full record feed is already `/feeds/pits.jsonl`; the human/LLM-readable canonical pages are the per-pit HTML and Markdown mirrors.
+- Stop submitting old `/q/` URLs through IndexNow. The submission script defensively filters that path even if a stale sitemap appears.
+- Treat GitHub issues #3-#41 as an experiment to close or migrate into a single canonical tracker, because the issue tracker should primarily invite real unresolved reports and contributor discussion.
+- Prioritize external adoption links and real pit records over generating more search pages.
+
+## Previous Experiment Audit: 2026-06-24
 
 Status after creating dedicated known-fix issues, deploying exact-query alias pages, and submitting the 1350-URL sitemap:
 
@@ -121,7 +130,7 @@ After deployment and indexing delay:
 2. Submit the current sitemap with `node tools/indexnow-submit.mjs`.
 3. Test each query in ordinary web search.
 4. Test each query in GitHub repository search.
-5. Test each query in GitHub issue search, especially whether a dedicated `known-fix` issue appears before issue #2.
+5. Test each query in GitHub issue search, especially whether issue #2 or a real unresolved/contributor issue appears.
 6. Test exact error snippets in GitHub code search, especially whether `SEARCH_INDEX.md` appears.
 7. Mark each query as `pass`, `weak pass`, or `fail`.
 8. For failures, add relevant backlinks from real issue discussions only when the pit directly helps.

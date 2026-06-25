@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-inspector-docker-connection-refused-host-env.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/18
 
 ## Summary
 
@@ -28,22 +27,6 @@ MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localh
 - MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set root cause
 - how to fix MCP Inspector in Docker refuses connections unless HOST and ALLOWED_ORIGINS are set
 - mcp-inspector refuses connections unless host allowed origins set
-- mcp-inspector refuses connections unless host allowed origins set fix
-- allowed origins set inspector docker refuses connections unless host mcp-inspector
-- allowed origins set inspector docker refuses connections unless host mcp-inspector fix
-- mcp inspector docker refuses allowed origins set
-- mcp inspector docker refuses allowed origins set fix
-- mcp inspector docker refuses mcp-inspector
-- mcp inspector docker refuses mcp-inspector fix
-- mcp-inspector localhost 6274 returns failed connect connection refused
-- mcp-inspector localhost 6274 returns failed connect connection refused fix
-- connect connection refused curl http localhost 6274 returns failed mcp-inspector
-- connect connection refused curl http localhost 6274 returns failed mcp-inspector fix
-- curl http localhost 6274 connect connection refused
-- curl http localhost 6274 connect connection refused fix
-- curl http localhost 6274 mcp-inspector
-- curl http localhost 6274 mcp-inspector fix
-- HOST fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ MCP Inspector run in Docker refuses connections (ERR_CONNECTION_REFUSED / localh
 - connection-refused
 - allowed-origins
 - mcp-inspector
-- curl http://localhost:6274 returns Failed to connect ... Connection refused
-- browser shows localhost refused to connect / ERR_CONNECTION_REFUSED
-- same symptom running Inspector inside a devcontainer
-- the published docker run inspector:latest command alone does not connect
-- Inspector listens on the loopback interface, which inside a container is only reachable by processes in that container
-- It also validates request origin, so without HOST/ALLOWED_ORIGINS the host browsers connection is refused even when ports are published
-- Assuming -p 6274:6274 alone exposes a loopback-only service
-- Setting ALLOWED_ORIGINS to a value that does not match the URL opened in the browser
-- Run Inspector directly on the host instead of in a container if env configuration is not possible
-- modelcontextprotocol/inspector issue 828: Docker container connection refused HOST + ALLOWED_ORIGINS workaround
-- Docker container connection refused HOST + ALLOWED_ORIGINS workaround
-- Docker container connection refused (HOST + ALLOWED_ORIGINS workaround) fix
 
 ## Affected Tools
 

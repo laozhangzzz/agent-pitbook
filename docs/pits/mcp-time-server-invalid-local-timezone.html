@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: The server resolves the local timezone, but the platform reports a non-IANA abbreviation (e.g. EDT). Fix: Pass an explicit IANA timezone with --local-timezone.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-time, timezone, zoneinfo, iana, uvx, mcp-server, claude-desktop, mcp-time-server-invalid-local-timezone, mcp time server invalid local timezone, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause, Time server fails under EDT timezone use --local-timezone with an IANA name, Time server fails under EDT timezone (use --local-timezone with an IANA name) fix, Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause, how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST, mcp-server local timezone abbreviation like edt pdt cest, mcp-server local timezone abbreviation like edt pdt cest fix, edt pdt cest time crashes local timezone abbreviation like mcp-server, verified, high">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-time, timezone, zoneinfo, iana, uvx, mcp-server, claude-desktop, verified, high, mcp-time-server-invalid-local-timezone">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-time, timezone, zoneinfo, iana, uvx, mcp-server, claude-desktop, mcp-time-server-invalid-local-timezone, mcp time server invalid local timezone, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix, mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause, Time server fails under EDT timezone use --local-timezone with an IANA name, Time server fails under EDT timezone (use --local-timezone with an IANA name) fix, Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause, how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST, mcp-server local timezone abbreviation like edt pdt cest, mcp-server local timezone abbreviation like edt pdt cest fix, edt pdt cest time crashes local timezone abbreviation like mcp-server, verified, high",
+  "keywords": "mcp, server-time, timezone, zoneinfo, iana, uvx, mcp-server, claude-desktop, mcp-time-server-invalid-local-timezone",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,20 +35,9 @@
     "uvx",
     "mcp-server",
     "claude-desktop",
-    "mcp-time-server-invalid-local-timezone",
-    "mcp time server invalid local timezone",
-    "mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST",
-    "mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix",
-    "mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause",
-    "Time server fails under EDT timezone use --local-timezone with an IANA name",
-    "Time server fails under EDT timezone (use --local-timezone with an IANA name) fix",
-    "Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause",
-    "how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST",
-    "mcp-server local timezone abbreviation like edt pdt cest",
-    "mcp-server local timezone abbreviation like edt pdt cest fix",
-    "edt pdt cest time crashes local timezone abbreviation like mcp-server",
     "verified",
-    "high"
+    "high",
+    "mcp-time-server-invalid-local-timezone"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -59,10 +48,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-time-server-invalid-local-timezone.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/31"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/31"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.md"
+  ]
 }</script>
 
 </head>
@@ -87,7 +74,6 @@
         <a href="/agent-pitbook/pits/mcp-time-server-invalid-local-timezone.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-time-server-invalid-local-timezone.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/31">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone</p>
@@ -95,9 +81,9 @@
     <p><strong>Fix first:</strong> Pass an explicit IANA timezone with --local-timezone.</p>
     <p><strong>Verify:</strong> Start the server with an explicit IANA timezone.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>Time server fails under EDT timezone use --local-timezone with an IANA name</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) fix</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause</li><li>how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server local timezone abbreviation like edt pdt cest</li><li>mcp-server local timezone abbreviation like edt pdt cest fix</li><li>edt pdt cest time crashes local timezone abbreviation like mcp-server</li><li>edt pdt cest time crashes local timezone abbreviation like mcp-server fix</li><li>mcp server time crashes edt pdt cest</li><li>mcp server time crashes edt pdt cest fix</li><li>mcp server time crashes mcp-server</li><li>mcp server time crashes mcp-server fix</li><li>mcp-server zoneinfo common py load tzdata failing timezone</li><li>mcp-server zoneinfo common py load tzdata failing timezone fix</li><li>tzdata failing timezone traceback through zoneinfo common py load mcp-server</li><li>tzdata failing timezone traceback through zoneinfo common py load mcp-server fix</li><li>uvx mcp server time tzdata failing timezone</li><li>uvx mcp server time tzdata failing timezone fix</li><li>uvx mcp server time mcp-server</li><li>uvx mcp server time mcp-server fix</li><li>EDT/PDT/CEST</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>Time server fails under EDT timezone use --local-timezone with an IANA name</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) fix</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause</li><li>how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server local timezone abbreviation like edt pdt cest</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>verified</td></tr><tr><th>Confidence</th><td>high</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, claude-desktop</td></tr><tr><th>Tags</th><td>mcp, server-time, timezone, zoneinfo, iana, uvx</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>mcp-time-server-invalid-local-timezone</li><li>mcp time server invalid local timezone</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause</li><li>server-time</li><li>timezone</li><li>zoneinfo</li><li>iana</li><li>mcp-server</li><li>claude-desktop</li><li>uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone</li><li>happens when DST is active and the local zone shows as an abbreviation EDT/PDT/CEST</li><li>works fine in standard time for some users</li><li>The server resolves the local timezone, but the platform reports a non-IANA abbreviation e.g. EDT</li><li>Pythons zoneinfo only loads canonical IANA names (e.g. America/New_York), so loading the abbreviation raises and the server fails to start</li><li>Passing a timezone abbreviation (EDT/PDT/CEST) instead of an IANA name</li><li>Relying on auto-detected local timezone on a platform that emits abbreviations during DST</li><li>Set the process/system timezone to a canonical IANA name</li><li>modelcontextprotocol/servers issue 786: Time server fails under EDT timezone use --local-timezone with an IANA name</li><li>Time server fails under EDT timezone use --local-timezone with an IANA name</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) fix</li><li>Time server fails under EDT timezone (use --local-timezone with an IANA name) root cause</li><li>how to fix mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-time-server-invalid-local-timezone</li><li>mcp time server invalid local timezone</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST fix</li><li>mcp-server-time crashes when the local timezone is an abbreviation like EDT/PDT/CEST root cause</li><li>server-time</li><li>timezone</li><li>zoneinfo</li><li>iana</li><li>mcp-server</li><li>claude-desktop</li><li>uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>uvx mcp-server-time traceback through zoneinfo/_common.py load_tzdata failing to load the timezone</li><li>happens when DST is active and the local zone shows as an abbreviation (EDT/PDT/CEST)</li><li>works fine in standard time for some users</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>Python</td></tr><tr><th>package_manager</th><td>uv</td></tr><tr><th>constraints</th><td>platform reports a non-IANA local timezone abbreviation, zoneinfo loads only canonical IANA names</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The server resolves the local timezone, but the platform reports a non-IANA abbreviation (e.g. EDT).</li><li>Python's zoneinfo only loads canonical IANA names (e.g. America/New_York), so loading the abbreviation raises and the server fails to start.</li></ul></section>

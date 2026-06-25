@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/python/uv-cache-outside-workspace-sandbox.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/38
 
 ## Summary
 
@@ -28,22 +27,6 @@ In managed agent sandboxes, uv may fail because its default cache or Python inst
 - codex workspace cache python install paths writable roots fix
 - paths writable roots fails managed workspace cache python install codex
 - paths writable roots fails managed workspace cache python install codex fix
-- uv fails managed workspace paths writable roots
-- uv fails managed workspace paths writable roots fix
-- uv fails managed workspace codex
-- uv fails managed workspace codex fix
-- codex run sync fails permission sandbox filesystem errors
-- codex run sync fails permission sandbox filesystem errors fix
-- sandbox filesystem errors uv run sync fails permission codex
-- sandbox filesystem errors uv run sync fails permission codex fix
-- uv run sync fails sandbox filesystem errors
-- uv run sync fails sandbox filesystem errors fix
-- uv run sync fails codex
-- uv run sync fails codex fix
-- UV_CACHE_DIR
-- UV_CACHE_DIR fix
-- codex UV_CACHE_DIR
-- codex UV_CACHE_DIR fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ In managed agent sandboxes, uv may fail because its default cache or Python inst
 - codex
 - claude-code
 - gemini
-- qwen-code
-- cursor
-- aider
-- uv run or uv sync fails with permission or sandbox filesystem errors
-- the project directory is writable but global cache paths are not
-- setting UV_CACHE_DIR and UV_PYTHON_INSTALL_DIR inside the workspace allows progress
-- uv defaults to cache or interpreter directories outside the agents writable roots
-- Changing project code to avoid uv before checking cache permissions
-- Using global chmod or deleting user-level caches from an agent session
-- Use an existing project virtual environment if it is already present and writable
-- Ask for sandbox escalation only when dependency downloads or outside-workspace writes are truly required
-- Agent Pitbook bootstrap local session
 
 ## Affected Tools
 

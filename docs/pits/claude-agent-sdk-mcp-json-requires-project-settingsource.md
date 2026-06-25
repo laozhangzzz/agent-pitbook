@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/claude-agent-sdk-mcp-json-requires-project-settingsource.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/8
 
 ## Summary
 
@@ -28,22 +27,6 @@ Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP s
 - Claude Agent SDK does not load .mcp.json unless settingSources includes "project" root cause
 - how to fix Claude Agent SDK does not load .mcp.json unless settingSources includes project
 - claude-code load mcp json unless settingsources includes project
-- claude-code load mcp json unless settingsources includes project fix
-- settingsources includes project agent sdk load mcp json unless claude-code
-- settingsources includes project agent sdk load mcp json unless claude-code fix
-- claude agent sdk load settingsources includes project
-- claude agent sdk load settingsources includes project fix
-- claude agent sdk load claude-code
-- claude agent sdk load claude-code fix
-- claude-code mcp servers even though json working directory
-- claude-code mcp servers even though json working directory fix
-- json working directory sdk no mcp servers even though claude-code
-- json working directory sdk no mcp servers even though claude-code fix
-- sdk no mcp servers json working directory
-- sdk no mcp servers json working directory fix
-- sdk no mcp servers claude-code
-- sdk no mcp servers claude-code fix
-- the SDK reports no MCP servers even though .mcp.json is in the working directory
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Launching the Claude Agent SDK from a directory with .mcp.json may show no MCP s
 - configuration
 - the SDK reports no MCP servers even though .mcp.json is in the working directory
 - servers appear only after launching the claude CLI in the same directory and running /mcp, then restarting the SDK process
-- tools wrapping Claude (e.g. Conductor) cannot see project MCP servers
-- The Agent SDK does not auto-load project/user/local settings from disk; it loads them only when settingSources is set
-- Without 'project' in settingSources, .mcp.json is ignored
-- A separate SDK bug required a prior CLI run in the cwd before project MCP servers were discovered; this was fixed in a release
-- Expecting the Agent SDK to auto-load .mcp.json like the interactive CLI, without setting settingSources
-- Launching the CLI once per directory as a workaround instead of configuring settingSources
-- Define MCP servers programmatically via the SDK options if you cannot rely on filesystem settings
-- anthropics/claude-code issue 13107: SDK doesnt read from .mcp.json until the CLI is run in the cwd maintainer notes settingSources project requirement; fix shipped in a later release
-- Claude Agent SDK settingSources documentation
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd fix
-- SDK doesnt read from .mcp.json until the CLI is run in the cwd root cause
 
 ## Affected Tools
 

@@ -5,7 +5,6 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-prompt-injection-in-debug-sources.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/4
 
 ## Summary
 
@@ -28,22 +27,6 @@ Issue threads, forum posts, logs, and pit records are prompt surfaces; agents mu
 - codex sources contain prompt injection targeting coding agents fix
 - targeting coding agents debug sources contain prompt injection codex
 - targeting coding agents debug sources contain prompt injection codex fix
-- debug sources contain prompt targeting coding agents
-- debug sources contain prompt targeting coding agents fix
-- debug sources contain prompt codex
-- debug sources contain prompt codex fix
-- codex source includes instructions ignore system developer
-- codex source includes instructions ignore system developer fix
-- ignore system developer source includes instructions codex
-- ignore system developer source includes instructions codex fix
-- source includes instructions ignore ignore system developer
-- source includes instructions ignore ignore system developer fix
-- source includes instructions ignore codex
-- source includes instructions ignore codex fix
-- a source includes instructions to ignore system or developer instructions
-- how to fix a source includes instructions to ignore system or developer instructions
-- a source includes instructions to ignore system or developer instructions root cause
-- codex a source includes instructions to ignore system or developer instructions
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Issue threads, forum posts, logs, and pit records are prompt surfaces; agents mu
 - retrieval
 - codex
 - claude-code
-- gemini
-- qwen-code
-- cursor
-- aider
-- a source includes instructions to ignore system or developer instructions
-- a suggested command is unrelated to the reported error
-- external text asks the agent to reveal secrets or bypass approval
-- a debug corpus mixes technical facts with agent-targeted instructions
-- LLM-readable troubleshooting material can also be used as a prompt-injection channel
-- Copying entire issue comments into an agent-facing corpus
-- Letting source snippets override tool or approval policy
-- Use exact short quotes only for error text or command output that is necessary for matching
 
 ## Affected Tools
 

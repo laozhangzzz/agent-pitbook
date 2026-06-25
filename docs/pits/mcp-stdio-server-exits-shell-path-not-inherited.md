@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-stdio-server-exits-shell-path-not-inherited.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/28
 
 ## Summary
 
@@ -28,22 +27,6 @@ A stdio MCP server that runs in the terminal but fails under a desktop client wi
 - npx-for-claude wrapper workaround (66 reactions) root cause
 - Server transport closed unexpectedly, process exiting early write EPIPE
 - Server transport closed unexpectedly, process exiting early (write EPIPE) fix
-- Server transport closed unexpectedly, process exiting early (write EPIPE) root cause
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH fix
-- MCP stdio server exits immediately because the GUI client does not inherit your shell PATH root cause
-- how to fix MCP stdio server exits immediately because the GUI client does not inherit your shell PATH
-- claude-desktop immediately gui client inherit your shell path
-- claude-desktop immediately gui client inherit your shell path fix
-- your shell path server exits immediately gui client inherit claude-desktop
-- your shell path server exits immediately gui client inherit claude-desktop fix
-- mcp stdio server exits your shell path
-- mcp stdio server exits your shell path fix
-- mcp stdio server exits claude-desktop
-- mcp stdio server exits claude-desktop fix
-- claude-desktop transport closed unexpectedly likely process exiting early
-- claude-desktop transport closed unexpectedly likely process exiting early fix
-- process exiting early log server transport closed unexpectedly likely claude-desktop
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ A stdio MCP server that runs in the terminal but fails under a desktop client wi
 - claude-desktop
 - transport
 - mcp-server
-- client log: Server transport closed unexpectedly, this is likely due to the process exiting early
-- client log shows write EPIPE immediately after the client initialize message
-- the same command starts fine when run manually in the terminal
-- a Node version manager (NVM, fnm, asdf) is in use, or node/npx live outside /usr/bin
-- the client uses an unexpected or missing Node version
-- GUI clients launch MCP servers without sourcing the users shell config, so the child gets a minimal PATH
-- With NVM/fnm/asdf the versioned node directory is not on that PATH, so npx/node is missing or wrong and the server exits at spawn
-- The client already sent initialize; the dying server writing to the closed pipe surfaces as write EPIPE and transport closed / process exiting early
-- The MCP server package itself is usually fine
-- Reinstalling or switching the server package when the package is fine
-- Treating write EPIPE as a server crash instead of a bad launch environment
-- Relying on bare npx/node in a GUI-launched config while using NVM/fnm/asdf
 
 ## Affected Tools
 

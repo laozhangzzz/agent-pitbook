@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: The server/* toolset alias resolves only when the MCP server is registered under the matching name (e.g. installed via the official flow so it is named github). Fix: Use the name that resolves for your setup: if github/* is Unknown tool, use 'github' and ignore the rename warning for now.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, github-mcp-server, vscode, toolsets, configuration, naming, github-mcp-vscode-toolset-name-mismatch, github mcp vscode toolset name mismatch, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause, how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed, github-mcp-server mcp toolset unknown tool while warns renamed, github-mcp-server mcp toolset unknown tool while warns renamed fix, while warns renamed config github mcp toolset unknown tool github-mcp-server, candidate, medium">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, github-mcp-server, vscode, toolsets, configuration, naming, candidate, medium, github-mcp-vscode-toolset-name-mismatch">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, github-mcp-server, vscode, toolsets, configuration, naming, github-mcp-vscode-toolset-name-mismatch, github mcp vscode toolset name mismatch, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix, VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix, VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause, how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed, github-mcp-server mcp toolset unknown tool while warns renamed, github-mcp-server mcp toolset unknown tool while warns renamed fix, while warns renamed config github mcp toolset unknown tool github-mcp-server, candidate, medium",
+  "keywords": "mcp, github-mcp-server, vscode, toolsets, configuration, naming, github-mcp-vscode-toolset-name-mismatch",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -33,20 +33,9 @@
     "toolsets",
     "configuration",
     "naming",
-    "github-mcp-vscode-toolset-name-mismatch",
-    "github mcp vscode toolset name mismatch",
-    "VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed",
-    "VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix",
-    "VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause",
-    "VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated",
-    "VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix",
-    "VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause",
-    "how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed",
-    "github-mcp-server mcp toolset unknown tool while warns renamed",
-    "github-mcp-server mcp toolset unknown tool while warns renamed fix",
-    "while warns renamed config github mcp toolset unknown tool github-mcp-server",
     "candidate",
-    "medium"
+    "medium",
+    "github-mcp-vscode-toolset-name-mismatch"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -57,10 +46,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/github-mcp-vscode-toolset-name-mismatch.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/13"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/13"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md"
+  ]
 }</script>
 
 </head>
@@ -85,7 +72,6 @@
         <a href="/agent-pitbook/pits/github-mcp-vscode-toolset-name-mismatch.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/github-mcp-vscode-toolset-name-mismatch.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/13">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> 'tools': ['github/*'] produces Unknown tool</p>
@@ -93,9 +79,9 @@
     <p><strong>Fix first:</strong> Use the name that resolves for your setup: if github/* is Unknown tool, use 'github' and ignore the rename warning for now.</p>
     <p><strong>Verify:</strong> Run the agent with the chosen tools entry.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause</li><li>how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>github-mcp-server mcp toolset unknown tool while warns renamed</li><li>github-mcp-server mcp toolset unknown tool while warns renamed fix</li><li>while warns renamed config github mcp toolset unknown tool github-mcp-server</li><li>while warns renamed config github mcp toolset unknown tool github-mcp-server fix</li><li>vs code agent config while warns renamed</li><li>vs code agent config while warns renamed fix</li><li>vs code agent config github-mcp-server</li><li>vs code agent config github-mcp-server fix</li><li>github-mcp-server tools github produces unknown tool</li><li>github-mcp-server tools github produces unknown tool fix</li><li>produces unknown tool tools github github-mcp-server</li><li>produces unknown tool tools github github-mcp-server fix</li><li>tools github produces unknown produces unknown tool</li><li>tools github produces unknown produces unknown tool fix</li><li>tools github produces unknown github-mcp-server</li><li>tools github produces unknown github-mcp-server fix</li><li>tools: [github/*] produces Unknown tool</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause</li><li>how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>github-mcp-server mcp toolset unknown tool while warns renamed</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>github-mcp-server, vscode</td></tr><tr><th>Tags</th><td>mcp, github-mcp-server, vscode, toolsets, configuration, naming</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>github-mcp-vscode-toolset-name-mismatch</li><li>github mcp vscode toolset name mismatch</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause</li><li>github-mcp-server</li><li>vscode</li><li>toolsets</li><li>configuration</li><li>naming</li><li>tools: [github/*] produces Unknown tool</li><li>tools: [github] works but warns it should be github/*</li><li>reported for other MCP servers too, not just GitHub</li><li>The server/* toolset alias resolves only when the MCP server is registered under the matching name e.g. installed via the official flow so it is named github</li><li>A manually named server, or an older agent-config location (.github/chatmodes vs .github/agents), does not resolve the * alias, so github/* is unknown while the bare name still matches</li><li>Blindly following the github/* rename warning when that form is Unknown tool</li><li>Manually renaming the MCP server, which can break server/* alias resolution</li><li>Keep using the bare 'github' name until the aliasing is consistent</li><li>github/github-mcp-server issue 1402: VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated fix</li><li>VSCode Toolset name mismatch: github/* fails with Unknown tool, but github warns its deprecated root cause</li><li>how to fix VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>github-mcp-server mcp toolset unknown tool while warns renamed</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>github-mcp-vscode-toolset-name-mismatch</li><li>github mcp vscode toolset name mismatch</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed fix</li><li>VS Code agent config: github/* MCP toolset is Unknown tool while github warns its renamed root cause</li><li>github-mcp-server</li><li>vscode</li><li>toolsets</li><li>configuration</li><li>naming</li><li>tools: [github/*] produces Unknown tool</li><li>tools: [github] works but warns it should be github/*</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>'tools': ['github/*'] produces Unknown tool</li><li>'tools': ['github'] works but warns it should be github/*</li><li>reported for other MCP servers too, not just GitHub</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>constraints</th><td>VS Code agent configuration, MCP server name must match the */ alias, .github/agents vs .github/chatmodes location</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The server/* toolset alias resolves only when the MCP server is registered under the matching name (e.g. installed via the official flow so it is named github).</li><li>A manually named server, or an older agent-config location (.github/chatmodes vs .github/agents), does not resolve the * alias, so github/* is unknown while the bare name still matches.</li></ul></section>

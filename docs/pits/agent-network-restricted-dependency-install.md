@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/agent-network-restricted-dependency-install.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/3
 
 ## Summary
 
@@ -28,22 +27,6 @@ Package manager failures in coding-agent sessions often come from restricted net
 - codex install fails agent sandbox blocks network access fix
 - blocks network access dependency install fails agent sandbox codex
 - blocks network access dependency install fails agent sandbox codex fix
-- dependency install fails agent blocks network access
-- dependency install fails agent blocks network access fix
-- dependency install fails agent codex
-- dependency install fails agent codex fix
-- codex host resolution registry index tls timeout errors
-- codex host resolution registry index tls timeout errors fix
-- tls timeout errors fails dns host resolution registry index codex
-- tls timeout errors fails dns host resolution registry index codex fix
-- dependency installation fails dns tls timeout errors
-- dependency installation fails dns tls timeout errors fix
-- dependency installation fails dns codex
-- dependency installation fails dns codex fix
-- dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- how to fix dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors root cause
-- codex dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Package manager failures in coding-agent sessions often come from restricted net
 - dependencies
 - codex
 - claude-code
-- gemini
-- qwen-code
-- cursor
-- aider
-- dependency installation fails with DNS, host resolution, registry, index, TLS, or timeout errors
-- the project lockfile or dependency manifest appears valid
-- the agent environment says network access is restricted
-- The package manager needs external network access but the agent sandbox blocks it by default
-- Deleting lockfiles to solve DNS errors
-- Switching package managers before checking sandbox network policy
-- Requesting broad shell approval instead of approval for the specific package command
-- Use vendored dependencies if the project already includes them
 
 ## Affected Tools
 

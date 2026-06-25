@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-commonjs-esm-pkce-challenge.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/33
 
 ## Summary
 
@@ -28,22 +27,6 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/33
 - MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM (pkce-challenge) root cause
 - how to fix MCP TypeScript SDK crashes in CommonJS projects with ERR_REQUIRE_ESM pkce-challenge
 - mcp-server commonjs projects err require esm pkce challenge
-- mcp-server commonjs projects err require esm pkce challenge fix
-- esm pkce challenge sdk crashes commonjs projects err require mcp-server
-- esm pkce challenge sdk crashes commonjs projects err require mcp-server fix
-- mcp typescript sdk crashes esm pkce challenge
-- mcp typescript sdk crashes esm pkce challenge fix
-- mcp typescript sdk crashes mcp-server
-- mcp typescript sdk crashes mcp-server fix
-- mcp-server module pkce challenge supported dynamic import instead
-- mcp-server module pkce challenge supported dynamic import instead fix
-- dynamic import instead esm es module pkce challenge supported mcp-server
-- dynamic import instead esm es module pkce challenge supported mcp-server fix
-- runtime crash mcp client dynamic import instead
-- runtime crash mcp client dynamic import instead fix
-- runtime crash mcp client mcp-server
-- runtime crash mcp client mcp-server fix
-- ERR_REQUIRE_ESM
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/33
 - dependencies
 - mcp-server
 - runtime crash on MCP client init: ERR_REQUIRE_ESM: require() of ES Module pkce-challenge is not supported. Use dynamic import() instead
-- the project is CommonJS often NestJS
-- the error originates inside @modelcontextprotocol/sdk/dist/cjs/client/auth.js
-- pkce-challenge shipped as ESM-only
-- The SDKs CommonJS build used a static require(pkce-challenge), which Node refuses for an ESM-only module from CJS, throwing at load time
-- Pinning a very old SDK (e.g. 1.5.0) just to avoid pkce-challenge, losing later fixes
-- Patching node_modules as a permanent solution instead of upgrading or using overrides
-- Use package-manager overrides to pin pkce-challenge@5.0.0
-- Temporarily import from the SDKs ESM dist
-- modelcontextprotocol/typescript-sdk issue 217: @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
-- crouchcd/pkce-challenge release 5.0.0 referenced as a compatible version
-- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency pkce-challenge
-- @modelcontextprotocol/sdk fails in CommonJS projects due to incompatible ESM-only dependency (pkce-challenge) fix
 
 ## Affected Tools
 

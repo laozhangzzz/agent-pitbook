@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-github-remote-oauth-dcr-unsupported-use-pat.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/17
 
 ## Summary
 
@@ -28,22 +27,6 @@ Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/
 - Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT root cause
 - how to fix Remote MCP OAuth fails with "does not support dynamic client registration"; use a PAT
 - claude-code oauth fails support dynamic client registration pat
-- claude-code oauth fails support dynamic client registration pat fix
-- client registration pat remote mcp oauth fails support dynamic claude-code
-- client registration pat remote mcp oauth fails support dynamic claude-code fix
-- remote mcp oauth fails client registration pat
-- remote mcp oauth fails client registration pat fix
-- remote mcp oauth fails claude-code
-- remote mcp oauth fails claude-code fix
-- claude-code add https api githubcopilot com connection fails
-- claude-code add https api githubcopilot com connection fails fix
-- com connection fails claude mcp add https api githubcopilot claude-code
-- com connection fails claude mcp add https api githubcopilot claude-code fix
-- claude mcp add https com connection fails
-- claude mcp add https com connection fails fix
-- claude mcp add https claude-code
-- claude mcp add https claude-code fix
-- does not support dynamic client registration
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ Connecting Claude Code to GitHub's remote MCP server (api.githubcopilot.com/mcp/
 - remote-mcp
 - github-mcp-server
 - claude mcp add ... then the connection fails
-- Error: Incompatible auth server: does not support dynamic client registration
-- the same server config works in VS Code, which authenticates differently
-- the UI shows an 'Authenticate' (OAuth) button that never completes
-- The clients OAuth flow relies on OAuth 2.1 Dynamic Client Registration to register itself with the authorization server
-- GitHubs remote MCP endpoint does not support DCR, so registration fails and the OAuth handshake cannot proceed
-- The endpoint expects token-based auth (a PAT) instead
-- Retrying the OAuth flow against an endpoint that lacks dynamic client registration
-- Following docs that show the OAuth connect path when only PAT auth works for that endpoint
-- Use the local/stdio GitHub MCP server with a PAT instead of the remote OAuth endpoint
-- anthropics/claude-code issue 3433: Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
-- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround
-- Claude Code cannot connect to GitHubs remote MCP server using OAuth authentication (PAT via GITHUB_PERSONAL_ACCESS_TOKEN is the confirmed workaround) fix
 
 ## Affected Tools
 

@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/",
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "dateModified": "2026-06-24",
+  "dateModified": "2026-06-25",
   "keywords": "agent-pitbook, llm-readable debugging, coding agents, agent debugging, mcp, codex, claude-code, cursor, gemini-cli, qwen-code, aider, llms.txt",
   "distribution": [
     {
@@ -36,18 +36,6 @@
       "name": "Agent Pitbook full pit feed",
       "encodingFormat": "application/x-ndjson",
       "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/pits.jsonl"
-    },
-    {
-      "@type": "DataDownload",
-      "name": "Agent Pitbook search terms feed",
-      "encodingFormat": "application/x-ndjson",
-      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/search-terms.jsonl"
-    },
-    {
-      "@type": "DataDownload",
-      "name": "Agent Pitbook answer queries feed",
-      "encodingFormat": "application/x-ndjson",
-      "contentUrl": "https://laozhangzzz.github.io/agent-pitbook/feeds/answer-queries.jsonl"
     },
     {
       "@type": "DataDownload",
@@ -105,28 +93,19 @@
       <h2>Machine entrypoints</h2>
       <ul class="link-list">
         <li><a href="/agent-pitbook/llms.txt">/llms.txt</a> - routing file for agents and LLMs</li>
-        <li><a href="/agent-pitbook/llms-full.txt">/llms-full.txt</a> - full answer-first text index for LLM retrieval</li>
         <li><a href="/agent-pitbook/ai.txt">/ai.txt</a> - short AI-agent routing file</li>
-        <li><a href="/agent-pitbook/answer-queries.txt">/answer-queries.txt</a> - plain-text solved-problem query map</li>
         <li><a href="/agent-pitbook/.well-known/llms.txt">/.well-known/llms.txt</a> - well-known mirror of the LLM entrypoint</li>
         <li><a href="/agent-pitbook/feed.xml">/feed.xml</a> - RSS feed of known fixes and exact problem titles</li>
         <li><a href="/agent-pitbook/feeds/index.jsonl">/feeds/index.jsonl</a> - slim scan-first index for search-enabled agents</li>
-        <li><a href="/agent-pitbook/feeds/search-terms.jsonl">/feeds/search-terms.jsonl</a> - generated query phrases from current pit symptoms and errors</li>
-        <li><a href="/agent-pitbook/feeds/answer-queries.jsonl">/feeds/answer-queries.jsonl</a> - answer-first queries for known solved problems and upstream issue titles</li>
-        <li><a href="/agent-pitbook/feeds/known-fix-issues.jsonl">/feeds/known-fix-issues.jsonl</a> - pit id to dedicated GitHub known-fix issue URL map</li>
         <li><a href="/agent-pitbook/feeds/unresolved-pit-template.json">/feeds/unresolved-pit-template.json</a> - machine-readable template for safe unresolved problem reports</li>
         <li><a href="/agent-pitbook/feeds/pits.jsonl">/feeds/pits.jsonl</a> - one machine-readable record per line</li>
         <li><a href="/agent-pitbook/ask.md">/ask.md</a> - Markdown protocol for agents that found no matching pit</li>
         <li><a href="/agent-pitbook/answers.html">/answers.html</a> - answer-first page for known fixes</li>
-        <li><a href="/agent-pitbook/q/">/q/</a> - exact-query landing pages with searched problem text in URL, title, and H1</li>
         <li><a href="/agent-pitbook/search-index.md">/search-index.md</a> - root-style answer index for search engines and LLM retrieval</li>
-        <li><a href="/agent-pitbook/SEARCH_SNAPSHOT_2026-06-24.md">/SEARCH_SNAPSHOT_2026-06-24.md</a> - release-style exact-query snapshot with known-fix issue links</li>
         <li><a href="/agent-pitbook/SEARCH_AUDIT.md">/SEARCH_AUDIT.md</a> - current evidence for what search surfaces pass or lag</li>
         <li><a href="/agent-pitbook/DISCOVERY.md">/DISCOVERY.md</a> - discovery map for human and agent readers</li>
-        <li><a href="https://github.com/laozhangzzz/agent-pitbook/releases/tag/search-snapshot-2026-06-24">GitHub search snapshot release</a> - release page with JSONL, RSS, and index assets</li>
         <li><a href="/agent-pitbook/search-queries.html">/search-queries.html</a> - crawlable index of common error and symptom searches</li>
         <li><a href="https://github.com/laozhangzzz/agent-pitbook/issues/2">GitHub issue #2</a> - native GitHub searchable tracker for solved-problem queries</li>
-        <li><a href="https://github.com/laozhangzzz/agent-pitbook/issues?q=is%3Aissue%20label%3Aknown-fix%20label%3Asearch-surface">GitHub known-fix issues</a> - one native issue page per solved pit, titled by exact problem query</li>
         <li><a href="/agent-pitbook/sitemap.xml">/sitemap.xml</a> - crawlable page map</li>
         <li><a href="/agent-pitbook/robots.txt">/robots.txt</a> - crawler permission and sitemap pointer</li>
       </ul>

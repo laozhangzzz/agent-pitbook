@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function. Fix: On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror, mcp ts sdk edge runtime ajv codegen evalerror, MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause, how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, mcp-server fails cloudflare workers evalerror ajv code generation, mcp-server fails cloudflare workers evalerror ajv code generation fix, ajv code generation sdk validation fails cloudflare workers evalerror mcp-server, candidate, medium">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, candidate, medium, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror, mcp ts sdk edge runtime ajv codegen evalerror, MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix, MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause, Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix, Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause, how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation, mcp-server fails cloudflare workers evalerror ajv code generation, mcp-server fails cloudflare workers evalerror ajv code generation fix, ajv code generation sdk validation fails cloudflare workers evalerror mcp-server, candidate, medium",
+  "keywords": "mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror, mcp-server, mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -35,20 +35,9 @@
     "elicitation",
     "evalerror",
     "mcp-server",
-    "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror",
-    "mcp ts sdk edge runtime ajv codegen evalerror",
-    "MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation",
-    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix",
-    "MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause",
-    "Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError",
-    "Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix",
-    "Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause",
-    "how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation",
-    "mcp-server fails cloudflare workers evalerror ajv code generation",
-    "mcp-server fails cloudflare workers evalerror ajv code generation fix",
-    "ajv code generation sdk validation fails cloudflare workers evalerror mcp-server",
     "candidate",
-    "medium"
+    "medium",
+    "mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -59,10 +48,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/34"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/34"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md"
+  ]
 }</script>
 
 </head>
@@ -87,7 +74,6 @@
         <a href="/agent-pitbook/pits/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/34">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</p>
@@ -95,9 +81,9 @@
     <p><strong>Fix first:</strong> On Cloudflare, use the McpAgent integration that added elicitation support; call elicitation on the McpAgent class, not mcpServer.server.</p>
     <p><strong>Verify:</strong> Run the validation/elicitation path on the edge runtime.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>mcp-server fails cloudflare workers evalerror ajv code generation</li><li>mcp-server fails cloudflare workers evalerror ajv code generation fix</li><li>ajv code generation sdk validation fails cloudflare workers evalerror mcp-server</li><li>ajv code generation sdk validation fails cloudflare workers evalerror mcp-server fix</li><li>mcp ts sdk validation ajv code generation</li><li>mcp ts sdk validation ajv code generation fix</li><li>mcp ts sdk validation mcp-server</li><li>mcp ts sdk validation mcp-server fix</li><li>mcp-server context stack through new function ajv localcompile</li><li>mcp-server context stack through new function ajv localcompile fix</li><li>function ajv localcompile strings disallowed context stack through new mcp-server</li><li>function ajv localcompile strings disallowed context stack through new mcp-server fix</li><li>evalerror code generation strings function ajv localcompile</li><li>evalerror code generation strings function ajv localcompile fix</li><li>evalerror code generation strings mcp-server</li><li>evalerror code generation strings mcp-server fix</li><li>EvalError: Code generation from strings disallowed because AJV v6 compiles schemas with new Function, which edge runtimes forbid</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>how to fix MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>mcp-server fails cloudflare workers evalerror ajv code generation</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>mcp-server, typescript-sdk</td></tr><tr><th>Tags</th><td>mcp, typescript-sdk, cloudflare-workers, edge, ajv, elicitation, evalerror</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror</li><li>mcp ts sdk edge runtime ajv codegen evalerror</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>typescript-sdk</li><li>cloudflare-workers</li><li>edge</li><li>elicitation</li><li>evalerror</li><li>mcp-server</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node</li><li>triggered by schema validation, e.g. after responding to an elicitInput request</li><li>The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function</li><li>Edge runtimes such as Cloudflare Workers disallow dynamic code generation from strings, so validator construction throws EvalError</li><li>Assuming Node-tested MCP server code runs unchanged on Cloudflare Workers</li><li>Calling elicitation on mcpServer.server instead of Cloudflares McpAgent</li><li>Move schema validation to a Node-hosted component if the edge runtime cannot run the validator</li><li>modelcontextprotocol/typescript-sdk issue 689: Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Cloudflare changelog: MCP elicitation support on McpAgent</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation EvalError</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) fix</li><li>Elicitation feature fails on Cloudflare Workers due to AJV code generation (EvalError) root cause</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-ts-sdk-edge-runtime-ajv-codegen-evalerror</li><li>mcp ts sdk edge runtime ajv codegen evalerror</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError AJV code generation</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) fix</li><li>MCP TS SDK validation fails on Cloudflare Workers with EvalError (AJV code generation) root cause</li><li>typescript-sdk</li><li>cloudflare-workers</li><li>edge</li><li>elicitation</li><li>evalerror</li><li>mcp-server</li><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>EvalError: Code generation from strings disallowed for this context, with a stack through new Function and Ajv.localCompile</li><li>occurs on Cloudflare Workers or other no-eval edge runtimes, not on Node</li><li>triggered by schema validation, e.g. after responding to an elicitInput request</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>language</th><td>TypeScript</td></tr><tr><th>runtime</th><td>Cloudflare Workers / edge</td></tr><tr><th>constraints</th><td>edge runtime disallows dynamic code generation from strings, AJV v6 uses new Function</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The SDK validates JSON Schema with AJV v6, which generates validator code at runtime via new Function.</li><li>Edge runtimes such as Cloudflare Workers disallow dynamic code generation from strings, so validator construction throws EvalError.</li></ul></section>

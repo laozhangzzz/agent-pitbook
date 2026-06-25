@@ -5,7 +5,6 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-19
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/agents/codex-workspace-root-moved-stale-state.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/6
 
 ## Summary
 
@@ -28,22 +27,6 @@ After moving a workspace, Codex Desktop may retain stale workspace roots in app 
 - codex references old workspace path after project move fix
 - after project move still references old workspace path codex
 - after project move still references old workspace path codex fix
-- still references old workspace after project move
-- still references old workspace after project move fix
-- still references old workspace codex
-- still references old workspace codex fix
-- codex sidebar references old workspace folder
-- codex sidebar references old workspace folder fix
-- old workspace folder sidebar references codex
-- old workspace folder sidebar references codex fix
-- sidebar references old workspace old workspace folder
-- sidebar references old workspace old workspace folder fix
-- sidebar references old workspace codex
-- sidebar references old workspace codex fix
-- Codex or its sidebar references an old workspace folder
-- how to fix Codex or its sidebar references an old workspace folder
-- Codex or its sidebar references an old workspace folder root cause
-- the shell current directory points to the new workspace
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ After moving a workspace, Codex Desktop may retain stale workspace roots in app 
 - state
 - Codex or its sidebar references an old workspace folder
 - the shell current directory points to the new workspace
-- file links or searches use the previous path
-- The desktop app persists workspace roots separately from the shell current directory, and those saved roots may not update when a folder is moved
-- Blindly rewriting all app state JSON without a backup
-- Deleting app state to fix one stale root when exact replacement would suffice
-- Create a temporary symlink from the old path to the new path only as a short-term bridge
-- Keep project moves visible to the agent by stating the new absolute path explicitly
-- Agent Pitbook bootstrap local session
-- how to fix Codex still references an old workspace path after a project move
-- codex references old workspace path after project move
-- codex references old workspace path after project move fix
-- after project move still references old workspace path codex
-- after project move still references old workspace path codex fix
 
 ## Affected Tools
 

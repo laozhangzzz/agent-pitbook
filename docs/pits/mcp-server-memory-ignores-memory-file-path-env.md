@@ -5,7 +5,6 @@ Status: verified
 Confidence: high
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-server-memory-ignores-memory-file-path-env.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
 
 ## Summary
 
@@ -28,22 +27,6 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
 - server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source root cause
 - how to fix server-memory ignores MEMORY_FILE_PATH because the npm build lagged the source
 - claude-desktop ignores file path npm build lagged source
-- claude-desktop ignores file path npm build lagged source fix
-- build lagged source server memory ignores file path npm claude-desktop
-- build lagged source server memory ignores file path npm claude-desktop fix
-- server memory ignores file build lagged source
-- server memory ignores file build lagged source fix
-- server memory ignores file claude-desktop
-- server memory ignores file claude-desktop fix
-- claude-desktop memory file path set created default location
-- claude-desktop memory file path set created default location fix
-- created default location memory file path set claude-desktop
-- created default location memory file path set claude-desktop fix
-- memory file path set created default location
-- memory file path set created default location fix
-- memory file path set claude-desktop
-- memory file path set claude-desktop fix
-- MEMORY_FILE_PATH
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/24
 - claude-desktop
 - cursor
 - mcp-server
-- MEMORY_FILE_PATH is set but the memory file is created at a default location
-- the GitHub source handles the env var, yet the installed copy ignores it
-- a relative MEMORY_FILE_PATH writes to an unexpected directory
-- The npm release e.g. 0.6.2 was older than the GitHub main source: its compiled dist/index.js hardcoded path.join__dirname, memory.json
-- The repo source already read process.env.MEMORY_FILE_PATH, so reading the source misled users about installed behavior
-- A relative MEMORY_FILE_PATH is resolved relative to the package install directory, not the users project
-- Inferring installed MCP server behavior from the GitHub source instead of the published build
-- Assuming a relative env-var path resolves against the project working directory
-- Treating a node_modules patch as a permanent fix instead of upgrading
-- As a stopgap some users edited dist/index.js in node_modules, but upgrading the package is the durable fix
-- modelcontextprotocol/servers issue 1018: Environment variables not respected in @modelcontextprotocol/server-memory package
-- Environment variables not respected in @modelcontextprotocol/server-memory package
 
 ## Affected Tools
 

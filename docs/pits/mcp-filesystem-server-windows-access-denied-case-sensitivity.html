@@ -10,7 +10,7 @@
   <meta property="og:description" content="Root cause: The allowed-directory check compares request paths against allowed roots as strings. Fix: Make the configured allowed-directory drive-letter case match what the client sends; try both C:\... and c:\... forms.">
   <meta property="og:url" content="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
   <meta property="og:site_name" content="Agent Pitbook">
-  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, mcp-filesystem-server-windows-access-denied-case-sensitivity, mcp filesystem server windows access denied case sensitivity, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause, Filesystem server access denied for allowed paths on Windows, Filesystem server access denied for allowed paths on Windows fix, Filesystem server access denied for allowed paths on Windows root cause, step toward fixing Windows path validation, step toward fixing Windows path validation fix, step toward fixing Windows path validation root cause, how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, candidate, medium">
+  <meta name="keywords" content="agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, candidate, medium, mcp-filesystem-server-windows-access-denied-case-sensitivity">
   <link rel="canonical" href="https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html">
   <link rel="alternate" type="application/rss+xml" title="Agent Pitbook known fixes" href="/agent-pitbook/feed.xml">
   <link rel="stylesheet" href="/agent-pitbook/styles.css">
@@ -22,7 +22,7 @@
   "url": "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.html",
   "dateCreated": "2026-06-21",
   "dateModified": "2026-06-21",
-  "keywords": "agent-pitbook, llm-readable debugging, coding-agent pit, mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, mcp-filesystem-server-windows-access-denied-case-sensitivity, mcp filesystem server windows access denied case sensitivity, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix, Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause, Filesystem server access denied for allowed paths on Windows, Filesystem server access denied for allowed paths on Windows fix, Filesystem server access denied for allowed paths on Windows root cause, step toward fixing Windows path validation, step toward fixing Windows path validation fix, step toward fixing Windows path validation root cause, how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch, candidate, medium",
+  "keywords": "mcp, server-filesystem, windows, paths, case-sensitivity, access-denied, claude-desktop, cursor, mcp-server, mcp-filesystem-server-windows-access-denied-case-sensitivity",
   "about": [
     "agent-pitbook",
     "llm-readable debugging",
@@ -36,20 +36,9 @@
     "claude-desktop",
     "cursor",
     "mcp-server",
-    "mcp-filesystem-server-windows-access-denied-case-sensitivity",
-    "mcp filesystem server windows access denied case sensitivity",
-    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch",
-    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix",
-    "Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause",
-    "Filesystem server access denied for allowed paths on Windows",
-    "Filesystem server access denied for allowed paths on Windows fix",
-    "Filesystem server access denied for allowed paths on Windows root cause",
-    "step toward fixing Windows path validation",
-    "step toward fixing Windows path validation fix",
-    "step toward fixing Windows path validation root cause",
-    "how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch",
     "candidate",
-    "medium"
+    "medium",
+    "mcp-filesystem-server-windows-access-denied-case-sensitivity"
   ],
   "isPartOf": {
     "@type": "Dataset",
@@ -60,10 +49,8 @@
   "codeRepository": "https://github.com/laozhangzzz/agent-pitbook",
   "sameAs": [
     "https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md",
-    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md",
-    "https://github.com/laozhangzzz/agent-pitbook/issues/16"
-  ],
-  "discussionUrl": "https://github.com/laozhangzzz/agent-pitbook/issues/16"
+    "https://laozhangzzz.github.io/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md"
+  ]
 }</script>
 
 </head>
@@ -88,7 +75,6 @@
         <a href="/agent-pitbook/pits/mcp-filesystem-server-windows-access-denied-case-sensitivity.md">Markdown mirror</a>
         <span>|</span>
         <a href="https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md">Canonical source</a>
-        <span>|</span><a href="https://github.com/laozhangzzz/agent-pitbook/issues/16">GitHub known-fix issue</a>
       </p>
       <section><h2>Fast answer</h2><div class="answer-box">
     <p><strong>Problem:</strong> Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories'</p>
@@ -96,9 +82,9 @@
     <p><strong>Fix first:</strong> Make the configured allowed-directory drive-letter case match what the client sends; try both C:\... and c:\... forms.</p>
     <p><strong>Verify:</strong> Call read_file on a path under the allowed directory after aligning case or applying the patched build.</p>
   </div></section>
-      <section><h2>Queries this answers</h2><ul><li>Filesystem server access denied for allowed paths on Windows</li><li>Filesystem server access denied for allowed paths on Windows fix</li><li>Filesystem server access denied for allowed paths on Windows root cause</li><li>step toward fixing Windows path validation</li><li>step toward fixing Windows path validation fix</li><li>step toward fixing Windows path validation root cause</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause</li><li>how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>claude-desktop allowed windows paths drive letter case mismatch</li><li>claude-desktop allowed windows paths drive letter case mismatch fix</li><li>letter case mismatch server denies allowed windows paths drive claude-desktop</li><li>letter case mismatch server denies allowed windows paths drive claude-desktop fix</li><li>filesystem mcp server denies letter case mismatch</li><li>filesystem mcp server denies letter case mismatch fix</li><li>filesystem mcp server denies claude-desktop</li><li>filesystem mcp server denies claude-desktop fix</li><li>claude-desktop directory returns error access denied path directories</li><li>claude-desktop directory returns error access denied path directories fix</li><li>denied path directories file allowed directory returns error access claude-desktop</li><li>denied path directories file allowed directory returns error access claude-desktop fix</li><li>windows file allowed directory denied path directories</li><li>windows file allowed directory denied path directories fix</li></ul></section>
+      <section><h2>Queries this answers</h2><ul><li>Filesystem server access denied for allowed paths on Windows</li><li>Filesystem server access denied for allowed paths on Windows fix</li><li>Filesystem server access denied for allowed paths on Windows root cause</li><li>step toward fixing Windows path validation</li><li>step toward fixing Windows path validation fix</li><li>step toward fixing Windows path validation root cause</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li></ul></section>
       <section><h2>Record metadata</h2><table><tr><th>Status</th><td>candidate</td></tr><tr><th>Confidence</th><td>medium</td></tr><tr><th>Created</th><td>2026-06-21</td></tr><tr><th>Updated</th><td>2026-06-21</td></tr><tr><th>Last verified</th><td>2026-06-21</td></tr><tr><th>Affected tools</th><td>claude-desktop, cursor, mcp-server</td></tr><tr><th>Tags</th><td>mcp, server-filesystem, windows, paths, case-sensitivity, access-denied</td></tr></table></section>
-      <section><h2>Common search queries</h2><ul><li>mcp-filesystem-server-windows-access-denied-case-sensitivity</li><li>mcp filesystem server windows access denied case sensitivity</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause</li><li>server-filesystem</li><li>windows</li><li>paths</li><li>case-sensitivity</li><li>access-denied</li><li>claude-desktop</li><li>cursor</li><li>mcp-server</li><li>Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories</li><li>the denied path is visibly inside a configured allowed root</li><li>no other errors in the logs</li><li>The allowed-directory check compares request paths against allowed roots as strings</li><li>Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test</li><li>Windows can rarely have case-sensitive paths, which complicates a fully correct fix</li><li>Widening allowed directories to the drive root to dodge the case mismatch</li><li>Assuming the allow-list config is wrong when the validators normalization is the bug</li><li>Temporarily configure the allowed root in the exact case the client emits</li><li>modelcontextprotocol/servers issue 470: Filesystem server access denied for allowed paths on Windows</li><li>modelcontextprotocol/servers PR 2111: step toward fixing Windows path validation</li></ul></section>
+      <section><h2>Common search queries</h2><ul><li>mcp-filesystem-server-windows-access-denied-case-sensitivity</li><li>mcp filesystem server windows access denied case sensitivity</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix</li><li>Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause</li><li>server-filesystem</li><li>windows</li><li>paths</li><li>case-sensitivity</li><li>access-denied</li><li>claude-desktop</li><li>cursor</li></ul></section>
       <section><h2>Symptoms</h2><ul><li>Windows only: a file under an allowed directory returns 'Error: Access denied - path outside allowed directories'</li><li>the denied path is visibly inside a configured allowed root</li><li>no other errors in the logs</li></ul></section>
       <section><h2>Environment</h2><table><tr><th>os</th><td>Windows</td></tr><tr><th>constraints</th><td>server-filesystem allowed-directory validation, Windows drive-letter case insensitivity</td></tr></table></section>
       <section><h2>Root cause</h2><ul><li>The allowed-directory check compares request paths against allowed roots as strings.</li><li>Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test.</li><li>Windows can rarely have case-sensitive paths, which complicates a fully correct fix.</li></ul></section>

@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-reverse-proxy-buffers-sse-connection-fails.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/23
 
 ## Summary
 
@@ -28,22 +27,6 @@ A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize,
 - A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed root cause
 - how to fix A reverse proxy buffering SSE breaks remote MCP after OAuth and initialize succeed
 - claude-desktop breaks remote mcp after oauth initialize succeed
-- claude-desktop breaks remote mcp after oauth initialize succeed fix
-- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop
-- oauth initialize succeed buffering sse breaks remote mcp after claude-desktop fix
-- reverse proxy buffering sse oauth initialize succeed
-- reverse proxy buffering sse oauth initialize succeed fix
-- reverse proxy buffering sse claude-desktop
-- reverse proxy buffering sse claude-desktop fix
-- claude-desktop errors there was error connecting your server
-- claude-desktop errors there was error connecting your server fix
-- connecting your server remote mcp errors there was error claude-desktop
-- connecting your server remote mcp errors there was error claude-desktop fix
-- client connects custom remote connecting your server
-- client connects custom remote connecting your server fix
-- client connects custom remote claude-desktop
-- client connects custom remote claude-desktop fix
-- HTTP fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ A remote MCP server behind a reverse proxy/tunnel can pass OAuth and initialize,
 - remote-mcp
 - claude-desktop
 - mcp-server
-- the client connects to a custom remote MCP then errors e.g. There was an error connecting to your server
-- server logs show success through registration, OAuth authorize, token exchange, initialize, and the SSE GET with Accept: text/event-stream, then nothing flows
-- direct non-proxied access works; only the proxied/tunnelled path fails
-- MCP Streamable HTTP streams responses over SSE, which must be flushed incrementally
-- A proxy/tunnel that buffers responses (Cloudflare Tunnel buffers SSE; Nginx with proxy_buffering on) holds bytes until the response completes, which never happens for a long-lived stream
-- So the client times out or errors despite a healthy OAuth/initialize handshake
-- Debugging OAuth when OAuth already succeeded and the SSE stream is what is buffered
-- Leaving default proxy_buffering on for an MCP streaming endpoint
-- Expose the MCP endpoint directly (non-proxied) for testing to confirm buffering is the cause
-- anthropics/claude-code issue 5826: Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
-- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize
-- Claude Desktop custom MCP connection failure; confirmed root cause is Cloudflare Tunnel buffering SSE despite successful OAuth/initialize fix
 
 ## Affected Tools
 

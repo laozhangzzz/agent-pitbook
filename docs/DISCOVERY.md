@@ -163,26 +163,24 @@ Current state:
 - GitHub broad-topic search is weak.
 - The repository has `llms.txt` and `AGENTS.md`.
 - The GitHub Pages site exposes `/llms.txt`, `/robots.txt`, `/sitemap.xml`, per-pit HTML pages, and JSONL feeds.
-- The static site exposes `/llms-full.txt`, `/answer-queries.txt`, `/ai.txt`, and `.well-known` mirrors for crawler-friendly plain-text retrieval.
+- The static site exposes `/ai.txt` and `.well-known` mirrors for crawler-friendly routing.
 - The static site exposes `/feed.xml` so search tools, feed readers, and monitors can pick up known fixes as update items.
 - The repository root includes `SEARCH_INDEX.md` for GitHub search, web search, and LLM retrieval over exact solved-problem titles.
 - GitHub issue #2 is a native searchable discovery tracker for solved-problem queries and links to the matching pit pages.
-- GitHub issues #3-#41 are dedicated `known-fix` search-surface issues, one solved pit per issue, with titles built from exact problem queries.
-- The hosted search snapshot `/SEARCH_SNAPSHOT_2026-06-24.md` repeats all known-fix issue URLs and exact solved-problem titles as a release-style index.
-- GitHub release `search-snapshot-2026-06-24` mirrors the search snapshot and uploads JSONL/RSS/index assets for release-page discovery.
-- The hosted feed `/feeds/known-fix-issues.jsonl` maps each pit id and exact primary query to its dedicated GitHub known-fix issue.
-- The hosted `/q/` tree exposes one exact-query landing page per high-value solved-problem query, with the searched phrase in the URL, title, H1, sitemap, and Markdown mirror.
+- GitHub issues #3-#41 were created as dedicated `known-fix` search-surface issues. Red-team review found this likely pollutes the issue tracker before real contributors arrive, so they should be closed or migrated into one canonical tracker.
+- The 2026-06-24 search snapshot, release assets, and `/q/` exact-query page tree were an indexing experiment. They are not the current strategy because duplicate query pages without external adoption risk looking like doorway spam.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
-- The static site exposes `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
+- The static site exposes `/answers.html`, `/answers.md`, and a compact `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.
 - The static site exposes `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json` for safe no-match escalation.
-- The site includes an IndexNow key file and `tools/indexnow-submit.mjs` can submit current sitemap URLs after deployment.
+- The site includes an IndexNow key file and `tools/indexnow-submit.mjs` can submit canonical sitemap URLs after deployment. The script defensively filters old `/q/` URLs.
 - A read-only local MCP server exists, but it is not yet packaged or listed in MCP registries.
 - The corpus is useful but still too small for strong long-tail error discovery.
 
 Next best moves:
 
 1. Add more real pits with exact error strings.
-2. Submit the current sitemap URL set with IndexNow after each meaningful Pages deployment.
-3. Add backlinks from concrete issue replies and docs pages where a pit directly helps.
-4. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
-5. Add a benchmark showing ordinary search vs pitbook-assisted debugging.
+2. Get real external adoption links from issue discussions, maintainer docs, MCP registries, agent docs, and user reports.
+3. Keep the search surface canonical: one pit page, one Markdown mirror, one compact feed record, and one unresolved-report path.
+4. Add backlinks from concrete issue replies and docs pages where a pit directly helps.
+5. Publish a minimal MCP/CLI package and register it in relevant MCP directories.
+6. Add a benchmark showing ordinary search vs pitbook-assisted debugging.

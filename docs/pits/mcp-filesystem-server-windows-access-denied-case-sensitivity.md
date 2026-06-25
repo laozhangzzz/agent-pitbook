@@ -5,7 +5,6 @@ Status: candidate
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-filesystem-server-windows-access-denied-case-sensitivity.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/16
 
 ## Summary
 
@@ -28,22 +27,6 @@ On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - 
 - step toward fixing Windows path validation root cause
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
 - Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch fix
-- Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch root cause
-- how to fix Filesystem MCP server denies allowed Windows paths due to drive-letter case mismatch
-- claude-desktop allowed windows paths drive letter case mismatch
-- claude-desktop allowed windows paths drive letter case mismatch fix
-- letter case mismatch server denies allowed windows paths drive claude-desktop
-- letter case mismatch server denies allowed windows paths drive claude-desktop fix
-- filesystem mcp server denies letter case mismatch
-- filesystem mcp server denies letter case mismatch fix
-- filesystem mcp server denies claude-desktop
-- filesystem mcp server denies claude-desktop fix
-- claude-desktop directory returns error access denied path directories
-- claude-desktop directory returns error access denied path directories fix
-- denied path directories file allowed directory returns error access claude-desktop
-- denied path directories file allowed directory returns error access claude-desktop fix
-- windows file allowed directory denied path directories
-- windows file allowed directory denied path directories fix
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ On Windows, @modelcontextprotocol/server-filesystem can return 'Access denied - 
 - access-denied
 - claude-desktop
 - cursor
-- mcp-server
-- Windows only: a file under an allowed directory returns Error: Access denied - path outside allowed directories
-- the denied path is visibly inside a configured allowed root
-- no other errors in the logs
-- The allowed-directory check compares request paths against allowed roots as strings
-- Windows drive letters/normalization are effectively case-insensitive (C:\source == c:\source) but the comparison treats them as different, failing the containment test
-- Windows can rarely have case-sensitive paths, which complicates a fully correct fix
-- Widening allowed directories to the drive root to dodge the case mismatch
-- Assuming the allow-list config is wrong when the validators normalization is the bug
-- Temporarily configure the allowed root in the exact case the client emits
-- modelcontextprotocol/servers issue 470: Filesystem server access denied for allowed paths on Windows
-- modelcontextprotocol/servers PR 2111: step toward fixing Windows path validation
 
 ## Affected Tools
 

@@ -5,7 +5,6 @@ Status: verified
 Confidence: medium
 Updated: 2026-06-21
 Canonical source: https://github.com/laozhangzzz/agent-pitbook/blob/main/pits/mcp/mcp-client-uses-user-level-npmrc-wrong-registry.md
-GitHub known-fix issue: https://github.com/laozhangzzz/agent-pitbook/issues/14
 
 ## Summary
 
@@ -28,22 +27,6 @@ npx-launched MCP servers that work in the terminal but hang under a GUI client (
 - MCP server hangs because the GUI client uses your user-level .npmrc, not your projects root cause
 - how to fix MCP server hangs because the GUI client uses your user-level .npmrc, not your projects
 - cursor client uses your user level npmrc project
-- cursor client uses your user level npmrc project fix
-- level npmrc project hangs gui client uses your user cursor
-- level npmrc project hangs gui client uses your user cursor fix
-- mcp server hangs gui level npmrc project
-- mcp server hangs gui level npmrc project fix
-- mcp server hangs gui cursor
-- mcp server hangs gui cursor fix
-- cursor npx package works project terminal launched client
-- cursor npx package works project terminal launched client fix
-- terminal launched client npx package works project cursor
-- terminal launched client npx package works project cursor fix
-- npx package works project terminal launched client
-- npx package works project terminal launched client fix
-- npx package works project cursor
-- npx package works project cursor fix
-- MCP error -32001: Request timed out
 
 ## Common Search Queries
 
@@ -59,18 +42,6 @@ npx-launched MCP servers that work in the terminal but hang under a GUI client (
 - cursor
 - claude-desktop
 - cline
-- mcp-server
-- npx -y <package> works in a project terminal but not when launched by the client
-- client log shows Client closed and MCP error -32001: Request timed out
-- a project-level .npmrc with a custom or corporate registry exists
-- npm merges config from multiple .npmrc files; the project-level file only applies when the working directory is inside that project
-- A GUI MCP client launches npx from a different directory (typically home), so only user-level and global config apply
-- A wrong or unreachable registry in ~/.npmrc makes the fetch hang or fail, surfaced as a startup timeout
-- Assuming a per-project .npmrc applies to a GUI-launched process
-- Editing the MCP config repeatedly when the fault is the registry in ~/.npmrc
-- Globally install the package and reference it by absolute path instead of npx
-- modelcontextprotocol/servers issue 891: author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal
-- author resolved 'Client closed' by fixing an incorrect registry in user-level ~/.npmrc that the project .npmrc had overridden in the terminal
 
 ## Affected Tools
 
