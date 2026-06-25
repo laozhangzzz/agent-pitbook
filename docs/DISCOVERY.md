@@ -167,7 +167,7 @@ Current state:
 - The static site exposes `/feed.xml` so search tools, feed readers, and monitors can pick up known fixes as update items.
 - The repository root includes `SEARCH_INDEX.md` for GitHub search, web search, and LLM retrieval over exact solved-problem titles.
 - GitHub issue #2 is a native searchable discovery tracker for solved-problem queries and links to the matching pit pages.
-- GitHub issues #3-#41 were created as dedicated `known-fix` search-surface issues. Red-team review found this likely pollutes the issue tracker before real contributors arrive, so they should be closed or migrated into one canonical tracker.
+- GitHub issues #3-#41 were created as dedicated `known-fix` search-surface issues, then closed on 2026-06-25 after red-team review found they likely pollute the issue tracker before real contributors arrive.
 - The 2026-06-24 search snapshot, release assets, and `/q/` exact-query page tree were an indexing experiment. They are not the current strategy because duplicate query pages without external adoption risk looking like doorway spam.
 - The static site exposes `/search-queries.html` and `/feeds/search-terms.jsonl` generated from current pit symptoms and error strings.
 - The static site exposes `/answers.html`, `/answers.md`, and a compact `/feeds/answer-queries.jsonl` generated from known fixes, source issue titles, exact errors, root causes, and fixes.

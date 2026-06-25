@@ -87,7 +87,7 @@ Decision:
 - Remove the generated `/q/` exact-query landing pages and their Markdown mirrors. They duplicated the same answers across hundreds of near-identical pages and risked being interpreted as doorway spam.
 - Remove `/llms-full.txt` and other duplicate full-text mirrors from the generated site. The full record feed is already `/feeds/pits.jsonl`; the human/LLM-readable canonical pages are the per-pit HTML and Markdown mirrors.
 - Stop submitting old `/q/` URLs through IndexNow. The submission script defensively filters that path even if a stale sitemap appears.
-- Treat GitHub issues #3-#41 as an experiment to close or migrate into a single canonical tracker, because the issue tracker should primarily invite real unresolved reports and contributor discussion.
+- Close GitHub issues #3-#41 as a completed indexing experiment. The issue tracker should primarily invite real unresolved reports and contributor discussion; issue #2 remains the canonical search/discovery tracker.
 - Prioritize external adoption links and real pit records over generating more search pages.
 
 ## Previous Experiment Audit: 2026-06-24
