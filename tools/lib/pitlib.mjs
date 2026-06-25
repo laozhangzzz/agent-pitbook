@@ -9,6 +9,52 @@ export const pitsDir = path.join(repoRoot, "pits");
 export const defaultSiteBaseUrl = "https://laozhangzzz.github.io/agent-pitbook";
 export const defaultRepoUrl = "https://github.com/laozhangzzz/agent-pitbook";
 
+function clipIssueField(value, maxLength = 900) {
+  const text = String(value ?? "").trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength - 20).trimEnd()}\n\n[truncated for URL]`;
+}
+
+function appendIfPresent(params, key, value, maxLength = 900) {
+  const clipped = clipIssueField(value, maxLength);
+  if (clipped) params.set(key, clipped);
+}
+
+export function buildUnresolvedIssueUrl({
+  repoUrl = defaultRepoUrl,
+  title,
+  query,
+  agentOrTool,
+  environment,
+  symptomsAndExactErrors,
+  whatWasTried,
+  existingRecordsChecked,
+  publicReproductionOrContext,
+  suspectedRootCause,
+  temporaryWorkaround,
+  sources
+} = {}) {
+  const url = new URL(`${repoUrl}/issues/new`);
+  const summary = clipIssueField(title || query || "Unresolved Agent Pitbook case", 120);
+  const checked = Array.isArray(existingRecordsChecked)
+    ? existingRecordsChecked.join("\n")
+    : existingRecordsChecked;
+
+  url.searchParams.set("template", "unresolved_pit.yml");
+  url.searchParams.set("title", `[ask] ${summary}`);
+  appendIfPresent(url.searchParams, "short-summary", summary, 220);
+  appendIfPresent(url.searchParams, "agent-tool", agentOrTool, 220);
+  appendIfPresent(url.searchParams, "environment", environment, 900);
+  appendIfPresent(url.searchParams, "symptoms", symptomsAndExactErrors || query, 1200);
+  appendIfPresent(url.searchParams, "existing-records", checked, 1200);
+  appendIfPresent(url.searchParams, "tried", whatWasTried, 900);
+  appendIfPresent(url.searchParams, "reproduction", publicReproductionOrContext, 900);
+  appendIfPresent(url.searchParams, "suspected-root-cause", suspectedRootCause, 700);
+  appendIfPresent(url.searchParams, "temporary-workaround", temporaryWorkaround, 700);
+  appendIfPresent(url.searchParams, "sources", sources, 700);
+  return url.toString();
+}
+
 export function walkMarkdown(dir = pitsDir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -429,15 +475,48 @@ export function unresolvedPitTemplate({
   siteBaseUrl = defaultSiteBaseUrl,
   repoUrl = defaultRepoUrl
 } = {}) {
+  const issueUrl = `${repoUrl}/issues/new?template=unresolved_pit.yml`;
+  const genericPrefilledIssueUrl = buildUnresolvedIssueUrl({
+    repoUrl,
+    title: "Unresolved Agent Pitbook case",
+    symptomsAndExactErrors: "Paste the exact public error text, command, UI action, or observable behavior here.",
+    existingRecordsChecked:
+      "List the Agent Pitbook pit ids, URLs, or search terms checked before opening this report.",
+    whatWasTried: "List commands, settings, docs, issue threads, and workarounds already tried.",
+    publicReproductionOrContext:
+      "Add a minimal public reproduction, redacted command sequence, or explain why no public repro is available."
+  });
+
   return {
     schema_version: "agent-pitbook.unresolved-pit.v1",
     purpose:
       "Capture an unsolved coding-agent execution or tooling failure when no existing Agent Pitbook record matches, so maintainers and future agents can help solve it.",
-    issue_url: `${repoUrl}/issues/new?template=unresolved_pit.yml`,
+    issue_url: issueUrl,
+    prefilled_issue_url: genericPrefilledIssueUrl,
     human_page_url: `${siteBaseUrl}/ask.html`,
     markdown_page_url: `${siteBaseUrl}/ask.md`,
+    agent_cta:
+      "If no pit record actually solves the user's blocked failure, show the nearest checked records, draft a public unresolved-pit report, redact private data, and ask the user to review the prefilled GitHub issue before submitting.",
+    prefill_query_parameters: {
+      note:
+        "GitHub issue forms can be prefilled with URL query parameters. Agent Pitbook uses the issue form field ids below so agents can hand the user a reviewable submit link instead of a blank form.",
+      fields: [
+        "title",
+        "short-summary",
+        "agent-tool",
+        "environment",
+        "symptoms",
+        "existing-records",
+        "tried",
+        "reproduction",
+        "suspected-root-cause",
+        "temporary-workaround",
+        "sources"
+      ]
+    },
     safety_rules: [
       "Search existing pit records before reporting.",
+      "Show the top nearby records checked before reporting, so the user can reject duplicates.",
       "Ask the user for explicit confirmation before opening an issue or publishing any report.",
       "Do not include secrets, tokens, API keys, cookies, private customer data, proprietary logs, or private source code.",
       "Keep exact public error strings, commands, versions, and environment details when safe.",
@@ -461,7 +540,9 @@ export function unresolvedPitTemplate({
     agent_flow: [
       "Search feeds/index.jsonl and feeds/search-terms.jsonl by exact symptom, error, tool, OS, runtime, package manager, and agent name.",
       "If a matching pit exists, read the full record before changing code.",
+      "If nothing clearly matches, collect the top three nearby pit records and show them to the user as duplicates to rule out.",
       "If no matching pit exists and the failure is still blocking, prepare an unresolved pit report.",
+      "Use the prefilled_issue_url or the issue_url plus prefill_query_parameters to create a reviewable GitHub issue link.",
       "Show the report draft to the user and ask for confirmation.",
       "If the user confirms and GitHub access is available, open the issue with the unresolved_pit template. Otherwise, provide the draft for manual submission.",
       "When the issue is solved, convert the verified lesson into a candidate or verified pit record."
@@ -479,7 +560,7 @@ export function unresolvedPitTemplate({
       "Links or redacted evidence:"
     ],
     user_confirmation_prompt:
-      "I did not find a matching Agent Pitbook record. I can draft a public unresolved-pit issue so maintainers and future agents can help solve it. I will redact secrets and show you the draft before anything is posted. Do you want me to prepare it?"
+      "I did not find a matching Agent Pitbook record. I checked the nearest records I found and they do not appear to solve this case. I can draft a public unresolved-pit issue so maintainers and future agents can help solve it. I will redact secrets and show you the draft before anything is posted. Do you want me to prepare it?"
   };
 }
 

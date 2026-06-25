@@ -191,8 +191,8 @@ Agent 优先读取：
 - `feeds/index.jsonl`：轻量索引，先扫这个
 - `feeds/pits.jsonl`：完整记录，按 id 取详情
 - `feeds/search-terms.jsonl` 和 `feeds/answer-queries.jsonl`：紧凑候选查询，不再生成批量薄落地页
-- `feeds/unresolved-pit-template.json`：没有匹配记录时，整理未解决问题的模板
-- `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits`、`get_pit` 和 `get_unresolved_pit_template`
+- `feeds/unresolved-pit-template.json`：没有匹配记录时，整理未解决问题的模板和 GitHub issue 预填规则
+- `mcp-server/server.mjs`：只读 MCP server，提供 `search_pits`、`get_pit` 和 `get_unresolved_pit_template(query)`；找不到时会返回近邻记录和预填 issue 链接
 
 ## 这个项目现在的边界
 

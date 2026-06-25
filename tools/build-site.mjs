@@ -544,11 +544,11 @@ Two-tier retrieval, cheapest first:
 
 The per-pit Markdown pages and \`pits/**/*.md\` are the human-facing mirror of the same JSON; you do not need them if you read the feed.
 
-If you integrate by MCP, the source repo's read-only server exposes \`search_pits\`, \`get_pit\`, and \`get_unresolved_pit_template\`.
+If you integrate by MCP, the source repo's read-only server exposes \`search_pits\`, \`get_pit\`, and \`get_unresolved_pit_template(query)\`.
 
 ## If No Record Matches
 
-Do not silently guess when the user is blocked by a reproducible agent/tooling failure and no existing pit matches. Prepare an unresolved-pit report and ask the user before publishing anything.
+Do not silently guess when the user is blocked by a reproducible agent/tooling failure and no existing pit matches. Show nearby records to rule out duplicates, then prepare an unresolved-pit report and ask the user before publishing anything.
 
 - [Ask protocol](${slugUrl("/ask.md")}): agent-facing steps for safe unresolved-pit escalation.
 - [Unresolved pit template](${slugUrl("/feeds/unresolved-pit-template.json")}): machine-readable report contract.
@@ -666,7 +666,7 @@ function renderAskMarkdown() {
   const lines = [
     "# Ask Agent Pitbook",
     "",
-    "When no existing Agent Pitbook record matches a reproducible coding-agent or local-tooling failure, create an unresolved-pit report instead of guessing silently.",
+    "When no existing Agent Pitbook record matches a reproducible coding-agent or local-tooling failure, show nearby records first, then create an unresolved-pit report instead of guessing silently.",
     "",
     "This is not a verified pit record yet. It is a low-friction request for help that can later become a candidate or verified pit.",
     "",
@@ -919,7 +919,7 @@ function renderAiText(records) {
   }
 
   lines.push("");
-  lines.push(`If no record matches, use ${slugUrl("/ask.md")} and draft an unresolved-pit report for user review.`);
+  lines.push(`If no record matches, use ${slugUrl("/ask.md")}, show nearby records first, and draft an unresolved-pit report for user review.`);
   lines.push(`GitHub issue search tracker: ${searchDiscoveryIssueUrl}`);
 
   return `${lines.join("\n")}\n`;
@@ -1048,10 +1048,7 @@ function renderSitemap(records) {
     ["/feeds/unresolved-pit-template.json", siteLastmod],
     ["/feeds/pits.jsonl", siteLastmod],
     ["/pits/", siteLastmod],
-    ...records.flatMap((record) => [
-      [recordHtmlPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)],
-      [recordMarkdownPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)]
-    ])
+    ...records.map((record) => [recordHtmlPath(record), maxDate(record.updated_at, siteSurfaceUpdatedAt)])
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>

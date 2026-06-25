@@ -2,10 +2,29 @@
   "schema_version": "agent-pitbook.unresolved-pit.v1",
   "purpose": "Capture an unsolved coding-agent execution or tooling failure when no existing Agent Pitbook record matches, so maintainers and future agents can help solve it.",
   "issue_url": "https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml",
+  "prefilled_issue_url": "https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml&title=%5Bask%5D+Unresolved+Agent+Pitbook+case&short-summary=Unresolved+Agent+Pitbook+case&symptoms=Paste+the+exact+public+error+text%2C+command%2C+UI+action%2C+or+observable+behavior+here.&existing-records=List+the+Agent+Pitbook+pit+ids%2C+URLs%2C+or+search+terms+checked+before+opening+this+report.&tried=List+commands%2C+settings%2C+docs%2C+issue+threads%2C+and+workarounds+already+tried.&reproduction=Add+a+minimal+public+reproduction%2C+redacted+command+sequence%2C+or+explain+why+no+public+repro+is+available.",
   "human_page_url": "https://laozhangzzz.github.io/agent-pitbook/ask.html",
   "markdown_page_url": "https://laozhangzzz.github.io/agent-pitbook/ask.md",
+  "agent_cta": "If no pit record actually solves the user's blocked failure, show the nearest checked records, draft a public unresolved-pit report, redact private data, and ask the user to review the prefilled GitHub issue before submitting.",
+  "prefill_query_parameters": {
+    "note": "GitHub issue forms can be prefilled with URL query parameters. Agent Pitbook uses the issue form field ids below so agents can hand the user a reviewable submit link instead of a blank form.",
+    "fields": [
+      "title",
+      "short-summary",
+      "agent-tool",
+      "environment",
+      "symptoms",
+      "existing-records",
+      "tried",
+      "reproduction",
+      "suspected-root-cause",
+      "temporary-workaround",
+      "sources"
+    ]
+  },
   "safety_rules": [
     "Search existing pit records before reporting.",
+    "Show the top nearby records checked before reporting, so the user can reject duplicates.",
     "Ask the user for explicit confirmation before opening an issue or publishing any report.",
     "Do not include secrets, tokens, API keys, cookies, private customer data, proprietary logs, or private source code.",
     "Keep exact public error strings, commands, versions, and environment details when safe.",
@@ -29,7 +48,9 @@
   "agent_flow": [
     "Search feeds/index.jsonl and feeds/search-terms.jsonl by exact symptom, error, tool, OS, runtime, package manager, and agent name.",
     "If a matching pit exists, read the full record before changing code.",
+    "If nothing clearly matches, collect the top three nearby pit records and show them to the user as duplicates to rule out.",
     "If no matching pit exists and the failure is still blocking, prepare an unresolved pit report.",
+    "Use the prefilled_issue_url or the issue_url plus prefill_query_parameters to create a reviewable GitHub issue link.",
     "Show the report draft to the user and ask for confirmation.",
     "If the user confirms and GitHub access is available, open the issue with the unresolved_pit template. Otherwise, provide the draft for manual submission.",
     "When the issue is solved, convert the verified lesson into a candidate or verified pit record."
@@ -46,5 +67,5 @@
     "Temporary workaround, if any:",
     "Links or redacted evidence:"
   ],
-  "user_confirmation_prompt": "I did not find a matching Agent Pitbook record. I can draft a public unresolved-pit issue so maintainers and future agents can help solve it. I will redact secrets and show you the draft before anything is posted. Do you want me to prepare it?"
+  "user_confirmation_prompt": "I did not find a matching Agent Pitbook record. I checked the nearest records I found and they do not appear to solve this case. I can draft a public unresolved-pit issue so maintainers and future agents can help solve it. I will redact secrets and show you the draft before anything is posted. Do you want me to prepare it?"
 }

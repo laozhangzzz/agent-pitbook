@@ -117,12 +117,13 @@ How:
 - make every pit page an answer page, not only a catalog entry
 - put exact error strings in pit titles, summaries, symptoms, and generated HTML body text
 - expose one stable HTML URL and one stable Markdown URL per pit
-- add sitemap entries for both HTML and Markdown pages
+- add sitemap entries for canonical HTML pit pages; keep Markdown mirrors linked from pages and feeds for direct LLM fetches
 - add schema.org structured data to the static site and per-pit pages
 - expose the slim scan-first index at `/feeds/index.jsonl`
 - expose generated search phrases at `/feeds/search-terms.jsonl` and `/search-queries.html`
 - expose answer-first known-fix snippets at `/answers.html`, `/answers.md`, and `/feeds/answer-queries.jsonl`
-- expose the no-match escalation path at `/ask.html`, `/ask.md`, and `/feeds/unresolved-pit-template.json`
+- expose the no-match escalation path at `/ask.html`, `/ask.md`, `/feeds/unresolved-pit-template.json`, and the MCP `get_unresolved_pit_template(query)` tool
+- make no-match escalation show nearby pit records first and provide a prefilled GitHub issue URL for user review
 - make `/llms.txt` explicitly tell search-enabled models to use the slim index before reading the README
 - make `/llms.txt` explicitly tell agents to draft an unresolved-pit report when no record matches and the user is still blocked
 - run `node tools/indexnow-submit.mjs` after Pages deployment so IndexNow-compatible engines are told about the current sitemap URLs

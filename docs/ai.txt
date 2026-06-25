@@ -207,5 +207,5 @@ Known solved-problem examples:
   Root cause: uv defaults to cache or interpreter directories outside the agent's writable roots.
   Fix first: Set UV_CACHE_DIR to a workspace-local directory.
 
-If no record matches, use https://laozhangzzz.github.io/agent-pitbook/ask.md and draft an unresolved-pit report for user review.
+If no record matches, use https://laozhangzzz.github.io/agent-pitbook/ask.md, show nearby records first, and draft an unresolved-pit report for user review.
 GitHub issue search tracker: https://github.com/laozhangzzz/agent-pitbook/issues/2

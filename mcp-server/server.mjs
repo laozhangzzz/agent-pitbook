@@ -8,12 +8,13 @@
 // Tools:
 //   - search_pits(query, tool?, status?, limit?)
 //   - get_pit(id)
-//   - get_unresolved_pit_template()
+//   - get_unresolved_pit_template(query?, tool?, ...)
 //
 // Run:   node mcp-server/server.mjs
 // Env:   AGENT_PITBOOK_FEED  override path to pits.jsonl
 //        AGENT_PITBOOK_ANSWER_QUERIES  override path to answer-queries.jsonl
 //        AGENT_PITBOOK_UNRESOLVED_TEMPLATE  override path to unresolved-pit-template.json
+//        AGENT_PITBOOK_METRICS_PATH  optional privacy-safe JSONL hit/miss metrics path; query text is never logged
 
 import fs from "node:fs";
 import path from "node:path";
@@ -27,9 +28,84 @@ const answerQueriesPath =
   process.env.AGENT_PITBOOK_ANSWER_QUERIES || path.join(repoRoot, "feeds", "answer-queries.jsonl");
 const unresolvedTemplatePath =
   process.env.AGENT_PITBOOK_UNRESOLVED_TEMPLATE || path.join(repoRoot, "feeds", "unresolved-pit-template.json");
+const metricsPath = process.env.AGENT_PITBOOK_METRICS_PATH || "";
 
 const SERVER_INFO = { name: "agent-pitbook", version: "0.1.0" };
 const DEFAULT_PROTOCOL = "2024-11-05";
+const DEFAULT_REPO_URL = "https://github.com/laozhangzzz/agent-pitbook";
+
+function clipIssueField(value, maxLength = 900) {
+  const text = String(value ?? "").trim();
+  if (text.length <= maxLength) return text;
+  return `${text.slice(0, maxLength - 20).trimEnd()}\n\n[truncated for URL]`;
+}
+
+function appendIfPresent(params, key, value, maxLength = 900) {
+  const clipped = clipIssueField(value, maxLength);
+  if (clipped) params.set(key, clipped);
+}
+
+function repoUrlFromIssueUrl(issueUrl) {
+  try {
+    const url = new URL(issueUrl);
+    const repoPath = url.pathname.replace(/\/issues\/new\/?$/, "");
+    return `${url.origin}${repoPath}`;
+  } catch {
+    return DEFAULT_REPO_URL;
+  }
+}
+
+function buildUnresolvedIssueUrl({
+  repoUrl = DEFAULT_REPO_URL,
+  title,
+  query,
+  agentOrTool,
+  environment,
+  symptomsAndExactErrors,
+  whatWasTried,
+  existingRecordsChecked,
+  publicReproductionOrContext,
+  suspectedRootCause,
+  temporaryWorkaround,
+  sources
+} = {}) {
+  const url = new URL(`${repoUrl}/issues/new`);
+  const summary = clipIssueField(title || query || "Unresolved Agent Pitbook case", 120);
+  const checked = Array.isArray(existingRecordsChecked)
+    ? existingRecordsChecked.join("\n")
+    : existingRecordsChecked;
+
+  url.searchParams.set("template", "unresolved_pit.yml");
+  url.searchParams.set("title", `[ask] ${summary}`);
+  appendIfPresent(url.searchParams, "short-summary", summary, 220);
+  appendIfPresent(url.searchParams, "agent-tool", agentOrTool, 220);
+  appendIfPresent(url.searchParams, "environment", environment, 900);
+  appendIfPresent(url.searchParams, "symptoms", symptomsAndExactErrors || query, 1200);
+  appendIfPresent(url.searchParams, "existing-records", checked, 1200);
+  appendIfPresent(url.searchParams, "tried", whatWasTried, 900);
+  appendIfPresent(url.searchParams, "reproduction", publicReproductionOrContext, 900);
+  appendIfPresent(url.searchParams, "suspected-root-cause", suspectedRootCause, 700);
+  appendIfPresent(url.searchParams, "temporary-workaround", temporaryWorkaround, 700);
+  appendIfPresent(url.searchParams, "sources", sources, 700);
+  return url.toString();
+}
+
+function writeMetric(event) {
+  if (!metricsPath) return;
+  try {
+    fs.appendFileSync(
+      metricsPath,
+      `${JSON.stringify({
+        ts: new Date().toISOString(),
+        server: SERVER_INFO.name,
+        version: SERVER_INFO.version,
+        ...event
+      })}\n`
+    );
+  } catch (error) {
+    process.stderr.write(`agent-pitbook metrics disabled: ${String(error?.message || error)}\n`);
+  }
+}
 
 function loadRecords() {
   let text;
@@ -152,8 +228,11 @@ function getUnresolvedPitTemplate() {
     return {
       schema_version: "agent-pitbook.unresolved-pit.v1",
       issue_url: "https://github.com/laozhangzzz/agent-pitbook/issues/new?template=unresolved_pit.yml",
+      agent_cta:
+        "If no pit record actually solves the user's blocked failure, show nearby checked records, draft a public unresolved-pit report, redact private data, and ask the user to review before submitting.",
       safety_rules: [
         "Search existing pit records before reporting.",
+        "Show the top nearby records checked before reporting, so the user can reject duplicates.",
         "Ask the user for explicit confirmation before opening an issue or publishing any report.",
         "Do not include secrets, tokens, API keys, cookies, private customer data, proprietary logs, or private source code."
       ],
@@ -168,6 +247,81 @@ function getUnresolvedPitTemplate() {
       ]
     };
   }
+}
+
+function nearestRecordsForTemplate(args) {
+  const query = String(args?.query ?? "").trim();
+  if (!query) return [];
+  return searchPits({
+    query,
+    tool: args?.tool,
+    status: args?.status,
+    limit: 3
+  });
+}
+
+function existingRecordsCheckedFromNearest(nearestMatches) {
+  if (nearestMatches.length === 0) {
+    return [
+      "Searched Agent Pitbook, but no nearby records were returned.",
+      "Reason none matched: fill in after comparing symptoms, environment, and attempted fixes."
+    ];
+  }
+  return nearestMatches.map(
+    (record) =>
+      `- ${record.id} (${record.status}, score ${record.match_score}): ${record.title}\n  URL: https://laozhangzzz.github.io/agent-pitbook/pits/${record.id}.html\n  Why it did not match: fill in before submitting.`
+  );
+}
+
+function unresolvedTemplateResponse(args) {
+  const template = getUnresolvedPitTemplate();
+  const nearestMatches = nearestRecordsForTemplate(args);
+  const repoUrl = repoUrlFromIssueUrl(template.issue_url);
+  const existingRecordsChecked =
+    args?.existing_records_checked || existingRecordsCheckedFromNearest(nearestMatches);
+  const prefilledIssueUrl = buildUnresolvedIssueUrl({
+    repoUrl,
+    title: args?.short_summary || args?.query,
+    query: args?.query,
+    agentOrTool: args?.agent_or_tool || args?.tool,
+    environment: args?.environment,
+    symptomsAndExactErrors: args?.symptoms_and_exact_errors,
+    whatWasTried: args?.what_was_tried,
+    existingRecordsChecked,
+    publicReproductionOrContext: args?.public_reproduction_or_context,
+    suspectedRootCause: args?.suspected_root_cause,
+    temporaryWorkaround: args?.temporary_workaround,
+    sources: args?.sources
+  });
+
+  return {
+    ...template,
+    prefilled_issue_url: prefilledIssueUrl,
+    nearest_matches: nearestMatches,
+    duplicate_check_instruction:
+      nearestMatches.length > 0
+        ? "Before opening a public issue, show these nearest Agent Pitbook records to the user and ask whether any one already solves the problem."
+        : "Before opening a public issue, state that Agent Pitbook returned no nearby records for the supplied query.",
+    agent_next_message:
+      "I did not find a matching Agent Pitbook record. I checked the nearest records below; if none solve this case, I can prepare a redacted public unresolved-pit issue for you to review before submission.",
+    report_draft_hints: {
+      existing_records_checked: existingRecordsChecked,
+      issue_form_fields:
+        template.prefill_query_parameters?.fields ?? [
+          "title",
+          "short-summary",
+          "agent-tool",
+          "environment",
+          "symptoms",
+          "existing-records",
+          "tried",
+          "reproduction",
+          "suspected-root-cause",
+          "temporary-workaround",
+          "sources"
+        ]
+    }
+  };
 }
 
 // ---- MCP tool definitions ------------------------------------------------
@@ -215,10 +369,66 @@ const TOOLS = [
     name: "get_unresolved_pit_template",
     description:
       "Return the safe no-match report template. Use this when search_pits finds no matching record and the user is still blocked. " +
+      "Pass the original query when possible: the tool returns nearby records to rule out duplicates and a prefilled GitHub issue URL for user review. " +
       "Draft a public unresolved-pit issue only after explicit user confirmation, and never include secrets or private logs.",
     inputSchema: {
       type: "object",
-      properties: {}
+      properties: {
+        query: {
+          type: "string",
+          description: "Original user-visible symptom or exact error searched before deciding no record matched."
+        },
+        tool: {
+          type: "string",
+          description: "Optional affected tool filter, e.g. claude-code, codex, cursor, gemini, qwen-code, aider."
+        },
+        status: {
+          type: "string",
+          enum: ["candidate", "verified", "stale", "disputed"],
+          description: "Optional status filter for nearby records."
+        },
+        short_summary: {
+          type: "string",
+          description: "Optional one-sentence issue title to prefill."
+        },
+        agent_or_tool: {
+          type: "string",
+          description: "Optional agent or tool name to prefill."
+        },
+        environment: {
+          type: "string",
+          description: "Optional safe environment details to prefill."
+        },
+        symptoms_and_exact_errors: {
+          type: "string",
+          description: "Optional safe symptoms and exact public error text to prefill."
+        },
+        what_was_tried: {
+          type: "string",
+          description: "Optional safe attempts, commands, docs, and workarounds already tried."
+        },
+        existing_records_checked: {
+          type: "array",
+          items: { type: "string" },
+          description: "Optional checked pit ids, URLs, or search terms. If omitted, top nearby records are inserted."
+        },
+        public_reproduction_or_context: {
+          type: "string",
+          description: "Optional minimal public reproduction or safe context."
+        },
+        suspected_root_cause: {
+          type: "string",
+          description: "Optional suspected root cause."
+        },
+        temporary_workaround: {
+          type: "string",
+          description: "Optional temporary workaround."
+        },
+        sources: {
+          type: "string",
+          description: "Optional public docs, issues, PRs, or redacted evidence links."
+        }
+      }
     }
   }
 ];
@@ -231,6 +441,15 @@ function callTool(name, args) {
       status: args?.status,
       limit: args?.limit
     });
+    writeMetric({
+      tool: "search_pits",
+      hit: results.length > 0,
+      result_count: results.length,
+      has_query: Boolean(String(args?.query ?? "").trim()),
+      has_tool_filter: Boolean(args?.tool),
+      has_status_filter: Boolean(args?.status),
+      requested_limit: Number.isInteger(args?.limit) ? args.limit : null
+    });
     const header =
       results.length === 0
         ? "No pit records matched. Treat this as 'not found', not 'no such pit exists'."
@@ -239,10 +458,17 @@ function callTool(name, args) {
     return { text: `${header}\n\n${JSON.stringify(results, null, 2)}` };
   }
   if (name === "get_unresolved_pit_template") {
+    const template = unresolvedTemplateResponse(args);
+    writeMetric({
+      tool: "get_unresolved_pit_template",
+      has_query: Boolean(String(args?.query ?? "").trim()),
+      nearest_count: template.nearest_matches?.length ?? 0,
+      has_prefilled_issue_url: Boolean(template.prefilled_issue_url)
+    });
     return {
       text:
-        "Use this only after searching existing pit records. Ask the user before opening any public issue.\n\n" +
-        JSON.stringify(getUnresolvedPitTemplate(), null, 2)
+        "Use this only after searching existing pit records. Show nearest matches to rule out duplicates. Ask the user before opening any public issue.\n\n" +
+        JSON.stringify(template, null, 2)
     };
   }
   if (name === "get_pit") {

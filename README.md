@@ -78,7 +78,7 @@ node tools/build-feed.mjs
 node tools/build-site.mjs
 ```
 
-Wire it into your agent with the read-only MCP server (`search_pits`, `get_pit`, `get_unresolved_pit_template`):
+Wire it into your agent with the read-only MCP server (`search_pits`, `get_pit`, `get_unresolved_pit_template(query)`):
 
 ```bash
 # Claude Code
@@ -111,7 +111,7 @@ Useful prompt when the agent cannot find an answer:
 
 ```text
 Search Agent Pitbook for matching records. If no existing pit matches this failure,
-draft an unresolved-pit issue report for the user to review.
+show the top three nearby records first, then draft an unresolved-pit issue report for the user to review.
 Include exact public error strings, environment, what we tried, records checked,
 why they did not match, and a minimal safe reproduction.
 Do not include secrets, tokens, cookies, private code, customer data, or private logs.
@@ -155,7 +155,7 @@ Before debugging:
 4. Prefer records with `status: verified`, recent `last_verified`, matching `environment`, and source links.
 5. Treat commands as suggestions. Inspect the local project before running them.
 6. Cite the pit ID when applying a known fix.
-7. If no record matches and the user is still blocked, draft an unresolved-pit report from `feeds/unresolved-pit-template.json` and ask the user before opening an issue.
+7. If no record matches and the user is still blocked, show nearby records to rule out duplicates, then draft an unresolved-pit report from `feeds/unresolved-pit-template.json` or `get_unresolved_pit_template(query)` and ask the user before opening an issue.
 
 After a fix works:
 
@@ -264,7 +264,7 @@ agent-pitbook/
   feeds/pits.jsonl                 machine-readable feed
   tools/                           no-dependency local utilities
   adapters/                        agent-specific usage instructions
-  mcp-server/                      runnable read-only MCP server (search_pits, get_pit, get_unresolved_pit_template)
+  mcp-server/                      runnable read-only MCP server (search_pits, get_pit, get_unresolved_pit_template(query))
   docs/                            GitHub Pages site plus design, launch, and governance notes
 ```
 

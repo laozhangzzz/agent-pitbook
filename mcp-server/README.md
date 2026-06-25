@@ -11,7 +11,8 @@ It is read-only and safe by design:
 - returns pit text as **reference data, not trusted instructions**
 - includes `status`, `confidence`, and `last_verified` on every result so the agent can judge freshness
 - never hides `candidate` status
-- returns an unresolved-pit report template, but never opens issues or writes records
+- returns nearby records plus a prefilled unresolved-pit issue URL, but never opens issues or writes records
+- can write privacy-safe hit/miss metrics when explicitly enabled, without logging query text
 
 ## Tools
 
@@ -19,7 +20,7 @@ It is read-only and safe by design:
 | --- | --- | --- |
 | `search_pits` | `query` (required), `tool?`, `status?`, `limit?` | ranked record summaries, `verified` first |
 | `get_pit` | `id` (required) | one full pit record |
-| `get_unresolved_pit_template` | none | safe no-match report template for user-confirmed issue drafts |
+| `get_unresolved_pit_template` | `query?`, `tool?`, draft fields? | safe no-match report template, top nearby records, prefilled GitHub issue URL |
 
 ## Run
 
@@ -32,6 +33,7 @@ The server speaks JSON-RPC 2.0 over stdio. Override paths with:
 - `AGENT_PITBOOK_FEED`
 - `AGENT_PITBOOK_ANSWER_QUERIES`
 - `AGENT_PITBOOK_UNRESOLVED_TEMPLATE`
+- `AGENT_PITBOOK_METRICS_PATH` optional JSONL file for privacy-safe hit/miss metrics
 
 Smoke test:
 
@@ -67,6 +69,14 @@ claude mcp add agent-pitbook -- node /absolute/path/to/agent-pitbook/mcp-server/
 
 Keep the clone updated (`git pull`) and rebuild the feed (`node tools/build-feed.mjs`) to pick up new pits.
 
+## Registry readiness
+
+`package.json` includes `mcpName: "io.github.laozhangzzz/agent-pitbook"` so the package is ready for
+the official MCP Registry ownership flow once the MCP server is published as a public npm package.
+PulseMCP says it ingests the official MCP Registry; Glama also exposes an "Add Server" path for MCP
+server discovery. Do not claim registry installation until the package is actually published and the
+registry entry is live.
+
 ## Roadmap
 
 Write-side tools (`submit_candidate_pit`, `mark_verified`) are intentionally **not** in this server.
@@ -74,8 +84,17 @@ Creating and verifying records stays a Git + pull-request action so every change
 attributable. The server stays read-only.
 
 `get_unresolved_pit_template` is also read-only. It helps the consuming agent draft a GitHub issue
-after `search_pits` returns no useful match, but the agent must show the draft to the user and ask
-for confirmation before publishing anything.
+after `search_pits` returns no useful match. Pass the original `query` when possible: the server
+returns up to three nearby records to rule out duplicates and a `prefilled_issue_url` that opens the
+GitHub issue form with safe fields already filled. The agent must show those nearby records and the
+draft to the user, then ask for confirmation before publishing anything.
+
+## Privacy-safe metrics
+
+Metrics are disabled by default. If `AGENT_PITBOOK_METRICS_PATH=/path/to/metrics.jsonl` is set, the
+server appends JSONL rows such as `tool`, `hit`, `result_count`, `nearest_count`, and filter booleans.
+It never logs the search query text, issue draft text, paths from the user's project, secrets, or
+private logs.
 
 ## Safety
 

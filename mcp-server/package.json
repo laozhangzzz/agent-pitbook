@@ -1,8 +1,29 @@
 {
   "name": "agent-pitbook-mcp",
   "version": "0.1.0",
+  "mcpName": "io.github.laozhangzzz/agent-pitbook",
   "description": "Zero-dependency MCP server exposing the Agent Pitbook corpus to coding agents.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laozhangzzz/agent-pitbook.git",
+    "directory": "mcp-server"
+  },
+  "homepage": "https://laozhangzzz.github.io/agent-pitbook/",
+  "bugs": {
+    "url": "https://github.com/laozhangzzz/agent-pitbook/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "coding-agents",
+    "agent-memory",
+    "debugging",
+    "llm-readable",
+    "claude-code",
+    "codex",
+    "gemini"
+  ],
   "bin": {
     "agent-pitbook-mcp": "server.mjs"
   },
